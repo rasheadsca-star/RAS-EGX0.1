@@ -1,107 +1,71 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EGX Light Trusted Analyzer</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EGX Auto Mubasher Dashboard</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
       <div class="logo">EGX</div>
       <div>
-        <h1>EGX Light Trusted Analyzer</h1>
-        <p>خفيف — عملي — لا يعرض أسعار وهمية — التحليل مبني فقط على بيانات تقوم باستيرادها</p>
+        <h1>EGX Auto Mubasher Dashboard</h1>
+        <p>GitHub Pages + GitHub Actions: تحديث مجاني تلقائي من صفحات مباشر العامة</p>
       </div>
     </div>
-
     <div class="actions">
-      <button id="templateBtn" class="btn ghost">تحميل قالب الأسعار</button>
-      <button id="portfolioTemplateBtn" class="btn ghost">قالب المحفظة</button>
-      <button id="exportBtn" class="btn ghost">تصدير تقرير</button>
-      <button id="clearBtn" class="btn danger">مسح البيانات</button>
+      <span id="status" class="pill warn">Loading...</span>
+      <button id="reloadBtn">تحديث الصفحة</button>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="trust-banner" id="trustBanner">
-      <strong>NO DATA</strong>
-      <span>ارفع ملف CSV للأسعار حتى يبدأ التحليل. لا توجد أسعار مولدة عشوائيًا في هذه النسخة.</span>
-    </section>
-
-    <section class="import-grid">
-      <div class="panel">
-        <h2>1) استيراد أسعار السوق</h2>
-        <p>الأعمدة المفضلة: symbol, name, sector, price, previousClose, high, low, volume, avg20Volume, support, resistance, date</p>
-        <input id="marketInput" type="file" accept=".csv,text/csv" />
-      </div>
-
-      <div class="panel">
-        <h2>2) استيراد المحفظة اختياري</h2>
-        <p>الأعمدة: symbol, quantity, avgCost</p>
-        <input id="portfolioInput" type="file" accept=".csv,text/csv" />
-      </div>
-    </section>
+    <section id="message" class="banner">في انتظار البيانات...</section>
 
     <section class="kpis">
-      <div class="kpi"><span>جودة البيانات</span><strong id="qualityKpi">--</strong></div>
-      <div class="kpi"><span>عدد الأسهم</span><strong id="countKpi">0</strong></div>
-      <div class="kpi"><span>فرص مراقبة قوية</span><strong id="strongKpi">0</strong></div>
-      <div class="kpi"><span>مخاطر / تخفيف</span><strong id="riskKpi">0</strong></div>
-      <div class="kpi"><span>متوسط الثقة</span><strong id="confidenceKpi">--</strong></div>
-      <div class="kpi"><span>قيمة المحفظة</span><strong id="portfolioKpi">--</strong></div>
+      <div class="kpi"><span>آخر تحديث</span><strong id="updated">--</strong></div>
+      <div class="kpi"><span>عدد الأسهم</span><strong id="count">0</strong></div>
+      <div class="kpi"><span>متوسط الثقة</span><strong id="confidence">--</strong></div>
+      <div class="kpi"><span>جودة البيانات</span><strong id="quality">--</strong></div>
+      <div class="kpi"><span>مراقبة شراء</span><strong id="watchBuy">0</strong></div>
+      <div class="kpi"><span>حذر / تخفيف</span><strong id="risk">0</strong></div>
     </section>
 
-    <section class="filters panel">
-      <div class="field">
-        <label>بحث</label>
-        <input id="searchInput" placeholder="CIB / CCAP / اسم الشركة" />
-      </div>
+    <section class="panel market-panel">
+      <h2>حالة السوق</h2>
+      <div id="marketBox" class="summary">--</div>
+    </section>
 
-      <div class="field">
-        <label>الإشارة</label>
-        <select id="signalFilter">
-          <option value="ALL">الكل</option>
-          <option value="STRONG_WATCH">مراقبة قوية</option>
-          <option value="WATCH">مراقبة</option>
-          <option value="WAIT">انتظار</option>
-          <option value="RISK_REDUCE">حذر / تخفيف</option>
-          <option value="INVALID">بيانات غير كافية</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>أقل ثقة</label>
-        <input id="minConfidence" type="number" min="0" max="100" value="0" />
-      </div>
-
-      <div class="field">
-        <label>ترتيب</label>
-        <select id="sortMode">
-          <option value="confidence">الأعلى ثقة</option>
-          <option value="volumeRatio">الأعلى Volume Ratio</option>
-          <option value="changePct">الأعلى تغير</option>
-          <option value="risk">الأعلى مخاطرة</option>
-        </select>
-      </div>
+    <section class="panel filters">
+      <input id="search" placeholder="بحث: COMI / ETEL / CCAP"/>
+      <select id="signalFilter">
+        <option value="ALL">كل الإشارات</option>
+        <option value="WATCH_BUY">مراقبة شراء</option>
+        <option value="WATCH">مراقبة</option>
+        <option value="WAIT">انتظار</option>
+        <option value="RISK_REDUCE">حذر / تخفيف</option>
+        <option value="INVALID">بيانات غير كافية</option>
+      </select>
+      <input id="minConfidence" type="number" min="0" max="100" value="0"/>
     </section>
 
     <section class="grid">
       <div class="panel">
         <div class="section-title">
           <h2>أفضل فرص المراقبة</h2>
-          <span>ليست توصية شراء</span>
+          <span>ليست أوامر شراء</span>
         </div>
-        <div id="topList" class="cards-list empty">ارفع بيانات الأسعار أولًا.</div>
+        <div id="topList" class="list empty">لا توجد بيانات.</div>
       </div>
 
       <div class="panel">
         <div class="section-title">
-          <h2>تحليل المحفظة</h2>
-          <span>اختياري</span>
+          <h2>أخطاء / رموز لم تُقرأ</h2>
+          <span>Diagnostics</span>
         </div>
-        <div id="portfolioBox" class="cards-list empty">ارفع ملف المحفظة لو عايز تحليل المراكز.</div>
+        <div id="errorsBox" class="summary">--</div>
       </div>
 
       <div class="panel wide">
@@ -114,31 +78,32 @@
             <thead>
               <tr>
                 <th>السهم</th>
-                <th>الشركة</th>
                 <th>السعر</th>
                 <th>التغير</th>
-                <th>Volume Ratio</th>
-                <th>الدعم</th>
-                <th>المقاومة</th>
-                <th>المسافة للدعم</th>
-                <th>المسافة للمقاومة</th>
+                <th>الحجم</th>
+                <th>قيمة التداول</th>
+                <th>Pivot</th>
+                <th>دعم 1</th>
+                <th>مقاومة 1</th>
+                <th>للدعم</th>
+                <th>للمقاومة</th>
                 <th>الإشارة</th>
                 <th>الثقة</th>
-                <th>جودة البيانات</th>
+                <th>الجودة</th>
                 <th>السبب</th>
               </tr>
             </thead>
-            <tbody id="analysisRows"></tbody>
+            <tbody id="rowsBody"></tbody>
           </table>
         </div>
       </div>
 
       <div class="panel wide note">
-        <h2>منهج الثقة</h2>
+        <h2>تنبيه مهم</h2>
         <p>
-          الثقة هنا لا تعني توقعًا مؤكدًا للربح. هي درجة اكتمال وتوافق البيانات:
-          اتجاه السعر + حجم التداول مقابل متوسط 20 جلسة + قرب الدعم/المقاومة + جودة الحقول.
-          أي صف ناقص بيانات مهمة يتم خفض ثقته تلقائيًا أو يظهر كـ “بيانات غير كافية”.
+          هذا حل مجاني عملي: GitHub Actions يقرأ صفحات مباشر العامة كل فترة ويحدّث ملف data/market.json،
+          ثم GitHub Pages يعرض النتائج. لا يستخدم تسجيل دخول ولا بيانات مدفوعة ولا يتجاوز حماية.
+          البيانات العامة ليست لحظية حقيقية وقد تكون متأخرة، والتوصيات هنا قرارات مراقبة وليست أوامر تداول.
         </p>
       </div>
     </section>
