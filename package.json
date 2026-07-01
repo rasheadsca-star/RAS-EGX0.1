@@ -1,0 +1,20 @@
+{
+  "name": "egx-full-cicd-production-system",
+  "version": "1.0.0",
+  "description": "EGX Live Web Trading Intelligence Dashboard - Render/GitHub CI-CD ready",
+  "main": "server/index.js",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "test": "node server/self-test.js"
+  },
+  "dependencies": {
+    "express": "^4.18.3",
+    "socket.io": "^4.7.5",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0"
+  }
+}
