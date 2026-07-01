@@ -1,27 +1,446 @@
 {
   "market": "EGX",
   "baseUrl": "https://english.mubasher.info",
+  "scanMode": "market_universe",
+  "maxSymbolsPerRun": 80,
+  "requestDelayMs": 800,
   "dataMode": "public_delayed",
   "symbols": [
-    "COMI",
-    "ETEL",
-    "CCAP",
-    "EGAL",
-    "HRHO",
-    "ORHD",
-    "SWDY",
-    "TMGH",
-    "FWRY",
-    "ABUK",
-    "EKHO",
-    "ORAS",
-    "AMER",
-    "EAST",
-    "MFPC"
-  ],
-  "notes_ar": [
-    "استخدم رموز مباشر كما تظهر في الرابط.",
-    "CIB غالبًا رمزه COMI على مباشر.",
-    "هذا Collector يقرأ الصفحات العامة فقط بدون تسجيل دخول."
+    {
+      "symbol": "COMI",
+      "name_en": "Commercial International Bank",
+      "name_ar": "البنك التجاري الدولي",
+      "aliases": [
+        "CIB",
+        "التجاري الدولي",
+        "بنك التجاري الدولي"
+      ]
+    },
+    {
+      "symbol": "ETEL",
+      "name_en": "Telecom Egypt",
+      "name_ar": "المصرية للاتصالات",
+      "aliases": [
+        "WE",
+        "وي",
+        "تليكوم ايجيبت"
+      ]
+    },
+    {
+      "symbol": "CCAP",
+      "name_en": "Qalaa Holdings",
+      "name_ar": "القلعة للاستثمارات المالية",
+      "aliases": [
+        "القلعة",
+        "قلعة"
+      ]
+    },
+    {
+      "symbol": "EGAL",
+      "name_en": "Egypt Aluminum",
+      "name_ar": "مصر للألومنيوم",
+      "aliases": [
+        "مصر للالومنيوم",
+        "الألومنيوم العربية"
+      ]
+    },
+    {
+      "symbol": "HRHO",
+      "name_en": "EFG Holding",
+      "name_ar": "إي إف جي القابضة",
+      "aliases": [
+        "هيرميس",
+        "EFG Hermes",
+        "اي اف جي"
+      ]
+    },
+    {
+      "symbol": "ORHD",
+      "name_en": "Orascom Development Egypt",
+      "name_ar": "أوراسكوم للتنمية مصر",
+      "aliases": [
+        "اوراسكوم للتنمية",
+        "أوراسكوم تنمية"
+      ]
+    },
+    {
+      "symbol": "SWDY",
+      "name_en": "El Sewedy Electric",
+      "name_ar": "السويدي إليكتريك",
+      "aliases": [
+        "السويدي",
+        "سويدي"
+      ]
+    },
+    {
+      "symbol": "TMGH",
+      "name_en": "Talaat Moustafa Group",
+      "name_ar": "مجموعة طلعت مصطفى",
+      "aliases": [
+        "طلعت مصطفى",
+        "TMG"
+      ]
+    },
+    {
+      "symbol": "FWRY",
+      "name_en": "Fawry",
+      "name_ar": "فوري لتكنولوجيا البنوك والمدفوعات الإلكترونية",
+      "aliases": [
+        "فوري"
+      ]
+    },
+    {
+      "symbol": "ABUK",
+      "name_en": "Abu Qir Fertilizers",
+      "name_ar": "أبو قير للأسمدة",
+      "aliases": [
+        "ابوقير",
+        "أبو قير"
+      ]
+    },
+    {
+      "symbol": "EKHO",
+      "name_en": "Egypt Kuwait Holding",
+      "name_ar": "القابضة المصرية الكويتية",
+      "aliases": [
+        "المصرية الكويتية"
+      ]
+    },
+    {
+      "symbol": "ORAS",
+      "name_en": "Orascom Construction",
+      "name_ar": "أوراسكوم كونستراكشون",
+      "aliases": [
+        "اوراسكوم كونستراكشن",
+        "أوراسكوم إنشاء"
+      ]
+    },
+    {
+      "symbol": "AMER",
+      "name_en": "Amer Group",
+      "name_ar": "عامر جروب",
+      "aliases": [
+        "عامر"
+      ]
+    },
+    {
+      "symbol": "EAST",
+      "name_en": "Eastern Company",
+      "name_ar": "الشرقية إيسترن كومباني",
+      "aliases": [
+        "إيسترن",
+        "ايسترن",
+        "الشرقية للدخان"
+      ]
+    },
+    {
+      "symbol": "MFPC",
+      "name_en": "Misr Fertilizers Production",
+      "name_ar": "موبكو",
+      "aliases": [
+        "مصر لإنتاج الأسمدة",
+        "MOPCO"
+      ]
+    },
+    {
+      "symbol": "PHDC",
+      "name_en": "Palm Hills Development",
+      "name_ar": "بالم هيلز للتعمير",
+      "aliases": [
+        "بالم هيلز"
+      ]
+    },
+    {
+      "symbol": "HELI",
+      "name_en": "Heliopolis Housing",
+      "name_ar": "مصر الجديدة للإسكان والتعمير",
+      "aliases": [
+        "مصر الجديدة"
+      ]
+    },
+    {
+      "symbol": "MNHD",
+      "name_en": "Madinet Masr",
+      "name_ar": "مدينة مصر للإسكان والتعمير",
+      "aliases": [
+        "مدينة نصر",
+        "مدينت مصر"
+      ]
+    },
+    {
+      "symbol": "EFID",
+      "name_en": "Edita Food Industries",
+      "name_ar": "إيديتا للصناعات الغذائية",
+      "aliases": [
+        "ايديتا",
+        "إيديتا"
+      ]
+    },
+    {
+      "symbol": "JUFO",
+      "name_en": "Juhayna Food Industries",
+      "name_ar": "جهينة للصناعات الغذائية",
+      "aliases": [
+        "جهينة"
+      ]
+    },
+    {
+      "symbol": "AUTO",
+      "name_en": "GB Corp",
+      "name_ar": "جي بي كوربوريشن",
+      "aliases": [
+        "غبور",
+        "جي بي أوتو",
+        "GB Auto"
+      ]
+    },
+    {
+      "symbol": "CLHO",
+      "name_en": "Cleopatra Hospital",
+      "name_ar": "مستشفى كليوباترا",
+      "aliases": [
+        "كليوباترا"
+      ]
+    },
+    {
+      "symbol": "CIRA",
+      "name_en": "Cairo Investment and Real Estate Development",
+      "name_ar": "القاهرة للاستثمار والتنمية العقارية",
+      "aliases": [
+        "سيرا",
+        "القاهرة للاستثمار"
+      ]
+    },
+    {
+      "symbol": "SKPC",
+      "name_en": "Sidi Kerir Petrochemicals",
+      "name_ar": "سيدي كرير للبتروكيماويات",
+      "aliases": [
+        "سيدبك",
+        "سيدي كرير"
+      ]
+    },
+    {
+      "symbol": "AMOC",
+      "name_en": "Alexandria Mineral Oils",
+      "name_ar": "الإسكندرية للزيوت المعدنية",
+      "aliases": [
+        "أموك",
+        "اموك"
+      ]
+    },
+    {
+      "symbol": "MICH",
+      "name_en": "Misr Chemical Industries",
+      "name_ar": "مصر لصناعة الكيماويات",
+      "aliases": [
+        "مصر كيماويات"
+      ]
+    },
+    {
+      "symbol": "ADIB",
+      "name_en": "Abu Dhabi Islamic Bank Egypt",
+      "name_ar": "مصرف أبو ظبي الإسلامي مصر",
+      "aliases": [
+        "أبوظبي الإسلامي",
+        "ابوظبي الإسلامي"
+      ]
+    },
+    {
+      "symbol": "SAUD",
+      "name_en": "Al Baraka Bank Egypt",
+      "name_ar": "بنك البركة مصر",
+      "aliases": [
+        "البركة"
+      ]
+    },
+    {
+      "symbol": "EXPA",
+      "name_en": "Export Development Bank of Egypt",
+      "name_ar": "البنك المصري لتنمية الصادرات",
+      "aliases": [
+        "تنمية الصادرات"
+      ]
+    },
+    {
+      "symbol": "EGBE",
+      "name_en": "Egyptian Gulf Bank",
+      "name_ar": "البنك المصري الخليجي",
+      "aliases": [
+        "المصري الخليجي"
+      ]
+    },
+    {
+      "symbol": "RAYA",
+      "name_en": "Raya Holding",
+      "name_ar": "راية القابضة",
+      "aliases": [
+        "راية"
+      ]
+    },
+    {
+      "symbol": "RMDA",
+      "name_en": "Tenth of Ramadan Pharmaceutical",
+      "name_ar": "العاشر من رمضان للصناعات الدوائية راميدا",
+      "aliases": [
+        "راميدا"
+      ]
+    },
+    {
+      "symbol": "ISPH",
+      "name_en": "Ibnsina Pharma",
+      "name_ar": "ابن سينا فارما",
+      "aliases": [
+        "ابن سينا"
+      ]
+    },
+    {
+      "symbol": "CICH",
+      "name_en": "CI Capital Holding",
+      "name_ar": "سي آي كابيتال القابضة",
+      "aliases": [
+        "سي اي كابيتال"
+      ]
+    },
+    {
+      "symbol": "BTFH",
+      "name_en": "Beltone Financial Holding",
+      "name_ar": "بلتون المالية القابضة",
+      "aliases": [
+        "بلتون"
+      ]
+    },
+    {
+      "symbol": "MASR",
+      "name_en": "Madinet Nasr Housing",
+      "name_ar": "مدينة نصر للإسكان والتعمير",
+      "aliases": [
+        "مدينة نصر"
+      ]
+    },
+    {
+      "symbol": "SUGR",
+      "name_en": "Delta Sugar",
+      "name_ar": "الدلتا للسكر",
+      "aliases": [
+        "الدلتا سكر"
+      ]
+    },
+    {
+      "symbol": "OLFI",
+      "name_en": "Obour Land",
+      "name_ar": "عبور لاند للصناعات الغذائية",
+      "aliases": [
+        "عبور لاند"
+      ]
+    },
+    {
+      "symbol": "DOMT",
+      "name_en": "Arabian Food Industries Domty",
+      "name_ar": "الصناعات الغذائية العربية دومتي",
+      "aliases": [
+        "دومتي"
+      ]
+    },
+    {
+      "symbol": "POUL",
+      "name_en": "Cairo Poultry",
+      "name_ar": "القاهرة للدواجن",
+      "aliases": [
+        "القاهرة دواجن"
+      ]
+    },
+    {
+      "symbol": "SPIN",
+      "name_en": "Alexandria Spinning & Weaving",
+      "name_ar": "الإسكندرية للغزل والنسيج",
+      "aliases": [
+        "سبينالكس",
+        "الإسكندرية غزل"
+      ]
+    },
+    {
+      "symbol": "KABO",
+      "name_en": "El Nasr Clothes & Textiles",
+      "name_ar": "النصر للملابس والمنسوجات كابو",
+      "aliases": [
+        "كابو"
+      ]
+    },
+    {
+      "symbol": "NIPH",
+      "name_en": "Nile Pharmaceuticals",
+      "name_ar": "النيل للأدوية والصناعات الكيماوية",
+      "aliases": [
+        "النيل للأدوية",
+        "نايل فارما"
+      ]
+    },
+    {
+      "symbol": "ADRI",
+      "name_en": "Arab Drug Company",
+      "name_ar": "العربية للأدوية",
+      "aliases": [
+        "العربية ادوية"
+      ]
+    },
+    {
+      "symbol": "AXPH",
+      "name_en": "Alexandria Pharmaceuticals",
+      "name_ar": "الإسكندرية للأدوية",
+      "aliases": [
+        "الإسكندرية ادوية"
+      ]
+    },
+    {
+      "symbol": "EGCH",
+      "name_en": "Egyptian Chemical Industries",
+      "name_ar": "كيما",
+      "aliases": [
+        "كيما"
+      ]
+    },
+    {
+      "symbol": "IRON",
+      "name_en": "Iron And Steel for Mines and Quarries",
+      "name_ar": "الحديد والصلب للمناجم والمحاجر",
+      "aliases": [
+        "الحديد والصلب",
+        "مناجم"
+      ]
+    },
+    {
+      "symbol": "ESRS",
+      "name_en": "Ezz Steel",
+      "name_ar": "حديد عز",
+      "aliases": [
+        "عز",
+        "حديد عز"
+      ]
+    },
+    {
+      "symbol": "ARCC",
+      "name_en": "Arabian Cement",
+      "name_ar": "العربية للأسمنت",
+      "aliases": [
+        "العربية اسمنت"
+      ]
+    },
+    {
+      "symbol": "MCQE",
+      "name_en": "Misr Cement Qena",
+      "name_ar": "مصر للأسمنت قنا",
+      "aliases": [
+        "اسمنت قنا"
+      ]
+    },
+    {
+      "symbol": "LCSW",
+      "name_en": "Lecico Egypt",
+      "name_ar": "ليسيكو مصر",
+      "aliases": [
+        "ليسيكو"
+      ]
+    }
   ]
 }
