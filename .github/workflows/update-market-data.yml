@@ -1,0 +1,33 @@
+name: Update EGX Market Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch and analyze public market data
+        run: node scripts/fetch-market-data.js
+
+      - name: Commit generated data files
+        run: |
+          git config user.name "egx-pro-hub-web"
+          git config user.email "actions@github.com"
+          git add data/market.json data/source-health.json data/validation-report.json data/daily-report.json
+          git diff --cached --quiet && echo "No data changes to commit" || git commit -m "auto update EGX market data"
+          git push
