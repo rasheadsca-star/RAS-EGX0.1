@@ -1,12 +1,36 @@
 const fs = require("fs");
 
 const DEFAULT_BASE_URL = "https://english.mubasher.info";
-const DEFAULT_MAX_SYMBOLS = 120;
-const DEFAULT_DELAY_MS = 650;
+const DEFAULT_MAX_SYMBOLS = 999;
+const DEFAULT_DELAY_MS = 450;
 
 function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 function writeJson(file, data) { ensureDir("data"); fs.writeFileSync(file, JSON.stringify(data, null, 2), "utf8"); }
 function readJson(file, fallback) { try { return JSON.parse(fs.readFileSync(file, "utf8")); } catch { return fallback; } }
+
+function readCsvSymbols(file) {
+  try {
+    if (!fs.existsSync(file)) return [];
+    const text = fs.readFileSync(file, "utf8");
+    const lines = text.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+    if (!lines.length) return [];
+    const start = /^symbol\s*,/i.test(lines[0]) ? 1 : 0;
+    return lines.slice(start).map((line) => {
+      const parts = line.split(",").map((x) => x.trim());
+      const [symbol, name_ar, name_en, aliasesRaw] = parts;
+      return {
+        symbol: String(symbol || "").toUpperCase(),
+        name_ar: name_ar || "",
+        name_en: name_en || symbol || "",
+        aliases: aliasesRaw ? aliasesRaw.split("|").map((x) => x.trim()).filter(Boolean) : []
+      };
+    }).filter((x) => x.symbol);
+  } catch (error) {
+    console.log("CSV symbols read failed:", error.message);
+    return [];
+  }
+}
+
 function sleep(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
 
 function toNumber(value) {
@@ -100,9 +124,11 @@ async function fetchText(url) {
 }
 
 function normalizeSymbolItem(item) {
-  if (typeof item === "string") return { symbol: item.trim().toUpperCase(), name_en: item.trim().toUpperCase(), name_ar: "", aliases: [] };
+  if (typeof item === "string") return { symbol: item.trim().toUpperCase(), mubasherSymbol: item.trim().toUpperCase(), name_en: item.trim().toUpperCase(), name_ar: "", aliases: [] };
+  if (item && item.disabled) return { symbol: "" };
   const symbol = String(item.symbol || item.code || "").trim().toUpperCase();
-  return { symbol, name_en: item.name_en || item.name || symbol, name_ar: item.name_ar || "", aliases: Array.isArray(item.aliases) ? item.aliases : [] };
+  const mubasherSymbol = String(item.mubasherSymbol || item.mubasher_symbol || symbol).trim().toUpperCase();
+  return { symbol, mubasherSymbol, name_en: item.name_en || item.name || symbol, name_ar: item.name_ar || "", aliases: Array.isArray(item.aliases) ? item.aliases : [] };
 }
 
 function discoverSymbolsFromMarketHtml(html) {
@@ -323,7 +349,7 @@ function analyzeRow(row) {
 
 function summarize(rows, requestedCount, discoveredCount) {
   return {
-    scanMode: "market_universe_v4", requestedSymbols: requestedCount, discoveredSymbols: discoveredCount, count: rows.length,
+    scanMode: "full_market_batch_cache_v4_1", requestedSymbols: requestedCount, discoveredSymbols: discoveredCount, count: rows.length,
     avgConfidence: rows.length ? Math.round(rows.reduce((s, r) => s + (r.finalConfidence || 0), 0) / rows.length) : 0,
     avgQuality: rows.length ? Math.round(rows.reduce((s, r) => s + (r.dataQualityScore || 0), 0) / rows.length) : 0,
     buyCandidates: rows.filter((r) => r.priority <= 2).length,
@@ -346,12 +372,13 @@ async function readMarketAndDiscover(baseUrl) {
 }
 
 async function readSymbol(symbolItem, baseUrl) {
-  const primaryUrl = stockUrl(symbolItem.symbol, baseUrl);
+  const externalSymbol = symbolItem.mubasherSymbol || symbolItem.symbol;
+  const primaryUrl = stockUrl(externalSymbol, baseUrl);
   const html = await fetchText(primaryUrl);
   const stock = parseStockPage(symbolItem, html, primaryUrl);
   let support = {};
   try {
-    const srUrl = supportUrl(symbolItem.symbol, baseUrl);
+    const srUrl = supportUrl(externalSymbol, baseUrl);
     const srHtml = await fetchText(srUrl);
     support = parseSupportPage(symbolItem.symbol, srHtml, srUrl);
   } catch (error) {
@@ -373,6 +400,61 @@ function updateHistory(existing, rows, generatedAt) {
   return history;
 }
 
+
+function sortRowsForOpportunity(rows) {
+  return rows.slice().sort((a, b) => (Number(a.priority || 99) - Number(b.priority || 99)) || (Number(b.finalConfidence || 0) - Number(a.finalConfidence || 0)));
+}
+
+function mergeFullMarketCache(existingCache, freshRows, generatedAt, batchInfo) {
+  const cache = existingCache && typeof existingCache === "object" ? existingCache : {};
+  const oldRows = Array.isArray(cache.rows) ? cache.rows : [];
+  const map = new Map();
+
+  for (const row of oldRows) {
+    if (row && row.symbol) map.set(String(row.symbol).toUpperCase(), row);
+  }
+
+  for (const row of freshRows) {
+    if (!row || !row.symbol) continue;
+    map.set(String(row.symbol).toUpperCase(), {
+      ...row,
+      cacheUpdatedAt: generatedAt,
+      stale: false
+    });
+  }
+
+  const maxAgeDays = Number(batchInfo.maxCacheAgeDays || 7);
+  const cutoff = Date.now() - maxAgeDays * 24 * 60 * 60 * 1000;
+
+  const merged = Array.from(map.values()).map((row) => {
+    const t = Date.parse(row.cacheUpdatedAt || row.fetchedAt || generatedAt);
+    const stale = Number.isFinite(t) ? t < cutoff : false;
+    return { ...row, stale };
+  });
+
+  return {
+    ok: merged.length > 0,
+    generatedAt,
+    scanMode: "full_market_batch_cache_v4_1",
+    batchInfo,
+    rows: sortRowsForOpportunity(merged)
+  };
+}
+
+function summarizeCached(rows, requestedCount, discoveredCount, batchInfo) {
+  const base = summarize(rows, requestedCount, discoveredCount);
+  return {
+    ...base,
+    scanMode: "full_market_batch_cache_v4_1",
+    cacheRows: rows.length,
+    batchOffset: batchInfo.offset,
+    nextBatchOffset: batchInfo.nextOffset,
+    batchSize: batchInfo.selectedForThisRun,
+    universeCoveragePct: batchInfo.totalUniverse ? Math.round((rows.length / batchInfo.totalUniverse) * 100) : 0
+  };
+}
+
+
 async function main() {
   ensureDir("data");
   const generatedAt = new Date().toISOString();
@@ -383,12 +465,22 @@ async function main() {
 
   const { market, discovered } = await readMarketAndDiscover(baseUrl);
   const configItems = Array.isArray(config.symbols) ? config.symbols : [];
-  const universe = mergeUniverse(configItems, discovered);
-  const selected = universe.slice(0, maxSymbols);
+  const csvItems = readCsvSymbols("config/egx-symbols.csv");
+  const correctionItems = Array.isArray(config.symbolCorrections) ? config.symbolCorrections : [];
+  const universe = mergeUniverse([...configItems, ...csvItems, ...correctionItems], discovered).slice(0, maxSymbols);
+
+  const batchSize = Math.max(1, Math.min(Number(config.batchSizePerRun || 70), universe.length || 1));
+  const scanState = readJson("data/scan-state.json", { offset: 0, runs: 0 });
+  const offset = Number(scanState.offset || 0) % Math.max(1, universe.length);
+  const selected = [];
+  for (let i = 0; i < batchSize; i++) {
+    selected.push(universe[(offset + i) % universe.length]);
+  }
+  const nextOffset = (offset + selected.length) % Math.max(1, universe.length);
 
   writeJson("data/symbols.json", {
-    ok: true, generatedAt, scanMode: "market_universe_v4",
-    totalConfigured: configItems.length, totalDiscoveredFromMarketPage: discovered.length, totalUniverse: universe.length, selectedForThisRun: selected.length,
+    ok: true, generatedAt, scanMode: "full_market_batch_cache_v4_1",
+    totalConfigured: configItems.length, totalFromCsv: csvItems.length, totalDiscoveredFromMarketPage: discovered.length, totalUniverse: universe.length, batchOffset: offset, nextBatchOffset: nextOffset, selectedForThisRun: selected.length,
     symbols: universe.map((item) => ({ ...item, searchText: normalizeArabic([item.symbol, item.name_en, item.name_ar, ...(item.aliases || [])].filter(Boolean).join(" ")) }))
   });
 
@@ -404,21 +496,45 @@ async function main() {
     await sleep(delayMs);
   }
 
-  const rows = rawRows.map(analyzeRow).sort((a, b) => (a.priority - b.priority) || ((b.finalConfidence || 0) - (a.finalConfidence || 0)));
-  const readSymbols = rows.map((r) => r.symbol);
+  const freshRows = rawRows.map(analyzeRow).sort((a, b) => (a.priority - b.priority) || ((b.finalConfidence || 0) - (a.finalConfidence || 0)));
+  const readSymbols = freshRows.map((r) => r.symbol);
   const missingSymbols = selected.map((s) => s.symbol).filter((symbol) => !readSymbols.includes(symbol));
-  const avgDataQuality = rows.length ? Math.round(rows.reduce((sum, row) => sum + (row.dataQualityScore || 0), 0) / rows.length) : 0;
-  const summary = summarize(rows, selected.length, discovered.length);
 
-  const history = updateHistory(readJson("data/history.json", {}), rows, generatedAt);
+  const batchInfo = {
+    offset,
+    nextOffset,
+    selectedForThisRun: selected.length,
+    totalUniverse: universe.length,
+    maxCacheAgeDays: Number(config.maxCacheAgeDays || 7),
+    freshRowsRead: freshRows.length,
+    failedInThisBatch: errors.length
+  };
+
+  const fullCache = mergeFullMarketCache(readJson("data/full-market-cache.json", {}), freshRows, generatedAt, batchInfo);
+  writeJson("data/full-market-cache.json", fullCache);
+  writeJson("data/scan-state.json", {
+    offset: nextOffset,
+    previousOffset: offset,
+    runs: Number(scanState.runs || 0) + 1,
+    totalUniverse: universe.length,
+    lastRunAt: generatedAt,
+    lastBatchRowsRead: freshRows.length,
+    lastBatchFailed: errors.map((e) => e.symbol).filter(Boolean)
+  });
+
+  const rows = fullCache.rows;
+  const avgDataQuality = rows.length ? Math.round(rows.reduce((sum, row) => sum + (row.dataQualityScore || 0), 0) / rows.length) : 0;
+  const summary = summarizeCached(rows, universe.length, discovered.length, batchInfo);
+
+  const history = updateHistory(readJson("data/history.json", {}), freshRows, generatedAt);
   writeJson("data/history.json", history);
 
   const recommendations = {
-    ok: rows.length > 0, generatedAt, source: "egx_pro_hub_v4",
+    ok: rows.length > 0, generatedAt, source: "egx_pro_hub_v4_1_full_market_batch_cache",
     disclaimer: "هذه ترشيحات مراقبة مبنية على بيانات عامة ومتأخرة وليست أوامر تداول.",
-    topBuyCandidates: rows.filter((r) => r.priority <= 2).slice(0, 15),
-    watchlist: rows.filter((r) => r.priority === 3).slice(0, 25),
-    riskReduce: rows.filter((r) => r.signal === "RISK_REDUCE").slice(0, 20),
+    topBuyCandidates: rows.filter((r) => r.priority <= 2).slice(0, 20),
+    watchlist: rows.filter((r) => r.priority === 3).slice(0, 35),
+    riskReduce: rows.filter((r) => r.signal === "RISK_REDUCE").slice(0, 25),
     all: rows
   };
   writeJson("data/recommendations.json", recommendations);
@@ -433,14 +549,14 @@ async function main() {
 
   writeJson("data/market.json", {
     ok: rows.length > 0,
-    source: "mubasher_public_pages_v4_market_universe_recommendations",
-    message: rows.length ? "تم مسح قائمة سوق موسعة وتوليد ترشيحات ونقاط دخول وأهداف. البيانات عامة ومتأخرة وليست لحظية حقيقية." : "لم يتم جمع بيانات صالحة من مباشر.",
+    source: "mubasher_public_pages_v4_1_full_market_batch_cache",
+    message: rows.length ? "تم تشغيل Batch من السوق ودمجه مع كاش السوق الكامل ثم توليد ترشيحات ونقاط دخول وأهداف. البيانات عامة ومتأخرة وليست لحظية حقيقية." : "لم يتم جمع بيانات صالحة من مباشر.",
     updatedAt: generatedAt, dataMode: "public_delayed", market, summary, rows, errors
   });
 
   writeJson("data/source-health.json", {
-    sourceName: "Mubasher Public Pages V4", ok: rows.length > 0, mode: "public_delayed", scanMode: "market_universe_v4",
-    lastSuccessAt: rows.length ? generatedAt : null, lastFailureAt: errors.length ? generatedAt : null,
+    sourceName: "Mubasher Public Pages V4.1", ok: rows.length > 0, mode: "public_delayed", scanMode: "full_market_batch_cache_v4_1",
+    lastSuccessAt: rows.length ? generatedAt : null, lastFailureAt: rows.length ? null : (errors.length ? generatedAt : null), partialFailureAt: errors.length ? generatedAt : null,
     rowsRead: rows.length, selectedForThisRun: selected.length, totalUniverse: universe.length, totalDiscoveredFromMarketPage: discovered.length,
     failedSymbols: errors.map((e) => e.symbol).filter(Boolean), avgDataQuality,
     warning: "البيانات من صفحات عامة وقد تكون متأخرة. لا تعتبر لحظية حقيقية.",
@@ -448,7 +564,7 @@ async function main() {
   });
 
   writeJson("data/validation-report.json", {
-    ok: rows.length > 0, scanMode: "market_universe_v4", requestedSymbols: selected.length, readSymbols: rows.length, missingSymbols,
+    ok: rows.length > 0, scanMode: "full_market_batch_cache_v4_1", requestedSymbols: selected.length, readSymbols: rows.length, missingSymbols,
     failedSymbols: errors.map((e) => e.symbol).filter(Boolean), validForDisplay: rows.length > 0,
     warnings: [
       ...(missingSymbols.length ? [`رموز لم تُقرأ: ${missingSymbols.join(", ")}`] : []),
@@ -468,19 +584,19 @@ async function main() {
     topWatchBuy: recommendations.topBuyCandidates,
     riskReduce: recommendations.riskReduce,
     marketSummary: market,
-    sourceStatus: rows.length > 0 ? "ok_public_delayed_market_universe_v4" : "failed",
+    sourceStatus: rows.length > 0 ? "ok_public_delayed_full_market_batch_cache_v4_1" : "failed",
     notes: ["تمت إضافة الترشيحات ونقاط الدخول والأهداف ووقف الخسارة.", "البيانات عامة ومتأخرة وليست لحظية حقيقية.", "الإشارات قرارات مراقبة وليست أوامر تداول."]
   });
 
-  console.log(`Collector V4 completed. rows=${rows.length}, universe=${universe.length}, errors=${errors.length}`);
+  console.log(`Collector V4.1 completed. rows=${rows.length}, universe=${universe.length}, errors=${errors.length}`);
   process.exit(0);
 }
 
 main().catch((error) => {
   const generatedAt = new Date().toISOString();
   console.error(error);
-  writeJson("data/market.json", { ok: false, source: "mubasher_public_pages_v4_market_universe_recommendations", message: "فشل التحديث الحقيقي من مباشر. راجع errors.", updatedAt: generatedAt, dataMode: "public_delayed", market: {}, summary: {}, rows: [], errors: [{ error: error.message }] });
-  writeJson("data/source-health.json", { sourceName: "Mubasher Public Pages V4", ok: false, mode: "public_delayed", scanMode: "market_universe_v4", lastSuccessAt: null, lastFailureAt: generatedAt, rowsRead: 0, failedSymbols: [], avgDataQuality: 0, warning: error.message, generatedAt });
+  writeJson("data/market.json", { ok: false, source: "mubasher_public_pages_v4_1_full_market_batch_cache", message: "فشل التحديث الحقيقي من مباشر. راجع errors.", updatedAt: generatedAt, dataMode: "public_delayed", market: {}, summary: {}, rows: [], errors: [{ error: error.message }] });
+  writeJson("data/source-health.json", { sourceName: "Mubasher Public Pages V4.1", ok: false, mode: "public_delayed", scanMode: "full_market_batch_cache_v4_1", lastSuccessAt: null, lastFailureAt: generatedAt, rowsRead: 0, failedSymbols: [], avgDataQuality: 0, warning: error.message, generatedAt });
   writeJson("data/validation-report.json", { ok: false, requestedSymbols: 0, readSymbols: 0, missingSymbols: [], failedSymbols: [], validForDisplay: false, warnings: [error.message], generatedAt });
   writeJson("data/daily-report.json", { generatedAt, topWatchBuy: [], riskReduce: [], marketSummary: {}, sourceStatus: "failed", notes: [error.message] });
   process.exit(0);
