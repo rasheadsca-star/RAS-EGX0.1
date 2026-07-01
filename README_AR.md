@@ -1,74 +1,55 @@
-# EGX Live Connector Ready System
+# EGX Mubasher Public Auto Reader
 
-هذه نسخة عملية لربط التطبيق بمصدر أسعار حقيقي.
+نسخة مجانية محلية تقرأ تلقائيًا من صفحات مباشر العامة.
 
-## المهم جدًا
+## ماذا تفعل؟
+- تدخل تلقائيًا على صفحات الأسهم في مباشر.
+- تقرأ:
+  - السعر
+  - التغير
+  - الحجم
+  - قيمة التداول
+  - الدعم والمقاومة
+  - Pivot
+  - حالة EGX30
+- تحلل وتخرج:
+  - مراقبة شراء
+  - مراقبة
+  - انتظار
+  - حذر / تخفيف
+  - بيانات غير كافية
+- تعمل تحديث تلقائي كل 3 دقائق افتراضيًا.
 
-- GitHub Pages لا يكفي للأسعار اللحظية لأنه Static فقط.
-- الربط اللحظي يحتاج Backend مثل هذا المشروع.
-- لا تستخدم مفاتيح API داخل GitHub Pages.
-- الربط مع مباشر يكون فقط عبر API رسمي/متعاقد عليه أو مصدر مرخص.
-- لا يوجد Scraping مفعل داخل هذا المشروع لتجنب كسر الشروط أو الاعتماد على صفحات غير مستقرة.
+## مهم جدًا
+- هذه ليست بيانات لحظية حقيقية؛ مباشر يوضح أن البيانات العامة متأخرة أثناء الجلسة.
+- الأداة لا تستخدم Login ولا تكسر حماية ولا تقرأ بيانات مدفوعة.
+- لو مباشر غيّر شكل الصفحة، قد تحتاج تعديل parser.
+- لا تجعل التحديث سريعًا جدًا. الافتراضي 180 ثانية لتقليل الضغط.
 
-## أوضاع التشغيل
-
-### 1) file_csv
-يقرأ الملف:
-
-data/live-prices.csv
-
-هذا هو الوضع الافتراضي. مناسب كبداية أو لو عندك Export من مصدر أسعار.
-
-### 2) http_json
-يقرأ أي API مرخص يرجع JSON.
-
-ضع في `.env`:
-
-SOURCE_MODE=http_json
-EGX_API_URL=https://...
-EGX_API_KEY=...
-
-### 3) mubasher_official
-لو عندك API رسمي من مباشر أو وسيطك.
-
-ضع في `.env`:
-
-SOURCE_MODE=mubasher_official
-MUBASHER_API_URL=https://...
-MUBASHER_API_TOKEN=...
-
-### 4) egx_public_manual
-Placeholder آمن. لا يجمع بيانات من الموقع مباشرة.
-
-## التشغيل المحلي
-
+## التشغيل
 1. ثبت Node.js 20.
-2. افتح CMD داخل الفولدر.
-3. شغل:
+2. فك الضغط.
+3. افتح:
+
+scripts/START_LOCAL.bat
+
+أو يدويًا:
 
 npm install
 npm start
 
-افتح:
+ثم افتح:
 
 http://localhost:3000
 
-## تشغيل سريع على ويندوز
-
+## تعديل الأسهم
 افتح:
 
-scripts/START_LOCAL.bat
+config/watchlist.json
 
-## شكل CSV
+واكتب رموز مباشر، مثال:
+COMI بدل CIB.
 
-symbol,name,sector,price,previousClose,high,low,volume,avg20Volume,support,resistance,date
-COMI,Commercial International Bank,Banks,132.52,132.10,133.00,131.95,2284054,1600000,128.00,136.50,2026-07-01
-
-## تطوير لاحق
-
-بعد الحصول على API رسمي:
-- نضبط mapping الحقول حسب شكل استجابة API.
-- نضيف watchlist.
-- نضيف historical candles.
-- نضيف backtest server-side.
-- نضيف alerts.
+## نشرها على الإنترنت؟
+لا أنصح بنشرها على GitHub Pages لأنها تحتاج Backend.
+لو عايزها Online، استخدم جهازك أو VPS/Render لاحقًا، لكن Render قد يطلب كارت.

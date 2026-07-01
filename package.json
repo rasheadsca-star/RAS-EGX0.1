@@ -1,7 +1,7 @@
 {
-  "name": "egx-live-connector-ready-system",
+  "name": "egx-mubasher-public-auto-reader",
   "version": "1.0.0",
-  "description": "Lightweight EGX live-data connector ready dashboard with file/API/Mubasher official adapter modes",
+  "description": "Free local EGX Mubasher public pages auto-reader and analyzer",
   "main": "server/index.js",
   "engines": {
     "node": "20.x"
@@ -13,7 +13,7 @@
   "dependencies": {
     "express": "^4.18.3",
     "socket.io": "^4.7.5",
-    "cors": "^2.8.5",
+    "cheerio": "^1.0.0",
     "dotenv": "^16.4.5"
   }
 }
