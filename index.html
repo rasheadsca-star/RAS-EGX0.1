@@ -2,60 +2,55 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EGX Live Intelligence Dashboard</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EGX Pro Intelligence Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
-    <div>
-      <h1>EGX Live Intelligence Dashboard</h1>
-      <p>نسخة تعمل مباشرة على GitHub Pages بدون Render وبدون كارت دفع</p>
+    <div class="brand">
+      <div class="logo">EGX</div>
+      <div><h1>EGX Pro Intelligence Dashboard</h1><p>لوحة متابعة وتحليل لحظي للأسهم — GitHub Pages Edition</p></div>
     </div>
-    <div class="live"><span class="dot"></span><span>LIVE SIMULATION</span></div>
+    <div class="header-actions">
+      <div class="live-pill"><span class="live-dot"></span><span>LIVE SIMULATION</span></div>
+      <button id="exportBtn" class="btn secondary">تصدير التقرير CSV</button>
+      <button id="refreshBtn" class="btn primary">تحديث فوري</button>
+    </div>
   </header>
 
-  <main class="grid">
-    <section class="card hero">
-      <div>
-        <span class="label">حالة السوق</span>
-        <h2 id="marketBias">جار التحليل...</h2>
-        <p id="lastUpdate">--</p>
+  <main class="container">
+    <section class="hero-card">
+      <div><span class="eyebrow">Market Control</span><h2 id="marketBias">جار التحليل...</h2><p id="lastUpdate">--</p></div>
+      <div class="strategy-box">
+        <label for="strategySelect">نمط الاستراتيجية</label>
+        <select id="strategySelect"><option value="conservative">محافظ</option><option value="balanced" selected>متوازن</option><option value="aggressive">هجومي</option></select>
+        <small>يؤثر على قوة الإشارة وتوزيع رأس المال.</small>
       </div>
-      <button id="refreshBtn">تحديث فوري</button>
     </section>
 
-    <section class="card">
-      <h3>إشارات التداول</h3>
-      <div id="signals"></div>
+    <section class="kpis">
+      <div class="kpi"><span>فرص شراء</span><strong id="buyCount">0</strong></div>
+      <div class="kpi"><span>تقليل / خروج</span><strong id="reduceCount">0</strong></div>
+      <div class="kpi"><span>متوسط الثقة</span><strong id="avgConfidence">0%</strong></div>
+      <div class="kpi"><span>السيولة المقترحة</span><strong id="cashPct">--</strong></div>
     </section>
 
-    <section class="card">
-      <h3>توزيع المحفظة المقترح</h3>
-      <div id="portfolio"></div>
+    <section class="toolbar card">
+      <div class="field"><label>بحث عن سهم</label><input id="searchInput" type="text" placeholder="مثال: CIB أو CCAP" /></div>
+      <div class="field"><label>فلتر الإشارة</label><select id="signalFilter"><option value="ALL">الكل</option><option value="BUY">BUY</option><option value="HOLD">HOLD</option><option value="REDUCE">REDUCE</option></select></div>
+      <div class="field"><label>فلتر المخاطر</label><select id="riskFilter"><option value="ALL">الكل</option><option value="LOW">LOW</option><option value="MEDIUM">MEDIUM</option><option value="HIGH">HIGH</option></select></div>
+      <form id="addStockForm" class="add-form"><div class="field"><label>أضف سهم للمتابعة</label><input id="newSymbolInput" type="text" placeholder="اكتب الرمز" maxlength="10" /></div><button class="btn secondary" type="submit">إضافة</button></form>
     </section>
 
-    <section class="card wide">
-      <h3>Market Watch</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>السهم</th><th>السعر</th><th>التغير</th><th>الحجم</th><th>الاتجاه</th><th>المخاطر</th>
-          </tr>
-        </thead>
-        <tbody id="rows"></tbody>
-      </table>
-    </section>
-
-    <section class="card wide note">
-      <h3>تنبيه مهم</h3>
-      <p>
-        هذه نسخة Web Live Simulation تعمل مباشرة على GitHub Pages بدون Backend وبدون كارت دفع.
-        لا تنفذ أوامر شراء أو بيع حقيقية، ولا تعتبر توصية استثمارية.
-      </p>
+    <section class="grid">
+      <div class="card"><div class="section-title"><h3>إشارات التداول</h3><span id="signalSummary">--</span></div><div id="signalsList" class="signals-list"></div></div>
+      <div class="card"><div class="section-title"><h3>توزيع المحفظة</h3><span>Confidence Weighted</span></div><div id="allocationList" class="allocation-list"></div></div>
+      <div class="card wide"><div class="section-title"><h3>Market Watch</h3><span id="rowCount">--</span></div><div class="table-wrap"><table><thead><tr><th>السهم</th><th>القطاع</th><th>السعر</th><th>التغير</th><th>الحجم</th><th>الاتجاه</th><th>المخاطر</th><th>الإشارة</th><th>الثقة</th></tr></thead><tbody id="marketRows"></tbody></table></div></div>
+      <div class="card wide"><div class="section-title"><h3>تقرير سريع</h3><span>Auto-generated</span></div><div id="reportBox" class="report-box"></div></div>
+      <div class="card wide disclaimer"><h3>تنبيه مهم</h3><p>هذه لوحة محاكاة وتحليل تعليمي تعمل على GitHub Pages بدون Backend. لا تنفذ أوامر شراء أو بيع حقيقية، ولا تعتبر توصية استثمارية أو ضمان ربح. للتداول الحقيقي يلزم ربط رسمي بمصدر بيانات مرخص ووسيط مالي مرخص.</p></div>
     </section>
   </main>
-
   <script src="app.js"></script>
 </body>
 </html>
