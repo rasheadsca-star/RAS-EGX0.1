@@ -1,12 +1,14 @@
 {
-  "name": "egx-github-pages-auto-mubasher",
+  "name": "egx-pro-hub-web-auto-mubasher",
   "version": "1.0.0",
-  "description": "GitHub Pages dashboard with GitHub Actions auto-updated Mubasher public data",
+  "description": "GitHub Pages EGX Pro Hub style dashboard with GitHub Actions public Mubasher collector and confidence fusion analysis.",
   "type": "commonjs",
   "scripts": {
-    "fetch": "node scripts/fetch-mubasher.js"
+    "fetch": "node scripts/fetch-market-data.js",
+    "analyze": "node scripts/analyze-market.js"
   },
   "engines": {
     "node": "20.x"
-  }
+  },
+  "dependencies": {}
 }

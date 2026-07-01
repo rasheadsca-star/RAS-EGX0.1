@@ -1,113 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EGX Auto Mubasher Dashboard</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>EGX Pro Hub Web — Real Confidence Fusion</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">EGX</div>
-      <div>
-        <h1>EGX Auto Mubasher Dashboard</h1>
-        <p>GitHub Pages + GitHub Actions: تحديث مجاني تلقائي من صفحات مباشر العامة</p>
-      </div>
-    </div>
-    <div class="actions">
-      <span id="status" class="pill warn">Loading...</span>
-      <button id="reloadBtn">تحديث الصفحة</button>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section id="message" class="banner">في انتظار البيانات...</section>
-
-    <section class="kpis">
-      <div class="kpi"><span>آخر تحديث</span><strong id="updated">--</strong></div>
-      <div class="kpi"><span>عدد الأسهم</span><strong id="count">0</strong></div>
-      <div class="kpi"><span>متوسط الثقة</span><strong id="confidence">--</strong></div>
-      <div class="kpi"><span>جودة البيانات</span><strong id="quality">--</strong></div>
-      <div class="kpi"><span>مراقبة شراء</span><strong id="watchBuy">0</strong></div>
-      <div class="kpi"><span>حذر / تخفيف</span><strong id="risk">0</strong></div>
-    </section>
-
-    <section class="panel market-panel">
-      <h2>حالة السوق</h2>
-      <div id="marketBox" class="summary">--</div>
-    </section>
-
-    <section class="panel filters">
-      <input id="search" placeholder="بحث: COMI / ETEL / CCAP"/>
-      <select id="signalFilter">
-        <option value="ALL">كل الإشارات</option>
-        <option value="WATCH_BUY">مراقبة شراء</option>
-        <option value="WATCH">مراقبة</option>
-        <option value="WAIT">انتظار</option>
-        <option value="RISK_REDUCE">حذر / تخفيف</option>
-        <option value="INVALID">بيانات غير كافية</option>
-      </select>
-      <input id="minConfidence" type="number" min="0" max="100" value="0"/>
-    </section>
-
-    <section class="grid">
-      <div class="panel">
-        <div class="section-title">
-          <h2>أفضل فرص المراقبة</h2>
-          <span>ليست أوامر شراء</span>
-        </div>
-        <div id="topList" class="list empty">لا توجد بيانات.</div>
-      </div>
-
-      <div class="panel">
-        <div class="section-title">
-          <h2>أخطاء / رموز لم تُقرأ</h2>
-          <span>Diagnostics</span>
-        </div>
-        <div id="errorsBox" class="summary">--</div>
-      </div>
-
-      <div class="panel wide">
-        <div class="section-title">
-          <h2>جدول التحليل</h2>
-          <span id="rowsCount">0 صف</span>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>السهم</th>
-                <th>السعر</th>
-                <th>التغير</th>
-                <th>الحجم</th>
-                <th>قيمة التداول</th>
-                <th>Pivot</th>
-                <th>دعم 1</th>
-                <th>مقاومة 1</th>
-                <th>للدعم</th>
-                <th>للمقاومة</th>
-                <th>الإشارة</th>
-                <th>الثقة</th>
-                <th>الجودة</th>
-                <th>السبب</th>
-              </tr>
-            </thead>
-            <tbody id="rowsBody"></tbody>
-          </table>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">EGX</div>
+        <div>
+          <h1>EGX Pro Hub</h1>
+          <p>Web Confidence Fusion</p>
         </div>
       </div>
 
-      <div class="panel wide note">
-        <h2>تنبيه مهم</h2>
-        <p>
-          هذا حل مجاني عملي: GitHub Actions يقرأ صفحات مباشر العامة كل فترة ويحدّث ملف data/market.json،
-          ثم GitHub Pages يعرض النتائج. لا يستخدم تسجيل دخول ولا بيانات مدفوعة ولا يتجاوز حماية.
-          البيانات العامة ليست لحظية حقيقية وقد تكون متأخرة، والتوصيات هنا قرارات مراقبة وليست أوامر تداول.
-        </p>
+      <nav>
+        <button class="nav active" data-view="dashboard">🏠 لوحة السوق</button>
+        <button class="nav" data-view="opportunities">🎯 الفرص التفصيلية</button>
+        <button class="nav" data-view="liquidity">💧 مراقب السيولة</button>
+        <button class="nav" data-view="volume">📊 مراقب حجم التداول</button>
+        <button class="nav" data-view="support">📌 الدعم والمقاومة</button>
+        <button class="nav" data-view="decision">🧠 القرار الاستثماري</button>
+        <button class="nav" data-view="validation">✅ مطابقة مباشر</button>
+        <button class="nav" data-view="sources">🛰️ صحة المصادر</button>
+        <button class="nav" data-view="alerts">🚨 التنبيهات</button>
+        <button class="nav" data-view="watchlists">⭐ قوائم المراقبة</button>
+        <button class="nav" data-view="dailyReport">🗓️ التقرير اليومي</button>
+        <button class="nav" data-view="settings">⚙️ الإعدادات</button>
+      </nav>
+
+      <div class="disclaimer">
+        بيانات عامة ومتأخرة. الأداة مساعد قرار فقط وليست مستشارًا ماليًا ولا تنفّذ أوامر تداول.
       </div>
-    </section>
-  </main>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h2 id="viewTitle">لوحة السوق</h2>
+          <p id="viewSubtitle">نسخة Web مستوحاة من EGX Pro Hub مع GitHub Actions وReal Confidence Fusion.</p>
+        </div>
+        <div class="top-actions">
+          <a class="primary link-btn" target="_blank" href="https://github.com/rasheadsca-star/RAS-EGX0.1/actions/workflows/update-market-data.yml">⚡ تحديث البيانات</a>
+          <button id="reloadData" class="secondary">🔄 إعادة تحميل</button>
+          <button id="exportCsv" class="secondary">CSV</button>
+          <button id="printPage" class="secondary">🖨️ طباعة</button>
+          <span id="sourceBadge" class="status-pill">جار التحميل...</span>
+        </div>
+      </header>
+
+      <section id="notice" class="notice">جار تحميل ملفات البيانات...</section>
+
+      <section id="dashboard" class="view active"></section>
+      <section id="opportunities" class="view"></section>
+      <section id="liquidity" class="view"></section>
+      <section id="volume" class="view"></section>
+      <section id="support" class="view"></section>
+      <section id="decision" class="view"></section>
+      <section id="validation" class="view"></section>
+      <section id="sources" class="view"></section>
+      <section id="alerts" class="view"></section>
+      <section id="watchlists" class="view"></section>
+      <section id="dailyReport" class="view"></section>
+      <section id="settings" class="view"></section>
+    </main>
+  </div>
 
   <script src="app.js"></script>
 </body>
