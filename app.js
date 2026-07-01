@@ -1,17 +1,442 @@
-const DEFAULT_STOCKS=[{symbol:"CIB",name:"Commercial International Bank",sector:"Banks",base:82},{symbol:"CCAP",name:"Qalaa Holdings",sector:"Financials",base:5.40},{symbol:"ETEL",name:"Telecom Egypt",sector:"Telecom",base:34},{symbol:"SWDY",name:"Elsewedy Electric",sector:"Industrials",base:65},{symbol:"EKHO",name:"Egypt Kuwait Holding",sector:"Energy",base:27},{symbol:"AMER",name:"Amer Group",sector:"Real Estate",base:2.90},{symbol:"PHAR",name:"Pharma Watchlist",sector:"Healthcare",base:160},{symbol:"EGAL",name:"Egypt Aluminium",sector:"Industrials",base:118},{symbol:"ORAS",name:"Orascom Construction",sector:"Construction",base:290}];
-const STRATEGIES={conservative:{buyVolume:950000,maxDeploy:.45,cashFloor:.50,riskBlock:"MEDIUM"},balanced:{buyVolume:750000,maxDeploy:.65,cashFloor:.35,riskBlock:"HIGH"},aggressive:{buyVolume:550000,maxDeploy:.80,cashFloor:.20,riskBlock:"HIGH"}};
-let stocks=loadStocks();let prices=Object.fromEntries(stocks.map(s=>[s.symbol,s.base||random(5,150)]));let latestRows=[];let latestSignals=[];let latestAllocation={cashPct:.85,allocations:{}};
-const els={marketBias:document.getElementById("marketBias"),lastUpdate:document.getElementById("lastUpdate"),buyCount:document.getElementById("buyCount"),reduceCount:document.getElementById("reduceCount"),avgConfidence:document.getElementById("avgConfidence"),cashPct:document.getElementById("cashPct"),signalsList:document.getElementById("signalsList"),allocationList:document.getElementById("allocationList"),marketRows:document.getElementById("marketRows"),reportBox:document.getElementById("reportBox"),rowCount:document.getElementById("rowCount"),signalSummary:document.getElementById("signalSummary"),searchInput:document.getElementById("searchInput"),signalFilter:document.getElementById("signalFilter"),riskFilter:document.getElementById("riskFilter"),strategySelect:document.getElementById("strategySelect")};
-function loadStocks(){const saved=localStorage.getItem("egx_pro_stocks");if(!saved)return[...DEFAULT_STOCKS];try{const custom=JSON.parse(saved);return custom.length?custom:[...DEFAULT_STOCKS]}catch{return[...DEFAULT_STOCKS]}}function saveStocks(){localStorage.setItem("egx_pro_stocks",JSON.stringify(stocks))}function random(min,max){return min+Math.random()*(max-min)}function currentStrategy(){return STRATEGIES[els.strategySelect.value]||STRATEGIES.balanced}
-function generateMarket(){latestRows=stocks.map(stock=>{const previous=prices[stock.symbol]||stock.base||random(5,150);const move=random(-.024,.026);const price=Math.max(.1,previous*(1+move));prices[stock.symbol]=price;const changePct=((price-previous)/previous)*100;const volume=Math.floor(random(50000,2400000));const volatility=Math.min(1,Math.abs(changePct)/4+Math.random()*.16);const trendScore=changePct>=0?random(.52,.96):random(.08,.48);return{...stock,price:+price.toFixed(2),changePct:+changePct.toFixed(2),volume,trend:changePct>=0?"UP":"DOWN",trendScore:+trendScore.toFixed(2),volatility:+volatility.toFixed(2),risk:volatility>.7?"HIGH":volatility>.4?"MEDIUM":"LOW"}});latestSignals=latestRows.map(makeSignal);latestAllocation=makeAllocation(latestSignals);render()}
-function makeSignal(row){const strategy=currentStrategy();let signal="HOLD",confidence=58,reason="لا توجد أفضلية واضحة كافية للدخول.";const highRiskBlocked=row.risk==="HIGH"||(strategy.riskBlock==="MEDIUM"&&row.risk==="MEDIUM");if(highRiskBlocked&&row.changePct<.8){signal="REDUCE";confidence=row.risk==="HIGH"?84:73;reason="المخاطر أعلى من المقبول؛ الأولوية لحماية رأس المال."}else if(row.trend==="UP"&&row.volume>=strategy.buyVolume&&row.trendScore>.62){signal="BUY";confidence=Math.min(94,76+Math.round(row.trendScore*14)+Math.round(Math.random()*5));reason="زخم إيجابي مدعوم بحجم تداول مناسب."}else if(row.trend==="DOWN"&&row.changePct<-1.1){signal="REDUCE";confidence=72+Math.round(Math.random()*8);reason="ضغط بيعي واضح واحتمال استمرار الهبوط."}else if(row.trend==="UP"){signal="HOLD";confidence=63+Math.round(Math.random()*7);reason="الحركة إيجابية لكن تحتاج تأكيد أقوى."}return{symbol:row.symbol,signal,confidence,risk:row.risk,reason}}
-function makeAllocation(signals){const strategy=currentStrategy();const buys=signals.filter(s=>s.signal==="BUY").sort((a,b)=>b.confidence-a.confidence);if(!buys.length)return{cashPct:.85,allocations:{},summary:"لا توجد فرص شراء قوية؛ الحفاظ على السيولة هو الخيار الأفضل الآن."};const totalScore=buys.reduce((sum,s)=>sum+s.confidence,0);const allocations={};buys.forEach(s=>{allocations[s.symbol]=+((s.confidence/totalScore)*strategy.maxDeploy).toFixed(3)});const used=Object.values(allocations).reduce((a,b)=>a+b,0);return{cashPct:Math.max(strategy.cashFloor,+(1-used).toFixed(3)),allocations,summary:"توزيع رأس المال حسب قوة الثقة مع الحفاظ على حد أدنى من السيولة."}}
-function filteredRows(){const q=els.searchInput.value.trim().toUpperCase();const sf=els.signalFilter.value;const rf=els.riskFilter.value;const bySymbol=Object.fromEntries(latestSignals.map(s=>[s.symbol,s]));return latestRows.filter(row=>{const sig=bySymbol[row.symbol]||{};return(!q||row.symbol.includes(q)||(row.name||"").toUpperCase().includes(q))&&(sf==="ALL"||sig.signal===sf)&&(rf==="ALL"||row.risk===rf)})}
-function render(){const buys=latestSignals.filter(s=>s.signal==="BUY").length;const reduces=latestSignals.filter(s=>s.signal==="REDUCE").length;const avg=latestSignals.length?Math.round(latestSignals.reduce((a,b)=>a+b.confidence,0)/latestSignals.length):0;const bias=buys>reduces?"انتقائي إيجابي":reduces>buys?"دفاعي":"محايد";els.marketBias.textContent=bias;els.lastUpdate.textContent="آخر تحديث: "+new Date().toLocaleString();els.buyCount.textContent=buys;els.reduceCount.textContent=reduces;els.avgConfidence.textContent=avg+"%";els.cashPct.textContent=Math.round(latestAllocation.cashPct*100)+"%";els.signalSummary.textContent=`${buys} BUY / ${reduces} REDUCE`;renderSignals();renderAllocation();renderTable();renderReport(bias,buys,reduces,avg)}
-function renderSignals(){els.signalsList.innerHTML=latestSignals.map(s=>`<div class="signal-card"><div><div class="symbol-title">${s.symbol}</div><div class="subtext">${s.reason}</div></div><div style="text-align:left"><span class="badge ${s.signal}">${s.signal}</span><div class="subtext">ثقة ${s.confidence}%</div><div class="subtext">مخاطر ${s.risk}</div></div></div>`).join("")}
-function renderAllocation(){const entries=Object.entries(latestAllocation.allocations);let html="";if(!entries.length){html+=`<div class="alloc-card"><strong>Cash</strong><span>${Math.round(latestAllocation.cashPct*100)}%</span></div>`}else{html+=entries.map(([symbol,weight])=>`<div class="alloc-card"><strong>${symbol}</strong><span>${Math.round(weight*100)}%</span></div>`).join("");html+=`<div class="alloc-card"><strong>Cash</strong><span>${Math.round(latestAllocation.cashPct*100)}%</span></div>`}html+=`<p class="subtext" style="margin-top:12px">${latestAllocation.summary}</p>`;els.allocationList.innerHTML=html}
-function renderTable(){const rows=filteredRows();const signalBySymbol=Object.fromEntries(latestSignals.map(s=>[s.symbol,s]));els.rowCount.textContent=`${rows.length} سهم ظاهر`;els.marketRows.innerHTML=rows.map(row=>{const sig=signalBySymbol[row.symbol]||{};const changeColor=row.changePct>=0?"var(--good)":"var(--bad)";return`<tr><td><strong>${row.symbol}</strong><div class="subtext">${row.name||""}</div></td><td>${row.sector||"--"}</td><td>${row.price}</td><td style="color:${changeColor}">${row.changePct}%</td><td>${row.volume.toLocaleString()}</td><td>${row.trend}</td><td>${row.risk}</td><td><span class="badge ${sig.signal}">${sig.signal||"--"}</span></td><td>${sig.confidence||"--"}%</td></tr>`}).join("")}
-function renderReport(bias,buys,reduces,avg){const topBuys=latestSignals.filter(s=>s.signal==="BUY").sort((a,b)=>b.confidence-a.confidence).slice(0,3).map(s=>`${s.symbol} (${s.confidence}%)`).join("، ")||"لا توجد";const defensive=latestSignals.filter(s=>s.signal==="REDUCE").sort((a,b)=>b.confidence-a.confidence).slice(0,3).map(s=>`${s.symbol} (${s.confidence}%)`).join("، ")||"لا توجد";els.reportBox.innerHTML=`<strong>الانحياز العام:</strong> ${bias}<br><strong>عدد فرص الشراء:</strong> ${buys}<br><strong>عدد إشارات تقليل المخاطر:</strong> ${reduces}<br><strong>متوسط الثقة:</strong> ${avg}%<br><strong>أفضل فرص حالية:</strong> ${topBuys}<br><strong>أسهم تحتاج حذر:</strong> ${defensive}<br><strong>السيولة المقترحة:</strong> ${Math.round(latestAllocation.cashPct*100)}%`}
-function exportCsv(){const signalBySymbol=Object.fromEntries(latestSignals.map(s=>[s.symbol,s]));const header=["Symbol","Name","Sector","Price","ChangePct","Volume","Trend","Risk","Signal","Confidence","Reason"];const rows=latestRows.map(row=>{const s=signalBySymbol[row.symbol]||{};return[row.symbol,row.name||"",row.sector||"",row.price,row.changePct,row.volume,row.trend,row.risk,s.signal||"",s.confidence||"",s.reason||""]});const csv=[header,...rows].map(r=>r.map(v=>`"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=`egx-report-${new Date().toISOString().slice(0,10)}.csv`;a.click();URL.revokeObjectURL(url)}
-function addStock(e){e.preventDefault();const input=document.getElementById("newSymbolInput");const symbol=input.value.trim().toUpperCase();if(!symbol)return;if(stocks.some(s=>s.symbol===symbol)){alert("السهم موجود بالفعل.");return}const stock={symbol,name:"Custom Watchlist",sector:"Custom",base:random(5,120)};stocks.push(stock);prices[symbol]=stock.base;saveStocks();input.value="";generateMarket()}
-document.getElementById("refreshBtn").addEventListener("click",generateMarket);document.getElementById("exportBtn").addEventListener("click",exportCsv);document.getElementById("addStockForm").addEventListener("submit",addStock);["searchInput","signalFilter","riskFilter"].forEach(id=>document.getElementById(id).addEventListener("input",renderTable));els.strategySelect.addEventListener("change",generateMarket);generateMarket();setInterval(generateMarket,3000);
+const REQUIRED_COLUMNS = ["symbol","price","previousClose"];
+let market = [];
+let portfolio = [];
+let analysis = [];
+
+const els = {
+  trustBanner: document.getElementById("trustBanner"),
+  marketInput: document.getElementById("marketInput"),
+  portfolioInput: document.getElementById("portfolioInput"),
+  qualityKpi: document.getElementById("qualityKpi"),
+  countKpi: document.getElementById("countKpi"),
+  strongKpi: document.getElementById("strongKpi"),
+  riskKpi: document.getElementById("riskKpi"),
+  confidenceKpi: document.getElementById("confidenceKpi"),
+  portfolioKpi: document.getElementById("portfolioKpi"),
+  searchInput: document.getElementById("searchInput"),
+  signalFilter: document.getElementById("signalFilter"),
+  minConfidence: document.getElementById("minConfidence"),
+  sortMode: document.getElementById("sortMode"),
+  topList: document.getElementById("topList"),
+  portfolioBox: document.getElementById("portfolioBox"),
+  rowsCount: document.getElementById("rowsCount"),
+  analysisRows: document.getElementById("analysisRows")
+};
+
+function splitCsvLine(line){
+  const out=[]; let cur=""; let inside=false;
+  for(let i=0;i<line.length;i++){
+    const ch=line[i];
+    if(ch === '"' && line[i+1] === '"'){ cur+='"'; i++; }
+    else if(ch === '"') inside=!inside;
+    else if(ch === "," && !inside){ out.push(cur); cur=""; }
+    else cur+=ch;
+  }
+  out.push(cur);
+  return out;
+}
+
+function num(v){
+  if(v === undefined || v === null) return null;
+  const cleaned = String(v).replaceAll(",","").replaceAll("٬","").trim();
+  if(cleaned === "") return null;
+  const n = Number(cleaned);
+  return Number.isFinite(n) ? n : null;
+}
+
+function parseCsv(text){
+  const lines = text.split(/\r?\n/).filter(x => x.trim());
+  if(lines.length < 2) throw new Error("الملف لا يحتوي على بيانات كافية.");
+  const headers = splitCsvLine(lines[0]).map(h => h.trim());
+  const lower = headers.map(h => h.toLowerCase());
+
+  const indexOf = (...names) => {
+    for(const name of names){
+      const i = lower.indexOf(name.toLowerCase());
+      if(i >= 0) return i;
+    }
+    return -1;
+  };
+
+  const idx = {
+    symbol: indexOf("symbol","ticker","code","رمز"),
+    name: indexOf("name","company","companyName","الشركة","اسم"),
+    sector: indexOf("sector","القطاع"),
+    price: indexOf("price","last","lastPrice","close","السعر"),
+    previousClose: indexOf("previousClose","prevClose","previous","prev","إغلاق سابق"),
+    high: indexOf("high","أعلى"),
+    low: indexOf("low","أدنى"),
+    volume: indexOf("volume","vol","الحجم"),
+    avg20Volume: indexOf("avg20Volume","avgVolume20","average20Volume","vol20","متوسط حجم 20"),
+    support: indexOf("support","support1","دعم"),
+    resistance: indexOf("resistance","resistance1","مقاومة"),
+    date: indexOf("date","sessionDate","تاريخ")
+  };
+
+  if(idx.symbol < 0 || idx.price < 0){
+    throw new Error("لازم الملف يحتوي على symbol و price على الأقل.");
+  }
+
+  return lines.slice(1).map(line => {
+    const c = splitCsvLine(line);
+    const row = {
+      symbol: String(c[idx.symbol] || "").trim().toUpperCase(),
+      name: idx.name >= 0 ? String(c[idx.name] || "").trim() : "",
+      sector: idx.sector >= 0 ? String(c[idx.sector] || "").trim() : "",
+      price: idx.price >= 0 ? num(c[idx.price]) : null,
+      previousClose: idx.previousClose >= 0 ? num(c[idx.previousClose]) : null,
+      high: idx.high >= 0 ? num(c[idx.high]) : null,
+      low: idx.low >= 0 ? num(c[idx.low]) : null,
+      volume: idx.volume >= 0 ? num(c[idx.volume]) : null,
+      avg20Volume: idx.avg20Volume >= 0 ? num(c[idx.avg20Volume]) : null,
+      support: idx.support >= 0 ? num(c[idx.support]) : null,
+      resistance: idx.resistance >= 0 ? num(c[idx.resistance]) : null,
+      date: idx.date >= 0 ? String(c[idx.date] || "").trim() : ""
+    };
+    return row;
+  }).filter(r => r.symbol && r.price !== null);
+}
+
+function parsePortfolioCsv(text){
+  const lines = text.split(/\r?\n/).filter(x => x.trim());
+  if(lines.length < 2) throw new Error("ملف المحفظة لا يحتوي على بيانات كافية.");
+  const headers = splitCsvLine(lines[0]).map(h => h.trim().toLowerCase());
+  const iSymbol = headers.indexOf("symbol");
+  const iQty = headers.indexOf("quantity");
+  const iCost = headers.indexOf("avgcost");
+  if(iSymbol < 0 || iQty < 0 || iCost < 0) throw new Error("ملف المحفظة لازم يحتوي على symbol, quantity, avgCost.");
+  return lines.slice(1).map(line => {
+    const c = splitCsvLine(line);
+    return {
+      symbol: String(c[iSymbol] || "").trim().toUpperCase(),
+      quantity: num(c[iQty]) || 0,
+      avgCost: num(c[iCost]) || 0
+    };
+  }).filter(p => p.symbol && p.quantity > 0);
+}
+
+function analyzeRow(r){
+  const missing = [];
+  if(r.price === null) missing.push("price");
+  if(r.previousClose === null) missing.push("previousClose");
+  if(r.volume === null) missing.push("volume");
+  if(r.avg20Volume === null) missing.push("avg20Volume");
+  if(r.support === null) missing.push("support");
+  if(r.resistance === null) missing.push("resistance");
+
+  const changePct = r.previousClose ? ((r.price - r.previousClose) / r.previousClose) * 100 : null;
+  const volumeRatio = (r.avg20Volume && r.avg20Volume > 0 && r.volume !== null) ? r.volume / r.avg20Volume : null;
+  const distSupport = r.support ? ((r.price - r.support) / r.support) * 100 : null;
+  const distResistance = r.resistance ? ((r.resistance - r.price) / r.price) * 100 : null;
+
+  const qualityScore = Math.round(((6 - missing.length) / 6) * 100);
+
+  if(r.price === null || r.previousClose === null){
+    return { ...r, missing, qualityScore, signal:"INVALID", confidence:0, reason:"السعر أو الإغلاق السابق غير موجود.", changePct, volumeRatio, distSupport, distResistance, riskScore:100 };
+  }
+
+  let score = 0;
+  let riskScore = 0;
+  const reasons = [];
+
+  if(changePct > 0.5){ score += 18; reasons.push("اتجاه سعري إيجابي"); }
+  if(changePct > 1.5){ score += 10; reasons.push("زخم سعري واضح"); }
+  if(changePct < -1.2){ riskScore += 26; reasons.push("ضغط سعري سلبي"); }
+
+  if(volumeRatio !== null){
+    if(volumeRatio >= 1.5){ score += 25; reasons.push("حجم تداول أعلى من متوسط 20 جلسة"); }
+    else if(volumeRatio >= 1){ score += 12; reasons.push("حجم تداول مقبول"); }
+    else { riskScore += 7; reasons.push("حجم تداول أقل من المتوسط"); }
+  }
+
+  if(distSupport !== null){
+    if(distSupport >= 0 && distSupport <= 4){ score += 14; reasons.push("قريب من دعم معلوم"); }
+    if(distSupport < 0){ riskScore += 30; reasons.push("كسر دعم"); }
+    if(distSupport > 10){ riskScore += 8; reasons.push("بعيد عن الدعم"); }
+  }
+
+  if(distResistance !== null){
+    if(distResistance > 4){ score += 10; reasons.push("مساحة صعود قبل المقاومة"); }
+    if(distResistance >= 0 && distResistance <= 2){ riskScore += 15; reasons.push("قريب جدًا من المقاومة"); }
+    if(distResistance < 0){ score += 10; reasons.push("اختراق مقاومة"); }
+  }
+
+  if(qualityScore < 70){
+    score = Math.min(score, 42);
+    reasons.push("جودة البيانات تقلل الثقة");
+  }
+
+  let signal = "WAIT";
+  let confidence = Math.max(20, Math.min(100, score + Math.round(qualityScore * 0.35) - Math.round(riskScore * 0.25)));
+
+  if(qualityScore < 45){
+    signal = "INVALID";
+    confidence = Math.min(confidence, 35);
+  } else if(riskScore >= 35 || (changePct !== null && changePct < -2.5)){
+    signal = "RISK_REDUCE";
+    confidence = Math.max(60, Math.min(92, 55 + riskScore));
+  } else if(confidence >= 78 && score >= 55){
+    signal = "STRONG_WATCH";
+  } else if(confidence >= 62 && score >= 40){
+    signal = "WATCH";
+  }
+
+  return {
+    ...r,
+    missing,
+    qualityScore,
+    signal,
+    confidence,
+    reason: reasons.join(" + ") || "لا توجد إشارات كافية",
+    changePct,
+    volumeRatio,
+    distSupport,
+    distResistance,
+    riskScore
+  };
+}
+
+function runAnalysis(){
+  analysis = market.map(analyzeRow);
+  renderAll();
+}
+
+function filtered(){
+  const q = els.searchInput.value.trim().toUpperCase();
+  const sig = els.signalFilter.value;
+  const minC = Number(els.minConfidence.value || 0);
+  const sort = els.sortMode.value;
+
+  let rows = analysis.filter(r => {
+    const matchQ = !q || r.symbol.includes(q) || (r.name || "").toUpperCase().includes(q);
+    const matchSig = sig === "ALL" || r.signal === sig;
+    const matchC = r.confidence >= minC;
+    return matchQ && matchSig && matchC;
+  });
+
+  rows.sort((a,b) => {
+    if(sort === "volumeRatio") return (b.volumeRatio || 0) - (a.volumeRatio || 0);
+    if(sort === "changePct") return (b.changePct || -999) - (a.changePct || -999);
+    if(sort === "risk") return (b.riskScore || 0) - (a.riskScore || 0);
+    return (b.confidence || 0) - (a.confidence || 0);
+  });
+
+  return rows;
+}
+
+function renderAll(){
+  const strong = analysis.filter(r => r.signal === "STRONG_WATCH").length;
+  const risks = analysis.filter(r => r.signal === "RISK_REDUCE").length;
+  const avgC = analysis.length ? Math.round(analysis.reduce((a,b)=>a+b.confidence,0)/analysis.length) : 0;
+  const avgQ = analysis.length ? Math.round(analysis.reduce((a,b)=>a+b.qualityScore,0)/analysis.length) : 0;
+
+  els.trustBanner.className = market.length ? "trust-banner ok" : "trust-banner";
+  els.trustBanner.innerHTML = market.length
+    ? `<strong>DATA LOADED</strong><span>تم تحميل ${market.length} سهم. التحليل مبني على ملفك فقط.</span>`
+    : `<strong>NO DATA</strong><span>ارفع ملف CSV للأسعار حتى يبدأ التحليل.</span>`;
+
+  els.qualityKpi.textContent = market.length ? avgQ + "%" : "--";
+  els.countKpi.textContent = market.length;
+  els.strongKpi.textContent = strong;
+  els.riskKpi.textContent = risks;
+  els.confidenceKpi.textContent = market.length ? avgC + "%" : "--";
+
+  renderTopList();
+  renderPortfolio();
+  renderTable();
+}
+
+function signalArabic(signal){
+  return {
+    STRONG_WATCH:"مراقبة قوية",
+    WATCH:"مراقبة",
+    WAIT:"انتظار",
+    RISK_REDUCE:"حذر / تخفيف",
+    INVALID:"بيانات غير كافية"
+  }[signal] || signal;
+}
+
+function fmtPct(v){
+  return v === null || v === undefined ? "--" : v.toFixed(2) + "%";
+}
+function fmtNum(v){
+  return v === null || v === undefined ? "--" : Number(v).toLocaleString();
+}
+
+function renderTopList(){
+  const rows = analysis
+    .filter(r => r.signal === "STRONG_WATCH" || r.signal === "WATCH")
+    .sort((a,b)=>b.confidence-a.confidence)
+    .slice(0,8);
+
+  if(!rows.length){
+    els.topList.className = "cards-list empty";
+    els.topList.textContent = market.length ? "لا توجد فرص مراقبة قوية بالشروط الحالية." : "ارفع بيانات الأسعار أولًا.";
+    return;
+  }
+
+  els.topList.className = "cards-list";
+  els.topList.innerHTML = rows.map(r => `
+    <div class="item">
+      <div>
+        <div class="symbol">${r.symbol}</div>
+        <div class="sub">${r.name || ""}</div>
+        <div class="sub">${r.reason}</div>
+      </div>
+      <div style="text-align:left">
+        <span class="badge ${r.signal}">${signalArabic(r.signal)}</span>
+        <div class="sub">ثقة ${r.confidence}%</div>
+        <div class="sub">VR ${r.volumeRatio ? r.volumeRatio.toFixed(2) : "--"}</div>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderPortfolio(){
+  if(!portfolio.length){
+    els.portfolioKpi.textContent = "--";
+    els.portfolioBox.className = "cards-list empty";
+    els.portfolioBox.textContent = "ارفع ملف المحفظة لو عايز تحليل المراكز.";
+    return;
+  }
+
+  const bySymbol = Object.fromEntries(analysis.map(r => [r.symbol, r]));
+  let totalValue = 0;
+  let totalCost = 0;
+
+  const items = portfolio.map(p => {
+    const m = bySymbol[p.symbol];
+    const value = m ? p.quantity * m.price : 0;
+    const cost = p.quantity * p.avgCost;
+    totalValue += value;
+    totalCost += cost;
+    const pnl = value - cost;
+    const pnlPct = cost ? (pnl / cost) * 100 : 0;
+    return { ...p, market: m, value, cost, pnl, pnlPct };
+  });
+
+  els.portfolioKpi.textContent = totalValue ? Math.round(totalValue).toLocaleString() : "--";
+  els.portfolioBox.className = "cards-list";
+  els.portfolioBox.innerHTML = items.map(x => `
+    <div class="item">
+      <div>
+        <div class="symbol">${x.symbol}</div>
+        <div class="sub">كمية: ${fmtNum(x.quantity)} | متوسط: ${x.avgCost}</div>
+        <div class="sub">الإشارة: ${x.market ? signalArabic(x.market.signal) : "غير موجود في ملف الأسعار"}</div>
+      </div>
+      <div style="text-align:left">
+        <div class="${x.pnl >= 0 ? "good" : "bad"}">${Math.round(x.pnl).toLocaleString()}</div>
+        <div class="sub">${x.pnlPct.toFixed(2)}%</div>
+      </div>
+    </div>
+  `).join("") + `
+    <div class="item">
+      <strong>إجمالي الربح/الخسارة</strong>
+      <strong class="${(totalValue-totalCost) >= 0 ? "good" : "bad"}">${Math.round(totalValue-totalCost).toLocaleString()}</strong>
+    </div>
+  `;
+}
+
+function renderTable(){
+  const rows = filtered();
+  els.rowsCount.textContent = `${rows.length} صف`;
+  if(!rows.length){
+    els.analysisRows.innerHTML = "";
+    return;
+  }
+
+  els.analysisRows.innerHTML = rows.map(r => `
+    <tr>
+      <td><strong>${r.symbol}</strong></td>
+      <td>${r.name || "--"}</td>
+      <td>${fmtNum(r.price)}</td>
+      <td class="${r.changePct >= 0 ? "good" : "bad"}">${fmtPct(r.changePct)}</td>
+      <td>${r.volumeRatio ? r.volumeRatio.toFixed(2) : "--"}</td>
+      <td>${fmtNum(r.support)}</td>
+      <td>${fmtNum(r.resistance)}</td>
+      <td>${fmtPct(r.distSupport)}</td>
+      <td>${fmtPct(r.distResistance)}</td>
+      <td><span class="badge ${r.signal}">${signalArabic(r.signal)}</span></td>
+      <td>${r.confidence}%</td>
+      <td>${r.qualityScore}%</td>
+      <td class="muted">${r.reason}</td>
+    </tr>
+  `).join("");
+}
+
+function downloadCsv(filename, rows){
+  const csv = rows.map(r => r.map(v => `"${String(v ?? "").replaceAll('"','""')}"`).join(",")).join("\n");
+  const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function exportReport(){
+  if(!analysis.length){ alert("ارفع بيانات الأسعار أولًا."); return; }
+  const header = ["symbol","name","price","previousClose","changePct","volume","avg20Volume","volumeRatio","support","resistance","distSupport","distResistance","signal","confidence","qualityScore","reason"];
+  const rows = analysis.map(r => [r.symbol,r.name,r.price,r.previousClose,fmtPct(r.changePct),r.volume,r.avg20Volume,r.volumeRatio ? r.volumeRatio.toFixed(2) : "",r.support,r.resistance,fmtPct(r.distSupport),fmtPct(r.distResistance),signalArabic(r.signal),r.confidence,r.qualityScore,r.reason]);
+  downloadCsv("egx-light-trusted-report.csv", [header, ...rows]);
+}
+
+function downloadMarketTemplate(){
+  downloadCsv("egx-market-template.csv", [
+    ["symbol","name","sector","price","previousClose","high","low","volume","avg20Volume","support","resistance","date"],
+    ["CIB","Commercial International Bank","Banks","82.50","81.30","83.10","80.90","1150000","900000","79.80","86.00","2026-07-01"],
+    ["CCAP","Qalaa Holdings","Financials","5.40","5.52","5.58","5.35","2200000","1800000","5.20","5.75","2026-07-01"]
+  ]);
+}
+
+function downloadPortfolioTemplate(){
+  downloadCsv("egx-portfolio-template.csv", [
+    ["symbol","quantity","avgCost"],
+    ["CIB","100","81.00"],
+    ["CCAP","1000","5.43"]
+  ]);
+}
+
+els.marketInput.addEventListener("change", async e => {
+  const file = e.target.files[0];
+  if(!file) return;
+  try{
+    market = parseCsv(await file.text());
+    if(!market.length) throw new Error("لا توجد صفوف صالحة.");
+    localStorage.setItem("egx_light_market", JSON.stringify(market));
+    runAnalysis();
+  }catch(err){ alert("فشل استيراد ملف الأسعار: " + err.message); }
+});
+
+els.portfolioInput.addEventListener("change", async e => {
+  const file = e.target.files[0];
+  if(!file) return;
+  try{
+    portfolio = parsePortfolioCsv(await file.text());
+    localStorage.setItem("egx_light_portfolio", JSON.stringify(portfolio));
+    renderPortfolio();
+  }catch(err){ alert("فشل استيراد ملف المحفظة: " + err.message); }
+});
+
+["searchInput","signalFilter","minConfidence","sortMode"].forEach(id => document.getElementById(id).addEventListener("input", renderTable));
+document.getElementById("exportBtn").addEventListener("click", exportReport);
+document.getElementById("templateBtn").addEventListener("click", downloadMarketTemplate);
+document.getElementById("portfolioTemplateBtn").addEventListener("click", downloadPortfolioTemplate);
+document.getElementById("clearBtn").addEventListener("click", () => {
+  localStorage.removeItem("egx_light_market");
+  localStorage.removeItem("egx_light_portfolio");
+  market = [];
+  portfolio = [];
+  analysis = [];
+  renderAll();
+});
+
+try{
+  market = JSON.parse(localStorage.getItem("egx_light_market") || "[]");
+  portfolio = JSON.parse(localStorage.getItem("egx_light_portfolio") || "[]");
+}catch{
+  market = [];
+  portfolio = [];
+}
+runAnalysis();
