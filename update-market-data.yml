@@ -1,0 +1,32 @@
+name: Update EGX Market Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch Mubasher public data
+        run: node scripts/fetch-mubasher.js
+
+      - name: Commit updated market data
+        run: |
+          git config user.name "egx-auto-reader"
+          git config user.email "actions@github.com"
+          git add data/market.json
+          git diff --cached --quiet && echo "No data changes to commit" || git commit -m "auto update EGX market data"
+          git push
