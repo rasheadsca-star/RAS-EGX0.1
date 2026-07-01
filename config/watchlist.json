@@ -1,9 +1,9 @@
 {
   "market": "EGX",
   "baseUrl": "https://english.mubasher.info",
-  "scanMode": "market_universe_v4",
-  "maxSymbolsPerRun": 120,
-  "requestDelayMs": 650,
+  "scanMode": "full_market_batch_cache_v4_1",
+  "maxSymbolsPerRun": 999,
+  "requestDelayMs": 450,
   "dataMode": "public_delayed",
   "symbols": [
     {
@@ -165,7 +165,9 @@
       "aliases": [
         "مدينة نصر",
         "مدينت مصر"
-      ]
+      ],
+      "disabled": true,
+      "note": "old/duplicate symbol; use GBCO or MASR"
     },
     {
       "symbol": "EFID",
@@ -192,7 +194,9 @@
         "غبور",
         "جي بي أوتو",
         "GB Auto"
-      ]
+      ],
+      "disabled": true,
+      "note": "old/duplicate symbol; use GBCO or MASR"
     },
     {
       "symbol": "CLHO",
@@ -538,6 +542,58 @@
       "name_ar": "المصرية للمنتجعات السياحية",
       "aliases": [
         "المنتجعات"
+      ]
+    },
+    {
+      "symbol": "EKHOA",
+      "name_en": "Egypt Kuwait Holding",
+      "name_ar": "القابضة المصرية الكويتية",
+      "aliases": [
+        "المصرية الكويتية",
+        "EKHO"
+      ],
+      "note": "alternative for EKHO if EKHO page fails"
+    },
+    {
+      "symbol": "MASR",
+      "name_en": "Madinet Masr",
+      "name_ar": "مدينة مصر للإسكان والتعمير",
+      "aliases": [
+        "مدينة نصر",
+        "مدينة مصر",
+        "MNHD"
+      ],
+      "note": "replacement for MNHD"
+    }
+  ],
+  "batchSizePerRun": 70,
+  "maxCacheAgeDays": 7,
+  "symbolCorrections": [
+    {
+      "symbol": "EKHOA",
+      "name_en": "Egypt Kuwait Holding",
+      "name_ar": "القابضة المصرية الكويتية",
+      "aliases": [
+        "EKHO",
+        "المصرية الكويتية"
+      ]
+    },
+    {
+      "symbol": "MASR",
+      "name_en": "Madinet Masr",
+      "name_ar": "مدينة مصر للإسكان والتعمير",
+      "aliases": [
+        "MNHD",
+        "مدينة نصر"
+      ]
+    },
+    {
+      "symbol": "GBCO",
+      "name_en": "GB Corp",
+      "name_ar": "جي بي كوربوريشن",
+      "aliases": [
+        "AUTO",
+        "غبور"
       ]
     }
   ]
