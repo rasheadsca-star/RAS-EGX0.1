@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EGX Live Intelligence Dashboard</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>EGX Live Intelligence Dashboard</h1>
+      <p>نسخة تعمل مباشرة على GitHub Pages بدون Render وبدون كارت دفع</p>
+    </div>
+    <div class="live"><span class="dot"></span><span>LIVE SIMULATION</span></div>
+  </header>
+
+  <main class="grid">
+    <section class="card hero">
+      <div>
+        <span class="label">حالة السوق</span>
+        <h2 id="marketBias">جار التحليل...</h2>
+        <p id="lastUpdate">--</p>
+      </div>
+      <button id="refreshBtn">تحديث فوري</button>
+    </section>
+
+    <section class="card">
+      <h3>إشارات التداول</h3>
+      <div id="signals"></div>
+    </section>
+
+    <section class="card">
+      <h3>توزيع المحفظة المقترح</h3>
+      <div id="portfolio"></div>
+    </section>
+
+    <section class="card wide">
+      <h3>Market Watch</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>السهم</th><th>السعر</th><th>التغير</th><th>الحجم</th><th>الاتجاه</th><th>المخاطر</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+
+    <section class="card wide note">
+      <h3>تنبيه مهم</h3>
+      <p>
+        هذه نسخة Web Live Simulation تعمل مباشرة على GitHub Pages بدون Backend وبدون كارت دفع.
+        لا تنفذ أوامر شراء أو بيع حقيقية، ولا تعتبر توصية استثمارية.
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

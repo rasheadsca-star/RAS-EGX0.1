@@ -1,0 +1,16 @@
+const STOCKS=[{symbol:"CIB",sector:"Banks",base:82},{symbol:"CCAP",sector:"Financials",base:5.4},{symbol:"ETEL",sector:"Telecom",base:34},{symbol:"SWDY",sector:"Industrials",base:65},{symbol:"EKHO",sector:"Energy",base:27},{symbol:"AMER",sector:"Real Estate",base:2.9},{symbol:"PHAR",sector:"Healthcare",base:160}];
+let prices=Object.fromEntries(STOCKS.map(s=>[s.symbol,s.base]));
+function rand(min,max){return min+Math.random()*(max-min)}
+function tick(){
+  const rows=STOCKS.map(s=>{const old=prices[s.symbol];const move=rand(-0.02,0.022);const price=Math.max(.1,old*(1+move));prices[s.symbol]=price;const changePct=((price-old)/old)*100;const volume=Math.floor(rand(50000,2000000));const vol=Math.min(1,Math.abs(changePct)/4+Math.random()*.15);return {...s,price:+price.toFixed(2),changePct:+changePct.toFixed(2),volume,trend:changePct>=0?"UP":"DOWN",risk:vol>.7?"HIGH":vol>.4?"MEDIUM":"LOW"}});
+  const signals=rows.map(r=>{let signal="HOLD",confidence=60,reason="لا توجد أفضلية كافية.";if(r.risk==="HIGH"){signal="REDUCE";confidence=82;reason="مخاطر عالية؛ حماية رأس المال أولًا."}else if(r.trend==="UP"&&r.volume>750000){signal="BUY";confidence=78+Math.round(Math.random()*14);reason="اتجاه إيجابي مع حجم تداول قوي."}else if(r.trend==="DOWN"&&r.changePct<-1){signal="REDUCE";confidence=74;reason="ضغط بيعي واضح."}else if(r.trend==="UP"){signal="HOLD";confidence=65;reason="حركة إيجابية لكن التأكيد ضعيف."}return {symbol:r.symbol,signal,confidence,risk:r.risk,reason}});
+  render(rows,signals)
+}
+function render(rows,signals){
+  const buys=signals.filter(s=>s.signal==="BUY").length;const reduces=signals.filter(s=>s.signal==="REDUCE").length;document.getElementById("marketBias").textContent=buys>reduces?"انتقائي إيجابي":reduces>buys?"دفاعي":"محايد";document.getElementById("lastUpdate").textContent="آخر تحديث: "+new Date().toLocaleString();
+  document.getElementById("signals").innerHTML=signals.map(s=>`<div class="signal"><div><strong>${s.symbol}</strong><div style="color:#85a9a1;font-size:13px;margin-top:5px">${s.reason}</div></div><div style="text-align:left"><span class="badge ${s.signal}">${s.signal}</span><div style="font-size:13px;margin-top:6px">ثقة ${s.confidence}%</div></div></div>`).join("");
+  const buySignals=signals.filter(s=>s.signal==="BUY").sort((a,b)=>b.confidence-a.confidence);let allocHtml="";if(!buySignals.length){allocHtml=`<div class="alloc"><strong>Cash</strong><span>85%</span></div><p style="color:#85a9a1;margin-top:12px">لا توجد فرص قوية الآن؛ الأفضل الحفاظ على السيولة.</p>`}else{const total=buySignals.reduce((a,b)=>a+b.confidence,0);allocHtml=buySignals.map(s=>`<div class="alloc"><strong>${s.symbol}</strong><span>${Math.round((s.confidence/total)*65)}%</span></div>`).join("")+`<div class="alloc"><strong>Cash</strong><span>35%</span></div>`}
+  document.getElementById("portfolio").innerHTML=allocHtml;
+  document.getElementById("rows").innerHTML=rows.map(r=>{const c=r.changePct>=0?"#58f59a":"#ff5b6e";return `<tr><td><strong>${r.symbol}</strong><br><span style="color:#85a9a1;font-size:12px">${r.sector}</span></td><td>${r.price}</td><td style="color:${c}">${r.changePct}%</td><td>${r.volume.toLocaleString()}</td><td>${r.trend}</td><td>${r.risk}</td></tr>`}).join("")
+}
+document.getElementById("refreshBtn").onclick=tick;tick();setInterval(tick,2500);
