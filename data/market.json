@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "source": "mubasher_public_pages_v4_market_universe_recommendations",
-  "message": "تم مسح قائمة سوق موسعة وتوليد ترشيحات ونقاط دخول وأهداف. البيانات عامة ومتأخرة وليست لحظية حقيقية.",
-  "updatedAt": "2026-07-01T22:47:41.646Z",
+  "source": "mubasher_public_pages_v4_1_full_market_batch_cache",
+  "message": "تم تشغيل Batch من السوق ودمجه مع كاش السوق الكامل ثم توليد ترشيحات ونقاط دخول وأهداف. البيانات عامة ومتأخرة وليست لحظية حقيقية.",
+  "updatedAt": "2026-07-01T23:09:35.275Z",
   "dataMode": "public_delayed",
   "market": {
     "index": "EGX30",
@@ -11,21 +11,26 @@
     "turnover": 2817733238.39,
     "state": "public_delayed",
     "sourceUrl": "https://english.mubasher.info/markets/EGX/",
-    "fetchedAt": "2026-07-01T22:47:42.523Z"
+    "fetchedAt": "2026-07-01T23:09:35.783Z"
   },
   "summary": {
-    "scanMode": "market_universe_v4",
+    "scanMode": "full_market_batch_cache_v4_1",
     "requestedSymbols": 66,
     "discoveredSymbols": 4,
-    "count": 62,
+    "count": 63,
     "avgConfidence": 65,
     "avgQuality": 100,
     "buyCandidates": 15,
     "watchBuy": 15,
-    "watch": 37,
+    "watch": 38,
     "wait": 0,
     "riskReduce": 10,
-    "invalid": 0
+    "invalid": 0,
+    "cacheRows": 63,
+    "batchOffset": 0,
+    "nextBatchOffset": 0,
+    "batchSize": 66,
+    "universeCoveragePct": 95
   },
   "rows": [
     {
@@ -48,7 +53,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/OCDI/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:28.642Z",
+      "fetchedAt": "2026-07-01T23:10:53.116Z",
       "pivot": 2.83,
       "support1": 24.47,
       "support2": 24.15,
@@ -78,7 +83,9 @@
       "target2": 27.96,
       "stopLoss": 23.86,
       "riskReward": 2.73,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة قوية + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة قوية + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "NIPH",
@@ -101,7 +108,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/NIPH/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:55.490Z",
+      "fetchedAt": "2026-07-01T23:10:28.746Z",
       "pivot": 10.52,
       "support1": 161.71,
       "support2": 159.39,
@@ -131,7 +138,9 @@
       "target2": 198.51,
       "stopLoss": 157.67,
       "riskReward": 5.04,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة قوية"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة قوية",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "HRHO",
@@ -155,7 +164,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/HRHO/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:47:51.986Z",
+      "fetchedAt": "2026-07-01T23:09:40.667Z",
       "pivot": 0.75,
       "support1": 26.46,
       "support2": 26.22,
@@ -185,7 +194,9 @@
       "target2": 29.72,
       "stopLoss": 25.8,
       "riskReward": 2.55,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "MFPC",
@@ -208,7 +219,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/MFPC/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:08.469Z",
+      "fetchedAt": "2026-07-01T23:09:52.620Z",
       "pivot": 2.35,
       "support1": 34.95,
       "support2": 34.72,
@@ -238,7 +249,9 @@
       "target2": 39.38,
       "stopLoss": 34.08,
       "riskReward": 3.1,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "RMDA",
@@ -260,7 +273,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/RMDA/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:38.142Z",
+      "fetchedAt": "2026-07-01T23:10:16.056Z",
       "pivot": 1.21,
       "support1": 4.9,
       "support2": 4.85,
@@ -290,7 +303,9 @@
       "target2": 5.52,
       "stopLoss": 4.78,
       "riskReward": 2.1,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "POUL",
@@ -312,7 +327,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/POUL/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:50.209Z",
+      "fetchedAt": "2026-07-01T23:10:24.913Z",
       "pivot": 1.54,
       "support1": 36.75,
       "support2": 36.34,
@@ -342,7 +357,9 @@
       "target2": 41.89,
       "stopLoss": 35.83,
       "riskReward": 1.71,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "EXPA",
@@ -364,7 +381,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/EXPA/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:32.803Z",
+      "fetchedAt": "2026-07-01T23:10:11.812Z",
       "pivot": 0.77,
       "support1": 18.12,
       "support2": 18.03,
@@ -394,7 +411,9 @@
       "target2": 20.21,
       "stopLoss": 17.67,
       "riskReward": 2.93,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ETEL",
@@ -418,7 +437,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ETEL/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:47:46.646Z",
+      "fetchedAt": "2026-07-01T23:09:37.136Z",
       "pivot": 0.78,
       "support1": 90.45,
       "support2": 88.61,
@@ -448,7 +467,9 @@
       "target2": 103.61,
       "stopLoss": 88.19,
       "riskReward": 1.42,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "CIRA",
@@ -471,7 +492,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/CIRA/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:22.142Z",
+      "fetchedAt": "2026-07-01T23:10:00.664Z",
       "pivot": 2.07,
       "support1": 27.68,
       "support2": 27.21,
@@ -501,7 +522,9 @@
       "target2": 31.75,
       "stopLoss": 26.99,
       "riskReward": 1.44,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "AXPH",
@@ -523,7 +546,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/AXPH/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:59.102Z",
+      "fetchedAt": "2026-07-01T23:10:31.389Z",
       "pivot": 8.63,
       "support1": 1112.07,
       "support2": 1105.05,
@@ -553,7 +576,9 @@
       "target2": 1336.59,
       "stopLoss": 1084.27,
       "riskReward": 7.33,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "HDBK",
@@ -575,7 +600,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/HDBK/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:22.534Z",
+      "fetchedAt": "2026-07-01T23:10:48.591Z",
       "pivot": 5.23,
       "support1": 155.64,
       "support2": 152.32,
@@ -605,7 +630,9 @@
       "target2": 183.75,
       "stopLoss": 151.75,
       "riskReward": 2,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "AMER",
@@ -627,7 +654,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/AMER/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:04.906Z",
+      "fetchedAt": "2026-07-01T23:09:50.106Z",
       "pivot": 1.67,
       "support1": 2.33,
       "support2": 2.25,
@@ -657,7 +684,9 @@
       "target2": 2.55,
       "stopLoss": 2.27,
       "riskReward": 0.22,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "RAYA",
@@ -679,7 +708,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/RAYA/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:36.384Z",
+      "fetchedAt": "2026-07-01T23:10:14.821Z",
       "pivot": 2.44,
       "support1": 7.28,
       "support2": 6.89,
@@ -709,7 +738,9 @@
       "target2": 8.15,
       "stopLoss": 7.1,
       "riskReward": 0.18,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ORAS",
@@ -732,7 +763,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ORAS/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:03.154Z",
+      "fetchedAt": "2026-07-01T23:09:48.862Z",
       "pivot": 1.72,
       "support1": 706.85,
       "support2": 693.69,
@@ -762,7 +793,9 @@
       "target2": 741.65,
       "stopLoss": 689.18,
       "riskReward": 0.36,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "EASB",
@@ -782,7 +815,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/EASB/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:35.639Z",
+      "fetchedAt": "2026-07-01T23:11:01.206Z",
       "pivot": 1.03,
       "support1": 7.13,
       "support2": 6.91,
@@ -812,7 +845,9 @@
       "target2": 8.01,
       "stopLoss": 6.95,
       "riskReward": 0.19,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "LCSW",
@@ -834,7 +869,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/LCSW/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:09.855Z",
+      "fetchedAt": "2026-07-01T23:10:39.295Z",
       "pivot": 1.69,
       "support1": 27.37,
       "support2": 26.83,
@@ -864,7 +899,9 @@
       "target2": 29.13,
       "stopLoss": 26.69,
       "riskReward": 0.18,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "CCAP",
@@ -887,7 +924,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/CCAP/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:47:48.474Z",
+      "fetchedAt": "2026-07-01T23:09:38.114Z",
       "pivot": 5.8,
       "support1": 4.71,
       "support2": 4.64,
@@ -917,7 +954,65 @@
       "target2": 5.56,
       "stopLoss": 4.59,
       "riskReward": 2.38,
-      "setup": "تحت Pivot + السعر إيجابي + سيولة قوية"
+      "setup": "تحت Pivot + السعر إيجابي + سيولة قوية",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
+    },
+    {
+      "symbol": "MASR",
+      "name": "Madinet Masr For Housing and Development (MASR)",
+      "name_en": "Madinet Masr",
+      "name_ar": "مدينة مصر للإسكان والتعمير",
+      "aliases": [
+        "مدينة نصر",
+        "مدينة مصر",
+        "MNHD"
+      ],
+      "searchText": "masr madinet masr مدينه مصر للاسكان والتعمير madinet masr for housing and development masr مدينه نصر مدينه مصر mnhd",
+      "price": 7.4,
+      "previousClose": 7.3,
+      "changePct": 1.64,
+      "open": 7.3,
+      "high": 7.42,
+      "low": 7.24,
+      "volume": 9192742,
+      "turnover": 67175216,
+      "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/MASR/",
+      "priceSource": "mubasher_public_stock_page",
+      "dataMode": "public_delayed",
+      "fetchedAt": "2026-07-01T23:10:57.863Z",
+      "pivot": 0.36,
+      "support1": 7.21,
+      "support2": 7.11,
+      "resistance1": 7.49,
+      "resistance2": 7.67,
+      "supportResistanceSource": "mubasher_public_support_resistance_page",
+      "supportResistanceUrl": "https://english.mubasher.info/markets/EGX/stocks/MASR/support-resistance",
+      "distanceToSupport": 2.64,
+      "distanceToResistance": 1.22,
+      "distanceToPivot": 1955.56,
+      "liquidityScore": 61,
+      "priceActionScore": 79,
+      "supportResistanceScore": 47,
+      "riskScore": 14,
+      "dataQualityScore": 100,
+      "sourceConfidence": 90,
+      "finalConfidence": 72,
+      "confidence": 72,
+      "signal": "WATCH",
+      "decision": "مراقبة",
+      "reason": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "recommendation": "مراقبة",
+      "priority": 3,
+      "entryFrom": 7.25,
+      "entryTo": 7.42,
+      "target1": 7.49,
+      "target2": 7.67,
+      "stopLoss": 7.03,
+      "riskReward": 0.19,
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "SWDY",
@@ -940,7 +1035,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/SWDY/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:47:55.444Z",
+      "fetchedAt": "2026-07-01T23:09:43.291Z",
       "pivot": 1.89,
       "support1": 85.25,
       "support2": 84.48,
@@ -970,7 +1065,9 @@
       "target2": 95.92,
       "stopLoss": 83.12,
       "riskReward": 1.94,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "TMGH",
@@ -993,7 +1090,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/TMGH/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:47:57.246Z",
+      "fetchedAt": "2026-07-01T23:09:44.511Z",
       "pivot": 0.53,
       "support1": 93.16,
       "support2": 91.83,
@@ -1023,7 +1120,9 @@
       "target2": 96.03,
       "stopLoss": 90.83,
       "riskReward": 0.27,
-      "setup": "فوق Pivot + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ABUK",
@@ -1046,7 +1145,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ABUK/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:00.650Z",
+      "fetchedAt": "2026-07-01T23:09:47.082Z",
       "pivot": 0.63,
       "support1": 67.1,
       "support2": 66.59,
@@ -1076,7 +1175,9 @@
       "target2": 68.49,
       "stopLoss": 65.42,
       "riskReward": 0.35,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "EGTS",
@@ -1098,7 +1199,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/EGTS/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:32.129Z",
+      "fetchedAt": "2026-07-01T23:10:56.040Z",
       "pivot": 2.21,
       "support1": 16.88,
       "support2": 16.32,
@@ -1128,7 +1229,9 @@
       "target2": 18.32,
       "stopLoss": 16.46,
       "riskReward": 0.14,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "AMOC",
@@ -1151,7 +1254,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/AMOC/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:25.655Z",
+      "fetchedAt": "2026-07-01T23:10:06.274Z",
       "pivot": 1.26,
       "support1": 7.62,
       "support2": 7.48,
@@ -1181,7 +1284,9 @@
       "target2": 7.88,
       "stopLoss": 7.43,
       "riskReward": 0.25,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "DOMT",
@@ -1203,7 +1308,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/DOMT/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:48.463Z",
+      "fetchedAt": "2026-07-01T23:10:23.719Z",
       "pivot": 1.35,
       "support1": 26.59,
       "support2": 26.24,
@@ -1233,7 +1338,9 @@
       "target2": 30.02,
       "stopLoss": 25.93,
       "riskReward": 1.47,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ACAMD",
@@ -1255,7 +1362,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ACAMD/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:13.460Z",
+      "fetchedAt": "2026-07-01T23:10:41.878Z",
       "pivot": 0.6,
       "support1": 2.2,
       "support2": 2.17,
@@ -1285,7 +1392,9 @@
       "target2": 2.31,
       "stopLoss": 2.15,
       "riskReward": 0.22,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "CIEB",
@@ -1307,7 +1416,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/CIEB/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:18.790Z",
+      "fetchedAt": "2026-07-01T23:10:46.055Z",
       "pivot": 1.38,
       "support1": 23.44,
       "support2": 23.21,
@@ -1337,7 +1446,9 @@
       "target2": 26.37,
       "stopLoss": 22.85,
       "riskReward": 1.94,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "CNFN",
@@ -1359,7 +1470,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/CNFN/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:26.833Z",
+      "fetchedAt": "2026-07-01T23:10:51.854Z",
       "pivot": 0.35,
       "support1": 4.68,
       "support2": 4.63,
@@ -1389,7 +1500,9 @@
       "target2": 4.85,
       "stopLoss": 4.56,
       "riskReward": 0.27,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "IFAP",
@@ -1409,7 +1522,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/IFAP/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:33.906Z",
+      "fetchedAt": "2026-07-01T23:10:59.241Z",
       "pivot": 0.94,
       "support1": 19.05,
       "support2": 18.9,
@@ -1439,7 +1552,9 @@
       "target2": 21.31,
       "stopLoss": 18.57,
       "riskReward": 2.05,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ORHD",
@@ -1462,7 +1577,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ORHD/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:47:53.760Z",
+      "fetchedAt": "2026-07-01T23:09:41.922Z",
       "pivot": 0.21,
       "support1": 37.79,
       "support2": 37.19,
@@ -1492,7 +1607,9 @@
       "target2": 39.05,
       "stopLoss": 36.85,
       "riskReward": 0.26,
-      "setup": "فوق Pivot + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "BTFH",
@@ -1514,7 +1631,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/BTFH/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:43.359Z",
+      "fetchedAt": "2026-07-01T23:10:19.504Z",
       "pivot": -0.22,
       "support1": 2.92,
       "support2": 2.9,
@@ -1544,7 +1661,9 @@
       "target2": 3.06,
       "stopLoss": 2.85,
       "riskReward": 0.24,
-      "setup": "تحت Pivot + السعر إيجابي + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "تحت Pivot + السعر إيجابي + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "FWRY",
@@ -1566,7 +1685,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/FWRY/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:47:58.920Z",
+      "fetchedAt": "2026-07-01T23:09:45.811Z",
       "pivot": -0.47,
       "support1": 18.23,
       "support2": 18.07,
@@ -1596,7 +1715,9 @@
       "target2": 18.91,
       "stopLoss": 17.77,
       "riskReward": 0.27,
-      "setup": "تحت Pivot + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "تحت Pivot + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "PHDC",
@@ -1618,7 +1739,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/PHDC/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:11.552Z",
+      "fetchedAt": "2026-07-01T23:09:53.831Z",
       "pivot": -0.68,
       "support1": 14.43,
       "support2": 14.26,
@@ -1648,7 +1769,9 @@
       "target2": 15.04,
       "stopLoss": 14.07,
       "riskReward": 0.25,
-      "setup": "تحت Pivot + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "تحت Pivot + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "HELI",
@@ -1670,7 +1793,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/HELI/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:13.295Z",
+      "fetchedAt": "2026-07-01T23:09:55.122Z",
       "pivot": -0.1,
       "support1": 6.36,
       "support2": 6.33,
@@ -1700,7 +1823,9 @@
       "target2": 6.55,
       "stopLoss": 6.2,
       "riskReward": 0.32,
-      "setup": "تحت Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "تحت Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "COMI",
@@ -1724,7 +1849,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/COMI/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:47:44.959Z",
+      "fetchedAt": "2026-07-01T23:09:36.197Z",
       "pivot": -0.63,
       "support1": 126.28,
       "support2": 125.06,
@@ -1754,7 +1879,9 @@
       "target2": 131.16,
       "stopLoss": 123.12,
       "riskReward": 0.26,
-      "setup": "تحت Pivot + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "تحت Pivot + سيولة قوية + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "KABO",
@@ -1776,7 +1903,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/KABO/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:53.743Z",
+      "fetchedAt": "2026-07-01T23:10:27.518Z",
       "pivot": 0.47,
       "support1": 6.26,
       "support2": 6.15,
@@ -1806,7 +1933,9 @@
       "target2": 6.49,
       "stopLoss": 6.1,
       "riskReward": 0.25,
-      "setup": "فوق Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "FAIT",
@@ -1828,7 +1957,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/FAIT/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:20.768Z",
+      "fetchedAt": "2026-07-01T23:10:47.341Z",
       "pivot": 0.65,
       "support1": 35.89,
       "support2": 34.82,
@@ -1858,7 +1987,9 @@
       "target2": 38.5,
       "stopLoss": 34.99,
       "riskReward": 0.16,
-      "setup": "فوق Pivot + سيولة ضعيفة + قريب من دعم"
+      "setup": "فوق Pivot + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "EGAL",
@@ -1881,7 +2012,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/EGAL/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:47:50.175Z",
+      "fetchedAt": "2026-07-01T23:09:39.328Z",
       "pivot": 1.04,
       "support1": 278.97,
       "support2": 271.03,
@@ -1911,7 +2042,9 @@
       "target2": 294.83,
       "stopLoss": 272,
       "riskReward": 0.18,
-      "setup": "فوق Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "SUGR",
@@ -1933,7 +2066,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/SUGR/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:45.078Z",
+      "fetchedAt": "2026-07-01T23:10:20.783Z",
       "pivot": 1.09,
       "support1": 45.77,
       "support2": 45.28,
@@ -1963,7 +2096,9 @@
       "target2": 47.7,
       "stopLoss": 44.63,
       "riskReward": 0.25,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "EFID",
@@ -1986,7 +2121,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/EFID/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:16.112Z",
+      "fetchedAt": "2026-07-01T23:09:56.444Z",
       "pivot": 0.33,
       "support1": 27.05,
       "support2": 26.8,
@@ -2016,7 +2151,9 @@
       "target2": 27.7,
       "stopLoss": 26.37,
       "riskReward": 0.32,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "OLFI",
@@ -2038,7 +2175,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/OLFI/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:46.728Z",
+      "fetchedAt": "2026-07-01T23:10:22.484Z",
       "pivot": 0,
       "support1": 22.12,
       "support2": 21.83,
@@ -2068,7 +2205,9 @@
       "target2": 22.75,
       "stopLoss": 21.57,
       "riskReward": 0.29,
-      "setup": "سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "EGCH",
@@ -2090,7 +2229,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/EGCH/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:00.942Z",
+      "fetchedAt": "2026-07-01T23:10:32.716Z",
       "pivot": -0.22,
       "support1": 12.08,
       "support2": 11.97,
@@ -2120,7 +2259,9 @@
       "target2": 12.65,
       "stopLoss": 11.78,
       "riskReward": 0.24,
-      "setup": "تحت Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "تحت Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ARCC",
@@ -2142,7 +2283,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ARCC/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:06.308Z",
+      "fetchedAt": "2026-07-01T23:10:36.794Z",
       "pivot": 1.11,
       "support1": 53.76,
       "support2": 52.43,
@@ -2172,7 +2313,9 @@
       "target2": 57.23,
       "stopLoss": 52.42,
       "riskReward": 0.18,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "MCQE",
@@ -2194,7 +2337,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/MCQE/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:08.056Z",
+      "fetchedAt": "2026-07-01T23:10:38.010Z",
       "pivot": 0.65,
       "support1": 167.79,
       "support2": 164.95,
@@ -2224,7 +2367,9 @@
       "target2": 176.85,
       "stopLoss": 163.6,
       "riskReward": 0.21,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ACGC",
@@ -2246,7 +2391,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ACGC/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:11.710Z",
+      "fetchedAt": "2026-07-01T23:10:40.577Z",
       "pivot": 0.36,
       "support1": 9.04,
       "support2": 8.88,
@@ -2276,7 +2421,9 @@
       "target2": 9.52,
       "stopLoss": 8.81,
       "riskReward": 0.21,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "EAST",
@@ -2300,7 +2447,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/EAST/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:06.735Z",
+      "fetchedAt": "2026-07-01T23:09:51.348Z",
       "pivot": 0.51,
       "support1": 36.92,
       "support2": 36.34,
@@ -2330,7 +2477,9 @@
       "target2": 38.08,
       "stopLoss": 36,
       "riskReward": 0.27,
-      "setup": "فوق Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "JUFO",
@@ -2352,7 +2501,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/JUFO/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:17.761Z",
+      "fetchedAt": "2026-07-01T23:09:57.668Z",
       "pivot": 0.1,
       "support1": 29.26,
       "support2": 28.8,
@@ -2382,7 +2531,9 @@
       "target2": 30.64,
       "stopLoss": 28.53,
       "riskReward": 0.22,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "MICH",
@@ -2404,7 +2555,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/MICH/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:27.389Z",
+      "fetchedAt": "2026-07-01T23:10:08.102Z",
       "pivot": 0.46,
       "support1": 36.73,
       "support2": 35.47,
@@ -2434,7 +2585,9 @@
       "target2": 39.27,
       "stopLoss": 35.81,
       "riskReward": 0.34,
-      "setup": "فوق Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم"
+      "setup": "فوق Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ISPH",
@@ -2456,7 +2609,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ISPH/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:39.809Z",
+      "fetchedAt": "2026-07-01T23:10:17.050Z",
       "pivot": -0.06,
       "support1": 11.51,
       "support2": 11.36,
@@ -2486,7 +2639,9 @@
       "target2": 11.86,
       "stopLoss": 11.22,
       "riskReward": 0.28,
-      "setup": "تحت Pivot + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "تحت Pivot + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "SKPC",
@@ -2509,7 +2664,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/SKPC/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:23.865Z",
+      "fetchedAt": "2026-07-01T23:10:01.920Z",
       "pivot": -0.1,
       "support1": 15.78,
       "support2": 15.71,
@@ -2539,7 +2694,9 @@
       "target2": 16.11,
       "stopLoss": 15.39,
       "riskReward": 0.37,
-      "setup": "تحت Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "تحت Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "SAUD",
@@ -2561,7 +2718,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/SAUD/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:30.982Z",
+      "fetchedAt": "2026-07-01T23:10:10.606Z",
       "pivot": 0.81,
       "support1": 20.65,
       "support2": 20.23,
@@ -2591,7 +2748,9 @@
       "target2": 21.61,
       "stopLoss": 20.13,
       "riskReward": 0.21,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "AIFI",
@@ -2613,7 +2772,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/AIFI/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:15.274Z",
+      "fetchedAt": "2026-07-01T23:10:43.549Z",
       "pivot": -0.49,
       "support1": 2,
       "support2": 1.95,
@@ -2643,7 +2802,9 @@
       "target2": 2.11,
       "stopLoss": 1.95,
       "riskReward": 0.44,
-      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم"
+      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "CANA",
@@ -2665,7 +2826,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/CANA/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:25.087Z",
+      "fetchedAt": "2026-07-01T23:10:50.452Z",
       "pivot": 0.52,
       "support1": 35.31,
       "support2": 34.94,
@@ -2695,7 +2856,9 @@
       "target2": 36.18,
       "stopLoss": 34.43,
       "riskReward": 0.31,
-      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "GBCO",
@@ -2704,9 +2867,10 @@
       "name_ar": "جي بي أوتو",
       "aliases": [
         "غبور",
-        "جي بي"
+        "جي بي",
+        "AUTO"
       ],
-      "searchText": "gbco gb auto جي بي اوتو gb corp gbco غبور جي بي",
+      "searchText": "gbco gb auto جي بي اوتو gb corp gbco غبور جي بي auto",
       "price": 32.07,
       "previousClose": 32.45,
       "changePct": -1.66,
@@ -2718,7 +2882,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/GBCO/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:30.351Z",
+      "fetchedAt": "2026-07-01T23:10:54.396Z",
       "pivot": -0.19,
       "support1": 31.49,
       "support2": 30.53,
@@ -2748,7 +2912,9 @@
       "target2": 33.41,
       "stopLoss": 30.7,
       "riskReward": 0.32,
-      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم"
+      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "CLHO",
@@ -2770,7 +2936,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/CLHO/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:20.421Z",
+      "fetchedAt": "2026-07-01T23:09:59.418Z",
       "pivot": -1.45,
       "support1": 16.33,
       "support2": 15.91,
@@ -2800,7 +2966,9 @@
       "target2": 17.17,
       "stopLoss": 15.92,
       "riskReward": 0.4,
-      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم"
+      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ADIB",
@@ -2823,7 +2991,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ADIB/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:29.149Z",
+      "fetchedAt": "2026-07-01T23:10:09.384Z",
       "pivot": -1.38,
       "support1": 46.1,
       "support2": 43.7,
@@ -2853,7 +3021,9 @@
       "target2": 50.88,
       "stopLoss": 44.95,
       "riskReward": 1.2,
-      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم + مساحة قبل المقاومة"
+      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم + مساحة قبل المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "EGBE",
@@ -2875,7 +3045,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/EGBE/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:34.655Z",
+      "fetchedAt": "2026-07-01T23:10:13.602Z",
       "pivot": 1.11,
       "support1": 0.44,
       "support2": 0.44,
@@ -2905,7 +3075,9 @@
       "target2": 0.49,
       "stopLoss": 0.43,
       "riskReward": 0.01,
-      "setup": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
+      "setup": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "CICH",
@@ -2927,7 +3099,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/CICH/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:41.628Z",
+      "fetchedAt": "2026-07-01T23:10:18.205Z",
       "pivot": -0.39,
       "support1": 11.83,
       "support2": 11.68,
@@ -2957,7 +3129,9 @@
       "target2": 12.16,
       "stopLoss": 11.53,
       "riskReward": 0.18,
-      "setup": "تحت Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "تحت Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "SPIN",
@@ -2980,7 +3154,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/SPIN/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:51.937Z",
+      "fetchedAt": "2026-07-01T23:10:26.221Z",
       "pivot": -0.12,
       "support1": 14.07,
       "support2": 13.99,
@@ -3010,7 +3184,9 @@
       "target2": 14.39,
       "stopLoss": 13.72,
       "riskReward": 0.02,
-      "setup": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "setup": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ADRI",
@@ -3032,7 +3208,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ADRI/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:48:57.312Z",
+      "fetchedAt": "2026-07-01T23:10:30.132Z",
       "pivot": -1.9,
       "support1": 7.26,
       "support2": 6.82,
@@ -3062,7 +3238,9 @@
       "target2": 8.24,
       "stopLoss": 7.08,
       "riskReward": 1.31,
-      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة"
+      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "IRON",
@@ -3085,7 +3263,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/IRON/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:02.743Z",
+      "fetchedAt": "2026-07-01T23:10:33.973Z",
       "pivot": -2.4,
       "support1": 32.12,
       "support2": 31.51,
@@ -3115,7 +3293,9 @@
       "target2": 34.49,
       "stopLoss": 31.32,
       "riskReward": 0.89,
-      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة"
+      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ESRS",
@@ -3138,7 +3318,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ESRS/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:04.474Z",
+      "fetchedAt": "2026-07-01T23:10:35.519Z",
       "pivot": -7.02,
       "support1": 110,
       "support2": 100,
@@ -3168,7 +3348,9 @@
       "target2": 139.98,
       "stopLoss": 107.25,
       "riskReward": 3.18,
-      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة"
+      "setup": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ALCN",
@@ -3190,7 +3372,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ALCN/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:16.997Z",
+      "fetchedAt": "2026-07-01T23:10:44.829Z",
       "pivot": -0.27,
       "support1": 27.87,
       "support2": 27.2,
@@ -3220,7 +3402,9 @@
       "target2": 29.64,
       "stopLoss": 27.17,
       "riskReward": 0.32,
-      "setup": "تحت Pivot + سيولة ضعيفة + قريب من دعم"
+      "setup": "تحت Pivot + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     },
     {
       "symbol": "ELWA",
@@ -3240,7 +3424,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/ELWA/",
       "priceSource": "mubasher_public_stock_page",
       "dataMode": "public_delayed",
-      "fetchedAt": "2026-07-01T22:49:37.462Z",
+      "fetchedAt": "2026-07-01T23:11:02.579Z",
       "pivot": -0.17,
       "support1": 1.95,
       "support2": 1.92,
@@ -3270,7 +3454,9 @@
       "target2": 2.04,
       "stopLoss": 1.9,
       "riskReward": 0.59,
-      "setup": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
+      "setup": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "cacheUpdatedAt": "2026-07-01T23:09:35.275Z",
+      "stale": false
     }
   ],
   "errors": [
@@ -3279,15 +3465,11 @@
       "error": "HTTP 404 Not Found"
     },
     {
-      "symbol": "MNHD",
-      "error": "HTTP 404 Not Found"
-    },
-    {
-      "symbol": "AUTO",
-      "error": "HTTP 404 Not Found"
-    },
-    {
       "symbol": "QNBA",
+      "error": "HTTP 404 Not Found"
+    },
+    {
+      "symbol": "EKHOA",
       "error": "HTTP 404 Not Found"
     }
   ]
