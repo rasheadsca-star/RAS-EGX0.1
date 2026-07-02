@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const DEFAULT_BASE_URL = "https://english.mubasher.info";
 const DEFAULT_MAX_SYMBOLS = 999;
-const DEFAULT_DELAY_MS = 450;
+const DEFAULT_DELAY_MS = 420;
 
 function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
 function writeJson(file, data) { ensureDir("data"); fs.writeFileSync(file, JSON.stringify(data, null, 2), "utf8"); }
@@ -349,7 +349,7 @@ function analyzeRow(row) {
 
 function summarize(rows, requestedCount, discoveredCount) {
   return {
-    scanMode: "full_market_batch_cache_v4_1", requestedSymbols: requestedCount, discoveredSymbols: discoveredCount, count: rows.length,
+    scanMode: "full_market_224_batch_cache_v4_2", requestedSymbols: requestedCount, discoveredSymbols: discoveredCount, count: rows.length,
     avgConfidence: rows.length ? Math.round(rows.reduce((s, r) => s + (r.finalConfidence || 0), 0) / rows.length) : 0,
     avgQuality: rows.length ? Math.round(rows.reduce((s, r) => s + (r.dataQualityScore || 0), 0) / rows.length) : 0,
     buyCandidates: rows.filter((r) => r.priority <= 2).length,
@@ -435,7 +435,7 @@ function mergeFullMarketCache(existingCache, freshRows, generatedAt, batchInfo) 
   return {
     ok: merged.length > 0,
     generatedAt,
-    scanMode: "full_market_batch_cache_v4_1",
+    scanMode: "full_market_224_batch_cache_v4_2",
     batchInfo,
     rows: sortRowsForOpportunity(merged)
   };
@@ -445,7 +445,7 @@ function summarizeCached(rows, requestedCount, discoveredCount, batchInfo) {
   const base = summarize(rows, requestedCount, discoveredCount);
   return {
     ...base,
-    scanMode: "full_market_batch_cache_v4_1",
+    scanMode: "full_market_224_batch_cache_v4_2",
     cacheRows: rows.length,
     batchOffset: batchInfo.offset,
     nextBatchOffset: batchInfo.nextOffset,
@@ -479,7 +479,7 @@ async function main() {
   const nextOffset = (offset + selected.length) % Math.max(1, universe.length);
 
   writeJson("data/symbols.json", {
-    ok: true, generatedAt, scanMode: "full_market_batch_cache_v4_1",
+    ok: true, generatedAt, scanMode: "full_market_224_batch_cache_v4_2",
     totalConfigured: configItems.length, totalFromCsv: csvItems.length, totalDiscoveredFromMarketPage: discovered.length, totalUniverse: universe.length, batchOffset: offset, nextBatchOffset: nextOffset, selectedForThisRun: selected.length,
     symbols: universe.map((item) => ({ ...item, searchText: normalizeArabic([item.symbol, item.name_en, item.name_ar, ...(item.aliases || [])].filter(Boolean).join(" ")) }))
   });
@@ -530,7 +530,7 @@ async function main() {
   writeJson("data/history.json", history);
 
   const recommendations = {
-    ok: rows.length > 0, generatedAt, source: "egx_pro_hub_v4_1_full_market_batch_cache",
+    ok: rows.length > 0, generatedAt, source: "egx_pro_hub_v4_2_full_224_market",
     disclaimer: "هذه ترشيحات مراقبة مبنية على بيانات عامة ومتأخرة وليست أوامر تداول.",
     topBuyCandidates: rows.filter((r) => r.priority <= 2).slice(0, 20),
     watchlist: rows.filter((r) => r.priority === 3).slice(0, 35),
@@ -549,22 +549,27 @@ async function main() {
 
   writeJson("data/market.json", {
     ok: rows.length > 0,
-    source: "mubasher_public_pages_v4_1_full_market_batch_cache",
+    source: "mubasher_public_pages_v4_2_full_224_market",
     message: rows.length ? "تم تشغيل Batch من السوق ودمجه مع كاش السوق الكامل ثم توليد ترشيحات ونقاط دخول وأهداف. البيانات عامة ومتأخرة وليست لحظية حقيقية." : "لم يتم جمع بيانات صالحة من مباشر.",
     updatedAt: generatedAt, dataMode: "public_delayed", market, summary, rows, errors
   });
 
   writeJson("data/source-health.json", {
-    sourceName: "Mubasher Public Pages V4.1", ok: rows.length > 0, mode: "public_delayed", scanMode: "full_market_batch_cache_v4_1",
+    sourceName: "Mubasher Public Pages V4.2", ok: rows.length > 0, mode: "public_delayed", scanMode: "full_market_224_batch_cache_v4_2",
     lastSuccessAt: rows.length ? generatedAt : null, lastFailureAt: rows.length ? null : (errors.length ? generatedAt : null), partialFailureAt: errors.length ? generatedAt : null,
-    rowsRead: rows.length, selectedForThisRun: selected.length, totalUniverse: universe.length, totalDiscoveredFromMarketPage: discovered.length,
+    rowsRead: freshRows.length,
+    cacheRows: rows.length,
+    selectedForThisRun: selected.length,
+    totalUniverse: universe.length,
+    universeCoveragePct: universe.length ? Math.round((rows.length / universe.length) * 100) : 0,
+    totalDiscoveredFromMarketPage: discovered.length,
     failedSymbols: errors.map((e) => e.symbol).filter(Boolean), avgDataQuality,
     warning: "البيانات من صفحات عامة وقد تكون متأخرة. لا تعتبر لحظية حقيقية.",
     generatedAt
   });
 
   writeJson("data/validation-report.json", {
-    ok: rows.length > 0, scanMode: "full_market_batch_cache_v4_1", requestedSymbols: selected.length, readSymbols: rows.length, missingSymbols,
+    ok: rows.length > 0, scanMode: "full_market_224_batch_cache_v4_2", requestedSymbols: selected.length, readSymbols: rows.length, missingSymbols,
     failedSymbols: errors.map((e) => e.symbol).filter(Boolean), validForDisplay: rows.length > 0,
     warnings: [
       ...(missingSymbols.length ? [`رموز لم تُقرأ: ${missingSymbols.join(", ")}`] : []),
@@ -584,19 +589,19 @@ async function main() {
     topWatchBuy: recommendations.topBuyCandidates,
     riskReduce: recommendations.riskReduce,
     marketSummary: market,
-    sourceStatus: rows.length > 0 ? "ok_public_delayed_full_market_batch_cache_v4_1" : "failed",
+    sourceStatus: rows.length > 0 ? "ok_public_delayed_full_market_224_batch_cache_v4_2" : "failed",
     notes: ["تمت إضافة الترشيحات ونقاط الدخول والأهداف ووقف الخسارة.", "البيانات عامة ومتأخرة وليست لحظية حقيقية.", "الإشارات قرارات مراقبة وليست أوامر تداول."]
   });
 
-  console.log(`Collector V4.1 completed. rows=${rows.length}, universe=${universe.length}, errors=${errors.length}`);
+  console.log(`Collector V4.2 completed. rows=${rows.length}, universe=${universe.length}, errors=${errors.length}`);
   process.exit(0);
 }
 
 main().catch((error) => {
   const generatedAt = new Date().toISOString();
   console.error(error);
-  writeJson("data/market.json", { ok: false, source: "mubasher_public_pages_v4_1_full_market_batch_cache", message: "فشل التحديث الحقيقي من مباشر. راجع errors.", updatedAt: generatedAt, dataMode: "public_delayed", market: {}, summary: {}, rows: [], errors: [{ error: error.message }] });
-  writeJson("data/source-health.json", { sourceName: "Mubasher Public Pages V4.1", ok: false, mode: "public_delayed", scanMode: "full_market_batch_cache_v4_1", lastSuccessAt: null, lastFailureAt: generatedAt, rowsRead: 0, failedSymbols: [], avgDataQuality: 0, warning: error.message, generatedAt });
+  writeJson("data/market.json", { ok: false, source: "mubasher_public_pages_v4_2_full_224_market", message: "فشل التحديث الحقيقي من مباشر. راجع errors.", updatedAt: generatedAt, dataMode: "public_delayed", market: {}, summary: {}, rows: [], errors: [{ error: error.message }] });
+  writeJson("data/source-health.json", { sourceName: "Mubasher Public Pages V4.2", ok: false, mode: "public_delayed", scanMode: "full_market_224_batch_cache_v4_2", lastSuccessAt: null, lastFailureAt: generatedAt, rowsRead: 0, failedSymbols: [], avgDataQuality: 0, warning: error.message, generatedAt });
   writeJson("data/validation-report.json", { ok: false, requestedSymbols: 0, readSymbols: 0, missingSymbols: [], failedSymbols: [], validForDisplay: false, warnings: [error.message], generatedAt });
   writeJson("data/daily-report.json", { generatedAt, topWatchBuy: [], riskReduce: [], marketSummary: {}, sourceStatus: "failed", notes: [error.message] });
   process.exit(0);
