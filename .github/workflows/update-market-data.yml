@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -32,25 +32,48 @@ jobs:
         run: node scripts/fetch-market-data.js
 
       - name: Build V4.2.1 symbol audit
-        run: node scripts/build-symbol-audit.js
+        run: |
+          if [ -f scripts/build-symbol-audit.js ]; then
+            node scripts/build-symbol-audit.js
+          else
+            echo "build-symbol-audit.js not found, skipping."
+          fi
 
       - name: Build V5.2 intelligence reports
-        run: node scripts/build-v52-intelligence.js
+        run: |
+          if [ -f scripts/build-v52-intelligence.js ]; then
+            node scripts/build-v52-intelligence.js
+          else
+            echo "build-v52-intelligence.js not found, skipping."
+          fi
 
       - name: Build V5.4 Universe Index
-        run: node scripts/build-v54-universe-index.js
-              - name: Build V5.5 Sector and Investor Flow Reports
-        run: node scripts/build-v55-sector-investor-flow.js
+        run: |
+          if [ -f scripts/build-v54-universe-index.js ]; then
+            node scripts/build-v54-universe-index.js
+          else
+            echo "build-v54-universe-index.js not found, skipping."
+          fi
+
+      - name: Build V5.5 Sector and Investor Flow Reports
+        run: |
+          if [ -f scripts/build-v55-sector-investor-flow.js ]; then
+            node scripts/build-v55-sector-investor-flow.js
+          else
+            echo "build-v55-sector-investor-flow.js not found, skipping."
+          fi
 
       - name: Commit generated market data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/*.json
+
+          git add data/*.json || true
+
           if git diff --cached --quiet; then
             echo "No generated data changes to commit."
           else
-            git commit -m "Update EGX market data and V5.4 universe index"
+            git commit -m "Update EGX generated market reports"
             git pull --rebase
             git push
           fi
