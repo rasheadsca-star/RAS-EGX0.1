@@ -62,7 +62,8 @@ jobs:
           else
             echo "build-v55-sector-investor-flow.js not found, skipping."
           fi
-                - name: Build V5.6 history 50 sessions
+
+      - name: Build V5.6 history 50 sessions
         run: |
           if [ -f scripts/build-v56-history-50.js ]; then
             node scripts/build-v56-history-50.js
