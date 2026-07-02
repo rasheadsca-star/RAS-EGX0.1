@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-02T11:05:10.245Z",
+  "generatedAt": "2026-07-02T13:32:10.101Z",
   "disclaimer_ar": "لوحة مخاطر للمراقبة فقط. البيانات عامة ومتأخرة.",
   "summary": {
     "totalRows": 221,
@@ -8,7 +8,7 @@
     "avgConfidence": 61,
     "universeCoveragePct": 99,
     "missingFromCache": 12,
-    "failedSymbols": 0,
+    "failedSymbols": 3,
     "strongWatchPct": 16,
     "riskReducePct": 24,
     "lowQualityPct": 0
@@ -997,7 +997,7 @@
         "riskScore": 47,
         "dataQualityScore": 100,
         "signal": "INVALID",
-        "reason": "تحت Pivot + سيولة ضعيفة + كسر دعم"
+        "reason": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + كسر دعم"
       },
       {
         "symbol": "NAHO",
@@ -1008,7 +1008,7 @@
         "riskScore": 47,
         "dataQualityScore": 100,
         "signal": "INVALID",
-        "reason": "تحت Pivot + سيولة ضعيفة + كسر دعم"
+        "reason": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + كسر دعم"
       },
       {
         "symbol": "ELNA",
@@ -1055,17 +1055,6 @@
         "reason": "تحت Pivot + سيولة ضعيفة + كسر دعم"
       },
       {
-        "symbol": "EDFM",
-        "name": "East Delta Flour Mills (EDFM)",
-        "price": 0,
-        "finalConfidence": 35,
-        "liquidityScore": 12,
-        "riskScore": 47,
-        "dataQualityScore": 100,
-        "signal": "INVALID",
-        "reason": "تحت Pivot + سيولة ضعيفة + كسر دعم"
-      },
-      {
         "symbol": "SEIGA",
         "name": "Saudi Egyptian Investment and Finance (SEIGA)",
         "price": 5.41,
@@ -1086,6 +1075,17 @@
         "dataQualityScore": 100,
         "signal": "INVALID",
         "reason": "تحت Pivot + سيولة ضعيفة + كسر دعم"
+      },
+      {
+        "symbol": "EDFM",
+        "name": "East Delta Flour Mills (EDFM)",
+        "price": 0,
+        "finalConfidence": 31,
+        "liquidityScore": 12,
+        "riskScore": 65,
+        "dataQualityScore": 100,
+        "signal": "INVALID",
+        "reason": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + كسر دعم"
       }
     ],
     "lowDataQuality": [],
