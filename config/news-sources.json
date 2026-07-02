@@ -1,0 +1,31 @@
+{
+  "version": "v5.2",
+  "notes_ar": [
+    "مصادر الأخبار العامة اختيارية. إذا فشل مصدر لا يسقط workflow.",
+    "لا تستخدم مصادر تحتاج تسجيل دخول أو تخطي حماية.",
+    "الأخبار للتلخيص والتنبيه وليست توصية تداول."
+  ],
+  "sources": [
+    {
+      "name": "Mubasher EGX News",
+      "type": "public_page",
+      "enabled": true,
+      "baseUrl": "https://english.mubasher.info",
+      "url": "https://english.mubasher.info/markets/EGX/news"
+    },
+    {
+      "name": "EGX Official",
+      "type": "public_page",
+      "enabled": false,
+      "baseUrl": "https://www.egx.com.eg",
+      "url": "https://www.egx.com.eg/"
+    },
+    {
+      "name": "Central Bank of Egypt",
+      "type": "public_page",
+      "enabled": false,
+      "baseUrl": "https://www.cbe.org.eg",
+      "url": "https://www.cbe.org.eg/"
+    }
+  ]
+}
