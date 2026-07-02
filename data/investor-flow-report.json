@@ -1,65 +1,63 @@
 {
-  "version": "5.5.0-sector-investor-flow",
-  "generatedAt": "2026-07-02T04:21:03.787Z",
-  "status": "needs_investor_flow_source",
-  "source": "not-yet-available-in-repo",
-  "note": "لم يتم العثور على data/investor-flow-daily.json أو config/investor-flow-daily.json. التقرير جاهز للعرض لكن يحتاج بيانات نوع المتعاملين من مصدر رسمي/يدوي.",
-  "whyItMatters": [
-    "صافي شراء المؤسسات يدعم استمرارية الصعود أكثر من تداول أفراد قصير الأجل.",
-    "صافي شراء الأجانب أو العرب مع سيولة مرتفعة قد يؤكد دخول أموال جديدة.",
-    "صافي بيع قوي من المؤسسات مع صعود سعري قد يعني ارتفاع هش يحتاج إدارة مخاطر."
+  "version": "5.6.0",
+  "generatedAt": "2026-07-02T04:55:32.762Z",
+  "status": "manual_or_prepared_daily_file",
+  "source": "data/investor-flow-daily.json or config template",
+  "rows": [
+    {
+      "group": "Institutions",
+      "buy": 0,
+      "sell": 0,
+      "net": 0,
+      "sharePct": null
+    },
+    {
+      "group": "Individuals",
+      "buy": 0,
+      "sell": 0,
+      "net": 0,
+      "sharePct": null
+    },
+    {
+      "group": "Egyptians",
+      "buy": 0,
+      "sell": 0,
+      "net": 0,
+      "sharePct": null
+    },
+    {
+      "group": "Arabs",
+      "buy": 0,
+      "sell": 0,
+      "net": 0,
+      "sharePct": null
+    },
+    {
+      "group": "Foreigners",
+      "buy": 0,
+      "sell": 0,
+      "net": 0,
+      "sharePct": null
+    }
   ],
-  "requiredInputFile": "data/investor-flow-daily.json",
-  "template": {
-    "date": "YYYY-MM-DD",
-    "unit": "EGP",
-    "rows": [
-      {
-        "category": "individuals",
-        "label_ar": "أفراد مصريون",
-        "nationality": "مصريون",
-        "buyValue": 0,
-        "sellValue": 0
-      },
-      {
-        "category": "institutions",
-        "label_ar": "مؤسسات مصرية",
-        "nationality": "مصريون",
-        "buyValue": 0,
-        "sellValue": 0
-      },
-      {
-        "category": "individuals",
-        "label_ar": "أفراد عرب",
-        "nationality": "عرب",
-        "buyValue": 0,
-        "sellValue": 0
-      },
-      {
-        "category": "institutions",
-        "label_ar": "مؤسسات عربية",
-        "nationality": "عرب",
-        "buyValue": 0,
-        "sellValue": 0
-      },
-      {
-        "category": "individuals",
-        "label_ar": "أفراد أجانب",
-        "nationality": "أجانب",
-        "buyValue": 0,
-        "sellValue": 0
-      },
-      {
-        "category": "institutions",
-        "label_ar": "مؤسسات أجنبية",
-        "nationality": "أجانب",
-        "buyValue": 0,
-        "sellValue": 0
-      }
-    ]
-  },
-  "marketContext": {
-    "nextSector": "عقارات وإنشاءات",
-    "mostLiquidSector": "عقارات وإنشاءات"
-  }
+  "strongestBuyer": "Institutions",
+  "strongestSeller": "Institutions",
+  "signal": "محايد / يحتاج متابعة",
+  "institutionsPct": null,
+  "individualsPct": null,
+  "impact": "أقوى مشتري: Institutions. أقوى بائع: Institutions. الإشارة: محايد / يحتاج متابعة.",
+  "sources": [
+    {
+      "url": "https://www.egx.com.eg/en/InvestorsTypeCharts.aspx",
+      "ok": false,
+      "error": "fetch failed",
+      "fetchedAt": "2026-07-02T04:55:22.614Z"
+    },
+    {
+      "url": "https://www.egx.com.eg/en/InvestorsTypePieChart.aspx",
+      "ok": false,
+      "error": "fetch failed",
+      "fetchedAt": "2026-07-02T04:55:32.762Z"
+    }
+  ]
 }
