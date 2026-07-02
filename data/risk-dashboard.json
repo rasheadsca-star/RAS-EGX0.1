@@ -1,14 +1,14 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-02T03:50:19.239Z",
+  "generatedAt": "2026-07-02T04:06:38.341Z",
   "disclaimer_ar": "لوحة مخاطر للمراقبة فقط. البيانات عامة ومتأخرة.",
   "summary": {
-    "totalRows": 163,
+    "totalRows": 164,
     "avgQuality": 100,
     "avgConfidence": 61,
     "universeCoveragePct": 73,
-    "missingFromCache": 70,
-    "failedSymbols": 0,
+    "missingFromCache": 69,
+    "failedSymbols": 3,
     "strongWatchPct": 15,
     "riskReducePct": 23,
     "lowQualityPct": 0
@@ -800,6 +800,17 @@
         "reason": "فوق Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
       },
       {
+        "symbol": "MENA",
+        "name": "Mena Touristic and Real Estate Investment (MENA)",
+        "price": 6.89,
+        "finalConfidence": 61,
+        "liquidityScore": 26,
+        "riskScore": 14,
+        "dataQualityScore": 100,
+        "signal": "WATCH",
+        "reason": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      },
+      {
         "symbol": "EGAL",
         "name": "Egypt Aluminum (EGAL)",
         "price": 285.88,
@@ -831,17 +842,6 @@
         "dataQualityScore": 100,
         "signal": "WATCH",
         "reason": "تحت Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم"
-      },
-      {
-        "symbol": "PHGC",
-        "name": "Premium Healthcare Group (PHGC)",
-        "price": 0.09,
-        "finalConfidence": 60,
-        "liquidityScore": 39,
-        "riskScore": 14,
-        "dataQualityScore": 100,
-        "signal": "WATCH",
-        "reason": "سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة"
       }
     ],
     "wait": [
@@ -876,7 +876,7 @@
         "riskScore": 47,
         "dataQualityScore": 100,
         "signal": "INVALID",
-        "reason": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + كسر دعم"
+        "reason": "تحت Pivot + سيولة ضعيفة + كسر دعم"
       },
       {
         "symbol": "NAHO",
@@ -887,7 +887,7 @@
         "riskScore": 47,
         "dataQualityScore": 100,
         "signal": "INVALID",
-        "reason": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + كسر دعم"
+        "reason": "تحت Pivot + سيولة ضعيفة + كسر دعم"
       },
       {
         "symbol": "ELNA",
@@ -937,12 +937,12 @@
         "symbol": "EDFM",
         "name": "East Delta Flour Mills (EDFM)",
         "price": 0,
-        "finalConfidence": 31,
+        "finalConfidence": 35,
         "liquidityScore": 12,
-        "riskScore": 65,
+        "riskScore": 47,
         "dataQualityScore": 100,
         "signal": "INVALID",
-        "reason": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + كسر دعم"
+        "reason": "تحت Pivot + سيولة ضعيفة + كسر دعم"
       }
     ],
     "lowDataQuality": [],
@@ -1088,7 +1088,7 @@
         "riskScore": 12,
         "dataQualityScore": 100,
         "signal": "RISK_REDUCE",
-        "reason": "تحت Pivot + سيولة ضعيفة + قريب من دعم"
+        "reason": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
       },
       {
         "symbol": "AMES",
