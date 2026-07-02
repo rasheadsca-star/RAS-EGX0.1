@@ -1,0 +1,65 @@
+{
+  "version": "5.5.0-sector-investor-flow",
+  "generatedAt": "2026-07-02T04:21:03.787Z",
+  "status": "needs_investor_flow_source",
+  "source": "not-yet-available-in-repo",
+  "note": "لم يتم العثور على data/investor-flow-daily.json أو config/investor-flow-daily.json. التقرير جاهز للعرض لكن يحتاج بيانات نوع المتعاملين من مصدر رسمي/يدوي.",
+  "whyItMatters": [
+    "صافي شراء المؤسسات يدعم استمرارية الصعود أكثر من تداول أفراد قصير الأجل.",
+    "صافي شراء الأجانب أو العرب مع سيولة مرتفعة قد يؤكد دخول أموال جديدة.",
+    "صافي بيع قوي من المؤسسات مع صعود سعري قد يعني ارتفاع هش يحتاج إدارة مخاطر."
+  ],
+  "requiredInputFile": "data/investor-flow-daily.json",
+  "template": {
+    "date": "YYYY-MM-DD",
+    "unit": "EGP",
+    "rows": [
+      {
+        "category": "individuals",
+        "label_ar": "أفراد مصريون",
+        "nationality": "مصريون",
+        "buyValue": 0,
+        "sellValue": 0
+      },
+      {
+        "category": "institutions",
+        "label_ar": "مؤسسات مصرية",
+        "nationality": "مصريون",
+        "buyValue": 0,
+        "sellValue": 0
+      },
+      {
+        "category": "individuals",
+        "label_ar": "أفراد عرب",
+        "nationality": "عرب",
+        "buyValue": 0,
+        "sellValue": 0
+      },
+      {
+        "category": "institutions",
+        "label_ar": "مؤسسات عربية",
+        "nationality": "عرب",
+        "buyValue": 0,
+        "sellValue": 0
+      },
+      {
+        "category": "individuals",
+        "label_ar": "أفراد أجانب",
+        "nationality": "أجانب",
+        "buyValue": 0,
+        "sellValue": 0
+      },
+      {
+        "category": "institutions",
+        "label_ar": "مؤسسات أجنبية",
+        "nationality": "أجانب",
+        "buyValue": 0,
+        "sellValue": 0
+      }
+    ]
+  },
+  "marketContext": {
+    "nextSector": "عقارات وإنشاءات",
+    "mostLiquidSector": "عقارات وإنشاءات"
+  }
+}
