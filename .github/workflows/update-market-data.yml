@@ -3,109 +3,41 @@ name: Update EGX Market Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 8 * * 0-4'
-    - cron: '15 12 * * 0-4'
+    # UTC. Approximate after-open / hourly / after-close for EGX.
+    - cron: "15 7 * * 0-4"
+    - cron: "0 8-12 * * 0-4"
+    - cron: "45 12 * * 0-4"
 
 permissions:
   contents: write
 
-concurrency:
-  group: egx-market-data
-  cancel-in-progress: false
-
 jobs:
-  update-market-data:
+  update-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "22"
 
-      - name: Run V4.2 market collector
+      - name: Fetch and analyze public market data
         run: node scripts/fetch-market-data.js
 
-      - name: Build V4.2.1 symbol audit
+      - name: Build V7 50-session history engine
+        run: node scripts/build-history-50-engine.js
+
+      - name: Build V5.2 intelligence reports if present
+        run: node scripts/build-v52-intelligence.js || echo "V5.2 intelligence builder skipped"
+
+      - name: Commit generated data
         run: |
-          if [ -f scripts/build-symbol-audit.js ]; then
-            node scripts/build-symbol-audit.js
-          else
-            echo "build-symbol-audit.js not found, skipping."
-          fi
-
-      - name: Build V5.2 intelligence reports
-        run: |
-          if [ -f scripts/build-v52-intelligence.js ]; then
-            node scripts/build-v52-intelligence.js
-          else
-            echo "build-v52-intelligence.js not found, skipping."
-          fi
-
-      - name: Build V5.4 Universe Index
-        run: |
-          if [ -f scripts/build-v54-universe-index.js ]; then
-            node scripts/build-v54-universe-index.js
-          else
-            echo "build-v54-universe-index.js not found, skipping."
-          fi
-
-      - name: Build V5.5 Sector and Investor Flow Reports
-        run: |
-          if [ -f scripts/build-v55-sector-investor-flow.js ]; then
-            node scripts/build-v55-sector-investor-flow.js
-          else
-            echo "build-v55-sector-investor-flow.js not found, skipping."
-          fi
-
-      - name: Build V5.6 history 50 sessions
-        run: |
-          if [ -f scripts/build-v56-history-50.js ]; then
-            node scripts/build-v56-history-50.js
-          else
-            echo "build-v56-history-50.js not found, skipping."
-          fi
-
-      - name: Build V5.6 technical report
-        run: |
-          if [ -f scripts/build-v56-technical-report.js ]; then
-            node scripts/build-v56-technical-report.js
-          else
-            echo "build-v56-technical-report.js not found, skipping."
-          fi
-
-      - name: Collect EGX investor type
-        run: |
-          if [ -f scripts/collect-egx-investor-type.js ]; then
-            node scripts/collect-egx-investor-type.js
-          else
-            echo "collect-egx-investor-type.js not found, skipping."
-          fi
-
-      - name: Collect V5.6 market news
-        run: |
-          if [ -f scripts/collect-v56-news.js ]; then
-            node scripts/collect-v56-news.js
-          else
-            echo "collect-v56-news.js not found, skipping."
-          fi
-
-      - name: Commit generated market data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add data/*.json || true
-
-          if git diff --cached --quiet; then
-            echo "No generated data changes to commit."
-          else
-            git commit -m "Update EGX generated market reports"
-            git pull --rebase
-            git push
-          fi
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/*.json
+          git diff --cached --quiet && echo "No data changes" || git commit -m "Update EGX V7 market history and intelligence"
+          git push || echo "Push skipped or failed; data generated in workflow logs"
