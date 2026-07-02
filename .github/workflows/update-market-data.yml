@@ -46,6 +46,9 @@ jobs:
       - name: Auto rolling 50-session history and indicators
         run: node scripts/build-history-50-engine.js
 
+      - name: Snapshot evidence confidence layer
+        run: node scripts/build-snapshot-evidence.js || echo "Snapshot evidence skipped"
+
       - name: Optional intelligence reports
         run: node scripts/build-v52-intelligence.js || echo "V5.2 intelligence builder skipped"
 
