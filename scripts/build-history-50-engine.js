@@ -1,5 +1,5 @@
 /*
-EGX Pro Hub V7 — Historical 50 Sessions Engine
+EGX Pro Hub V7.2 — Auto Rolling 50 Sessions Engine
 
 Purpose:
 - Build and maintain data/history.json from daily collected market snapshots.
@@ -370,7 +370,7 @@ function enhanceRecommendations(indicators) {
   });
 
   recs.historyEngine = {
-    version: "v7_history_50_engine",
+    version: "v7_2_auto_rolling_50_sessions_engine",
     updatedAt: new Date().toISOString(),
     enhancedRows: changed,
     rule: "Only rows with historyComplete50=true can claim full 50-session history analysis."
@@ -423,7 +423,7 @@ function main() {
   const enhanced = enhanceRecommendations(indicators);
 
   writeJson("data/history.json", {
-    version: "v7_history_50_engine",
+    version: "v7_2_auto_rolling_50_sessions_engine",
     generatedAt: new Date().toISOString(),
     sessionDate: date,
     requiredSessions: REQUIRED_50,
@@ -433,7 +433,7 @@ function main() {
   });
 
   writeJson("data/history-indicators.json", {
-    version: "v7_history_50_engine",
+    version: "v7_2_auto_rolling_50_sessions_engine",
     generatedAt: new Date().toISOString(),
     requiredSessions: REQUIRED_50,
     indicators
@@ -453,6 +453,21 @@ function main() {
       averageSessionsPerSymbol: validation.averageSessionsPerSymbol
     },
     rows: Object.values(historyReport)
+  });
+
+  writeJson("data/history-auto-status.json", {
+    ok: true,
+    engine: "v7_2_auto_rolling_50_sessions_engine",
+    generatedAt: new Date().toISOString(),
+    sessionDate: date,
+    rowsReadFromCurrentMarket: rows.length,
+    symbolsTracked: validation.totalSymbolsWithHistory,
+    symbolsWithComplete50: validation.symbolsWithComplete50,
+    averageSessionsPerSymbol: validation.averageSessionsPerSymbol,
+    rule: "The engine automatically appends/updates one snapshot per symbol per trading date, deduplicates by date, stores up to 75 sessions, and uses exactly the latest 50 once available.",
+    note: validation.symbolsWithComplete50 === 0
+      ? "Still collecting future sessions. No recommendation should claim full 50-session analysis yet."
+      : "Some symbols now have complete 50-session history and can be used in 50-session recommendations."
   });
 
   console.log("V7 History 50 Engine complete:", {
