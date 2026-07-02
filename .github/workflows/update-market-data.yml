@@ -3,13 +3,17 @@ name: Update EGX Market Data
 on:
   workflow_dispatch:
   schedule:
-    # UTC. Approximate after-open / hourly / after-close for EGX.
-    - cron: "15 7 * * 0-4"
-    - cron: "0 8-12 * * 0-4"
+    # EGX trading days are typically Sun-Thu. Times are UTC.
+    # Mid-session refresh updates the same session date; final run after close keeps the closing snapshot.
+    - cron: "15 8 * * 0-4"
     - cron: "45 12 * * 0-4"
 
 permissions:
   contents: write
+
+concurrency:
+  group: egx-market-history-update
+  cancel-in-progress: false
 
 jobs:
   update-data:
@@ -25,13 +29,16 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Fetch and analyze public market data
+      - name: Fetch public market snapshot
         run: node scripts/fetch-market-data.js
 
-      - name: Build V7 50-session history engine
+      - name: Optional historical backfill import
+        run: node scripts/import-history-backfill.js || echo "No backfill importer or file found"
+
+      - name: Auto rolling 50-session history
         run: node scripts/build-history-50-engine.js
 
-      - name: Build V5.2 intelligence reports if present
+      - name: Optional intelligence reports
         run: node scripts/build-v52-intelligence.js || echo "V5.2 intelligence builder skipped"
 
       - name: Commit generated data
@@ -39,5 +46,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add data/*.json
-          git diff --cached --quiet && echo "No data changes" || git commit -m "Update EGX V7 market history and intelligence"
-          git push || echo "Push skipped or failed; data generated in workflow logs"
+          git diff --cached --quiet && echo "No data changes" || git commit -m "Auto update EGX rolling 50-session history"
+          git push || echo "Push skipped or failed"
