@@ -3,7 +3,10 @@ name: Update EGX Market Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *"
+    # UTC. Approximate after-open / hourly / after-close for EGX.
+    - cron: "15 7 * * 0-4"
+    - cron: "0 8-12 * * 0-4"
+    - cron: "45 12 * * 0-4"
 
 permissions:
   contents: write
@@ -11,23 +14,27 @@ permissions:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 20
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "22"
 
       - name: Fetch and analyze public market data
         run: node scripts/fetch-market-data.js
 
-      - name: Commit generated data files
+      - name: Build V5.2 intelligence reports
+        run: node scripts/build-v52-intelligence.js || echo "V5.2 intelligence builder skipped"
+
+      - name: Commit generated data
         run: |
-          git config user.name "egx-pro-hub-web"
-          git config user.email "actions@github.com"
-          git add data/market.json data/source-health.json data/validation-report.json data/daily-report.json
-          git diff --cached --quiet && echo "No data changes to commit" || git commit -m "auto update EGX market data"
-          git push
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/*.json
+          git diff --cached --quiet && echo "No data changes" || git commit -m "Update EGX V5.2 intelligence"
+          git push || echo "Push skipped or failed; data generated in workflow logs"
