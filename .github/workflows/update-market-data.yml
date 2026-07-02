@@ -3,38 +3,48 @@ name: Update EGX Market Data
 on:
   workflow_dispatch:
   schedule:
-    # UTC. Approximate after-open / hourly / after-close for EGX.
-    - cron: "15 7 * * 0-4"
-    - cron: "0 8-12 * * 0-4"
-    - cron: "45 12 * * 0-4"
+    - cron: '20 8 * * 0-4'
+    - cron: '15 12 * * 0-4'
 
 permissions:
   contents: write
 
-jobs:
-  update-data:
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
+concurrency:
+  group: egx-market-data
+  cancel-in-progress: false
 
+jobs:
+  update-market-data:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: '20'
 
-      - name: Fetch and analyze public market data
+      - name: Run V4.2 market collector
         run: node scripts/fetch-market-data.js
 
-      - name: Build V5.2 intelligence reports
-        run: node scripts/build-v52-intelligence.js || echo "V5.2 intelligence builder skipped"
+      - name: Build V4.2.1 symbol audit
+        run: node scripts/build-symbol-audit.js
 
-      - name: Commit generated data
+      - name: Build V5.2 intelligence reports
+        run: node scripts/build-v52-intelligence.js
+
+      - name: Commit generated market data
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/*.json
-          git diff --cached --quiet && echo "No data changes" || git commit -m "Update EGX V5.2 intelligence"
-          git push || echo "Push skipped or failed; data generated in workflow logs"
+          if git diff --cached --quiet; then
+            echo "No generated data changes to commit."
+          else
+            git commit -m "Update EGX market data and V5.2 intelligence"
+            git pull --rebase
+            git push
+          fi
