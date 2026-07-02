@@ -39,6 +39,8 @@ jobs:
 
       - name: Build V5.4 Universe Index
         run: node scripts/build-v54-universe-index.js
+              - name: Build V5.5 Sector and Investor Flow Reports
+        run: node scripts/build-v55-sector-investor-flow.js
 
       - name: Commit generated market data
         run: |
