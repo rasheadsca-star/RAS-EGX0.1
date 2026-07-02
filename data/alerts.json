@@ -1,284 +1,277 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-02T02:16:27.333Z",
-  "source": "egx_pro_hub_v5_2_alerts",
-  "count": 46,
+  "generatedAt": "2026-07-02T02:48:42.734Z",
+  "disclaimer_ar": "هذه تنبيهات مراقبة مبنية على بيانات عامة ومتأخرة وليست أوامر تداول.",
+  "count": 22,
   "alerts": [
     {
-      "level": "success",
-      "symbol": "VLMRA",
-      "title": "داخل منطقة الدخول",
-      "text": "VLMRA: السعر 28.2 داخل/قريب من منطقة الدخول 28.1 - 28.39"
+      "level": "warning",
+      "type": "universe_coverage",
+      "title_ar": "أسهم لم تدخل الكاش بعد",
+      "message_ar": "86 رمز موجود في الكون ولم يظهر في الكاش حتى الآن.",
+      "symbols": [
+        "AALR",
+        "ACTF.CA",
+        "AFDI",
+        "AIDC",
+        "AIHC",
+        "ALRA",
+        "ALUM",
+        "APSW",
+        "AREH",
+        "ARVA",
+        "ASCOM",
+        "ASPI",
+        "CAED",
+        "CCRS",
+        "CEFM",
+        "CERA",
+        "COPR",
+        "COSG",
+        "CPME",
+        "CRST",
+        "DCCC",
+        "DEIN",
+        "DGTZ",
+        "DOMTY",
+        "DTPP",
+        "EASB",
+        "EBSC",
+        "EEII",
+        "EGYFERT",
+        "ELNA",
+        "ELWA",
+        "EOSB",
+        "EPCO",
+        "EPPK",
+        "GGCC",
+        "GIHD",
+        "GMCI",
+        "GOUR",
+        "GRCA",
+        "GTEX",
+        "GTWL",
+        "ICID",
+        "ICLE",
+        "ICON",
+        "IDRE",
+        "KRDI",
+        "KWIN",
+        "LUTS",
+        "MAAL",
+        "MCRO"
+      ]
     },
     {
-      "level": "success",
-      "symbol": "RAYA",
-      "title": "داخل منطقة الدخول",
-      "text": "RAYA: السعر 7.67 داخل/قريب من منطقة الدخول 7.55 - 7.79"
-    },
-    {
-      "level": "success",
-      "symbol": "ORAS",
-      "title": "داخل منطقة الدخول",
-      "text": "ORAS: السعر 720.42 داخل/قريب من منطقة الدخول 710.38 - 719.87"
-    },
-    {
-      "level": "info",
-      "symbol": "ORAS",
-      "title": "قريب من هدف 1",
-      "text": "ORAS: قريب من الهدف الأول 730.83"
-    },
-    {
-      "level": "info",
-      "symbol": "MASR",
-      "title": "قريب من هدف 1",
-      "text": "MASR: قريب من الهدف الأول 7.49"
-    },
-    {
-      "level": "info",
-      "symbol": "TMGH",
-      "title": "قريب من هدف 1",
-      "text": "TMGH: قريب من الهدف الأول 95.26"
-    },
-    {
-      "level": "info",
-      "symbol": "ABUK",
-      "title": "قريب من هدف 1",
-      "text": "ABUK: قريب من الهدف الأول 68.05"
-    },
-    {
-      "level": "info",
-      "symbol": "EGTS",
-      "title": "قريب من هدف 1",
-      "text": "EGTS: قريب من الهدف الأول 17.88"
-    },
-    {
-      "level": "info",
-      "symbol": "AMOC",
-      "title": "قريب من هدف 1",
-      "text": "AMOC: قريب من الهدف الأول 7.82"
-    },
-    {
-      "level": "info",
-      "symbol": "ORHD",
-      "title": "قريب من هدف 1",
-      "text": "ORHD: قريب من الهدف الأول 38.72"
-    },
-    {
-      "level": "info",
-      "symbol": "BTFH",
-      "title": "قريب من هدف 1",
-      "text": "BTFH: قريب من الهدف الأول 3"
-    },
-    {
-      "level": "info",
-      "symbol": "HELI",
-      "title": "قريب من هدف 1",
-      "text": "HELI: قريب من الهدف الأول 6.47"
+      "level": "warning",
+      "type": "batch_failures",
+      "title_ar": "رموز فشلت في آخر تشغيل",
+      "message_ar": "3 رمز فشل في القراءة من الصفحات العامة.",
+      "symbols": [
+        "GOUR",
+        "ACTF.CA",
+        "ALRA"
+      ]
     },
     {
       "level": "info",
-      "symbol": "COMI",
-      "title": "قريب من هدف 1",
-      "text": "COMI: قريب من الهدف الأول 129.33"
+      "type": "strong_watch",
+      "symbol": "OCDI",
+      "title_ar": "OCDI مراقبة قوية",
+      "message_ar": "مراقبة شراء مشروطة — ثقة 84، سيولة 70.",
+      "price": 25.36,
+      "entryFrom": 24.98,
+      "entryTo": 24.57,
+      "target1": 26.5,
+      "stopLoss": 23.86
     },
     {
       "level": "info",
-      "symbol": "QNBE",
-      "title": "قريب من هدف 1",
-      "text": "QNBE: قريب من الهدف الأول 52.73"
+      "type": "strong_watch",
+      "symbol": "ISMQ",
+      "title_ar": "ISMQ مراقبة قوية",
+      "message_ar": "مراقبة شراء مشروطة — ثقة 80، سيولة 70.",
+      "price": 9.34,
+      "entryFrom": 9.2,
+      "entryTo": 9.08,
+      "target1": 9.76,
+      "stopLoss": 8.76
     },
     {
       "level": "info",
-      "symbol": "EMFD",
-      "title": "قريب من هدف 1",
-      "text": "EMFD: قريب من الهدف الأول 11.72"
+      "type": "strong_watch",
+      "symbol": "SVCE",
+      "title_ar": "SVCE مراقبة قوية",
+      "message_ar": "مراقبة شراء مشروطة — ثقة 80، سيولة 70.",
+      "price": 9.63,
+      "entryFrom": 9.49,
+      "entryTo": 8.9,
+      "target1": 10.06,
+      "stopLoss": 8.64
     },
     {
       "level": "info",
-      "symbol": "EFID",
-      "title": "قريب من هدف 1",
-      "text": "EFID: قريب من الهدف الأول 27.5"
+      "type": "strong_watch",
+      "symbol": "NIPH",
+      "title_ar": "NIPH مراقبة قوية",
+      "message_ar": "مراقبة شراء مشروطة — ثقة 79، سيولة 65.",
+      "price": 180.06,
+      "entryFrom": 177.36,
+      "entryTo": 162.71,
+      "target1": 188.16,
+      "stopLoss": 157.67
     },
     {
       "level": "info",
-      "symbol": "EGCH",
-      "title": "قريب من هدف 1",
-      "text": "EGCH: قريب من الهدف الأول 12.42"
+      "type": "strong_watch",
+      "symbol": "BONY",
+      "title_ar": "BONY مراقبة قوية",
+      "message_ar": "مراقبة شراء مشروطة — ثقة 79، سيولة 50.",
+      "price": 4.88,
+      "entryFrom": 4.81,
+      "entryTo": 4.76,
+      "target1": 5.1,
+      "stopLoss": 4.61
     },
     {
       "level": "info",
-      "symbol": "ARCC",
-      "title": "قريب من هدف 1",
-      "text": "ARCC: قريب من الهدف الأول 56.16"
+      "type": "strong_watch",
+      "symbol": "HRHO",
+      "title_ar": "HRHO مراقبة قوية",
+      "message_ar": "مراقبة شراء مشروطة — ثقة 78، سيولة 56.",
+      "price": 26.96,
+      "entryFrom": 26.59,
+      "entryTo": 26.47,
+      "target1": 28.17,
+      "stopLoss": 25.8
     },
     {
       "level": "info",
-      "symbol": "MCQE",
-      "title": "قريب من هدف 1",
-      "text": "MCQE: قريب من الهدف الأول 173.74"
+      "type": "strong_watch",
+      "symbol": "PRDC",
+      "title_ar": "PRDC مراقبة قوية",
+      "message_ar": "مراقبة شراء مشروطة — ثقة 78، سيولة 61.",
+      "price": 7.7,
+      "entryFrom": 7.58,
+      "entryTo": 7.41,
+      "target1": 8.05,
+      "stopLoss": 7.09
     },
     {
       "level": "info",
-      "symbol": "PHAR",
-      "title": "قريب من هدف 1",
-      "text": "PHAR: قريب من الهدف الأول 89.53"
+      "type": "strong_watch",
+      "symbol": "MPCI",
+      "title_ar": "MPCI مراقبة قوية",
+      "message_ar": "مراقبة شراء مشروطة — ثقة 77، سيولة 57.",
+      "price": 246,
+      "entryFrom": 242.31,
+      "entryTo": 238.08,
+      "target1": 257.07,
+      "stopLoss": 229.48
     },
     {
       "level": "info",
-      "symbol": "MHOT",
-      "title": "قريب من هدف 1",
-      "text": "MHOT: قريب من الهدف الأول 34.3"
+      "type": "strong_watch",
+      "symbol": "PRCL",
+      "title_ar": "PRCL مراقبة قوية",
+      "message_ar": "مراقبة شراء مشروطة — ثقة 76، سيولة 56.",
+      "price": 33,
+      "entryFrom": 32.51,
+      "entryTo": 30.66,
+      "target1": 34.48,
+      "stopLoss": 29.79
     },
     {
       "level": "info",
-      "symbol": "TALM",
-      "title": "قريب من هدف 1",
-      "text": "TALM: قريب من الهدف الأول 15.89"
-    },
-    {
-      "level": "info",
-      "symbol": "OLFI",
-      "title": "قريب من هدف 1",
-      "text": "OLFI: قريب من الهدف الأول 22.58"
-    },
-    {
-      "level": "info",
-      "symbol": "EFIC",
-      "title": "قريب من هدف 1",
-      "text": "EFIC: قريب من الهدف الأول 187.79"
-    },
-    {
-      "level": "info",
-      "symbol": "MBSC",
-      "title": "قريب من هدف 1",
-      "text": "MBSC: قريب من الهدف الأول 242.75"
-    },
-    {
-      "level": "info",
-      "symbol": "ATQA",
-      "title": "قريب من هدف 1",
-      "text": "ATQA: قريب من الهدف الأول 9.56"
-    },
-    {
-      "level": "info",
-      "symbol": "EAST",
-      "title": "قريب من هدف 1",
-      "text": "EAST: قريب من الهدف الأول 37.79"
-    },
-    {
-      "level": "info",
-      "symbol": "JUFO",
-      "title": "قريب من هدف 1",
-      "text": "JUFO: قريب من الهدف الأول 30.18"
-    },
-    {
-      "level": "info",
-      "symbol": "ISPH",
-      "title": "قريب من هدف 1",
-      "text": "ISPH: قريب من الهدف الأول 11.76"
-    },
-    {
-      "level": "info",
-      "symbol": "CANA",
-      "title": "قريب من هدف 1",
-      "text": "CANA: قريب من الهدف الأول 35.93"
-    },
-    {
-      "level": "info",
-      "symbol": "FERC",
-      "title": "قريب من هدف 1",
-      "text": "FERC: قريب من الهدف الأول 74"
-    },
-    {
-      "level": "info",
-      "symbol": "SKPC",
-      "title": "قريب من هدف 1",
-      "text": "SKPC: قريب من الهدف الأول 15.98"
-    },
-    {
-      "level": "info",
-      "symbol": "SAUD",
-      "title": "قريب من هدف 1",
-      "text": "SAUD: قريب من الهدف الأول 21.34"
+      "type": "strong_watch",
+      "symbol": "MFPC",
+      "title_ar": "MFPC مراقبة قوية",
+      "message_ar": "مراقبة شراء مشروطة — ثقة 75، سيولة 37.",
+      "price": 35.72,
+      "entryFrom": 35.18,
+      "entryTo": 34.87,
+      "target1": 37.33,
+      "stopLoss": 34.08
     },
     {
       "level": "danger",
+      "type": "risk_reduce",
       "symbol": "ALCN",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + سيولة ضعيفة + قريب من دعم"
+      "title_ar": "ALCN مخاطرة مرتفعة",
+      "message_ar": "تحت Pivot + سيولة ضعيفة + قريب من دعم",
+      "price": 28.34
     },
     {
       "level": "danger",
+      "type": "risk_reduce",
       "symbol": "ADIB",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم + مساحة قبل المقاومة"
+      "title_ar": "ADIB مخاطرة مرتفعة",
+      "message_ar": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم + مساحة قبل المقاومة",
+      "price": 46.64
     },
     {
       "level": "danger",
+      "type": "risk_reduce",
       "symbol": "IRON",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة"
+      "title_ar": "IRON مخاطرة مرتفعة",
+      "message_ar": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة",
+      "price": 32.21
     },
     {
       "level": "danger",
+      "type": "risk_reduce",
       "symbol": "VALU",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة"
+      "title_ar": "VALU مخاطرة مرتفعة",
+      "message_ar": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة",
+      "price": 12.05
     },
     {
       "level": "danger",
+      "type": "risk_reduce",
       "symbol": "CLHO",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم"
+      "title_ar": "CLHO مخاطرة مرتفعة",
+      "message_ar": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم",
+      "price": 16.5
     },
     {
       "level": "danger",
+      "type": "risk_reduce",
       "symbol": "TAQA",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + كسر دعم"
-    },
-    {
-      "level": "info",
-      "symbol": "ORWE",
-      "title": "قريب من هدف 1",
-      "text": "ORWE: قريب من الهدف الأول 22.53"
+      "title_ar": "TAQA مخاطرة مرتفعة",
+      "message_ar": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + كسر دعم",
+      "price": 14.46
     },
     {
       "level": "danger",
+      "type": "risk_reduce",
       "symbol": "ORWE",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "title_ar": "ORWE مخاطرة مرتفعة",
+      "message_ar": "تحت Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "price": 22.39
     },
     {
       "level": "danger",
+      "type": "risk_reduce",
       "symbol": "CICH",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة"
+      "title_ar": "CICH مخاطرة مرتفعة",
+      "message_ar": "تحت Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "price": 11.87
     },
     {
       "level": "danger",
+      "type": "risk_reduce",
       "symbol": "EGBE",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
+      "title_ar": "EGBE مخاطرة مرتفعة",
+      "message_ar": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "price": 0.45
     },
     {
       "level": "danger",
+      "type": "risk_reduce",
       "symbol": "MOIL",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب جدًا من المقاومة"
-    },
-    {
-      "level": "danger",
-      "symbol": "BINV",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + سيولة ضعيفة + قريب من دعم"
-    },
-    {
-      "level": "danger",
-      "symbol": "CSAG",
-      "title": "حذر / تخفيف",
-      "text": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم"
+      "title_ar": "MOIL مخاطرة مرتفعة",
+      "message_ar": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب جدًا من المقاومة",
+      "price": 0.48
     }
   ]
 }

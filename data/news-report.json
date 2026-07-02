@@ -1,15 +1,29 @@
 {
   "ok": true,
-  "generatedAt": "2026-07-02T02:16:27.333Z",
-  "source": "egx_pro_hub_v5_2_news_intelligence",
-  "summary_ar": "تم التقاط 1 خبر/عنوان من مصادر عامة مفعلة. يلزم مراجعة التأثير يدويًا قبل اتخاذ أي قرار.",
-  "items": [
+  "generatedAt": "2026-07-02T02:48:42.734Z",
+  "mode": "configured_sources_placeholder",
+  "disclaimer_ar": "مصادر الأخبار مهيأة. الربط الكامل للأخبار يمكن تفعيله لاحقًا بدون التأثير على V4.2.",
+  "sourcesCount": 3,
+  "sources": [
     {
-      "title": "تعذر قراءة Mubasher EGX News",
-      "source": "Mubasher EGX News",
-      "category": "source_error",
-      "impactScore": 0,
-      "error": "HTTP 404"
+      "name": "Mubasher Egypt Latest News",
+      "url": "https://english.mubasher.info/news/eg",
+      "type": "web"
+    },
+    {
+      "name": "Mubasher EGX Market Announcements",
+      "url": "https://english.mubasher.info/markets/EGX/news",
+      "type": "web"
+    },
+    {
+      "name": "Egyptian Exchange Disclosures",
+      "url": "https://www.egx.com.eg/en/Disclosure.aspx",
+      "type": "web"
     }
+  ],
+  "items": [],
+  "notes_ar": [
+    "V5.2 الحالي يبني تقارير الذكاء من بيانات السوق الموجودة.",
+    "جلب الأخبار المباشر يفضل إضافته كخطوة مستقلة بعد تثبيت Universe Repair حتى لا يؤثر على Workflow."
   ]
 }
