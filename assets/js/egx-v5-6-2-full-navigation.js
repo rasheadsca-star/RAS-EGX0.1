@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const ROOT = 'egx-v562-root';
+  const ROOT = 'egx-v56-hard-root';
   const VERSION = 'V5.6.2';
   const paths = {
     health: 'data/source-health.json',
@@ -152,7 +152,8 @@
   }
 
   function css() {
-    if (document.getElementById('egx-v562-style')) return;
+    document.getElementById('egx-v562-style')?.remove();
+    // Keep compatibility with V5.6.1 hard mode: use the same root id so old hiding CSS cannot blank the page.
     const s = document.createElement('style'); s.id = 'egx-v562-style';
     s.textContent = `
       html,body{margin:0!important;padding:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#eef4f8!important;direction:rtl!important}
@@ -275,7 +276,7 @@
   async function start() {
     if (started) return; started = true;
     css();
-    const old = document.getElementById('egx-v56-hard-root'); if (old) old.remove();
+    document.querySelectorAll('#egx-v562-root,#egx-v56-hard-root').forEach(el => el.remove());
     const root = document.getElementById(ROOT) || Object.assign(document.body.appendChild(document.createElement('div')), { id: ROOT });
     root.innerHTML = '<div style="margin:auto;text-align:center;font-family:Tahoma,Arial"><b>جاري تحميل EGX Pro Hub...</b><br><span style="color:#64748b">V5.6.2</span></div>';
     await load();
