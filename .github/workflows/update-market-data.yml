@@ -24,7 +24,7 @@ jobs:
       - name: Checkout with history
         uses: actions/checkout@v4
         with:
-          fetch-depth: 120
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -34,7 +34,7 @@ jobs:
       - name: Fetch public market snapshot
         run: node scripts/fetch-market-data.js
 
-      - name: Recover past sessions from git snapshots
+      - name: Recover past sessions from Git snapshots using commit dates
         run: node scripts/rebuild-history-from-git.js || echo "Git past recovery skipped"
 
       - name: Optional uploaded historical backfill
@@ -54,5 +54,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add data/*.json
-          git diff --cached --quiet && echo "No data changes" || git commit -m "Recover and update EGX rolling 50-session history"
+          git diff --cached --quiet && echo "No data changes" || git commit -m "Recover Git-date history and update EGX rolling 50-session history"
           git push || echo "Push skipped or failed"
