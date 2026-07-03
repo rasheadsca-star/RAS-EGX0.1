@@ -49,6 +49,9 @@ jobs:
       - name: Snapshot evidence confidence layer
         run: node scripts/build-snapshot-evidence.js || echo "Snapshot evidence skipped"
 
+      - name: Fetch trusted external news
+        run: node scripts/fetch-trusted-news.js || echo "Trusted external news collector skipped"
+
       - name: News intelligence layer
         run: node scripts/build-news-intelligence.js || echo "News intelligence skipped"
 
