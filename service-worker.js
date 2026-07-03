@@ -1,5 +1,5 @@
-/* EGX Pro Hub V8.1.1.1 Safe PWA Service Worker */
-const CACHE_NAME = "egx-pro-hub-shell-v8-1-1";
+/* EGX Pro Hub V8.1.2.2.1 Safe PWA Service Worker */
+const CACHE_NAME = "egx-pro-hub-shell-v8-1-2";
 const SHELL_FILES = [
   "./",
   "./index.html",
