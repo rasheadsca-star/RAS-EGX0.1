@@ -1,5 +1,5 @@
 /*
-EGX Pro Hub V8.1 — Build Regression QA Report
+EGX Pro Hub V8.1.2 — Build Regression QA Report
 Checks generated files and JSON health during GitHub Actions.
 Does not reset or overwrite market cache/history/scan-state.
 */
@@ -45,7 +45,7 @@ function main(){
   const failed=tests.filter(x=>!x.ok);
   const report={
     ok:failed.length===0,
-    engine:"v8_1_regression_qa",
+    engine:"v8_1_2_regression_qa",
     generatedAt:new Date().toISOString(),
     total:tests.length,
     passed:tests.length-failed.length,
