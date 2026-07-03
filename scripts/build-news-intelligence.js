@@ -109,7 +109,7 @@ function main(){
         categoryCode:c.code,
         sentiment:c.sentiment,
         impactScore:c.impact,
-        source:"recommendation-reason", evidenceType:"internal_signal", sourceName:"سبب التوصية الحالي", url:"data/recommendations.json"
+        source:"recommendation-reason", evidenceType:"internal_signal", sourceName:"إشارة تحليلية داخلية من سبب التوصية", url:null, evidenceType:"internal_signal", sourceName:"إشارة تحليلية داخلية من سبب التوصية", url:null
       });
     }
   }
@@ -141,7 +141,7 @@ function main(){
     classifiedItems:items.length,
     linkedSymbols:Object.keys(bySymbolOut).filter(s=>s!=="UNLINKED").length,
     linkedSectors:Object.keys(bySectorOut).length,
-    note:sourceMode==="recommendation-reasons"?"No standalone news-report rows found. Internal recommendation reasons were used as weak analytical signals and linked to data/recommendations.json.":"Used news-report rows; items with url show external source links."
+    note:sourceMode==="recommendation-reasons"?"No standalone news-report rows found. Internal recommendation reasons were used as analytical signals only; no external news source link is created.":"Used news-report rows; items with url show external source links."
   };
 
   writeJson("data/news-intelligence.json",{
