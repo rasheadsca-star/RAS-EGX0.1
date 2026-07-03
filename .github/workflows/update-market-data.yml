@@ -71,3 +71,6 @@ jobs:
           git add data/*.json
           git diff --cached --quiet && echo "No data changes" || git commit -m "Recover Git-date history and update EGX rolling 50-session history"
           git push || echo "Push skipped or failed"
+
+      - name: Institutional score report
+        run: node scripts/build-institutional-score.js || echo "Institutional score skipped"
