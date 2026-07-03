@@ -58,6 +58,9 @@ jobs:
       - name: Apply trusted news impact
         run: node scripts/apply-news-impact-to-recommendations.js || echo "Trusted news impact skipped"
 
+      - name: Build recommendation accuracy tracker
+        run: node scripts/build-recommendation-accuracy.js || echo "Recommendation accuracy tracker skipped"
+
       - name: Optional intelligence reports
         run: node scripts/build-v52-intelligence.js || echo "V5.2 intelligence builder skipped"
 
