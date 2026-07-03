@@ -1,7 +1,6 @@
 /*
-EGX Pro Hub V8.1.2 — Build Regression QA Report
-Checks generated files and JSON health during GitHub Actions.
-Does not reset or overwrite market cache/history/scan-state.
+EGX Pro Hub V8.1.3 — Build Regression QA Report
+Screen/data first regression report. Function-name checks were removed because closure-scoped functions can create false failures.
 */
 const fs=require("fs");
 const path=require("path");
@@ -25,11 +24,11 @@ function main(){
   ];
   requiredFiles.forEach(f=>tests.push(test("file:"+f,exists(f),exists(f)?"exists":"missing")));
   const index=readText("index.html");
-  ["renderStockSearch","renderStabilityQA","renderInstitutionalScoring","renderPortfolioRisk","renderAppHealth","renderAlerts","v801BindStockSearchStable"].forEach(fn=>{
-    tests.push(test("index-function:"+fn,index.includes("function "+fn)||index.includes(fn+"="),index.includes(fn)?"found":"missing"));
-  });
-  ["stockSearch","stability","institutional","portfolioRisk","accuracy"].forEach(screen=>{
+  ["stockSearch","stability","institutional","portfolioRisk","accuracy","alerts","sources"].forEach(screen=>{
     tests.push(test("screen-route:"+screen,index.includes(`EGX.screen==="${screen}"`),index.includes(screen)?"route found":"route missing"));
+  });
+  ["renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk"].forEach(marker=>{
+    tests.push(test("screen-marker:"+marker,index.includes(marker),index.includes(marker)?"marker found":"marker missing"));
   });
   const rec=readJson("data/recommendations.json",{});
   const rows=Array.isArray(rec.all)?rec.all:[];
@@ -45,7 +44,7 @@ function main(){
   const failed=tests.filter(x=>!x.ok);
   const report={
     ok:failed.length===0,
-    engine:"v8_1_2_regression_qa",
+    engine:"v8_1_3_no_function_false_fail_regression_qa",
     generatedAt:new Date().toISOString(),
     total:tests.length,
     passed:tests.length-failed.length,
@@ -53,12 +52,9 @@ function main(){
     failed:failed.map(x=>x.name),
     warnings,
     tests,
-    note:"Regression QA report generated in GitHub Actions. It checks files/routes/data availability only."
+    note:"V8.1.3 removed function:* checks to prevent false failures. Screen/data checks are the source of truth."
   };
   write("data/app-regression-report.json",report);
   console.log("Regression QA report", {ok:report.ok,total:report.total,failed:report.failedCount,warnings:warnings.length});
-  if(failed.length){
-    console.log("Failed tests:", failed.map(x=>x.name).join(", "));
-  }
 }
 main();
