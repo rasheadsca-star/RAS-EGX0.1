@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EGX Pro Hub — Professional Terminal V7.13.1.1.1</title>
+  <title>EGX Pro Hub — Professional Terminal V7.13.1.1.1.1.1</title>
   <style>
     :root{
       --bg:#050914;--bg2:#071326;--card:#08182d;--card2:#0a1d36;
@@ -251,6 +251,35 @@
     .levels-legend span{font-size:10px;border:1px solid rgba(119,169,235,.18);border-radius:999px;padding:4px 7px;background:rgba(7,19,38,.65);color:#cfe3ff}
     .no-x{overflow-x:hidden}
     @media(max-width:900px){.pager-v712{flex-wrap:wrap}.compact-table{min-width:960px}.no-x{overflow-x:auto}}
+
+
+    /* V7.13.1 Always Visible Install Button */
+    .pwa-floating-install{
+      position:fixed;left:18px;bottom:18px;z-index:9999;
+      display:flex;align-items:center;gap:8px;
+      border:1px solid rgba(34,197,94,.38);
+      background:linear-gradient(135deg,#16a34a,#0ea5e9);
+      color:white;border-radius:999px;padding:11px 15px;
+      font-weight:950;font-size:13px;box-shadow:0 18px 46px rgba(0,0,0,.45);
+      cursor:pointer
+    }
+    .pwa-floating-install small{opacity:.9;font-weight:800}
+    .pwa-install-panel{
+      position:fixed;left:18px;bottom:72px;z-index:9999;width:min(360px,calc(100vw - 36px));
+      background:linear-gradient(180deg,rgba(8,24,45,.98),rgba(5,13,27,.98));
+      border:1px solid rgba(119,169,235,.28);border-radius:18px;padding:14px;
+      box-shadow:0 22px 58px rgba(0,0,0,.50);display:none
+    }
+    .pwa-install-panel.show{display:block}
+    .pwa-install-panel h4{margin:0 0 8px;color:#eaf6ff;font-size:15px}
+    .pwa-install-panel p,.pwa-install-panel li{color:#b7c7df;font-size:12px;line-height:1.8;margin:0 0 6px}
+    .pwa-install-panel ol{margin:7px 0 10px;padding-right:19px}
+    .pwa-install-panel .row{display:flex;gap:8px;margin-top:10px}
+    .pwa-install-panel .row button{flex:1}
+    @media(max-width:700px){
+      .pwa-floating-install{left:12px;bottom:12px;padding:10px 12px;font-size:12px}
+      .pwa-install-panel{left:12px;bottom:62px;width:calc(100vw - 24px)}
+    }
 
 </style>
 
@@ -689,7 +718,7 @@ function renderSettings(){
   return `${header("الإعدادات","إعدادات تجربة الاستخدام والبيانات المحلية")}${quickJump()}<section class="settings-grid"><div class="panel"><h3>إعدادات عامة</h3><div class="toggle-row"><span>تذكر آخر شاشة</span><span class="switch on"></span></div><div class="toggle-row"><span>إبراز الصف المحدد</span><span class="switch on"></span></div><div class="toggle-row"><span>استخدام بيانات الكاش</span><span class="switch on"></span></div></div><div class="panel"><h3>البيانات المحلية</h3><button class="btn warn" id="clearLocal">مسح المحفظة وقوائم المراقبة المحلية</button><p class="muted">لن يتم حذف ملفات GitHub أو بيانات السوق.</p></div></section>`
 }
 
-function side(){const nav=[["dashboard","لوحة السوق","⌂"],["opportunities","الفرص التفصيلية","◎"],["liquidity","مراقب السيولة","◒"],["volume","مراقب حجم التداول","▥"],["support","الدعم والمقاومة","◇"],["sectors","ذكاء القطاعات","▦"],["newsIntel","الأخبار الذكية","✺"],["portfolio","المحفظة والتقارير الذكية","◈"],["intelligence","ذكاء المحفظة والرقابة","✹"],["sources","صحة المصادر","✦"],["alerts","التنبيهات","♢"],["watchlist","قوائم المراقبة","★"],["reports","مركز التقارير","▤"],["settings","الإعدادات","⚙"]];return`<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><p>Professional Terminal V7.13</p></div></div><div class="nav-title">لوحة التحكم</div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[1]}</span><span class="ico">${n[2]}</span></button>`).join("")}</nav><div class="footer"><div class="live">متصل</div><div class="muted" style="margin-top:8px">بيانات عامة ومتأخرة — مساعد قرار فقط.</div><button class="btn warn" id="classicBtn" style="margin-top:10px;width:100%">الوضع الكلاسيكي</button></div></aside>`}
+function side(){const nav=[["dashboard","لوحة السوق","⌂"],["opportunities","الفرص التفصيلية","◎"],["liquidity","مراقب السيولة","◒"],["volume","مراقب حجم التداول","▥"],["support","الدعم والمقاومة","◇"],["sectors","ذكاء القطاعات","▦"],["newsIntel","الأخبار الذكية","✺"],["portfolio","المحفظة والتقارير الذكية","◈"],["intelligence","ذكاء المحفظة والرقابة","✹"],["sources","صحة المصادر","✦"],["alerts","التنبيهات","♢"],["watchlist","قوائم المراقبة","★"],["reports","مركز التقارير","▤"],["settings","الإعدادات","⚙"]];return`<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><p>Professional Terminal V7.13.1</p></div></div><div class="nav-title">لوحة التحكم</div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[1]}</span><span class="ico">${n[2]}</span></button>`).join("")}</nav><div class="footer"><div class="live">متصل</div><div class="muted" style="margin-top:8px">بيانات عامة ومتأخرة — مساعد قرار فقط.</div><button class="btn warn" id="classicBtn" style="margin-top:10px;width:100%">الوضع الكلاسيكي</button></div></aside>`}
 function header(title,sub){const last=EGX.source.generatedAt||EGX.source.lastSuccessAt||EGX.market.updatedAt||new Date().toISOString();return`<div class="head"><div><h2>${title}</h2><p>${sub}</p></div><div class="actions"><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn primary" id="installPwaBtn" style="display:none">تثبيت التطبيق</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق التغطية: السوق المصري</span><span class="chip warn"><i class="dot"></i> وضع المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${esc(new Date(last).toLocaleString("en-GB"))}</span><span class="chip info"><i class="dot"></i> الكاش: ${fmt0(EGX.source.cacheRows||EGX.rows.length)} / ${fmt0(EGX.source.totalUniverse||EGX.rows.length)}</span><span class="chip"><i class="dot"></i> جودة البيانات: ${fmt0(EGX.source.avgDataQuality||100)}%</span><span class="chip info"><i class="dot"></i> تاريخ 50 جلسة: ${fmt0((EGX.historyHealth&&EGX.historyHealth.symbolsWithComplete50)||0)} سهم</span><span class="chip"><i class="dot"></i> V7.7 Smart Alerts</span></div>`}
 function kpis(){const p=pulse();const hs=historyGlobalStats();return`<section class="kpis">${kpi("عدد الفرص",fmt0(p.rows),"Universe "+fmt0(EGX.source.totalUniverse||p.rows))}${kpi("سجل 50 جلسة",fmt0(hs.with50),`متوسط ${fmt0(hs.avg)} جلسة`)}${kpi("سجل فعلي جزئي",fmt0(hs.withAny),`من ${fmt0(hs.total)} سهم`)}${kpi("فرص تخفيف مخاطر",fmt0(p.risk),"راجع الوقف",true)}${kpi("متوسط الثقة",fmt0(p.avg)+"%","يعرض التاريخ إن وجد")}${kpi("اتساع السوق",p.breadth.toFixed(2),p.status)}</section>`}
 function topFive(){const top=sorted().slice(0,5);return`<div class="panel"><h3>أفضل 5 فرص اليوم <span>🏆</span></h3><div class="list">${top.map((r,i)=>`<div class="listrow"><span class="rank">${i+1}</span><b>${esc(r.symbol)}</b><span>${fmt0(r.finalConfidence)}%</span><div></div><div class="bar"><span style="width:${Math.min(100,r.finalConfidence)}%"></span></div></div>`).join("")}</div></div>`}
@@ -1264,6 +1293,72 @@ async function egxRegisterServiceWorker(){
 }
 egxRegisterServiceWorker(); setTimeout(()=>egxShowPwaHint(false),2500);
 
+
+/* ===================== V7.13.1 Always Visible PWA Install Button ===================== */
+window.EGX_PWA_DEFERRED = window.EGX_PWA_DEFERRED || null;
+window.addEventListener("beforeinstallprompt", function(e){
+  e.preventDefault();
+  window.EGX_PWA_DEFERRED = e;
+});
+window.addEventListener("appinstalled", function(){
+  localStorage.setItem("egx_pwa_installed","1");
+});
+function egxIsIos(){
+  return /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1);
+}
+function egxIsStandalone(){
+  return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+}
+function egxInstallInstructions(){
+  if(egxIsIos()){
+    return `<ol><li>افتح الرابط من Safari.</li><li>اضغط زر المشاركة Share.</li><li>اختر Add to Home Screen.</li><li>اضغط Add.</li></ol>`;
+  }
+  return `<ol><li>في Chrome / Edge اضغط زر Install في شريط العنوان إن ظهر.</li><li>أو من قائمة ⋮ اختر Install app / Add to Home screen.</li><li>بعد التثبيت ستجد الأيقونة على Desktop أو Start Menu أو Home Screen.</li></ol>`;
+}
+async function egxTryInstallPwa(){
+  if(window.EGX_PWA_DEFERRED){
+    const promptEvent = window.EGX_PWA_DEFERRED;
+    window.EGX_PWA_DEFERRED = null;
+    promptEvent.prompt();
+    try{ await promptEvent.userChoice; }catch(_){}
+    return;
+  }
+  egxShowInstallPanel();
+}
+function egxShowInstallPanel(){
+  let panel=document.getElementById("egxPwaInstallPanel");
+  if(!panel){
+    panel=document.createElement("div");
+    panel.id="egxPwaInstallPanel";
+    panel.className="pwa-install-panel";
+    document.body.appendChild(panel);
+  }
+  const standalone = egxIsStandalone();
+  panel.innerHTML = standalone
+    ? `<h4>التطبيق مثبت بالفعل</h4><p>أنت الآن تستخدم EGX Pro Hub كنافذة تطبيق مستقلة.</p><div class="row"><button class="btn" id="pwaPanelClose">إغلاق</button></div>`
+    : `<h4>تثبيت EGX Pro Hub كأيقونة</h4><p>لو لم يظهر زر التثبيت التلقائي، استخدم خطوات المتصفح التالية:</p>${egxInstallInstructions()}<div class="row"><button class="btn primary" id="pwaTryAgain">محاولة التثبيت</button><button class="btn" id="pwaPanelClose">إغلاق</button></div>`;
+  panel.classList.add("show");
+  const close=document.getElementById("pwaPanelClose");
+  if(close)close.onclick=()=>panel.classList.remove("show");
+  const again=document.getElementById("pwaTryAgain");
+  if(again)again.onclick=async()=>{ if(window.EGX_PWA_DEFERRED){panel.classList.remove("show"); await egxTryInstallPwa();} else { alert("لو التثبيت التلقائي غير ظاهر، استخدم قائمة المتصفح: Install app / Add to Home screen."); } };
+}
+function egxAddFloatingInstallButton(){
+  if(document.getElementById("egxPwaFloatingInstall")) return;
+  const b=document.createElement("button");
+  b.id="egxPwaFloatingInstall";
+  b.className="pwa-floating-install";
+  b.innerHTML = egxIsStandalone() ? `✅ <span>التطبيق مثبت</span>` : `📲 <span>تثبيت التطبيق</span> <small>PWA</small>`;
+  b.onclick=()=>egxTryInstallPwa();
+  document.body.appendChild(b);
+}
+async function egxRegisterServiceWorker(){
+  if(!("serviceWorker" in navigator)) return;
+  try{ await navigator.serviceWorker.register("./service-worker.js", {scope:"./"}); }
+  catch(e){ console.warn("Service worker registration failed", e); }
+}
+setTimeout(()=>{egxAddFloatingInstallButton();egxRegisterServiceWorker();}, 800);
+
 function content(){if(EGX.screen==="classic")return classic();if(EGX.screen==="dashboard")return dashboard();if(EGX.screen==="portfolio")return portfolio();if(EGX.screen==="intelligence")return renderIntelligence();if(EGX.screen==="opportunities")return opportunities();if(EGX.screen==="liquidity")return renderLiquidity();if(EGX.screen==="volume")return renderVolume();if(EGX.screen==="support")return renderSupport();if(EGX.screen==="sectors")return renderSectorIntelligence();if(EGX.screen==="newsIntel")return renderNewsIntelligence();if(EGX.screen==="watchlist")return renderWatchlist();if(EGX.screen==="alerts")return renderAlerts();if(EGX.screen==="reports")return renderReports();if(EGX.screen==="settings")return renderSettings();const names={sources:"صحة المصادر"};return placeholder(names[EGX.screen]||"EGX Pro Hub")}
 function render(){document.getElementById("app").innerHTML=EGX.screen==="classic"?content():`<div class="shell">${side()}<main class="main">${content()}</main></div>`;bind()}
 function bind(){document.querySelectorAll("[data-screen]").forEach(b=>b.onclick=()=>{EGX.screen=b.dataset.screen;localStorage.setItem("egx_v61_screen",EGX.screen);render()});document.querySelectorAll("[data-symbol]").forEach(tr=>tr.onclick=()=>{EGX.selected=tr.dataset.symbol;render()});document.querySelectorAll("[data-pro-detail]").forEach(b=>b.onclick=e=>{e.stopPropagation();openProDrawer(b.dataset.proDetail)});document.querySelectorAll("[data-page]").forEach(b=>b.onclick=e=>{e.stopPropagation();const p=Number(b.dataset.page);if(!b.disabled&&p){EGX.page=p;render()}});
@@ -1272,7 +1367,7 @@ const aw=document.getElementById("addWatch");const wi=document.getElementById("w
 egxBindPwaInstallButton();const nb=document.getElementById("notifyBtn");if(nb)nb.onclick=async()=>{try{if(!("Notification" in window)){alert("المتصفح لا يدعم الإشعارات");return}const p=await Notification.requestPermission();if(p==="granted"){new Notification("EGX Pro Hub",{body:"تم تفعيل إشعارات المتصفح أثناء فتح الصفحة."})}}catch(e){}};
 const cr=document.getElementById("copyReport");if(cr)cr.onclick=async()=>{const t=document.getElementById("reportText")?.innerText||"";try{await navigator.clipboard.writeText(t);cr.textContent="تم النسخ"}catch(e){alert(t)}};
 const cl=document.getElementById("clearLocal");if(cl)cl.onclick=()=>{if(confirm("مسح المحفظة وقوائم المراقبة المحلية؟")){localStorage.removeItem("egx_v61_portfolio");localStorage.removeItem("egx_v64_watchlist");EGX.watchlist=[];EGX.portfolioText="";render()}};const s=document.getElementById("search");if(s){s.oninput=e=>{EGX.query=e.target.value;EGX.page=1;render()};setTimeout(()=>{try{s.focus({preventScroll:true});s.setSelectionRange(s.value.length,s.value.length)}catch(e){}},0)}const f=document.getElementById("filter");if(f){f.value=EGX.filter;f.onchange=e=>{EGX.filter=e.target.value;EGX.page=1;render()}}const c=document.getElementById("conf");if(c){c.value=EGX.confidence;c.onchange=e=>{EGX.confidence=e.target.value;EGX.page=1;render()}}const sec=document.getElementById("sector");if(sec){sec.value=EGX.sector;sec.onchange=e=>{EGX.sector=e.target.value;EGX.page=1;render()}}const r=document.getElementById("reset");if(r)r.onclick=()=>{EGX.query="";EGX.filter="all";EGX.confidence="all";EGX.sector="all";EGX.page=1;render()};const ref=document.getElementById("refresh");if(ref)ref.onclick=()=>location.reload();const exp=document.getElementById("export");if(exp)exp.onclick=exportCsv;const cb=document.getElementById("classicBtn");if(cb)cb.onclick=()=>{EGX.screen="classic";render()};const ct=document.getElementById("classicTop");if(ct)ct.onclick=()=>{EGX.screen="classic";render()};const pm=document.getElementById("proMode");if(pm)pm.onclick=()=>{EGX.screen="opportunities";localStorage.setItem("egx_v61_screen","opportunities");history.replaceState(null,"",location.pathname);render()};const pt=document.getElementById("portText");const sp=document.getElementById("savePort");if(sp&&pt)sp.onclick=()=>{EGX.portfolioText=pt.value;localStorage.setItem("egx_v61_portfolio",EGX.portfolioText);render()};const xf=document.getElementById("excelFile");if(xf)xf.onchange=e=>handleExcelImport(e.target.files&&e.target.files[0]);const im=document.getElementById("imageFile");if(im)im.onchange=e=>handleImageImport(e.target.files&&e.target.files[0]);const ap=document.getElementById("applyOcr");const ot=document.getElementById("ocrText");if(ap&&ot)ap.onclick=()=>{const rows=parsePortfolioText(ot.value);if(!rows.length){setImportStatus("ocrStatus","النص غير صالح. اكتب مثل: COMI,5000,77.50","bad");return}EGX.portfolioText=mergePortfolioText(rowsToPortfolioText(rows));localStorage.setItem("egx_v61_portfolio",EGX.portfolioText);setImportStatus("ocrStatus",`تم اعتماد ${rows.length} مركز وإضافتها للمحفظة.`,"good");render()}}
-async function init(){const[recs,cache,market,source,alerts,history,historyIndicators,historyHealth,pro,news,newsIntel,newsCollector]=await Promise.all([loadJson("data/recommendations.json",{}),loadJson("data/full-market-cache.json",{}),loadJson("data/market.json",{}),loadJson("data/source-health.json",{}),loadJson("data/alerts.json",{}),loadJson("data/history.json",{}),loadJson("data/history-indicators.json",{}),loadJson("data/history-health.json",{}),loadJson("data/pro-report.json",{}),loadJson("data/news-report.json",{}),loadJson("data/news-intelligence.json",{}),loadJson("data/trusted-news-collector-status.json",{})]);EGX.source=source||{};EGX.market=market||{};EGX.alerts=alerts||{};EGX.history=history||{};EGX.historyIndicators=historyIndicators||{};EGX.historyHealth=historyHealth||{};EGX.pro=pro||{};EGX.news=news||{};EGX.newsIntel=newsIntel||{};EGX.newsCollector=newsCollector||{};let raw=[];if(recs&&Array.isArray(recs.all)&&recs.all.length)raw=recs.all;else if(cache&&Array.isArray(cache.rows)&&cache.rows.length)raw=cache.rows;else if(market&&Array.isArray(market.rows)&&market.rows.length)raw=market.rows;else raw=SAMPLE;EGX.rows=raw.map(normalizeRow).filter(Boolean);if(!EGX.rows.length)EGX.rows=SAMPLE.map(normalizeRow);EGX.selected=(sorted()[0]||{}).symbol;render();console.log("EGX Pro Hub V7.13 PWA Launcher loaded:",EGX.rows.length)}
+async function init(){const[recs,cache,market,source,alerts,history,historyIndicators,historyHealth,pro,news,newsIntel,newsCollector]=await Promise.all([loadJson("data/recommendations.json",{}),loadJson("data/full-market-cache.json",{}),loadJson("data/market.json",{}),loadJson("data/source-health.json",{}),loadJson("data/alerts.json",{}),loadJson("data/history.json",{}),loadJson("data/history-indicators.json",{}),loadJson("data/history-health.json",{}),loadJson("data/pro-report.json",{}),loadJson("data/news-report.json",{}),loadJson("data/news-intelligence.json",{}),loadJson("data/trusted-news-collector-status.json",{})]);EGX.source=source||{};EGX.market=market||{};EGX.alerts=alerts||{};EGX.history=history||{};EGX.historyIndicators=historyIndicators||{};EGX.historyHealth=historyHealth||{};EGX.pro=pro||{};EGX.news=news||{};EGX.newsIntel=newsIntel||{};EGX.newsCollector=newsCollector||{};let raw=[];if(recs&&Array.isArray(recs.all)&&recs.all.length)raw=recs.all;else if(cache&&Array.isArray(cache.rows)&&cache.rows.length)raw=cache.rows;else if(market&&Array.isArray(market.rows)&&market.rows.length)raw=market.rows;else raw=SAMPLE;EGX.rows=raw.map(normalizeRow).filter(Boolean);if(!EGX.rows.length)EGX.rows=SAMPLE.map(normalizeRow);EGX.selected=(sorted()[0]||{}).symbol;render();console.log("EGX Pro Hub V7.13.1 Visible Install Button loaded:",EGX.rows.length)}
 init();
 })();
 </script>
