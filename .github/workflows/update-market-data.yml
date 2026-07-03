@@ -52,6 +52,9 @@ jobs:
       - name: News intelligence layer
         run: node scripts/build-news-intelligence.js || echo "News intelligence skipped"
 
+      - name: Apply trusted news impact
+        run: node scripts/apply-news-impact-to-recommendations.js || echo "Trusted news impact skipped"
+
       - name: Optional intelligence reports
         run: node scripts/build-v52-intelligence.js || echo "V5.2 intelligence builder skipped"
 
