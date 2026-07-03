@@ -87,7 +87,7 @@ function main(){
       categoryCode:c.code,
       sentiment:c.sentiment,
       impactScore:c.impact,
-      source:"news-report"
+      source:"news-report", evidenceType:"external_news", sourceName:item.sourceName||item.publisher||item.source||"news-report"
     });
   }
 
@@ -109,7 +109,7 @@ function main(){
         categoryCode:c.code,
         sentiment:c.sentiment,
         impactScore:c.impact,
-        source:"recommendation-reason"
+        source:"recommendation-reason", evidenceType:"internal_signal", sourceName:"سبب التوصية الحالي", url:"data/recommendations.json"
       });
     }
   }
@@ -134,22 +134,22 @@ function main(){
 
   const status={
     ok:true,
-    engine:"v7_9_news_intelligence",
+    engine:"v7_9_1_news_source_links",
     generatedAt:new Date().toISOString(),
     sourceMode,
     rawNewsRows:rawNews.length,
     classifiedItems:items.length,
     linkedSymbols:Object.keys(bySymbolOut).filter(s=>s!=="UNLINKED").length,
     linkedSectors:Object.keys(bySectorOut).length,
-    note:sourceMode==="recommendation-reasons"?"No standalone news-report rows found. Used recommendation reasons as weak evidence only.":"Used news-report rows."
+    note:sourceMode==="recommendation-reasons"?"No standalone news-report rows found. Internal recommendation reasons were used as weak analytical signals and linked to data/recommendations.json.":"Used news-report rows; items with url show external source links."
   };
 
   writeJson("data/news-intelligence.json",{
     ok:true,
-    engine:"v7_9_news_intelligence",
+    engine:"v7_9_1_news_source_links",
     generatedAt:new Date().toISOString(),
     sourceMode,
-    importantNote:"News intelligence is an evidence layer. It is not a live breaking-news feed unless news-report.json is populated by a collector.",
+    importantNote:"News intelligence is an evidence layer. External news should include url/sourceName. Recommendation reasons are internal analytical signals, not external news.",
     items,
     bySymbol:bySymbolOut,
     bySector:bySectorOut
