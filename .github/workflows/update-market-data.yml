@@ -74,3 +74,6 @@ jobs:
 
       - name: Institutional score report
         run: node scripts/build-institutional-score.js || echo "Institutional score skipped"
+
+      - name: Regression QA report
+        run: node scripts/build-regression-report.js || echo "Regression QA skipped"
