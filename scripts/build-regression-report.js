@@ -34,7 +34,8 @@ function main(){
     "data/price-reconciliation-report.json",
     "data/final-opportunity-ranking.json",
     "data/portfolio-decision-rules.json",
-    "data/alert-decision-center.json"
+    "data/alert-decision-center.json",
+    "data/data-operations-center.json"
   ];
   requiredFiles.forEach(f=>tests.push(test("file:"+f,exists(f),exists(f)?"exists":"missing")));
   const index=readText("index.html");
@@ -67,7 +68,8 @@ function main(){
     "data/price-reconciliation-report.json",
     "data/final-opportunity-ranking.json",
     "data/portfolio-decision-rules.json",
-    "data/alert-decision-center.json",{});
+    "data/alert-decision-center.json",
+    "data/data-operations-center.json",{});
   tests.push(test("data:institutional_report",inst && Object.keys(inst).length>0,"institutional report readable"));
   const failed=tests.filter(x=>!x.ok);
   const report={
