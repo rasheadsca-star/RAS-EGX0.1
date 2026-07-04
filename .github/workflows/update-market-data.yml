@@ -83,6 +83,9 @@ jobs:
       - name: History integrity report
         run: node scripts/build-history-integrity-report.js || echo "History integrity skipped"
 
+      - name: Sector completion report
+        run: node scripts/build-sector-completion-report.js || echo "Sector completion skipped"
+
       - name: App health status
         run: node scripts/build-app-health.js || echo "App health skipped"
 
