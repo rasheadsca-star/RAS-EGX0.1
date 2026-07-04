@@ -14,7 +14,7 @@ function main(){
   const rec=read("data/recommendations.json",{}), rows=Array.isArray(rec.all)?rec.all:[];
   const source=read("data/source-health.json",{}), health=read("data/app-health-status.json",{}), hist=read("data/history-integrity-report.json",{}), alerts=read("data/smart-alert-rules.json",{rules:[]}), acc=read("data/recommendation-accuracy-latest.json",{}), inst=read("data/institutional-score-report.json",{});
   const scored=rows.map(r=>({...r,_rr:rr(r),_conf:num(r.finalConfidence||r.confidence)}));
-  const opportunities=scored.filter(r=>sclass(r)!=="risk").sort((a,b)=>b._conf-a._conf || b._rr-a._rr).slice(0,10).map(r=>({symbol:r.symbol,name:r.name_ar||r.name_en||r.name||"",confidence:r._conf,price:num(r.price),entryFrom:num(r.entryFrom),entryTo:num(r.entryTo),target1:num(r.target1),target2:num(r.target2),stopLoss:num(r.stopLoss),rr:Number(r._rr.toFixed(2)),reason:r.reason||""}));
+  const opportunities=scored.filter(r=>sclass(r)!=="risk").sort((a,b)=>{const dc=b._conf-a._conf; return Math.abs(dc)>=3?dc:(dc||b._rr-a._rr)}).slice(0,10).map(r=>({symbol:r.symbol,name:r.name_ar||r.name_en||r.name||"",confidence:r._conf,price:num(r.price),entryFrom:num(r.entryFrom),entryTo:num(r.entryTo),target1:num(r.target1),target2:num(r.target2),stopLoss:num(r.stopLoss),rr:Number(r._rr.toFixed(2)),reason:r.reason||""}));
   const risks=scored.filter(r=>sclass(r)==="risk").sort((a,b)=>b._conf-a._conf).slice(0,10).map(r=>({symbol:r.symbol,name:r.name_ar||r.name_en||r.name||"",recommendation:r.recommendation||"",reason:r.reason||"",price:num(r.price),stopLoss:num(r.stopLoss)}));
   const marketAlerts=(alerts.rules||[]).slice(0,20);
   const avgChange=rows.length?rows.reduce((s,r)=>s+num(r.changePct),0)/rows.length:0;
