@@ -33,11 +33,12 @@ function main(){
     "data/price-freshness-report.json",
     "data/price-reconciliation-report.json",
     "data/final-opportunity-ranking.json",
-    "data/portfolio-decision-rules.json"
+    "data/portfolio-decision-rules.json",
+    "data/alert-decision-center.json"
   ];
   requiredFiles.forEach(f=>tests.push(test("file:"+f,exists(f),exists(f)?"exists":"missing")));
   const index=readText("index.html");
-  ["stockSearch","chartLab","sessionMemory","historyBackfill","priceReconcile","confidenceGuard","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","dailyBrief","alerts","portfolioAlerts","sources"].forEach(screen=>{
+  ["stockSearch","chartLab","sessionMemory","historyBackfill","priceReconcile","confidenceGuard","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","dailyBrief","alerts","alertsCenter","portfolioAlerts","sources"].forEach(screen=>{
     tests.push(test("screen-route:"+screen,index.includes(`EGX.screen==="${screen}"`),index.includes(screen)?"route found":"route missing"));
   });
   ["renderHistoricalChartLab","renderSectorCompletion","renderDailyDecisionBrief","v90AccuracySegments","renderDailyOpportunities","renderFinalRankingEngine","renderPortfolioDecisionEngine","v95Compare","v931DailyRows","v931OpportunityCard","v921Compare","v921TargetProbability","v922NameCell","renderSessionMemory","renderHistoryBackfillControl","renderPriceReconciliation","v93ResolvedPrice","renderConfidenceGuard","v91GuardedConfidence","renderPortfolioSmartAlerts","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
@@ -65,7 +66,8 @@ function main(){
     "data/price-freshness-report.json",
     "data/price-reconciliation-report.json",
     "data/final-opportunity-ranking.json",
-    "data/portfolio-decision-rules.json",{});
+    "data/portfolio-decision-rules.json",
+    "data/alert-decision-center.json",{});
   tests.push(test("data:institutional_report",inst && Object.keys(inst).length>0,"institutional report readable"));
   const failed=tests.filter(x=>!x.ok);
   const report={
