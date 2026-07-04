@@ -80,6 +80,9 @@ jobs:
         run: node scripts/build-recommendation-accuracy.js || echo "Recommendation accuracy tracker skipped"
 
       # 4) Build all reports BEFORE final commit.
+      - name: History integrity report
+        run: node scripts/build-history-integrity-report.js || echo "History integrity skipped"
+
       - name: App health status
         run: node scripts/build-app-health.js || echo "App health skipped"
 
