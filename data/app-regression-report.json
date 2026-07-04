@@ -1,9 +1,9 @@
 {
   "ok": false,
   "engine": "v8_1_3_no_function_false_fail_regression_qa",
-  "generatedAt": "2026-07-04T16:41:24.650Z",
-  "total": 58,
-  "passed": 56,
+  "generatedAt": "2026-07-04T17:41:52.923Z",
+  "total": 63,
+  "passed": 61,
   "failedCount": 2,
   "failed": [
     "file:data/smart-alert-rules.json",
@@ -72,6 +72,12 @@
       "message": "exists"
     },
     {
+      "name": "file:data/history-backfill-plan.json",
+      "ok": true,
+      "status": "PASS",
+      "message": "exists"
+    },
+    {
       "name": "file:data/sector-completion-report.json",
       "ok": true,
       "status": "PASS",
@@ -133,6 +139,12 @@
     },
     {
       "name": "screen-route:sessionMemory",
+      "ok": true,
+      "status": "PASS",
+      "message": "route found"
+    },
+    {
+      "name": "screen-route:historyBackfill",
       "ok": true,
       "status": "PASS",
       "message": "route found"
@@ -240,6 +252,18 @@
       "message": "marker found"
     },
     {
+      "name": "screen-marker:v931DailyRows",
+      "ok": true,
+      "status": "PASS",
+      "message": "marker found"
+    },
+    {
+      "name": "screen-marker:v931OpportunityCard",
+      "ok": true,
+      "status": "PASS",
+      "message": "marker found"
+    },
+    {
       "name": "screen-marker:v921Compare",
       "ok": true,
       "status": "PASS",
@@ -259,6 +283,12 @@
     },
     {
       "name": "screen-marker:renderSessionMemory",
+      "ok": true,
+      "status": "PASS",
+      "message": "marker found"
+    },
+    {
+      "name": "screen-marker:renderHistoryBackfillControl",
       "ok": true,
       "status": "PASS",
       "message": "marker found"
