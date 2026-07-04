@@ -1,11 +1,13 @@
 {
-  "ok": true,
+  "ok": false,
   "engine": "v8_1_3_no_function_false_fail_regression_qa",
-  "generatedAt": "2026-07-04T05:40:22.186Z",
-  "total": 34,
-  "passed": 34,
-  "failedCount": 0,
-  "failed": [],
+  "generatedAt": "2026-07-04T06:24:05.104Z",
+  "total": 40,
+  "passed": 39,
+  "failedCount": 1,
+  "failed": [
+    "file:data/smart-alert-rules.json"
+  ],
   "warnings": [],
   "tests": [
     {
@@ -75,6 +77,18 @@
       "message": "exists"
     },
     {
+      "name": "file:data/smart-alert-rules.json",
+      "ok": false,
+      "status": "FAIL",
+      "message": "missing"
+    },
+    {
+      "name": "file:data/daily-decision-brief.json",
+      "ok": true,
+      "status": "PASS",
+      "message": "exists"
+    },
+    {
       "name": "screen-route:stockSearch",
       "ok": true,
       "status": "PASS",
@@ -123,7 +137,19 @@
       "message": "route found"
     },
     {
+      "name": "screen-route:dailyBrief",
+      "ok": true,
+      "status": "PASS",
+      "message": "route found"
+    },
+    {
       "name": "screen-route:alerts",
+      "ok": true,
+      "status": "PASS",
+      "message": "route found"
+    },
+    {
+      "name": "screen-route:portfolioAlerts",
       "ok": true,
       "status": "PASS",
       "message": "route found"
@@ -142,6 +168,18 @@
     },
     {
       "name": "screen-marker:renderSectorCompletion",
+      "ok": true,
+      "status": "PASS",
+      "message": "marker found"
+    },
+    {
+      "name": "screen-marker:renderDailyDecisionBrief",
+      "ok": true,
+      "status": "PASS",
+      "message": "marker found"
+    },
+    {
+      "name": "screen-marker:renderPortfolioSmartAlerts",
       "ok": true,
       "status": "PASS",
       "message": "marker found"
