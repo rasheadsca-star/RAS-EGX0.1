@@ -1,12 +1,13 @@
 {
   "ok": false,
   "engine": "v8_1_3_no_function_false_fail_regression_qa",
-  "generatedAt": "2026-07-04T07:23:32.080Z",
-  "total": 42,
-  "passed": 41,
-  "failedCount": 1,
+  "generatedAt": "2026-07-04T08:19:54.508Z",
+  "total": 51,
+  "passed": 49,
+  "failedCount": 2,
   "failed": [
-    "file:data/smart-alert-rules.json"
+    "file:data/smart-alert-rules.json",
+    "file:data/confidence-guard-report.json"
   ],
   "warnings": [],
   "tests": [
@@ -95,6 +96,24 @@
       "message": "exists"
     },
     {
+      "name": "file:data/confidence-guard-report.json",
+      "ok": false,
+      "status": "FAIL",
+      "message": "missing"
+    },
+    {
+      "name": "file:data/session-memory-status.json",
+      "ok": true,
+      "status": "PASS",
+      "message": "exists"
+    },
+    {
+      "name": "file:data/price-freshness-report.json",
+      "ok": true,
+      "status": "PASS",
+      "message": "exists"
+    },
+    {
       "name": "screen-route:stockSearch",
       "ok": true,
       "status": "PASS",
@@ -102,6 +121,18 @@
     },
     {
       "name": "screen-route:chartLab",
+      "ok": true,
+      "status": "PASS",
+      "message": "route found"
+    },
+    {
+      "name": "screen-route:sessionMemory",
+      "ok": true,
+      "status": "PASS",
+      "message": "route found"
+    },
+    {
+      "name": "screen-route:confidenceGuard",
       "ok": true,
       "status": "PASS",
       "message": "route found"
@@ -186,6 +217,30 @@
     },
     {
       "name": "screen-marker:v90AccuracySegments",
+      "ok": true,
+      "status": "PASS",
+      "message": "marker found"
+    },
+    {
+      "name": "screen-marker:renderDailyOpportunities",
+      "ok": true,
+      "status": "PASS",
+      "message": "marker found"
+    },
+    {
+      "name": "screen-marker:renderSessionMemory",
+      "ok": true,
+      "status": "PASS",
+      "message": "marker found"
+    },
+    {
+      "name": "screen-marker:renderConfidenceGuard",
+      "ok": true,
+      "status": "PASS",
+      "message": "marker found"
+    },
+    {
+      "name": "screen-marker:v91GuardedConfidence",
       "ok": true,
       "status": "PASS",
       "message": "marker found"
