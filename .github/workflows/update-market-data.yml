@@ -96,6 +96,9 @@ jobs:
       - name: History integrity report
         run: node scripts/build-history-integrity-report.js || echo "History integrity skipped"
 
+      - name: History backfill plan
+        run: node scripts/build-history-backfill-plan.js || echo "History backfill plan skipped"
+
       - name: Sector completion report
         run: node scripts/build-sector-completion-report.js || echo "Sector completion skipped"
 
