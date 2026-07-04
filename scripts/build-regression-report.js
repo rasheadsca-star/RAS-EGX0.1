@@ -22,14 +22,15 @@ function main(){
     "data/recommendation-accuracy-latest.json",
     "data/institutional-score-report.json",
     "data/workflow-budget-status.json",
-    "data/history-integrity-report.json"
+    "data/history-integrity-report.json",
+    "data/sector-completion-report.json"
   ];
   requiredFiles.forEach(f=>tests.push(test("file:"+f,exists(f),exists(f)?"exists":"missing")));
   const index=readText("index.html");
   ["stockSearch","chartLab","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","alerts","sources"].forEach(screen=>{
     tests.push(test("screen-route:"+screen,index.includes(`EGX.screen==="${screen}"`),index.includes(screen)?"route found":"route missing"));
   });
-  ["renderHistoricalChartLab","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
+  ["renderHistoricalChartLab","renderSectorCompletion","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
     tests.push(test("screen-marker:"+marker,index.includes(marker),index.includes(marker)?"marker found":"marker missing"));
   });
   const rec=readJson("data/recommendations.json",{});
@@ -43,7 +44,8 @@ function main(){
   tests.push(test("data:app_health",app && Object.keys(app).length>0,"app-health readable"));
   const inst=readJson("data/institutional-score-report.json",
     "data/workflow-budget-status.json",
-    "data/history-integrity-report.json",{});
+    "data/history-integrity-report.json",
+    "data/sector-completion-report.json",{});
   tests.push(test("data:institutional_report",inst && Object.keys(inst).length>0,"institutional report readable"));
   const failed=tests.filter(x=>!x.ok);
   const report={
