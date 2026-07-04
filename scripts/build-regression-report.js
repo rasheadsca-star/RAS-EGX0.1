@@ -24,10 +24,10 @@ function main(){
   ];
   requiredFiles.forEach(f=>tests.push(test("file:"+f,exists(f),exists(f)?"exists":"missing")));
   const index=readText("index.html");
-  ["stockSearch","stability","institutional","portfolioRisk","accuracy","alerts","sources"].forEach(screen=>{
+  ["stockSearch","stability","institutional","portfolioRisk","rebalance","accuracy","alerts","sources"].forEach(screen=>{
     tests.push(test("screen-route:"+screen,index.includes(`EGX.screen==="${screen}"`),index.includes(screen)?"route found":"route missing"));
   });
-  ["renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk"].forEach(marker=>{
+  ["renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance"].forEach(marker=>{
     tests.push(test("screen-marker:"+marker,index.includes(marker),index.includes(marker)?"marker found":"marker missing"));
   });
   const rec=readJson("data/recommendations.json",{});
