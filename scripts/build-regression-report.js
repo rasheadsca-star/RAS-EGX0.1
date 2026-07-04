@@ -36,7 +36,7 @@ function main(){
   ["stockSearch","chartLab","sessionMemory","confidenceGuard","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","dailyBrief","alerts","portfolioAlerts","sources"].forEach(screen=>{
     tests.push(test("screen-route:"+screen,index.includes(`EGX.screen==="${screen}"`),index.includes(screen)?"route found":"route missing"));
   });
-  ["renderHistoricalChartLab","renderSectorCompletion","renderDailyDecisionBrief","v90AccuracySegments","renderDailyOpportunities","renderSessionMemory","renderConfidenceGuard","v91GuardedConfidence","renderPortfolioSmartAlerts","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
+  ["renderHistoricalChartLab","renderSectorCompletion","renderDailyDecisionBrief","v90AccuracySegments","renderDailyOpportunities","v921Compare","v921TargetProbability","renderSessionMemory","renderConfidenceGuard","v91GuardedConfidence","renderPortfolioSmartAlerts","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
     tests.push(test("screen-marker:"+marker,index.includes(marker),index.includes(marker)?"marker found":"marker missing"));
   });
   const rec=readJson("data/recommendations.json",{});
