@@ -12,17 +12,21 @@ on:
           - "false"
           - "true"
   schedule:
-    # V8.4 budget mode:
-    # One scheduled run only after the EGX session, to reduce GitHub Actions usage.
-    # Manual workflow_dispatch remains available for intraday refresh when needed.
-    - cron: "15 13 * * 0-4"
+    # V9.2 session monitoring mode:
+    # Several public/delayed refreshes during/after EGX session (Egypt UTC+3).
+    # This is NOT tick-by-tick live; it is scheduled refresh from public sources.
+    - cron: "15 7 * * 0-4"   # 10:15 Cairo
+    - cron: "15 9 * * 0-4"   # 12:15 Cairo
+    - cron: "15 11 * * 0-4"  # 14:15 Cairo
+    - cron: "45 12 * * 0-4"  # 15:45 Cairo post-session
+    - cron: "0 15 * * 0"     # weekly history maintenance window
 
 permissions:
   contents: write
 
 concurrency:
   group: egx-market-history-update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update-data:
@@ -49,20 +53,26 @@ jobs:
 
       # 2) Heavy history maintenance is manual only to save GitHub Actions minutes.
       - name: Recover past sessions from Git snapshots using commit dates
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true' }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true') || github.event.schedule == '0 15 * * 0' }}
         run: node scripts/rebuild-history-from-git.js || echo "Git past recovery skipped"
 
       - name: Optional uploaded historical backfill
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true' }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true') || github.event.schedule == '0 15 * * 0' }}
         run: node scripts/import-history-backfill.js || echo "No uploaded backfill file found"
 
       - name: Opportunistic public historical discovery
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true' }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true') || github.event.schedule == '0 15 * * 0' }}
         run: node scripts/auto-public-history-backfill.js || echo "Public history discovery skipped"
 
       # 3) Build analysis layers
       - name: Auto rolling 50-session history and indicators
         run: node scripts/build-history-50-engine.js || echo "History 50 engine skipped"
+
+      - name: Session memory status
+        run: node scripts/build-session-memory-status.js || echo "Session memory status skipped"
+
+      - name: Price freshness report
+        run: node scripts/build-price-freshness-report.js || echo "Price freshness skipped"
 
       - name: Snapshot evidence confidence layer
         run: node scripts/build-snapshot-evidence.js || echo "Snapshot evidence skipped"
@@ -91,6 +101,9 @@ jobs:
 
       - name: Daily decision brief
         run: node scripts/build-daily-decision-brief.js || echo "Daily decision brief skipped"
+
+      - name: Confidence guard report
+        run: node scripts/build-confidence-guard-report.js || echo "Confidence guard skipped"
 
       - name: Accuracy interpretation report
         run: node scripts/build-accuracy-interpretation-report.js || echo "Accuracy interpretation skipped"
