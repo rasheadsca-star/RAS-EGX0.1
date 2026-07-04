@@ -92,6 +92,9 @@ jobs:
       - name: Daily decision brief
         run: node scripts/build-daily-decision-brief.js || echo "Daily decision brief skipped"
 
+      - name: Accuracy interpretation report
+        run: node scripts/build-accuracy-interpretation-report.js || echo "Accuracy interpretation skipped"
+
       - name: App health status
         run: node scripts/build-app-health.js || echo "App health skipped"
 
