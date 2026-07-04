@@ -1,9 +1,9 @@
 {
   "ok": false,
   "engine": "v8_1_3_no_function_false_fail_regression_qa",
-  "generatedAt": "2026-07-04T06:58:17.129Z",
-  "total": 40,
-  "passed": 39,
+  "generatedAt": "2026-07-04T07:23:32.080Z",
+  "total": 42,
+  "passed": 41,
   "failedCount": 1,
   "failed": [
     "file:data/smart-alert-rules.json"
@@ -84,6 +84,12 @@
     },
     {
       "name": "file:data/daily-decision-brief.json",
+      "ok": true,
+      "status": "PASS",
+      "message": "exists"
+    },
+    {
+      "name": "file:data/accuracy-interpretation-report.json",
       "ok": true,
       "status": "PASS",
       "message": "exists"
@@ -174,6 +180,12 @@
     },
     {
       "name": "screen-marker:renderDailyDecisionBrief",
+      "ok": true,
+      "status": "PASS",
+      "message": "marker found"
+    },
+    {
+      "name": "screen-marker:v90AccuracySegments",
       "ok": true,
       "status": "PASS",
       "message": "marker found"
