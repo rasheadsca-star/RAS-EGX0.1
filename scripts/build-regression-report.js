@@ -23,14 +23,16 @@ function main(){
     "data/institutional-score-report.json",
     "data/workflow-budget-status.json",
     "data/history-integrity-report.json",
-    "data/sector-completion-report.json"
+    "data/sector-completion-report.json",
+    "data/smart-alert-rules.json",
+    "data/daily-decision-brief.json"
   ];
   requiredFiles.forEach(f=>tests.push(test("file:"+f,exists(f),exists(f)?"exists":"missing")));
   const index=readText("index.html");
-  ["stockSearch","chartLab","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","alerts","sources"].forEach(screen=>{
+  ["stockSearch","chartLab","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","dailyBrief","alerts","portfolioAlerts","sources"].forEach(screen=>{
     tests.push(test("screen-route:"+screen,index.includes(`EGX.screen==="${screen}"`),index.includes(screen)?"route found":"route missing"));
   });
-  ["renderHistoricalChartLab","renderSectorCompletion","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
+  ["renderHistoricalChartLab","renderSectorCompletion","renderDailyDecisionBrief","renderPortfolioSmartAlerts","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
     tests.push(test("screen-marker:"+marker,index.includes(marker),index.includes(marker)?"marker found":"marker missing"));
   });
   const rec=readJson("data/recommendations.json",{});
@@ -45,7 +47,9 @@ function main(){
   const inst=readJson("data/institutional-score-report.json",
     "data/workflow-budget-status.json",
     "data/history-integrity-report.json",
-    "data/sector-completion-report.json",{});
+    "data/sector-completion-report.json",
+    "data/smart-alert-rules.json",
+    "data/daily-decision-brief.json",{});
   tests.push(test("data:institutional_report",inst && Object.keys(inst).length>0,"institutional report readable"));
   const failed=tests.filter(x=>!x.ok);
   const report={
