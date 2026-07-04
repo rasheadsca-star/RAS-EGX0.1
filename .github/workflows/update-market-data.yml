@@ -86,6 +86,12 @@ jobs:
       - name: Sector completion report
         run: node scripts/build-sector-completion-report.js || echo "Sector completion skipped"
 
+      - name: Smart alert rules
+        run: node scripts/build-smart-alert-rules.js || echo "Smart alert rules skipped"
+
+      - name: Daily decision brief
+        run: node scripts/build-daily-decision-brief.js || echo "Daily decision brief skipped"
+
       - name: App health status
         run: node scripts/build-app-health.js || echo "App health skipped"
 
