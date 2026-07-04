@@ -20,14 +20,15 @@ function main(){
     "data/source-health.json",
     "data/app-health-status.json",
     "data/recommendation-accuracy-latest.json",
-    "data/institutional-score-report.json"
+    "data/institutional-score-report.json",
+    "data/workflow-budget-status.json"
   ];
   requiredFiles.forEach(f=>tests.push(test("file:"+f,exists(f),exists(f)?"exists":"missing")));
   const index=readText("index.html");
-  ["stockSearch","stability","institutional","portfolioRisk","rebalance","accuracy","alerts","sources"].forEach(screen=>{
+  ["stockSearch","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","alerts","sources"].forEach(screen=>{
     tests.push(test("screen-route:"+screen,index.includes(`EGX.screen==="${screen}"`),index.includes(screen)?"route found":"route missing"));
   });
-  ["renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance"].forEach(marker=>{
+  ["renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline"].forEach(marker=>{
     tests.push(test("screen-marker:"+marker,index.includes(marker),index.includes(marker)?"marker found":"marker missing"));
   });
   const rec=readJson("data/recommendations.json",{});
@@ -39,7 +40,8 @@ function main(){
   if(src.ok===false)warnings.push("source-health reports ok=false.");
   const app=readJson("data/app-health-status.json",{});
   tests.push(test("data:app_health",app && Object.keys(app).length>0,"app-health readable"));
-  const inst=readJson("data/institutional-score-report.json",{});
+  const inst=readJson("data/institutional-score-report.json",
+    "data/workflow-budget-status.json",{});
   tests.push(test("data:institutional_report",inst && Object.keys(inst).length>0,"institutional report readable"));
   const failed=tests.filter(x=>!x.ok);
   const report={
