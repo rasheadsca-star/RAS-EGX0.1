@@ -86,6 +86,9 @@ jobs:
       - name: Alert decision center
         run: node scripts/build-alert-decision-center.js || echo "Alert decision center skipped"
 
+      - name: Data operations center
+        run: node scripts/build-data-operations-center.js || echo "Data operations center skipped"
+
       - name: Snapshot evidence confidence layer
         run: node scripts/build-snapshot-evidence.js || echo "Snapshot evidence skipped"
 
