@@ -2,11 +2,20 @@ name: Update EGX Market Data
 
 on:
   workflow_dispatch:
+    inputs:
+      history_maintenance:
+        description: "Run heavy history recovery/backfill scripts. Keep false unless needed."
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
   schedule:
-    # EGX trading days are typically Sun-Thu. Times are UTC.
-    # Mid-session refresh updates the same session date; final run after close keeps the closing snapshot.
-    - cron: "15 8 * * 0-4"
-    - cron: "45 12 * * 0-4"
+    # V8.4 budget mode:
+    # One scheduled run only after the EGX session, to reduce GitHub Actions usage.
+    # Manual workflow_dispatch remains available for intraday refresh when needed.
+    - cron: "15 13 * * 0-4"
 
 permissions:
   contents: write
@@ -18,7 +27,10 @@ concurrency:
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 30
+
+    env:
+      HISTORY_MAINTENANCE: ${{ github.event.inputs.history_maintenance || 'false' }}
 
     steps:
       - name: Checkout with history
@@ -31,20 +43,26 @@ jobs:
         with:
           node-version: "22"
 
+      # 1) Market snapshot
       - name: Fetch public market snapshot
         run: node scripts/fetch-market-data.js
 
+      # 2) Heavy history maintenance is manual only to save GitHub Actions minutes.
       - name: Recover past sessions from Git snapshots using commit dates
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true' }}
         run: node scripts/rebuild-history-from-git.js || echo "Git past recovery skipped"
 
       - name: Optional uploaded historical backfill
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true' }}
         run: node scripts/import-history-backfill.js || echo "No uploaded backfill file found"
 
       - name: Opportunistic public historical discovery
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true' }}
         run: node scripts/auto-public-history-backfill.js || echo "Public history discovery skipped"
 
+      # 3) Build analysis layers
       - name: Auto rolling 50-session history and indicators
-        run: node scripts/build-history-50-engine.js
+        run: node scripts/build-history-50-engine.js || echo "History 50 engine skipped"
 
       - name: Snapshot evidence confidence layer
         run: node scripts/build-snapshot-evidence.js || echo "Snapshot evidence skipped"
@@ -61,16 +79,9 @@ jobs:
       - name: Build recommendation accuracy tracker
         run: node scripts/build-recommendation-accuracy.js || echo "Recommendation accuracy tracker skipped"
 
-      - name: Optional intelligence reports
-        run: node scripts/build-v52-intelligence.js || echo "V5.2 intelligence builder skipped"
-
-      - name: Commit generated data
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add data/*.json
-          git diff --cached --quiet && echo "No data changes" || git commit -m "Recover Git-date history and update EGX rolling 50-session history"
-          git push || echo "Push skipped or failed"
+      # 4) Build all reports BEFORE final commit.
+      - name: App health status
+        run: node scripts/build-app-health.js || echo "App health skipped"
 
       - name: Institutional score report
         run: node scripts/build-institutional-score.js || echo "Institutional score skipped"
@@ -81,5 +92,20 @@ jobs:
       - name: Watchlist pipeline candidates
         run: node scripts/build-watchlist-pipeline-candidates.js || echo "Watchlist pipeline candidates skipped"
 
+      - name: Workflow budget status
+        run: node scripts/build-workflow-budget-status.js || echo "Workflow budget status skipped"
+
       - name: Regression QA report
         run: node scripts/build-regression-report.js || echo "Regression QA skipped"
+
+      - name: Optional legacy intelligence reports
+        run: node scripts/build-v52-intelligence.js || echo "Legacy intelligence builder skipped"
+
+      # 5) Single final commit after all generated data files are ready.
+      - name: Commit generated data once
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/*.json
+          git diff --cached --quiet && echo "No generated data changes" || git commit -m "Update EGX generated data and reports"
+          git push || echo "Push skipped or failed"
