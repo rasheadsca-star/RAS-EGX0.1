@@ -1,15 +1,64 @@
 {
-  "ok": false,
+  "ok": true,
   "engine": "v9_8_data_operations_center",
-  "generatedAt": null,
-  "score": 0,
+  "generatedAt": "2026-07-04T19:21:51.393Z",
+  "score": 61,
   "state": "warn",
   "summary": {
-    "ok": 0,
-    "warn": 0,
-    "bad": 0,
-    "total": 0
+    "ok": 2,
+    "warn": 3,
+    "bad": 1,
+    "total": 6
   },
-  "checks": [],
-  "note": "Generated after workflow run."
+  "checks": [
+    {
+      "id": "coverage",
+      "name": "تغطية السوق",
+      "state": "ok",
+      "value": "99.0%",
+      "message": "تغطية السوق جيدة",
+      "action": "متابعة"
+    },
+    {
+      "id": "price",
+      "name": "تدقيق الأسعار",
+      "state": "warn",
+      "value": "0 تعارض / 11 قديم",
+      "message": "بعض الأسعار قديمة",
+      "action": "شغّل Workflow"
+    },
+    {
+      "id": "history",
+      "name": "ذاكرة 50 جلسة",
+      "state": "bad",
+      "value": "0/224 مكتمل",
+      "message": "متوسط الجلسات 3.1 / 50",
+      "action": "شغّل history_maintenance أو استيراد Backfill"
+    },
+    {
+      "id": "ranking",
+      "name": "محرك الأولويات",
+      "state": "warn",
+      "value": "P1 0 / مقيّد 48",
+      "message": "لا توجد P1 واضحة الآن",
+      "action": "افتح محرك الأولويات"
+    },
+    {
+      "id": "alerts",
+      "name": "مركز التنبيهات",
+      "state": "warn",
+      "value": "عاجل 0 / مهم 59",
+      "message": "راجع التنبيهات المهمة",
+      "action": "افتح مركز التنبيهات"
+    },
+    {
+      "id": "regression",
+      "name": "فحص الثبات",
+      "state": "ok",
+      "value": "0 فشل",
+      "message": "لا توجد أخطاء فحص معروفة",
+      "action": "متابعة"
+    }
+  ],
+  "note": "Single operational center for data health, price reconciliation, history, ranking, alerts, and regression."
 }
