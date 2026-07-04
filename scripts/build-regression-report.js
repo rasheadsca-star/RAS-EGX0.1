@@ -26,14 +26,17 @@ function main(){
     "data/sector-completion-report.json",
     "data/smart-alert-rules.json",
     "data/daily-decision-brief.json",
-    "data/accuracy-interpretation-report.json"
+    "data/accuracy-interpretation-report.json",
+    "data/confidence-guard-report.json",
+    "data/session-memory-status.json",
+    "data/price-freshness-report.json"
   ];
   requiredFiles.forEach(f=>tests.push(test("file:"+f,exists(f),exists(f)?"exists":"missing")));
   const index=readText("index.html");
-  ["stockSearch","chartLab","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","dailyBrief","alerts","portfolioAlerts","sources"].forEach(screen=>{
+  ["stockSearch","chartLab","sessionMemory","confidenceGuard","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","dailyBrief","alerts","portfolioAlerts","sources"].forEach(screen=>{
     tests.push(test("screen-route:"+screen,index.includes(`EGX.screen==="${screen}"`),index.includes(screen)?"route found":"route missing"));
   });
-  ["renderHistoricalChartLab","renderSectorCompletion","renderDailyDecisionBrief","v90AccuracySegments","renderPortfolioSmartAlerts","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
+  ["renderHistoricalChartLab","renderSectorCompletion","renderDailyDecisionBrief","v90AccuracySegments","renderDailyOpportunities","renderSessionMemory","renderConfidenceGuard","v91GuardedConfidence","renderPortfolioSmartAlerts","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
     tests.push(test("screen-marker:"+marker,index.includes(marker),index.includes(marker)?"marker found":"marker missing"));
   });
   const rec=readJson("data/recommendations.json",{});
@@ -51,7 +54,10 @@ function main(){
     "data/sector-completion-report.json",
     "data/smart-alert-rules.json",
     "data/daily-decision-brief.json",
-    "data/accuracy-interpretation-report.json",{});
+    "data/accuracy-interpretation-report.json",
+    "data/confidence-guard-report.json",
+    "data/session-memory-status.json",
+    "data/price-freshness-report.json",{});
   tests.push(test("data:institutional_report",inst && Object.keys(inst).length>0,"institutional report readable"));
   const failed=tests.filter(x=>!x.ok);
   const report={
