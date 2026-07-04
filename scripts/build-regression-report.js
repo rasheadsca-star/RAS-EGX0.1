@@ -23,6 +23,7 @@ function main(){
     "data/institutional-score-report.json",
     "data/workflow-budget-status.json",
     "data/history-integrity-report.json",
+    "data/history-backfill-plan.json",
     "data/sector-completion-report.json",
     "data/smart-alert-rules.json",
     "data/daily-decision-brief.json",
@@ -34,10 +35,10 @@ function main(){
   ];
   requiredFiles.forEach(f=>tests.push(test("file:"+f,exists(f),exists(f)?"exists":"missing")));
   const index=readText("index.html");
-  ["stockSearch","chartLab","sessionMemory","priceReconcile","confidenceGuard","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","dailyBrief","alerts","portfolioAlerts","sources"].forEach(screen=>{
+  ["stockSearch","chartLab","sessionMemory","historyBackfill","priceReconcile","confidenceGuard","stability","institutional","portfolioRisk","rebalance","pipeline","accuracy","dailyBrief","alerts","portfolioAlerts","sources"].forEach(screen=>{
     tests.push(test("screen-route:"+screen,index.includes(`EGX.screen==="${screen}"`),index.includes(screen)?"route found":"route missing"));
   });
-  ["renderHistoricalChartLab","renderSectorCompletion","renderDailyDecisionBrief","v90AccuracySegments","renderDailyOpportunities","v931DailyRows","v931OpportunityCard","v921Compare","v921TargetProbability","v922NameCell","renderSessionMemory","renderPriceReconciliation","v93ResolvedPrice","renderConfidenceGuard","v91GuardedConfidence","renderPortfolioSmartAlerts","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
+  ["renderHistoricalChartLab","renderSectorCompletion","renderDailyDecisionBrief","v90AccuracySegments","renderDailyOpportunities","v931DailyRows","v931OpportunityCard","v921Compare","v921TargetProbability","v922NameCell","renderSessionMemory","renderHistoryBackfillControl","renderPriceReconciliation","v93ResolvedPrice","renderConfidenceGuard","v91GuardedConfidence","renderPortfolioSmartAlerts","renderStabilityQA","renderStockSearch","renderInstitutionalScoring","renderPortfolioRisk","renderRebalance","renderWatchlistPipeline","v85HistorySessions"].forEach(marker=>{
     tests.push(test("screen-marker:"+marker,index.includes(marker),index.includes(marker)?"marker found":"marker missing"));
   });
   const rec=readJson("data/recommendations.json",{});
@@ -52,6 +53,7 @@ function main(){
   const inst=readJson("data/institutional-score-report.json",
     "data/workflow-budget-status.json",
     "data/history-integrity-report.json",
+    "data/history-backfill-plan.json",
     "data/sector-completion-report.json",
     "data/smart-alert-rules.json",
     "data/daily-decision-brief.json",
