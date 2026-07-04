@@ -1,9 +1,9 @@
 {
   "ok": false,
   "engine": "v8_1_3_no_function_false_fail_regression_qa",
-  "generatedAt": "2026-07-04T18:33:17.294Z",
-  "total": 68,
-  "passed": 66,
+  "generatedAt": "2026-07-04T18:58:22.950Z",
+  "total": 70,
+  "passed": 68,
   "failedCount": 2,
   "failed": [
     "file:data/smart-alert-rules.json",
@@ -138,6 +138,12 @@
       "message": "exists"
     },
     {
+      "name": "file:data/alert-decision-center.json",
+      "ok": true,
+      "status": "PASS",
+      "message": "exists"
+    },
+    {
       "name": "screen-route:stockSearch",
       "ok": true,
       "status": "PASS",
@@ -217,6 +223,12 @@
     },
     {
       "name": "screen-route:alerts",
+      "ok": true,
+      "status": "PASS",
+      "message": "route found"
+    },
+    {
+      "name": "screen-route:alertsCenter",
       "ok": true,
       "status": "PASS",
       "message": "route found"
