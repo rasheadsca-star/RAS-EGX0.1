@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EGX Pro Hub — Professional Terminal V9.3.2.2.1.1.1</title>
+  <title>EGX Pro Hub — Professional Terminal V9.3.1.1.2.2.1.1.1</title>
   <style>
     :root{
       --bg:#050914;--bg2:#071326;--card:#08182d;--card2:#0a1d36;
@@ -159,7 +159,7 @@
     @media(max-width:900px){.shell{display:block}.side{position:relative;width:100%;height:auto;border-left:none;border-bottom:1px solid rgba(119,169,235,.2)}.nav{grid-template-columns:repeat(2,minmax(0,1fr))}.head{display:block}.actions{margin-top:12px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar,.detail,.dashgrid,.portgrid{grid-template-columns:1fr}}
     @media(max-width:560px){.main{padding:12px}.kpis{grid-template-columns:1fr}.leftstack{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.head h2{font-size:24px}}
   
-    /* V9.3 Price Reconciliation + Portfolio/Watchlist Intelligence */
+    /* V9.3.1 Daily Opportunities Readability + Portfolio/Watchlist Intelligence */
     .v77-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:12px}
     .v77-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0}
     .v77-card{background:linear-gradient(180deg,rgba(8,24,45,.9),rgba(5,13,27,.88));border:1px solid rgba(119,169,235,.18);border-radius:18px;padding:12px}
@@ -319,7 +319,7 @@
     .fatal-box h2{margin:0 0 10px;color:#fff}.fatal-box code{background:#020617;color:#fef3c7;border-radius:8px;padding:2px 6px}
 
 
-    /* V9.3 Price Reconciliation + Stable Stock Search */
+    /* V9.3.1 Daily Opportunities Readability + Stable Stock Search */
     .stock-search-status{font-size:12px;color:#93a9c9;margin-top:6px;line-height:1.6}
 
 
@@ -360,11 +360,11 @@
     @media(max-width:780px){.pipe-board{grid-template-columns:1fr}.pipe-meta{grid-template-columns:repeat(3,1fr)}}
 
 
-    /* V9.3 Price Reconciliation Note */
+    /* V9.3.1 Daily Opportunities Readability Note */
     .workflow-budget-note{border:1px solid rgba(34,197,94,.24);background:rgba(34,197,94,.08);color:#bbf7d0;border-radius:14px;padding:10px;margin:10px 0;line-height:1.8}
 
 
-    /* V9.3 Price Reconciliation + Dashboard Labels */
+    /* V9.3.1 Daily Opportunities Readability + Dashboard Labels */
     .mini-metric{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:86px}
     .mini-metric .mini-label{font-size:9px;color:#8ca8cb;font-weight:800;line-height:1.2}
     .mini-metric .mini-value{font-size:13px;font-weight:950}
@@ -875,8 +875,8 @@ function side(){const nav=[
 ["confidenceGuard","حارس الثقة","🛡"],
 ["settings","الإعدادات","⚙"],
 ["mobile","موبايل","▣"]
-];return`<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><p>Professional Terminal V9.3.2</p></div></div><div class="nav-title">لوحة التحكم</div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[1]}</span><span class="ico">${n[2]}</span></button>`).join("")}</nav><div class="footer"><div class="live">متصل</div><div class="muted" style="margin-top:8px">بيانات عامة ومتأخرة — مساعد قرار فقط.</div><button class="btn warn" id="classicBtn" style="margin-top:10px;width:100%">الوضع الكلاسيكي</button></div></aside>`}
-function header(title,sub){const last=EGX.source.generatedAt||EGX.source.lastSuccessAt||EGX.market.updatedAt||new Date().toISOString();return`<div class="head"><div><h2>${title}</h2><p>${sub}</p></div><div class="actions"><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق التغطية: السوق المصري</span><span class="chip warn"><i class="dot"></i> وضع المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${esc(new Date(last).toLocaleString("en-GB"))}</span><span class="chip info"><i class="dot"></i> الكاش: ${fmt0(EGX.source.cacheRows||EGX.rows.length)} / ${fmt0(EGX.source.totalUniverse||EGX.rows.length)}</span><span class="chip"><i class="dot"></i> جودة البيانات: ${fmt0(EGX.source.avgDataQuality||100)}%</span><span class="chip info"><i class="dot"></i> تاريخ 50 جلسة: ${fmt0((EGX.historyHealth&&EGX.historyHealth.symbolsWithComplete50)||0)} سهم</span><span class="chip"><i class="dot"></i> V9.3 Price Reconciliation</span></div>`}
+];return`<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><p>Professional Terminal V9.3.1.2</p></div></div><div class="nav-title">لوحة التحكم</div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[1]}</span><span class="ico">${n[2]}</span></button>`).join("")}</nav><div class="footer"><div class="live">متصل</div><div class="muted" style="margin-top:8px">بيانات عامة ومتأخرة — مساعد قرار فقط.</div><button class="btn warn" id="classicBtn" style="margin-top:10px;width:100%">الوضع الكلاسيكي</button></div></aside>`}
+function header(title,sub){const last=EGX.source.generatedAt||EGX.source.lastSuccessAt||EGX.market.updatedAt||new Date().toISOString();return`<div class="head"><div><h2>${title}</h2><p>${sub}</p></div><div class="actions"><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق التغطية: السوق المصري</span><span class="chip warn"><i class="dot"></i> وضع المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${esc(new Date(last).toLocaleString("en-GB"))}</span><span class="chip info"><i class="dot"></i> الكاش: ${fmt0(EGX.source.cacheRows||EGX.rows.length)} / ${fmt0(EGX.source.totalUniverse||EGX.rows.length)}</span><span class="chip"><i class="dot"></i> جودة البيانات: ${fmt0(EGX.source.avgDataQuality||100)}%</span><span class="chip info"><i class="dot"></i> تاريخ 50 جلسة: ${fmt0((EGX.historyHealth&&EGX.historyHealth.symbolsWithComplete50)||0)} سهم</span><span class="chip"><i class="dot"></i> V9.3.1 Daily Opportunities Readability</span></div>`}
 function kpis(){const p=pulse();const hs=historyGlobalStats();return`<section class="kpis">${kpi("عدد الفرص",fmt0(p.rows),"Universe "+fmt0(EGX.source.totalUniverse||p.rows))}${kpi("سجل 50 جلسة",fmt0(hs.with50),`متوسط ${fmt0(hs.avg)} جلسة`)}${kpi("سجل فعلي جزئي",fmt0(hs.withAny),`من ${fmt0(hs.total)} سهم`)}${kpi("فرص تخفيف مخاطر",fmt0(p.risk),"راجع الوقف",true)}${kpi("متوسط الثقة",fmt0(p.avg)+"%","يعرض التاريخ إن وجد")}${kpi("اتساع السوق",p.breadth.toFixed(2),p.status)}</section>`}
 function topFive(){const top=sorted().slice(0,5);return`<div class="panel"><h3>أفضل 5 فرص اليوم <span>🏆</span></h3><div class="list">${top.map((r,i)=>`<div class="listrow"><span class="rank">${i+1}</span><b>${esc(r.symbol)}</b><span>${fmt0(r.finalConfidence)}%</span><div></div><div class="bar"><span style="width:${Math.min(100,r.finalConfidence)}%"></span></div></div>`).join("")}</div></div>`}
 function pulsePanel(){const p=pulse();return`<div class="panel"><h3>نبض السوق <span>〽</span></h3><div class="ministat"><span>الاتجاه العام</span><b class="${p.breadth>=.5?"pos":"neg"}">${p.status}</b></div><div class="ministat"><span>اتساع السوق</span><b>${p.breadth.toFixed(2)}</b></div><div class="ministat"><span>قوة الشراء</span><b class="pos">${fmt0(p.breadth*100)}%</b></div><div class="ministat"><span>قيمة التداول المقروءة</span><b>${fmtCompact(p.value)}</b></div><div class="segment"><i style="width:${Math.max(5,p.breadth*55)}%"></i><i style="width:25%"></i><i style="width:12%"></i><i style="width:${Math.max(5,(1-p.breadth)*28)}%"></i></div></div>`}
@@ -1034,7 +1034,7 @@ function renderSupport(){
 
 function placeholder(title){return`${header(title,"تم توحيد التصميم ضمن الواجهة الاحترافية الجديدة.")}${kpis()}<section class="layout"><div class="leftstack">${pulsePanel()}${notes()}</div><div class="mainpanel">${opportunitiesTable(sorted().slice(0,10))}${detail(selectedRow())}</div></section>`}
 
-/* ===================== V9.3 Price Reconciliation + Portfolio/Watchlist Intelligence ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability + Portfolio/Watchlist Intelligence ===================== */
 function v77PortfolioRows(){try{return portfolioRows().map(r=>({...r,scope:"portfolio"}))}catch(e){return[]}}
 function v77WatchRows(){return(EGX.watchlist||[]).map(s=>EGX.rows.find(r=>r.symbol===s)).filter(Boolean).map(r=>({...r,scope:"watchlist"}))}
 function v77InPortfolio(symbol){return v77PortfolioRows().some(r=>r.symbol===symbol)}
@@ -1638,7 +1638,7 @@ function opportunities(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability ===================== */
 function v717AckStore(){try{return JSON.parse(localStorage.getItem("egx_v717_alert_ack")||"{}")}catch(e){return{}}}
 function v717SaveAck(x){localStorage.setItem("egx_v717_alert_ack",JSON.stringify(x||{}))}
 function v717AlertId(a){return [a.category||"",a.symbol||"",a.title||"",a.level||""].join("|").replace(/\s+/g,"_").slice(0,160)}
@@ -1847,7 +1847,7 @@ function renderPortfolioRisk(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability ===================== */
 function v800Clamp(x,a=0,b=100){return Math.max(a,Math.min(b,Number.isFinite(+x)?+x:0))}
 function v800NormScore(v){return v800Clamp(num(v)==null?0:num(v))}
 function v800RRScore(r){
@@ -2127,7 +2127,7 @@ function renderStabilityQA(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation Suggestions ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability Suggestions ===================== */
 function v82PortfolioRows(){
   let h=typeof v718PortfolioRows==="function"?v718PortfolioRows():(typeof portfolioRows==="function"?portfolioRows():[]);
   const total=h.reduce((s,r)=>s+(num(r.val)||0),0);
@@ -2256,7 +2256,7 @@ function renderHistoricalChartLab(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation + Dashboard Labels ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability + Dashboard Labels ===================== */
 function v87MiniMetric(label,value,cls="",sub=""){
   return `<span class="mini-metric"><span class="mini-label">${esc(label)}</span><span class="mini-value ${cls}">${value}</span>${sub?`<span class="mini-sub">${esc(sub)}</span>`:""}</span>`;
 }
@@ -2306,7 +2306,7 @@ function renderSectorCompletion(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability ===================== */
 function v88DistancePct(price, level){
   price=num(price); level=num(level);
   if(!price||!level)return null;
@@ -2399,7 +2399,7 @@ function renderPortfolioSmartAlerts(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability ===================== */
 function v89SafeRows(){
   const rows=typeof v85Sorted==="function"?v85Sorted(EGX.rows||[]):(typeof sorted==="function"?sorted():EGX.rows||[]);
   return rows.filter(Boolean);
@@ -2535,7 +2535,7 @@ function v89SafeRows(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation Lab ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability Lab ===================== */
 function v90AccReport(){
   return EGX.accuracyInterpretation||{};
 }
@@ -2623,7 +2623,7 @@ function renderAccuracy(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability ===================== */
 function v91GuardReportMap(){
   const rows=(EGX.confidenceGuard&&EGX.confidenceGuard.rows)||[];
   const m={}; rows.forEach(x=>{if(x&&x.symbol)m[String(x.symbol).toUpperCase()]=x});
@@ -2790,7 +2790,7 @@ function renderSessionMemory(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability ===================== */
 function v921TargetProbability(r){
   return typeof v92TargetProbability==="function" ? v92TargetProbability(r) : (num(r.finalConfidence)||0);
 }
@@ -2858,7 +2858,7 @@ function topFive(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability ===================== */
 function v922StockName(r){
   const ar=String(r&&r.name_ar||"").trim();
   const en=String(r&&r.name_en||r&&r.name||"").trim();
@@ -2879,7 +2879,7 @@ function v922TableNote(){
 }
 
 
-/* ===================== V9.3 Price Reconciliation ===================== */
+/* ===================== V9.3.1 Daily Opportunities Readability ===================== */
 function v93PriceMap(){const m={};((EGX.priceReconciliation&&EGX.priceReconciliation.rows)||[]).forEach(x=>{if(x&&x.symbol)m[String(x.symbol).toUpperCase()]=x});return m}
 function v93PriceRecord(r){return v93PriceMap()[String(r&&r.symbol||"").toUpperCase()]||null}
 function v93ResolvedPrice(r){const rec=v93PriceRecord(r),p=rec&&num(rec.finalPrice);return p||num(r&&r.price)||num(r&&r.last)||num(r&&r.close)||0}
@@ -2899,6 +2899,26 @@ function v85Sorted(rows){return rows.slice().sort(v921Compare)} function sorted(
 function v93ReconcileSummary(){const rep=EGX.priceReconciliation||{},rows=rep.rows||[];return{total:rows.length,ok:rows.filter(x=>!x.isStale&&!x.hasConflict).length,stale:rows.filter(x=>x.isStale).length,conflict:rows.filter(x=>x.hasConflict).length,adjusted:rows.filter(x=>num(x.finalPrice)!=null&&num(x.recommendationPrice)!=null&&Math.abs(num(x.finalPrice)-num(x.recommendationPrice))>.0001).length}}
 function renderPriceReconciliation(){const rep=EGX.priceReconciliation||{},s=v93ReconcileSummary(),rows=(rep.rows||[]).slice().sort((a,b)=>Number(b.hasConflict)-Number(a.hasConflict)||Number(b.isStale)-Number(a.isStale)||Math.abs(num(b.diffPct)||0)-Math.abs(num(a.diffPct)||0)),state=s.conflict?"bad":s.stale?"warn":"";return`${header("Price Reconciliation","تدقيق واعتماد السعر النهائي المستخدم في التوصيات والتنبيهات وترتيب الفرص")}${quickJump()}${commandStrip()}<div class="price93-banner ${state}"><b>${s.conflict?"يوجد تعارض أسعار يحتاج مراجعة":s.stale?"بعض الأسعار قديمة":"الأسعار الداخلية متسقة"}</b><br>هذه الطبقة تمنع استخدام سعر قديم أو متعارض في ترتيب الأولويات. إذا كان السعر الخارجي الحقيقي أحدث من مصادر التطبيق، يجب تشغيل Workflow أو تحسين مصدر الجلب.</div><section class="price93-grid"><div class="price93-card"><span>إجمالي الأسهم</span><b>${fmt0(s.total)}</b><small>داخل تقرير التدقيق</small></div><div class="price93-card"><span>أسعار مدققة</span><b>${fmt0(s.ok)}</b><small>لا يوجد تعارض داخلي</small></div><div class="price93-card"><span>أسعار قديمة</span><b>${fmt0(s.stale)}</b><small>حسب عمر آخر لقطة</small></div><div class="price93-card"><span>تعارض أسعار</span><b>${fmt0(s.conflict)}</b><small>بين ملفات التطبيق</small></div><div class="price93-card"><span>أسعار تم تعديلها</span><b>${fmt0(s.adjusted)}</b><small>مقارنة بسعر التوصيات</small></div><div class="price93-card"><span>عمر المصدر</span><b>${rep.sourceAgeMinutes==null?"-":(rep.sourceAgeMinutes<60?fmt(rep.sourceAgeMinutes,0)+"د":fmt(rep.sourceAgeMinutes/60,1)+"س")}</b><small>آخر تحديث معروف</small></div></section><section class="dashgrid"><div class="panel"><h3>جدول تدقيق الأسعار <span>${fmt0(rows.length)}</span></h3><div class="tablewrap no-x"><table class="compact-table wide-table92"><thead><tr><th>#</th><th>الرمز</th><th>الاسم</th><th>السعر النهائي</th><th>سعر التوصيات</th><th>market</th><th>cache</th><th>history</th><th>المصدر</th><th>العمر</th><th>الحالة</th><th>الأثر</th></tr></thead><tbody>${rows.slice(0,160).map((r,i)=>`<tr><td>${i+1}</td><td class="symbol">${esc(r.symbol)}</td><td class="stock-fullname92">${esc(r.name||"")}</td><td>${fmt(r.finalPrice)}</td><td>${fmt(r.recommendationPrice)}</td><td>${fmt(r.marketPrice)}</td><td>${fmt(r.cachePrice)}</td><td>${fmt(r.historyPrice)}</td><td>${esc(r.sourceUsed||"-")}</td><td>${r.sourceAgeMinutes==null?"-":fmt(r.sourceAgeMinutes,0)+"د"}</td><td><span class="price93-pill ${r.hasConflict?"bad":r.isStale?"warn":"ok"}">${r.hasConflict?"تعارض":r.isStale?"قديم":"مدقق"}</span></td><td>${r.hasConflict||r.isStale?"خصم احتمالية الهدف":"بدون خصم"}</td></tr>`).join("")||'<tr><td colspan="12">لا يوجد تقرير تدقيق بعد تشغيل Workflow.</td></tr>'}</tbody></table></div></div><div class="leftstack"><div class="panel"><h3>قواعد اعتماد السعر</h3><div class="price93-note"><b>الأولوية:</b> market ثم full-market-cache ثم recommendations ثم آخر history، مع مراعاة عمر اللقطة والتعارض.</div><div class="price93-note warn"><b>السعر القديم:</b> يخصم من احتمال تحقيق الهدف ولا يسمح بتضخيم أولوية السهم.</div><div class="price93-note bad"><b>تعارض السعر:</b> يظهر تنبيه واضح ويتم خصم أكبر حتى تتم مراجعة المصدر.</div></div><div class="panel"><h3>مهم</h3><p class="muted" style="line-height:2">GitHub Pages لا يعطي بثًا لحظيًا tick-by-tick. التطبيق يعتمد على آخر لقطة عامة/متأخرة يجلبها الـ Workflow.</p></div></div></section>`}
 
+
+/* ===================== V9.3.1 Daily Opportunities Readability ===================== */
+function v931PriorityFormulaText(){return "الترتيب النهائي: 1) احتمال تحقيق الهدف أولًا، 2) الربح إلى هدف 1، 3) العائد المتوقع بعد المخاطر، 4) R/R، 5) السيولة. السعر القديم أو المتعارض يخصم من الاحتمال."}
+function v931ViewMode(){return localStorage.getItem("egx_v931_daily_view")||"cards"}
+function v931SetViewMode(m){localStorage.setItem("egx_v931_daily_view",m)}
+function v931Name(r){const ar=String(r&&r.name_ar||"").trim(), en=String(r&&r.name_en||r&&r.name||"").trim();return ar||en||String(r&&r.symbol||"")}
+function v931SubName(r){const ar=String(r&&r.name_ar||"").trim(), en=String(r&&r.name_en||r&&r.name||"").trim();return ar&&en&&norm(ar)!==norm(en)?en:""}
+function v931RR(r){return typeof rr==="function"?rr({...r,price:typeof v93ResolvedPrice==="function"?v93ResolvedPrice(r):num(r.price)}):0}
+function v931Price(r){return typeof v93ResolvedPrice==="function"?v93ResolvedPrice(r):(num(r.price)||0)}
+function v931PriceStateLabel(r){if(typeof v93PriceState==="function"){const st=v93PriceState(r);return {label:st.label,cls:st.state}}return {label:"غير مدقق",cls:"warn"}}
+function v931PriorityScore(r){return typeof v921TargetProbability==="function"?v921TargetProbability(r):(num(r.finalConfidence)||0)}
+function v931Potential(r){return typeof v92PotentialProfitPct==="function"?v92PotentialProfitPct(r):0}
+function v931Expected(r){return typeof v92ExpectedReturnPct==="function"?v92ExpectedReturnPct(r):0}
+function v931DailyRows(){return (typeof v85Sorted==="function"?v85Sorted(EGX.rows||[]):(EGX.rows||[]).slice()).filter(r=>sclass(r)!=="risk").slice(0,60)}
+function v931FormulaBox(){return `<div class="formula931"><b>آلية تحديد الأولوية واضحة الآن:</b><br>${v931PriorityFormulaText()}<div class="formula931-grid"><div class="formula931-item"><span>1. الأساس الحاسم</span><b>احتمال تحقيق الهدف %</b></div><div class="formula931-item"><span>2. كسر التعادل</span><b>الربح إلى هدف 1</b></div><div class="formula931-item"><span>3. ضبط المخاطر</span><b>العائد المتوقع + R/R</b></div><div class="formula931-item"><span>4. صلاحية السعر</span><b>خصم عند سعر قديم/متعارض</b></div></div></div>`}
+function v931StockNameBlock(r){const sub=v931SubName(r);return `<div class="daily-name-cell"><b>${esc(v931Name(r))}</b>${sub?`<small>${esc(sub)}</small>`:""}<small>رمز: ${esc(r.symbol||"-")}</small></div>`}
+function v931OpportunityCard(r,i){const ps=v931PriceStateLabel(r),p=v931PriorityScore(r);return `<div class="daily931-card" data-symbol="${esc(r.symbol)}"><div class="top"><div><span class="rank">${i+1}</span><span class="symbol"> ${esc(r.symbol)}</span><div class="name">${esc(v931Name(r))}</div>${v931SubName(r)?`<small class="muted">${esc(v931SubName(r))}</small>`:""}</div><div class="prob"><span>احتمال الهدف</span><b>${fmt0(p)}%</b></div></div><div class="daily931-metrics"><div class="daily931-metric"><span>السعر المدقق</span><b>${fmt(v931Price(r))}</b><small class="daily931-small ${ps.cls==="ok"?"pos":ps.cls==="bad"?"neg":"warn"}">${esc(ps.label)}</small></div><div class="daily931-metric"><span>الربح إلى هدف 1</span><b class="${v931Potential(r)>=0?"pos":"neg"}">${fmt(v931Potential(r),1)}%</b></div><div class="daily931-metric"><span>العائد المتوقع</span><b class="${v931Expected(r)>=0?"pos":"neg"}">${fmt(v931Expected(r),1)}%</b></div><div class="daily931-metric"><span>R/R</span><b>${fmt(v931RR(r),2)}</b></div><div class="daily931-metric"><span>الدخول</span><b>${fmt(r.entryFrom)} - ${fmt(r.entryTo)}</b></div><div class="daily931-metric"><span>هدف / وقف</span><b><span class="pos">${fmt(r.target1)}</span> / <span class="neg">${fmt(r.stopLoss)}</span></b></div><div class="daily931-metric"><span>الثقة</span><b>${fmt0(r.finalConfidence)}%</b></div><div class="daily931-metric"><span>السيولة</span><b>${fmtCompact(r.valueTraded)}</b></div><div class="daily931-metric"><span>التغير اليومي</span><b class="${num(r.changePct)>=0?"pos":"neg"}">${pct(r.changePct)}</b></div></div><div class="daily931-reason"><b>سبب التوصية:</b><br>${esc(r.reason||"لا يوجد سبب تفصيلي متاح.")}</div><div style="margin-top:9px">${proDetailButton(r.symbol)}</div></div>`}
+function v931DailyTable(rows){return `<div class="tablewrap no-x"><table class="compact-table daily931-table"><thead><tr><th>#</th><th>الرمز</th><th>اسم السهم الكامل</th><th>احتمال الهدف</th><th>السعر المدقق</th><th>الربح لهدف1</th><th>العائد المتوقع</th><th>R/R</th><th>التغير</th><th>السيولة</th><th>الدخول</th><th>هدف1</th><th>وقف</th><th>الثقة</th><th>سبب التوصية</th><th>إجراء</th></tr></thead><tbody>${rows.slice(0,60).map((r,i)=>`<tr data-symbol="${esc(r.symbol)}"><td>${i+1}</td><td class="symbol">${esc(r.symbol)}</td><td>${v931StockNameBlock(r)}</td><td>${typeof v921ProbBadge==="function"?v921ProbBadge(r):fmt0(v931PriorityScore(r))+"%"}</td><td>${typeof v93PriceCell==="function"?v93PriceCell(r):fmt(v931Price(r))}</td><td class="${v931Potential(r)>=0?"pos":"neg"}">${fmt(v931Potential(r),1)}%</td><td class="${v931Expected(r)>=0?"pos":"neg"}">${fmt(v931Expected(r),1)}%</td><td>${fmt(v931RR(r),2)}</td><td class="${num(r.changePct)>=0?"pos":"neg"}">${pct(r.changePct)}</td><td>${fmtCompact(r.valueTraded)}</td><td>${fmt(r.entryFrom)}-${fmt(r.entryTo)}</td><td class="pos">${fmt(r.target1)}</td><td class="neg">${fmt(r.stopLoss)}</td><td>${fmt0(r.finalConfidence)}%</td><td class="daily-reason-cell">${esc(r.reason||"")}</td><td>${proDetailButton(r.symbol)}</td></tr>`).join("")}</tbody></table></div>`}
+function renderDailyOpportunities(){const rows=v931DailyRows(),fresh=typeof v92Freshness==="function"?v92Freshness():{state:"warn",label:"غير معروف",last:null},best=rows[0]||{},mode=v931ViewMode();return `${header("Daily Opportunities","فرص يومية واضحة قابلة للقراءة — مرتبة باحتمال تحقيق الهدف أولًا")}${quickJump()}${commandStrip()}${v931FormulaBox()}<section class="daily92-grid"><div class="daily92-card"><span>أفضل فرصة حالية</span><b>${esc(best.symbol||"-")}</b><small>${best.symbol?`${esc(v931Name(best))} — احتمال ${fmt0(v931PriorityScore(best))}%`:"-"}</small></div><div class="daily92-card"><span>عدد الفرص</span><b>${fmt0(rows.length)}</b><small>بعد استبعاد إشارات المخاطر</small></div><div class="daily92-card"><span>فوق 70% احتمال هدف</span><b>${fmt0(rows.filter(r=>v931PriorityScore(r)>=70).length)}</b><small>حسب النموذج الحالي</small></div><div class="daily92-card"><span>بيانات السعر</span><b>${fresh.state==="ok"?"حديثة":fresh.state==="warn"?"تحتاج مراجعة":"قديمة"}</b><small>آخر لقطة: ${fresh.last?esc(new Date(fresh.last).toLocaleString("en-GB")):"غير معروف"}</small></div></section><div class="daily-view-toggle"><button class="btn ${mode==="cards"?"active":""}" data-daily-view="cards">عرض كروت واضح</button><button class="btn ${mode==="table"?"active":""}" data-daily-view="table">عرض جدول تفصيلي</button></div><section class="panel"><h3>الفرص اليومية <span>${fmt0(rows.length)}</span></h3>${mode==="table"?v931DailyTable(rows):`<div class="daily931-cardlist">${rows.slice(0,30).map(v931OpportunityCard).join("")}</div>`}</section>`}
+
 function content(){if(EGX.screen==="classic")return classic();if(EGX.screen==="dashboard")return dashboard();if(EGX.screen==="dailyOpportunities")return renderDailyOpportunities();if(EGX.screen==="stockSearch")return renderStockSearch();if(EGX.screen==="priceReconcile")return renderPriceReconciliation();if(EGX.screen==="chartLab"||EGX.screen==="historyChart"||EGX.screen==="historyLab")return renderHistoricalChartLab();if(EGX.screen==="sessionMemory")return renderSessionMemory();if(EGX.screen==="confidenceGuard")return renderConfidenceGuard();if(EGX.screen==="mobile")return renderMobileHub();if(EGX.screen==="portfolio")return portfolio();if(EGX.screen==="portfolioRisk")return renderPortfolioRisk();if(EGX.screen==="rebalance")return renderRebalance();if(EGX.screen==="accuracy")return renderAccuracy();if(EGX.screen==="intelligence")return renderIntelligence();if(EGX.screen==="opportunities")return opportunities();if(EGX.screen==="institutional")return renderInstitutionalScoring();if(EGX.screen==="liquidity")return renderLiquidity();if(EGX.screen==="volume")return renderVolume();if(EGX.screen==="support")return renderSupport();if(EGX.screen==="sectors")return renderSectorIntelligence();if(EGX.screen==="sectorCompletion")return renderSectorCompletion();if(EGX.screen==="newsIntel")return renderNewsIntelligence();if(EGX.screen==="watchlist")return renderWatchlist();if(EGX.screen==="pipeline")return renderWatchlistPipeline();if(EGX.screen==="alerts")return renderAlerts();if(EGX.screen==="portfolioAlerts")return renderPortfolioSmartAlerts();if(EGX.screen==="dailyBrief")return renderDailyDecisionBrief();if(EGX.screen==="reports")return renderReports();if(EGX.screen==="settings")return renderSettings();if(EGX.screen==="sources")return renderAppHealth();if(EGX.screen==="stability")return renderStabilityQA();const names={};return placeholder(names[EGX.screen]||"EGX Pro Hub")}
 function render(){const app=document.getElementById("app");if(EGX.screen==="classic"){app.innerHTML=content()}else if(typeof v92FocusScreens==="function"&&v92FocusScreens()){app.innerHTML=`<div class="shell focus-shell"><main class="main">${v92FocusNav()}${content()}</main>${v716IsMobile?v716BottomNav():""}</div>`}else{app.innerHTML=`<div class="shell">${side()}<main class="main">${content()}</main>${v716IsMobile?v716BottomNav():""}</div>`}bind()}
 function bind(){
@@ -2911,13 +2931,13 @@ document.querySelectorAll('button[data-screen="chartLab"],button[data-screen="hi
     render();
   };
 });
-document.querySelectorAll("[data-screen]").forEach(b=>b.onclick=()=>{EGX.screen=b.dataset.screen;localStorage.setItem("egx_v61_screen",EGX.screen);render()});document.querySelectorAll("[data-symbol]").forEach(tr=>tr.onclick=()=>{EGX.selected=tr.dataset.symbol;render()});document.querySelectorAll("[data-pro-detail]").forEach(b=>b.onclick=e=>{e.stopPropagation();openProDrawer(b.dataset.proDetail)});document.querySelectorAll("[data-page]").forEach(b=>b.onclick=e=>{e.stopPropagation();const p=Number(b.dataset.page);if(!b.disabled&&p){EGX.page=p;render()}});
+document.querySelectorAll("[data-daily-view]").forEach(b=>b.onclick=e=>{e.stopPropagation();v931SetViewMode(b.dataset.dailyView);render()});document.querySelectorAll("[data-screen]").forEach(b=>b.onclick=()=>{EGX.screen=b.dataset.screen;localStorage.setItem("egx_v61_screen",EGX.screen);render()});document.querySelectorAll("[data-symbol]").forEach(tr=>tr.onclick=()=>{EGX.selected=tr.dataset.symbol;render()});document.querySelectorAll("[data-pro-detail]").forEach(b=>b.onclick=e=>{e.stopPropagation();openProDrawer(b.dataset.proDetail)});document.querySelectorAll("[data-page]").forEach(b=>b.onclick=e=>{e.stopPropagation();const p=Number(b.dataset.page);if(!b.disabled&&p){EGX.page=p;render()}});
 document.querySelectorAll("[data-inst-grade]").forEach(b=>b.onclick=e=>{e.stopPropagation();localStorage.setItem("egx_v800_grade",b.dataset.instGrade);render()});document.querySelectorAll("[data-pipe-stage]").forEach(b=>b.onclick=e=>{e.stopPropagation();v83SetStage(b.dataset.symbol,b.dataset.pipeStage);render()});document.querySelectorAll("[data-watch-toggle]").forEach(b=>b.onclick=e=>{e.stopPropagation();toggleWatch(b.dataset.watchToggle)});
 v801BindStockSearchStable();const aw=document.getElementById("addWatch");const wi=document.getElementById("watchInput");if(aw&&wi)aw.onclick=()=>{toggleWatch(wi.value)};
 egxBindPwaInstallButton();document.querySelectorAll("[data-alert-ack]").forEach(b=>b.onclick=e=>{e.stopPropagation();const s=v717AckStore();const id=b.dataset.alertAck;if(s[id])delete s[id];else s[id]=new Date().toISOString();v717SaveAck(s);render()});document.querySelectorAll("[data-alert88-filter]").forEach(b=>b.onclick=e=>{e.stopPropagation();localStorage.setItem("egx_v88_alert_filter",b.dataset.alert88Filter);render()});document.querySelectorAll("[data-alert-filter]").forEach(b=>b.onclick=e=>{e.stopPropagation();localStorage.setItem("egx_v717_alert_filter",b.dataset.alertFilter);render()});const ca=document.getElementById("clearAlertAck");if(ca)ca.onclick=()=>{localStorage.removeItem("egx_v717_alert_ack");render()};const cam=document.getElementById("copyAccuracyMeaning");if(cam)cam.onclick=async()=>{const t=document.getElementById("accuracyMeaningText")?.innerText||v90MeaningText();try{await navigator.clipboard.writeText(t);cam.textContent="تم النسخ"}catch(e){alert(t)}};const cdb=document.getElementById("copyDailyBrief");if(cdb)cdb.onclick=async()=>{const t=document.getElementById("dailyBriefText")?.innerText||v89BriefText();try{await navigator.clipboard.writeText(t);cdb.textContent="تم النسخ"}catch(e){alert(t)}};const ddb=document.getElementById("downloadDailyBrief");if(ddb)ddb.onclick=()=>{const t=document.getElementById("dailyBriefText")?.innerText||v89BriefText();const blob=new Blob([t],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="egx-daily-decision-brief.txt";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500)};const coq=document.getElementById("clearOldQA");if(coq)coq.onclick=()=>{localStorage.removeItem("egx_v81_last_client_qa");EGX.localRegressionResult={};render()};const qa=document.getElementById("runClientQA");if(qa)qa.onclick=()=>{try{v81RunClientQA();render()}catch(e){alert("QA failed: "+e.message)}};const cq=document.getElementById("copyClientQA");if(cq)cq.onclick=async()=>{const r=EGX.localRegressionResult||v81LoadLastClientQA()||EGX.regressionReport||{};const t=JSON.stringify(r,null,2);try{await navigator.clipboard.writeText(t);cq.textContent="تم النسخ"}catch(e){alert(t)}};const nb=document.getElementById("notifyBtn");if(nb)nb.onclick=async()=>{try{if(!("Notification" in window)){alert("المتصفح لا يدعم الإشعارات");return}const p=await Notification.requestPermission();if(p==="granted"){new Notification("EGX Pro Hub",{body:"تم تفعيل إشعارات المتصفح أثناء فتح الصفحة."})}}catch(e){}};
 const cr=document.getElementById("copyReport");if(cr)cr.onclick=async()=>{const t=document.getElementById("reportText")?.innerText||"";try{await navigator.clipboard.writeText(t);cr.textContent="تم النسخ"}catch(e){alert(t)}};
 const cl=document.getElementById("clearLocal");if(cl)cl.onclick=()=>{if(confirm("مسح المحفظة وقوائم المراقبة المحلية؟")){localStorage.removeItem("egx_v61_portfolio");localStorage.removeItem("egx_v64_watchlist");EGX.watchlist=[];EGX.portfolioText="";render()}};const s=document.getElementById("search");if(s){s.oninput=e=>{EGX.query=e.target.value;EGX.page=1;render()};setTimeout(()=>{try{s.focus({preventScroll:true});s.setSelectionRange(s.value.length,s.value.length)}catch(e){}},0)}const f=document.getElementById("filter");if(f){f.value=EGX.filter;f.onchange=e=>{EGX.filter=e.target.value;EGX.page=1;render()}}const c=document.getElementById("conf");if(c){c.value=EGX.confidence;c.onchange=e=>{EGX.confidence=e.target.value;EGX.page=1;render()}}const sec=document.getElementById("sector");if(sec){sec.value=EGX.sector;sec.onchange=e=>{EGX.sector=e.target.value;EGX.page=1;render()}}const r=document.getElementById("reset");if(r)r.onclick=()=>{EGX.query="";EGX.filter="all";EGX.confidence="all";EGX.sector="all";EGX.page=1;render()};const ref=document.getElementById("refresh");if(ref)ref.onclick=()=>location.reload();const exp=document.getElementById("export");if(exp)exp.onclick=exportCsv;const cb=document.getElementById("classicBtn");if(cb)cb.onclick=()=>{EGX.screen="classic";render()};const ct=document.getElementById("classicTop");if(ct)ct.onclick=()=>{EGX.screen="classic";render()};const pm=document.getElementById("proMode");if(pm)pm.onclick=()=>{EGX.screen="opportunities";localStorage.setItem("egx_v61_screen","opportunities");history.replaceState(null,"",location.pathname);render()};const pt=document.getElementById("portText");const sp=document.getElementById("savePort");if(sp&&pt)sp.onclick=()=>{EGX.portfolioText=pt.value;localStorage.setItem("egx_v61_portfolio",EGX.portfolioText);render()};const xf=document.getElementById("excelFile");if(xf)xf.onchange=e=>handleExcelImport(e.target.files&&e.target.files[0]);const im=document.getElementById("imageFile");if(im)im.onchange=e=>handleImageImport(e.target.files&&e.target.files[0]);const ap=document.getElementById("applyOcr");const ot=document.getElementById("ocrText");if(ap&&ot)ap.onclick=()=>{const rows=parsePortfolioText(ot.value);if(!rows.length){setImportStatus("ocrStatus","النص غير صالح. اكتب مثل: COMI,5000,77.50","bad");return}EGX.portfolioText=mergePortfolioText(rowsToPortfolioText(rows));localStorage.setItem("egx_v61_portfolio",EGX.portfolioText);setImportStatus("ocrStatus",`تم اعتماد ${rows.length} مركز وإضافتها للمحفظة.`,"good");render()}}
-async function init(){const[recs,cache,market,source,alerts,history,historyIndicators,historyHealth,pro,news,newsIntel,newsCollector,accuracy,accuracyHistory,appHealth,regressionReport,workflowBudget,historyIntegrity,sectorCompletion,smartAlertRules,dailyBrief,accuracyInterpretation,confidenceGuard,sessionMemory,priceFreshness,priceReconciliation]=await Promise.all([loadJson("data/recommendations.json",{}),loadJson("data/full-market-cache.json",{}),loadJson("data/market.json",{}),loadJson("data/source-health.json",{}),loadJson("data/alerts.json",{}),loadJson("data/history.json",{}),loadJson("data/history-indicators.json",{}),loadJson("data/history-health.json",{}),loadJson("data/pro-report.json",{}),loadJson("data/news-report.json",{}),loadJson("data/news-intelligence.json",{}),loadJson("data/trusted-news-collector-status.json",{}),loadJson("data/recommendation-accuracy-latest.json",{}),loadJson("data/recommendation-accuracy.json",{}),loadJson("data/app-health-status.json",{}),loadJson("data/app-regression-report.json",{}),loadJson("data/workflow-budget-status.json",{}),loadJson("data/history-integrity-report.json",{}),loadJson("data/sector-completion-report.json",{}),loadJson("data/smart-alert-rules.json",{}),loadJson("data/daily-decision-brief.json",{}),loadJson("data/accuracy-interpretation-report.json",{}),loadJson("data/confidence-guard-report.json",{}),loadJson("data/session-memory-status.json",{}),loadJson("data/price-freshness-report.json",{}),loadJson("data/price-reconciliation-report.json",{})]);EGX.source=source||{};EGX.market=market||{};EGX.alerts=alerts||{};EGX.history=history||{};EGX.historyIndicators=historyIndicators||{};EGX.historyHealth=historyHealth||{};EGX.pro=pro||{};EGX.news=news||{};EGX.newsIntel=newsIntel||{};EGX.newsCollector=newsCollector||{};EGX.accuracy=accuracy||{};EGX.accuracyLatest=accuracy||{};EGX.accuracyHistory=accuracyHistory||{};EGX.appHealth=appHealth||{};EGX.regressionReport=regressionReport||{};EGX.workflowBudget=workflowBudget||{};EGX.historyIntegrity=historyIntegrity||{};EGX.sectorCompletion=sectorCompletion||{};EGX.smartAlertRules=smartAlertRules||{};EGX.dailyBrief=dailyBrief||{};EGX.accuracyInterpretation=accuracyInterpretation||{};EGX.confidenceGuard=confidenceGuard||{};EGX.sessionMemory=sessionMemory||{};EGX.priceFreshness=priceFreshness||{};EGX.priceReconciliation=priceReconciliation||{};let raw=[];if(recs&&Array.isArray(recs.all)&&recs.all.length)raw=recs.all;else if(cache&&Array.isArray(cache.rows)&&cache.rows.length)raw=cache.rows;else if(market&&Array.isArray(market.rows)&&market.rows.length)raw=market.rows;else raw=SAMPLE;EGX.rows=raw.map(normalizeRow).filter(Boolean);if(!EGX.rows.length)EGX.rows=SAMPLE.map(normalizeRow);EGX.selected=(sorted()[0]||{}).symbol;render();console.log("EGX Pro Hub V9.3 Price Reconciliation loaded:",EGX.rows.length)}
+async function init(){const[recs,cache,market,source,alerts,history,historyIndicators,historyHealth,pro,news,newsIntel,newsCollector,accuracy,accuracyHistory,appHealth,regressionReport,workflowBudget,historyIntegrity,sectorCompletion,smartAlertRules,dailyBrief,accuracyInterpretation,confidenceGuard,sessionMemory,priceFreshness,priceReconciliation]=await Promise.all([loadJson("data/recommendations.json",{}),loadJson("data/full-market-cache.json",{}),loadJson("data/market.json",{}),loadJson("data/source-health.json",{}),loadJson("data/alerts.json",{}),loadJson("data/history.json",{}),loadJson("data/history-indicators.json",{}),loadJson("data/history-health.json",{}),loadJson("data/pro-report.json",{}),loadJson("data/news-report.json",{}),loadJson("data/news-intelligence.json",{}),loadJson("data/trusted-news-collector-status.json",{}),loadJson("data/recommendation-accuracy-latest.json",{}),loadJson("data/recommendation-accuracy.json",{}),loadJson("data/app-health-status.json",{}),loadJson("data/app-regression-report.json",{}),loadJson("data/workflow-budget-status.json",{}),loadJson("data/history-integrity-report.json",{}),loadJson("data/sector-completion-report.json",{}),loadJson("data/smart-alert-rules.json",{}),loadJson("data/daily-decision-brief.json",{}),loadJson("data/accuracy-interpretation-report.json",{}),loadJson("data/confidence-guard-report.json",{}),loadJson("data/session-memory-status.json",{}),loadJson("data/price-freshness-report.json",{}),loadJson("data/price-reconciliation-report.json",{})]);EGX.source=source||{};EGX.market=market||{};EGX.alerts=alerts||{};EGX.history=history||{};EGX.historyIndicators=historyIndicators||{};EGX.historyHealth=historyHealth||{};EGX.pro=pro||{};EGX.news=news||{};EGX.newsIntel=newsIntel||{};EGX.newsCollector=newsCollector||{};EGX.accuracy=accuracy||{};EGX.accuracyLatest=accuracy||{};EGX.accuracyHistory=accuracyHistory||{};EGX.appHealth=appHealth||{};EGX.regressionReport=regressionReport||{};EGX.workflowBudget=workflowBudget||{};EGX.historyIntegrity=historyIntegrity||{};EGX.sectorCompletion=sectorCompletion||{};EGX.smartAlertRules=smartAlertRules||{};EGX.dailyBrief=dailyBrief||{};EGX.accuracyInterpretation=accuracyInterpretation||{};EGX.confidenceGuard=confidenceGuard||{};EGX.sessionMemory=sessionMemory||{};EGX.priceFreshness=priceFreshness||{};EGX.priceReconciliation=priceReconciliation||{};let raw=[];if(recs&&Array.isArray(recs.all)&&recs.all.length)raw=recs.all;else if(cache&&Array.isArray(cache.rows)&&cache.rows.length)raw=cache.rows;else if(market&&Array.isArray(market.rows)&&market.rows.length)raw=market.rows;else raw=SAMPLE;EGX.rows=raw.map(normalizeRow).filter(Boolean);if(!EGX.rows.length)EGX.rows=SAMPLE.map(normalizeRow);EGX.selected=(sorted()[0]||{}).symbol;render();console.log("EGX Pro Hub V9.3.1 Daily Opportunities Readability loaded:",EGX.rows.length)}
 init().catch(e=>{
   console.error("EGX init failed", e);
   const app=document.getElementById("app");
