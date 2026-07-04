@@ -77,6 +77,9 @@ jobs:
       - name: Price reconciliation report
         run: node scripts/build-price-reconciliation-report.js || echo "Price reconciliation skipped"
 
+      - name: Final opportunity ranking
+        run: node scripts/build-final-opportunity-ranking.js || echo "Final ranking skipped"
+
       - name: Snapshot evidence confidence layer
         run: node scripts/build-snapshot-evidence.js || echo "Snapshot evidence skipped"
 
