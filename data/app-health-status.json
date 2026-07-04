@@ -1,11 +1,22 @@
 {
-  "ok": false,
+  "ok": true,
   "engine": "v7_15_data_trust_health_center",
-  "generatedAt": null,
-  "score": null,
+  "generatedAt": "2026-07-04T04:20:30.935Z",
+  "score": 84,
   "warnings": [
-    "Generated after workflow run."
+    "No symbol has complete 50-session history yet.",
+    "Recommendation accuracy is in warm-up or not measured yet."
   ],
   "failures": [],
-  "metrics": {}
+  "metrics": {
+    "marketRows": 221,
+    "totalUniverse": 224,
+    "marketDataAgeMinutes": 4,
+    "complete50History": 0,
+    "partialHistory": 217,
+    "trustedExternalNews": 160,
+    "newsSignals": 0,
+    "measuredRecommendations": 0
+  },
+  "note": "Health score is a transparency indicator, not investment advice."
 }
