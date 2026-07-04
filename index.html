@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EGX Pro Hub — Professional Terminal V8.7.1</title>
+  <title>EGX Pro Hub — Professional Terminal V8.9.1</title>
   <style>
     :root{
       --bg:#050914;--bg2:#071326;--card:#08182d;--card2:#0a1d36;
@@ -159,7 +159,7 @@
     @media(max-width:900px){.shell{display:block}.side{position:relative;width:100%;height:auto;border-left:none;border-bottom:1px solid rgba(119,169,235,.2)}.nav{grid-template-columns:repeat(2,minmax(0,1fr))}.head{display:block}.actions{margin-top:12px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar,.detail,.dashgrid,.portgrid{grid-template-columns:1fr}}
     @media(max-width:560px){.main{padding:12px}.kpis{grid-template-columns:1fr}.leftstack{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.head h2{font-size:24px}}
   
-    /* V8.7 Sector Completion + Portfolio/Watchlist Intelligence */
+    /* V8.9 Daily Decision Brief + Portfolio/Watchlist Intelligence */
     .v77-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:12px}
     .v77-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0}
     .v77-card{background:linear-gradient(180deg,rgba(8,24,45,.9),rgba(5,13,27,.88));border:1px solid rgba(119,169,235,.18);border-radius:18px;padding:12px}
@@ -319,7 +319,7 @@
     .fatal-box h2{margin:0 0 10px;color:#fff}.fatal-box code{background:#020617;color:#fef3c7;border-radius:8px;padding:2px 6px}
 
 
-    /* V8.7 Sector Completion + Stable Stock Search */
+    /* V8.9 Daily Decision Brief + Stable Stock Search */
     .stock-search-status{font-size:12px;color:#93a9c9;margin-top:6px;line-height:1.6}
 
 
@@ -360,11 +360,11 @@
     @media(max-width:780px){.pipe-board{grid-template-columns:1fr}.pipe-meta{grid-template-columns:repeat(3,1fr)}}
 
 
-    /* V8.7 Sector Completion Note */
+    /* V8.9 Daily Decision Brief Note */
     .workflow-budget-note{border:1px solid rgba(34,197,94,.24);background:rgba(34,197,94,.08);color:#bbf7d0;border-radius:14px;padding:10px;margin:10px 0;line-height:1.8}
 
 
-    /* V8.7 Sector Completion + Dashboard Labels */
+    /* V8.9 Daily Decision Brief + Dashboard Labels */
     .mini-metric{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:86px}
     .mini-metric .mini-label{font-size:9px;color:#8ca8cb;font-weight:800;line-height:1.2}
     .mini-metric .mini-value{font-size:13px;font-weight:950}
@@ -418,7 +418,7 @@ const SAMPLE=[
 {symbol:"JUFO",name_ar:"جهينة للصناعات الغذائية",sector:"أغذية ومشروبات",price:15.85,changePct:-.44,valueTraded:12700000,volume:792000,support1:15.30,resistance1:16.40,entryFrom:15.60,entryTo:15.90,target1:16.40,target2:17.30,stopLoss:14.90,finalConfidence:61,dataQualityScore:74,grade:"B-",signal:"WATCH",recommendation:"مراقبة",reason:"انتظار اختراق مقاومة",priority:10}
 ];
 
-const EGX={screen:localStorage.getItem("egx_v61_screen")||"opportunities",query:"",filter:"all",confidence:"all",sector:"all",selected:null,rows:[],source:{},market:{},alerts:{},history:{},historyIndicators:{},historyHealth:{},portfolio:[],portfolioText:localStorage.getItem("egx_v61_portfolio")||"COMI,5000,77.50\nETEL,10000,18.20\nEFGH,15000,16.10\nTMGH,7500,30.40\nCCAP,20000,2.41",watchlist:JSON.parse(localStorage.getItem("egx_v64_watchlist")||"[]"),news:{},newsIntel:{},newsCollector:{},accuracy:{},accuracyLatest:{},accuracyHistory:{},appHealth:{},regressionReport:{},historyIntegrity:{},sectorCompletion:{},pro:{}};
+const EGX={screen:localStorage.getItem("egx_v61_screen")||"opportunities",query:"",filter:"all",confidence:"all",sector:"all",selected:null,rows:[],source:{},market:{},alerts:{},history:{},historyIndicators:{},historyHealth:{},portfolio:[],portfolioText:localStorage.getItem("egx_v61_portfolio")||"COMI,5000,77.50\nETEL,10000,18.20\nEFGH,15000,16.10\nTMGH,7500,30.40\nCCAP,20000,2.41",watchlist:JSON.parse(localStorage.getItem("egx_v64_watchlist")||"[]"),news:{},newsIntel:{},newsCollector:{},accuracy:{},accuracyLatest:{},accuracyHistory:{},appHealth:{},regressionReport:{},historyIntegrity:{},sectorCompletion:{},smartAlertRules:{},dailyBrief:{},pro:{}};
 if(new URLSearchParams(location.search).get("classic")==="1"){EGX.screen="classic"}
 
 function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
@@ -760,7 +760,7 @@ function chartSvg(row,bars=false){
 
 function kpi(label,value,delta,red){return`<div class="card kpi"><div class="label">${label}</div><div class="value">${value}</div><div class="delta ${red?"red":""}">${delta||""}</div><div class="spark"><svg viewBox="0 0 120 24"><polyline points="2,18 14,10 26,15 38,7 50,14 62,8 74,12 86,5 100,9 118,4" fill="none" stroke="${red?"#ef4444":"#22c55e"}" stroke-width="2"/></svg></div></div>`}
 
-function quickJump(){return`<div class="screen-jump"><button data-screen="opportunities">◎ الفرص التفصيلية</button><button data-screen="institutional">◬ التحليل المؤسسي</button><button data-screen="stockSearch">⌕ بحث سهم</button><button data-screen="chartLab">▧ تاريخ وشارت</button><button data-screen="dashboard">⌂ لوحة السوق</button><button data-screen="portfolio">◈ المحفظة والتقارير</button><button data-screen="portfolioRisk">⟁ مخاطر المحفظة</button><button data-screen="rebalance">⇄ إعادة التوازن</button></div>`}
+function quickJump(){return`<div class="screen-jump"><button data-screen="opportunities">◎ الفرص التفصيلية</button><button data-screen="institutional">◬ التحليل المؤسسي</button><button data-screen="stockSearch">⌕ بحث سهم</button><button data-screen="chartLab">▧ تاريخ وشارت</button><button data-screen="dashboard">⌂ لوحة السوق</button><button data-screen="portfolio">◈ المحفظة والتقارير</button><button data-screen="portfolioRisk">⟁ مخاطر المحفظة</button><button data-screen="portfolioAlerts">⚡ تنبيهات المحفظة</button><button data-screen="rebalance">⇄ إعادة التوازن</button></div>`}
 function actionClassText(r){const c=sclass(r);if(c==="buy")return"زيادة/دخول مشروط";if(c==="near")return"مراقبة دخول";if(c==="risk")return"تخفيف مخاطر";return"احتفاظ / انتظار تأكيد"}
 function topMovers(){return sorted().slice().sort((a,b)=>(num(b.changePct)||0)-(num(a.changePct)||0)).slice(0,5)}
 function topLiquidity(){return sorted().slice().sort((a,b)=>(num(b.valueTraded)||0)-(num(a.valueTraded)||0)).slice(0,5)}
@@ -821,8 +821,8 @@ function renderSettings(){
   return `${header("الإعدادات","إعدادات تجربة الاستخدام والبيانات المحلية")}${quickJump()}<section class="settings-grid"><div class="panel"><h3>إعدادات عامة</h3><div class="toggle-row"><span>تذكر آخر شاشة</span><span class="switch on"></span></div><div class="toggle-row"><span>إبراز الصف المحدد</span><span class="switch on"></span></div><div class="toggle-row"><span>استخدام بيانات الكاش</span><span class="switch on"></span></div></div><div class="panel"><h3>البيانات المحلية</h3><button class="btn warn" id="clearLocal">مسح المحفظة وقوائم المراقبة المحلية</button><p class="muted">لن يتم حذف ملفات GitHub أو بيانات السوق.</p></div></section>`
 }
 
-function side(){const nav=[["dashboard","لوحة السوق","⌂"],["stockSearch","بحث وتحليل سهم","⌕"],["chartLab","تاريخ وشارت","▧"],["mobile","موبايل","▣"],["opportunities","الفرص التفصيلية","◎"],["institutional","التحليل المؤسسي","◬"],["liquidity","مراقب السيولة","◒"],["volume","مراقب حجم التداول","▥"],["support","الدعم والمقاومة","◇"],["sectors","ذكاء القطاعات","▦"],["sectorCompletion","اكتمال القطاعات","▧"],["newsIntel","الأخبار الذكية","✺"],["portfolio","المحفظة والتقارير الذكية","◈"],["portfolioRisk","مخاطر المحفظة","⟁"],["rebalance","إعادة التوازن","⇄"],["accuracy","دقة التوصيات","✓"],["intelligence","ذكاء المحفظة والرقابة","✹"],["sources","صحة التطبيق","✦"],["stability","فحص الثبات","⚑"],["alerts","التنبيهات","♢"],["watchlist","قوائم المراقبة","★"],["pipeline","مسار الرقابة","⇢"],["reports","مركز التقارير","▤"],["settings","الإعدادات","⚙"]];return`<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><p>Professional Terminal V8.7</p></div></div><div class="nav-title">لوحة التحكم</div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[1]}</span><span class="ico">${n[2]}</span></button>`).join("")}</nav><div class="footer"><div class="live">متصل</div><div class="muted" style="margin-top:8px">بيانات عامة ومتأخرة — مساعد قرار فقط.</div><button class="btn warn" id="classicBtn" style="margin-top:10px;width:100%">الوضع الكلاسيكي</button></div></aside>`}
-function header(title,sub){const last=EGX.source.generatedAt||EGX.source.lastSuccessAt||EGX.market.updatedAt||new Date().toISOString();return`<div class="head"><div><h2>${title}</h2><p>${sub}</p></div><div class="actions"><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق التغطية: السوق المصري</span><span class="chip warn"><i class="dot"></i> وضع المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${esc(new Date(last).toLocaleString("en-GB"))}</span><span class="chip info"><i class="dot"></i> الكاش: ${fmt0(EGX.source.cacheRows||EGX.rows.length)} / ${fmt0(EGX.source.totalUniverse||EGX.rows.length)}</span><span class="chip"><i class="dot"></i> جودة البيانات: ${fmt0(EGX.source.avgDataQuality||100)}%</span><span class="chip info"><i class="dot"></i> تاريخ 50 جلسة: ${fmt0((EGX.historyHealth&&EGX.historyHealth.symbolsWithComplete50)||0)} سهم</span><span class="chip"><i class="dot"></i> V8.7 Sector Completion</span></div>`}
+function side(){const nav=[["dashboard","لوحة السوق","⌂"],["stockSearch","بحث وتحليل سهم","⌕"],["chartLab","تاريخ وشارت","▧"],["mobile","موبايل","▣"],["opportunities","الفرص التفصيلية","◎"],["institutional","التحليل المؤسسي","◬"],["liquidity","مراقب السيولة","◒"],["volume","مراقب حجم التداول","▥"],["support","الدعم والمقاومة","◇"],["sectors","ذكاء القطاعات","▦"],["sectorCompletion","اكتمال القطاعات","▧"],["newsIntel","الأخبار الذكية","✺"],["portfolio","المحفظة والتقارير الذكية","◈"],["portfolioRisk","مخاطر المحفظة","⟁"],["rebalance","إعادة التوازن","⇄"],["accuracy","دقة التوصيات","✓"],["intelligence","ذكاء المحفظة والرقابة","✹"],["sources","صحة التطبيق","✦"],["stability","فحص الثبات","⚑"],["alerts","التنبيهات","♢"],["portfolioAlerts","تنبيهات المحفظة","⚡"],["watchlist","قوائم المراقبة","★"],["pipeline","مسار الرقابة","⇢"],["dailyBrief","تقرير القرار اليومي","☷"],["reports","مركز التقارير","▤"],["settings","الإعدادات","⚙"]];return`<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><p>Professional Terminal V8.9</p></div></div><div class="nav-title">لوحة التحكم</div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[1]}</span><span class="ico">${n[2]}</span></button>`).join("")}</nav><div class="footer"><div class="live">متصل</div><div class="muted" style="margin-top:8px">بيانات عامة ومتأخرة — مساعد قرار فقط.</div><button class="btn warn" id="classicBtn" style="margin-top:10px;width:100%">الوضع الكلاسيكي</button></div></aside>`}
+function header(title,sub){const last=EGX.source.generatedAt||EGX.source.lastSuccessAt||EGX.market.updatedAt||new Date().toISOString();return`<div class="head"><div><h2>${title}</h2><p>${sub}</p></div><div class="actions"><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق التغطية: السوق المصري</span><span class="chip warn"><i class="dot"></i> وضع المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${esc(new Date(last).toLocaleString("en-GB"))}</span><span class="chip info"><i class="dot"></i> الكاش: ${fmt0(EGX.source.cacheRows||EGX.rows.length)} / ${fmt0(EGX.source.totalUniverse||EGX.rows.length)}</span><span class="chip"><i class="dot"></i> جودة البيانات: ${fmt0(EGX.source.avgDataQuality||100)}%</span><span class="chip info"><i class="dot"></i> تاريخ 50 جلسة: ${fmt0((EGX.historyHealth&&EGX.historyHealth.symbolsWithComplete50)||0)} سهم</span><span class="chip"><i class="dot"></i> V8.9 Daily Decision Brief</span></div>`}
 function kpis(){const p=pulse();const hs=historyGlobalStats();return`<section class="kpis">${kpi("عدد الفرص",fmt0(p.rows),"Universe "+fmt0(EGX.source.totalUniverse||p.rows))}${kpi("سجل 50 جلسة",fmt0(hs.with50),`متوسط ${fmt0(hs.avg)} جلسة`)}${kpi("سجل فعلي جزئي",fmt0(hs.withAny),`من ${fmt0(hs.total)} سهم`)}${kpi("فرص تخفيف مخاطر",fmt0(p.risk),"راجع الوقف",true)}${kpi("متوسط الثقة",fmt0(p.avg)+"%","يعرض التاريخ إن وجد")}${kpi("اتساع السوق",p.breadth.toFixed(2),p.status)}</section>`}
 function topFive(){const top=sorted().slice(0,5);return`<div class="panel"><h3>أفضل 5 فرص اليوم <span>🏆</span></h3><div class="list">${top.map((r,i)=>`<div class="listrow"><span class="rank">${i+1}</span><b>${esc(r.symbol)}</b><span>${fmt0(r.finalConfidence)}%</span><div></div><div class="bar"><span style="width:${Math.min(100,r.finalConfidence)}%"></span></div></div>`).join("")}</div></div>`}
 function pulsePanel(){const p=pulse();return`<div class="panel"><h3>نبض السوق <span>〽</span></h3><div class="ministat"><span>الاتجاه العام</span><b class="${p.breadth>=.5?"pos":"neg"}">${p.status}</b></div><div class="ministat"><span>اتساع السوق</span><b>${p.breadth.toFixed(2)}</b></div><div class="ministat"><span>قوة الشراء</span><b class="pos">${fmt0(p.breadth*100)}%</b></div><div class="ministat"><span>قيمة التداول المقروءة</span><b>${fmtCompact(p.value)}</b></div><div class="segment"><i style="width:${Math.max(5,p.breadth*55)}%"></i><i style="width:25%"></i><i style="width:12%"></i><i style="width:${Math.max(5,(1-p.breadth)*28)}%"></i></div></div>`}
@@ -980,7 +980,7 @@ function renderSupport(){
 
 function placeholder(title){return`${header(title,"تم توحيد التصميم ضمن الواجهة الاحترافية الجديدة.")}${kpis()}<section class="layout"><div class="leftstack">${pulsePanel()}${notes()}</div><div class="mainpanel">${opportunitiesTable(sorted().slice(0,10))}${detail(selectedRow())}</div></section>`}
 
-/* ===================== V8.7 Sector Completion + Portfolio/Watchlist Intelligence ===================== */
+/* ===================== V8.9 Daily Decision Brief + Portfolio/Watchlist Intelligence ===================== */
 function v77PortfolioRows(){try{return portfolioRows().map(r=>({...r,scope:"portfolio"}))}catch(e){return[]}}
 function v77WatchRows(){return(EGX.watchlist||[]).map(s=>EGX.rows.find(r=>r.symbol===s)).filter(Boolean).map(r=>({...r,scope:"watchlist"}))}
 function v77InPortfolio(symbol){return v77PortfolioRows().some(r=>r.symbol===symbol)}
@@ -1584,7 +1584,7 @@ function opportunities(){
 }
 
 
-/* ===================== V8.7 Sector Completion ===================== */
+/* ===================== V8.9 Daily Decision Brief ===================== */
 function v717AckStore(){try{return JSON.parse(localStorage.getItem("egx_v717_alert_ack")||"{}")}catch(e){return{}}}
 function v717SaveAck(x){localStorage.setItem("egx_v717_alert_ack",JSON.stringify(x||{}))}
 function v717AlertId(a){return [a.category||"",a.symbol||"",a.title||"",a.level||""].join("|").replace(/\s+/g,"_").slice(0,160)}
@@ -1793,7 +1793,7 @@ function renderPortfolioRisk(){
 }
 
 
-/* ===================== V8.7 Sector Completion ===================== */
+/* ===================== V8.9 Daily Decision Brief ===================== */
 function v800Clamp(x,a=0,b=100){return Math.max(a,Math.min(b,Number.isFinite(+x)?+x:0))}
 function v800NormScore(v){return v800Clamp(num(v)==null?0:num(v))}
 function v800RRScore(r){
@@ -2005,7 +2005,7 @@ function v81RequiredScreens(){
     ["rebalance","إعادة التوازن"],
     ["accuracy","دقة التوصيات"],
     ["sources","صحة التطبيق"],
-    ["alerts","التنبيهات"],
+    ["alerts","التنبيهات"],["portfolioAlerts","تنبيهات المحفظة"],
     ["watchlist","قوائم المراقبة"],
     ["pipeline","مسار الرقابة"],
     ["newsIntel","الأخبار الذكية"],
@@ -2073,7 +2073,7 @@ function renderStabilityQA(){
 }
 
 
-/* ===================== V8.7 Sector Completion Suggestions ===================== */
+/* ===================== V8.9 Daily Decision Brief Suggestions ===================== */
 function v82PortfolioRows(){
   let h=typeof v718PortfolioRows==="function"?v718PortfolioRows():(typeof portfolioRows==="function"?portfolioRows():[]);
   const total=h.reduce((s,r)=>s+(num(r.val)||0),0);
@@ -2202,7 +2202,7 @@ function renderHistoricalChartLab(){
 }
 
 
-/* ===================== V8.7 Sector Completion + Dashboard Labels ===================== */
+/* ===================== V8.9 Daily Decision Brief + Dashboard Labels ===================== */
 function v87MiniMetric(label,value,cls="",sub=""){
   return `<span class="mini-metric"><span class="mini-label">${esc(label)}</span><span class="mini-value ${cls}">${value}</span>${sub?`<span class="mini-sub">${esc(sub)}</span>`:""}</span>`;
 }
@@ -2251,7 +2251,195 @@ function renderSectorCompletion(){
   return`${header("Sector Completion","استكمال تصنيف القطاعات وتحسين تقارير السيولة والتوزيع القطاعي")}${quickJump()}${commandStrip()}<div class="sector-completion-banner ${st}"><b>${st==="ok"?"تغطية القطاعات ممتازة":"تغطية القطاعات تحتاج استكمال"}</b><br>${v87SectorPill(s.known,s.total)} — الأسهم غير المصنفة تؤثر على سيولة القطاعات، تأثير الأخبار القطاعي، وتوزيع المحفظة.</div><section class="sector-grid-v87"><div class="sector-card-v87"><span>إجمالي الأسهم</span><b>${fmt0(s.total)}</b><small>Universe الحالي</small></div><div class="sector-card-v87"><span>مصنفة</span><b>${fmt0(s.known)}</b><small>${fmt(s.coverage,1)}% تغطية</small></div><div class="sector-card-v87"><span>غير مصنفة</span><b>${fmt0(s.unknown.length)}</b><small>تحتاج مراجعة</small></div><div class="sector-card-v87"><span>عدد القطاعات</span><b>${fmt0(s.sectors.filter(x=>x.sector!=="غير مصنف").length)}</b><small>بعد التنظيف</small></div></section><section class="dashgrid"><div class="panel"><h3>سيولة القطاعات <span>مرتبة بالقيمة</span></h3><div class="tablewrap no-x"><table class="compact-table"><thead><tr><th>#</th><th>القطاع</th><th>عدد الأسهم</th><th>قيمة التداول</th><th>متوسط التغير اليومي</th><th>تأثير الأخبار</th></tr></thead><tbody>${s.sectors.slice(0,30).map((x,i)=>`<tr><td>${i+1}</td><td>${esc(x.sector)}</td><td>${fmt0(x.count)}</td><td>${fmtCompact(x.value)}</td><td class="${x.avgChange>=0?"pos":"neg"}">${pct(x.avgChange)}</td><td class="${x.newsAvg>=0?"pos":"neg"}">${fmt(x.newsAvg,1)}</td></tr>`).join("")}</tbody></table></div></div><div class="leftstack"><div class="panel"><h3>ملاحظات V8.7</h3><div class="sector-note-v87"><b>توضيح الأرقام في القوائم</b><br>الأرقام الخضراء/الحمراء في مراكز الزيادة والاحتفاظ أصبحت موسومة باسم: التغير اليومي — آخر جلسة.</div><div class="sector-note-v87 warn"><b>استكمال القطاعات</b><br>التصنيف المقترح لا يغيّر ملف القطاع الأساسي تلقائيًا. راجع الاقتراحات ثم اعتمدها في sector map.</div></div><div class="panel"><h3>حالة تقرير الـ Workflow</h3><p class="muted" style="line-height:2">آخر توليد: ${esc(report.generatedAt||"لم يتم بعد")}<br>اقتراحات تصنيف: ${fmt0(suggestions.length)}</p></div></div></section><section class="dashgrid"><div class="panel"><h3>أسهم غير مصنفة <span>${fmt0(missing.length)} معروضة</span></h3><div class="tablewrap no-x"><table class="compact-table"><thead><tr><th>#</th><th>الرمز</th><th>الاسم</th><th>آخر سعر</th><th>التغير اليومي</th><th>السيولة</th><th>اقتراح</th></tr></thead><tbody>${missing.map((r,i)=>{const sug=suggestions.find(x=>String(x.symbol).toUpperCase()===String(r.symbol).toUpperCase());return`<tr data-symbol="${esc(r.symbol)}"><td>${i+1}</td><td class="symbol">${esc(r.symbol)}</td><td>${esc(r.name_ar||r.name_en||r.name||"")}</td><td>${fmt(r.price)}</td><td class="${num(r.changePct)>=0?"pos":"neg"}">${pct(r.changePct)}</td><td>${fmtCompact(r.valueTraded)}</td><td>${sug?`<span class="sector-pill-v87 warn">${esc(sug.suggestedSector)} — ${fmt0(sug.confidence)}%</span>`:'<span class="sector-pill-v87 bad">لا يوجد اقتراح</span>'}</td></tr>`}).join("")}</tbody></table></div></div><div class="leftstack"><div class="panel"><h3>أعلى اقتراحات التصنيف</h3>${suggestions.slice(0,15).map(x=>`<div class="quickrow"><b>${esc(x.symbol)}</b><div><b>${esc(x.suggestedSector)}</b><br><small>${esc(x.reason||"keyword inference")}</small></div><span class="sector-pill-v87 warn">${fmt0(x.confidence)}%</span></div>`).join("")||'<p class="muted">لا توجد اقتراحات بعد تشغيل الـ Workflow.</p>'}</div></div></section>`
 }
 
-function content(){if(EGX.screen==="classic")return classic();if(EGX.screen==="dashboard")return dashboard();if(EGX.screen==="stockSearch")return renderStockSearch();if(EGX.screen==="chartLab"||EGX.screen==="historyChart"||EGX.screen==="historyLab")return renderHistoricalChartLab();if(EGX.screen==="mobile")return renderMobileHub();if(EGX.screen==="portfolio")return portfolio();if(EGX.screen==="portfolioRisk")return renderPortfolioRisk();if(EGX.screen==="rebalance")return renderRebalance();if(EGX.screen==="accuracy")return renderAccuracy();if(EGX.screen==="intelligence")return renderIntelligence();if(EGX.screen==="opportunities")return opportunities();if(EGX.screen==="institutional")return renderInstitutionalScoring();if(EGX.screen==="liquidity")return renderLiquidity();if(EGX.screen==="volume")return renderVolume();if(EGX.screen==="support")return renderSupport();if(EGX.screen==="sectors")return renderSectorIntelligence();if(EGX.screen==="sectorCompletion")return renderSectorCompletion();if(EGX.screen==="newsIntel")return renderNewsIntelligence();if(EGX.screen==="watchlist")return renderWatchlist();if(EGX.screen==="pipeline")return renderWatchlistPipeline();if(EGX.screen==="alerts")return renderAlerts();if(EGX.screen==="reports")return renderReports();if(EGX.screen==="settings")return renderSettings();if(EGX.screen==="sources")return renderAppHealth();if(EGX.screen==="stability")return renderStabilityQA();const names={};return placeholder(names[EGX.screen]||"EGX Pro Hub")}
+
+/* ===================== V8.9 Daily Decision Brief ===================== */
+function v88DistancePct(price, level){
+  price=num(price); level=num(level);
+  if(!price||!level)return null;
+  return (price-level)/level*100;
+}
+function v88AlertLevelRank(level){return {critical:4,warning:3,opportunity:2,info:1}[level]||0}
+function v88AlertLabel(level){
+  return level==="critical"?"عاجل":level==="warning"?"مهم":level==="opportunity"?"فرصة":"مراقبة";
+}
+function v88Support(r){return num(r.support||r.support1||r.entryFrom)||0}
+function v88Resistance(r){return num(r.resistance||r.resistance1||r.target1)||0}
+function v88BaseAlertsForRow(r, source="market"){
+  const p=num(r.price), stop=num(r.stopLoss), t1=num(r.target1), t2=num(r.target2), e1=num(r.entryFrom), e2=num(r.entryTo), sup=v88Support(r), res=v88Resistance(r);
+  const alerts=[];
+  if(!p)return alerts;
+  function add(level,type,title,text,action){
+    alerts.push({level,type,symbol:r.symbol,title,text,action:action||"",source,price:p,row:r,id:`${source}:${r.symbol}:${type}`});
+  }
+  if(e1&&e2&&p>=e1*.99&&p<=e2*1.01)add("opportunity","entry_zone","داخل منطقة الدخول",`السعر الحالي ${fmt(p)} داخل/قريب من منطقة الدخول ${fmt(e1)} - ${fmt(e2)}.`,"مراجعة التنفيذ المشروط فقط مع سيولة مناسبة.");
+  if(e1&&p<e1&&p>=e1*.97)add("info","near_entry","قريب من الدخول",`السعر ${fmt(p)} قريب من بداية منطقة الدخول ${fmt(e1)}.`,"ضع السهم في Near Entry ولا تدخل قبل التأكيد.");
+  if(t1&&p>=t1*.985&&p<t1*1.03)add("warning","near_target1","قريب من الهدف الأول",`السعر ${fmt(p)} قريب من هدف 1 عند ${fmt(t1)}.`,"راجع جني جزء أو رفع وقف الحماية.");
+  if(t1&&p>=t1*1.03)add("opportunity","target1_hit","تجاوز الهدف الأول",`السعر ${fmt(p)} أعلى من هدف 1 ${fmt(t1)}.`,"لا تطارد السعر؛ راجع هدف 2 ووقف حماية.");
+  if(t2&&p>=t2*.985)add("warning","near_target2","قريب من الهدف الثاني",`السعر ${fmt(p)} قريب من هدف 2 عند ${fmt(t2)}.`,"مراجعة جني أرباح/وقف متحرك.");
+  if(stop&&p<=stop*1.03)add("critical","near_stop","قريب من وقف الخسارة",`السعر ${fmt(p)} على بعد ${fmt(Math.abs(v88DistancePct(p,stop)),2)}% تقريبًا من وقف ${fmt(stop)}.`,"التزم بخطة الوقف ولا تزود مركز خاسر.");
+  if(stop&&p<stop)add("critical","stop_break","كسر وقف الخسارة",`السعر ${fmt(p)} أقل من وقف الخسارة ${fmt(stop)}.`,"تخفيف/خروج حسب الخطة.");
+  if(sup&&p<=sup*.995)add("warning","support_break","كسر أو ضغط على الدعم",`السعر ${fmt(p)} عند/أقل من الدعم ${fmt(sup)}.`,"راجع المخاطر قبل أي زيادة.");
+  if(res&&p>=res*1.005)add("opportunity","resistance_break","اختراق مقاومة",`السعر ${fmt(p)} أعلى من المقاومة ${fmt(res)}.`,"انتظر تأكيد حجم التداول قبل المطاردة.");
+  if(sclass(r)==="risk")add("critical","risk_signal","إشارة تخفيف",r.reason||"السهم داخل قائمة المخاطر.","مراجعة تخفيف المركز.");
+  return alerts;
+}
+function smartAlerts(){
+  const alerts=[];
+  (EGX.rows||[]).forEach(r=>alerts.push(...v88BaseAlertsForRow(r,"market")));
+  return alerts.sort((a,b)=>v88AlertLevelRank(b.level)-v88AlertLevelRank(a.level)).slice(0,120);
+}
+function v88PortfolioRows(){
+  let rows=typeof portfolioRows==="function"?portfolioRows():[];
+  const total=rows.reduce((s,r)=>s+(num(r.val)||0),0);
+  return rows.map(r=>({...r,weight:total?(num(r.val)||0)/total*100:0}));
+}
+function v88PortfolioSectorWeights(rows){
+  const total=rows.reduce((s,r)=>s+(num(r.val)||0),0), map={};
+  rows.forEach(r=>{
+    const sector=(typeof v87SectorOf==="function"?v87SectorOf(r):(r.sector||"غير مصنف"));
+    map[sector]=map[sector]||{sector,value:0,count:0,weight:0};
+    map[sector].value+=num(r.val)||0; map[sector].count++;
+  });
+  Object.values(map).forEach(x=>x.weight=total?x.value/total*100:0);
+  return Object.values(map).sort((a,b)=>b.weight-a.weight);
+}
+function v88PortfolioPositionAlerts(r, sectorWeight){
+  const alerts=v88BaseAlertsForRow(r,"portfolio");
+  const pnlPct=num(r.pnlPct)||0, weight=num(r.weight)||0;
+  function add(level,type,title,text,action){
+    alerts.push({level,type,symbol:r.symbol,title,text,action:action||"",source:"portfolio",price:num(r.price),row:r,id:`portfolio:${r.symbol}:${type}`});
+  }
+  if(weight>=35)add("critical","position_concentration","تركيز شديد في سهم واحد",`وزن ${r.symbol} = ${fmt(weight,1)}% من المحفظة.`,"خفض الوزن تدريجيًا قبل إضافة مراكز جديدة.");
+  else if(weight>=25)add("warning","position_concentration","تركيز مرتفع",`وزن ${r.symbol} = ${fmt(weight,1)}% من المحفظة.`,"لا تزود هذا المركز إلا بعد تخفيض التركيز.");
+  if(sectorWeight>=45)add("warning","sector_concentration","تركيز قطاعي مرتفع",`قطاع السهم يمثل حوالي ${fmt(sectorWeight,1)}% من المحفظة.`,"وازن المحفظة قبل زيادة أسهم نفس القطاع.");
+  if(pnlPct<=-12)add("critical","open_loss","خسارة مفتوحة كبيرة",`الخسارة الحالية ${pct(pnlPct)}.`,"لا تعزز الخسارة. راجع وقف الخسارة وخطة الخروج.");
+  else if(pnlPct<=-6)add("warning","open_loss_watch","خسارة مفتوحة تحتاج متابعة",`الخسارة الحالية ${pct(pnlPct)}.`,"راقب الدعم والوقف قبل أي زيادة.");
+  if(pnlPct>=12)add("opportunity","profit_protection","ربح مفتوح يحتاج حماية",`الربح الحالي ${pct(pnlPct)}.`,"فكر في رفع وقف الحماية أو جني جزء.");
+  return alerts;
+}
+function v88PortfolioAlertsSummary(){
+  const rows=v88PortfolioRows(), total=rows.reduce((s,r)=>s+(num(r.val)||0),0), cost=rows.reduce((s,r)=>s+(num(r.cost)||0),0), pnl=total-cost, pnlPct=cost?pnl/cost*100:0;
+  const sectors=v88PortfolioSectorWeights(rows), sectorBy={}; sectors.forEach(s=>sectorBy[s.sector]=s.weight);
+  const positionAlerts=[];
+  rows.forEach(r=>{
+    const sector=(typeof v87SectorOf==="function"?v87SectorOf(r):(r.sector||"غير مصنف"));
+    positionAlerts.push(...v88PortfolioPositionAlerts(r,sectorBy[sector]||0));
+  });
+  const critical=positionAlerts.filter(a=>a.level==="critical").length, warning=positionAlerts.filter(a=>a.level==="warning").length, opportunity=positionAlerts.filter(a=>a.level==="opportunity").length;
+  const state=critical?"critical":warning?"warning":"ok";
+  return {rows,total,cost,pnl,pnlPct,sectors,alerts:positionAlerts.sort((a,b)=>v88AlertLevelRank(b.level)-v88AlertLevelRank(a.level)),critical,warning,opportunity,state};
+}
+function v88AlertCard(a){
+  const r=a.row||{};
+  return`<div class="alert88-card ${a.level}" data-symbol="${esc(a.symbol)}"><span class="alert88-tag ${a.level}">${v88AlertLabel(a.level)}</span><span class="alert88-tag">${esc(a.type||"alert")}</span><b>${esc(a.symbol)} — ${esc(a.title)}</b><small>${esc(a.text)}</small>${a.action?`<p class="muted" style="line-height:1.8;margin-top:6px"><b>الإجراء:</b> ${esc(a.action)}</p>`:""}<div class="alert88-matrix"><div><span>السعر</span><b>${fmt(a.price||r.price)}</b></div><div><span>الدخول</span><b>${fmt(r.entryFrom)}-${fmt(r.entryTo)}</b></div><div><span>هدف 1</span><b class="pos">${fmt(r.target1)}</b></div><div><span>وقف</span><b class="neg">${fmt(r.stopLoss)}</b></div></div><div style="margin-top:8px">${proDetailButton(a.symbol)}</div></div>`
+}
+function renderAlerts(){
+  const a=smartAlerts();
+  const filter=localStorage.getItem("egx_v88_alert_filter")||"all";
+  const shown=filter==="all"?a:a.filter(x=>x.level===filter);
+  return `${header("التنبيهات الذكية","تنبيهات دخول / هدف / وقف / دعم / مقاومة مع تسمية واضحة للإجراء")}${quickJump()}${commandStrip()}<section class="kpis">${kpi("إجمالي التنبيهات",fmt0(a.length),"")}${kpi("عاجل",fmt0(a.filter(x=>x.level==="critical").length),"وقف/مخاطر",a.some(x=>x.level==="critical"))}${kpi("مهم",fmt0(a.filter(x=>x.level==="warning").length),"هدف/دعم")}${kpi("فرص",fmt0(a.filter(x=>x.level==="opportunity").length),"دخول/اختراق")}</section><div class="panel"><h3>فلتر التنبيهات</h3><button class="btn ${filter==="all"?"primary":""}" data-alert88-filter="all">الكل</button><button class="btn ${filter==="critical"?"primary":""}" data-alert88-filter="critical">عاجل</button><button class="btn ${filter==="warning"?"primary":""}" data-alert88-filter="warning">مهم</button><button class="btn ${filter==="opportunity"?"primary":""}" data-alert88-filter="opportunity">فرص</button><button class="btn ${filter==="info"?"primary":""}" data-alert88-filter="info">مراقبة</button></div><section class="dashgrid"><div class="panel"><h3>Smart Alerts <span>${fmt0(shown.length)}</span></h3><div class="alert88-grid">${shown.slice(0,80).map(v88AlertCard).join("")||'<div class="muted">لا توجد تنبيهات بهذا الفلتر.</div>'}</div></div><div class="leftstack"><div class="panel"><h3>تفعيل إشعارات المتصفح</h3><p class="muted">الإشعارات تعمل فقط والمتصفح مفتوح.</p><button class="btn primary" id="notifyBtn">طلب إذن الإشعارات</button></div>${pulsePanel()}</div></section>`
+}
+function renderPortfolioSmartAlerts(){
+  const s=v88PortfolioAlertsSummary();
+  return `${header("Portfolio & Smart Alerts","تنبيهات مخصصة للمحفظة: وقف، هدف، تركيز، قطاع، وخسارة/ربح مفتوح")}${quickJump()}${commandStrip()}<div class="alert88-banner ${s.state}"><b>${s.rows.length?`محفظة بها ${fmt0(s.rows.length)} مركز`:"لا توجد محفظة مستوردة"}</b><br>${s.rows.length?`يوجد ${fmt0(s.critical)} تنبيه عاجل و ${fmt0(s.warning)} تنبيه مهم. راجع الأعلى خطورة أولًا.`:"افتح شاشة المحفظة والصق بياناتك. الصيغ المدعومة: SYMBOL,qty,avg أو SYMBOL value +pnl%."}</div><section class="kpis">${kpi("قيمة المحفظة",fmt0(s.total),"")}${kpi("الربح/الخسارة",fmt0(s.pnl),pct(s.pnlPct),s.pnl<0)}${kpi("تنبيهات عاجلة",fmt0(s.critical),"وقف/تركيز",s.critical>0)}${kpi("تنبيهات مهمة",fmt0(s.warning),"مراجعة")}${kpi("فرص حماية/ربح",fmt0(s.opportunity),"هدف/حماية")}</section><section class="dashgrid"><div class="panel"><h3>تنبيهات المحفظة <span>${fmt0(s.alerts.length)}</span></h3><div class="alert88-grid">${s.alerts.map(v88AlertCard).join("")||'<div class="muted">لا توجد تنبيهات محفظة حاليًا.</div>'}</div></div><div class="leftstack"><div class="panel"><h3>طريقة إدخال المحفظة</h3><div class="portfolio-input-help"><b>صيغة كمية وتكلفة:</b><br>COMI,1000,85<br><b>صيغة كشف قيمة ونسبة:</b><br>COMI 110,956.50 +0.31%</div><button class="btn primary" data-screen="portfolio">فتح شاشة المحفظة</button></div><div class="panel"><h3>تركيز القطاعات</h3>${s.sectors.slice(0,8).map(x=>`<div class="quickrow"><b>${fmt(x.weight,1)}%</b><div><b>${esc(x.sector)}</b><br><small>${fmt0(x.count)} مركز</small></div><span>${fmt0(x.value)}</span></div>`).join("")||'<p class="muted">لا توجد بيانات.</p>'}</div></div></section><section class="panel"><h3>جدول مراكز المحفظة</h3><div class="tablewrap no-x"><table class="compact-table"><thead><tr><th>#</th><th>الرمز</th><th>الكمية</th><th>متوسط التكلفة</th><th>آخر سعر</th><th>القيمة</th><th>الوزن</th><th>ربح/خسارة</th><th>قرب الوقف</th><th>قرب الهدف</th><th>إجراء</th></tr></thead><tbody>${s.rows.map((r,i)=>{const p=num(r.price), stop=num(r.stopLoss), t1=num(r.target1);const stopDist=stop&&p?(p-stop)/p*100:null;const targetDist=t1&&p?(t1-p)/p*100:null;return`<tr data-symbol="${esc(r.symbol)}"><td>${i+1}</td><td class="symbol">${esc(r.symbol)}</td><td>${fmt0(r.qty)}</td><td>${fmt(r.avg)}</td><td>${fmt(p)}</td><td>${fmt0(r.val)}</td><td>${fmt(r.weight,1)}%</td><td class="${num(r.pnl)>=0?"pos":"neg"}">${fmt0(r.pnl)}<br><small>${pct(r.pnlPct)}</small></td><td class="${stopDist!=null&&stopDist<=5?"neg":""}">${stopDist==null?"-":fmt(stopDist,1)+"%"}</td><td class="${targetDist!=null&&targetDist<=3?"pos":""}">${targetDist==null?"-":fmt(targetDist,1)+"%"}</td><td>${proDetailButton(r.symbol)}</td></tr>`}).join("")}</tbody></table></div></section>`
+}
+
+
+/* ===================== V8.9 Daily Decision Brief ===================== */
+function v89SafeRows(){
+  const rows=typeof v85Sorted==="function"?v85Sorted(EGX.rows||[]):(typeof sorted==="function"?sorted():EGX.rows||[]);
+  return rows.filter(Boolean);
+}
+function v89HistoryCoverage(){
+  if(EGX.historyIntegrity&&EGX.historyIntegrity.totalSymbols){
+    return {total:EGX.historyIntegrity.totalSymbols,full:EGX.historyIntegrity.full50Symbols||0,partial:EGX.historyIntegrity.partialSymbols||0,missing:EGX.historyIntegrity.missingSymbols||0,avg:EGX.historyIntegrity.avgSessions||0};
+  }
+  const rows=EGX.rows||[], sessions=rows.map(r=>typeof v86AvailableSessions==="function"?v86AvailableSessions(r):0);
+  return {total:rows.length,full:sessions.filter(x=>x>=50).length,partial:sessions.filter(x=>x>0&&x<50).length,missing:sessions.filter(x=>x===0).length,avg:sessions.length?sessions.reduce((a,b)=>a+b,0)/sessions.length:0};
+}
+function v89BriefState(){
+  const h=v89HistoryCoverage(), sourceOk=EGX.source&&EGX.source.ok!==false, appOk=EGX.appHealth&&EGX.appHealth.ok!==false;
+  if(!sourceOk||!appOk)return "bad";
+  if(h.full===0||h.avg<10)return "warn";
+  return "ok";
+}
+function v89TopOpportunities(){
+  return v89SafeRows().filter(r=>sclass(r)!=="risk").slice(0,7);
+}
+function v89RiskRows(){
+  return (typeof riskList==="function"?riskList():v89SafeRows().filter(r=>sclass(r)==="risk")).slice(0,7);
+}
+function v89PortfolioSummary(){
+  try{
+    if(typeof v88PortfolioAlertsSummary==="function")return v88PortfolioAlertsSummary();
+  }catch(e){}
+  return {rows:[],total:0,pnl:0,pnlPct:0,alerts:[],critical:0,warning:0,opportunity:0,state:"ok",sectors:[]};
+}
+function v89MarketAlerts(){
+  try{return smartAlerts().slice(0,8)}catch(e){return[]}
+}
+function v89BriefData(){
+  const pulseData=typeof pulse==="function"?pulse():{status:"غير متاح",avgChange:0};
+  const top=v89TopOpportunities(), risk=v89RiskRows(), port=v89PortfolioSummary(), hist=v89HistoryCoverage(), alerts=v89MarketAlerts();
+  const sourceRows=EGX.source.cacheRows||EGX.rows.length, universe=EGX.source.totalUniverse||EGX.rows.length, coverage=universe?sourceRows/universe*100:0;
+  return {generatedAt:new Date().toISOString(),state:v89BriefState(),pulse:pulseData,top,risk,port,hist,alerts,coverage,sourceOk:EGX.source&&EGX.source.ok!==false,appOk:EGX.appHealth&&EGX.appHealth.ok!==false,accuracy:EGX.accuracyLatest||EGX.accuracy||{},sector:EGX.sectorCompletion||{},workflow:EGX.workflowBudget||{}};
+}
+function v89LineForOpportunity(r,i){
+  const rrVal=typeof rr==="function"?rr(r):0;
+  const hist=typeof v86AvailableSessions==="function"?v86AvailableSessions(r):0;
+  return `${i+1}) ${r.symbol} — ثقة ${fmt0(r.finalConfidence)}% — دخول ${fmt(r.entryFrom)}-${fmt(r.entryTo)} — هدف1 ${fmt(r.target1)} — وقف ${fmt(r.stopLoss)} — R/R ${fmt(rrVal,2)} — تاريخ ${fmt0(hist)}/50`;
+}
+function v89LineForAlert(a,i){
+  return `${i+1}) ${a.symbol} — ${v88AlertLabel?v88AlertLabel(a.level):a.level} — ${a.title}: ${a.action||a.text||""}`;
+}
+function v89BriefText(data=v89BriefData()){
+  const top=data.top.map(v89LineForOpportunity).join("\n")||"لا توجد فرص كافية حسب الفلتر الحالي.";
+  const risks=data.risk.map((r,i)=>`${i+1}) ${r.symbol} — ${r.recommendation||"مخاطر"} — ${r.reason||"مراجعة المخاطر"}`).join("\n")||"لا توجد قائمة حذر واضحة.";
+  const pAlerts=(data.port.alerts||[]).slice(0,7).map(v89LineForAlert).join("\n")||"لا توجد تنبيهات محفظة أو لم يتم إدخال محفظة.";
+  const mAlerts=(data.alerts||[]).slice(0,7).map(v89LineForAlert).join("\n")||"لا توجد تنبيهات سوق مهمة.";
+  return `تقرير القرار اليومي — EGX Pro Hub V8.9
+تاريخ التوليد: ${new Date(data.generatedAt).toLocaleString("en-GB")}
+
+1) حالة السوق والبيانات
+- اتجاه السوق: ${data.pulse.status||"-"}
+- متوسط التغير: ${pct(data.pulse.avgChange||0)}
+- تغطية الكاش: ${fmt(data.coverage,1)}%
+- تاريخ 50 جلسة: مكتمل ${fmt0(data.hist.full)} / ${fmt0(data.hist.total)} — متوسط ${fmt(data.hist.avg,1)} جلسة
+- ملاحظة: إذا كان التاريخ أقل من 50 جلسة فلا تعتمد على مؤشرات 50 جلسة كقرار نهائي.
+
+2) أفضل فرص للمراجعة وليس تنفيذ تلقائي
+${top}
+
+3) قائمة الحذر / التخفيض
+${risks}
+
+4) تنبيهات السوق
+${mAlerts}
+
+5) تنبيهات المحفظة
+${pAlerts}
+
+6) قواعد القرار اليوم
+- لا تضيف لمركز خاسر قريب من وقف الخسارة.
+- لا تطارد سهم تجاوز الهدف بدون تأكيد حجم.
+- راجع السيولة قبل الدخول.
+- خفض التركيز قبل إضافة مراكز جديدة.
+- البيانات عامة ومتأخرة وليست توصية تداول أو أمر شراء/بيع.`;
+}
+function v89BriefItem(r,i){
+  const rrVal=typeof rr==="function"?rr(r):0, hist=typeof v86AvailableSessions==="function"?v86AvailableSessions(r):0;
+  return `<div class="brief89-item" data-symbol="${esc(r.symbol)}"><div class="brief89-symbol">${i+1}. ${esc(r.symbol)}</div><div><b>${esc(r.name_ar||r.name_en||r.name||"")}</b><br><small class="muted">دخول ${fmt(r.entryFrom)}-${fmt(r.entryTo)} | هدف1 ${fmt(r.target1)} | وقف ${fmt(r.stopLoss)} | R/R ${fmt(rrVal,2)} | تاريخ ${fmt0(hist)}/50</small></div><span class="brief89-pill ${num(r.finalConfidence)>=80?"ok":"warn"}">ثقة ${fmt0(r.finalConfidence)}%</span></div>`;
+}
+function v89AlertItem(a,i){
+  return `<div class="brief89-item" data-symbol="${esc(a.symbol)}"><div class="brief89-symbol">${i+1}. ${esc(a.symbol)}</div><div><b>${esc(a.title)}</b><br><small class="muted">${esc(a.text||"")} ${a.action?(" — الإجراء: "+esc(a.action)):""}</small></div><span class="brief89-pill ${a.level==="critical"?"bad":a.level==="warning"?"warn":"ok"}">${typeof v88AlertLabel==="function"?v88AlertLabel(a.level):esc(a.level)}</span></div>`;
+}
+function renderDailyDecisionBrief(){
+  const d=v89BriefData(), text=v89BriefText(d), state=d.state==="bad"?"bad":d.state==="warn"?"warn":"ok";
+  const portAlerts=(d.port.alerts||[]).slice(0,6), marketAlerts=(d.alerts||[]).slice(0,6);
+  return `${header("Daily Decision Brief","تقرير يومي مختصر: ماذا أراجع؟ ماذا أتجنب؟ وما حالة البيانات قبل القرار؟")}${quickJump()}${commandStrip()}<div class="brief89-hero ${state}"><b>${state==="ok"?"جاهز للمراجعة اليومية":state==="warn"?"مراجعة بحذر بسبب نقص التاريخ أو تحذيرات بيانات":"توجد مشكلة بيانات/صحة تحتاج مراجعة"}</b><br>هذا التقرير يجمع الفرص، المخاطر، التنبيهات، المحفظة، التاريخ، وصحة البيانات في صفحة واحدة.</div><section class="brief89-grid"><div class="brief89-card"><span>اتجاه السوق</span><b>${esc(d.pulse.status||"-")}</b><small>متوسط التغير ${pct(d.pulse.avgChange||0)}</small></div><div class="brief89-card"><span>تغطية الكاش</span><b>${fmt(d.coverage,1)}%</b><small>${fmt0(EGX.source.cacheRows||EGX.rows.length)} / ${fmt0(EGX.source.totalUniverse||EGX.rows.length)}</small></div><div class="brief89-card"><span>تاريخ 50 جلسة</span><b>${fmt0(d.hist.full)} / ${fmt0(d.hist.total)}</b><small>متوسط ${fmt(d.hist.avg,1)} جلسة</small></div><div class="brief89-card"><span>تنبيهات المحفظة</span><b>${fmt0((d.port.alerts||[]).length)}</b><small>عاجل ${fmt0(d.port.critical||0)} / مهم ${fmt0(d.port.warning||0)}</small></div></section><div class="brief89-actions"><button class="btn primary" id="copyDailyBrief">نسخ التقرير</button><button class="btn" id="downloadDailyBrief">تنزيل TXT</button><button class="btn" onclick="window.print()">طباعة</button></div><section class="dashgrid"><div><div class="brief89-section"><h3>أفضل فرص للمراجعة <span>${fmt0(d.top.length)}</span></h3>${d.top.map(v89BriefItem).join("")||'<p class="muted">لا توجد فرص كافية.</p>'}</div><div class="brief89-section"><h3>تنبيهات السوق</h3>${marketAlerts.map(v89AlertItem).join("")||'<p class="muted">لا توجد تنبيهات سوق مهمة.</p>'}</div><div class="brief89-section"><h3>تنبيهات المحفظة</h3>${portAlerts.map(v89AlertItem).join("")||'<p class="muted">لا توجد محفظة أو لا توجد تنبيهات محفظة.</p>'}</div></div><div class="leftstack"><div class="brief89-section"><h3>قائمة الحذر</h3>${d.risk.map(v89BriefItem).join("")||'<p class="muted">لا توجد قائمة حذر واضحة.</p>'}</div><div class="brief89-section"><h3>قواعد القرار اليوم</h3><p class="muted" style="line-height:2">لا تضيف لمركز خاسر قريب من الوقف. لا تطارد سهم تجاوز الهدف بدون تأكيد حجم. خفض التركيز قبل إضافة مراكز جديدة. راجع تاريخ 50 جلسة قبل الثقة في المؤشرات الفنية.</p></div><div class="brief89-section"><h3>النص القابل للنسخ</h3><div id="dailyBriefText" class="brief89-text">${esc(text)}</div></div></div></section>`;
+}
+
+function content(){if(EGX.screen==="classic")return classic();if(EGX.screen==="dashboard")return dashboard();if(EGX.screen==="stockSearch")return renderStockSearch();if(EGX.screen==="chartLab"||EGX.screen==="historyChart"||EGX.screen==="historyLab")return renderHistoricalChartLab();if(EGX.screen==="mobile")return renderMobileHub();if(EGX.screen==="portfolio")return portfolio();if(EGX.screen==="portfolioRisk")return renderPortfolioRisk();if(EGX.screen==="rebalance")return renderRebalance();if(EGX.screen==="accuracy")return renderAccuracy();if(EGX.screen==="intelligence")return renderIntelligence();if(EGX.screen==="opportunities")return opportunities();if(EGX.screen==="institutional")return renderInstitutionalScoring();if(EGX.screen==="liquidity")return renderLiquidity();if(EGX.screen==="volume")return renderVolume();if(EGX.screen==="support")return renderSupport();if(EGX.screen==="sectors")return renderSectorIntelligence();if(EGX.screen==="sectorCompletion")return renderSectorCompletion();if(EGX.screen==="newsIntel")return renderNewsIntelligence();if(EGX.screen==="watchlist")return renderWatchlist();if(EGX.screen==="pipeline")return renderWatchlistPipeline();if(EGX.screen==="alerts")return renderAlerts();if(EGX.screen==="portfolioAlerts")return renderPortfolioSmartAlerts();if(EGX.screen==="dailyBrief")return renderDailyDecisionBrief();if(EGX.screen==="reports")return renderReports();if(EGX.screen==="settings")return renderSettings();if(EGX.screen==="sources")return renderAppHealth();if(EGX.screen==="stability")return renderStabilityQA();const names={};return placeholder(names[EGX.screen]||"EGX Pro Hub")}
 function render(){document.getElementById("app").innerHTML=EGX.screen==="classic"?content():`<div class="shell">${side()}<main class="main">${content()}</main>${v716IsMobile?v716BottomNav():""}</div>`;bind()}
 function bind(){
 /* V8.6.1 direct ChartLab opener */
@@ -2266,10 +2454,10 @@ document.querySelectorAll('button[data-screen="chartLab"],button[data-screen="hi
 document.querySelectorAll("[data-screen]").forEach(b=>b.onclick=()=>{EGX.screen=b.dataset.screen;localStorage.setItem("egx_v61_screen",EGX.screen);render()});document.querySelectorAll("[data-symbol]").forEach(tr=>tr.onclick=()=>{EGX.selected=tr.dataset.symbol;render()});document.querySelectorAll("[data-pro-detail]").forEach(b=>b.onclick=e=>{e.stopPropagation();openProDrawer(b.dataset.proDetail)});document.querySelectorAll("[data-page]").forEach(b=>b.onclick=e=>{e.stopPropagation();const p=Number(b.dataset.page);if(!b.disabled&&p){EGX.page=p;render()}});
 document.querySelectorAll("[data-inst-grade]").forEach(b=>b.onclick=e=>{e.stopPropagation();localStorage.setItem("egx_v800_grade",b.dataset.instGrade);render()});document.querySelectorAll("[data-pipe-stage]").forEach(b=>b.onclick=e=>{e.stopPropagation();v83SetStage(b.dataset.symbol,b.dataset.pipeStage);render()});document.querySelectorAll("[data-watch-toggle]").forEach(b=>b.onclick=e=>{e.stopPropagation();toggleWatch(b.dataset.watchToggle)});
 v801BindStockSearchStable();const aw=document.getElementById("addWatch");const wi=document.getElementById("watchInput");if(aw&&wi)aw.onclick=()=>{toggleWatch(wi.value)};
-egxBindPwaInstallButton();document.querySelectorAll("[data-alert-ack]").forEach(b=>b.onclick=e=>{e.stopPropagation();const s=v717AckStore();const id=b.dataset.alertAck;if(s[id])delete s[id];else s[id]=new Date().toISOString();v717SaveAck(s);render()});document.querySelectorAll("[data-alert-filter]").forEach(b=>b.onclick=e=>{e.stopPropagation();localStorage.setItem("egx_v717_alert_filter",b.dataset.alertFilter);render()});const ca=document.getElementById("clearAlertAck");if(ca)ca.onclick=()=>{localStorage.removeItem("egx_v717_alert_ack");render()};const coq=document.getElementById("clearOldQA");if(coq)coq.onclick=()=>{localStorage.removeItem("egx_v81_last_client_qa");EGX.localRegressionResult={};render()};const qa=document.getElementById("runClientQA");if(qa)qa.onclick=()=>{try{v81RunClientQA();render()}catch(e){alert("QA failed: "+e.message)}};const cq=document.getElementById("copyClientQA");if(cq)cq.onclick=async()=>{const r=EGX.localRegressionResult||v81LoadLastClientQA()||EGX.regressionReport||{};const t=JSON.stringify(r,null,2);try{await navigator.clipboard.writeText(t);cq.textContent="تم النسخ"}catch(e){alert(t)}};const nb=document.getElementById("notifyBtn");if(nb)nb.onclick=async()=>{try{if(!("Notification" in window)){alert("المتصفح لا يدعم الإشعارات");return}const p=await Notification.requestPermission();if(p==="granted"){new Notification("EGX Pro Hub",{body:"تم تفعيل إشعارات المتصفح أثناء فتح الصفحة."})}}catch(e){}};
+egxBindPwaInstallButton();document.querySelectorAll("[data-alert-ack]").forEach(b=>b.onclick=e=>{e.stopPropagation();const s=v717AckStore();const id=b.dataset.alertAck;if(s[id])delete s[id];else s[id]=new Date().toISOString();v717SaveAck(s);render()});document.querySelectorAll("[data-alert88-filter]").forEach(b=>b.onclick=e=>{e.stopPropagation();localStorage.setItem("egx_v88_alert_filter",b.dataset.alert88Filter);render()});document.querySelectorAll("[data-alert-filter]").forEach(b=>b.onclick=e=>{e.stopPropagation();localStorage.setItem("egx_v717_alert_filter",b.dataset.alertFilter);render()});const ca=document.getElementById("clearAlertAck");if(ca)ca.onclick=()=>{localStorage.removeItem("egx_v717_alert_ack");render()};const cdb=document.getElementById("copyDailyBrief");if(cdb)cdb.onclick=async()=>{const t=document.getElementById("dailyBriefText")?.innerText||v89BriefText();try{await navigator.clipboard.writeText(t);cdb.textContent="تم النسخ"}catch(e){alert(t)}};const ddb=document.getElementById("downloadDailyBrief");if(ddb)ddb.onclick=()=>{const t=document.getElementById("dailyBriefText")?.innerText||v89BriefText();const blob=new Blob([t],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="egx-daily-decision-brief.txt";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500)};const coq=document.getElementById("clearOldQA");if(coq)coq.onclick=()=>{localStorage.removeItem("egx_v81_last_client_qa");EGX.localRegressionResult={};render()};const qa=document.getElementById("runClientQA");if(qa)qa.onclick=()=>{try{v81RunClientQA();render()}catch(e){alert("QA failed: "+e.message)}};const cq=document.getElementById("copyClientQA");if(cq)cq.onclick=async()=>{const r=EGX.localRegressionResult||v81LoadLastClientQA()||EGX.regressionReport||{};const t=JSON.stringify(r,null,2);try{await navigator.clipboard.writeText(t);cq.textContent="تم النسخ"}catch(e){alert(t)}};const nb=document.getElementById("notifyBtn");if(nb)nb.onclick=async()=>{try{if(!("Notification" in window)){alert("المتصفح لا يدعم الإشعارات");return}const p=await Notification.requestPermission();if(p==="granted"){new Notification("EGX Pro Hub",{body:"تم تفعيل إشعارات المتصفح أثناء فتح الصفحة."})}}catch(e){}};
 const cr=document.getElementById("copyReport");if(cr)cr.onclick=async()=>{const t=document.getElementById("reportText")?.innerText||"";try{await navigator.clipboard.writeText(t);cr.textContent="تم النسخ"}catch(e){alert(t)}};
 const cl=document.getElementById("clearLocal");if(cl)cl.onclick=()=>{if(confirm("مسح المحفظة وقوائم المراقبة المحلية؟")){localStorage.removeItem("egx_v61_portfolio");localStorage.removeItem("egx_v64_watchlist");EGX.watchlist=[];EGX.portfolioText="";render()}};const s=document.getElementById("search");if(s){s.oninput=e=>{EGX.query=e.target.value;EGX.page=1;render()};setTimeout(()=>{try{s.focus({preventScroll:true});s.setSelectionRange(s.value.length,s.value.length)}catch(e){}},0)}const f=document.getElementById("filter");if(f){f.value=EGX.filter;f.onchange=e=>{EGX.filter=e.target.value;EGX.page=1;render()}}const c=document.getElementById("conf");if(c){c.value=EGX.confidence;c.onchange=e=>{EGX.confidence=e.target.value;EGX.page=1;render()}}const sec=document.getElementById("sector");if(sec){sec.value=EGX.sector;sec.onchange=e=>{EGX.sector=e.target.value;EGX.page=1;render()}}const r=document.getElementById("reset");if(r)r.onclick=()=>{EGX.query="";EGX.filter="all";EGX.confidence="all";EGX.sector="all";EGX.page=1;render()};const ref=document.getElementById("refresh");if(ref)ref.onclick=()=>location.reload();const exp=document.getElementById("export");if(exp)exp.onclick=exportCsv;const cb=document.getElementById("classicBtn");if(cb)cb.onclick=()=>{EGX.screen="classic";render()};const ct=document.getElementById("classicTop");if(ct)ct.onclick=()=>{EGX.screen="classic";render()};const pm=document.getElementById("proMode");if(pm)pm.onclick=()=>{EGX.screen="opportunities";localStorage.setItem("egx_v61_screen","opportunities");history.replaceState(null,"",location.pathname);render()};const pt=document.getElementById("portText");const sp=document.getElementById("savePort");if(sp&&pt)sp.onclick=()=>{EGX.portfolioText=pt.value;localStorage.setItem("egx_v61_portfolio",EGX.portfolioText);render()};const xf=document.getElementById("excelFile");if(xf)xf.onchange=e=>handleExcelImport(e.target.files&&e.target.files[0]);const im=document.getElementById("imageFile");if(im)im.onchange=e=>handleImageImport(e.target.files&&e.target.files[0]);const ap=document.getElementById("applyOcr");const ot=document.getElementById("ocrText");if(ap&&ot)ap.onclick=()=>{const rows=parsePortfolioText(ot.value);if(!rows.length){setImportStatus("ocrStatus","النص غير صالح. اكتب مثل: COMI,5000,77.50","bad");return}EGX.portfolioText=mergePortfolioText(rowsToPortfolioText(rows));localStorage.setItem("egx_v61_portfolio",EGX.portfolioText);setImportStatus("ocrStatus",`تم اعتماد ${rows.length} مركز وإضافتها للمحفظة.`,"good");render()}}
-async function init(){const[recs,cache,market,source,alerts,history,historyIndicators,historyHealth,pro,news,newsIntel,newsCollector,accuracy,accuracyHistory,appHealth,regressionReport]=await Promise.all([loadJson("data/recommendations.json",{}),loadJson("data/full-market-cache.json",{}),loadJson("data/market.json",{}),loadJson("data/source-health.json",{}),loadJson("data/alerts.json",{}),loadJson("data/history.json",{}),loadJson("data/history-indicators.json",{}),loadJson("data/history-health.json",{}),loadJson("data/pro-report.json",{}),loadJson("data/news-report.json",{}),loadJson("data/news-intelligence.json",{}),loadJson("data/trusted-news-collector-status.json",{}),loadJson("data/recommendation-accuracy-latest.json",{}),loadJson("data/recommendation-accuracy.json",{}),loadJson("data/app-health-status.json",{}),loadJson("data/app-regression-report.json",{})]);EGX.source=source||{};EGX.market=market||{};EGX.alerts=alerts||{};EGX.history=history||{};EGX.historyIndicators=historyIndicators||{};EGX.historyHealth=historyHealth||{};EGX.pro=pro||{};EGX.news=news||{};EGX.newsIntel=newsIntel||{};EGX.newsCollector=newsCollector||{};EGX.accuracy=accuracy||{};EGX.accuracyLatest=accuracy||{};EGX.accuracyHistory=accuracyHistory||{};EGX.appHealth=appHealth||{};EGX.regressionReport=regressionReport||{};let raw=[];if(recs&&Array.isArray(recs.all)&&recs.all.length)raw=recs.all;else if(cache&&Array.isArray(cache.rows)&&cache.rows.length)raw=cache.rows;else if(market&&Array.isArray(market.rows)&&market.rows.length)raw=market.rows;else raw=SAMPLE;EGX.rows=raw.map(normalizeRow).filter(Boolean);if(!EGX.rows.length)EGX.rows=SAMPLE.map(normalizeRow);EGX.selected=(sorted()[0]||{}).symbol;render();console.log("EGX Pro Hub V8.7 Sector Completion & Dashboard Labels loaded:",EGX.rows.length)}
+async function init(){const[recs,cache,market,source,alerts,history,historyIndicators,historyHealth,pro,news,newsIntel,newsCollector,accuracy,accuracyHistory,appHealth,regressionReport,workflowBudget,historyIntegrity,sectorCompletion,smartAlertRules,dailyBrief]=await Promise.all([loadJson("data/recommendations.json",{}),loadJson("data/full-market-cache.json",{}),loadJson("data/market.json",{}),loadJson("data/source-health.json",{}),loadJson("data/alerts.json",{}),loadJson("data/history.json",{}),loadJson("data/history-indicators.json",{}),loadJson("data/history-health.json",{}),loadJson("data/pro-report.json",{}),loadJson("data/news-report.json",{}),loadJson("data/news-intelligence.json",{}),loadJson("data/trusted-news-collector-status.json",{}),loadJson("data/recommendation-accuracy-latest.json",{}),loadJson("data/recommendation-accuracy.json",{}),loadJson("data/app-health-status.json",{}),loadJson("data/app-regression-report.json",{}),loadJson("data/workflow-budget-status.json",{}),loadJson("data/history-integrity-report.json",{}),loadJson("data/sector-completion-report.json",{}),loadJson("data/smart-alert-rules.json",{}),loadJson("data/daily-decision-brief.json",{})]);EGX.source=source||{};EGX.market=market||{};EGX.alerts=alerts||{};EGX.history=history||{};EGX.historyIndicators=historyIndicators||{};EGX.historyHealth=historyHealth||{};EGX.pro=pro||{};EGX.news=news||{};EGX.newsIntel=newsIntel||{};EGX.newsCollector=newsCollector||{};EGX.accuracy=accuracy||{};EGX.accuracyLatest=accuracy||{};EGX.accuracyHistory=accuracyHistory||{};EGX.appHealth=appHealth||{};EGX.regressionReport=regressionReport||{};EGX.workflowBudget=workflowBudget||{};EGX.historyIntegrity=historyIntegrity||{};EGX.sectorCompletion=sectorCompletion||{};EGX.smartAlertRules=smartAlertRules||{};EGX.dailyBrief=dailyBrief||{};let raw=[];if(recs&&Array.isArray(recs.all)&&recs.all.length)raw=recs.all;else if(cache&&Array.isArray(cache.rows)&&cache.rows.length)raw=cache.rows;else if(market&&Array.isArray(market.rows)&&market.rows.length)raw=market.rows;else raw=SAMPLE;EGX.rows=raw.map(normalizeRow).filter(Boolean);if(!EGX.rows.length)EGX.rows=SAMPLE.map(normalizeRow);EGX.selected=(sorted()[0]||{}).symbol;render();console.log("EGX Pro Hub V8.9 Daily Decision Brief loaded:",EGX.rows.length)}
 init().catch(e=>{
   console.error("EGX init failed", e);
   const app=document.getElementById("app");
