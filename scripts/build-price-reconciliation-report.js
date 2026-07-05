@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
-  EGX Pro Hub V8.9.6 — Price Reconciliation + Precision Execution Guard
+  EGX Pro Hub V8.9.7 — Price Reconciliation + HARD Execution Price Gate
   Purpose:
   - Select the freshest internal public/delayed price.
   - Detect sub-1 EGP rounded/low-precision prices such as 0.21/0.210.
@@ -21,6 +21,25 @@ function effectiveDecimalsFromNumber(n){
   const s=String(Number(n));
   return s.includes(".") ? s.split(".")[1].replace(/0+$/g,"").length : 0;
 }
+function rawPriceText(row){
+  const vals=[row?.priceText,row?.rawPrice,row?.lastText,row?.lastPriceText,row?.priceDisplay,row?.finalPriceDisplay,row?.price,row?.last,row?.close,row?.lastPrice];
+  return vals.filter(v=>v!==undefined&&v!==null&&String(v).trim()!=="").map(v=>String(v).trim());
+}
+function effectiveDecimalsFromRaw(row,n){
+  const texts=rawPriceText(row);
+  for(const t of texts){
+    const cleaned=t.replace(/,/g,".").replace(/[^0-9.\-]/g,"");
+    const m=cleaned.match(/^-?\d*\.(\d+)/);
+    if(m)return m[1].replace(/0+$/g,"").length;
+  }
+  return effectiveDecimalsFromNumber(n);
+}
+function looksRoundedSubPoundText(row){
+  return rawPriceText(row).some(t=>{
+    const cleaned=t.replace(/,/g,".").replace(/[^0-9.\-]/g,"");
+    return /^0?\.\d{1,2}$/.test(cleaned) || /^0?\.\d{2}0+$/.test(cleaned);
+  });
+}
 function isTwoDecimalGridSubPound(n){
   const p=Number(n);
   if(!Number.isFinite(p)||p<=0||p>=1)return false;
@@ -34,10 +53,12 @@ function detectPrecisionRisk(finalPrice, chosen, candidates){
   const p=Number(finalPrice);
   if(!Number.isFinite(p)||p<=0||p>=1)return {risk:false,state:"normal_price",reason:""};
   const sourceWarn=hasSourcePrecisionWarning(chosen?.row)||candidates.some(c=>hasSourcePrecisionWarning(c.row));
-  const dec=effectiveDecimalsFromNumber(p);
+  const dec=Math.max(effectiveDecimalsFromRaw(chosen?.row,p), ...candidates.map(c=>effectiveDecimalsFromRaw(c.row,c.price)).filter(Number.isFinite));
   const twoGrid=isTwoDecimalGridSubPound(p);
+  const roundedText=looksRoundedSubPoundText(chosen?.row)||candidates.some(c=>looksRoundedSubPoundText(c.row));
   if(sourceWarn) return {risk:true,state:"precision_risk",reason:"sub_1_price_source_warned_low_precision"};
   if(twoGrid) return {risk:true,state:"precision_risk",reason:"sub_1_price_on_0.01_grid_needs_exact_0.001_confirmation"};
+  if(roundedText) return {risk:true,state:"precision_risk",reason:"sub_1_price_text_looks_rounded"};
   if(dec<3) return {risk:true,state:"precision_risk",reason:"sub_1_price_has_less_than_3_effective_decimals"};
   return {risk:false,state:"precise_sub_1",reason:""};
 }
@@ -88,7 +109,7 @@ function main(){
   executionBlocked:rows.filter(x=>!x.isExecutionSafe).length
  };
  const last=source.generatedAt||source.lastSuccessAt||market.updatedAt||rec.generatedAt||null;
- write("data/price-reconciliation-report.json",{ok:true,engine:"v8_9_6_price_precision_execution_guard",generatedAt:new Date().toISOString(),lastSourceUpdate:last,sourceAgeMinutes:age(last)==null?null:Number(age(last).toFixed(1)),summary,rows,note:"Sub-1 EGP prices rounded to the 0.01 grid are blocked from execution recommendations until a 0.001-precision source confirms them."});
+ write("data/price-reconciliation-report.json",{ok:true,engine:"v8_9_7_hard_price_gate_reconciliation",generatedAt:new Date().toISOString(),lastSourceUpdate:last,sourceAgeMinutes:age(last)==null?null:Number(age(last).toFixed(1)),summary,rows,note:"Hard gate: any sub-1 EGP price on a 0.01 grid, rounded-looking text, or fewer than 3 effective decimals is blocked from execution recommendations until a 0.001-precision source confirms it."});
  console.log("Price reconciliation",summary);
 }
 main();

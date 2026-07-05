@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* EGX Pro Hub V8.9.6 — Entry Trigger Engine with Price Precision Guard */
+/* EGX Pro Hub V8.9.7 — Entry Trigger Engine with Price Precision Guard */
 const fs=require('fs'); const path=require('path'); const ROOT=process.cwd();
 function readJson(rel,f){try{const p=path.join(ROOT,rel);return fs.existsSync(p)?JSON.parse(fs.readFileSync(p,'utf8')):f;}catch{return f;}}
 function writeJson(rel,d){const p=path.join(ROOT,rel);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,JSON.stringify(d,null,2)+'\n','utf8');}
@@ -11,4 +11,4 @@ function triggerFor(r){
 }
 const aw=readJson('data/actionable-watchlist.json',{rows:[]}); const rows=(aw.rows||[]).map(r=>{const trig=triggerFor(r); if(!['A+','A','B'].includes(r.tier)&&trig.urgency!=='urgent')trig.urgency=trig.trigger==='extended'||trig.trigger==='near_resistance'?'watch':'info'; return{symbol:r.symbol,name:r.name,tier:r.tier,recommendation:r.recommendation,price:r.price,priceDisplay:r.priceDisplay,entryLow:r.entryLow,entryHigh:r.entryHigh,target1:r.target1,target2:r.target2,stopLoss:r.stopLoss,riskReward:r.riskReward,confidence:r.confidence,compositeScore:r.compositeScore,precisionRisk:r.precisionRisk,executionAllowed:r.executionAllowed,...trig,reason:r.reason};});
 const summary={total:rows.length,urgent:rows.filter(r=>r.urgency==='urgent').length,important:rows.filter(r=>r.urgency==='important').length,watch:rows.filter(r=>r.urgency==='watch').length,info:rows.filter(r=>r.urgency==='info').length,precisionHold:rows.filter(r=>r.trigger==='precision_hold').length,insideEntry:rows.filter(r=>r.trigger==='inside_entry').length,extended:rows.filter(r=>r.trigger==='extended').length,stopBroken:rows.filter(r=>r.trigger==='stop_broken').length};
-writeJson('data/entry-trigger-report.json',{ok:true,engine:'v8_9_6_entry_trigger_price_precision_guard',generatedAt:new Date().toISOString(),summary,rows,disclaimer:'Triggers للمراقبة فقط وليست أوامر تداول. السعر غير الدقيق يحجب أي Trigger تنفيذي.'}); console.log(`Entry trigger report generated: ${rows.length}`);
+writeJson('data/entry-trigger-report.json',{ok:true,engine:'v8_9_7_entry_trigger_hard_price_gate',generatedAt:new Date().toISOString(),summary,rows,disclaimer:'Triggers للمراقبة فقط وليست أوامر تداول. السعر غير الدقيق يحجب أي Trigger تنفيذي.'}); console.log(`Entry trigger report generated: ${rows.length}`);
