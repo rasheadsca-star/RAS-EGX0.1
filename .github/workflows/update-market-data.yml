@@ -107,6 +107,19 @@ jobs:
       - name: Apply trusted news impact
         run: node scripts/apply-news-impact-to-recommendations.js || echo "Trusted news impact skipped"
 
+      # V8.9.2 Actionable Watchlist + Signal Quality Engine
+      - name: Signal quality engine
+        run: node scripts/build-signal-quality-engine.js || echo "Signal quality engine skipped"
+
+      - name: Actionable watchlist engine
+        run: node scripts/build-actionable-watchlist.js || echo "Actionable watchlist skipped"
+
+      - name: Entry trigger engine
+        run: node scripts/build-entry-trigger-engine.js || echo "Entry trigger engine skipped"
+
+      - name: Recommendation outcome tracker
+        run: node scripts/build-recommendation-outcome-tracker.js || echo "Recommendation outcome tracker skipped"
+
       - name: Build recommendation accuracy tracker
         run: node scripts/build-recommendation-accuracy.js || echo "Recommendation accuracy tracker skipped"
 
