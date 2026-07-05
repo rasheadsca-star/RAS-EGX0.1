@@ -1,13 +1,13 @@
 {
   "ok": true,
   "engine": "v8_9_1_alert_decision_center_calibrated",
-  "generatedAt": "2026-07-05T17:15:32.480Z",
+  "generatedAt": "2026-07-05T17:30:34.555Z",
   "total": 54,
   "summary": {
     "critical": 20,
     "warning": 12,
-    "opportunity": 2,
-    "watch": 15,
+    "opportunity": 3,
+    "watch": 14,
     "info": 5,
     "urgent": 20,
     "important": 12
@@ -261,18 +261,6 @@
       "why": "max/min internal price spread 2.17%"
     },
     {
-      "id": "ranking:blocked_candidate:FAITA:مرشح مقيّد لا يرفع للأولوية",
-      "level": "warning",
-      "priority": "مهم",
-      "source": "ranking",
-      "type": "blocked_candidate",
-      "symbol": "FAITA",
-      "title": "مرشح مقيّد لا يرفع للأولوية",
-      "text": "تعارض سعر",
-      "action": "اتركه للمراقبة فقط حتى تزول القيود",
-      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
-    },
-    {
       "id": "ranking:blocked_candidate:GBCO:مرشح مقيّد لا يرفع للأولوية",
       "level": "warning",
       "priority": "مهم",
@@ -285,12 +273,12 @@
       "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
     },
     {
-      "id": "ranking:blocked_candidate:VLMR:مرشح مقيّد لا يرفع للأولوية",
+      "id": "ranking:blocked_candidate:NIPH:مرشح مقيّد لا يرفع للأولوية",
       "level": "warning",
       "priority": "مهم",
       "source": "ranking",
       "type": "blocked_candidate",
-      "symbol": "VLMR",
+      "symbol": "NIPH",
       "title": "مرشح مقيّد لا يرفع للأولوية",
       "text": "تعارض سعر",
       "action": "اتركه للمراقبة فقط حتى تزول القيود",
@@ -345,6 +333,18 @@
       "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
     },
     {
+      "id": "ranking:blocked_candidate:ETRS:مرشح مقيّد لا يرفع للأولوية",
+      "level": "warning",
+      "priority": "مهم",
+      "source": "ranking",
+      "type": "blocked_candidate",
+      "symbol": "ETRS",
+      "title": "مرشح مقيّد لا يرفع للأولوية",
+      "text": "تعارض سعر",
+      "action": "اتركه للمراقبة فقط حتى تزول القيود",
+      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
+    },
+    {
       "id": "ranking:blocked_candidate:ARVA:مرشح مقيّد لا يرفع للأولوية",
       "level": "warning",
       "priority": "مهم",
@@ -357,26 +357,26 @@
       "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
     },
     {
-      "id": "ranking:blocked_candidate:COPR:مرشح مقيّد لا يرفع للأولوية",
+      "id": "ranking:blocked_candidate:PHTV:مرشح مقيّد لا يرفع للأولوية",
       "level": "warning",
       "priority": "مهم",
       "source": "ranking",
       "type": "blocked_candidate",
-      "symbol": "COPR",
+      "symbol": "PHTV",
       "title": "مرشح مقيّد لا يرفع للأولوية",
       "text": "تعارض سعر",
       "action": "اتركه للمراقبة فقط حتى تزول القيود",
       "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
     },
     {
-      "id": "ranking:blocked_candidate:ETRS:مرشح مقيّد لا يرفع للأولوية",
+      "id": "ranking:blocked_candidate:EASB:مرشح مقيّد لا يرفع للأولوية",
       "level": "warning",
       "priority": "مهم",
       "source": "ranking",
       "type": "blocked_candidate",
-      "symbol": "ETRS",
+      "symbol": "EASB",
       "title": "مرشح مقيّد لا يرفع للأولوية",
-      "text": "تعارض سعر",
+      "text": "تعارض سعر، R/R ضعيف",
       "action": "اتركه للمراقبة فقط حتى تزول القيود",
       "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
     },
@@ -414,6 +414,18 @@
       "title": "P1 فرصة قوية #1",
       "text": "prob=88% expected=4.11% rr=1.47",
       "action": "راجع الدخول والوقف وحجم الصفقة",
+      "why": "احتمال الهدف 88% | ربح هدف1 5.2% | عائد متوقع 4.1% | R/R 1.47 | السعر مدقق | تاريخ 4/50"
+    },
+    {
+      "id": "ranking:ranked_opportunity:UBEE:P1 — فرصة مرتبة #1",
+      "level": "opportunity",
+      "priority": "مراقبة قوية",
+      "source": "ranking",
+      "type": "ranked_opportunity",
+      "symbol": "UBEE",
+      "title": "P1 — فرصة مرتبة #1",
+      "text": "الثقة 88% | R/R 1.47 | عائد متوقع 4.1%",
+      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
       "why": "احتمال الهدف 88% | ربح هدف1 5.2% | عائد متوقع 4.1% | R/R 1.47 | السعر مدقق | تاريخ 4/50"
     },
     {
@@ -513,28 +525,16 @@
       "why": "احتمال الهدف 80% | ربح هدف1 3.9% | عائد متوقع 2.2% | R/R 0.85 | السعر مدقق | تاريخ 5/50"
     },
     {
-      "id": "ranking:ranked_opportunity:DOMT:P2 — فرصة مرتبة #1",
+      "id": "ranking:ranked_opportunity:DOMT:P2 — فرصة مرتبة #2",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "ranked_opportunity",
       "symbol": "DOMT",
-      "title": "P2 — فرصة مرتبة #1",
-      "text": "الثقة 78% | R/R 0.98 | عائد متوقع 2.5%",
-      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 78% | ربح هدف1 4.6% | عائد متوقع 2.5% | R/R 0.98 | السعر مدقق | تاريخ 5/50"
-    },
-    {
-      "id": "ranking:ranked_opportunity:UBEE:P2 — فرصة مرتبة #2",
-      "level": "watch",
-      "priority": "مراقبة",
-      "source": "ranking",
-      "type": "ranked_opportunity",
-      "symbol": "UBEE",
       "title": "P2 — فرصة مرتبة #2",
-      "text": "الثقة 73% | R/R 1.47 | عائد متوقع 2.8%",
+      "text": "الثقة 87% | R/R 0.98 | عائد متوقع 3.4%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 73% | ربح هدف1 5.2% | عائد متوقع 2.8% | R/R 1.47 | السعر مدقق | تاريخ 4/50"
+      "why": "احتمال الهدف 87% | ربح هدف1 4.6% | عائد متوقع 3.4% | R/R 0.98 | السعر مدقق | تاريخ 5/50"
     },
     {
       "id": "ranking:ranked_opportunity:POUL:P2 — فرصة مرتبة #3",
@@ -544,9 +544,9 @@
       "type": "ranked_opportunity",
       "symbol": "POUL",
       "title": "P2 — فرصة مرتبة #3",
-      "text": "الثقة 72% | R/R 0.85 | عائد متوقع 1.8%",
+      "text": "الثقة 82% | R/R 0.85 | عائد متوقع 2.9%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 72% | ربح هدف1 4.7% | عائد متوقع 1.8% | R/R 0.85 | السعر مدقق | تاريخ 5/50"
+      "why": "احتمال الهدف 82% | ربح هدف1 4.7% | عائد متوقع 2.9% | R/R 0.85 | السعر مدقق | تاريخ 5/50"
     },
     {
       "id": "ranking:ranked_opportunity:RMDA:P2 — فرصة مرتبة #4",
@@ -556,21 +556,21 @@
       "type": "ranked_opportunity",
       "symbol": "RMDA",
       "title": "P2 — فرصة مرتبة #4",
-      "text": "الثقة 72% | R/R 0.92 | عائد متوقع 1.8%",
+      "text": "الثقة 81% | R/R 0.92 | عائد متوقع 2.6%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 72% | ربح هدف1 4.4% | عائد متوقع 1.8% | R/R 0.92 | السعر مدقق | تاريخ 5/50"
+      "why": "احتمال الهدف 81% | ربح هدف1 4.4% | عائد متوقع 2.6% | R/R 0.92 | السعر مدقق | تاريخ 5/50"
     },
     {
-      "id": "ranking:ranked_opportunity:UEFM:P2 — فرصة مرتبة #5",
+      "id": "ranking:ranked_opportunity:AALR:P2 — فرصة مرتبة #5",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "ranked_opportunity",
-      "symbol": "UEFM",
+      "symbol": "AALR",
       "title": "P2 — فرصة مرتبة #5",
-      "text": "الثقة 72% | R/R 0.92 | عائد متوقع 1.8%",
+      "text": "الثقة 81% | R/R 0.85 | عائد متوقع 2.6%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 72% | ربح هدف1 4.4% | عائد متوقع 1.8% | R/R 0.92 | السعر مدقق | تاريخ 4/50"
+      "why": "احتمال الهدف 81% | ربح هدف1 4.5% | عائد متوقع 2.6% | R/R 0.85 | السعر مدقق | تاريخ 4/50"
     },
     {
       "id": "ranking:ranked_opportunity:SEIG:P2 — فرصة مرتبة #6",
@@ -580,21 +580,21 @@
       "type": "ranked_opportunity",
       "symbol": "SEIG",
       "title": "P2 — فرصة مرتبة #6",
-      "text": "الثقة 72% | R/R 0.83 | عائد متوقع 1.8%",
+      "text": "الثقة 80% | R/R 0.83 | عائد متوقع 2.6%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 72% | ربح هدف1 4.6% | عائد متوقع 1.8% | R/R 0.83 | السعر مدقق | تاريخ 4/50"
+      "why": "احتمال الهدف 80% | ربح هدف1 4.6% | عائد متوقع 2.6% | R/R 0.83 | السعر مدقق | تاريخ 4/50"
     },
     {
-      "id": "ranking:ranked_opportunity:AALR:P2 — فرصة مرتبة #7",
+      "id": "ranking:ranked_opportunity:UEFM:P2 — فرصة مرتبة #7",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "ranked_opportunity",
-      "symbol": "AALR",
+      "symbol": "UEFM",
       "title": "P2 — فرصة مرتبة #7",
-      "text": "الثقة 72% | R/R 0.85 | عائد متوقع 1.8%",
+      "text": "الثقة 80% | R/R 0.92 | عائد متوقع 2.5%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 72% | ربح هدف1 4.5% | عائد متوقع 1.8% | R/R 0.85 | السعر مدقق | تاريخ 4/50"
+      "why": "احتمال الهدف 80% | ربح هدف1 4.4% | عائد متوقع 2.5% | R/R 0.92 | السعر مدقق | تاريخ 4/50"
     },
     {
       "id": "ranking:ranked_opportunity:IFAP:P2 — فرصة مرتبة #8",
@@ -604,9 +604,9 @@
       "type": "ranked_opportunity",
       "symbol": "IFAP",
       "title": "P2 — فرصة مرتبة #8",
-      "text": "الثقة 72% | R/R 0.85 | عائد متوقع 1.5%",
+      "text": "الثقة 80% | R/R 0.85 | عائد متوقع 2.2%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 72% | ربح هدف1 3.9% | عائد متوقع 1.5% | R/R 0.85 | السعر مدقق | تاريخ 5/50"
+      "why": "احتمال الهدف 80% | ربح هدف1 3.9% | عائد متوقع 2.2% | R/R 0.85 | السعر مدقق | تاريخ 5/50"
     },
     {
       "id": "price:stale_price_summary:market:7 أسعار قديمة/غير مؤكدة",
