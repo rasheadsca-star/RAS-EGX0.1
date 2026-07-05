@@ -57,6 +57,36 @@ function uniqueRows(rows){
   for(const r of rows){if(r&&r.symbol&&!m.has(r.symbol))m.set(r.symbol,r)}
   return [...m.values()];
 }
+function hasVal(v){return v!==undefined&&v!==null&&v!==""}
+function decimalPlaces(v){
+  if(!Number.isFinite(Number(v)))return 0;
+  const s=String(v);
+  if(!s.includes("."))return 0;
+  return s.split(".")[1].replace(/0+$/g,"").length;
+}
+function mergeRowsPreferPrecisePrice(preciseRows,enrichRows){
+  const pRows=Array.isArray(preciseRows)?preciseRows:[];
+  const eRows=Array.isArray(enrichRows)?enrichRows:[];
+  const eMap=new Map();
+  for(const e of eRows){if(e&&e.symbol)eMap.set(e.symbol,e)}
+  const used=new Set();
+  const merged=[];
+  for(const p of pRows){
+    const e=eMap.get(p.symbol)||{}; used.add(p.symbol);
+    const out={...e,...p};
+    for(const k of ["volume","valueTraded","support1","support2","resistance1","resistance2","inFlow","outFlow","open","previousClose","high","low","sector","sector_ar","sector_en"]){
+      if(!hasVal(out[k])&&hasVal(e[k]))out[k]=e[k];
+    }
+    out.price=p.price;
+    out.last=p.price;
+    out.priceSource=p.source||"mubasher_symbol_pages_precise";
+    out.enrichedFrom=e.source||null;
+    out.pricePrecisionWarning=(p.price>0&&p.price<1&&decimalPlaces(p.price)<3)?"sub_1_price_has_less_than_3_decimals":null;
+    merged.push(out);
+  }
+  for(const e of eRows){if(e&&e.symbol&&!used.has(e.symbol))merged.push(e)}
+  return uniqueRows(merged);
+}
 function getUniverseSymbols(){
   const rec=read("data/recommendations.json",{}), market=read("data/market.json",{}), cache=read("data/full-market-cache.json",{}), hist=read("data/history.json",{});
   const set=new Set();
@@ -247,14 +277,44 @@ async function sourceMubasherSymbolPages(){
 }
 async function trySources(){
   const attempts=[];
-  for(const fn of [sourceConfiguredJson, sourceMubasherAnalysisTools, sourceMubasherSymbolPages]){
+
+  // 1) If the user provides an external JSON source, respect it first.
+  try{
+    const cfg=await sourceConfiguredJson();
+    if(Array.isArray(cfg.attempts)) attempts.push(...cfg.attempts);
+    attempts.push({name:cfg.name,url:cfg.url,ok:!!cfg.ok,rows:cfg.rows.length,message:cfg.message});
+    if(cfg.ok)return {selected:cfg,attempts};
+  }catch(e){attempts.push({name:"sourceConfiguredJson",url:null,ok:false,rows:0,error:e.stack||e.message})}
+
+  // 2) Use symbol pages as the primary price source because they preserve small-price precision
+  //    مثل 0.216 بدلاً من 0.21. Analysis tools can still enrich liquidity/support data.
+  let precise=null;
+  try{
+    precise=await sourceMubasherSymbolPages();
+    if(Array.isArray(precise.attempts)) attempts.push(...precise.attempts);
+    attempts.push({name:precise.name,url:precise.url,ok:!!precise.ok,rows:precise.rows.length,message:precise.message});
+  }catch(e){attempts.push({name:"sourceMubasherSymbolPages",url:null,ok:false,rows:0,error:e.stack||e.message})}
+
+  if(precise&&precise.ok){
+    let enrichedRows=precise.rows;
     try{
-      const r=await fn();
-      if(Array.isArray(r.attempts)) attempts.push(...r.attempts);
-      attempts.push({name:r.name,url:r.url,ok:!!r.ok,rows:r.rows.length,message:r.message});
-      if(r.ok)return {selected:r,attempts};
-    }catch(e){attempts.push({name:fn.name,url:null,ok:false,rows:0,error:e.stack||e.message})}
+      const tools=await sourceMubasherAnalysisTools();
+      if(Array.isArray(tools.attempts)) attempts.push(...tools.attempts);
+      attempts.push({name:tools.name,url:tools.url,ok:!!tools.ok,rows:tools.rows.length,message:tools.message});
+      if(tools.rows&&tools.rows.length)enrichedRows=mergeRowsPreferPrecisePrice(precise.rows,tools.rows);
+    }catch(e){attempts.push({name:"sourceMubasherAnalysisTools_enrichment",url:null,ok:false,rows:0,error:e.stack||e.message})}
+    return {selected:{...precise,name:"mubasher_symbol_pages_precise_enriched",url:precise.url+" + analysis tools enrichment",rows:enrichedRows,message:`Parsed precise prices ${precise.rows.length}; enriched rows ${enrichedRows.length}`},attempts};
   }
+
+  // 3) Fallback only: analysis tools. If this is selected, sub-1 prices may be rounded;
+  //    the price reconciliation report will mark such cases as precision risk.
+  try{
+    const tools=await sourceMubasherAnalysisTools();
+    if(Array.isArray(tools.attempts)) attempts.push(...tools.attempts);
+    attempts.push({name:tools.name,url:tools.url,ok:!!tools.ok,rows:tools.rows.length,message:tools.message});
+    if(tools.ok)return {selected:tools,attempts};
+  }catch(e){attempts.push({name:"sourceMubasherAnalysisTools",url:null,ok:false,rows:0,error:e.stack||e.message})}
+
   return {selected:null,attempts};
 }
 async function main(){
@@ -264,21 +324,21 @@ async function main(){
   if(selected&&selected.rows.length){
     const rows=uniqueRows(selected.rows);
     const coveragePct=expected?Number((rows.length/expected*100).toFixed(1)):0;
-    write("data/market.json",{ok:true,generatedAt:RUN_AT,updatedAt:RUN_AT,source:selected.name,sourceUrl:selected.url,rows,note:"Public/delayed data fetched by Mubasher Analysis Tools Adapter. Validate with broker before trading."});
-    write("data/source-health.json",{ok:true,generatedAt:RUN_AT,lastSuccessAt:RUN_AT,mode:"mubasher_analysis_tools_adapter",sourceName:selected.name,sourceUrl:selected.url,marketRows:rows.length,cacheRows:Array.isArray(existingCache.rows)?existingCache.rows.length:0,recommendationRows:Array.isArray(rec.all)?rec.all.length:0,totalUniverse:expected,universeCoveragePct:coveragePct,coveragePct,delayed:true});
-    write("data/fetch-status.json",{ok:true,realFetch:true,scriptExists:true,generatedAt:RUN_AT,mode:"mubasher_analysis_tools_adapter",sourceName:selected.name,sourceUrl:selected.url,marketRows:rows.length,coveragePct,message:`Fetched and accepted ${rows.length} rows from ${selected.name}`});
-    write("data/source-fetch-report.json",{ok:true,realFetch:true,engine:"v9_8_6_mubasher_analysis_tools_adapter",generatedAt:RUN_AT,mode:"mubasher_analysis_tools_adapter",sourceName:selected.name,selected:{name:selected.name,url:selected.url,rows:rows.length,message:selected.message},attempts,marketRows:rows.length,expectedUniverse:expected,coveragePct,minimumRows:MIN_ROWS,note:"Accepted public/delayed Mubasher analysis tools/symbol pages. Validate before execution."});
+    write("data/market.json",{ok:true,generatedAt:RUN_AT,updatedAt:RUN_AT,source:selected.name,sourceUrl:selected.url,rows,note:"Public/delayed data fetched with price-precision priority. Symbol pages are preferred for exact sub-1 EGP prices. Validate with broker before trading."});
+    write("data/source-health.json",{ok:true,generatedAt:RUN_AT,lastSuccessAt:RUN_AT,mode:"price_precision_source_adapter",sourceName:selected.name,sourceUrl:selected.url,marketRows:rows.length,cacheRows:Array.isArray(existingCache.rows)?existingCache.rows.length:0,recommendationRows:Array.isArray(rec.all)?rec.all.length:0,totalUniverse:expected,universeCoveragePct:coveragePct,coveragePct,delayed:true});
+    write("data/fetch-status.json",{ok:true,realFetch:true,scriptExists:true,generatedAt:RUN_AT,mode:"price_precision_source_adapter",sourceName:selected.name,sourceUrl:selected.url,marketRows:rows.length,coveragePct,message:`Fetched and accepted ${rows.length} rows from ${selected.name}`});
+    write("data/source-fetch-report.json",{ok:true,realFetch:true,engine:"v8_9_5_price_precision_source_adapter",generatedAt:RUN_AT,mode:"price_precision_source_adapter",sourceName:selected.name,selected:{name:selected.name,url:selected.url,rows:rows.length,message:selected.message},attempts,marketRows:rows.length,expectedUniverse:expected,coveragePct,minimumRows:MIN_ROWS,note:"Accepted public/delayed Mubasher analysis tools/symbol pages. Validate before execution."});
     console.log(`Accepted ${selected.name}: ${rows.length}/${expected} rows`);
     return;
   }
   const status={ok:false,realFetch:false,scriptExists:true,generatedAt:RUN_AT,mode:"mubasher_analysis_tools_failed_existing_files_only",sourceName:null,marketRows:Array.isArray(existingMarket.rows)?existingMarket.rows.length:0,cacheRows:Array.isArray(existingCache.rows)?existingCache.rows.length:0,recommendationRows:Array.isArray(rec.all)?rec.all.length:0,message:"Mubasher analysis tools and symbol pages did not produce enough valid rows. Existing repository data preserved; freshness is not guaranteed."};
   write("data/fetch-status.json",status);
-  write("data/source-fetch-report.json",{ok:false,realFetch:false,engine:"v9_8_6_mubasher_analysis_tools_adapter",generatedAt:RUN_AT,mode:status.mode,selected:null,attempts,marketRows:status.marketRows,expectedUniverse:expected,coveragePct:0,minimumRows:MIN_ROWS,note:"No data overwritten because coverage was too low. See attempts for exact reason."});
+  write("data/source-fetch-report.json",{ok:false,realFetch:false,engine:"v8_9_5_price_precision_source_adapter",generatedAt:RUN_AT,mode:status.mode,selected:null,attempts,marketRows:status.marketRows,expectedUniverse:expected,coveragePct:0,minimumRows:MIN_ROWS,note:"No data overwritten because coverage was too low. See attempts for exact reason."});
   console.warn(status.message);
 }
 main().catch(err=>{
   const status={ok:false,realFetch:false,scriptExists:true,generatedAt:new Date().toISOString(),mode:"mubasher_analysis_tools_exception",message:err.stack||err.message};
   write("data/fetch-status.json",status);
-  write("data/source-fetch-report.json",{ok:false,realFetch:false,engine:"v9_8_6_mubasher_analysis_tools_adapter",generatedAt:status.generatedAt,mode:status.mode,attempts:[],error:status.message});
+  write("data/source-fetch-report.json",{ok:false,realFetch:false,engine:"v8_9_5_price_precision_source_adapter",generatedAt:status.generatedAt,mode:status.mode,attempts:[],error:status.message});
   console.error(err);
 });
