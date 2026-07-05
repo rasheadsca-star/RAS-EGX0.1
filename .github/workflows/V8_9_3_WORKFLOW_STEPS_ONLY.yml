@@ -1,0 +1,8 @@
+      - name: Recommendation performance index
+        run: node scripts/build-recommendation-performance-index.js || echo "Recommendation performance index skipped"
+
+      - name: Engines console report
+        run: node scripts/build-engines-console-report.js || echo "Engines console skipped"
+
+      - name: Executive home report
+        run: node scripts/build-executive-home-report.js || echo "Executive home skipped"
