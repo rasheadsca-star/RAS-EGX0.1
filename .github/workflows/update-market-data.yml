@@ -162,6 +162,11 @@ jobs:
 
       - name: Regression QA report
         run: node scripts/build-regression-report.js || echo "Regression QA skipped"
+              - name: Price source audit
+        run: node scripts/build-price-source-audit.js || echo "Price source audit skipped"
+
+      - name: Recommendation validation panel
+        run: node scripts/build-recommendation-validation-panel.js || echo "Recommendation validation panel skipped"
 
       # V8.9.3 Executive Dashboard + Engines Console + Recommendation Performance Index
       - name: Recommendation performance index
