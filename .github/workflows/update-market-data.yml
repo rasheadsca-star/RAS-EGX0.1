@@ -47,9 +47,9 @@ jobs:
         with:
           node-version: "22"
 
-      # 1) Market snapshot
-      - name: Fetch public market snapshot
-        run: node scripts/fetch-market-data.js || echo "Public market fetch failed; verification will report status"
+      # 1) Market snapshot through resilient gateway
+      - name: Data Gateway market collection
+        run: node scripts/collect-market-gateway.js || echo "Data gateway failed; existing data preserved"
 
       # 2) Heavy history maintenance is manual only to save GitHub Actions minutes.
       - name: Recover past sessions from Git snapshots using commit dates
