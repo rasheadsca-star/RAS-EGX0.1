@@ -1,16 +1,24 @@
 {
   "ok": true,
   "engine": "v9_8_data_operations_center",
-  "generatedAt": "2026-07-04T19:21:51.393Z",
-  "score": 61,
-  "state": "warn",
+  "generatedAt": "2026-07-05T03:26:44.917Z",
+  "score": 54,
+  "state": "bad",
   "summary": {
     "ok": 2,
-    "warn": 3,
+    "warn": 4,
     "bad": 1,
-    "total": 6
+    "total": 7
   },
   "checks": [
+    {
+      "id": "fetcher",
+      "name": "جلب البيانات",
+      "state": "warn",
+      "value": "existing_files_only",
+      "message": "لا يوجد جلب خارجي مؤكد؛ قد تكون البيانات من ملفات حالية",
+      "action": "افتح تحقق الجلب واضبط EGX_MARKET_JSON_URL"
+    },
     {
       "id": "coverage",
       "name": "تغطية السوق",
@@ -23,7 +31,7 @@
       "id": "price",
       "name": "تدقيق الأسعار",
       "state": "warn",
-      "value": "0 تعارض / 11 قديم",
+      "value": "0 تعارض / 224 قديم",
       "message": "بعض الأسعار قديمة",
       "action": "شغّل Workflow"
     },
@@ -47,7 +55,7 @@
       "id": "alerts",
       "name": "مركز التنبيهات",
       "state": "warn",
-      "value": "عاجل 0 / مهم 59",
+      "value": "عاجل 0 / مهم 272",
       "message": "راجع التنبيهات المهمة",
       "action": "افتح مركز التنبيهات"
     },
