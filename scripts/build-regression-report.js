@@ -37,6 +37,7 @@ function main(){
     "data/alert-decision-center.json",
     "data/data-operations-center.json",
     "data/fetch-status.json",
+    "data/source-fetch-report.json",
     "data/workflow-source-verification.json"
   ];
   requiredFiles.forEach(f=>tests.push(test("file:"+f,exists(f),exists(f)?"exists":"missing")));
@@ -73,6 +74,7 @@ function main(){
     "data/alert-decision-center.json",
     "data/data-operations-center.json",
     "data/fetch-status.json",
+    "data/source-fetch-report.json",
     "data/workflow-source-verification.json",{});
   tests.push(test("data:institutional_report",inst && Object.keys(inst).length>0,"institutional report readable"));
   const failed=tests.filter(x=>!x.ok);
