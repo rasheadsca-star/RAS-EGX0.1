@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+/* EGX Pro Hub V8.9.2 — Entry Trigger Engine */
+const fs = require('fs'); const path = require('path'); const ROOT=process.cwd();
+function readJson(rel,f){try{const p=path.join(ROOT,rel);return fs.existsSync(p)?JSON.parse(fs.readFileSync(p,'utf8')):f;}catch{return f;}}
+function writeJson(rel,d){const p=path.join(ROOT,rel);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,JSON.stringify(d,null,2)+'\n','utf8');}
+function num(v,d=0){const n=Number(String(v??'').replace(/,/g,'').replace(/%/g,''));return Number.isFinite(n)?n:d;}
+function round(n,dp=2){const m=10**dp;return Math.round(num(n)*m)/m;}
+function triggerFor(r){
+  const price=num(r.price), low=num(r.entryLow), high=num(r.entryHigh), stop=num(r.stopLoss), t1=num(r.target1), res=num(r.resistance1);
+  if (!price) return {trigger:'no_price', label:'لا يوجد سعر', urgency:'info', distancePct:null};
+  if (stop && price < stop) return {trigger:'stop_broken', label:'كسر وقف الخسارة', urgency:'urgent', distancePct:round(((price-stop)/stop)*100,2)};
+  if (low && high && price>=low && price<=high) return {trigger:'inside_entry', label:'داخل نطاق الدخول', urgency:'important', distancePct:0};
+  if (high && price>high && price<=high*1.015) return {trigger:'near_entry_upper', label:'قريب أعلى الدخول', urgency:'important', distancePct:round(((price-high)/high)*100,2)};
+  if (low && price<low && price>=low*0.985) return {trigger:'near_entry_lower', label:'قريب أسفل الدخول', urgency:'watch', distancePct:round(((price-low)/low)*100,2)};
+  if (high && price>high*1.035) return {trigger:'extended', label:'السعر ابتعد عن الدخول', urgency:'watch', distancePct:round(((price-high)/high)*100,2)};
+  if (t1 && price>=t1*0.985) return {trigger:'near_target1', label:'قريب من الهدف الأول', urgency:'watch', distancePct:round(((price-t1)/t1)*100,2)};
+  if (res && price>=res*0.99) return {trigger:'near_resistance', label:'قريب من مقاومة', urgency:'watch', distancePct:round(((price-res)/res)*100,2)};
+  return {trigger:'wait', label:'انتظار Trigger واضح', urgency:'info', distancePct:null};
+}
+const aw = readJson('data/actionable-watchlist.json',{rows:[]});
+const rows = (aw.rows||[]).map(r=>{
+  const trig = triggerFor(r);
+  // Avoid alert fatigue: only A+/A/B can create important entry alerts.
+  // C/Risk rows remain visible as watch/info unless stop is broken.
+  if (!['A+','A','B'].includes(r.tier) && trig.urgency !== 'urgent') {
+    trig.urgency = trig.trigger === 'extended' || trig.trigger === 'near_resistance' ? 'watch' : 'info';
+  }
+  return {
+    symbol:r.symbol, name:r.name, tier:r.tier, recommendation:r.recommendation,
+    price:r.price, entryLow:r.entryLow, entryHigh:r.entryHigh, target1:r.target1, target2:r.target2, stopLoss:r.stopLoss,
+    riskReward:r.riskReward, confidence:r.confidence, compositeScore:r.compositeScore,
+    ...trig, reason:r.reason
+  };
+});
+const summary={
+  total:rows.length,
+  urgent:rows.filter(r=>r.urgency==='urgent').length,
+  important:rows.filter(r=>r.urgency==='important').length,
+  watch:rows.filter(r=>r.urgency==='watch').length,
+  info:rows.filter(r=>r.urgency==='info').length,
+  insideEntry:rows.filter(r=>r.trigger==='inside_entry').length,
+  extended:rows.filter(r=>r.trigger==='extended').length,
+  stopBroken:rows.filter(r=>r.trigger==='stop_broken').length
+};
+writeJson('data/entry-trigger-report.json',{ok:true,engine:'v8_9_2_entry_trigger_engine',generatedAt:new Date().toISOString(),summary,rows,disclaimer:'Triggers للمراقبة فقط وليست أوامر تداول.'});
+console.log(`Entry trigger report generated: ${rows.length}`);
