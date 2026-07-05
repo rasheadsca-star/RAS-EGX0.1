@@ -1,7 +1,7 @@
 {
   "ok": true,
   "engine": "v8_9_1_confidence_guard",
-  "generatedAt": "2026-07-05T16:07:40.926Z",
+  "generatedAt": "2026-07-05T16:59:50.851Z",
   "score": 59,
   "state": "bad",
   "summary": {
@@ -10,7 +10,7 @@
     "totalSymbols": 224,
     "sourceCoveragePct": 93.8,
     "stalePrices": 7,
-    "priceConflicts": 121,
+    "priceConflicts": 132,
     "guards": 4
   },
   "guards": [
@@ -39,37 +39,11 @@
       "id": "price_conflict",
       "level": "critical",
       "title": "تعارض أسعار",
-      "message": "عدد التعارضات 121",
+      "message": "عدد التعارضات 132",
       "action": "امنع ترقية أي سهم متعارض إلى تنفيذ"
     }
   ],
   "rows": [
-    {
-      "symbol": "COPR",
-      "name": "كوبر للاستثمار التجاري والتطوير العقاري",
-      "grade": "P1",
-      "rawProbability": 78,
-      "guardedProbability": 72,
-      "finalScore": 78,
-      "historySessions": 4,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 4/50"
-      ]
-    },
-    {
-      "symbol": "ARAB",
-      "name": "المطورون العرب القابضة",
-      "grade": "P1",
-      "rawProbability": 78,
-      "guardedProbability": 72,
-      "finalScore": 78,
-      "historySessions": 4,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 4/50"
-      ]
-    },
     {
       "symbol": "DOMT",
       "name": "دومتي",
@@ -188,36 +162,8 @@
       ]
     },
     {
-      "symbol": "AIHC",
-      "name": "العربية للاستثمارات القابضة",
-      "grade": "P3",
-      "rawProbability": 77,
-      "guardedProbability": 66,
-      "finalScore": 76,
-      "historySessions": 4,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 4/50",
-        "قيود: R/R ضعيف"
-      ]
-    },
-    {
       "symbol": "ATLC",
       "name": "التوفيق للتأجير التمويلي",
-      "grade": "P3",
-      "rawProbability": 76,
-      "guardedProbability": 65,
-      "finalScore": 74,
-      "historySessions": 4,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 4/50",
-        "قيود: R/R ضعيف"
-      ]
-    },
-    {
-      "symbol": "ASPI",
-      "name": "أسباير كابيتال",
       "grade": "P3",
       "rawProbability": 76,
       "guardedProbability": 65,
@@ -409,20 +355,6 @@
       "notes": [
         "تاريخ محدود 4/50",
         "قيود: R/R ضعيف"
-      ]
-    },
-    {
-      "symbol": "PHGC",
-      "name": "بريميوم هيلث كير",
-      "grade": "P3",
-      "rawProbability": 72,
-      "guardedProbability": 61,
-      "finalScore": 68,
-      "historySessions": 4,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 4/50",
-        "قيود: R/R ضعيف، لا يوجد ربح واضح"
       ]
     },
     {
@@ -848,9 +780,9 @@
       "symbol": "RAKT",
       "name": "راكتا",
       "grade": "Watch",
-      "rawProbability": 56,
-      "guardedProbability": 37,
-      "finalScore": 51,
+      "rawProbability": 57,
+      "guardedProbability": 38,
+      "finalScore": 52,
       "historySessions": 2,
       "priceState": "stale",
       "notes": [
@@ -863,9 +795,9 @@
       "symbol": "ELNA",
       "name": "النصر لتصنيع الحاصلات الزراعية",
       "grade": "Watch",
-      "rawProbability": 56,
-      "guardedProbability": 37,
-      "finalScore": 51,
+      "rawProbability": 57,
+      "guardedProbability": 38,
+      "finalScore": 52,
       "historySessions": 2,
       "priceState": "stale",
       "notes": [
@@ -881,38 +813,10 @@
       "rawProbability": 35,
       "guardedProbability": 24,
       "finalScore": 29,
-      "historySessions": 2,
+      "historySessions": 3,
       "priceState": "ok",
       "notes": [
-        "تاريخ محدود 2/50",
-        "قيود: R/R ضعيف، لا يوجد ربح واضح"
-      ]
-    },
-    {
-      "symbol": "CFGH",
-      "name": "كونكريت فاشون جروب",
-      "grade": "Watch",
-      "rawProbability": 35,
-      "guardedProbability": 24,
-      "finalScore": 29,
-      "historySessions": 2,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 2/50",
-        "قيود: R/R ضعيف، لا يوجد ربح واضح"
-      ]
-    },
-    {
-      "symbol": "NAHO",
-      "name": "نعيم القابضة",
-      "grade": "Watch",
-      "rawProbability": 35,
-      "guardedProbability": 24,
-      "finalScore": 29,
-      "historySessions": 2,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 2/50",
+        "تاريخ محدود 3/50",
         "قيود: R/R ضعيف، لا يوجد ربح واضح"
       ]
     },
@@ -923,10 +827,10 @@
       "rawProbability": 35,
       "guardedProbability": 24,
       "finalScore": 29,
-      "historySessions": 2,
+      "historySessions": 3,
       "priceState": "ok",
       "notes": [
-        "تاريخ محدود 2/50",
+        "تاريخ محدود 3/50",
         "قيود: R/R ضعيف، لا يوجد ربح واضح"
       ]
     },
@@ -1044,21 +948,6 @@
       ]
     },
     {
-      "symbol": "TRTO",
-      "name": "عبر المحيطات للسياحة",
-      "grade": "Watch",
-      "rawProbability": 27,
-      "guardedProbability": 8,
-      "finalScore": 21,
-      "historySessions": 2,
-      "priceState": "stale",
-      "notes": [
-        "تاريخ محدود 2/50",
-        "سعر قديم",
-        "قيود: سعر قديم، R/R ضعيف، لا يوجد ربح واضح"
-      ]
-    },
-    {
       "symbol": "FAITA",
       "name": "بنك فيصل الإسلامي",
       "grade": "Blocked",
@@ -1161,6 +1050,126 @@
         "تاريخ محدود 5/50",
         "تعارض سعر",
         "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "ARVA",
+      "name": "العربية للصمامات",
+      "grade": "Blocked",
+      "rawProbability": 60,
+      "guardedProbability": 24,
+      "finalScore": 60,
+      "historySessions": 4,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 4/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "COPR",
+      "name": "كوبر للاستثمار التجاري والتطوير العقاري",
+      "grade": "Blocked",
+      "rawProbability": 60,
+      "guardedProbability": 24,
+      "finalScore": 60,
+      "historySessions": 4,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 4/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "ETRS",
+      "name": "إيجيترانس",
+      "grade": "Blocked",
+      "rawProbability": 60,
+      "guardedProbability": 24,
+      "finalScore": 60,
+      "historySessions": 4,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 4/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "ARAB",
+      "name": "المطورون العرب القابضة",
+      "grade": "Blocked",
+      "rawProbability": 60,
+      "guardedProbability": 24,
+      "finalScore": 60,
+      "historySessions": 4,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 4/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "PHTV",
+      "name": "بيراميزا للفنادق",
+      "grade": "Blocked",
+      "rawProbability": 60,
+      "guardedProbability": 24,
+      "finalScore": 59,
+      "historySessions": 4,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 4/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "AIDC",
+      "name": "العربية للاستثمار والتنمية",
+      "grade": "Blocked",
+      "rawProbability": 59,
+      "guardedProbability": 23,
+      "finalScore": 59,
+      "historySessions": 4,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 4/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "EASB",
+      "name": "ثمار للوساطة",
+      "grade": "Blocked",
+      "rawProbability": 59,
+      "guardedProbability": 23,
+      "finalScore": 57,
+      "historySessions": 5,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف"
+      ]
+    },
+    {
+      "symbol": "FAIT",
+      "name": "بنك فيصل الإسلامي",
+      "grade": "Blocked",
+      "rawProbability": 59,
+      "guardedProbability": 23,
+      "finalScore": 57,
+      "historySessions": 5,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف"
       ]
     }
   ],
