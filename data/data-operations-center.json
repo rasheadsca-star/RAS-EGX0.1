@@ -1,39 +1,39 @@
 {
   "ok": true,
   "engine": "v8_9_1_data_operations_center_clear",
-  "generatedAt": "2026-07-05T06:55:19.982Z",
-  "score": 62,
-  "state": "warn",
+  "generatedAt": "2026-07-05T07:26:23.731Z",
+  "score": 28,
+  "state": "bad",
   "summary": {
-    "ok": 4,
-    "warn": 3,
-    "bad": 1,
+    "ok": 3,
+    "warn": 2,
+    "bad": 3,
     "total": 8
   },
   "checks": [
     {
       "id": "fetcher",
       "name": "جلب البيانات",
-      "state": "ok",
-      "value": "accepted 209 صف",
-      "message": "مصدر mubasher_symbol_pages قبل 209 صف",
+      "state": "warn",
+      "value": "accepted 143 صف",
+      "message": "مصدر mubasher_symbol_pages قبل 143 صف",
       "action": "متابعة بدون Reset"
     },
     {
       "id": "coverage",
       "name": "تغطية السوق",
-      "state": "warn",
-      "value": "93.3%",
-      "message": "تغطية مقبولة مع نقص محدود",
-      "action": "تشغيل Workflow لاحقًا عند الحاجة"
+      "state": "bad",
+      "value": "63.8%",
+      "message": "التغطية أقل من حد التشغيل المريح",
+      "action": "راجع مصدر البيانات"
     },
     {
       "id": "price",
       "name": "تدقيق الأسعار",
-      "state": "ok",
-      "value": "0 تعارض / 8 قديم",
-      "message": "بعض الأسعار تحتاج تحقق لكن ليست فشلًا عامًا",
-      "action": "راجع القائمة ولا تكرر Workflow بلا داعٍ"
+      "state": "bad",
+      "value": "76 تعارض / 74 قديم",
+      "message": "يوجد تعارض أسعار مؤثر",
+      "action": "افتح تدقيق الأسعار"
     },
     {
       "id": "history",
@@ -47,24 +47,24 @@
       "id": "ranking",
       "name": "محرك الأولويات",
       "state": "ok",
-      "value": "P1 5 / P2 21 / مقيّد 48",
+      "value": "P1 5 / P2 7 / مقيّد 112",
       "message": "يوجد فرص قابلة للمراجعة",
       "action": "افتح محرك الأولويات"
     },
     {
       "id": "alerts",
       "name": "مركز التنبيهات",
-      "state": "warn",
-      "value": "عاجل 0 / مهم 12 / فرص 8 / مراقبة 10",
-      "message": "تنبيهات مهمة بدون فشل حرج",
+      "state": "bad",
+      "value": "عاجل 20 / مهم 12 / فرص 8 / مراقبة 14",
+      "message": "ابدأ بالتنبيهات العاجلة",
       "action": "افتح مركز التنبيهات"
     },
     {
       "id": "confidence_guard",
       "name": "حارس الثقة",
-      "state": "bad",
-      "value": "غير متاح",
-      "message": "لم يتم توليد تقرير حارس الثقة",
+      "state": "ok",
+      "value": "84%",
+      "message": "تاريخ 4.0/50 وتغطية 93.3%",
       "action": "راجع تفسير الثقة قبل الاعتماد على النتائج"
     },
     {
