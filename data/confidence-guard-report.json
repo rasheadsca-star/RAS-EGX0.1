@@ -1,16 +1,16 @@
 {
   "ok": true,
   "engine": "v8_9_1_confidence_guard",
-  "generatedAt": "2026-07-05T14:24:19.890Z",
+  "generatedAt": "2026-07-05T16:07:40.926Z",
   "score": 59,
   "state": "bad",
   "summary": {
-    "historyAverageSessions": 4.04,
+    "historyAverageSessions": 4.08,
     "full50": 0,
     "totalSymbols": 224,
     "sourceCoveragePct": 93.8,
     "stalePrices": 7,
-    "priceConflicts": 123,
+    "priceConflicts": 121,
     "guards": 4
   },
   "guards": [
@@ -18,7 +18,7 @@
       "id": "history_limited",
       "level": "warning",
       "title": "سجل 50 جلسة غير مكتمل",
-      "message": "متوسط التاريخ 4.0/50، لذلك لا يتم اعتبار إشارات 50 جلسة مكتملة.",
+      "message": "متوسط التاريخ 4.1/50، لذلك لا يتم اعتبار إشارات 50 جلسة مكتملة.",
       "action": "استخدم النتائج للمراقبة ولا ترفع وزن SMA50/RSI حتى يكتمل السجل"
     },
     {
@@ -39,7 +39,7 @@
       "id": "price_conflict",
       "level": "critical",
       "title": "تعارض أسعار",
-      "message": "عدد التعارضات 123",
+      "message": "عدد التعارضات 121",
       "action": "امنع ترقية أي سهم متعارض إلى تنفيذ"
     }
   ],
@@ -848,9 +848,9 @@
       "symbol": "RAKT",
       "name": "راكتا",
       "grade": "Watch",
-      "rawProbability": 54,
-      "guardedProbability": 35,
-      "finalScore": 49,
+      "rawProbability": 56,
+      "guardedProbability": 37,
+      "finalScore": 51,
       "historySessions": 2,
       "priceState": "stale",
       "notes": [
@@ -863,9 +863,9 @@
       "symbol": "ELNA",
       "name": "النصر لتصنيع الحاصلات الزراعية",
       "grade": "Watch",
-      "rawProbability": 54,
-      "guardedProbability": 35,
-      "finalScore": 49,
+      "rawProbability": 56,
+      "guardedProbability": 37,
+      "finalScore": 51,
       "historySessions": 2,
       "priceState": "stale",
       "notes": [
@@ -905,6 +905,20 @@
     {
       "symbol": "NAHO",
       "name": "نعيم القابضة",
+      "grade": "Watch",
+      "rawProbability": 35,
+      "guardedProbability": 24,
+      "finalScore": 29,
+      "historySessions": 2,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 2/50",
+        "قيود: R/R ضعيف، لا يوجد ربح واضح"
+      ]
+    },
+    {
+      "symbol": "EDFM",
+      "name": "مطاحن شرق الدلتا",
       "grade": "Watch",
       "rawProbability": 35,
       "guardedProbability": 24,
@@ -1145,21 +1159,6 @@
       "priceState": "conflict",
       "notes": [
         "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ]
-    },
-    {
-      "symbol": "ARVA",
-      "name": "العربية للصمامات",
-      "grade": "Blocked",
-      "rawProbability": 60,
-      "guardedProbability": 24,
-      "finalScore": 60,
-      "historySessions": 4,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 4/50",
         "تعارض سعر",
         "قيود: تعارض سعر"
       ]

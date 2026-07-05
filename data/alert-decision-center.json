@@ -1,7 +1,7 @@
 {
   "ok": true,
   "engine": "v8_9_1_alert_decision_center_calibrated",
-  "generatedAt": "2026-07-05T14:22:02.815Z",
+  "generatedAt": "2026-07-05T16:05:35.583Z",
   "total": 58,
   "summary": {
     "critical": 20,
@@ -14,7 +14,7 @@
   },
   "suppressed": {
     "critical": 15,
-    "warning": 148,
+    "warning": 147,
     "opportunity": 0,
     "watch": 1,
     "info": 0
@@ -67,18 +67,6 @@
       "text": "final=238.5, recommendation=240.97, market=238.5, cache=240.97",
       "action": "مراجعة السعر قبل أي قرار قوي",
       "why": "max/min internal price spread 1.04%"
-    },
-    {
-      "id": "price:price_conflict:ADRI:تعارض سعر",
-      "level": "critical",
-      "priority": "عاجل",
-      "source": "price",
-      "type": "price_conflict",
-      "symbol": "ADRI",
-      "title": "تعارض سعر",
-      "text": "final=7.26, recommendation=null, market=7.26, cache=null",
-      "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 1.79%"
     },
     {
       "id": "price:price_conflict:AFMC:تعارض سعر",
@@ -259,6 +247,18 @@
       "text": "final=11.98, recommendation=11.87, market=11.98, cache=11.87",
       "action": "مراجعة السعر قبل أي قرار قوي",
       "why": "max/min internal price spread 0.93%"
+    },
+    {
+      "id": "price:price_conflict:CIEB:تعارض سعر",
+      "level": "critical",
+      "priority": "عاجل",
+      "source": "price",
+      "type": "price_conflict",
+      "symbol": "CIEB",
+      "title": "تعارض سعر",
+      "text": "final=24.44, recommendation=23.92, market=24.44, cache=23.92",
+      "action": "مراجعة السعر قبل أي قرار قوي",
+      "why": "max/min internal price spread 2.17%"
     },
     {
       "id": "ranking:blocked_candidate:FAITA:مرشح مقيّد لا يرفع للأولوية",
@@ -700,7 +700,7 @@
       "type": "news_linking_low",
       "symbol": null,
       "title": "الأخبار موجودة لكن ربطها بالأسهم محدود",
-      "text": "أخبار مصنفة: 160 | رموز مرتبطة: 10",
+      "text": "أخبار مصنفة: 160 | رموز مرتبطة: 7",
       "action": "تحسين قاموس ربط الأخبار بالرموز والقطاعات في مرحلة لاحقة",
       "why": "وجود أخبار كثيرة لا يعني تأثيرًا مباشرًا على كل سهم"
     },
@@ -712,7 +712,7 @@
       "type": "suppressed_summary",
       "symbol": null,
       "title": "تم إخفاء تنبيهات منخفضة الأولوية لتقليل الضوضاء",
-      "text": "مخفي: مهم 148 / فرص 0 / مراقبة 1 / معلومات 0",
+      "text": "مخفي: مهم 147 / فرص 0 / مراقبة 1 / معلومات 0",
       "action": "استخدم التقارير التفصيلية عند الحاجة",
       "why": "مركز التنبيهات يعرض المهم فقط حتى لا يتحول إلى قائمة مزعجة"
     }

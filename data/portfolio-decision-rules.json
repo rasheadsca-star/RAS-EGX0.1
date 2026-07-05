@@ -1,7 +1,7 @@
 {
   "ok": true,
   "engine": "v9_6_portfolio_decision_rules",
-  "generatedAt": "2026-07-05T14:22:02.771Z",
+  "generatedAt": "2026-07-05T16:05:35.540Z",
   "total": 221,
   "rules": [
     {
@@ -588,21 +588,21 @@
       "symbol": "RAKT",
       "grade": "Watch",
       "action": "watch",
-      "targetProbability": 54,
-      "expectedReturnPct": -3.68,
+      "targetProbability": 56,
+      "expectedReturnPct": -3.52,
       "rr": 0,
       "priceState": "stale",
-      "why": "احتمال الهدف 54% | ربح هدف1 0.0% | عائد متوقع -3.7% | R/R 0.00 | السعر قديم | تاريخ 2/50 | قيود: سعر قديم، R/R ضعيف، لا يوجد ربح واضح"
+      "why": "احتمال الهدف 56% | ربح هدف1 0.0% | عائد متوقع -3.5% | R/R 0.00 | السعر قديم | تاريخ 2/50 | قيود: سعر قديم، R/R ضعيف، لا يوجد ربح واضح"
     },
     {
       "symbol": "ELNA",
       "grade": "Watch",
       "action": "watch",
-      "targetProbability": 54,
-      "expectedReturnPct": -3.68,
+      "targetProbability": 56,
+      "expectedReturnPct": -3.52,
       "rr": 0,
       "priceState": "stale",
-      "why": "احتمال الهدف 54% | ربح هدف1 0.0% | عائد متوقع -3.7% | R/R 0.00 | السعر قديم | تاريخ 2/50 | قيود: سعر قديم، R/R ضعيف، لا يوجد ربح واضح"
+      "why": "احتمال الهدف 56% | ربح هدف1 0.0% | عائد متوقع -3.5% | R/R 0.00 | السعر قديم | تاريخ 2/50 | قيود: سعر قديم، R/R ضعيف، لا يوجد ربح واضح"
     },
     {
       "symbol": "MMAT",
@@ -626,6 +626,16 @@
     },
     {
       "symbol": "NAHO",
+      "grade": "Watch",
+      "action": "watch",
+      "targetProbability": 35,
+      "expectedReturnPct": -5.2,
+      "rr": 0,
+      "priceState": "ok",
+      "why": "احتمال الهدف 35% | ربح هدف1 0.0% | عائد متوقع -5.2% | R/R 0.00 | السعر مدقق | تاريخ 2/50 | قيود: R/R ضعيف، لا يوجد ربح واضح"
+    },
+    {
+      "symbol": "EDFM",
       "grade": "Watch",
       "action": "watch",
       "targetProbability": 35,
@@ -2203,16 +2213,6 @@
       "rr": 0.01,
       "priceState": "conflict",
       "why": "احتمال الهدف 20% | ربح هدف1 0.1% | عائد متوقع -7.4% | R/R 0.01 | السعر متعارض | تاريخ 4/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
-    },
-    {
-      "symbol": "EDFM",
-      "grade": "Blocked",
-      "action": "do_not_add_review",
-      "targetProbability": 17,
-      "expectedReturnPct": -6.64,
-      "rr": 0,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 17% | ربح هدف1 0.0% | عائد متوقع -6.6% | R/R 0.00 | السعر متعارض | تاريخ 2/50 | قيود: تعارض سعر، R/R ضعيف، لا يوجد ربح واضح"
     }
   ],
   "note": "Rules are market-side. Browser combines them with local portfolio weights/PnL to produce final portfolio decisions."
