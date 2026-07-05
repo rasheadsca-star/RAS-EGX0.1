@@ -49,7 +49,7 @@ jobs:
 
       # 1) Market snapshot
       - name: Fetch public market snapshot
-        run: node scripts/fetch-market-data.js
+        run: node scripts/fetch-market-data.js || echo "Public market fetch failed; verification will report status"
 
       # 2) Heavy history maintenance is manual only to save GitHub Actions minutes.
       - name: Recover past sessions from Git snapshots using commit dates
@@ -88,6 +88,9 @@ jobs:
 
       - name: Data operations center
         run: node scripts/build-data-operations-center.js || echo "Data operations center skipped"
+
+      - name: Workflow source verification
+        run: node scripts/build-workflow-source-verification.js || echo "Workflow source verification skipped"
 
       - name: Snapshot evidence confidence layer
         run: node scripts/build-snapshot-evidence.js || echo "Snapshot evidence skipped"
