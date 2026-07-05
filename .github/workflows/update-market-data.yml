@@ -80,6 +80,9 @@ jobs:
       - name: Final opportunity ranking
         run: node scripts/build-final-opportunity-ranking.js || echo "Final ranking skipped"
 
+      - name: Unified decision board
+        run: node scripts/build-unified-decision-board.js || echo "Unified decision board skipped"
+
       - name: Portfolio decision rules
         run: node scripts/build-portfolio-decision-rules.js || echo "Portfolio decision rules skipped"
 
