@@ -12,9 +12,6 @@ on:
           - "false"
           - "true"
   schedule:
-    # V9.2 session monitoring mode:
-    # Several public/delayed refreshes during/after EGX session (Egypt UTC+3).
-    # This is NOT tick-by-tick live; it is scheduled refresh from public sources.
     - cron: "15 7 * * 0-4"   # 10:15 Cairo
     - cron: "15 9 * * 0-4"   # 12:15 Cairo
     - cron: "15 11 * * 0-4"  # 14:15 Cairo
@@ -47,11 +44,9 @@ jobs:
         with:
           node-version: "22"
 
-      # 1) Market snapshot through resilient gateway
       - name: Data Gateway market collection
         run: node scripts/collect-market-gateway.js || echo "Data gateway failed; existing data preserved"
 
-      # 2) Heavy history maintenance is manual only to save GitHub Actions minutes.
       - name: Recover past sessions from Git snapshots using commit dates
         if: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true') || github.event.schedule == '0 15 * * 0' }}
         run: node scripts/rebuild-history-from-git.js || echo "Git past recovery skipped"
@@ -64,7 +59,6 @@ jobs:
         if: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.history_maintenance == 'true') || github.event.schedule == '0 15 * * 0' }}
         run: node scripts/auto-public-history-backfill.js || echo "Public history discovery skipped"
 
-      # 3) Build analysis layers
       - name: Auto rolling 50-session history and indicators
         run: node scripts/build-history-50-engine.js || echo "History 50 engine skipped"
 
@@ -107,7 +101,6 @@ jobs:
       - name: Apply trusted news impact
         run: node scripts/apply-news-impact-to-recommendations.js || echo "Trusted news impact skipped"
 
-      # V8.9.2 Actionable Watchlist + Signal Quality Engine
       - name: Signal quality engine
         run: node scripts/build-signal-quality-engine.js || echo "Signal quality engine skipped"
 
@@ -123,7 +116,6 @@ jobs:
       - name: Build recommendation accuracy tracker
         run: node scripts/build-recommendation-accuracy.js || echo "Recommendation accuracy tracker skipped"
 
-      # 4) Build all reports BEFORE final commit.
       - name: History integrity report
         run: node scripts/build-history-integrity-report.js || echo "History integrity skipped"
 
@@ -162,13 +154,7 @@ jobs:
 
       - name: Regression QA report
         run: node scripts/build-regression-report.js || echo "Regression QA skipped"
-              - name: Price source audit
-        run: node scripts/build-price-source-audit.js || echo "Price source audit skipped"
 
-      - name: Recommendation validation panel
-        run: node scripts/build-recommendation-validation-panel.js || echo "Recommendation validation panel skipped"
-
-      # V8.9.3 Executive Dashboard + Engines Console + Recommendation Performance Index
       - name: Recommendation performance index
         run: node scripts/build-recommendation-performance-index.js || echo "Recommendation performance index skipped"
 
@@ -178,10 +164,15 @@ jobs:
       - name: Executive home report
         run: node scripts/build-executive-home-report.js || echo "Executive home skipped"
 
+      - name: Price source audit
+        run: node scripts/build-price-source-audit.js || echo "Price source audit skipped"
+
+      - name: Recommendation validation panel
+        run: node scripts/build-recommendation-validation-panel.js || echo "Recommendation validation panel skipped"
+
       - name: Optional legacy intelligence reports
         run: node scripts/build-v52-intelligence.js || echo "Legacy intelligence builder skipped"
 
-      # 5) Single final commit after all generated data files are ready.
       - name: Commit generated data once
         run: |
           git config user.name "github-actions"
