@@ -1,20 +1,20 @@
 {
-  "ok": false,
+  "ok": true,
   "engine": "v9_8_4_workflow_source_verification",
-  "generatedAt": "2026-07-05T05:21:05.465Z",
-  "score": 60,
-  "state": "warn",
-  "realFetch": false,
-  "fetchMode": "public_sources_failed_existing_files_only",
-  "message": "All public source adapters failed or returned low coverage. Existing repository data preserved; freshness is not guaranteed.",
-  "marketRows": 221,
+  "generatedAt": "2026-07-05T05:40:55.321Z",
+  "score": 91,
+  "state": "ok",
+  "realFetch": true,
+  "fetchMode": "mubasher_symbol_pages_fetcher",
+  "message": "Fetched and accepted 209 rows from mubasher_symbol_pages",
+  "marketRows": 209,
   "cacheRows": 221,
   "recommendationRows": 221,
-  "sourceAgeMinutes": 600.8,
+  "sourceAgeMinutes": 0.3,
   "summary": {
-    "ok": 6,
-    "warn": 2,
-    "bad": 1,
+    "ok": 8,
+    "warn": 1,
+    "bad": 0,
     "total": 10
   },
   "checks": [
@@ -37,16 +37,16 @@
     {
       "id": "external_fetch",
       "name": "External public source",
-      "state": "warn",
-      "value": "public_sources_failed_existing_files_only",
-      "message": "لا يوجد دليل على جلب خارجي؛ قد تكون البيانات من الملفات الحالية فقط",
-      "action": "اضبط EGX_MARKET_JSON_URL أو أضف fetcher حقيقي"
+      "state": "ok",
+      "value": "mubasher_symbol_pages_fetcher",
+      "message": "تم الجلب من مصدر خارجي/عام مضبوط",
+      "action": "متابعة"
     },
     {
       "id": "market_rows",
       "name": "market.json rows",
       "state": "ok",
-      "value": "221",
+      "value": "209",
       "message": "market.json يحتوي صفوفًا",
       "action": "متابعة"
     },
@@ -69,16 +69,16 @@
     {
       "id": "source_age",
       "name": "Source age",
-      "state": "bad",
-      "value": "600.8 min",
-      "message": "المصدر قديم جدًا",
-      "action": "شغّل Workflow أو راجع fetcher"
+      "state": "ok",
+      "value": "0.3 min",
+      "message": "المصدر حديث نسبيًا",
+      "action": "متابعة"
     },
     {
       "id": "price_reconciliation",
       "name": "Price reconciliation",
       "state": "warn",
-      "value": "0 conflict / 224 stale",
+      "value": "0 conflict / 8 stale",
       "message": "بعض الأسعار قديمة بعد الجلب",
       "action": "متابعة"
     },
@@ -93,10 +93,10 @@
     {
       "id": "public_adapter",
       "name": "Public source adapter",
-      "state": "warn",
-      "value": "public_sources_failed_existing_files_only",
-      "message": "لم يتم قبول مصدر عام كافٍ",
-      "action": "راجع source-fetch-report أو هيكل صفحات المصدر"
+      "state": "ok",
+      "value": "mubasher_symbol_pages",
+      "message": "تم قبول مصدر عام بعدد 209 صف",
+      "action": "متابعة"
     }
   ],
   "note": "This report verifies data pipeline mechanics. It does not certify tick-by-tick live prices."

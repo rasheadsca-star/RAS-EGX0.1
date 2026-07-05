@@ -1,12 +1,12 @@
 {
   "ok": true,
   "engine": "v9_8_data_operations_center",
-  "generatedAt": "2026-07-05T05:21:05.397Z",
-  "score": 54,
-  "state": "bad",
+  "generatedAt": "2026-07-05T05:40:55.264Z",
+  "score": 61,
+  "state": "warn",
   "summary": {
-    "ok": 2,
-    "warn": 4,
+    "ok": 3,
+    "warn": 3,
     "bad": 1,
     "total": 7
   },
@@ -14,24 +14,24 @@
     {
       "id": "fetcher",
       "name": "جلب البيانات",
-      "state": "warn",
-      "value": "public_sources_failed_existing_files_only",
-      "message": "لا يوجد جلب خارجي مؤكد؛ قد تكون البيانات من ملفات حالية",
-      "action": "افتح تحقق الجلب واضبط EGX_MARKET_JSON_URL"
+      "state": "ok",
+      "value": "mubasher_symbol_pages_fetcher",
+      "message": "الجلب العام/الخارجي مضبوط",
+      "action": "متابعة"
     },
     {
       "id": "coverage",
       "name": "تغطية السوق",
-      "state": "ok",
-      "value": "99.0%",
-      "message": "تغطية السوق جيدة",
-      "action": "متابعة"
+      "state": "warn",
+      "value": "93.3%",
+      "message": "التغطية أقل من المطلوب",
+      "action": "راجع مصدر البيانات أو Workflow"
     },
     {
       "id": "price",
       "name": "تدقيق الأسعار",
       "state": "warn",
-      "value": "0 تعارض / 224 قديم",
+      "value": "0 تعارض / 8 قديم",
       "message": "بعض الأسعار قديمة",
       "action": "شغّل Workflow"
     },
@@ -46,16 +46,16 @@
     {
       "id": "ranking",
       "name": "محرك الأولويات",
-      "state": "warn",
-      "value": "P1 0 / مقيّد 48",
-      "message": "لا توجد P1 واضحة الآن",
+      "state": "ok",
+      "value": "P1 1 / مقيّد 48",
+      "message": "يوجد فرص قابلة للمراجعة",
       "action": "افتح محرك الأولويات"
     },
     {
       "id": "alerts",
       "name": "مركز التنبيهات",
       "state": "warn",
-      "value": "عاجل 0 / مهم 272",
+      "value": "عاجل 0 / مهم 56",
       "message": "راجع التنبيهات المهمة",
       "action": "افتح مركز التنبيهات"
     },
