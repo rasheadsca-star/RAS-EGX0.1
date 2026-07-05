@@ -163,6 +163,16 @@ jobs:
       - name: Regression QA report
         run: node scripts/build-regression-report.js || echo "Regression QA skipped"
 
+      # V8.9.3 Executive Dashboard + Engines Console + Recommendation Performance Index
+      - name: Recommendation performance index
+        run: node scripts/build-recommendation-performance-index.js || echo "Recommendation performance index skipped"
+
+      - name: Engines console report
+        run: node scripts/build-engines-console-report.js || echo "Engines console skipped"
+
+      - name: Executive home report
+        run: node scripts/build-executive-home-report.js || echo "Executive home skipped"
+
       - name: Optional legacy intelligence reports
         run: node scripts/build-v52-intelligence.js || echo "Legacy intelligence builder skipped"
 
