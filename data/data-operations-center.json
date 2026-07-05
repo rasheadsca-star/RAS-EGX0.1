@@ -1,53 +1,53 @@
 {
   "ok": true,
-  "engine": "v9_8_data_operations_center",
-  "generatedAt": "2026-07-05T06:44:31.134Z",
-  "score": 61,
+  "engine": "v8_9_1_data_operations_center_clear",
+  "generatedAt": "2026-07-05T06:55:19.982Z",
+  "score": 62,
   "state": "warn",
   "summary": {
-    "ok": 3,
+    "ok": 4,
     "warn": 3,
     "bad": 1,
-    "total": 7
+    "total": 8
   },
   "checks": [
     {
       "id": "fetcher",
       "name": "جلب البيانات",
       "state": "ok",
-      "value": "accepted_full",
-      "message": "بوابة البيانات قبلت 209 صف",
-      "action": "متابعة"
+      "value": "accepted 209 صف",
+      "message": "مصدر mubasher_symbol_pages قبل 209 صف",
+      "action": "متابعة بدون Reset"
     },
     {
       "id": "coverage",
       "name": "تغطية السوق",
       "state": "warn",
       "value": "93.3%",
-      "message": "التغطية أقل من المطلوب",
-      "action": "راجع مصدر البيانات أو Workflow"
+      "message": "تغطية مقبولة مع نقص محدود",
+      "action": "تشغيل Workflow لاحقًا عند الحاجة"
     },
     {
       "id": "price",
       "name": "تدقيق الأسعار",
-      "state": "warn",
+      "state": "ok",
       "value": "0 تعارض / 8 قديم",
-      "message": "بعض الأسعار قديمة",
-      "action": "شغّل Workflow"
+      "message": "بعض الأسعار تحتاج تحقق لكن ليست فشلًا عامًا",
+      "action": "راجع القائمة ولا تكرر Workflow بلا داعٍ"
     },
     {
       "id": "history",
       "name": "ذاكرة 50 جلسة",
-      "state": "bad",
+      "state": "warn",
       "value": "0/224 مكتمل",
-      "message": "متوسط الجلسات 4.0 / 50",
-      "action": "شغّل history_maintenance أو استيراد Backfill"
+      "message": "متوسط الجلسات 4.0 / 50 — التحليل الطويل غير مكتمل",
+      "action": "شغّل history_maintenance=true فقط عند الحاجة"
     },
     {
       "id": "ranking",
       "name": "محرك الأولويات",
       "state": "ok",
-      "value": "P1 5 / مقيّد 48",
+      "value": "P1 5 / P2 21 / مقيّد 48",
       "message": "يوجد فرص قابلة للمراجعة",
       "action": "افتح محرك الأولويات"
     },
@@ -55,9 +55,17 @@
       "id": "alerts",
       "name": "مركز التنبيهات",
       "state": "warn",
-      "value": "عاجل 0 / مهم 56",
-      "message": "راجع التنبيهات المهمة",
+      "value": "عاجل 0 / مهم 12 / فرص 8 / مراقبة 10",
+      "message": "تنبيهات مهمة بدون فشل حرج",
       "action": "افتح مركز التنبيهات"
+    },
+    {
+      "id": "confidence_guard",
+      "name": "حارس الثقة",
+      "state": "bad",
+      "value": "غير متاح",
+      "message": "لم يتم توليد تقرير حارس الثقة",
+      "action": "راجع تفسير الثقة قبل الاعتماد على النتائج"
     },
     {
       "id": "regression",
@@ -68,5 +76,11 @@
       "action": "متابعة"
     }
   ],
-  "note": "Single operational center for data health, price reconciliation, history, ranking, alerts, and regression."
+  "runbook": [
+    "إذا الجلب accepted والتغطية فوق 80% فلا تعمل Reset.",
+    "إذا التاريخ أقل من 15/50 فهذا نقص تحليل طويل وليس فشل تشغيل.",
+    "إذا التنبيهات كثيرة، ابدأ بالعاجل فقط ثم المهم.",
+    "لا ترفع scan-state أو full-market-cache يدويًا إلا عند Restore/Reset صريح."
+  ],
+  "note": "Clear operational center: separates source failure from incomplete history and alert noise."
 }

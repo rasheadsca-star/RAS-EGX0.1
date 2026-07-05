@@ -1,14 +1,11 @@
 {
-  "ok": false,
+  "ok": true,
   "engine": "v8_1_3_no_function_false_fail_regression_qa",
-  "generatedAt": "2026-07-05T06:47:52.526Z",
+  "generatedAt": "2026-07-05T06:57:31.456Z",
   "total": 77,
-  "passed": 75,
-  "failedCount": 2,
-  "failed": [
-    "file:data/smart-alert-rules.json",
-    "file:data/confidence-guard-report.json"
-  ],
+  "passed": 77,
+  "failedCount": 0,
+  "failed": [],
   "warnings": [],
   "tests": [
     {
@@ -85,9 +82,9 @@
     },
     {
       "name": "file:data/smart-alert-rules.json",
-      "ok": false,
-      "status": "FAIL",
-      "message": "missing"
+      "ok": true,
+      "status": "PASS",
+      "message": "exists"
     },
     {
       "name": "file:data/daily-decision-brief.json",
@@ -103,9 +100,9 @@
     },
     {
       "name": "file:data/confidence-guard-report.json",
-      "ok": false,
-      "status": "FAIL",
-      "message": "missing"
+      "ok": true,
+      "status": "PASS",
+      "message": "exists"
     },
     {
       "name": "file:data/session-memory-status.json",
