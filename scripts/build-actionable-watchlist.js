@@ -1,112 +1,23 @@
 #!/usr/bin/env node
-/*
-  EGX Pro Hub V8.9.2 — Actionable Watchlist Engine
-  Output: data/actionable-watchlist.json
-*/
-
-const fs = require('fs');
-const path = require('path');
-const ROOT = process.cwd();
-function readJson(rel, fallback) { try { const p = path.join(ROOT, rel); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p,'utf8')) : fallback; } catch { return fallback; } }
-function writeJson(rel, data) { const p = path.join(ROOT, rel); fs.mkdirSync(path.dirname(p), {recursive:true}); fs.writeFileSync(p, JSON.stringify(data,null,2)+'\n','utf8'); }
-function num(v,d=0){ const n=Number(String(v??'').replace(/,/g,'').replace(/%/g,'')); return Number.isFinite(n)?n:d; }
-function round(n,dp=2){ const m=10**dp; return Math.round(num(n)*m)/m; }
+/* EGX Pro Hub V8.9.6 — Actionable Watchlist with Price Precision Guard */
+const fs=require('fs'); const path=require('path'); const ROOT=process.cwd();
+function readJson(rel,f){try{const p=path.join(ROOT,rel);return fs.existsSync(p)?JSON.parse(fs.readFileSync(p,'utf8')):f}catch{return f}}
+function writeJson(rel,d){const p=path.join(ROOT,rel);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,JSON.stringify(d,null,2)+'\n','utf8')}
+function num(v,d=0){const n=Number(String(v??'').replace(/,/g,'').replace(/%/g,''));return Number.isFinite(n)?n:d}
 function classify(row){
-  const score=num(row.compositeScore); const conf=num(row.confidence); const rr=num(row.riskReward); const blocks=row.blocks||[];
-  const hardBlock = blocks.includes('broken_stop') || blocks.includes('weak_data') || blocks.includes('stale_price') || blocks.includes('price_mismatch');
-  if (hardBlock) return {tier:'Risk', label:'تجنب / مراجعة', priority:5};
-  if (blocks.includes('extended_price')) return {tier:'C', label:'انتظار عودة لنطاق دخول', priority:4};
-  if (score>=84 && conf>=78 && rr>=1.7 && ['inside_entry','near_entry'].includes(row.priceState)) return {tier:'A+', label:'فرصة قوية بشرط الدخول', priority:1};
-  if (score>=76 && conf>=72 && rr>=1.45) return {tier:'A', label:'مراقبة قوية', priority:2};
-  if (score>=65 && rr>=1.15) return {tier:'B', label:'متابعة فقط', priority:3};
-  return {tier:'C', label:'انتظار تأكيد', priority:4};
+  const score=num(row.compositeScore),conf=num(row.confidence),rr=num(row.riskReward),blocks=row.blocks||[];
+  const hardBlock=blocks.includes('price_precision_risk')||blocks.includes('broken_stop')||blocks.includes('weak_data')||blocks.includes('stale_price')||blocks.includes('price_mismatch')||row.precisionRisk===true;
+  if(hardBlock)return{tier:'Risk',label:blocks.includes('price_precision_risk')||row.precisionRisk?'انتظار تحقق السعر':'تجنب / مراجعة',priority:5};
+  if(blocks.includes('extended_price'))return{tier:'C',label:'انتظار عودة لنطاق دخول',priority:4};
+  if(score>=84&&conf>=78&&rr>=1.7&&['inside_entry','near_entry'].includes(row.priceState))return{tier:'A+',label:'فرصة قوية بشرط الدخول',priority:1};
+  if(score>=76&&conf>=72&&rr>=1.45)return{tier:'A',label:'مراقبة قوية',priority:2};
+  if(score>=65&&rr>=1.15)return{tier:'B',label:'متابعة فقط',priority:3};
+  return{tier:'C',label:'انتظار تأكيد',priority:4};
 }
-function makeNote(r){
-  const notes=[];
-  if ((r.sourceTags||[]).includes('final_ranking') && (r.sourceTags||[]).includes('recommendations')) notes.push('مشترك بين الفرص اليومية ومحرك الأولويات');
-  else if ((r.sourceTags||[]).includes('final_ranking')) notes.push('قوي في محرك الأولويات وينتظر تأكيد جلسة');
-  else if ((r.sourceTags||[]).includes('recommendations')) notes.push('ظاهر في الفرص اليومية ويحتاج فلترة أولوية');
-  if (r.priceState==='inside_entry') notes.push('داخل نطاق الدخول');
-  if (r.priceState==='near_entry') notes.push('قريب من الدخول');
-  if (r.priceState==='extended') notes.push('ابتعد عن الدخول');
-  if (num(r.historySessions)<10) notes.push(`تاريخ محدود ${r.historySessions}/50`);
-  if (num(r.riskReward)>=1.5) notes.push('R/R جيد');
-  return notes.join(' | ');
-}
-const signal = readJson('data/signal-quality-report.json', {rows:[]});
-let rows = Array.isArray(signal.rows)? signal.rows : [];
-rows = rows.map(r => {
-  const c = classify(r);
-  return {
-    rank: 0,
-    symbol: r.symbol,
-    name: r.name,
-    tier: c.tier,
-    decision: c.label,
-    recommendation: r.action,
-    compositeScore: r.compositeScore,
-    confidence: r.confidence,
-    dataQualityScore: r.dataQualityScore,
-    technicalScore: r.technicalScore,
-    liquidityScore: r.liquidityScore,
-    financialScore: r.financialScore,
-    newsScore: r.newsScore,
-    historySessions: r.historySessions,
-    price: r.price,
-    changePct: r.changePct,
-    turnover: r.turnover,
-    volume: r.volume,
-    support1: r.support1,
-    resistance1: r.resistance1,
-    entryLow: r.entryLow,
-    entryHigh: r.entryHigh,
-    entryRange: `${r.entryLow} - ${r.entryHigh}`,
-    target1: r.target1,
-    target2: r.target2,
-    stopLoss: r.stopLoss,
-    riskReward: r.riskReward,
-    priceState: r.priceState,
-    blocks: r.blocks,
-    reason: r.reason,
-    decisionNote: makeNote(r),
-    sourceUrl: r.sourceUrl
-  };
-});
-rows.sort((a,b) => {
-  const pa = classify(a).priority, pb = classify(b).priority;
-  return pa-pb || num(b.compositeScore)-num(a.compositeScore) || num(b.confidence)-num(a.confidence) || num(b.liquidityScore)-num(a.liquidityScore);
-});
-rows.forEach((r,i)=>r.rank=i+1);
-const buckets = {
-  strong: rows.filter(r=>r.tier==='A+'),
-  watch: rows.filter(r=>r.tier==='A'),
-  follow: rows.filter(r=>r.tier==='B'),
-  wait: rows.filter(r=>r.tier==='C'),
-  risk: rows.filter(r=>r.tier==='Risk')
-};
-const output = {
-  ok:true,
-  engine:'v8_9_2_actionable_watchlist_engine',
-  generatedAt:new Date().toISOString(),
-  summary:{
-    total:rows.length,
-    strong:buckets.strong.length,
-    watch:buckets.watch.length,
-    follow:buckets.follow.length,
-    wait:buckets.wait.length,
-    risk:buckets.risk.length,
-    actionable: buckets.strong.length + buckets.watch.length
-  },
-  topActionable: rows.filter(r=>['A+','A'].includes(r.tier)).slice(0,25),
-  buckets,
-  rows,
-  rules:[
-    'A+ لا تظهر إلا مع ثقة عالية وR/R قوي وسعر داخل/قريب من الدخول',
-    'السعر الممتد يتحول إلى انتظار بدل مطاردة',
-    'السعر القديم أو فرق السعر يحجب التوصية القوية',
-    'التاريخ المحدود يقلل الثقة لكنه لا يفشل التشغيل'
-  ],
-  disclaimer:'هذه قائمة مراقبة وتحليل مبنية على بيانات عامة/متأخرة وليست أوامر تداول.'
-};
-writeJson('data/actionable-watchlist.json', output);
-console.log(`Actionable watchlist generated: ${rows.length} symbols, actionable=${output.summary.actionable}`);
+function makeNote(r){const notes=[]; if(r.precisionRisk||((r.blocks||[]).includes('price_precision_risk')))notes.push('لا تنفيذ: السعر يحتاج تأكيد 3 خانات'); if((r.sourceTags||[]).includes('final_ranking')&&(r.sourceTags||[]).includes('recommendations'))notes.push('مشترك بين الفرص اليومية ومحرك الأولويات'); else if((r.sourceTags||[]).includes('final_ranking'))notes.push('قوي في محرك الأولويات وينتظر تأكيد جلسة'); else if((r.sourceTags||[]).includes('recommendations'))notes.push('ظاهر في الفرص اليومية ويحتاج فلترة أولوية'); if(r.priceState==='inside_entry')notes.push('داخل نطاق الدخول'); if(r.priceState==='near_entry')notes.push('قريب من الدخول'); if(r.priceState==='extended')notes.push('ابتعد عن الدخول'); if(num(r.historySessions)<10)notes.push(`تاريخ محدود ${r.historySessions}/50`); if(num(r.riskReward)>=1.5)notes.push('R/R جيد'); return notes.join(' | ')}
+const signal=readJson('data/signal-quality-report.json',{rows:[]}); let rows=Array.isArray(signal.rows)?signal.rows:[];
+rows=rows.map(r=>{const c=classify(r);return{rank:0,symbol:r.symbol,name:r.name,tier:c.tier,decision:c.label,recommendation:r.action,compositeScore:r.compositeScore,confidence:r.confidence,dataQualityScore:r.dataQualityScore,technicalScore:r.technicalScore,liquidityScore:r.liquidityScore,financialScore:r.financialScore,newsScore:r.newsScore,historySessions:r.historySessions,price:r.price,priceDisplay:r.priceDisplay,changePct:r.changePct,turnover:r.turnover,volume:r.volume,support1:r.support1,resistance1:r.resistance1,entryLow:r.entryLow,entryHigh:r.entryHigh,entryRange:`${r.entryLow} - ${r.entryHigh}`,target1:r.target1,target2:r.target2,stopLoss:r.stopLoss,riskReward:r.riskReward,priceState:r.priceState,precisionRisk:r.precisionRisk===true,executionAllowed:r.executionAllowed!==false&&c.tier!=='Risk',blocks:r.blocks,reason:r.reason,decisionNote:makeNote(r),sourceUrl:r.sourceUrl}});
+rows.sort((a,b)=>{const pa=classify(a).priority,pb=classify(b).priority;return pa-pb||num(b.compositeScore)-num(a.compositeScore)||num(b.confidence)-num(a.confidence)||num(b.liquidityScore)-num(a.liquidityScore)}); rows.forEach((r,i)=>r.rank=i+1);
+const buckets={strong:rows.filter(r=>r.tier==='A+'),watch:rows.filter(r=>r.tier==='A'),follow:rows.filter(r=>r.tier==='B'),wait:rows.filter(r=>r.tier==='C'),risk:rows.filter(r=>r.tier==='Risk')};
+const output={ok:true,engine:'v8_9_6_actionable_watchlist_price_precision_guard',generatedAt:new Date().toISOString(),summary:{total:rows.length,strong:buckets.strong.length,watch:buckets.watch.length,follow:buckets.follow.length,wait:buckets.wait.length,risk:buckets.risk.length,precisionRisk:rows.filter(r=>r.precisionRisk).length,actionable:buckets.strong.length+buckets.watch.length},topActionable:rows.filter(r=>['A+','A'].includes(r.tier)&&r.executionAllowed).slice(0,25),buckets,rows,rules:['A+ لا تظهر إلا مع ثقة عالية وR/R قوي وسعر داخل/قريب من الدخول','السعر الممتد يتحول إلى انتظار بدل مطاردة','السعر القديم أو فرق السعر يحجب التوصية القوية','أي سعر أقل من 1 جنيه بدقة غير كافية يتحول إلى انتظار تحقق السعر ولا يدخل Top Actionable'],disclaimer:'هذه قائمة مراقبة وتحليل مبنية على بيانات عامة/متأخرة وليست أوامر تداول.'};
+writeJson('data/actionable-watchlist.json',output); console.log(`Actionable watchlist generated: ${rows.length} symbols, actionable=${output.summary.actionable}, precisionRisk=${output.summary.precisionRisk}`);
