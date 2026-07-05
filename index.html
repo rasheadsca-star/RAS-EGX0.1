@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EGX Pro Hub — Professional Terminal V9.8.8.4.4.3.3.2.2.1.1.2.2.1.1.1</title>
+  <title>EGX Pro Hub — Professional Terminal V8.10.0 Global Table Scroll</title>
   <style>
     :root{
       --bg:#050914;--bg2:#071326;--card:#08182d;--card2:#0a1d36;
@@ -420,7 +420,97 @@
 /* V8.9.3 Executive Home + Engines Console */
 .v893-grid{display:grid;grid-template-columns:1.7fr .9fr;gap:12px;margin-top:12px}.v893-hero{border:1px solid rgba(56,189,248,.22);background:linear-gradient(135deg,rgba(14,165,233,.14),rgba(15,23,42,.88));border-radius:22px;padding:16px}.v893-hero h3{margin:0 0 8px;color:#eaf6ff}.v893-hero .big{font-size:42px;font-weight:1000;letter-spacing:-1px}.v893-scorebox{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:12px}.v893-scorebox div{border:1px solid rgba(119,169,235,.16);border-radius:16px;background:rgba(2,8,23,.55);padding:10px}.v893-scorebox span{display:block;color:#9fb5d5;font-size:12px}.v893-scorebox b{font-size:18px;color:#f8fafc}.v893-table table{width:100%;border-collapse:separate;border-spacing:0 7px}.v893-table th{font-size:12px;color:#93a9c9;text-align:right;padding:6px}.v893-table td{background:rgba(2,8,23,.65);border-top:1px solid rgba(119,169,235,.14);border-bottom:1px solid rgba(119,169,235,.14);padding:9px;font-size:13px}.v893-table td:first-child{border-radius:0 12px 12px 0;border-right:1px solid rgba(119,169,235,.14)}.v893-table td:last-child{border-radius:12px 0 0 12px;border-left:1px solid rgba(119,169,235,.14)}.v893-tier{display:inline-flex;align-items:center;justify-content:center;min-width:40px;padding:4px 9px;border-radius:999px;font-weight:1000;border:1px solid rgba(125,211,252,.2);background:rgba(14,165,233,.12);color:#bae6fd}.v893-tier.a{background:rgba(34,197,94,.12);color:#bbf7d0}.v893-tier.b{background:rgba(234,179,8,.12);color:#fde68a}.v893-tier.risk{background:rgba(239,68,68,.12);color:#fecaca}.v893-engines{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.v893-engine{border:1px solid rgba(119,169,235,.16);border-radius:18px;background:rgba(2,8,23,.72);padding:13px}.v893-engine h4{margin:0 0 8px;color:#eaf6ff}.v893-status{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 8px;font-size:12px;font-weight:900}.v893-status.ok{background:rgba(34,197,94,.12);color:#bbf7d0}.v893-status.warn{background:rgba(234,179,8,.12);color:#fde68a}.v893-status.bad{background:rgba(239,68,68,.12);color:#fecaca}.v893-status.info{background:rgba(14,165,233,.12);color:#bae6fd}.v893-ring{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;margin:auto;background:conic-gradient(#22c55e calc(var(--p)*1%),rgba(30,41,59,.9) 0);position:relative}.v893-ring:after{content:"";position:absolute;inset:13px;border-radius:50%;background:#020817;border:1px solid rgba(119,169,235,.18)}.v893-ring b{position:relative;z-index:1;font-size:28px;color:#fff}.v893-component{display:grid;grid-template-columns:1fr 90px;gap:10px;align-items:center;margin:8px 0}.v893-component .bar{height:9px;border-radius:999px;background:rgba(30,41,59,.8);overflow:hidden}.v893-component .bar i{display:block;height:100%;background:#38bdf8;border-radius:999px}.v893-note{border:1px solid rgba(234,179,8,.2);background:rgba(234,179,8,.08);border-radius:16px;padding:12px;color:#fde68a;margin-top:10px}@media(max-width:1100px){.v893-grid,.v893-scorebox,.v893-engines{grid-template-columns:1fr}.v893-table{overflow:auto}.v893-table table{min-width:850px}}
 
-</style>
+
+
+    /* ===================== V8.10.0 Global Table Scroll & Sticky Headers ===================== */
+    body.egx-v810-table-mode{overflow-x:hidden!important}
+    body.egx-v810-table-mode .main{min-width:0!important;overflow:hidden!important}
+    body.egx-v810-table-mode .panel,
+    body.egx-v810-table-mode .box,
+    body.egx-v810-table-mode .card{min-width:0!important}
+    .egx-v810-scroll-hint{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:8px 12px;margin:8px 0 6px;border:1px solid rgba(56,189,248,.24);
+      background:linear-gradient(90deg,rgba(14,165,233,.09),rgba(34,197,94,.05));
+      border-radius:14px;color:#dbeafe;font-size:12px;font-weight:800;line-height:1.7
+    }
+    .egx-v810-scroll-hint small{color:#9fb5d5;font-weight:700}
+    .egx-v810-table-scroll,
+    body.egx-v810-table-mode .tablewrap,
+    body.egx-v810-table-mode .v893-table,
+    body.egx-v810-table-mode .v899-tablewrap{
+      width:100%!important;max-width:100%!important;
+      overflow:auto!important;overflow-x:auto!important;overflow-y:auto!important;
+      max-height:calc(100vh - 210px)!important;min-height:160px;
+      border-radius:18px!important;border:1px solid rgba(119,169,235,.22)!important;
+      background:rgba(2,8,23,.55)!important;scrollbar-gutter:stable both-edges;
+      -webkit-overflow-scrolling:touch;position:relative;direction:rtl
+    }
+    body.egx-v810-table-mode .tablewrap.no-x{overflow-x:auto!important}
+    .egx-v810-table-scroll::-webkit-scrollbar,
+    body.egx-v810-table-mode .tablewrap::-webkit-scrollbar,
+    body.egx-v810-table-mode .v893-table::-webkit-scrollbar,
+    body.egx-v810-table-mode .v899-tablewrap::-webkit-scrollbar{height:14px;width:14px}
+    .egx-v810-table-scroll::-webkit-scrollbar-track,
+    body.egx-v810-table-mode .tablewrap::-webkit-scrollbar-track,
+    body.egx-v810-table-mode .v893-table::-webkit-scrollbar-track,
+    body.egx-v810-table-mode .v899-tablewrap::-webkit-scrollbar-track{background:rgba(15,23,42,.92);border-radius:999px}
+    .egx-v810-table-scroll::-webkit-scrollbar-thumb,
+    body.egx-v810-table-mode .tablewrap::-webkit-scrollbar-thumb,
+    body.egx-v810-table-mode .v893-table::-webkit-scrollbar-thumb,
+    body.egx-v810-table-mode .v899-tablewrap::-webkit-scrollbar-thumb{background:linear-gradient(90deg,#0ea5e9,#22c55e);border-radius:999px;border:3px solid rgba(15,23,42,.92)}
+    body.egx-v810-table-mode table,
+    body.egx-v810-table-mode .compact-table,
+    body.egx-v810-table-mode .rank95-table,
+    body.egx-v810-table-mode .v899-table,
+    body.egx-v810-table-mode .v893-table table{
+      width:max-content!important;min-width:max(100%,1320px)!important;table-layout:auto!important;
+      border-collapse:separate!important;border-spacing:0!important
+    }
+    body.egx-v810-table-mode .rank95-table{min-width:1900px!important}
+    body.egx-v810-table-mode .compact-table{min-width:1450px!important}
+    body.egx-v810-table-mode .v899-validation-table{min-width:1450px!important}
+    body.egx-v810-table-mode th,
+    body.egx-v810-table-mode td{
+      white-space:nowrap!important;min-width:74px;max-width:360px;
+      padding:9px 10px!important;vertical-align:middle!important;overflow:hidden;text-overflow:ellipsis
+    }
+    body.egx-v810-table-mode td:hover{white-space:normal!important;overflow:visible;text-overflow:clip;position:relative;z-index:12;background:rgba(15,23,42,.98)!important}
+    body.egx-v810-table-mode td .muted,
+    body.egx-v810-table-mode td .v899-reason,
+    body.egx-v810-table-mode td .rank95-why,
+    body.egx-v810-table-mode td .reason,
+    body.egx-v810-table-mode td p{white-space:normal!important;line-height:1.65!important}
+    body.egx-v810-table-mode thead th,
+    body.egx-v810-table-mode table > tr:first-child th{
+      position:sticky!important;top:0!important;z-index:20!important;
+      background:linear-gradient(180deg,rgba(8,24,45,.99),rgba(7,19,38,.99))!important;
+      color:#eaf6ff!important;box-shadow:0 1px 0 rgba(119,169,235,.25),0 8px 18px rgba(0,0,0,.22)
+    }
+    body.egx-v810-table-mode th:nth-child(1),
+    body.egx-v810-table-mode td:nth-child(1){
+      position:sticky!important;right:0!important;z-index:10!important;min-width:54px;max-width:76px;
+      background:rgba(6,18,34,.98)!important;box-shadow:-1px 0 0 rgba(119,169,235,.22)
+    }
+    body.egx-v810-table-mode th:nth-child(2),
+    body.egx-v810-table-mode td:nth-child(2){
+      position:sticky!important;right:54px!important;z-index:9!important;min-width:115px;max-width:210px;
+      background:rgba(6,18,34,.98)!important;box-shadow:-1px 0 0 rgba(119,169,235,.18)
+    }
+    body.egx-v810-table-mode thead th:nth-child(1),
+    body.egx-v810-table-mode thead th:nth-child(2){z-index:30!important}
+    body.egx-v810-table-mode .symbol,
+    body.egx-v810-table-mode td.symbol{font-weight:1000;color:#fff!important}
+    @media(max-width:900px){
+      .egx-v810-scroll-hint{font-size:11px;align-items:flex-start;flex-direction:column}
+      .egx-v810-table-scroll,
+      body.egx-v810-table-mode .tablewrap,
+      body.egx-v810-table-mode .v893-table,
+      body.egx-v810-table-mode .v899-tablewrap{max-height:calc(100vh - 190px)!important}
+      body.egx-v810-table-mode table{min-width:1150px!important}
+    }
+
+  </style>
 
 <!-- EGX Pro Hub PWA -->
 <link rel="manifest" href="manifest.json">
@@ -3456,11 +3546,142 @@ function renderPriceSourceAudit(){const d=v898PriceAuditData(),s=d.summary||{},r
 const __v898OldQuickJump=quickJump;
 quickJump=function(){const base=[['home','⌂ الرئيسية'],['enginesConsole','⚙ لوحة التشغيل'],['recommendationValidation','☑ تحقق التوصيات'],['priceSourceAudit','⇆ مصدر السعر'],['performanceIndex','✓ مؤشر الدقة'],['rankingEngine','≡ الأولويات'],['dataOps','☷ تدقيق البيانات'],['portfolio','◈ المحفظة']];return `<div class="screen-jump v894-jump">${base.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
 const __v898OldSide=side;
-side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['portfolioDecision','قرارات المحفظة','⚖'],['alertsCenter','مركز التنبيهات','🚨'],['dailyBrief','تقرير القرار اليومي','▧'],['stockSearch','بحث وتحليل سهم','⌕'],['sessionMemory','ذاكرة الجلسات','▣'],['historyBackfill','استكمال التاريخ','⏳'],['chartLab','تاريخ وشارت','▥'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V8.9.8 Validation</div></div></div><div class="statusbar"><span class="live">تحقق التوصيات ومصدر السعر مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
+side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['portfolioDecision','قرارات المحفظة','⚖'],['alertsCenter','مركز التنبيهات','🚨'],['dailyBrief','تقرير القرار اليومي','▧'],['stockSearch','بحث وتحليل سهم','⌕'],['sessionMemory','ذاكرة الجلسات','▣'],['historyBackfill','استكمال التاريخ','⏳'],['chartLab','تاريخ وشارت','▥'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V8.10.0 Table Scroll</div></div></div><div class="statusbar"><span class="live">تحقق التوصيات ومصدر السعر مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
 const __v898OldContent=content;
 content=function(){if(EGX.screen==='recommendationValidation')return renderRecommendationValidationPanel();if(EGX.screen==='priceSourceAudit')return renderPriceSourceAudit();return __v898OldContent();};
 const __v898OldInit=init;
 init=async function(){await __v898OldInit();try{const [pv,ps]=await Promise.all([loadJson('data/recommendation-validation-panel.json',{}),loadJson('data/price-source-audit.json',{})]);EGX.recommendationValidation=pv||{};EGX.priceSourceAudit=ps||{};console.log('V8.9.8 validation/audit loaded',!!pv.ok,!!ps.ok);render();}catch(e){console.warn('V8.9.8 extra load skipped',e)}};
+
+
+/* ===================== V8.9.9 Audit Readability Hotfix ===================== */
+(function v899AuditReadability(){
+  try{
+    const style=document.createElement('style');
+    style.textContent=`
+      .v899-hint{border:1px solid rgba(56,189,248,.22);background:rgba(14,165,233,.075);border-radius:16px;padding:10px 12px;color:#dbeafe;line-height:1.8;margin:10px 0}
+      .v899-tablewrap{overflow:auto;border-radius:18px;border:1px solid rgba(119,169,235,.16);background:rgba(2,8,23,.52);max-height:68vh}
+      .v899-table{width:100%;min-width:980px!important;border-collapse:separate;border-spacing:0;table-layout:fixed}
+      .v899-table th{font-size:13px!important;padding:11px 10px!important;position:sticky;top:0;z-index:3;background:rgba(8,24,45,.98)!important;color:#eaf6ff!important}
+      .v899-table td{font-size:13px!important;padding:10px!important;line-height:1.55!important;vertical-align:top!important;white-space:normal!important;word-break:break-word}
+      .v899-table tr:hover td{background:rgba(14,165,233,.055)}
+      .v899-symbol{font-weight:1000;color:#fff;font-size:14px}.v899-name{color:#9fb5d6;font-size:12px;margin-top:3px;display:block}
+      .v899-price{font-size:16px;font-weight:1000;color:#fff}.v899-sub{display:block;color:#9fb5d6;font-size:12px;margin-top:3px}
+      .v899-reason{color:#dbeafe;line-height:1.75}.v899-reason.bad{color:#fecaca}.v899-reason.ok{color:#bbf7d0}
+      .v899-smallgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.v899-smallgrid span{border:1px solid rgba(119,169,235,.12);border-radius:10px;padding:6px;background:rgba(15,23,42,.45)}
+      .v899-table th:nth-child(1){width:42px}.v899-table th:nth-child(2){width:170px}.v899-table th:nth-child(3){width:130px}.v899-table th:nth-child(4){width:150px}.v899-table th:nth-child(5){width:130px}.v899-table th:nth-child(6){width:auto}
+      .v899-validation-table th:nth-child(1){width:42px}.v899-validation-table th:nth-child(2){width:150px}.v899-validation-table th:nth-child(3){width:120px}.v899-validation-table th:nth-child(4){width:170px}.v899-validation-table th:nth-child(5){width:170px}.v899-validation-table th:nth-child(6){width:150px}.v899-validation-table th:nth-child(7){width:auto}
+      @media(max-width:900px){.v899-table{min-width:860px!important}.v898-metric{grid-template-columns:repeat(2,minmax(0,1fr))}.v898-grid{grid-template-columns:1fr}.v899-table th,.v899-table td{font-size:12px!important;padding:8px!important}}
+    `;
+    document.head.appendChild(style);
+  }catch(e){}
+})();
+
+function renderPriceSourceAudit(){
+  const d=v898PriceAuditData(),s=d.summary||{},rows=v898Rows(d).slice(0,120);
+  const blocked=rows.filter(r=>!r.executionAllowed).length;
+  const allowed=rows.filter(r=>!!r.executionAllowed).length;
+  return `${header('تدقيق مصدر السعر','نسخة مقروءة: تركيز على مصدر السعر، دقته، وهل مسموح ببناء توصية تنفيذية عليه أم لا')}${quickJump()}
+  <section class="v898-metric">
+    ${kpi('إجمالي مفحوص',fmt0(s.total||rows.length),'أسهم لها سعر')}
+    ${kpi('مسموح تنفيذياً',fmt0(s.allowed||allowed),'سعر مقبول')}
+    ${kpi('محجوب',fmt0(s.blocked||blocked),'لا يدخل P1/P2/P3',num(s.blocked||blocked)>0)}
+    ${kpi('حجب بسبب الدقة',fmt0(s.precisionBlocked),'خصوصًا أقل من 1 جنيه',num(s.precisionBlocked)>0)}
+  </section>
+  <div class="panel">
+    <h3>قائمة تدقيق الأسعار — عرض مبسط</h3>
+    <div class="v899-hint">أي سهم أقل من 1 جنيه يجب أن يكون السعر مؤكدًا بثلاث خانات قبل أي توصية تنفيذية. الأسهم المحجوبة ليست فشلًا؛ هي حماية من توصية مبنية على سعر غير دقيق.</div>
+    <div class="v899-tablewrap"><table class="v899-table"><thead><tr><th>#</th><th>السهم</th><th>السعر والدقة</th><th>مصدر السعر</th><th>حالة التنفيذ</th><th>سبب الحجب / الملاحظة</th></tr></thead><tbody>
+    ${rows.map((r,i)=>{const ok=!!r.executionAllowed;const precision=r.pricePrecision||r.decimals||'-';const source=r.sourceUsed||r.source||'-';const reason=r.blockReason||r.reason||(!ok?'محجوب لحماية التوصيات التنفيذية':'سعر صالح للتقييم الحالي');return `<tr><td>${i+1}</td><td><span class="v899-symbol">${esc(r.symbol)}</span><span class="v899-name">${esc(r.name||'')}</span></td><td><span class="v899-price">${esc(r.priceDisplay||fmt(r.price))}</span><span class="v899-sub">الدقة: ${esc(precision)}</span></td><td>${esc(source)}</td><td>${v898StatusPill(ok,ok?'مسموح':'محجوب')}</td><td><div class="v899-reason ${ok?'ok':'bad'}">${esc(reason)}</div><span class="v899-sub">Precision: ${r.precisionRisk?'Risk':'OK'} · Conflict: ${r.conflict?'نعم':'-'} · Stale: ${r.stale?'قديم':'-'}</span></td></tr>`}).join('')||'<tr><td colspan="6" class="muted">لا توجد بيانات تدقيق بعد تشغيل Workflow.</td></tr>'}
+    </tbody></table></div>
+  </div>`;
+}
+
+function renderRecommendationValidationPanel(){
+  const d=v898ValidationData(),s=d.summary||{},rows=v898Rows(d).slice(0,80);const idx=Math.round(num(s.validationIndex??s.index??0));
+  return `${header('لوحة تحقق التوصيات','عرض مقروء لنتائج التوصيات: المفتوح لا يُحسب فشلًا قبل تحقق الهدف أو الوقف')}${quickJump()}
+  <section class="v898-metric">
+    ${kpi('مؤشر التحقق',fmt0(idx)+'%',esc(s.grade||'--'),idx<50)}
+    ${kpi('إجمالي الإشارات',fmt0(s.totalSignals||rows.length),'كل الإشارات المسجلة')}
+    ${kpi('محسومة / مفتوحة',`${fmt0(s.evaluated)} / ${fmt0(s.open)}`,'لا نحكم على المفتوح كفشل')}
+    ${kpi('هدف / وقف',`${fmt0((s.target1Hit||0)+(s.target2Hit||0))} / ${fmt0(s.stopHit)}`,'نتائج فعلية فقط',num(s.stopHit)>num(s.target1Hit)+num(s.target2Hit))}
+  </section>
+  <div class="v898-grid"><div class="panel"><h3>سجل التوصيات المقاسة — عرض مبسط</h3>
+  <div class="v899-hint">${esc(d.interpretation||'المؤشر يقيس النتائج المحسومة فقط. التوصية المفتوحة تظل قيد المتابعة وليست فشلًا.')}</div>
+  <div class="v899-tablewrap"><table class="v899-table v899-validation-table"><thead><tr><th>#</th><th>السهم</th><th>الحالة</th><th>الدخول / الحالي</th><th>هدف / وقف</th><th>العائد والمخاطر</th><th>القراءة</th></tr></thead><tbody>
+  ${rows.map((r,i)=>{const status=r.statusLabel||r.status||'open';const good=r.status==='target1'||r.status==='target2';const stopped=r.status==='stop';const reading=good?'تحقق هدف فعلي':stopped?'ضرب وقف ويحتاج مراجعة':'ما زالت قيد المتابعة';return `<tr><td>${i+1}</td><td><span class="v899-symbol">${esc(r.symbol)}</span><span class="v899-name">${esc(r.name||r.grade||'')}</span></td><td>${v898StatusPill(good,esc(status))}</td><td><div class="v899-smallgrid"><span>دخول: ${fmt(r.entry)}</span><span>حالي: ${fmt(r.current)}</span></div></td><td><div class="v899-smallgrid"><span class="pos">هدف1: ${fmt(r.target1)}</span><span class="neg">وقف: ${fmt(r.stopLoss)}</span></div></td><td><div class="v899-smallgrid"><span class="${num(r.openReturnPct)>=0?'pos':'neg'}">مفتوح: ${pct(num(r.openReturnPct))}</span><span class="neg">هبوط: ${pct(-Math.abs(num(r.maxDrawdownPct)))}</span></div></td><td><div class="v899-reason ${stopped?'bad':good?'ok':''}">${reading}</div></td></tr>`}).join('')||'<tr><td colspan="7" class="muted">لا توجد نتائج بعد تشغيل Workflow.</td></tr>'}
+  </tbody></table></div></div>
+  <div class="leftstack"><div class="panel"><h3>تفسير المؤشر</h3><div class="ministat"><span>نسبة النجاح</span><b>${fmt(s.successRatePct)}%</b></div><div class="ministat"><span>نسبة الوقف</span><b class="${num(s.stopRatePct)>35?'neg':''}">${fmt(s.stopRatePct)}%</b></div><div class="ministat"><span>متوسط عائد مفتوح</span><b class="${num(s.avgOpenReturnPct)>=0?'pos':'neg'}">${pct(num(s.avgOpenReturnPct))}</b></div><div class="ministat"><span>متوسط أقصى ربح</span><b class="pos">${pct(num(s.avgMaxGainPct))}</b></div><div class="ministat"><span>متوسط أقصى هبوط</span><b class="neg">${pct(-Math.abs(num(s.avgDrawdownPct)))}</b></div></div><div class="panel"><h3>إجراءات تحسين الدقة</h3>${(d.recommendations||[]).map(x=>`<div class="signal-item"><b>توصية تشغيلية</b><p class="muted">${esc(x)}</p></div>`).join('')||'<p class="muted">لا توجد إجراءات خاصة الآن.</p>'}</div></div></div>`;
+}
+
+
+
+/* ===================== V8.10.0 Global Table Scroll & Sticky Headers ===================== */
+(function v810GlobalTableScroll(){
+  const SCROLL_CLASS='egx-v810-table-scroll';
+  const HINT_CLASS='egx-v810-scroll-hint';
+  function isInsideTableContainer(table){
+    return table.closest('.tablewrap,.v893-table,.v899-tablewrap,.'+SCROLL_CLASS);
+  }
+  function addHint(box){
+    if(!box || box.dataset.v810Hint==='1') return;
+    box.dataset.v810Hint='1';
+    const hint=document.createElement('div');
+    hint.className=HINT_CLASS;
+    hint.innerHTML='<span>↔ حرّك الجدول يمين/شمال لقراءة كل الأعمدة</span><small>العناوين ثابتة أثناء النزول، وأول عمودين ثابتين أثناء الحركة الأفقية</small>';
+    box.parentNode && box.parentNode.insertBefore(hint, box);
+  }
+  function prepareExistingContainer(box){
+    if(!box || box.dataset.v810Ready==='1') return;
+    box.dataset.v810Ready='1';
+    box.classList.add(SCROLL_CLASS);
+    addHint(box);
+    const t=box.querySelector('table');
+    if(t) t.classList.add('egx-v810-wide-table');
+  }
+  function wrapBareTable(table){
+    if(!table || table.dataset.v810Ready==='1') return;
+    if(table.closest('table')) return;
+    const existing=isInsideTableContainer(table);
+    if(existing){prepareExistingContainer(existing);table.dataset.v810Ready='1';return;}
+    const wrap=document.createElement('div');
+    wrap.className=SCROLL_CLASS;
+    table.parentNode.insertBefore(wrap,table);
+    wrap.appendChild(table);
+    table.dataset.v810Ready='1';
+    table.classList.add('egx-v810-wide-table');
+    addHint(wrap);
+  }
+  window.egxV810EnhanceTables=function(){
+    try{
+      document.body.classList.add('egx-v810-table-mode');
+      document.querySelectorAll('.tablewrap,.v893-table,.v899-tablewrap').forEach(prepareExistingContainer);
+      document.querySelectorAll('table').forEach(wrapBareTable);
+    }catch(e){console.warn('V8.10 table enhancement skipped',e)}
+  };
+  const oldRender=typeof render==='function'?render:null;
+  if(oldRender){
+    render=function(){
+      const res=oldRender.apply(this,arguments);
+      setTimeout(window.egxV810EnhanceTables,0);
+      return res;
+    };
+  }
+  const oldBind=typeof bind==='function'?bind:null;
+  if(oldBind){
+    bind=function(){
+      const res=oldBind.apply(this,arguments);
+      setTimeout(window.egxV810EnhanceTables,0);
+      return res;
+    };
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>setTimeout(window.egxV810EnhanceTables,50));
+  else setTimeout(window.egxV810EnhanceTables,50);
+  try{
+    const app=document.getElementById('app')||document.body;
+    const mo=new MutationObserver(()=>{clearTimeout(window.__egxV810Timer);window.__egxV810Timer=setTimeout(window.egxV810EnhanceTables,80)});
+    mo.observe(app,{childList:true,subtree:true});
+  }catch(e){}
+})();
 
 init().catch(e=>{
   console.error("EGX init failed", e);
