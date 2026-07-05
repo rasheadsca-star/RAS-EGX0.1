@@ -39,6 +39,7 @@ function main(){
     "data/fetch-status.json",
     "data/source-fetch-report.json",
     "data/source-alerts.json",
+    "data/unified-decision-board.json",
     "data/last-good-market.json",
     "data/source-gateway-report.json",
     "data/workflow-source-verification.json"
@@ -79,6 +80,7 @@ function main(){
     "data/fetch-status.json",
     "data/source-fetch-report.json",
     "data/source-alerts.json",
+    "data/unified-decision-board.json",
     "data/last-good-market.json",
     "data/source-gateway-report.json",
     "data/workflow-source-verification.json",{});
