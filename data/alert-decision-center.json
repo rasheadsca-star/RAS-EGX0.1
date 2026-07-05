@@ -1,12 +1,12 @@
 {
   "ok": true,
   "engine": "v8_9_1_alert_decision_center_calibrated",
-  "generatedAt": "2026-07-05T11:26:14.537Z",
-  "total": 56,
+  "generatedAt": "2026-07-05T12:41:47.655Z",
+  "total": 57,
   "summary": {
     "critical": 20,
     "warning": 12,
-    "opportunity": 4,
+    "opportunity": 5,
     "watch": 15,
     "info": 5,
     "urgent": 20,
@@ -14,9 +14,9 @@
   },
   "suppressed": {
     "critical": 15,
-    "warning": 146,
+    "warning": 148,
     "opportunity": 0,
-    "watch": 2,
+    "watch": 1,
     "info": 0
   },
   "alerts": [
@@ -28,9 +28,9 @@
       "type": "price_conflict",
       "symbol": "ABUK",
       "title": "تعارض سعر",
-      "text": "final=69.6, recommendation=67.94, market=69.6, cache=67.94",
+      "text": "final=69.7, recommendation=67.94, market=69.7, cache=67.94",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 2.44%"
+      "why": "max/min internal price spread 2.59%"
     },
     {
       "id": "price:price_conflict:ACAMD:تعارض سعر",
@@ -40,9 +40,9 @@
       "type": "price_conflict",
       "symbol": "ACAMD",
       "title": "تعارض سعر",
-      "text": "final=2.29, recommendation=2.25, market=2.29, cache=2.25",
+      "text": "final=2.3, recommendation=2.25, market=2.3, cache=2.25",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 1.78%"
+      "why": "max/min internal price spread 2.22%"
     },
     {
       "id": "price:price_conflict:ACGC:تعارض سعر",
@@ -64,9 +64,21 @@
       "type": "price_conflict",
       "symbol": "ADCI",
       "title": "تعارض سعر",
-      "text": "final=238.54, recommendation=240.97, market=238.54, cache=240.97",
+      "text": "final=238.5, recommendation=240.97, market=238.5, cache=240.97",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 1.02%"
+      "why": "max/min internal price spread 1.04%"
+    },
+    {
+      "id": "price:price_conflict:ADRI:تعارض سعر",
+      "level": "critical",
+      "priority": "عاجل",
+      "source": "price",
+      "type": "price_conflict",
+      "symbol": "ADRI",
+      "title": "تعارض سعر",
+      "text": "final=7.26, recommendation=null, market=7.26, cache=null",
+      "action": "مراجعة السعر قبل أي قرار قوي",
+      "why": "max/min internal price spread 1.79%"
     },
     {
       "id": "price:price_conflict:AFMC:تعارض سعر",
@@ -76,9 +88,9 @@
       "type": "price_conflict",
       "symbol": "AFMC",
       "title": "تعارض سعر",
-      "text": "final=71.27, recommendation=69.44, market=71.27, cache=69.44",
+      "text": "final=71.2, recommendation=69.44, market=71.2, cache=69.44",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 2.64%"
+      "why": "max/min internal price spread 2.53%"
     },
     {
       "id": "price:price_conflict:AIDC:تعارض سعر",
@@ -117,16 +129,16 @@
       "why": "max/min internal price spread 1.65%"
     },
     {
-      "id": "price:price_conflict:ARAB:تعارض سعر",
+      "id": "price:price_conflict:AMOC:تعارض سعر",
       "level": "critical",
       "priority": "عاجل",
       "source": "price",
       "type": "price_conflict",
-      "symbol": "ARAB",
+      "symbol": "AMOC",
       "title": "تعارض سعر",
-      "text": "final=0.22, recommendation=0.21, market=0.22, cache=0.21",
+      "text": "final=7.85, recommendation=7.76, market=7.85, cache=7.76",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 4.76%"
+      "why": "max/min internal price spread 1.16%"
     },
     {
       "id": "price:price_conflict:ARCC:تعارض سعر",
@@ -148,9 +160,9 @@
       "type": "price_conflict",
       "symbol": "ARVA",
       "title": "تعارض سعر",
-      "text": "final=10.88, recommendation=11.03, market=10.88, cache=11.03",
+      "text": "final=10.89, recommendation=11.03, market=10.89, cache=11.03",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 1.38%"
+      "why": "max/min internal price spread 1.29%"
     },
     {
       "id": "price:price_conflict:ASCM:تعارض سعر",
@@ -160,9 +172,9 @@
       "type": "price_conflict",
       "symbol": "ASCM",
       "title": "تعارض سعر",
-      "text": "final=60.26, recommendation=59.26, market=60.26, cache=59.26",
+      "text": "final=60.04, recommendation=59.26, market=60.04, cache=59.26",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 1.69%"
+      "why": "max/min internal price spread 1.32%"
     },
     {
       "id": "price:price_conflict:AXPH:تعارض سعر",
@@ -172,9 +184,9 @@
       "type": "price_conflict",
       "symbol": "AXPH",
       "title": "تعارض سعر",
-      "text": "final=1200.25, recommendation=1212.35, market=1200.25, cache=1212.35",
+      "text": "final=1200.16, recommendation=1212.35, market=1200.16, cache=1212.35",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 1.01%"
+      "why": "max/min internal price spread 1.02%"
     },
     {
       "id": "price:price_conflict:BINV:تعارض سعر",
@@ -184,9 +196,9 @@
       "type": "price_conflict",
       "symbol": "BINV",
       "title": "تعارض سعر",
-      "text": "final=47.31, recommendation=46.04, market=47.31, cache=46.04",
+      "text": "final=47.33, recommendation=46.04, market=47.33, cache=46.04",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 2.76%"
+      "why": "max/min internal price spread 2.80%"
     },
     {
       "id": "price:price_conflict:BIOC:تعارض سعر",
@@ -196,21 +208,9 @@
       "type": "price_conflict",
       "symbol": "BIOC",
       "title": "تعارض سعر",
-      "text": "final=70.87, recommendation=71.48, market=70.87, cache=71.48",
+      "text": "final=70.57, recommendation=71.48, market=70.57, cache=71.48",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 0.86%"
-    },
-    {
-      "id": "price:price_conflict:BTFH:تعارض سعر",
-      "level": "critical",
-      "priority": "عاجل",
-      "source": "price",
-      "type": "price_conflict",
-      "symbol": "BTFH",
-      "title": "تعارض سعر",
-      "text": "final=3, recommendation=2.97, market=3, cache=2.97",
-      "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 1.01%"
+      "why": "max/min internal price spread 1.29%"
     },
     {
       "id": "price:price_conflict:CCAP:تعارض سعر",
@@ -220,9 +220,9 @@
       "type": "price_conflict",
       "symbol": "CCAP",
       "title": "تعارض سعر",
-      "text": "final=5.13, recommendation=5.04, market=5.13, cache=5.04",
+      "text": "final=5.14, recommendation=5.04, market=5.14, cache=5.04",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 1.79%"
+      "why": "max/min internal price spread 1.98%"
     },
     {
       "id": "price:price_conflict:CCRS:تعارض سعر",
@@ -237,18 +237,6 @@
       "why": "max/min internal price spread 3.02%"
     },
     {
-      "id": "price:price_conflict:CEFM:تعارض سعر",
-      "level": "critical",
-      "priority": "عاجل",
-      "source": "price",
-      "type": "price_conflict",
-      "symbol": "CEFM",
-      "title": "تعارض سعر",
-      "text": "final=100.86, recommendation=100.07, market=100.86, cache=100.07",
-      "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 0.79%"
-    },
-    {
       "id": "price:price_conflict:CERA:تعارض سعر",
       "level": "critical",
       "priority": "عاجل",
@@ -259,6 +247,18 @@
       "text": "final=1.23, recommendation=1.22, market=1.23, cache=1.22",
       "action": "مراجعة السعر قبل أي قرار قوي",
       "why": "max/min internal price spread 0.82%"
+    },
+    {
+      "id": "price:price_conflict:CICH:تعارض سعر",
+      "level": "critical",
+      "priority": "عاجل",
+      "source": "price",
+      "type": "price_conflict",
+      "symbol": "CICH",
+      "title": "تعارض سعر",
+      "text": "final=11.98, recommendation=11.87, market=11.98, cache=11.87",
+      "action": "مراجعة السعر قبل أي قرار قوي",
+      "why": "max/min internal price spread 0.93%"
     },
     {
       "id": "ranking:blocked_candidate:FAITA:مرشح مقيّد لا يرفع للأولوية",
@@ -285,36 +285,12 @@
       "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
     },
     {
-      "id": "ranking:blocked_candidate:CIRA:مرشح مقيّد لا يرفع للأولوية",
+      "id": "ranking:blocked_candidate:VLMR:مرشح مقيّد لا يرفع للأولوية",
       "level": "warning",
       "priority": "مهم",
       "source": "ranking",
       "type": "blocked_candidate",
-      "symbol": "CIRA",
-      "title": "مرشح مقيّد لا يرفع للأولوية",
-      "text": "تعارض سعر",
-      "action": "اتركه للمراقبة فقط حتى تزول القيود",
-      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
-    },
-    {
-      "id": "ranking:blocked_candidate:PHTV:مرشح مقيّد لا يرفع للأولوية",
-      "level": "warning",
-      "priority": "مهم",
-      "source": "ranking",
-      "type": "blocked_candidate",
-      "symbol": "PHTV",
-      "title": "مرشح مقيّد لا يرفع للأولوية",
-      "text": "تعارض سعر",
-      "action": "اتركه للمراقبة فقط حتى تزول القيود",
-      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
-    },
-    {
-      "id": "ranking:blocked_candidate:ETRS:مرشح مقيّد لا يرفع للأولوية",
-      "level": "warning",
-      "priority": "مهم",
-      "source": "ranking",
-      "type": "blocked_candidate",
-      "symbol": "ETRS",
+      "symbol": "VLMR",
       "title": "مرشح مقيّد لا يرفع للأولوية",
       "text": "تعارض سعر",
       "action": "اتركه للمراقبة فقط حتى تزول القيود",
@@ -333,48 +309,72 @@
       "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
     },
     {
+      "id": "ranking:blocked_candidate:ARVA:مرشح مقيّد لا يرفع للأولوية",
+      "level": "warning",
+      "priority": "مهم",
+      "source": "ranking",
+      "type": "blocked_candidate",
+      "symbol": "ARVA",
+      "title": "مرشح مقيّد لا يرفع للأولوية",
+      "text": "تعارض سعر",
+      "action": "اتركه للمراقبة فقط حتى تزول القيود",
+      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
+    },
+    {
+      "id": "ranking:blocked_candidate:CIRA:مرشح مقيّد لا يرفع للأولوية",
+      "level": "warning",
+      "priority": "مهم",
+      "source": "ranking",
+      "type": "blocked_candidate",
+      "symbol": "CIRA",
+      "title": "مرشح مقيّد لا يرفع للأولوية",
+      "text": "تعارض سعر",
+      "action": "اتركه للمراقبة فقط حتى تزول القيود",
+      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
+    },
+    {
+      "id": "ranking:blocked_candidate:AIDC:مرشح مقيّد لا يرفع للأولوية",
+      "level": "warning",
+      "priority": "مهم",
+      "source": "ranking",
+      "type": "blocked_candidate",
+      "symbol": "AIDC",
+      "title": "مرشح مقيّد لا يرفع للأولوية",
+      "text": "تعارض سعر",
+      "action": "اتركه للمراقبة فقط حتى تزول القيود",
+      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
+    },
+    {
+      "id": "ranking:blocked_candidate:ETRS:مرشح مقيّد لا يرفع للأولوية",
+      "level": "warning",
+      "priority": "مهم",
+      "source": "ranking",
+      "type": "blocked_candidate",
+      "symbol": "ETRS",
+      "title": "مرشح مقيّد لا يرفع للأولوية",
+      "text": "تعارض سعر",
+      "action": "اتركه للمراقبة فقط حتى تزول القيود",
+      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
+    },
+    {
+      "id": "ranking:blocked_candidate:PHTV:مرشح مقيّد لا يرفع للأولوية",
+      "level": "warning",
+      "priority": "مهم",
+      "source": "ranking",
+      "type": "blocked_candidate",
+      "symbol": "PHTV",
+      "title": "مرشح مقيّد لا يرفع للأولوية",
+      "text": "تعارض سعر",
+      "action": "اتركه للمراقبة فقط حتى تزول القيود",
+      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
+    },
+    {
       "id": "ranking:blocked_candidate:EASB:مرشح مقيّد لا يرفع للأولوية",
       "level": "warning",
       "priority": "مهم",
       "source": "ranking",
       "type": "blocked_candidate",
       "symbol": "EASB",
-      "title": "مرشح مقيّد لا يرفع للأولوية",
-      "text": "تعارض سعر، R/R ضعيف",
-      "action": "اتركه للمراقبة فقط حتى تزول القيود",
-      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
-    },
-    {
-      "id": "ranking:blocked_candidate:MPRC:مرشح مقيّد لا يرفع للأولوية",
-      "level": "warning",
-      "priority": "مهم",
-      "source": "ranking",
-      "type": "blocked_candidate",
-      "symbol": "MPRC",
-      "title": "مرشح مقيّد لا يرفع للأولوية",
-      "text": "تعارض سعر",
-      "action": "اتركه للمراقبة فقط حتى تزول القيود",
-      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
-    },
-    {
-      "id": "ranking:blocked_candidate:NIPH:مرشح مقيّد لا يرفع للأولوية",
-      "level": "warning",
-      "priority": "مهم",
-      "source": "ranking",
-      "type": "blocked_candidate",
-      "symbol": "NIPH",
-      "title": "مرشح مقيّد لا يرفع للأولوية",
-      "text": "تعارض سعر",
-      "action": "اتركه للمراقبة فقط حتى تزول القيود",
-      "why": "القيود تخفض صلاحية السهم كفرصة تنفيذية"
-    },
-    {
-      "id": "ranking:blocked_candidate:FAIT:مرشح مقيّد لا يرفع للأولوية",
-      "level": "warning",
-      "priority": "مهم",
-      "source": "ranking",
-      "type": "blocked_candidate",
-      "symbol": "FAIT",
       "title": "مرشح مقيّد لا يرفع للأولوية",
       "text": "تعارض سعر، R/R ضعيف",
       "action": "اتركه للمراقبة فقط حتى تزول القيود",
@@ -417,6 +417,18 @@
       "why": "احتمال الهدف 78% | ربح هدف1 5.6% | عائد متوقع 3.1% | R/R 1.00 | السعر مدقق | تاريخ 4/50"
     },
     {
+      "id": "ranking:p1_opportunity:ARAB:P1 فرصة قوية #2",
+      "level": "opportunity",
+      "priority": "مراقبة قوية",
+      "source": "ranking",
+      "type": "p1_opportunity",
+      "symbol": "ARAB",
+      "title": "P1 فرصة قوية #2",
+      "text": "prob=78% expected=2.67% rr=1",
+      "action": "راجع الدخول والوقف وحجم الصفقة",
+      "why": "احتمال الهدف 78% | ربح هدف1 4.8% | عائد متوقع 2.7% | R/R 1.00 | السعر مدقق | تاريخ 4/50"
+    },
+    {
       "id": "ranking:ranked_opportunity:COPR:P1 — فرصة مرتبة #1",
       "level": "opportunity",
       "priority": "مراقبة قوية",
@@ -427,18 +439,6 @@
       "text": "الثقة 78% | R/R 1.00 | عائد متوقع 3.1%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
       "why": "احتمال الهدف 78% | ربح هدف1 5.6% | عائد متوقع 3.1% | R/R 1.00 | السعر مدقق | تاريخ 4/50"
-    },
-    {
-      "id": "ranking:ranked_opportunity:SPMD:P1 — فرصة مرتبة #2",
-      "level": "opportunity",
-      "priority": "مراقبة قوية",
-      "source": "ranking",
-      "type": "ranked_opportunity",
-      "symbol": "SPMD",
-      "title": "P1 — فرصة مرتبة #2",
-      "text": "الثقة 78% | R/R 1.00 | عائد متوقع 2.6%",
-      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 78% | ربح هدف1 4.7% | عائد متوقع 2.6% | R/R 1.00 | السعر مدقق | تاريخ 4/50"
     },
     {
       "id": "portfolio_rules:increase_candidate:COPR:مرشح زيادة مشروطة",
@@ -453,184 +453,196 @@
       "why": "احتمال الهدف 78% | ربح هدف1 5.6% | عائد متوقع 3.1% | R/R 1.00 | السعر مدقق | تاريخ 4/50"
     },
     {
-      "id": "ranking:p2_watch:UBEE:P2 مراقبة #2",
+      "id": "portfolio_rules:increase_candidate:ARAB:مرشح زيادة مشروطة",
+      "level": "opportunity",
+      "priority": "مراقبة قوية",
+      "source": "portfolio_rules",
+      "type": "increase_candidate",
+      "symbol": "ARAB",
+      "title": "مرشح زيادة مشروطة",
+      "text": "prob=78%",
+      "action": "يستخدم فقط إذا كان السهم موجودًا بالمحفظة وبوزن مناسب",
+      "why": "احتمال الهدف 78% | ربح هدف1 4.8% | عائد متوقع 2.7% | R/R 1.00 | السعر مدقق | تاريخ 4/50"
+    },
+    {
+      "id": "ranking:p2_watch:DOMT:P2 مراقبة #3",
+      "level": "watch",
+      "priority": "مراقبة",
+      "source": "ranking",
+      "type": "p2_watch",
+      "symbol": "DOMT",
+      "title": "P2 مراقبة #3",
+      "text": "prob=78% expected=2.55% rr=0.98",
+      "action": "انتظار Trigger واضح",
+      "why": "احتمال الهدف 78% | ربح هدف1 4.6% | عائد متوقع 2.5% | R/R 0.98 | السعر مدقق | تاريخ 5/50"
+    },
+    {
+      "id": "ranking:p2_watch:UBEE:P2 مراقبة #4",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "p2_watch",
       "symbol": "UBEE",
-      "title": "P2 مراقبة #2",
+      "title": "P2 مراقبة #4",
       "text": "prob=73% expected=2.81% rr=1.47",
       "action": "انتظار Trigger واضح",
       "why": "احتمال الهدف 73% | ربح هدف1 5.2% | عائد متوقع 2.8% | R/R 1.47 | السعر مدقق | تاريخ 4/50"
     },
     {
-      "id": "ranking:p2_watch:POUL:P2 مراقبة #3",
+      "id": "ranking:p2_watch:POUL:P2 مراقبة #5",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "p2_watch",
       "symbol": "POUL",
-      "title": "P2 مراقبة #3",
-      "text": "prob=72% expected=1.91% rr=0.87",
+      "title": "P2 مراقبة #5",
+      "text": "prob=72% expected=1.83% rr=0.85",
       "action": "انتظار Trigger واضح",
-      "why": "احتمال الهدف 72% | ربح هدف1 4.8% | عائد متوقع 1.9% | R/R 0.87 | السعر مدقق | تاريخ 5/50"
+      "why": "احتمال الهدف 72% | ربح هدف1 4.7% | عائد متوقع 1.8% | R/R 0.85 | السعر مدقق | تاريخ 5/50"
     },
     {
-      "id": "ranking:p2_watch:DOMT:P2 مراقبة #4",
-      "level": "watch",
-      "priority": "مراقبة",
-      "source": "ranking",
-      "type": "p2_watch",
-      "symbol": "DOMT",
-      "title": "P2 مراقبة #4",
-      "text": "prob=72% expected=1.88% rr=0.93",
-      "action": "انتظار Trigger واضح",
-      "why": "احتمال الهدف 72% | ربح هدف1 4.5% | عائد متوقع 1.9% | R/R 0.93 | السعر مدقق | تاريخ 5/50"
-    },
-    {
-      "id": "ranking:p2_watch:RMDA:P2 مراقبة #5",
+      "id": "ranking:p2_watch:RMDA:P2 مراقبة #6",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "p2_watch",
       "symbol": "RMDA",
-      "title": "P2 مراقبة #5",
+      "title": "P2 مراقبة #6",
       "text": "prob=72% expected=1.82% rr=0.92",
       "action": "انتظار Trigger واضح",
       "why": "احتمال الهدف 72% | ربح هدف1 4.4% | عائد متوقع 1.8% | R/R 0.92 | السعر مدقق | تاريخ 5/50"
     },
     {
-      "id": "ranking:p2_watch:UEFM:P2 مراقبة #6",
+      "id": "ranking:p2_watch:UEFM:P2 مراقبة #7",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "p2_watch",
       "symbol": "UEFM",
-      "title": "P2 مراقبة #6",
+      "title": "P2 مراقبة #7",
       "text": "prob=72% expected=1.82% rr=0.92",
       "action": "انتظار Trigger واضح",
       "why": "احتمال الهدف 72% | ربح هدف1 4.4% | عائد متوقع 1.8% | R/R 0.92 | السعر مدقق | تاريخ 4/50"
     },
     {
-      "id": "ranking:p2_watch:SEIG:P2 مراقبة #7",
+      "id": "ranking:p2_watch:SEIG:P2 مراقبة #8",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "p2_watch",
       "symbol": "SEIG",
-      "title": "P2 مراقبة #7",
-      "text": "prob=72% expected=1.72% rr=0.81",
+      "title": "P2 مراقبة #8",
+      "text": "prob=72% expected=1.77% rr=0.83",
       "action": "انتظار Trigger واضح",
-      "why": "احتمال الهدف 72% | ربح هدف1 4.6% | عائد متوقع 1.7% | R/R 0.81 | السعر مدقق | تاريخ 4/50"
+      "why": "احتمال الهدف 72% | ربح هدف1 4.6% | عائد متوقع 1.8% | R/R 0.83 | السعر مدقق | تاريخ 4/50"
     },
     {
-      "id": "ranking:p2_watch:AALR:P2 مراقبة #8",
+      "id": "ranking:p2_watch:AALR:P2 مراقبة #9",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "p2_watch",
       "symbol": "AALR",
-      "title": "P2 مراقبة #8",
-      "text": "prob=72% expected=1.69% rr=0.83",
+      "title": "P2 مراقبة #9",
+      "text": "prob=72% expected=1.75% rr=0.85",
       "action": "انتظار Trigger واضح",
-      "why": "احتمال الهدف 72% | ربح هدف1 4.4% | عائد متوقع 1.7% | R/R 0.83 | السعر مدقق | تاريخ 4/50"
+      "why": "احتمال الهدف 72% | ربح هدف1 4.5% | عائد متوقع 1.8% | R/R 0.85 | السعر مدقق | تاريخ 4/50"
     },
     {
-      "id": "ranking:p2_watch:IFAP:P2 مراقبة #9",
+      "id": "ranking:p2_watch:IFAP:P2 مراقبة #10",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "p2_watch",
       "symbol": "IFAP",
-      "title": "P2 مراقبة #9",
+      "title": "P2 مراقبة #10",
       "text": "prob=72% expected=1.51% rr=0.85",
       "action": "انتظار Trigger واضح",
       "why": "احتمال الهدف 72% | ربح هدف1 3.9% | عائد متوقع 1.5% | R/R 0.85 | السعر مدقق | تاريخ 5/50"
     },
     {
-      "id": "ranking:ranked_opportunity:DOMT:P2 — فرصة مرتبة #3",
-      "level": "watch",
-      "priority": "مراقبة",
-      "source": "ranking",
-      "type": "ranked_opportunity",
-      "symbol": "DOMT",
-      "title": "P2 — فرصة مرتبة #3",
-      "text": "الثقة 78% | R/R 0.99 | عائد متوقع 2.6%",
-      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 78% | ربح هدف1 4.6% | عائد متوقع 2.6% | R/R 0.99 | السعر مدقق | تاريخ 5/50"
-    },
-    {
-      "id": "ranking:ranked_opportunity:APSW:P2 — فرصة مرتبة #4",
-      "level": "watch",
-      "priority": "مراقبة",
-      "source": "ranking",
-      "type": "ranked_opportunity",
-      "symbol": "APSW",
-      "title": "P2 — فرصة مرتبة #4",
-      "text": "الثقة 77% | R/R 0.88 | عائد متوقع 2.5%",
-      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 77% | ربح هدف1 5.0% | عائد متوقع 2.5% | R/R 0.88 | السعر مدقق | تاريخ 4/50"
-    },
-    {
-      "id": "ranking:ranked_opportunity:KRDI:P2 — فرصة مرتبة #5",
-      "level": "watch",
-      "priority": "مراقبة",
-      "source": "ranking",
-      "type": "ranked_opportunity",
-      "symbol": "KRDI",
-      "title": "P2 — فرصة مرتبة #5",
-      "text": "الثقة 75% | R/R 1.00 | عائد متوقع 1.5%",
-      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 75% | ربح هدف1 2.9% | عائد متوقع 1.5% | R/R 1.00 | السعر مدقق | تاريخ 4/50"
-    },
-    {
-      "id": "ranking:ranked_opportunity:UBEE:P2 — فرصة مرتبة #6",
+      "id": "ranking:ranked_opportunity:UBEE:P2 — فرصة مرتبة #2",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "ranked_opportunity",
       "symbol": "UBEE",
-      "title": "P2 — فرصة مرتبة #6",
+      "title": "P2 — فرصة مرتبة #2",
       "text": "الثقة 73% | R/R 1.47 | عائد متوقع 2.8%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
       "why": "احتمال الهدف 73% | ربح هدف1 5.2% | عائد متوقع 2.8% | R/R 1.47 | السعر مدقق | تاريخ 4/50"
     },
     {
-      "id": "ranking:ranked_opportunity:VLMR:P2 — فرصة مرتبة #7",
+      "id": "ranking:ranked_opportunity:POUL:P2 — فرصة مرتبة #3",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "ranked_opportunity",
-      "symbol": "VLMR",
-      "title": "P2 — فرصة مرتبة #7",
-      "text": "الثقة 72% | R/R 1.00 | عائد متوقع 2.0%",
+      "symbol": "POUL",
+      "title": "P2 — فرصة مرتبة #3",
+      "text": "الثقة 72% | R/R 0.87 | عائد متوقع 1.9%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "why": "احتمال الهدف 72% | ربح هدف1 4.5% | عائد متوقع 2.0% | R/R 1.00 | السعر مدقق | تاريخ 4/50"
+      "why": "احتمال الهدف 72% | ربح هدف1 4.8% | عائد متوقع 1.9% | R/R 0.87 | السعر مدقق | تاريخ 5/50"
     },
     {
-      "id": "ranking:ranked_opportunity:RMDA:P2 — فرصة مرتبة #8",
+      "id": "ranking:ranked_opportunity:DOMT:P2 — فرصة مرتبة #4",
+      "level": "watch",
+      "priority": "مراقبة",
+      "source": "ranking",
+      "type": "ranked_opportunity",
+      "symbol": "DOMT",
+      "title": "P2 — فرصة مرتبة #4",
+      "text": "الثقة 72% | R/R 0.93 | عائد متوقع 1.9%",
+      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
+      "why": "احتمال الهدف 72% | ربح هدف1 4.5% | عائد متوقع 1.9% | R/R 0.93 | السعر مدقق | تاريخ 5/50"
+    },
+    {
+      "id": "ranking:ranked_opportunity:RMDA:P2 — فرصة مرتبة #5",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "ranked_opportunity",
       "symbol": "RMDA",
-      "title": "P2 — فرصة مرتبة #8",
+      "title": "P2 — فرصة مرتبة #5",
       "text": "الثقة 72% | R/R 0.92 | عائد متوقع 1.8%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
       "why": "احتمال الهدف 72% | ربح هدف1 4.4% | عائد متوقع 1.8% | R/R 0.92 | السعر مدقق | تاريخ 5/50"
     },
     {
-      "id": "ranking:ranked_opportunity:UEFM:P2 — فرصة مرتبة #9",
+      "id": "ranking:ranked_opportunity:UEFM:P2 — فرصة مرتبة #6",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "ranked_opportunity",
       "symbol": "UEFM",
-      "title": "P2 — فرصة مرتبة #9",
+      "title": "P2 — فرصة مرتبة #6",
       "text": "الثقة 72% | R/R 0.92 | عائد متوقع 1.8%",
       "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
       "why": "احتمال الهدف 72% | ربح هدف1 4.4% | عائد متوقع 1.8% | R/R 0.92 | السعر مدقق | تاريخ 4/50"
+    },
+    {
+      "id": "ranking:ranked_opportunity:SEIG:P2 — فرصة مرتبة #7",
+      "level": "watch",
+      "priority": "مراقبة",
+      "source": "ranking",
+      "type": "ranked_opportunity",
+      "symbol": "SEIG",
+      "title": "P2 — فرصة مرتبة #7",
+      "text": "الثقة 72% | R/R 0.81 | عائد متوقع 1.7%",
+      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
+      "why": "احتمال الهدف 72% | ربح هدف1 4.6% | عائد متوقع 1.7% | R/R 0.81 | السعر مدقق | تاريخ 4/50"
+    },
+    {
+      "id": "ranking:ranked_opportunity:AALR:P2 — فرصة مرتبة #8",
+      "level": "watch",
+      "priority": "مراقبة",
+      "source": "ranking",
+      "type": "ranked_opportunity",
+      "symbol": "AALR",
+      "title": "P2 — فرصة مرتبة #8",
+      "text": "الثقة 72% | R/R 0.83 | عائد متوقع 1.7%",
+      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
+      "why": "احتمال الهدف 72% | ربح هدف1 4.4% | عائد متوقع 1.7% | R/R 0.83 | السعر مدقق | تاريخ 4/50"
     },
     {
       "id": "price:stale_price_summary:market:7 أسعار قديمة/غير مؤكدة",
@@ -688,7 +700,7 @@
       "type": "suppressed_summary",
       "symbol": null,
       "title": "تم إخفاء تنبيهات منخفضة الأولوية لتقليل الضوضاء",
-      "text": "مخفي: مهم 146 / فرص 0 / مراقبة 2 / معلومات 0",
+      "text": "مخفي: مهم 148 / فرص 0 / مراقبة 1 / معلومات 0",
       "action": "استخدم التقارير التفصيلية عند الحاجة",
       "why": "مركز التنبيهات يعرض المهم فقط حتى لا يتحول إلى قائمة مزعجة"
     }
