@@ -17,6 +17,7 @@ function main(){
   const fetchScriptExists=exists("scripts/fetch-market-data.js");
   const fetchStatus=read("data/fetch-status.json",{});
   const sourceFetchReport=read("data/source-fetch-report.json",{});
+  const gateway=read("data/source-gateway-report.json",{});
   const source=read("data/source-health.json",{});
   const market=read("data/market.json",{});
   const cache=read("data/full-market-cache.json",{});
@@ -26,7 +27,7 @@ function main(){
   const checks=[];
   checks.push(check("fetch_script","fetch-market-data.js",fetchScriptExists?"ok":"bad",fetchScriptExists?"exists":"missing",fetchScriptExists?"سكريبت الجلب موجود":"سكريبت الجلب غير موجود وسيوقف Workflow","ارفع scripts/fetch-market-data.js"));
   checks.push(check("workflow_reference","Workflow fetch step",workflow.includes("node scripts/fetch-market-data.js")?"ok":"bad",workflow.includes("node scripts/fetch-market-data.js")?"referenced":"missing","هل الـ Workflow يشغّل سكريبت الجلب؟",workflow.includes("node scripts/fetch-market-data.js")?"متابعة":"عدّل workflow"));
-  checks.push(check("external_fetch","External public source",(fetchStatus.realFetch||sourceFetchReport.realFetch)?"ok":"warn",fetchStatus.mode||"unknown",(fetchStatus.realFetch||sourceFetchReport.realFetch)?"تم الجلب من مصدر خارجي/عام مضبوط":"لا يوجد دليل على جلب خارجي؛ قد تكون البيانات من الملفات الحالية فقط",fetchStatus.realFetch?"متابعة":"اضبط EGX_MARKET_JSON_URL أو أضف fetcher حقيقي"));
+  checks.push(check("external_fetch","External public source",(fetchStatus.realFetch||sourceFetchReport.realFetch||gateway.accepted)?"ok":"warn",fetchStatus.mode||"unknown",(fetchStatus.realFetch||sourceFetchReport.realFetch||gateway.accepted)?"تم الجلب من مصدر خارجي/عام مضبوط":"لا يوجد دليل على جلب خارجي؛ قد تكون البيانات من الملفات الحالية فقط",fetchStatus.realFetch?"متابعة":"اضبط EGX_MARKET_JSON_URL أو أضف fetcher حقيقي"));
   const marketRows=Array.isArray(market.rows)?market.rows.length:0, cacheRows=Array.isArray(cache.rows)?cache.rows.length:0, recommendationRows=Array.isArray(rec.all)?rec.all.length:0;
   checks.push(check("market_rows","market.json rows",marketRows>0?"ok":"bad",marketRows,marketRows>0?"market.json يحتوي صفوفًا":"market.json فارغ أو غير موجود",marketRows>0?"متابعة":"راجع الجلب"));
   checks.push(check("cache_rows","full-market-cache rows",cacheRows>0?"ok":"warn",cacheRows,cacheRows>0?"الكاش موجود":"الكاش غير متاح في هذا الفحص",cacheRows>0?"متابعة":"لا ترفعه يدويًا إلا عند reset"));
@@ -39,8 +40,8 @@ function main(){
   checks.push(check("history_memory","history.json memory",Object.keys(histSymbols).length>0?"ok":"warn",Object.keys(histSymbols).length,Object.keys(histSymbols).length>0?"ذاكرة الجلسات موجودة":"لا توجد ذاكرة جلسات كافية","راجع ذاكرة الجلسات"));
   const bad=checks.filter(x=>x.state==="bad").length, warn=checks.filter(x=>x.state==="warn").length, ok=checks.filter(x=>x.state==="ok").length;
   const score=Math.max(0,100-bad*22-warn*9);
-  checks.push(check("public_adapter","Public source adapter",sourceFetchReport.realFetch?"ok":"warn",sourceFetchReport.sourceName||sourceFetchReport.mode||"not accepted",sourceFetchReport.realFetch?`تم قبول مصدر عام بعدد ${sourceFetchReport.marketRows||0} صف`:"لم يتم قبول مصدر عام كافٍ",sourceFetchReport.realFetch?"متابعة":"راجع source-fetch-report أو هيكل صفحات المصدر"));
-  const report={ok:bad===0,engine:"v9_8_4_workflow_source_verification",generatedAt:new Date().toISOString(),score,state:score>=85?"ok":score>=60?"warn":"bad",realFetch:!!(fetchStatus.realFetch||sourceFetchReport.realFetch),fetchMode:fetchStatus.mode||"unknown",message:fetchStatus.message||"",marketRows,cacheRows,recommendationRows,sourceAgeMinutes:sourceAge,summary:{ok,warn,bad,total:checks.length},checks,note:"This report verifies data pipeline mechanics. It does not certify tick-by-tick live prices."};
+  checks.push(check("public_adapter","Public source adapter",sourceFetchReport.realFetch?"ok":"warn",gateway.selectedSource||sourceFetchReport.sourceName||sourceFetchReport.mode||"not accepted",gateway.accepted?`تم قبول بوابة البيانات بعدد ${gateway.marketRows||0} صف`:sourceFetchReport.realFetch?`تم قبول مصدر عام بعدد ${sourceFetchReport.marketRows||0} صف`:"لم يتم قبول مصدر عام كافٍ",sourceFetchReport.realFetch?"متابعة":"راجع source-fetch-report أو هيكل صفحات المصدر"));
+  const report={ok:bad===0,engine:"v9_8_7_workflow_source_verification",generatedAt:new Date().toISOString(),score,state:score>=85?"ok":score>=60?"warn":"bad",realFetch:!!(fetchStatus.realFetch||sourceFetchReport.realFetch||gateway.accepted),fetchMode:fetchStatus.mode||"unknown",message:fetchStatus.message||"",marketRows,cacheRows,recommendationRows,sourceAgeMinutes:sourceAge,summary:{ok,warn,bad,total:checks.length},checks,note:"This report verifies data pipeline mechanics. It does not certify tick-by-tick live prices."};
   write("data/workflow-source-verification.json",report);
   console.log("Workflow source verification", {score, ok, warn, bad, realFetch:report.realFetch, mode:report.fetchMode});
 }
