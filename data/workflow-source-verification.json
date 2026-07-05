@@ -1,20 +1,20 @@
 {
-  "ok": true,
-  "engine": "v9_8_4_workflow_source_verification",
-  "generatedAt": "2026-07-05T06:08:23.361Z",
-  "score": 91,
-  "state": "ok",
+  "ok": false,
+  "engine": "v9_8_7_workflow_source_verification",
+  "generatedAt": "2026-07-05T06:31:13.299Z",
+  "score": 69,
+  "state": "warn",
   "realFetch": true,
-  "fetchMode": "mubasher_analysis_tools_adapter",
-  "message": "Fetched and accepted 209 rows from mubasher_symbol_pages",
+  "fetchMode": "multi_source_gateway",
+  "message": "Full gateway acceptance",
   "marketRows": 209,
   "cacheRows": 221,
   "recommendationRows": 221,
-  "sourceAgeMinutes": 1.1,
+  "sourceAgeMinutes": 1,
   "summary": {
-    "ok": 8,
+    "ok": 7,
     "warn": 1,
-    "bad": 0,
+    "bad": 1,
     "total": 10
   },
   "checks": [
@@ -29,16 +29,16 @@
     {
       "id": "workflow_reference",
       "name": "Workflow fetch step",
-      "state": "ok",
-      "value": "referenced",
+      "state": "bad",
+      "value": "missing",
       "message": "هل الـ Workflow يشغّل سكريبت الجلب؟",
-      "action": "متابعة"
+      "action": "عدّل workflow"
     },
     {
       "id": "external_fetch",
       "name": "External public source",
       "state": "ok",
-      "value": "mubasher_analysis_tools_adapter",
+      "value": "multi_source_gateway",
       "message": "تم الجلب من مصدر خارجي/عام مضبوط",
       "action": "متابعة"
     },
@@ -70,7 +70,7 @@
       "id": "source_age",
       "name": "Source age",
       "state": "ok",
-      "value": "1.1 min",
+      "value": "1 min",
       "message": "المصدر حديث نسبيًا",
       "action": "متابعة"
     },
@@ -95,7 +95,7 @@
       "name": "Public source adapter",
       "state": "ok",
       "value": "mubasher_symbol_pages",
-      "message": "تم قبول مصدر عام بعدد 209 صف",
+      "message": "تم قبول بوابة البيانات بعدد 209 صف",
       "action": "متابعة"
     }
   ],
