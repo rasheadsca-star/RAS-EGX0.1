@@ -1,13 +1,13 @@
 {
   "ok": true,
   "engine": "v8_9_1_data_operations_center_clear",
-  "generatedAt": "2026-07-05T07:26:23.731Z",
-  "score": 28,
+  "generatedAt": "2026-07-05T07:49:08.574Z",
+  "score": 8,
   "state": "bad",
   "summary": {
-    "ok": 3,
+    "ok": 2,
     "warn": 2,
-    "bad": 3,
+    "bad": 4,
     "total": 8
   },
   "checks": [
@@ -15,15 +15,15 @@
       "id": "fetcher",
       "name": "جلب البيانات",
       "state": "warn",
-      "value": "accepted 143 صف",
-      "message": "مصدر mubasher_symbol_pages قبل 143 صف",
+      "value": "accepted 179 صف",
+      "message": "مصدر mubasher_symbol_pages قبل 179 صف",
       "action": "متابعة بدون Reset"
     },
     {
       "id": "coverage",
       "name": "تغطية السوق",
       "state": "bad",
-      "value": "63.8%",
+      "value": "79.9%",
       "message": "التغطية أقل من حد التشغيل المريح",
       "action": "راجع مصدر البيانات"
     },
@@ -31,7 +31,7 @@
       "id": "price",
       "name": "تدقيق الأسعار",
       "state": "bad",
-      "value": "76 تعارض / 74 قديم",
+      "value": "87 تعارض / 38 قديم",
       "message": "يوجد تعارض أسعار مؤثر",
       "action": "افتح تدقيق الأسعار"
     },
@@ -47,7 +47,7 @@
       "id": "ranking",
       "name": "محرك الأولويات",
       "state": "ok",
-      "value": "P1 5 / P2 7 / مقيّد 112",
+      "value": "P1 4 / P2 9 / مقيّد 118",
       "message": "يوجد فرص قابلة للمراجعة",
       "action": "افتح محرك الأولويات"
     },
@@ -55,16 +55,16 @@
       "id": "alerts",
       "name": "مركز التنبيهات",
       "state": "bad",
-      "value": "عاجل 20 / مهم 12 / فرص 8 / مراقبة 14",
+      "value": "عاجل 20 / مهم 12 / فرص 8 / مراقبة 15",
       "message": "ابدأ بالتنبيهات العاجلة",
       "action": "افتح مركز التنبيهات"
     },
     {
       "id": "confidence_guard",
       "name": "حارس الثقة",
-      "state": "ok",
-      "value": "84%",
-      "message": "تاريخ 4.0/50 وتغطية 93.3%",
+      "state": "bad",
+      "value": "52%",
+      "message": "تاريخ 4.0/50 وتغطية 63.8%",
       "action": "راجع تفسير الثقة قبل الاعتماد على النتائج"
     },
     {
