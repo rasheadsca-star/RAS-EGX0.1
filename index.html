@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EGX Pro Hub — Professional Terminal V9.6 Capital Allocation Governor</title>
+  <title>EGX Pro Hub — Professional Terminal V9.7 Portfolio-Aware Allocation Governor</title>
   <style>
     :root{
       --bg:#050914;--bg2:#071326;--card:#08182d;--card2:#0a1d36;
@@ -4056,6 +4056,124 @@ function renderRecommendationValidationPanel(){
   content=function(){if(EGX.screen==='capitalAllocation')return renderCapitalAllocation();return __v960OldContent();};
   side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['decisionQueue','قائمة القرار التنفيذي','🚦'],['capitalAllocation','تخصيص رأس المال','💰'],['coverageBooster','توسيع التغطية','🧭'],['riskReturn','المخاطر والعائد','📊'],['safetyGovernor','حاكم التوصيات','🛡'],['multiSourceIntel','ذكاء المصادر','☷'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['portfolioDecision','قرارات المحفظة','⚖'],['alertsCenter','مركز التنبيهات','🚨'],['dailyBrief','تقرير القرار اليومي','▧'],['stockSearch','بحث وتحليل سهم','⌕'],['sessionMemory','ذاكرة الجلسات','▣'],['historyBackfill','استكمال التاريخ','⏳'],['chartLab','تاريخ وشارت','▥'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V9.6 Risk Budget</div></div></div><div class="statusbar"><span class="live">حاكم تخصيص رأس المال مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
   quickJump=function(){const base=[['home','⌂ الرئيسية'],['decisionQueue','🚦 قائمة القرار'],['capitalAllocation','💰 تخصيص رأس المال'],['riskReturn','📊 المخاطر والعائد'],['coverageBooster','🧭 توسيع التغطية'],['safetyGovernor','🛡 حاكم التوصيات'],['multiSourceIntel','☷ ذكاء المصادر'],['rankingEngine','≡ الأولويات'],['performanceIndex','✓ مؤشر الدقة'],['dataOps','☷ تدقيق البيانات'],['portfolio','◈ المحفظة']];return `<div class="screen-jump v894-jump">${base.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
+})();
+
+
+/* ===================== V9.7 Portfolio-Aware Allocation Governor ===================== */
+(function v970PortfolioAwareAllocation(){
+  try{
+    const style=document.createElement('style');
+    style.textContent=`
+      .pa97-hero{border:1px solid rgba(34,197,94,.30);background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(14,165,233,.07));border-radius:18px;padding:13px;margin:10px 0;line-height:1.9;color:#dcfce7}
+      .pa97-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0}
+      .pa97-card{background:rgba(7,19,38,.78);border:1px solid rgba(119,169,235,.18);border-radius:16px;padding:12px;min-height:84px}
+      .pa97-card span{display:block;color:#93a9c9;font-size:11px}.pa97-card b{display:block;font-size:22px;margin-top:5px;color:#eef7ff}.pa97-card small{display:block;color:#9fb5d6;margin-top:4px;line-height:1.6}
+      .pa97-split{display:grid;grid-template-columns:1.25fr .75fr;gap:12px;align-items:start}.pa97-settings{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:8px;align-items:end;margin:10px 0}.pa97-settings label{display:block;color:#93a9c9;font-size:11px;margin:0 0 4px}.pa97-settings input{min-height:38px;padding:8px 10px}.pa97-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:950;border:1px solid rgba(119,169,235,.2);background:rgba(7,19,38,.75);color:#dbeafe}.pa97-pill.add{background:rgba(34,197,94,.13);border-color:rgba(34,197,94,.35);color:#bbf7d0}.pa97-pill.hold{background:rgba(14,165,233,.13);border-color:rgba(14,165,233,.35);color:#bfdbfe}.pa97-pill.no{background:rgba(239,68,68,.13);border-color:rgba(239,68,68,.35);color:#fecaca}.pa97-pill.watch{background:rgba(245,158,11,.13);border-color:rgba(245,158,11,.35);color:#fde68a}
+      .pa97-table{min-width:1780px!important}.pa97-table td{vertical-align:top!important}.pa97-reason{white-space:normal!important;line-height:1.65;color:#cfe3ff;min-width:220px}.pa97-money{font-weight:950;color:#eaf6ff}.pa97-note{border:1px solid rgba(119,169,235,.16);background:rgba(7,19,38,.72);border-radius:14px;padding:10px;margin:8px 0;line-height:1.8;color:#cfe3ff}.pa97-note.good{border-color:rgba(34,197,94,.28);background:rgba(34,197,94,.09);color:#bbf7d0}.pa97-note.warn{border-color:rgba(245,158,11,.28);background:rgba(245,158,11,.10);color:#fde68a}.pa97-note.bad{border-color:rgba(239,68,68,.30);background:rgba(239,68,68,.10);color:#fecaca}
+      .pa97-sectorbar{height:8px;border-radius:999px;background:rgba(30,41,59,.9);overflow:hidden;margin-top:6px}.pa97-sectorbar i{display:block;height:100%;background:linear-gradient(90deg,#0ea5e9,#22c55e)}
+      @media(max-width:1100px){.pa97-split,.pa97-settings{grid-template-columns:1fr}.pa97-table{min-width:1350px!important}}
+    `;
+    document.head.appendChild(style);
+  }catch(e){}
+
+  function v970N(v,d=2){try{return fmt(v,d)}catch(e){const n=Number(v);return Number.isFinite(n)?n.toFixed(d):'-'}}
+  function v970Money(v){const n=num(v);if(n==null)return '-';return n.toLocaleString('en-US',{maximumFractionDigits:0})}
+  function v970Settings(){
+    let holdings=[];try{holdings=typeof portfolioRows==='function'?portfolioRows():[]}catch(e){}
+    const detected=holdings.reduce((s,r)=>s+(num(r.val)||0),0);
+    return {
+      total:num(localStorage.getItem('egx_v970_total_capital'))||detected||1000000,
+      cashPct:num(localStorage.getItem('egx_v970_cash_pct'))||25,
+      maxStock:num(localStorage.getItem('egx_v970_max_stock'))||15,
+      maxSector:num(localStorage.getItem('egx_v970_max_sector'))||30,
+      detected
+    };
+  }
+  function v970PortfolioExposure(total){
+    let holdings=[];try{holdings=typeof portfolioRows==='function'?portfolioRows():[]}catch(e){}
+    const effectiveTotal=total||holdings.reduce((s,r)=>s+(num(r.val)||0),0)||1;
+    const bySymbol=new Map(), bySector=new Map();
+    holdings.forEach(h=>{
+      const sym=String(h.symbol||'').toUpperCase(); if(!sym)return;
+      const val=num(h.val)||0, w=effectiveTotal?val/effectiveTotal*100:0;
+      const row=(EGX.rows||[]).find(r=>String(r.symbol).toUpperCase()===sym)||h;
+      const sector=row.sector||h.sector||'غير مصنف';
+      bySymbol.set(sym,{...h,sector,val,weight:w});
+      bySector.set(sector,(bySector.get(sector)||0)+w);
+    });
+    return {holdings,bySymbol,bySector};
+  }
+  function v970BaseRows(){
+    if(typeof v960AllocationRows==='function')return v960AllocationRows();
+    return (EGX.rows||[]).map(r=>{const g=typeof v920Safety==='function'?v920Safety(r):{status:'WATCH_ONLY',score:num(r.finalConfidence)||0,sourceStrengthScore:num(r.sourceStrengthScore)||0};return{r,g,risk:{cls:'medium',ar:'متوسطة المخاطر'},riskScore:50,expected:0,extended:0,loss:0,rr:0,alloc:{label:'مراقبة فقط',clsName:'small',min:0,max:1,riskBudget:.1,mode:'احتياطي',reason:'لم يتم تحميل V9.6'}}});
+  }
+  function v970Row(x,settings,exposure){
+    const r=x.r||{}, a=x.alloc||{}, g=x.g||{}, sym=String(r.symbol||'').toUpperCase();
+    const sector=r.sector||'غير مصنف', holding=exposure.bySymbol.get(sym)||null;
+    const currentWeight=holding?num(holding.weight)||0:0;
+    const sectorWeight=num(exposure.bySector.get(sector))||0;
+    const baseMax=Math.max(0,num(a.max)||0);
+    const stockRoom=Math.max(0,settings.maxStock-currentWeight);
+    const sectorRoom=Math.max(0,settings.maxSector-sectorWeight);
+    const cashRoom=Math.max(0,settings.cashPct);
+    let addPct=0, action='لا تخصيص', actionCls='no', reason=[];
+    if((a.clsName||'zero')==='zero' || (g.status||'')==='BLOCKED'){
+      addPct=0; action='لا تدخل'; actionCls='no'; reason.push('محجوب أو لا يملك خطة آمنة');
+    }else if((g.status||'')!=='EXECUTABLE_REVIEW'){
+      addPct=Math.min(baseMax, stockRoom, sectorRoom, cashRoom, 2);
+      action=addPct>0?'مراقبة صغيرة فقط':'لا زيادة'; actionCls=addPct>0?'watch':'no'; reason.push('ليس تنفيذًا عاديًا؛ مراقبة فقط');
+    }else{
+      addPct=Math.min(baseMax, stockRoom, sectorRoom, cashRoom);
+      if(addPct<=0){action='لا زيادة'; actionCls='no'; reason.push('لا توجد مساحة بسبب النقد/التركيز/القطاع');}
+      else if(holding){action='زيادة مشروطة'; actionCls='add'; reason.push('مركز موجود؛ إضافة فقط داخل نطاق الدخول');}
+      else {action='مركز جديد مشروط'; actionCls='add'; reason.push('مركز جديد بعد تحقق السعر والسيولة');}
+    }
+    if(currentWeight>=settings.maxStock)reason.push('تجاوز حد السهم');
+    if(sectorWeight>=settings.maxSector)reason.push('تجاوز حد القطاع');
+    if(settings.cashPct<=0)reason.push('لا توجد سيولة متاحة');
+    const price=num(r.price)||0;
+    const proposedValue=settings.total*addPct/100;
+    const shares=price>0?Math.floor(proposedValue/price):0;
+    const lossPct=Math.max(0,num(x.loss)||0);
+    const maxLossValue=proposedValue*lossPct/100;
+    const sectorAfter=sectorWeight+addPct;
+    return {...x,symbol:sym,sector,holding,currentWeight,sectorWeight,sectorAfter,baseMax,stockRoom,sectorRoom,cashRoom,addPct,action,actionCls,proposedValue,shares,lossPct,maxLossValue,reason:reason.join('، ')};
+  }
+  window.v970PortfolioAwareRows=function(){
+    const st=v970Settings(), ex=v970PortfolioExposure(st.total);
+    return v970BaseRows().map(x=>v970Row(x,st,ex)).sort((a,b)=>{
+      const order={add:0,watch:1,no:2};
+      return (order[a.actionCls]??9)-(order[b.actionCls]??9)|| b.addPct-a.addPct || b.proposedValue-a.proposedValue || (num(b.g&&b.g.score)-num(a.g&&a.g.score));
+    });
+  };
+  function v970RenderRow(x,i){
+    const r=x.r||{}, g=x.g||{}, a=x.alloc||{};
+    return `<tr data-symbol="${esc(x.symbol)}"><td>${i+1}</td><td class="symbol">${esc(x.symbol)}</td><td>${typeof v922NameCell==='function'?v922NameCell(r):esc(r.name_ar||r.name||'')}</td><td>${esc(x.sector)}</td><td><span class="pa97-pill ${x.actionCls}">${esc(x.action)}</span></td><td>${esc(a.label||'-')}</td><td>${v970N(x.currentWeight,1)}%</td><td><b>${v970N(x.addPct,1)}%</b></td><td class="pa97-money">${v970Money(x.proposedValue)}</td><td>${v970Money(x.shares)}</td><td class="neg">${v970Money(x.maxLossValue)}<br><small>${v970N(x.lossPct,1)}%</small></td><td>${v970N(x.sectorWeight,1)}% → ${v970N(x.sectorAfter,1)}%<div class="pa97-sectorbar"><i style="width:${Math.min(100,x.sectorAfter)}%"></i></div></td><td>${v970N(x.baseMax,1)}%</td><td>${v970N(x.stockRoom,1)}%</td><td>${v970N(x.sectorRoom,1)}%</td><td>${v970N(x.cashRoom,1)}%</td><td>${v970N(g.score,0)}%</td><td>${v970N(g.sourceStrengthScore||r.sourceStrengthScore,0)}%</td><td class="pa97-reason">${esc(x.reason||a.reason||'')}</td><td>${proDetailButton(x.symbol)}</td></tr>`;
+  }
+  window.renderPortfolioAwareAllocation=function(){
+    const st=v970Settings(), ex=v970PortfolioExposure(st.total), rows=v970PortfolioAwareRows();
+    const addRows=rows.filter(x=>x.actionCls==='add'&&x.addPct>0), watchRows=rows.filter(x=>x.actionCls==='watch'&&x.addPct>0), noRows=rows.filter(x=>x.actionCls==='no'||x.addPct<=0);
+    const totalAddPct=addRows.reduce((s,x)=>s+(num(x.addPct)||0),0), totalAddValue=addRows.reduce((s,x)=>s+(num(x.proposedValue)||0),0), totalRisk=addRows.reduce((s,x)=>s+(num(x.maxLossValue)||0),0);
+    const top=addRows[0]||watchRows[0]||rows[0];
+    return `${header('V9.7 تخصيص مرتبط بالمحفظة','يحول حجم المركز من نسبة عامة إلى قيمة تنفيذ وعدد أسهم مع مراعاة السيولة، التركيز الحالي، حد السهم، حد القطاع، والخسارة لو ضرب الوقف')}${quickJump()}<div class="pa97-hero"><b>قاعدة V9.7:</b> لا يكفي أن يكون السهم منخفض المخاطر؛ يجب أن توجد مساحة نقدية ومساحة تركيز في السهم والقطاع. الناتج هنا حجم إضافة مقترح وليس أمر تنفيذ.</div><section class="pa97-grid"><div class="pa97-card"><span>قيمة المحفظة المستخدمة</span><b>${v970Money(st.total)}</b><small>${st.detected?'تم تقديرها من شاشة المحفظة':'قيمة افتراضية/مدخلة'}</small></div><div class="pa97-card"><span>السيولة المتاحة</span><b>${v970N(st.cashPct,1)}%</b><small>${v970Money(st.total*st.cashPct/100)} جنيه</small></div><div class="pa97-card"><span>إضافات تنفيذية</span><b class="pos">${fmt0(addRows.length)}</b><small>${v970N(totalAddPct,1)}% = ${v970Money(totalAddValue)}</small></div><div class="pa97-card"><span>خسارة قصوى نظرية</span><b class="neg">${v970Money(totalRisk)}</b><small>لو ضربت كل الإضافات وقفها</small></div><div class="pa97-card"><span>مراقبة صغيرة</span><b>${fmt0(watchRows.length)}</b><small>ليست تنفيذًا عاديًا</small></div><div class="pa97-card"><span>أفضل مرشح</span><b>${esc(top?top.symbol:'-')}</b><small>${top?esc(top.action):''}</small></div></section><section class="panel"><h3>إعدادات المحفظة</h3><div class="pa97-settings"><div><label>قيمة المحفظة بالجنيه</label><input id="pa97Total" type="number" value="${Math.round(st.total)}"></div><div><label>السيولة المتاحة %</label><input id="pa97Cash" type="number" step="0.1" value="${v970N(st.cashPct,1)}"></div><div><label>أقصى سهم %</label><input id="pa97MaxStock" type="number" step="0.1" value="${v970N(st.maxStock,1)}"></div><div><label>أقصى قطاع %</label><input id="pa97MaxSector" type="number" step="0.1" value="${v970N(st.maxSector,1)}"></div><button class="btn primary" id="pa97Save">حفظ وإعادة حساب</button></div><div class="muted">لو أدخلت محفظتك في شاشة المحفظة سيتم حساب الوزن الحالي تلقائيًا. يمكنك هنا تعديل قيمة المحفظة والسيولة وحدود التركيز.</div></section><section class="pa97-split"><div class="panel"><h3>جدول التخصيص المرتبط بالمحفظة</h3><div class="tablewrap"><table class="compact-table pa97-table"><thead><tr><th>#</th><th>الرمز</th><th>الاسم</th><th>القطاع</th><th>قرار V9.7</th><th>تصنيف V9.6</th><th>وزن حالي</th><th>إضافة %</th><th>قيمة الصفقة</th><th>عدد أسهم</th><th>خسارة الوقف</th><th>القطاع قبل/بعد</th><th>حد V9.6</th><th>مساحة السهم</th><th>مساحة القطاع</th><th>مساحة النقد</th><th>Safety</th><th>المصادر</th><th>السبب</th><th>إجراء</th></tr></thead><tbody>${rows.slice(0,170).map(v970RenderRow).join('')}</tbody></table></div></div><div class="leftstack"><div class="panel"><h3>قواعد V9.7</h3><div class="pa97-note good"><b>إضافة مشروطة:</b> السهم قابل للتنفيذ + توجد سيولة + لا يكسر حد السهم أو القطاع.</div><div class="pa97-note warn"><b>مراقبة صغيرة:</b> السهم ليس تنفيذًا عاديًا، لذلك يبقى حجمًا صغيرًا أو متابعة فقط.</div><div class="pa97-note bad"><b>لا تخصيص:</b> محجوب أو لا توجد مساحة تركيز/نقد.</div></div><div class="panel"><h3>أفضل إضافات مقترحة</h3>${addRows.slice(0,8).map((x,i)=>`<div class="quickrow"><b>${i+1}</b><div><b>${esc(x.symbol)}</b><br><small>${esc(x.sector)} — ${v970N(x.addPct,1)}%</small></div><span>${v970Money(x.proposedValue)}</span></div>`).join('')||'<div class="muted">لا توجد إضافات تنفيذية بعد تطبيق حدود المحفظة.</div>'}</div><div class="panel"><h3>تحذير التركيز</h3>${Array.from(ex.bySector.entries()).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([s,w])=>`<div class="quickrow"><b>•</b><div><b>${esc(s)}</b><br><small>الوزن الحالي</small></div><span class="${w>=st.maxSector?'neg':w>=st.maxSector*.8?'warn':''}">${v970N(w,1)}%</span></div>`).join('')||'<div class="muted">لا توجد محفظة مدخلة بعد.</div>'}</div></div></section>`;
+  };
+  const __v970OldContent=content;
+  content=function(){if(EGX.screen==='portfolioAwareAllocation')return renderPortfolioAwareAllocation();return __v970OldContent();};
+  const __v970OldBind=bind;
+  bind=function(){
+    __v970OldBind();
+    const btn=document.getElementById('pa97Save');
+    if(btn)btn.onclick=()=>{
+      const t=document.getElementById('pa97Total'), c=document.getElementById('pa97Cash'), ms=document.getElementById('pa97MaxStock'), msec=document.getElementById('pa97MaxSector');
+      if(t)localStorage.setItem('egx_v970_total_capital',String(num(t.value)||0));
+      if(c)localStorage.setItem('egx_v970_cash_pct',String(num(c.value)||0));
+      if(ms)localStorage.setItem('egx_v970_max_stock',String(num(ms.value)||0));
+      if(msec)localStorage.setItem('egx_v970_max_sector',String(num(msec.value)||0));
+      render();
+    };
+  };
+  side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['decisionQueue','قائمة القرار التنفيذي','🚦'],['capitalAllocation','تخصيص رأس المال','💰'],['portfolioAwareAllocation','تخصيص مرتبط بالمحفظة','🧮'],['coverageBooster','توسيع التغطية','🧭'],['riskReturn','المخاطر والعائد','📊'],['safetyGovernor','حاكم التوصيات','🛡'],['multiSourceIntel','ذكاء المصادر','☷'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['portfolioDecision','قرارات المحفظة','⚖'],['alertsCenter','مركز التنبيهات','🚨'],['dailyBrief','تقرير القرار اليومي','▧'],['stockSearch','بحث وتحليل سهم','⌕'],['sessionMemory','ذاكرة الجلسات','▣'],['historyBackfill','استكمال التاريخ','⏳'],['chartLab','تاريخ وشارت','▥'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V9.7 Portfolio-Aware</div></div></div><div class="statusbar"><span class="live">حاكم التخصيص المرتبط بالمحفظة مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
+  quickJump=function(){const base=[['home','⌂ الرئيسية'],['decisionQueue','🚦 قائمة القرار'],['capitalAllocation','💰 تخصيص رأس المال'],['portfolioAwareAllocation','🧮 مرتبط بالمحفظة'],['riskReturn','📊 المخاطر والعائد'],['coverageBooster','🧭 توسيع التغطية'],['safetyGovernor','🛡 حاكم التوصيات'],['multiSourceIntel','☷ ذكاء المصادر'],['rankingEngine','≡ الأولويات'],['performanceIndex','✓ مؤشر الدقة'],['dataOps','☷ تدقيق البيانات'],['portfolio','◈ المحفظة']];return `<div class="screen-jump v894-jump">${base.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
 })();
 
 })();

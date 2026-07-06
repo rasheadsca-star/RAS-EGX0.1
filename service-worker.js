@@ -1,5 +1,5 @@
-/* EGX Pro Hub V9.6 Capital Allocation Governor — cache rescue service worker */
-const CACHE_NAME = 'egx-pro-hub-v9-6-capital-allocation';
+/* EGX Pro Hub V9.7 Portfolio-Aware Allocation Governor — cache rescue service worker */
+const CACHE_NAME = 'egx-pro-hub-v9-7-portfolio-aware-allocation';
 self.addEventListener('install', event => {
   self.skipWaiting();
 });
@@ -12,8 +12,7 @@ self.addEventListener('activate', event => {
 });
 async function networkFirst(request) {
   try {
-    const fresh = await fetch(request, { cache: 'no-store' });
-    return fresh;
+    return await fetch(request, { cache: 'no-store' });
   } catch (e) {
     const cache = await caches.open(CACHE_NAME);
     const cached = await cache.match(request);
@@ -22,10 +21,5 @@ async function networkFirst(request) {
 }
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
-  const url = new URL(event.request.url);
-  if (url.pathname.endsWith('.html') || url.pathname.endsWith('/') || url.pathname.includes('/data/') || url.searchParams.has('v')) {
-    event.respondWith(networkFirst(event.request));
-    return;
-  }
   event.respondWith(networkFirst(event.request));
 });
