@@ -1,42 +1,42 @@
 {
   "ok": true,
   "engine": "v8_9_8_price_source_audit",
-  "generatedAt": "2026-07-05T20:01:04.499Z",
+  "generatedAt": "2026-07-06T09:51:44.539Z",
   "summary": {
-    "total": 217,
-    "allowed": 58,
-    "blocked": 159,
+    "total": 218,
+    "allowed": 31,
+    "blocked": 187,
     "precisionBlocked": 22,
-    "conflicts": 121,
-    "stale": 7,
+    "conflicts": 156,
+    "stale": 12,
     "subPound": 22,
     "sourceCoveragePct": 100,
-    "marketCoveragePct": 93.8
+    "marketCoveragePct": 92
   },
   "rows": [
     {
       "symbol": "AIDC",
       "name": "العربية للاستثمار والتنمية",
-      "price": 0.66,
-      "priceDisplay": "0.660",
+      "price": 0.67,
+      "priceDisplay": "0.670",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "3/3",
       "decimals": 3,
       "precisionRisk": true,
-      "conflict": true,
+      "conflict": false,
       "stale": false,
       "executionAllowed": false,
       "executionState": "blocked",
-      "blockReason": "دقة السعر غير كافية للتنفيذ، تعارض بين مصادر السعر",
+      "blockReason": "دقة السعر غير كافية للتنفيذ",
       "finalGrade": "Blocked",
-      "finalScore": 2,
+      "finalScore": 13,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "AIHC",
@@ -60,31 +60,31 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ARAB",
       "name": "المطورون العرب القابضة",
-      "price": 0.21,
-      "priceDisplay": "0.210",
+      "price": 0.22,
+      "priceDisplay": "0.220",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "3/3",
       "decimals": 3,
       "precisionRisk": true,
-      "conflict": false,
+      "conflict": true,
       "stale": false,
       "executionAllowed": false,
       "executionState": "blocked",
-      "blockReason": "دقة السعر غير كافية للتنفيذ",
+      "blockReason": "دقة السعر غير كافية للتنفيذ، تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 16,
+      "finalScore": 0,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ASPI",
@@ -108,31 +108,30 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "CFGH",
       "name": "كونكريت فاشون جروب",
       "price": 0.1,
       "priceDisplay": "0.100",
-      "source": "market",
-      "sourceUsed": "market",
+      "source": "history",
+      "sourceUsed": "history",
       "pricePrecision": "3/3",
       "decimals": 3,
       "precisionRisk": true,
       "conflict": false,
-      "stale": false,
+      "stale": true,
       "executionAllowed": false,
       "executionState": "blocked",
-      "blockReason": "دقة السعر غير كافية للتنفيذ",
+      "blockReason": "دقة السعر غير كافية للتنفيذ، السعر قديم أو يحتاج تحديث",
       "finalGrade": "Blocked",
-      "finalScore": 0,
+      "finalScore": 2,
       "sourceTags": [
         "cache",
-        "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-04T19:20:19.933Z"
     },
     {
       "symbol": "COPR",
@@ -156,7 +155,7 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "EGBE",
@@ -174,13 +173,13 @@
       "executionState": "blocked",
       "blockReason": "دقة السعر غير كافية للتنفيذ، تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 0,
+      "finalScore": 1,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "FAITA",
@@ -204,13 +203,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "GDWA",
       "name": "جدوى للتنمية الصناعية",
-      "price": 0.77,
-      "priceDisplay": "0.770",
+      "price": 0.78,
+      "priceDisplay": "0.780",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "3/3",
@@ -222,19 +221,19 @@
       "executionState": "blocked",
       "blockReason": "دقة السعر غير كافية للتنفيذ، تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 0,
+      "finalScore": 2,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "GGCC",
       "name": "الجيزة العامة للمقاولات",
-      "price": 0.52,
-      "priceDisplay": "0.520",
+      "price": 0.53,
+      "priceDisplay": "0.530",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "3/3",
@@ -252,31 +251,30 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "GTEX",
       "name": "جي تيكس",
       "price": 0.03,
       "priceDisplay": "0.030",
-      "source": "market",
-      "sourceUsed": "market",
+      "source": "history",
+      "sourceUsed": "history",
       "pricePrecision": "3/3",
       "decimals": 3,
       "precisionRisk": true,
       "conflict": false,
-      "stale": false,
+      "stale": true,
       "executionAllowed": false,
       "executionState": "blocked",
-      "blockReason": "دقة السعر غير كافية للتنفيذ",
+      "blockReason": "دقة السعر غير كافية للتنفيذ، السعر قديم أو يحتاج تحديث",
       "finalGrade": "Blocked",
       "finalScore": 1,
       "sourceTags": [
         "cache",
-        "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-04T18:29:57.883Z"
     },
     {
       "symbol": "KRDI",
@@ -294,13 +292,13 @@
       "executionState": "blocked",
       "blockReason": "دقة السعر غير كافية للتنفيذ، تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 0,
+      "finalScore": 1,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "LUTS",
@@ -324,31 +322,31 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MOED",
       "name": "المصرية الحديثة للتعليم",
-      "price": 0.68,
-      "priceDisplay": "0.680",
+      "price": 0.69,
+      "priceDisplay": "0.690",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "3/3",
       "decimals": 3,
       "precisionRisk": true,
-      "conflict": false,
+      "conflict": true,
       "stale": false,
       "executionAllowed": false,
       "executionState": "blocked",
-      "blockReason": "دقة السعر غير كافية للتنفيذ",
+      "blockReason": "دقة السعر غير كافية للتنفيذ، تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 0,
+      "finalScore": 1,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MOIL",
@@ -372,7 +370,7 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "NAHO",
@@ -390,19 +388,19 @@
       "executionState": "blocked",
       "blockReason": "دقة السعر غير كافية للتنفيذ",
       "finalGrade": "Blocked",
-      "finalScore": 0,
+      "finalScore": 2,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "OFH",
       "name": "أو بي المالية القابضة",
-      "price": 0.62,
-      "priceDisplay": "0.620",
+      "price": 0.63,
+      "priceDisplay": "0.630",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "3/3",
@@ -420,7 +418,7 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "PHGC",
@@ -438,37 +436,37 @@
       "executionState": "blocked",
       "blockReason": "دقة السعر غير كافية للتنفيذ",
       "finalGrade": "Blocked",
-      "finalScore": 7,
+      "finalScore": 13,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "SPMD",
       "name": "سبيد ميديكال",
-      "price": 0.44,
-      "priceDisplay": "0.440",
+      "price": 0.43,
+      "priceDisplay": "0.430",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "3/3",
       "decimals": 3,
       "precisionRisk": true,
-      "conflict": true,
+      "conflict": false,
       "stale": false,
       "executionAllowed": false,
       "executionState": "blocked",
-      "blockReason": "دقة السعر غير كافية للتنفيذ، تعارض بين مصادر السعر",
+      "blockReason": "دقة السعر غير كافية للتنفيذ",
       "finalGrade": "Blocked",
-      "finalScore": 0,
+      "finalScore": 15,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "TRTO",
@@ -486,7 +484,7 @@
       "executionState": "blocked",
       "blockReason": "دقة السعر غير كافية للتنفيذ، السعر قديم أو يحتاج تحديث",
       "finalGrade": "Blocked",
-      "finalScore": 0,
+      "finalScore": 1,
       "sourceTags": [
         "cache",
         "recommendations"
@@ -515,7 +513,7 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "VLMR",
@@ -539,7 +537,7 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ABUK",
@@ -557,67 +555,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 54,
+      "finalScore": 62,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ACAMD",
       "name": "العربية لإدارة وتطوير الأصول",
-      "price": 2.3,
-      "priceDisplay": "2.30",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 54,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ACAP",
-      "name": "إيه كابيتال القابضة",
-      "price": 8.58,
-      "priceDisplay": "8.58",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 57,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ACGC",
-      "name": "العربية لحليج الأقطان",
-      "price": 9.33,
-      "priceDisplay": "9.33",
+      "price": 2.34,
+      "priceDisplay": "2.34",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -635,13 +585,61 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ACAP",
+      "name": "إيه كابيتال القابضة",
+      "price": 8.61,
+      "priceDisplay": "8.61",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "توجد قيود تمنع التنفيذ",
+      "finalGrade": "Blocked",
+      "finalScore": 57,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ACGC",
+      "name": "العربية لحليج الأقطان",
+      "price": 9.6,
+      "priceDisplay": "9.60",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 59,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ADCI",
       "name": "العربية للأدوية",
-      "price": 238.5,
-      "priceDisplay": "238.50",
+      "price": 237.94,
+      "priceDisplay": "237.94",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -653,67 +651,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 36,
+      "finalScore": 38,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ADIB",
       "name": "مصرف أبو ظبي الإسلامي مصر",
-      "price": 46.64,
-      "priceDisplay": "46.64",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 65,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "AFDI",
-      "name": "الأهلي للتنمية والاستثمار",
-      "price": 44.31,
-      "priceDisplay": "44.31",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 56,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "AFMC",
-      "name": "مطاحن ومخابز الإسكندرية",
-      "price": 71.2,
-      "priceDisplay": "71.20",
+      "price": 47,
+      "priceDisplay": "47.00",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -725,19 +675,135 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 52,
+      "finalScore": 43,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ADPC",
+      "name": "العربية لمنتجات الألبان آراب ديري",
+      "price": 3.56,
+      "priceDisplay": "3.56",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ADRI",
+      "name": "0,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Arab for Development and Real Estate Investment",
+      "price": 7.46,
+      "priceDisplay": "7.46",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Risk",
+      "finalScore": 26.4,
+      "sourceTags": [
+        "market"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "AFDI",
+      "name": "الأهلي للتنمية والاستثمار",
+      "price": 45.01,
+      "priceDisplay": "45.01",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 32,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "AFMC",
+      "name": "مطاحن ومخابز الإسكندرية",
+      "price": 71.99,
+      "priceDisplay": "71.99",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 58,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "AIFI",
+      "name": "50],[300,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Atlas For Investment and Food Industries",
+      "price": 2.08,
+      "priceDisplay": "2.08",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Risk",
+      "finalScore": 27.6,
+      "sourceTags": [
+        "market"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "AJWA",
       "name": "أجواء للصناعات الغذائية",
-      "price": 179.96,
-      "priceDisplay": "179.96",
+      "price": 179.8,
+      "priceDisplay": "179.80",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -755,37 +821,37 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ALCN",
       "name": "الإسكندرية لتداول الحاويات والبضائع",
-      "price": 28.26,
-      "priceDisplay": "28.26",
+      "price": 28.6,
+      "priceDisplay": "28.60",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
       "decimals": 2,
       "precisionRisk": false,
-      "conflict": false,
+      "conflict": true,
       "stale": false,
       "executionAllowed": false,
       "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
+      "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 53,
+      "finalScore": 32,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ALUM",
       "name": "الألومنيوم العربية",
-      "price": 21.85,
-      "priceDisplay": "21.85",
+      "price": 22.47,
+      "priceDisplay": "22.47",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -797,19 +863,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 52,
+      "finalScore": 55,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "AMER",
       "name": "عامر جروب",
-      "price": 2.46,
-      "priceDisplay": "2.46",
+      "price": 2.49,
+      "priceDisplay": "2.49",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -821,19 +887,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 61,
+      "finalScore": 60,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "AMES",
       "name": "مركز الإسكندرية الطبي",
-      "price": 60.18,
-      "priceDisplay": "60.18",
+      "price": 60.19,
+      "priceDisplay": "60.19",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -851,85 +917,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "AMOC",
       "name": "الإسكندرية للزيوت المعدنية",
-      "price": 7.85,
-      "priceDisplay": "7.85",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 53,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ARCC",
-      "name": "العربية للأسمنت",
-      "price": 56.25,
-      "priceDisplay": "56.25",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 53,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ARVA",
-      "name": "العربية للصمامات",
-      "price": 10.89,
-      "priceDisplay": "10.89",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 69,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ASCM",
-      "name": "أسيك للتعدين أسكوم",
-      "price": 60.04,
-      "priceDisplay": "60.04",
+      "price": 7.82,
+      "priceDisplay": "7.82",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -947,13 +941,156 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "APSW",
+      "name": "يونيراب بولفارا",
+      "price": 8.48,
+      "priceDisplay": "8.48",
+      "source": "history",
+      "sourceUsed": "history",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": true,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "السعر قديم أو يحتاج تحديث",
+      "finalGrade": "P3",
+      "finalScore": 70,
+      "sourceTags": [
+        "cache",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-04T18:29:57.883Z"
+    },
+    {
+      "symbol": "ARCC",
+      "name": "العربية للأسمنت",
+      "price": 55.99,
+      "priceDisplay": "55.99",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 59,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "AREH",
+      "name": "المجموعة المصرية العقارية",
+      "price": 1.6,
+      "priceDisplay": "1.60",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ASCM",
+      "name": "أسيك للتعدين أسكوم",
+      "price": 59.98,
+      "priceDisplay": "59.98",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ATLC",
+      "name": "التوفيق للتأجير التمويلي",
+      "price": 5.32,
+      "priceDisplay": "5.32",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ATQA",
+      "name": "مصر الوطنية للصلب عتاقة",
+      "price": 9.69,
+      "priceDisplay": "9.69",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "AXPH",
       "name": "الإسكندرية للأدوية",
-      "price": 1200.16,
-      "priceDisplay": "1200.16",
+      "price": 1181.74,
+      "priceDisplay": "1181.74",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -965,19 +1102,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 68,
+      "finalScore": 69,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "BINV",
       "name": "بي إنفستمنتس",
-      "price": 47.33,
-      "priceDisplay": "47.33",
+      "price": 48.71,
+      "priceDisplay": "48.71",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -989,19 +1126,67 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 23,
+      "finalScore": 29,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "BIOC",
       "name": "جلاكسو سميثكلاين",
-      "price": 70.57,
-      "priceDisplay": "70.57",
+      "price": 72.12,
+      "priceDisplay": "72.12",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 59,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "BONY",
+      "name": "بنيان للتنمية والتجارة",
+      "price": 4.93,
+      "priceDisplay": "4.93",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "BTFH",
+      "name": "بلتون القابضة",
+      "price": 3.02,
+      "priceDisplay": "3.02",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1019,13 +1204,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "CAED",
       "name": "القاهرة للخدمات التعليمية",
-      "price": 71.47,
-      "priceDisplay": "71.47",
+      "price": 71.38,
+      "priceDisplay": "71.38",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1043,13 +1228,37 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "CANA",
+      "name": "بنك قناة السويس",
+      "price": 36.46,
+      "priceDisplay": "36.46",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "CCAP",
       "name": "القلعة للاستثمارات المالية",
-      "price": 5.14,
-      "priceDisplay": "5.14",
+      "price": 5.13,
+      "priceDisplay": "5.13",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1067,13 +1276,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "CCRS",
       "name": "الخليجية الكندية للاستثمار العقاري",
-      "price": 2.39,
-      "priceDisplay": "2.39",
+      "price": 2.4,
+      "priceDisplay": "2.40",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1091,13 +1300,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "CERA",
-      "name": "العربية للخزف سيراميكا ريماس",
-      "price": 1.23,
-      "priceDisplay": "1.23",
+      "symbol": "CEFM",
+      "name": "مطاحن مصر الوسطى",
+      "price": 100.85,
+      "priceDisplay": "100.85",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1115,13 +1324,37 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "CERA",
+      "name": "العربية للخزف سيراميكا ريماس",
+      "price": 1.26,
+      "priceDisplay": "1.26",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 59,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "CICH",
       "name": "سي آي كابيتال",
-      "price": 11.98,
-      "priceDisplay": "11.98",
+      "price": 12.23,
+      "priceDisplay": "12.23",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1139,13 +1372,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "CIEB",
       "name": "كريدي أجريكول مصر",
-      "price": 24.44,
-      "priceDisplay": "24.44",
+      "price": 24.32,
+      "priceDisplay": "24.32",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1157,162 +1390,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 55,
+      "finalScore": 56,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "CIRA",
-      "name": "القاهرة للاستثمار والتنمية العقارية",
-      "price": 28.2,
-      "priceDisplay": "28.20",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "1/2",
-      "decimals": 1,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 74,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "CLHO",
       "name": "مستشفى كليوباترا",
-      "price": 16.4,
-      "priceDisplay": "16.40",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "1/2",
-      "decimals": 1,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 61,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "COMI",
-      "name": "البنك التجاري الدولي",
-      "price": 129.96,
-      "priceDisplay": "129.96",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 55,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "COSG",
-      "name": "القاهرة للزيوت والصابون",
-      "price": 1.56,
-      "priceDisplay": "1.56",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 53,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "CPCI",
-      "name": "القاهرة للأدوية",
-      "price": 400.02,
-      "priceDisplay": "400.02",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 61,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "CPME",
-      "name": "كاتاليست بارتنرز",
-      "price": 18,
-      "priceDisplay": "18.00",
-      "source": "history",
-      "sourceUsed": "history",
-      "pricePrecision": "0/2",
-      "decimals": 0,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": true,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "السعر قديم أو يحتاج تحديث",
-      "finalGrade": "Blocked",
-      "finalScore": 46,
-      "sourceTags": [
-        "cache",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-04T18:29:57.883Z"
-    },
-    {
-      "symbol": "CRST",
-      "name": "كريست مارك",
-      "price": 1.36,
-      "priceDisplay": "1.36",
+      "price": 16.85,
+      "priceDisplay": "16.85",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1330,13 +1420,156 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "CNFN",
+      "name": "كونتكت المالية القابضة",
+      "price": 4.86,
+      "priceDisplay": "4.86",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "COMI",
+      "name": "البنك التجاري الدولي",
+      "price": 131.8,
+      "priceDisplay": "131.80",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "1/2",
+      "decimals": 1,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 62,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "COSG",
+      "name": "القاهرة للزيوت والصابون",
+      "price": 1.6,
+      "priceDisplay": "1.60",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "CPCI",
+      "name": "القاهرة للأدوية",
+      "price": 396.48,
+      "priceDisplay": "396.48",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 66,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "CPME",
+      "name": "كاتاليست بارتنرز",
+      "price": 18,
+      "priceDisplay": "18.00",
+      "source": "history",
+      "sourceUsed": "history",
+      "pricePrecision": "0/2",
+      "decimals": 0,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": true,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "السعر قديم أو يحتاج تحديث",
+      "finalGrade": "Blocked",
+      "finalScore": 53,
+      "sourceTags": [
+        "cache",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-04T18:29:57.883Z"
+    },
+    {
+      "symbol": "CRST",
+      "name": "كريست مارك",
+      "price": 1.35,
+      "priceDisplay": "1.35",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 28,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "CSAG",
       "name": "القناة للتوكيلات الملاحية",
-      "price": 32.52,
-      "priceDisplay": "32.52",
+      "price": 32.53,
+      "priceDisplay": "32.53",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1354,13 +1587,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "DAPH",
       "name": "المشروعات الصناعية والهندسية",
-      "price": 82.96,
-      "priceDisplay": "82.96",
+      "price": 83.6,
+      "priceDisplay": "83.60",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1372,13 +1605,13 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 60,
+      "finalScore": 56,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "DCCC",
@@ -1396,13 +1629,13 @@
       "executionState": "blocked",
       "blockReason": "توجد قيود تمنع التنفيذ",
       "finalGrade": "Blocked",
-      "finalScore": 45,
+      "finalScore": 52,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "DEIN",
@@ -1420,19 +1653,19 @@
       "executionState": "blocked",
       "blockReason": "توجد قيود تمنع التنفيذ",
       "finalGrade": "Blocked",
-      "finalScore": 41,
+      "finalScore": 56,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "DGTZ",
       "name": "ديجيتايز للاستثمار والتقنية",
-      "price": 2.63,
-      "priceDisplay": "2.63",
+      "price": 2.65,
+      "priceDisplay": "2.65",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1444,19 +1677,67 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 47,
+      "finalScore": 54,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "DOMT",
+      "name": "دومتي",
+      "price": 27.57,
+      "priceDisplay": "27.57",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "DSCW",
+      "name": "دايس للملابس الجاهزة",
+      "price": 1.77,
+      "priceDisplay": "1.77",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "DTPP",
       "name": "دلتا للطباعة والتغليف",
-      "price": 210.02,
-      "priceDisplay": "210.02",
+      "price": 207.23,
+      "priceDisplay": "207.23",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1474,13 +1755,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "EASB",
       "name": "ثمار للوساطة",
-      "price": 7.38,
-      "priceDisplay": "7.38",
+      "price": 7.37,
+      "priceDisplay": "7.37",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1498,37 +1779,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EBSC",
-      "name": "أصول إي إس بي للوساطة",
-      "price": 2.05,
-      "priceDisplay": "2.05",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 66,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ECAP",
       "name": "العز للسيراميك والبورسلين الجوهرة",
-      "price": 33.01,
-      "priceDisplay": "33.01",
+      "price": 33.2,
+      "priceDisplay": "33.20",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -1540,641 +1797,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 60,
+      "finalScore": 61,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "EEII",
-      "name": "العربية للصناعات الهندسية",
-      "price": 2.72,
-      "priceDisplay": "2.72",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 47,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EFID",
-      "name": "إيديتا للصناعات الغذائية",
-      "price": 28.36,
-      "priceDisplay": "28.36",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 49,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EFIH",
-      "name": "إي فاينانس",
-      "price": 21.48,
-      "priceDisplay": "21.48",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 52,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EGAL",
-      "name": "مصر للألومنيوم",
-      "price": 293.99,
-      "priceDisplay": "293.99",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 54,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EGCH",
-      "name": "كيما",
-      "price": 12.71,
-      "priceDisplay": "12.71",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 52,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EGTS",
-      "name": "المصرية للمنتجعات السياحية",
-      "price": 19.05,
-      "priceDisplay": "19.05",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 48,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EHDR",
-      "name": "المصريين للإسكان والتنمية",
-      "price": 2.56,
-      "priceDisplay": "2.56",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 53,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ELEC",
-      "name": "الكابلات الكهربائية المصرية",
-      "price": 2.08,
-      "priceDisplay": "2.08",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 71,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ELKA",
-      "name": "القاهرة للإسكان والتعمير",
-      "price": 1.43,
-      "priceDisplay": "1.43",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 49,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ELNA",
-      "name": "النصر لتصنيع الحاصلات الزراعية",
-      "price": 37.81,
-      "priceDisplay": "37.81",
-      "source": "history",
-      "sourceUsed": "history",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": true,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "السعر قديم أو يحتاج تحديث",
-      "finalGrade": "Watch",
-      "finalScore": 59,
-      "sourceTags": [
-        "cache",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-04T18:29:57.883Z"
-    },
-    {
-      "symbol": "ELSH",
-      "name": "الشمس للإسكان والتعمير",
-      "price": 13.75,
-      "priceDisplay": "13.75",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 46,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ELWA",
-      "name": "الوادي العالمية للاستثمار والتنمية",
-      "price": 1.98,
-      "priceDisplay": "1.98",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 31,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EMFD",
-      "name": "إعمار مصر",
-      "price": 11.78,
-      "priceDisplay": "11.78",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 54,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ENGC",
-      "name": "آيكون",
-      "price": 37.08,
-      "priceDisplay": "37.08",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 32,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EOSB",
-      "name": "العروبة للسمسرة",
-      "price": 1.48,
-      "priceDisplay": "1.48",
-      "source": "history",
-      "sourceUsed": "history",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": true,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "السعر قديم أو يحتاج تحديث",
-      "finalGrade": "Watch",
-      "finalScore": 28,
-      "sourceTags": [
-        "cache",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-04T18:29:57.883Z"
-    },
-    {
-      "symbol": "EPCO",
-      "name": "مصر للدواجن",
-      "price": 8.8,
-      "priceDisplay": "8.80",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "1/2",
-      "decimals": 1,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 30,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EPPK",
-      "name": "الأهرام للطباعة والتغليف",
-      "price": 14.53,
-      "priceDisplay": "14.53",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 49,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ETEL",
-      "name": "المصرية للاتصالات",
-      "price": 92.89,
-      "priceDisplay": "92.89",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 71,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ETRS",
-      "name": "إيجيترانس",
-      "price": 10.77,
-      "priceDisplay": "10.77",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 70,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EXPA",
-      "name": "البنك المصري لتنمية الصادرات",
-      "price": 18.73,
-      "priceDisplay": "18.73",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 57,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "FAIT",
-      "name": "بنك فيصل الإسلامي",
-      "price": 36.63,
-      "priceDisplay": "36.63",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 66,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "GBCO",
-      "name": "جي بي كوربوريشن",
-      "price": 31.4,
-      "priceDisplay": "31.40",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 76,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "GGRN",
-      "name": "جو جرين",
-      "price": 1.43,
-      "priceDisplay": "1.43",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 53,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "GIHD",
-      "name": "الغربية الإسلامية للتنمية العمرانية",
-      "price": 43.37,
-      "priceDisplay": "43.37",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 23,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "GMCI",
-      "name": "جي إم سي",
-      "price": 1.95,
-      "priceDisplay": "1.95",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 27,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "GPIM",
-      "name": "جي بي آي للنمو العمراني",
-      "price": 1.12,
-      "priceDisplay": "1.12",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 60,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "GRCA",
-      "name": "جراند كابيتال",
-      "price": 51.72,
-      "priceDisplay": "51.72",
+      "symbol": "EDFM",
+      "name": "مطاحن شرق الدلتا",
+      "price": 326.76,
+      "priceDisplay": "326.76",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2192,37 +1827,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "GSSC",
-      "name": "الصوامع والتخزين",
-      "price": 248.17,
-      "priceDisplay": "248.17",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 52,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "HDBK",
-      "name": "بنك التعمير والإسكان",
-      "price": 169.4,
-      "priceDisplay": "169.40",
+      "symbol": "EEII",
+      "name": "العربية للصناعات الهندسية",
+      "price": 2.74,
+      "priceDisplay": "2.74",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2240,13 +1851,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "HELI",
-      "name": "مصر الجديدة للإسكان والتعمير",
-      "price": 6.63,
-      "priceDisplay": "6.63",
+      "symbol": "EFID",
+      "name": "إيديتا للصناعات الغذائية",
+      "price": 28.53,
+      "priceDisplay": "28.53",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2258,19 +1869,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 54,
+      "finalScore": 56,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "HRHO",
-      "name": "إي إف جي القابضة",
-      "price": 26.73,
-      "priceDisplay": "26.73",
+      "symbol": "EFIH",
+      "name": "إي فاينانس",
+      "price": 22.63,
+      "priceDisplay": "22.63",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2282,43 +1893,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 73,
+      "finalScore": 55,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "ICID",
-      "name": "الدولية للاستثمار والتنمية",
-      "price": 7.97,
-      "priceDisplay": "7.97",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 66,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "IDRE",
-      "name": "الإسماعيلية للتطوير العقاري",
-      "price": 44.28,
-      "priceDisplay": "44.28",
+      "symbol": "EGAL",
+      "name": "مصر للألومنيوم",
+      "price": 295.35,
+      "priceDisplay": "295.35",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2330,91 +1917,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 59,
+      "finalScore": 61,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "IRON",
-      "name": "الحديد والصلب",
-      "price": 32.02,
-      "priceDisplay": "32.02",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 65,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ISMA",
-      "name": "الإسماعيلية مصر للدواجن",
-      "price": 28.07,
-      "priceDisplay": "28.07",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 62,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ISMQ",
-      "name": "الحديد والصلب للمناجم والمحاجر",
-      "price": 9.9,
-      "priceDisplay": "9.90",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 50,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "KABO",
-      "name": "كابو",
-      "price": 6.41,
-      "priceDisplay": "6.41",
+      "symbol": "EGAS",
+      "name": "غاز مصر",
+      "price": 50.63,
+      "priceDisplay": "50.63",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2432,13 +1947,537 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "KWIN",
-      "name": "القاهرة الوطنية للاستثمار",
-      "price": 68.22,
-      "priceDisplay": "68.22",
+      "symbol": "EGCH",
+      "name": "كيما",
+      "price": 12.75,
+      "priceDisplay": "12.75",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "EGTS",
+      "name": "المصرية للمنتجعات السياحية",
+      "price": 19.2,
+      "priceDisplay": "19.20",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "1/2",
+      "decimals": 1,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "EHDR",
+      "name": "المصريين للإسكان والتنمية",
+      "price": 2.67,
+      "priceDisplay": "2.67",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ELKA",
+      "name": "القاهرة للإسكان والتعمير",
+      "price": 1.47,
+      "priceDisplay": "1.47",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ELNA",
+      "name": "النصر لتصنيع الحاصلات الزراعية",
+      "price": 37.81,
+      "priceDisplay": "37.81",
+      "source": "history",
+      "sourceUsed": "history",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": true,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "السعر قديم أو يحتاج تحديث",
+      "finalGrade": "P3",
+      "finalScore": 70,
+      "sourceTags": [
+        "cache",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-04T18:29:57.883Z"
+    },
+    {
+      "symbol": "ELSH",
+      "name": "الشمس للإسكان والتعمير",
+      "price": 13.67,
+      "priceDisplay": "13.67",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 55,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ELWA",
+      "name": "الوادي العالمية للاستثمار والتنمية",
+      "price": 1.99,
+      "priceDisplay": "1.99",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 25,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "EMFD",
+      "name": "إعمار مصر",
+      "price": 11.83,
+      "priceDisplay": "11.83",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 62,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ENGC",
+      "name": "آيكون",
+      "price": 37.15,
+      "priceDisplay": "37.15",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 31,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "EOSB",
+      "name": "العروبة للسمسرة",
+      "price": 1.48,
+      "priceDisplay": "1.48",
+      "source": "history",
+      "sourceUsed": "history",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": true,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "السعر قديم أو يحتاج تحديث",
+      "finalGrade": "Watch",
+      "finalScore": 40,
+      "sourceTags": [
+        "cache",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-04T18:29:57.883Z"
+    },
+    {
+      "symbol": "EPCO",
+      "name": "مصر للدواجن",
+      "price": 8.85,
+      "priceDisplay": "8.85",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 37,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "EPPK",
+      "name": "الأهرام للطباعة والتغليف",
+      "price": 15.15,
+      "priceDisplay": "15.15",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 53,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ESRS",
+      "name": "' ### Size: [[320,50],[300,50],[300,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Ezz Steel SAE",
+      "price": 129.98,
+      "priceDisplay": "129.98",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Risk",
+      "finalScore": 23.5,
+      "sourceTags": [
+        "market"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ETEL",
+      "name": "المصرية للاتصالات",
+      "price": 95.85,
+      "priceDisplay": "95.85",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ETRS",
+      "name": "إيجيترانس",
+      "price": 10.85,
+      "priceDisplay": "10.85",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 63,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "EXPA",
+      "name": "البنك المصري لتنمية الصادرات",
+      "price": 18.78,
+      "priceDisplay": "18.78",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "FAIT",
+      "name": "بنك فيصل الإسلامي",
+      "price": 36.6,
+      "priceDisplay": "36.60",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 66,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "FERC",
+      "name": "فيركيم مصر",
+      "price": 74.71,
+      "priceDisplay": "74.71",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "FWRY",
+      "name": "فوري لتكنولوجيا البنوك والمدفوعات الإلكترونية",
+      "price": 18.8,
+      "priceDisplay": "18.80",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 62,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "GBCO",
+      "name": "جي بي كوربوريشن",
+      "price": 30.75,
+      "priceDisplay": "30.75",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 79,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "GGRN",
+      "name": "جو جرين",
+      "price": 1.44,
+      "priceDisplay": "1.44",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "GIHD",
+      "name": "الغربية الإسلامية للتنمية العمرانية",
+      "price": 45,
+      "priceDisplay": "45.00",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 28,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "GMCI",
+      "name": "جي إم سي",
+      "price": 2.02,
+      "priceDisplay": "2.02",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2456,13 +2495,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "KZPC",
-      "name": "كفر الزيات للمبيدات",
-      "price": 8.56,
-      "priceDisplay": "8.56",
+      "symbol": "GPIM",
+      "name": "جي بي آي للنمو العمراني",
+      "price": 1.14,
+      "priceDisplay": "1.14",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2474,19 +2513,43 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 52,
+      "finalScore": 59,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "LCSW",
-      "name": "ليسيكو مصر",
-      "price": 28.5,
-      "priceDisplay": "28.50",
+      "symbol": "GRCA",
+      "name": "جراند كابيتال",
+      "price": 52,
+      "priceDisplay": "52.00",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "توجد قيود تمنع التنفيذ",
+      "finalGrade": "Blocked",
+      "finalScore": 54,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "GSSC",
+      "name": "الصوامع والتخزين",
+      "price": 250.08,
+      "priceDisplay": "250.08",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2504,13 +2567,325 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "GTWL",
+      "name": "جولدن تكس",
+      "price": 88.14,
+      "priceDisplay": "88.14",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 67,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "HELI",
+      "name": "مصر الجديدة للإسكان والتعمير",
+      "price": 6.77,
+      "priceDisplay": "6.77",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 57,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ICID",
+      "name": "الدولية للاستثمار والتنمية",
+      "price": 7.87,
+      "priceDisplay": "7.87",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 46,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "IDRE",
+      "name": "الإسماعيلية للتطوير العقاري",
+      "price": 44.39,
+      "priceDisplay": "44.39",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "INFI",
+      "name": "الإسماعيلية الوطنية للصناعات الغذائية",
+      "price": 94.56,
+      "priceDisplay": "94.56",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "IRON",
+      "name": "الحديد والصلب",
+      "price": 32.03,
+      "priceDisplay": "32.03",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "توجد قيود تمنع التنفيذ",
+      "finalGrade": "Blocked",
+      "finalScore": 64,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ISMA",
+      "name": "الإسماعيلية مصر للدواجن",
+      "price": 28.2,
+      "priceDisplay": "28.20",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "توجد قيود تمنع التنفيذ",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ISMQ",
+      "name": "الحديد والصلب للمناجم والمحاجر",
+      "price": 10.05,
+      "priceDisplay": "10.05",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "JUFO",
+      "name": "جهينة للصناعات الغذائية",
+      "price": 30.67,
+      "priceDisplay": "30.67",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "KABO",
+      "name": "كابو",
+      "price": 6.9,
+      "priceDisplay": "6.90",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "KWIN",
+      "name": "القاهرة الوطنية للاستثمار",
+      "price": 69.6,
+      "priceDisplay": "69.60",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 24,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "KZPC",
+      "name": "كفر الزيات للمبيدات",
+      "price": 8.58,
+      "priceDisplay": "8.58",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "LCSW",
+      "name": "ليسيكو مصر",
+      "price": 29.4,
+      "priceDisplay": "29.40",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 57,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MAAL",
       "name": "مرسيليا المصرية الخليجية",
-      "price": 7.54,
-      "priceDisplay": "7.54",
+      "price": 7.78,
+      "priceDisplay": "7.78",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2522,19 +2897,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 49,
+      "finalScore": 56,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MASR",
       "name": "مدينة مصر للإسكان والتعمير",
-      "price": 7.56,
-      "priceDisplay": "7.56",
+      "price": 7.67,
+      "priceDisplay": "7.67",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2546,19 +2921,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 54,
+      "finalScore": 60,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MBSC",
       "name": "مصر بني سويف للأسمنت",
-      "price": 244.18,
-      "priceDisplay": "244.18",
+      "price": 245.55,
+      "priceDisplay": "245.55",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2570,19 +2945,43 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 53,
+      "finalScore": 59,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "MCQE",
+      "name": "مصر للأسمنت قنا",
+      "price": 176.29,
+      "priceDisplay": "176.29",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MCRO",
       "name": "ماكرو جروب",
-      "price": 1.22,
-      "priceDisplay": "1.22",
+      "price": 1.24,
+      "priceDisplay": "1.24",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2594,13 +2993,37 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 53,
+      "finalScore": 59,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "MENA",
+      "name": "مينا للاستثمار السياحي والعقاري",
+      "price": 7.1,
+      "priceDisplay": "7.10",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MEPA",
@@ -2618,13 +3041,13 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 52,
+      "finalScore": 60,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MFPC",
@@ -2648,133 +3071,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "MHOT",
-      "name": "مصر للفنادق",
-      "price": 34.79,
-      "priceDisplay": "34.79",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 53,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "MIPH",
-      "name": "مينا فارم",
-      "price": 661.65,
-      "priceDisplay": "661.65",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 48,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "MOIN",
-      "name": "المهندس للتأمين",
-      "price": 23.72,
-      "priceDisplay": "23.72",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 58,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "MOSC",
-      "name": "مصر للزيوت والصابون",
-      "price": 269.87,
-      "priceDisplay": "269.87",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 41,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "MPCO",
-      "name": "المنصورة للدواجن",
-      "price": 1.82,
-      "priceDisplay": "1.82",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 62,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "MPRC",
-      "name": "مدينة الإنتاج الإعلامي",
-      "price": 38.15,
-      "priceDisplay": "38.15",
+      "symbol": "MFSC",
+      "name": "مصر للأسواق الحرة",
+      "price": 48.78,
+      "priceDisplay": "48.78",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2792,13 +3095,203 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "MHOT",
+      "name": "مصر للفنادق",
+      "price": 34.92,
+      "priceDisplay": "34.92",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "MICH",
+      "name": "مصر لصناعة الكيماويات",
+      "price": 38.11,
+      "priceDisplay": "38.11",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "MIPH",
+      "name": "مينا فارم",
+      "price": 669.97,
+      "priceDisplay": "669.97",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 29,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "MMAT",
+      "name": "مرسى مرسى علم للتنمية السياحية",
+      "price": 3.53,
+      "priceDisplay": "3.53",
+      "source": "history",
+      "sourceUsed": "history",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": true,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "السعر قديم أو يحتاج تحديث",
+      "finalGrade": "Watch",
+      "finalScore": 41,
+      "sourceTags": [
+        "cache",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-04T18:29:57.883Z"
+    },
+    {
+      "symbol": "MOIN",
+      "name": "المهندس للتأمين",
+      "price": 23.73,
+      "priceDisplay": "23.73",
+      "source": "history",
+      "sourceUsed": "history",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": true,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "السعر قديم أو يحتاج تحديث",
+      "finalGrade": "Blocked",
+      "finalScore": 49,
+      "sourceTags": [
+        "cache",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-04T18:54:48.858Z"
+    },
+    {
+      "symbol": "MOSC",
+      "name": "مصر للزيوت والصابون",
+      "price": 272.97,
+      "priceDisplay": "272.97",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 38,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "MPCO",
+      "name": "المنصورة للدواجن",
+      "price": 1.8,
+      "priceDisplay": "1.80",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 66,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "MPRC",
+      "name": "مدينة الإنتاج الإعلامي",
+      "price": 38.31,
+      "priceDisplay": "38.31",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 63,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MTIE",
       "name": "إم إم جروب",
-      "price": 9.55,
-      "priceDisplay": "9.55",
+      "price": 9.56,
+      "priceDisplay": "9.56",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2816,61 +3309,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "NAPR",
       "name": "الوطنية للطباعة",
-      "price": 26.35,
-      "priceDisplay": "26.35",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 62,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "NARE",
-      "name": "نعيم العقارية",
-      "price": 13.82,
-      "priceDisplay": "13.82",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
-      "finalGrade": "Blocked",
-      "finalScore": 61,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "NCCW",
-      "name": "النصر للأعمال المدنية",
-      "price": 6.28,
-      "priceDisplay": "6.28",
+      "price": 26.55,
+      "priceDisplay": "26.55",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2882,13 +3327,61 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 53,
+      "finalScore": 41,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "NARE",
+      "name": "نعيم العقارية",
+      "price": 15.41,
+      "priceDisplay": "15.41",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 28,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "NCCW",
+      "name": "النصر للأعمال المدنية",
+      "price": 6.37,
+      "priceDisplay": "6.37",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 59,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "NEDA",
@@ -2914,34 +3407,58 @@
       "updatedAt": "2026-07-04T18:29:57.883Z"
     },
     {
-      "symbol": "NINH",
-      "name": "النزهة الدولي",
-      "price": 18.07,
-      "priceDisplay": "18.07",
+      "symbol": "NHPS",
+      "name": "الوطنية للإسكان للنقابات المهنية",
+      "price": 71,
+      "priceDisplay": "71.00",
       "source": "market",
       "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
+      "pricePrecision": "0/2",
+      "decimals": 0,
       "precisionRisk": false,
-      "conflict": false,
+      "conflict": true,
       "stale": false,
       "executionAllowed": false,
       "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
+      "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 57,
+      "finalScore": 55,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "NINH",
+      "name": "النزهة الدولي",
+      "price": 18.25,
+      "priceDisplay": "18.25",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 33,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "NIPH",
       "name": "النيل للأدوية",
-      "price": 172,
-      "priceDisplay": "172.00",
+      "price": 176.85,
+      "priceDisplay": "176.85",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2953,19 +3470,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 74,
+      "finalScore": 69,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "OBRI",
       "name": "العبور للاستثمار العقاري",
-      "price": 37.79,
-      "priceDisplay": "37.79",
+      "price": 37.57,
+      "priceDisplay": "37.57",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -2977,43 +3494,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 49,
+      "finalScore": 56,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "ODIN",
-      "name": "أودن للاستثمارات",
-      "price": 2.29,
-      "priceDisplay": "2.29",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 49,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "OLFI",
-      "name": "عبور لاند",
-      "price": 22.6,
-      "priceDisplay": "22.60",
+      "symbol": "OCDI",
+      "name": "سوديك",
+      "price": 25.99,
+      "priceDisplay": "25.99",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3031,13 +3524,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "ORWE",
-      "name": "النساجون الشرقيون",
-      "price": 22.65,
-      "priceDisplay": "22.65",
+      "symbol": "OCPH",
+      "name": "أكتوبر فارما",
+      "price": 359.37,
+      "priceDisplay": "359.37",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3049,19 +3542,67 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 31,
+      "finalScore": 60,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "PHDC",
-      "name": "بالم هيلز للتعمير",
-      "price": 14.75,
-      "priceDisplay": "14.75",
+      "symbol": "ODIN",
+      "name": "أودن للاستثمارات",
+      "price": 2.4,
+      "priceDisplay": "2.40",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 54,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "OLFI",
+      "name": "عبور لاند",
+      "price": 22.73,
+      "priceDisplay": "22.73",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 61,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ORHD",
+      "name": "أوراسكوم للتنمية مصر",
+      "price": 39.35,
+      "priceDisplay": "39.35",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3079,13 +3620,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "PHTV",
-      "name": "بيراميزا للفنادق",
-      "price": 268.5,
-      "priceDisplay": "268.50",
+      "symbol": "ORWE",
+      "name": "النساجون الشرقيون",
+      "price": 22.92,
+      "priceDisplay": "22.92",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3097,23 +3638,71 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 68,
+      "finalScore": 32,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "PHDC",
+      "name": "بالم هيلز للتعمير",
+      "price": 14.92,
+      "priceDisplay": "14.92",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 62,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "PHTV",
+      "name": "بيراميزا للفنادق",
+      "price": 266.88,
+      "priceDisplay": "266.88",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 71,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "PRCL",
       "name": "العامة لمنتجات الخزف والصيني",
-      "price": 33.9,
-      "priceDisplay": "33.90",
+      "price": 33.97,
+      "priceDisplay": "33.97",
       "source": "market",
       "sourceUsed": "market",
-      "pricePrecision": "1/2",
-      "decimals": 1,
+      "pricePrecision": "2/2",
+      "decimals": 2,
       "precisionRisk": false,
       "conflict": true,
       "stale": false,
@@ -3127,7 +3716,31 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "PRDC",
+      "name": "بايونيرز بروبرتيز",
+      "price": 8.16,
+      "priceDisplay": "8.16",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "PRMH",
@@ -3151,156 +3764,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "RACC",
       "name": "راية لخدمات مراكز الاتصالات",
-      "price": 9.96,
-      "priceDisplay": "9.96",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 60,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "RAKT",
-      "name": "راكتا",
-      "price": 21.67,
-      "priceDisplay": "21.67",
-      "source": "history",
-      "sourceUsed": "history",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": true,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "السعر قديم أو يحتاج تحديث",
-      "finalGrade": "Watch",
-      "finalScore": 59,
-      "sourceTags": [
-        "cache",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-04T18:29:57.883Z"
-    },
-    {
-      "symbol": "RAYA",
-      "name": "راية القابضة",
-      "price": 7.88,
-      "priceDisplay": "7.88",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 54,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ROTO",
-      "name": "رواد السياحة",
-      "price": 42.92,
-      "priceDisplay": "42.92",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 61,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "RREI",
-      "name": "العربية للاستثمارات العقارية",
-      "price": 3.55,
-      "priceDisplay": "3.55",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 53,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "RTVC",
-      "name": "رمكو لإنشاء القرى السياحية",
-      "price": 3.84,
-      "priceDisplay": "3.84",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 59,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "RUBX",
-      "name": "روبيكس",
-      "price": 13.28,
-      "priceDisplay": "13.28",
+      "price": 10.2,
+      "priceDisplay": "10.20",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3318,13 +3788,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "SAUD",
-      "name": "بنك البركة مصر",
-      "price": 21.36,
-      "priceDisplay": "21.36",
+      "symbol": "RAKT",
+      "name": "راكتا",
+      "price": 22.75,
+      "priceDisplay": "22.75",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3336,19 +3806,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 52,
+      "finalScore": 63,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "SCEM",
-      "name": "سيناء للأسمنت",
-      "price": 65.02,
-      "priceDisplay": "65.02",
+      "symbol": "RAYA",
+      "name": "راية القابضة",
+      "price": 8.23,
+      "priceDisplay": "8.23",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3360,67 +3830,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 54,
+      "finalScore": 56,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "SCFM",
-      "name": "مطاحن جنوب القاهرة والجيزة",
-      "price": 243.97,
-      "priceDisplay": "243.97",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 23,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "SCTS",
-      "name": "قناة السويس لتوطين التكنولوجيا",
-      "price": 621.33,
-      "priceDisplay": "621.33",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 67,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "SIPC",
-      "name": "سبأ الدولية للأدوية",
-      "price": 3.42,
-      "priceDisplay": "3.42",
+      "symbol": "RMDA",
+      "name": "راميدا",
+      "price": 5.08,
+      "priceDisplay": "5.08",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3438,13 +3860,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "SKPC",
-      "name": "سيدي كرير للبتروكيماويات",
-      "price": 16.1,
-      "priceDisplay": "16.10",
+      "symbol": "ROTO",
+      "name": "رواد السياحة",
+      "price": 42.75,
+      "priceDisplay": "42.75",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3456,91 +3878,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 53,
+      "finalScore": 61,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "SNFC",
-      "name": "الشرقية الوطنية للأمن الغذائي",
-      "price": 11.91,
-      "priceDisplay": "11.91",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 45,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "SPIN",
-      "name": "سبينالكس",
-      "price": 14.49,
-      "priceDisplay": "14.49",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 24,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "SUGR",
-      "name": "الدلتا للسكر",
-      "price": 47.45,
-      "priceDisplay": "47.45",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": true,
-      "stale": false,
-      "executionAllowed": false,
-      "executionState": "blocked",
-      "blockReason": "تعارض بين مصادر السعر",
-      "finalGrade": "Blocked",
-      "finalScore": 52,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "SVCE",
-      "name": "جنوب الوادي للأسمنت",
-      "price": 9.72,
-      "priceDisplay": "9.72",
+      "symbol": "RREI",
+      "name": "العربية للاستثمارات العقارية",
+      "price": 3.56,
+      "priceDisplay": "3.56",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3558,13 +3908,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "TALM",
-      "name": "تعليم لخدمات الإدارة",
-      "price": 15.96,
-      "priceDisplay": "15.96",
+      "symbol": "RTVC",
+      "name": "رمكو لإنشاء القرى السياحية",
+      "price": 3.85,
+      "priceDisplay": "3.85",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3576,19 +3926,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 53,
+      "finalScore": 57,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "TANM",
-      "name": "تنمية للاستثمار العقاري",
-      "price": 5.37,
-      "priceDisplay": "5.37",
+      "symbol": "RUBX",
+      "name": "روبيكس",
+      "price": 13.87,
+      "priceDisplay": "13.87",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3606,7 +3956,270 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "SAUD",
+      "name": "بنك البركة مصر",
+      "price": 21.72,
+      "priceDisplay": "21.72",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "SCEM",
+      "name": "سيناء للأسمنت",
+      "price": 65.07,
+      "priceDisplay": "65.07",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 51,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "SCFM",
+      "name": "مطاحن جنوب القاهرة والجيزة",
+      "price": 242.02,
+      "priceDisplay": "242.02",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 30,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "SEIG",
+      "name": "السعودية المصرية للاستثمار والتمويل",
+      "price": 190.54,
+      "priceDisplay": "190.54",
+      "source": "history",
+      "sourceUsed": "history",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": true,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "السعر قديم أو يحتاج تحديث",
+      "finalGrade": "P3",
+      "finalScore": 71,
+      "sourceTags": [
+        "cache",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-04T18:29:57.883Z"
+    },
+    {
+      "symbol": "SIPC",
+      "name": "سبأ الدولية للأدوية",
+      "price": 3.45,
+      "priceDisplay": "3.45",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 55,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "SKPC",
+      "name": "سيدي كرير للبتروكيماويات",
+      "price": 16.16,
+      "priceDisplay": "16.16",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 62,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "SNFC",
+      "name": "الشرقية الوطنية للأمن الغذائي",
+      "price": 11.66,
+      "priceDisplay": "11.66",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 42,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "SPIN",
+      "name": "سبينالكس",
+      "price": 14.56,
+      "priceDisplay": "14.56",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 31,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "SVCE",
+      "name": "جنوب الوادي للأسمنت",
+      "price": 9.78,
+      "priceDisplay": "9.78",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "SWDY",
+      "name": "السويدي إليكتريك",
+      "price": 87.99,
+      "priceDisplay": "87.99",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 60,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "TANM",
+      "name": "تنمية للاستثمار العقاري",
+      "price": 5.34,
+      "priceDisplay": "5.34",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 56,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "TAQA",
@@ -3630,37 +4243,85 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "TMGH",
+      "name": "مجموعة طلعت مصطفى",
+      "price": 97.37,
+      "priceDisplay": "97.37",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 62,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "TYCN",
       "name": "تايكون القابضة",
-      "price": 27.4,
-      "priceDisplay": "27.40",
+      "price": 27.02,
+      "priceDisplay": "27.02",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
       "decimals": 2,
       "precisionRisk": false,
-      "conflict": false,
+      "conflict": true,
       "stale": false,
       "executionAllowed": false,
       "executionState": "blocked",
-      "blockReason": "توجد قيود تمنع التنفيذ",
+      "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 50,
+      "finalScore": 46,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "UEFM",
+      "name": "مطاحن مصر العليا",
+      "price": 485.52,
+      "priceDisplay": "485.52",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": true,
+      "stale": false,
+      "executionAllowed": false,
+      "executionState": "blocked",
+      "blockReason": "تعارض بين مصادر السعر",
+      "finalGrade": "Blocked",
+      "finalScore": 54,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "UEGC",
       "name": "الصعيد العامة للمقاولات",
-      "price": 1.53,
-      "priceDisplay": "1.53",
+      "price": 1.58,
+      "priceDisplay": "1.58",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3672,19 +4333,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 49,
+      "finalScore": 54,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "UNIT",
       "name": "المتحدة للإسكان",
-      "price": 13.41,
-      "priceDisplay": "13.41",
+      "price": 16.09,
+      "priceDisplay": "16.09",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3696,19 +4357,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 23,
+      "finalScore": 26,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "VALU",
       "name": "فاليو",
-      "price": 12.58,
-      "priceDisplay": "12.58",
+      "price": 12.64,
+      "priceDisplay": "12.64",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3720,19 +4381,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 24,
+      "finalScore": 30,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "VLMRA",
       "name": "فالمور القابضة",
-      "price": 29.25,
-      "priceDisplay": "29.25",
+      "price": 29.65,
+      "priceDisplay": "29.65",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3744,13 +4405,13 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 53,
+      "finalScore": 56,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "WCDF",
@@ -3778,8 +4439,8 @@
     {
       "symbol": "ZEOT",
       "name": "الزيوت المستخلصة",
-      "price": 11.15,
-      "priceDisplay": "11.15",
+      "price": 11.17,
+      "priceDisplay": "11.17",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3797,13 +4458,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ZMID",
       "name": "زهراء المعادي",
-      "price": 6.79,
-      "priceDisplay": "6.79",
+      "price": 6.78,
+      "priceDisplay": "6.78",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3815,43 +4476,19 @@
       "executionState": "blocked",
       "blockReason": "تعارض بين مصادر السعر",
       "finalGrade": "Blocked",
-      "finalScore": 53,
+      "finalScore": 60,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "AALR",
       "name": "العامة لاستصلاح الأراضي والتنمية والتعمير",
-      "price": 206.23,
-      "priceDisplay": "206.23",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P2",
-      "finalScore": 81,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ADPC",
-      "name": "العربية لمنتجات الألبان آراب ديري",
-      "price": 3.47,
-      "priceDisplay": "3.47",
+      "price": 206.68,
+      "priceDisplay": "206.68",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3863,63 +4500,19 @@
       "executionState": "allowed",
       "blockReason": "",
       "finalGrade": "P3",
-      "finalScore": 77,
+      "finalScore": 80,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ADRI",
-      "name": "0,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Arab for Development and Real Estate Investment",
-      "price": 7.26,
-      "priceDisplay": "7.26",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "Risk",
-      "finalScore": 36.2,
-      "sourceTags": [
-        "market"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "AIFI",
-      "name": "50],[300,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Atlas For Investment and Food Industries",
-      "price": 2.01,
-      "priceDisplay": "2.01",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "Risk",
-      "finalScore": 36.9,
-      "sourceTags": [
-        "market"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "AMIA",
       "name": "العربية للمحابس",
-      "price": 8.71,
-      "priceDisplay": "8.71",
+      "price": 8.72,
+      "priceDisplay": "8.72",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -3937,229 +4530,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "APSW",
-      "name": "يونيراب بولفارا",
-      "price": 8.54,
-      "priceDisplay": "8.54",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 78,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "AREH",
-      "name": "المجموعة المصرية العقارية",
-      "price": 1.56,
-      "priceDisplay": "1.56",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 81,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ATLC",
-      "name": "التوفيق للتأجير التمويلي",
-      "price": 5.26,
-      "priceDisplay": "5.26",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 85,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ATQA",
-      "name": "مصر الوطنية للصلب عتاقة",
-      "price": 9.54,
-      "priceDisplay": "9.54",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 78,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "BONY",
-      "name": "بنيان للتنمية والتجارة",
-      "price": 4.91,
-      "priceDisplay": "4.91",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 80,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "BTFH",
-      "name": "بلتون القابضة",
-      "price": 2.99,
-      "priceDisplay": "2.99",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 80,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "CANA",
-      "name": "بنك قناة السويس",
-      "price": 35.74,
-      "priceDisplay": "35.74",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 77,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "CEFM",
-      "name": "مطاحن مصر الوسطى",
-      "price": 100.65,
-      "priceDisplay": "100.65",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 78,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "CNFN",
-      "name": "كونتكت المالية القابضة",
-      "price": 4.77,
-      "priceDisplay": "4.77",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 78,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "DOMT",
-      "name": "دومتي",
-      "price": 27.21,
-      "priceDisplay": "27.21",
+      "symbol": "ARVA",
+      "name": "العربية للصمامات",
+      "price": 10.95,
+      "priceDisplay": "10.95",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -4177,13 +4554,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "DSCW",
-      "name": "دايس للملابس الجاهزة",
-      "price": 1.74,
-      "priceDisplay": "1.74",
+      "symbol": "CIRA",
+      "name": "القاهرة للاستثمار والتنمية العقارية",
+      "price": 28.63,
+      "priceDisplay": "28.63",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -4194,162 +4571,20 @@
       "executionAllowed": true,
       "executionState": "allowed",
       "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 78,
+      "finalGrade": "P2",
+      "finalScore": 88,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "EALR",
       "name": "العامة لاستصلاح الأراضي",
-      "price": 341.09,
-      "priceDisplay": "341.09",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 78,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EAST",
-      "name": "الشرقية إيسترن كومباني",
-      "price": 37.2,
-      "priceDisplay": "37.20",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 81,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EDFM",
-      "name": "مطاحن شرق الدلتا",
-      "price": 320.43,
-      "priceDisplay": "320.43",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "Watch",
-      "finalScore": 37,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EFIC",
-      "name": "المالية والصناعية المصرية",
-      "price": 185.57,
-      "priceDisplay": "185.57",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 79,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "EGAS",
-      "name": "غاز مصر",
-      "price": 49.72,
-      "priceDisplay": "49.72",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 78,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ESRS",
-      "name": "' ### Size: [[320,50],[300,50],[300,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Ezz Steel SAE",
-      "price": 111.57,
-      "priceDisplay": "111.57",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "Risk",
-      "finalScore": 33.4,
-      "sourceTags": [
-        "market"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "FERC",
-      "name": "فيركيم مصر",
-      "price": 74.01,
-      "priceDisplay": "74.01",
+      "price": 342.07,
+      "priceDisplay": "342.07",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -4367,109 +4602,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "FWRY",
-      "name": "فوري لتكنولوجيا البنوك والمدفوعات الإلكترونية",
-      "price": 18.41,
-      "priceDisplay": "18.41",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 81,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "GTWL",
-      "name": "جولدن تكس",
-      "price": 89.38,
-      "priceDisplay": "89.38",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 85,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "IFAP",
-      "name": "الدولية للمحاصيل الزراعية",
-      "price": 19.45,
-      "priceDisplay": "19.45",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P2",
-      "finalScore": 79,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "INFI",
-      "name": "الإسماعيلية الوطنية للصناعات الغذائية",
-      "price": 93.73,
-      "priceDisplay": "93.73",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 79,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ISPH",
-      "name": "ابن سينا فارما",
-      "price": 11.63,
-      "priceDisplay": "11.63",
+      "symbol": "EAST",
+      "name": "الشرقية إيسترن كومباني",
+      "price": 37.38,
+      "priceDisplay": "37.38",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -4487,13 +4626,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "JUFO",
-      "name": "جهينة للصناعات الغذائية",
-      "price": 29.97,
-      "priceDisplay": "29.97",
+      "symbol": "EBSC",
+      "name": "أصول إي إس بي للوساطة",
+      "price": 2.09,
+      "priceDisplay": "2.09",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -4511,7 +4650,175 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "EFIC",
+      "name": "المالية والصناعية المصرية",
+      "price": 185.91,
+      "priceDisplay": "185.91",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": true,
+      "executionState": "allowed",
+      "blockReason": "",
+      "finalGrade": "P3",
+      "finalScore": 78,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "EGSA",
+      "name": "نايل سات",
+      "price": 8.73,
+      "priceDisplay": "8.73",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": true,
+      "executionState": "allowed",
+      "blockReason": "",
+      "finalGrade": "Watch",
+      "finalScore": 44,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ELEC",
+      "name": "الكابلات الكهربائية المصرية",
+      "price": 2.11,
+      "priceDisplay": "2.11",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": true,
+      "executionState": "allowed",
+      "blockReason": "",
+      "finalGrade": "P3",
+      "finalScore": 80,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "HDBK",
+      "name": "بنك التعمير والإسكان",
+      "price": 165.82,
+      "priceDisplay": "165.82",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": true,
+      "executionState": "allowed",
+      "blockReason": "",
+      "finalGrade": "P3",
+      "finalScore": 80,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "HRHO",
+      "name": "إي إف جي القابضة",
+      "price": 27,
+      "priceDisplay": "27.00",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": true,
+      "executionState": "allowed",
+      "blockReason": "",
+      "finalGrade": "P2",
+      "finalScore": 83,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "IFAP",
+      "name": "الدولية للمحاصيل الزراعية",
+      "price": 19.46,
+      "priceDisplay": "19.46",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": true,
+      "executionState": "allowed",
+      "blockReason": "",
+      "finalGrade": "P2",
+      "finalScore": 79,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "ISPH",
+      "name": "ابن سينا فارما",
+      "price": 11.64,
+      "priceDisplay": "11.64",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": true,
+      "executionState": "allowed",
+      "blockReason": "",
+      "finalGrade": "P3",
+      "finalScore": 80,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "KORA",
@@ -4535,31 +4842,7 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "MCQE",
-      "name": "مصر للأسمنت قنا",
-      "price": 172,
-      "priceDisplay": "172.00",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "1/2",
-      "decimals": 1,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 79,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MEGM",
@@ -4583,85 +4866,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "MENA",
-      "name": "مينا للاستثمار السياحي والعقاري",
-      "price": 6.89,
-      "priceDisplay": "6.89",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 78,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "MFSC",
-      "name": "مصر للأسواق الحرة",
-      "price": 49.7,
-      "priceDisplay": "49.70",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 79,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "MICH",
-      "name": "مصر لصناعة الكيماويات",
-      "price": 37.73,
-      "priceDisplay": "37.73",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 80,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MILS",
       "name": "مطاحن شمال القاهرة",
-      "price": 130.29,
-      "priceDisplay": "130.29",
+      "price": 130.05,
+      "priceDisplay": "130.05",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -4679,37 +4890,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "MMAT",
-      "name": "مرسى مرسى علم للتنمية السياحية",
-      "price": 3.53,
-      "priceDisplay": "3.53",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "Watch",
-      "finalScore": 37,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "MPCI",
       "name": "ممفيس للأدوية",
-      "price": 247.32,
-      "priceDisplay": "247.32",
+      "price": 245.51,
+      "priceDisplay": "245.51",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -4721,85 +4908,13 @@
       "executionState": "allowed",
       "blockReason": "",
       "finalGrade": "P3",
-      "finalScore": 81,
+      "finalScore": 82,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "NHPS",
-      "name": "الوطنية للإسكان للنقابات المهنية",
-      "price": 67.54,
-      "priceDisplay": "67.54",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 89,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "OCDI",
-      "name": "سوديك",
-      "price": 25.51,
-      "priceDisplay": "25.51",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 81,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "OCPH",
-      "name": "أكتوبر فارما",
-      "price": 357.65,
-      "priceDisplay": "357.65",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 79,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "OIH",
@@ -4823,13 +4938,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "ORAS",
       "name": "أوراسكوم كونستراكشون",
-      "price": 719.18,
-      "priceDisplay": "719.18",
+      "price": 717.75,
+      "priceDisplay": "717.75",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -4841,91 +4956,67 @@
       "executionState": "allowed",
       "blockReason": "",
       "finalGrade": "P3",
-      "finalScore": 81,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "ORHD",
-      "name": "أوراسكوم للتنمية مصر",
-      "price": 38.17,
-      "priceDisplay": "38.17",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 81,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "PHAR",
-      "name": "إيبيكو",
-      "price": 88.87,
-      "priceDisplay": "88.87",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P3",
-      "finalScore": 78,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "POUL",
-      "name": "القاهرة للدواجن",
-      "price": 37.93,
-      "priceDisplay": "37.93",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P2",
       "finalScore": 82,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "PRDC",
-      "name": "بايونيرز بروبرتيز",
-      "price": 7.75,
-      "priceDisplay": "7.75",
+      "symbol": "PHAR",
+      "name": "إيبيكو",
+      "price": 88.23,
+      "priceDisplay": "88.23",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": true,
+      "executionState": "allowed",
+      "blockReason": "",
+      "finalGrade": "P3",
+      "finalScore": 80,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "POUL",
+      "name": "القاهرة للدواجن",
+      "price": 38.14,
+      "priceDisplay": "38.14",
+      "source": "market",
+      "sourceUsed": "market",
+      "pricePrecision": "2/2",
+      "decimals": 2,
+      "precisionRisk": false,
+      "conflict": false,
+      "stale": false,
+      "executionAllowed": true,
+      "executionState": "allowed",
+      "blockReason": "",
+      "finalGrade": "P3",
+      "finalScore": 81,
+      "sourceTags": [
+        "cache",
+        "market",
+        "recommendations"
+      ],
+      "updatedAt": "2026-07-06T09:47:45.026Z"
+    },
+    {
+      "symbol": "QNBE",
+      "name": "قطر الوطني الأهلي",
+      "price": 52.83,
+      "priceDisplay": "52.83",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -4943,13 +5034,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "QNBE",
-      "name": "قطر الوطني الأهلي",
-      "price": 52.65,
-      "priceDisplay": "52.65",
+      "symbol": "SCTS",
+      "name": "قناة السويس لتوطين التكنولوجيا",
+      "price": 625.04,
+      "priceDisplay": "625.04",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -4961,43 +5052,19 @@
       "executionState": "allowed",
       "blockReason": "",
       "finalGrade": "P3",
-      "finalScore": 77,
+      "finalScore": 86,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "RMDA",
-      "name": "راميدا",
-      "price": 5.02,
-      "priceDisplay": "5.02",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P2",
-      "finalScore": 81,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "SDTI",
       "name": "شرم دريمز",
-      "price": 46.59,
-      "priceDisplay": "46.59",
+      "price": 46.5,
+      "priceDisplay": "46.50",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -5015,31 +5082,7 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "SEIG",
-      "name": "السعودية المصرية للاستثمار والتمويل",
-      "price": 190.31,
-      "priceDisplay": "190.31",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P2",
-      "finalScore": 80,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "SEIGA",
@@ -5063,13 +5106,13 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "SMFR",
       "name": "سماد مصر",
-      "price": 195.23,
-      "priceDisplay": "195.23",
+      "price": 195.86,
+      "priceDisplay": "195.86",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -5081,19 +5124,19 @@
       "executionState": "allowed",
       "blockReason": "",
       "finalGrade": "P3",
-      "finalScore": 76,
+      "finalScore": 78,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "SWDY",
-      "name": "السويدي إليكتريك",
-      "price": 87.51,
-      "priceDisplay": "87.51",
+      "symbol": "SUGR",
+      "name": "الدلتا للسكر",
+      "price": 47.25,
+      "priceDisplay": "47.25",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -5105,19 +5148,19 @@
       "executionState": "allowed",
       "blockReason": "",
       "finalGrade": "P3",
-      "finalScore": 80,
+      "finalScore": 79,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
-      "symbol": "TMGH",
-      "name": "مجموعة طلعت مصطفى",
-      "price": 95.39,
-      "priceDisplay": "95.39",
+      "symbol": "TALM",
+      "name": "تعليم لخدمات الإدارة",
+      "price": 15.75,
+      "priceDisplay": "15.75",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -5128,20 +5171,20 @@
       "executionAllowed": true,
       "executionState": "allowed",
       "blockReason": "",
-      "finalGrade": "Watch",
-      "finalScore": 74,
+      "finalGrade": "P3",
+      "finalScore": 79,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "UBEE",
       "name": "البنك المتحد",
-      "price": 13.39,
-      "priceDisplay": "13.39",
+      "price": 13.42,
+      "priceDisplay": "13.42",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -5153,43 +5196,19 @@
       "executionState": "allowed",
       "blockReason": "",
       "finalGrade": "P1",
-      "finalScore": 90,
+      "finalScore": 88,
       "sourceTags": [
         "cache",
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
-    },
-    {
-      "symbol": "UEFM",
-      "name": "مطاحن مصر العليا",
-      "price": 477.74,
-      "priceDisplay": "477.74",
-      "source": "market",
-      "sourceUsed": "market",
-      "pricePrecision": "2/2",
-      "decimals": 2,
-      "precisionRisk": false,
-      "conflict": false,
-      "stale": false,
-      "executionAllowed": true,
-      "executionState": "allowed",
-      "blockReason": "",
-      "finalGrade": "P2",
-      "finalScore": 80,
-      "sourceTags": [
-        "cache",
-        "market",
-        "recommendations"
-      ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     },
     {
       "symbol": "WKOL",
       "name": "وادي كوم أمبو",
-      "price": 282.7,
-      "priceDisplay": "282.70",
+      "price": 282.21,
+      "priceDisplay": "282.21",
       "source": "market",
       "sourceUsed": "market",
       "pricePrecision": "2/2",
@@ -5207,7 +5226,7 @@
         "market",
         "recommendations"
       ],
-      "updatedAt": "2026-07-05T19:58:06.906Z"
+      "updatedAt": "2026-07-06T09:47:45.026Z"
     }
   ],
   "note": "Execution gate: any sub-1 EGP price without verified 0.001 precision is blocked from executable recommendations."
