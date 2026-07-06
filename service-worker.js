@@ -1,5 +1,5 @@
-/* EGX Pro Hub V9.2 Recommendation Safety Governor — cache rescue service worker */
-const CACHE_NAME = 'egx-pro-hub-v9-2-recommendation-safety-governor';
+/* EGX Pro Hub V9.3 Execution Decision Queue — cache rescue service worker */
+const CACHE_NAME = 'egx-pro-hub-v9-3-execution-decision-queue';
 self.addEventListener('install', event => {
   self.skipWaiting();
 });
