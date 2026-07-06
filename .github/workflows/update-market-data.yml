@@ -170,16 +170,6 @@ jobs:
       - name: Recommendation validation panel
         run: node scripts/build-recommendation-validation-panel.js || echo "Recommendation validation panel skipped"
 
-      # V8.10.1 Multi-Source Intelligence Collector
-      - name: Collect Mubasher analysis tools
-        run: node scripts/collect-mubasher-analysis-tools.js || echo "Mubasher analysis tools collector skipped"
-
-      - name: Build multi-source intelligence
-        run: node scripts/build-multi-source-intelligence.js || echo "Multi-source intelligence skipped"
-
-      - name: Apply multi-source intelligence to ranking
-        run: node scripts/apply-multisource-intelligence-to-ranking.js || echo "Multi-source ranking gate skipped"
-
       - name: Optional legacy intelligence reports
         run: node scripts/build-v52-intelligence.js || echo "Legacy intelligence builder skipped"
 
