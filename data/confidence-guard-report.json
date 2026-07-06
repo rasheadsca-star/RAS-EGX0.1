@@ -1,16 +1,16 @@
 {
   "ok": true,
   "engine": "v8_9_1_confidence_guard",
-  "generatedAt": "2026-07-06T10:26:32.051Z",
+  "generatedAt": "2026-07-06T11:46:45.527Z",
   "score": 59,
   "state": "bad",
   "summary": {
     "historyAverageSessions": 5,
     "full50": 0,
     "totalSymbols": 224,
-    "sourceCoveragePct": 92.4,
-    "stalePrices": 11,
-    "priceConflicts": 164,
+    "sourceCoveragePct": 93.3,
+    "stalePrices": 9,
+    "priceConflicts": 160,
     "guards": 4
   },
   "guards": [
@@ -25,21 +25,21 @@
       "id": "coverage_partial",
       "level": "info",
       "title": "تغطية المصدر أقل من 95%",
-      "message": "تغطية آخر جلب 92.4%",
+      "message": "تغطية آخر جلب 93.3%",
       "action": "لا تعمل Reset؛ استمر بالتحديث التدريجي"
     },
     {
       "id": "stale_prices",
       "level": "info",
       "title": "بعض الأسعار قديمة",
-      "message": "عدد الأسعار القديمة/غير المؤكدة 11",
+      "message": "عدد الأسعار القديمة/غير المؤكدة 9",
       "action": "راجع مركز تدقيق الأسعار قبل قرار سريع"
     },
     {
       "id": "price_conflict",
       "level": "critical",
       "title": "تعارض أسعار",
-      "message": "عدد التعارضات 164",
+      "message": "عدد التعارضات 160",
       "action": "امنع ترقية أي سهم متعارض إلى تنفيذ"
     }
   ],
@@ -50,6 +50,32 @@
       "grade": "P1",
       "rawProbability": 87,
       "guardedProbability": 81,
+      "finalScore": 88,
+      "historySessions": 5,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 5/50"
+      ]
+    },
+    {
+      "symbol": "HRHO",
+      "name": "إي إف جي القابضة",
+      "grade": "P1",
+      "rawProbability": 83,
+      "guardedProbability": 77,
+      "finalScore": 83,
+      "historySessions": 6,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 6/50"
+      ]
+    },
+    {
+      "symbol": "MPCI",
+      "name": "ممفيس للأدوية",
+      "grade": "P2",
+      "rawProbability": 88,
+      "guardedProbability": 82,
       "finalScore": 88,
       "historySessions": 5,
       "priceState": "ok",
@@ -72,8 +98,8 @@
       ]
     },
     {
-      "symbol": "HRHO",
-      "name": "إي إف جي القابضة",
+      "symbol": "MFPC",
+      "name": "موبكو",
       "grade": "P2",
       "rawProbability": 83,
       "guardedProbability": 77,
@@ -99,6 +125,32 @@
       ]
     },
     {
+      "symbol": "DOMT",
+      "name": "دومتي",
+      "grade": "P2",
+      "rawProbability": 81,
+      "guardedProbability": 75,
+      "finalScore": 81,
+      "historySessions": 6,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 6/50"
+      ]
+    },
+    {
+      "symbol": "SEIG",
+      "name": "السعودية المصرية للاستثمار والتمويل",
+      "grade": "P2",
+      "rawProbability": 80,
+      "guardedProbability": 74,
+      "finalScore": 80,
+      "historySessions": 5,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 5/50"
+      ]
+    },
+    {
       "symbol": "HDBK",
       "name": "بنك التعمير والإسكان",
       "grade": "P3",
@@ -113,26 +165,25 @@
       ]
     },
     {
-      "symbol": "SCTS",
-      "name": "قناة السويس لتوطين التكنولوجيا",
-      "grade": "P3",
-      "rawProbability": 86,
-      "guardedProbability": 75,
-      "finalScore": 86,
-      "historySessions": 5,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "قيود: R/R ضعيف"
-      ]
-    },
-    {
       "symbol": "KORA",
       "name": "قرة للطاقة",
       "grade": "P3",
-      "rawProbability": 85,
-      "guardedProbability": 74,
-      "finalScore": 83,
+      "rawProbability": 86,
+      "guardedProbability": 80,
+      "finalScore": 85,
+      "historySessions": 5,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 5/50"
+      ]
+    },
+    {
+      "symbol": "ASCM",
+      "name": "أسيك للتعدين أسكوم",
+      "grade": "P3",
+      "rawProbability": 84,
+      "guardedProbability": 73,
+      "finalScore": 82,
       "historySessions": 5,
       "priceState": "ok",
       "notes": [
@@ -169,26 +220,40 @@
       ]
     },
     {
+      "symbol": "AMOC",
+      "name": "الإسكندرية للزيوت المعدنية",
+      "grade": "P3",
+      "rawProbability": 83,
+      "guardedProbability": 72,
+      "finalScore": 80,
+      "historySessions": 6,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 6/50",
+        "قيود: R/R ضعيف"
+      ]
+    },
+    {
       "symbol": "OIH",
       "name": "أوراسكوم للاستثمار القابضة",
       "grade": "P3",
       "rawProbability": 83,
       "guardedProbability": 72,
-      "finalScore": 80,
+      "finalScore": 79,
       "historySessions": 5,
       "priceState": "ok",
       "notes": [
         "تاريخ محدود 5/50",
-        "قيود: R/R ضعيف"
+        "قيود: R/R ضعيف، لا يوجد ربح واضح"
       ]
     },
     {
-      "symbol": "POUL",
-      "name": "القاهرة للدواجن",
+      "symbol": "CIRA",
+      "name": "القاهرة للاستثمار والتنمية العقارية",
       "grade": "P3",
       "rawProbability": 82,
       "guardedProbability": 76,
-      "finalScore": 82,
+      "finalScore": 81,
       "historySessions": 6,
       "priceState": "ok",
       "notes": [
@@ -196,22 +261,22 @@
       ]
     },
     {
-      "symbol": "MPCI",
-      "name": "ممفيس للأدوية",
+      "symbol": "CCAP",
+      "name": "القلعة للاستثمارات المالية",
       "grade": "P3",
       "rawProbability": 82,
       "guardedProbability": 71,
       "finalScore": 81,
-      "historySessions": 5,
+      "historySessions": 6,
       "priceState": "ok",
       "notes": [
-        "تاريخ محدود 5/50",
+        "تاريخ محدود 6/50",
         "قيود: R/R ضعيف"
       ]
     },
     {
-      "symbol": "AMIA",
-      "name": "العربية للمحابس",
+      "symbol": "SVCE",
+      "name": "جنوب الوادي للأسمنت",
       "grade": "P3",
       "rawProbability": 82,
       "guardedProbability": 71,
@@ -226,6 +291,20 @@
     {
       "symbol": "MILS",
       "name": "مطاحن شمال القاهرة",
+      "grade": "P3",
+      "rawProbability": 82,
+      "guardedProbability": 71,
+      "finalScore": 79,
+      "historySessions": 5,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 5/50",
+        "قيود: R/R ضعيف"
+      ]
+    },
+    {
+      "symbol": "OCPH",
+      "name": "أكتوبر فارما",
       "grade": "P3",
       "rawProbability": 82,
       "guardedProbability": 71,
@@ -266,36 +345,21 @@
       ]
     },
     {
-      "symbol": "EFIC",
-      "name": "المالية والصناعية المصرية",
+      "symbol": "ARVA",
+      "name": "العربية للصمامات",
       "grade": "P3",
-      "rawProbability": 82,
-      "guardedProbability": 71,
-      "finalScore": 78,
+      "rawProbability": 81,
+      "guardedProbability": 75,
+      "finalScore": 80,
       "historySessions": 5,
       "priceState": "ok",
       "notes": [
-        "تاريخ محدود 5/50",
-        "قيود: R/R ضعيف"
+        "تاريخ محدود 5/50"
       ]
     },
     {
-      "symbol": "AMOC",
-      "name": "الإسكندرية للزيوت المعدنية",
-      "grade": "P3",
-      "rawProbability": 82,
-      "guardedProbability": 71,
-      "finalScore": 78,
-      "historySessions": 6,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 6/50",
-        "قيود: R/R ضعيف"
-      ]
-    },
-    {
-      "symbol": "AALR",
-      "name": "العامة لاستصلاح الأراضي والتنمية والتعمير",
+      "symbol": "ELEC",
+      "name": "الكابلات الكهربائية المصرية",
       "grade": "P3",
       "rawProbability": 81,
       "guardedProbability": 75,
@@ -321,20 +385,6 @@
       ]
     },
     {
-      "symbol": "EALR",
-      "name": "العامة لاستصلاح الأراضي",
-      "grade": "P3",
-      "rawProbability": 81,
-      "guardedProbability": 70,
-      "finalScore": 77,
-      "historySessions": 5,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "قيود: R/R ضعيف"
-      ]
-    },
-    {
       "symbol": "EGAS",
       "name": "غاز مصر",
       "grade": "P3",
@@ -349,26 +399,12 @@
       ]
     },
     {
-      "symbol": "SDTI",
-      "name": "شرم دريمز",
-      "grade": "P3",
-      "rawProbability": 81,
-      "guardedProbability": 70,
-      "finalScore": 77,
-      "historySessions": 5,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "قيود: R/R ضعيف"
-      ]
-    },
-    {
-      "symbol": "WKOL",
-      "name": "وادي كوم أمبو",
+      "symbol": "EBSC",
+      "name": "أصول إي إس بي للوساطة",
       "grade": "P3",
       "rawProbability": 80,
       "guardedProbability": 69,
-      "finalScore": 76,
+      "finalScore": 78,
       "historySessions": 5,
       "priceState": "ok",
       "notes": [
@@ -391,21 +427,6 @@
       ]
     },
     {
-      "symbol": "SEIG",
-      "name": "السعودية المصرية للاستثمار والتمويل",
-      "grade": "P3",
-      "rawProbability": 72,
-      "guardedProbability": 53,
-      "finalScore": 71,
-      "historySessions": 5,
-      "priceState": "stale",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "سعر قديم",
-        "قيود: سعر قديم"
-      ]
-    },
-    {
       "symbol": "ELNA",
       "name": "النصر لتصنيع الحاصلات الزراعية",
       "grade": "P3",
@@ -421,12 +442,12 @@
       ]
     },
     {
-      "symbol": "SMFR",
-      "name": "سماد مصر",
+      "symbol": "QNBE",
+      "name": "قطر الوطني الأهلي",
       "grade": "Watch",
-      "rawProbability": 74,
-      "guardedProbability": 63,
-      "finalScore": 70,
+      "rawProbability": 76,
+      "guardedProbability": 65,
+      "finalScore": 71,
       "historySessions": 5,
       "priceState": "ok",
       "notes": [
@@ -438,9 +459,9 @@
       "symbol": "MMAT",
       "name": "مرسى مرسى علم للتنمية السياحية",
       "grade": "Watch",
-      "rawProbability": 51,
-      "guardedProbability": 32,
-      "finalScore": 49,
+      "rawProbability": 52,
+      "guardedProbability": 33,
+      "finalScore": 51,
       "historySessions": 3,
       "priceState": "stale",
       "notes": [
@@ -453,14 +474,14 @@
       "symbol": "EGSA",
       "name": "نايل سات",
       "grade": "Watch",
-      "rawProbability": 46,
-      "guardedProbability": 35,
-      "finalScore": 41,
+      "rawProbability": 51,
+      "guardedProbability": 40,
+      "finalScore": 50,
       "historySessions": 0,
       "priceState": "ok",
       "notes": [
         "تاريخ محدود 0/50",
-        "قيود: R/R ضعيف، خطة مشتقة محافظة"
+        "قيود: خطة مشتقة محافظة"
       ]
     },
     {
@@ -563,18 +584,93 @@
       ]
     },
     {
-      "symbol": "GBCO",
-      "name": "جي بي كوربوريشن",
+      "symbol": "ORAS",
+      "name": "أوراسكوم كونستراكشون",
       "grade": "Blocked",
-      "rawProbability": 72,
-      "guardedProbability": 36,
-      "finalScore": 74,
+      "rawProbability": 74,
+      "guardedProbability": 38,
+      "finalScore": 76,
       "historySessions": 6,
       "priceState": "conflict",
       "notes": [
         "تاريخ محدود 6/50",
         "تعارض سعر",
-        "قيود: تعارض سعر، خطة مشتقة محافظة"
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "GBCO",
+      "name": "جي بي كوربوريشن",
+      "grade": "Blocked",
+      "rawProbability": 73,
+      "guardedProbability": 37,
+      "finalScore": 77,
+      "historySessions": 6,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 6/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "RMDA",
+      "name": "راميدا",
+      "grade": "Blocked",
+      "rawProbability": 71,
+      "guardedProbability": 35,
+      "finalScore": 73,
+      "historySessions": 6,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 6/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "MFSC",
+      "name": "مصر للأسواق الحرة",
+      "grade": "Blocked",
+      "rawProbability": 70,
+      "guardedProbability": 34,
+      "finalScore": 72,
+      "historySessions": 5,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "PHTV",
+      "name": "بيراميزا للفنادق",
+      "grade": "Blocked",
+      "rawProbability": 70,
+      "guardedProbability": 34,
+      "finalScore": 71,
+      "historySessions": 5,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "NIPH",
+      "name": "النيل للأدوية",
+      "grade": "Blocked",
+      "rawProbability": 70,
+      "guardedProbability": 34,
+      "finalScore": 69,
+      "historySessions": 6,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 6/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف"
       ]
     },
     {
@@ -593,8 +689,8 @@
       ]
     },
     {
-      "symbol": "FWRY",
-      "name": "فوري لتكنولوجيا البنوك والمدفوعات الإلكترونية",
+      "symbol": "TMGH",
+      "name": "مجموعة طلعت مصطفى",
       "grade": "Blocked",
       "rawProbability": 70,
       "guardedProbability": 34,
@@ -623,36 +719,6 @@
       ]
     },
     {
-      "symbol": "NIPH",
-      "name": "النيل للأدوية",
-      "grade": "Blocked",
-      "rawProbability": 70,
-      "guardedProbability": 34,
-      "finalScore": 69,
-      "historySessions": 6,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 6/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ]
-    },
-    {
-      "symbol": "TMGH",
-      "name": "مجموعة طلعت مصطفى",
-      "grade": "Blocked",
-      "rawProbability": 70,
-      "guardedProbability": 34,
-      "finalScore": 68,
-      "historySessions": 6,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 6/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
-      ]
-    },
-    {
       "symbol": "AXPH",
       "name": "الإسكندرية للأدوية",
       "grade": "Blocked",
@@ -668,53 +734,23 @@
       ]
     },
     {
-      "symbol": "ARVA",
-      "name": "العربية للصمامات",
+      "symbol": "EGCH",
+      "name": "كيما",
       "grade": "Blocked",
       "rawProbability": 69,
       "guardedProbability": 33,
-      "finalScore": 69,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ]
-    },
-    {
-      "symbol": "PHTV",
-      "name": "بيراميزا للفنادق",
-      "grade": "Blocked",
-      "rawProbability": 69,
-      "guardedProbability": 33,
-      "finalScore": 69,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ]
-    },
-    {
-      "symbol": "EASB",
-      "name": "ثمار للوساطة",
-      "grade": "Blocked",
-      "rawProbability": 69,
-      "guardedProbability": 33,
-      "finalScore": 68,
+      "finalScore": 67,
       "historySessions": 6,
       "priceState": "conflict",
       "notes": [
         "تاريخ محدود 6/50",
         "تعارض سعر",
-        "قيود: تعارض سعر"
+        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
       ]
     },
     {
-      "symbol": "VLMRA",
-      "name": "فالمور القابضة",
+      "symbol": "EMFD",
+      "name": "إعمار مصر",
       "grade": "Blocked",
       "rawProbability": 69,
       "guardedProbability": 33,
@@ -723,6 +759,36 @@
       "priceState": "conflict",
       "notes": [
         "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
+      ]
+    },
+    {
+      "symbol": "FWRY",
+      "name": "فوري لتكنولوجيا البنوك والمدفوعات الإلكترونية",
+      "grade": "Blocked",
+      "rawProbability": 69,
+      "guardedProbability": 33,
+      "finalScore": 67,
+      "historySessions": 6,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 6/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
+      ]
+    },
+    {
+      "symbol": "HELI",
+      "name": "مصر الجديدة للإسكان والتعمير",
+      "grade": "Blocked",
+      "rawProbability": 69,
+      "guardedProbability": 33,
+      "finalScore": 67,
+      "historySessions": 6,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 6/50",
         "تعارض سعر",
         "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
       ]
@@ -758,27 +824,12 @@
       ]
     },
     {
-      "symbol": "HELI",
-      "name": "مصر الجديدة للإسكان والتعمير",
-      "grade": "Blocked",
-      "rawProbability": 69,
-      "guardedProbability": 33,
-      "finalScore": 67,
-      "historySessions": 6,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 6/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
-      ]
-    },
-    {
       "symbol": "LCSW",
       "name": "ليسيكو مصر",
       "grade": "Blocked",
       "rawProbability": 69,
       "guardedProbability": 33,
-      "finalScore": 67,
+      "finalScore": 66,
       "historySessions": 6,
       "priceState": "conflict",
       "notes": [
@@ -788,53 +839,23 @@
       ]
     },
     {
-      "symbol": "ZMID",
-      "name": "زهراء المعادي",
-      "grade": "Blocked",
-      "rawProbability": 69,
-      "guardedProbability": 33,
-      "finalScore": 67,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
-      ]
-    },
-    {
-      "symbol": "GTWL",
-      "name": "جولدن تكس",
-      "grade": "Blocked",
-      "rawProbability": 69,
-      "guardedProbability": 33,
-      "finalScore": 67,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ]
-    },
-    {
-      "symbol": "ISMQ",
-      "name": "الحديد والصلب للمناجم والمحاجر",
+      "symbol": "EGTS",
+      "name": "المصرية للمنتجعات السياحية",
       "grade": "Blocked",
       "rawProbability": 69,
       "guardedProbability": 33,
       "finalScore": 66,
-      "historySessions": 5,
+      "historySessions": 6,
       "priceState": "conflict",
       "notes": [
-        "تاريخ محدود 5/50",
+        "تاريخ محدود 6/50",
         "تعارض سعر",
         "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
       ]
     },
     {
-      "symbol": "RAYA",
-      "name": "راية القابضة",
+      "symbol": "OCDI",
+      "name": "سوديك",
       "grade": "Blocked",
       "rawProbability": 69,
       "guardedProbability": 33,
@@ -878,8 +899,23 @@
       ]
     },
     {
-      "symbol": "GSSC",
-      "name": "الصوامع والتخزين",
+      "symbol": "GTWL",
+      "name": "جولدن تكس",
+      "grade": "Blocked",
+      "rawProbability": 68,
+      "guardedProbability": 32,
+      "finalScore": 68,
+      "historySessions": 5,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ]
+    },
+    {
+      "symbol": "SCTS",
+      "name": "قناة السويس لتوطين التكنولوجيا",
       "grade": "Blocked",
       "rawProbability": 68,
       "guardedProbability": 32,
@@ -889,7 +925,7 @@
       "notes": [
         "تاريخ محدود 5/50",
         "تعارض سعر",
-        "قيود: تعارض سعر، خطة مشتقة محافظة"
+        "قيود: تعارض سعر، R/R ضعيف"
       ]
     },
     {
@@ -923,16 +959,31 @@
       ]
     },
     {
-      "symbol": "EFID",
-      "name": "إيديتا للصناعات الغذائية",
+      "symbol": "CPCI",
+      "name": "القاهرة للأدوية",
       "grade": "Blocked",
       "rawProbability": 68,
       "guardedProbability": 32,
       "finalScore": 66,
-      "historySessions": 6,
+      "historySessions": 5,
       "priceState": "conflict",
       "notes": [
-        "تاريخ محدود 6/50",
+        "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف"
+      ]
+    },
+    {
+      "symbol": "CERA",
+      "name": "العربية للخزف سيراميكا ريماس",
+      "grade": "Blocked",
+      "rawProbability": 68,
+      "guardedProbability": 32,
+      "finalScore": 66,
+      "historySessions": 5,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 5/50",
         "تعارض سعر",
         "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
       ]
@@ -953,8 +1004,23 @@
       ]
     },
     {
-      "symbol": "EGCH",
-      "name": "كيما",
+      "symbol": "MCQE",
+      "name": "مصر للأسمنت قنا",
+      "grade": "Blocked",
+      "rawProbability": 68,
+      "guardedProbability": 32,
+      "finalScore": 66,
+      "historySessions": 6,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 6/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
+      ]
+    },
+    {
+      "symbol": "EFID",
+      "name": "إيديتا للصناعات الغذائية",
       "grade": "Blocked",
       "rawProbability": 68,
       "guardedProbability": 32,
@@ -983,8 +1049,53 @@
       ]
     },
     {
+      "symbol": "VLMRA",
+      "name": "فالمور القابضة",
+      "grade": "Blocked",
+      "rawProbability": 68,
+      "guardedProbability": 32,
+      "finalScore": 66,
+      "historySessions": 5,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
+      ]
+    },
+    {
+      "symbol": "MCRO",
+      "name": "ماكرو جروب",
+      "grade": "Blocked",
+      "rawProbability": 68,
+      "guardedProbability": 32,
+      "finalScore": 65,
+      "historySessions": 5,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
+      ]
+    },
+    {
       "symbol": "MAAL",
       "name": "مرسيليا المصرية الخليجية",
+      "grade": "Blocked",
+      "rawProbability": 68,
+      "guardedProbability": 32,
+      "finalScore": 65,
+      "historySessions": 5,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
+      ]
+    },
+    {
+      "symbol": "EEII",
+      "name": "العربية للصناعات الهندسية",
       "grade": "Blocked",
       "rawProbability": 68,
       "guardedProbability": 32,
@@ -1008,51 +1119,6 @@
       "priceState": "conflict",
       "notes": [
         "تاريخ محدود 6/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
-      ]
-    },
-    {
-      "symbol": "EEII",
-      "name": "العربية للصناعات الهندسية",
-      "grade": "Blocked",
-      "rawProbability": 68,
-      "guardedProbability": 32,
-      "finalScore": 65,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
-      ]
-    },
-    {
-      "symbol": "EGTS",
-      "name": "المصرية للمنتجعات السياحية",
-      "grade": "Blocked",
-      "rawProbability": 68,
-      "guardedProbability": 32,
-      "finalScore": 65,
-      "historySessions": 6,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 6/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
-      ]
-    },
-    {
-      "symbol": "EFIH",
-      "name": "إي فاينانس",
-      "grade": "Blocked",
-      "rawProbability": 68,
-      "guardedProbability": 32,
-      "finalScore": 65,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
         "تعارض سعر",
         "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
       ]
@@ -1088,6 +1154,21 @@
       ]
     },
     {
+      "symbol": "EFIH",
+      "name": "إي فاينانس",
+      "grade": "Blocked",
+      "rawProbability": 68,
+      "guardedProbability": 32,
+      "finalScore": 64,
+      "historySessions": 5,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 5/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
+      ]
+    },
+    {
       "symbol": "ELSH",
       "name": "الشمس للإسكان والتعمير",
       "grade": "Blocked",
@@ -1103,38 +1184,8 @@
       ]
     },
     {
-      "symbol": "MPCO",
-      "name": "المنصورة للدواجن",
-      "grade": "Blocked",
-      "rawProbability": 67,
-      "guardedProbability": 31,
-      "finalScore": 66,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ]
-    },
-    {
-      "symbol": "ORAS",
-      "name": "أوراسكوم كونستراكشون",
-      "grade": "Blocked",
-      "rawProbability": 67,
-      "guardedProbability": 31,
-      "finalScore": 66,
-      "historySessions": 6,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 6/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ]
-    },
-    {
-      "symbol": "DGTZ",
-      "name": "ديجيتايز للاستثمار والتقنية",
+      "symbol": "AFMC",
+      "name": "مطاحن ومخابز الإسكندرية",
       "grade": "Blocked",
       "rawProbability": 67,
       "guardedProbability": 31,
@@ -1145,66 +1196,6 @@
         "تاريخ محدود 5/50",
         "تعارض سعر",
         "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
-      ]
-    },
-    {
-      "symbol": "ALUM",
-      "name": "الألومنيوم العربية",
-      "grade": "Blocked",
-      "rawProbability": 67,
-      "guardedProbability": 31,
-      "finalScore": 65,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
-      ]
-    },
-    {
-      "symbol": "UEGC",
-      "name": "الصعيد العامة للمقاولات",
-      "grade": "Blocked",
-      "rawProbability": 67,
-      "guardedProbability": 31,
-      "finalScore": 64,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
-      ]
-    },
-    {
-      "symbol": "ODIN",
-      "name": "أودن للاستثمارات",
-      "grade": "Blocked",
-      "rawProbability": 67,
-      "guardedProbability": 31,
-      "finalScore": 63,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف، خطة مشتقة محافظة"
-      ]
-    },
-    {
-      "symbol": "MPRC",
-      "name": "مدينة الإنتاج الإعلامي",
-      "grade": "Blocked",
-      "rawProbability": 66,
-      "guardedProbability": 30,
-      "finalScore": 63,
-      "historySessions": 5,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 5/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
       ]
     }
   ],
