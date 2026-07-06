@@ -1,21 +1,21 @@
 {
   "ok": true,
   "engine": "v8_9_1_alert_decision_center_calibrated",
-  "generatedAt": "2026-07-06T20:32:20.254Z",
-  "total": 53,
+  "generatedAt": "2026-07-06T20:42:37.793Z",
+  "total": 54,
   "summary": {
     "critical": 20,
-    "warning": 12,
-    "opportunity": 6,
+    "warning": 11,
+    "opportunity": 8,
     "watch": 10,
     "info": 5,
     "urgent": 20,
-    "important": 12
+    "important": 11
   },
   "suppressed": {
     "critical": 15,
-    "warning": 181,
-    "opportunity": 0,
+    "warning": 0,
+    "opportunity": 4,
     "watch": 0,
     "info": 0
   },
@@ -393,18 +393,6 @@
       "why": "التحليل التاريخي الطويل لا يجب أن يرفع الثقة قبل اكتمال السجل"
     },
     {
-      "id": "portfolio_rules:do_not_add:ORAS:لا تزود قبل المراجعة",
-      "level": "warning",
-      "priority": "مهم",
-      "source": "portfolio_rules",
-      "type": "do_not_add",
-      "symbol": "ORAS",
-      "title": "لا تزود قبل المراجعة",
-      "text": "prob=74%",
-      "action": "مراجعة القيود قبل أي زيادة",
-      "why": "احتمال الهدف 74% | ربح هدف1 3.9% | عائد متوقع 2.4% | R/R 1.92 | السعر متعارض | تاريخ 6/50 | قيود: تعارض سعر"
-    },
-    {
       "id": "ranking:p1_opportunity:UBEE:P1 فرصة قوية #1",
       "level": "opportunity",
       "priority": "مراقبة قوية",
@@ -427,6 +415,42 @@
       "text": "prob=83% expected=2.99% rr=1.04",
       "action": "راجع الدخول والوقف وحجم الصفقة",
       "why": "احتمال الهدف 83% | ربح هدف1 4.5% | عائد متوقع 3.0% | R/R 1.04 | السعر مدقق | تاريخ 6/50"
+    },
+    {
+      "id": "ranking:p1_opportunity:MFPC:P1 فرصة قوية #3",
+      "level": "opportunity",
+      "priority": "مراقبة قوية",
+      "source": "ranking",
+      "type": "p1_opportunity",
+      "symbol": "MFPC",
+      "title": "P1 فرصة قوية #3",
+      "text": "prob=83% expected=2.99% rr=0.99",
+      "action": "راجع الدخول والوقف وحجم الصفقة",
+      "why": "احتمال الهدف 83% | ربح هدف1 4.5% | عائد متوقع 3.0% | R/R 0.99 | السعر مدقق | تاريخ 6/50"
+    },
+    {
+      "id": "ranking:p1_opportunity:ORAS:P1 فرصة قوية #4",
+      "level": "opportunity",
+      "priority": "مراقبة قوية",
+      "source": "ranking",
+      "type": "p1_opportunity",
+      "symbol": "ORAS",
+      "title": "P1 فرصة قوية #4",
+      "text": "prob=74% expected=2.35% rr=1.92",
+      "action": "راجع الدخول والوقف وحجم الصفقة",
+      "why": "احتمال الهدف 74% | ربح هدف1 3.9% | عائد متوقع 2.4% | R/R 1.92 | السعر متعارض | تاريخ 6/50 | قيود: تعارض سعر"
+    },
+    {
+      "id": "ranking:p1_opportunity:GBCO:P1 فرصة قوية #5",
+      "level": "opportunity",
+      "priority": "مراقبة قوية",
+      "source": "ranking",
+      "type": "p1_opportunity",
+      "symbol": "GBCO",
+      "title": "P1 فرصة قوية #5",
+      "text": "prob=73% expected=3.55% rr=3.29",
+      "action": "راجع الدخول والوقف وحجم الصفقة",
+      "why": "احتمال الهدف 73% | ربح هدف1 5.5% | عائد متوقع 3.5% | R/R 3.29 | السعر متعارض | تاريخ 6/50 | قيود: تعارض سعر"
     },
     {
       "id": "ranking:ranked_opportunity:UBEE:P1 — فرصة مرتبة #1",
@@ -465,76 +489,64 @@
       "why": "احتمال الهدف 87% | ربح هدف1 5.0% | عائد متوقع 3.9% | R/R 1.37 | السعر مدقق | تاريخ 5/50"
     },
     {
-      "id": "portfolio_rules:increase_candidate:HRHO:مرشح زيادة مشروطة",
-      "level": "opportunity",
-      "priority": "مراقبة قوية",
-      "source": "portfolio_rules",
-      "type": "increase_candidate",
-      "symbol": "HRHO",
-      "title": "مرشح زيادة مشروطة",
-      "text": "prob=83%",
-      "action": "يستخدم فقط إذا كان السهم موجودًا بالمحفظة وبوزن مناسب",
-      "why": "احتمال الهدف 83% | ربح هدف1 4.5% | عائد متوقع 3.0% | R/R 1.04 | السعر مدقق | تاريخ 6/50"
-    },
-    {
-      "id": "ranking:p2_watch:MPCI:P2 مراقبة #3",
+      "id": "ranking:p2_watch:RMDA:P2 مراقبة #6",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "p2_watch",
-      "symbol": "MPCI",
-      "title": "P2 مراقبة #3",
-      "text": "prob=88% expected=3.72% rr=0.82",
-      "action": "انتظار Trigger واضح",
-      "why": "احتمال الهدف 88% | ربح هدف1 5.1% | عائد متوقع 3.7% | R/R 0.82 | السعر مدقق | تاريخ 5/50"
-    },
-    {
-      "id": "ranking:p2_watch:OIH:P2 مراقبة #4",
-      "level": "watch",
-      "priority": "مراقبة",
-      "source": "ranking",
-      "type": "p2_watch",
-      "symbol": "OIH",
-      "title": "P2 مراقبة #4",
-      "text": "prob=88% expected=2.59% rr=0.83",
-      "action": "انتظار Trigger واضح",
-      "why": "احتمال الهدف 88% | ربح هدف1 3.5% | عائد متوقع 2.6% | R/R 0.83 | السعر مدقق | تاريخ 5/50"
-    },
-    {
-      "id": "ranking:p2_watch:MFPC:P2 مراقبة #5",
-      "level": "watch",
-      "priority": "مراقبة",
-      "source": "ranking",
-      "type": "p2_watch",
-      "symbol": "MFPC",
-      "title": "P2 مراقبة #5",
-      "text": "prob=83% expected=2.99% rr=0.99",
-      "action": "انتظار Trigger واضح",
-      "why": "احتمال الهدف 83% | ربح هدف1 4.5% | عائد متوقع 3.0% | R/R 0.99 | السعر مدقق | تاريخ 6/50"
-    },
-    {
-      "id": "ranking:p2_watch:DOMT:P2 مراقبة #6",
-      "level": "watch",
-      "priority": "مراقبة",
-      "source": "ranking",
-      "type": "p2_watch",
-      "symbol": "DOMT",
+      "symbol": "RMDA",
       "title": "P2 مراقبة #6",
-      "text": "prob=81% expected=2.49% rr=0.85",
+      "text": "prob=71% expected=3.16% rr=1.71",
       "action": "انتظار Trigger واضح",
-      "why": "احتمال الهدف 81% | ربح هدف1 4.2% | عائد متوقع 2.5% | R/R 0.85 | السعر مدقق | تاريخ 6/50"
+      "why": "احتمال الهدف 71% | ربح هدف1 5.9% | عائد متوقع 3.2% | R/R 1.71 | السعر متعارض | تاريخ 6/50 | قيود: تعارض سعر"
     },
     {
-      "id": "ranking:p2_watch:SEIG:P2 مراقبة #7",
+      "id": "ranking:p2_watch:MFSC:P2 مراقبة #7",
       "level": "watch",
       "priority": "مراقبة",
       "source": "ranking",
       "type": "p2_watch",
-      "symbol": "SEIG",
+      "symbol": "MFSC",
       "title": "P2 مراقبة #7",
-      "text": "prob=80% expected=2.52% rr=0.81",
+      "text": "prob=70% expected=3.52% rr=1.28",
       "action": "انتظار Trigger واضح",
-      "why": "احتمال الهدف 80% | ربح هدف1 4.6% | عائد متوقع 2.5% | R/R 0.81 | السعر مدقق | تاريخ 5/50"
+      "why": "احتمال الهدف 70% | ربح هدف1 7.5% | عائد متوقع 3.5% | R/R 1.28 | السعر متعارض | تاريخ 5/50 | قيود: تعارض سعر"
+    },
+    {
+      "id": "ranking:p2_watch:PHTV:P2 مراقبة #8",
+      "level": "watch",
+      "priority": "مراقبة",
+      "source": "ranking",
+      "type": "p2_watch",
+      "symbol": "PHTV",
+      "title": "P2 مراقبة #8",
+      "text": "prob=70% expected=1.89% rr=1.49",
+      "action": "انتظار Trigger واضح",
+      "why": "احتمال الهدف 70% | ربح هدف1 3.8% | عائد متوقع 1.9% | R/R 1.49 | السعر متعارض | تاريخ 5/50 | قيود: تعارض سعر"
+    },
+    {
+      "id": "ranking:p2_watch:AXPH:P2 مراقبة #9",
+      "level": "watch",
+      "priority": "مراقبة",
+      "source": "ranking",
+      "type": "p2_watch",
+      "symbol": "AXPH",
+      "title": "P2 مراقبة #9",
+      "text": "prob=69% expected=2.37% rr=0.86",
+      "action": "انتظار Trigger واضح",
+      "why": "احتمال الهدف 69% | ربح هدف1 7.2% | عائد متوقع 2.4% | R/R 0.86 | السعر متعارض | تاريخ 6/50 | قيود: تعارض سعر"
+    },
+    {
+      "id": "ranking:p2_watch:EASB:P2 مراقبة #10",
+      "level": "watch",
+      "priority": "مراقبة",
+      "source": "ranking",
+      "type": "p2_watch",
+      "symbol": "EASB",
+      "title": "P2 مراقبة #10",
+      "text": "prob=66% expected=1.39% rr=0.92",
+      "action": "انتظار Trigger واضح",
+      "why": "احتمال الهدف 66% | ربح هدف1 4.8% | عائد متوقع 1.4% | R/R 0.92 | السعر متعارض | تاريخ 6/50 | قيود: تعارض سعر"
     },
     {
       "id": "ranking:ranked_opportunity:MPCI:P2 — فرصة مرتبة #3",
@@ -652,7 +664,7 @@
       "type": "suppressed_summary",
       "symbol": null,
       "title": "تم إخفاء تنبيهات منخفضة الأولوية لتقليل الضوضاء",
-      "text": "مخفي: مهم 181 / فرص 0 / مراقبة 0 / معلومات 0",
+      "text": "مخفي: مهم 0 / فرص 4 / مراقبة 0 / معلومات 0",
       "action": "استخدم التقارير التفصيلية عند الحاجة",
       "why": "مركز التنبيهات يعرض المهم فقط حتى لا يتحول إلى قائمة مزعجة"
     }
