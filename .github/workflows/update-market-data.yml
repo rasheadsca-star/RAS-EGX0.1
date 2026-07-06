@@ -28,10 +28,14 @@ concurrency:
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
 
     env:
       HISTORY_MAINTENANCE: ${{ github.event.inputs.history_maintenance || 'false' }}
+      EGX_TRUSTED_COVERAGE_TARGET: '80'
+      EGX_COVERAGE_MAX_CYCLES: '5'
+      EGX_SOURCE_RETRIES: '3'
+      EGX_SOURCE_FETCH_TIMEOUT_MS: '45000'
 
     steps:
       - name: Checkout with history
@@ -73,6 +77,16 @@ jobs:
 
       - name: Final opportunity ranking
         run: node scripts/build-final-opportunity-ranking.js || echo "Final ranking skipped"
+
+
+      - name: V10 Trusted coverage recovery loop
+        run: node scripts/collect-mubasher-analysis-tools.js || echo "Trusted coverage recovery loop skipped"
+
+      - name: V10 Build source evidence matrix
+        run: node scripts/build-multi-source-intelligence.js || echo "Source evidence matrix skipped"
+
+      - name: V10 Apply coverage recovery to ranking
+        run: node scripts/apply-multisource-intelligence-to-ranking.js || echo "Coverage recovery apply skipped"
 
       - name: Unified decision board
         run: node scripts/build-unified-decision-board.js || echo "Unified decision board skipped"
