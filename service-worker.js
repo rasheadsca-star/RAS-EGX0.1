@@ -1,5 +1,5 @@
-/* EGX Pro Hub V9.3 Execution Decision Queue — cache rescue service worker */
-const CACHE_NAME = 'egx-pro-hub-v9-3-execution-decision-queue';
+/* EGX Pro Hub V9.6 Capital Allocation Governor — cache rescue service worker */
+const CACHE_NAME = 'egx-pro-hub-v9-6-capital-allocation';
 self.addEventListener('install', event => {
   self.skipWaiting();
 });

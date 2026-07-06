@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EGX Pro Hub — Professional Terminal V9.5 Risk-Return Coverage Booster</title>
+  <title>EGX Pro Hub — Professional Terminal V9.6 Capital Allocation Governor</title>
   <style>
     :root{
       --bg:#050914;--bg2:#071326;--card:#08182d;--card2:#0a1d36;
@@ -3975,6 +3975,89 @@ function renderRecommendationValidationPanel(){
   content=function(){if(EGX.screen==='coverageBooster')return renderCoverageBooster();if(EGX.screen==='riskReturn')return renderRiskReturnClassifier();return __v945OldContent()};
   side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['decisionQueue','قائمة القرار التنفيذي','🚦'],['coverageBooster','توسيع التغطية','🧭'],['riskReturn','المخاطر والعائد','📊'],['safetyGovernor','حاكم التوصيات','🛡'],['multiSourceIntel','ذكاء المصادر','☷'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['portfolioDecision','قرارات المحفظة','⚖'],['alertsCenter','مركز التنبيهات','🚨'],['dailyBrief','تقرير القرار اليومي','▧'],['stockSearch','بحث وتحليل سهم','⌕'],['sessionMemory','ذاكرة الجلسات','▣'],['historyBackfill','استكمال التاريخ','⏳'],['chartLab','تاريخ وشارت','▥'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V9.5 Risk-Return</div></div></div><div class="statusbar"><span class="live">توسيع التغطية + تصنيف المخاطر مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
   quickJump=function(){const base=[['home','⌂ الرئيسية'],['decisionQueue','🚦 قائمة القرار'],['coverageBooster','🧭 توسيع التغطية'],['riskReturn','📊 المخاطر والعائد'],['safetyGovernor','🛡 حاكم التوصيات'],['multiSourceIntel','☷ ذكاء المصادر'],['rankingEngine','≡ الأولويات'],['performanceIndex','✓ مؤشر الدقة'],['dataOps','☷ تدقيق البيانات'],['portfolio','◈ المحفظة']];return `<div class="screen-jump v894-jump">${base.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
+
+/* ===================== V9.6 Capital Allocation + Risk Budget Governor ===================== */
+(function v960InstallCapitalAllocation(){
+  try{
+    const style=document.createElement('style');
+    style.textContent=`
+      .cap96-hero{border:1px solid rgba(34,197,94,.28);background:linear-gradient(135deg,rgba(34,197,94,.10),rgba(14,165,233,.06));border-radius:18px;padding:14px;margin:10px 0;line-height:1.9;color:#dcfce7}
+      .cap96-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:12px 0}.cap96-card{background:linear-gradient(180deg,rgba(8,24,45,.9),rgba(5,13,27,.88));border:1px solid rgba(119,169,235,.18);border-radius:18px;padding:12px;min-height:92px}.cap96-card span{display:block;color:#93a9c9;font-size:11px}.cap96-card b{display:block;font-size:22px;margin-top:5px}.cap96-card small{display:block;color:#9fb5d6;margin-top:4px;line-height:1.6}
+      .cap96-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:950;border:1px solid rgba(119,169,235,.22);background:#071b34;color:#dbeafe}.cap96-pill.core{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.32);color:#bbf7d0}.cap96-pill.balanced{background:rgba(14,165,233,.14);border-color:rgba(14,165,233,.32);color:#bfdbfe}.cap96-pill.small{background:rgba(245,158,11,.14);border-color:rgba(245,158,11,.32);color:#fde68a}.cap96-pill.zero{background:rgba(239,68,68,.14);border-color:rgba(239,68,68,.34);color:#fecaca}
+      .cap96-split{display:grid;grid-template-columns:1.05fr .95fr;gap:12px;align-items:start}.cap96-note{border-right:4px solid #38bdf8;background:rgba(14,165,233,.08);border-radius:13px;padding:10px;line-height:1.85;color:#dbeafe;margin:8px 0}.cap96-note.warn{border-right-color:#f59e0b;background:rgba(245,158,11,.10);color:#fde68a}.cap96-note.bad{border-right-color:#ef4444;background:rgba(239,68,68,.10);color:#fecaca}.cap96-note.good{border-right-color:#22c55e;background:rgba(34,197,94,.10);color:#bbf7d0}
+      .cap96-range{font-weight:950;color:#eaf6ff}.cap96-reason{white-space:normal!important;line-height:1.65;color:#cfe3ff;min-width:280px}.cap96-table{min-width:1850px!important}.cap96-budget{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.cap96-budget div{border:1px solid rgba(119,169,235,.16);background:rgba(2,8,23,.35);border-radius:13px;padding:9px}.cap96-budget span{display:block;color:#93a9c9;font-size:11px}.cap96-budget b{display:block;margin-top:3px;font-size:17px}
+      @media(max-width:1100px){.cap96-split,.cap96-budget{grid-template-columns:1fr}.cap96-table{min-width:1380px!important}}
+    `;
+    document.head.appendChild(style);
+  }catch(e){}
+
+  function v960SafeGov(r){try{return typeof v920Safety==='function'?v920Safety(r):{status:r.safetyGovernorStatus||'WATCH_ONLY',grade:r.grade||'Watch',score:num(r.safetyGovernorScore||r.finalScore||r.finalConfidence)||0,sourceStrengthScore:num(r.sourceStrengthScore)||0,blocks:r.safetyBlocks||[],warnings:r.safetyWarnings||[]}}catch(e){return{status:'WATCH_ONLY',grade:'Watch',score:num(r&&r.finalConfidence)||0,sourceStrengthScore:0,blocks:[],warnings:['تعذر قراءة حاكم السلامة']}}}
+  function v960RiskRows(){
+    if(typeof v945RiskReturnRows==='function')return v945RiskReturnRows();
+    return (EGX.rows||[]).map(r=>{const g=v960SafeGov(r);const entry=(num(r.entryFrom)||num(r.price)||0);const t1=num(r.target1)||0,t2=num(r.target2)||0,sl=num(r.stopLoss)||0;const exp=entry&&t1?(t1-entry)/entry*100:0;const ext=entry&&t2?(t2-entry)/entry*100:exp;const loss=entry&&sl?(entry-sl)/entry*100:0;return{r,g,risk:{cls:g.status==='EXECUTABLE_REVIEW'?'medium':'high',ar:g.status==='EXECUTABLE_REVIEW'?'متوسطة المخاطر':'عالية المخاطر'},riskScore:100-(g.score||0),expected:exp,extended:ext,loss,rr:loss>0?exp/loss:0,type:{ar:'تصنيف تقريبي',cls:'medium'}}})
+  }
+  function v960RiskBudget(x){
+    const cls=x.risk&&x.risk.cls||'high', g=x.g||v960SafeGov(x.r);
+    if(g.status==='BLOCKED')return 0;
+    if(g.status!=='EXECUTABLE_REVIEW')return cls==='low'?0.20:cls==='medium'?0.15:0.10;
+    if(cls==='low')return 0.90;
+    if(cls==='medium')return 0.55;
+    if(cls==='high')return 0.25;
+    return 0.10;
+  }
+  function v960Allocation(x){
+    const r=x.r, g=x.g||v960SafeGov(r), cls=x.risk&&x.risk.cls||'high';
+    const loss=Math.max(0,num(x.loss)||0), rr=num(x.rr)||0, src=num(g.sourceStrengthScore||r.sourceStrengthScore)||0, safety=num(g.score)||0, exp=num(x.expected)||0;
+    let label='لا تخصيص', clsName='zero', min=0, max=0, mode='مستبعد';
+    if(g.status==='BLOCKED'){
+      label='لا تخصيص'; mode='محجوب حتى تتحسن البيانات/الخطة';
+    }else if(g.status!=='EXECUTABLE_REVIEW'){
+      label='مراقبة فقط'; clsName='small'; max=(cls==='low'||cls==='medium')?2:1; mode='قائمة مراقبة فقط — لا تنفيذ عادي';
+    }else if(cls==='low' && safety>=78 && src>=65 && rr>=1 && exp>0){
+      label='مركز أساسي'; clsName='core'; min=8; max=15; mode='تنفيذ مشروط محافظ';
+    }else if((cls==='low'||cls==='medium') && safety>=70 && rr>=0.8 && exp>0){
+      label='مركز متوسط'; clsName='balanced'; min=4; max=8; mode='تنفيذ محدود ومشروط';
+    }else if(cls==='high' || cls==='veryhigh'){
+      label='مضاربة صغيرة'; clsName='small'; min=0; max=3; mode='حجم صغير جدًا فقط';
+    }else{
+      label='مركز محدود'; clsName='small'; min=2; max=5; mode='تجربة محدودة بعد تأكيد إضافي';
+    }
+    const riskBudget=v960RiskBudget(x);
+    let riskBasedMax=max;
+    if(loss>0 && riskBudget>0){riskBasedMax=Math.min(max, riskBudget/loss*100)}
+    if(g.status==='EXECUTABLE_REVIEW' && riskBasedMax<min)min=Math.max(0,Math.min(min,riskBasedMax*0.55));
+    riskBasedMax=Math.max(0,riskBasedMax);
+    const cap=Number.isFinite(riskBasedMax)?riskBasedMax:max;
+    const reason=[];
+    reason.push(`Risk ${fmt0(num(x.riskScore)||0)}%`);
+    reason.push(`Safety ${fmt0(safety)}%`);
+    reason.push(`مصادر ${fmt0(src)}%`);
+    reason.push(`خسارة وقف ${fmt(loss,1)}%`);
+    if(g.status!=='EXECUTABLE_REVIEW')reason.push('ليس تنفيذًا عاديًا');
+    if(loss<=0)reason.push('وقف غير كافٍ لحساب حجم مركز دقيق');
+    if(rr<1)reason.push('R/R أقل من 1');
+    return {label,clsName,min,max:cap,rawMax:max,riskBudget,mode,reason:reason.join('، ')};
+  }
+  window.v960AllocationRows=function(){
+    return v960RiskRows().map(x=>({...x,alloc:v960Allocation(x)})).sort((a,b)=>{
+      const order={core:0,balanced:1,small:2,zero:3};
+      return (order[a.alloc.clsName]??9)-(order[b.alloc.clsName]??9)|| (b.alloc.max-a.alloc.max) || (b.g.score-a.g.score) || (a.riskScore-b.riskScore)
+    });
+  };
+  function v960RenderAllocationRow(x,i){const r=x.r,g=x.g,a=x.alloc;const rr=num(x.rr)||0;return `<tr data-symbol="${esc(r.symbol)}"><td>${i+1}</td><td class="symbol">${esc(r.symbol)}</td><td>${typeof v922NameCell==='function'?v922NameCell(r):esc(r.name_ar||r.name||'')}</td><td><span class="cap96-pill ${a.clsName}">${esc(a.label)}</span></td><td><span class="rr95-pill ${x.risk.cls}">${esc(x.risk.ar)}</span></td><td><b>${fmt0(x.riskScore)}%</b></td><td><b class="${g.status==='EXECUTABLE_REVIEW'?'pos':g.status==='BLOCKED'?'neg':''}">${esc(g.grade||'-')} / ${esc(g.status||'-')}</b></td><td><b>${fmt0(g.score)}%</b></td><td>${fmt0(g.sourceStrengthScore||r.sourceStrengthScore)}%</td><td class="${x.expected>=6?'pos':x.expected<1?'neg':''}">${fmt(x.expected,1)}%</td><td>${fmt(x.extended,1)}%</td><td class="neg">${fmt(x.loss,1)}%</td><td>${fmt(rr,2)}</td><td><b>${fmt(a.riskBudget,2)}%</b></td><td class="cap96-range">${fmt(a.min,1)}% - ${fmt(a.max,1)}%</td><td>${esc(a.mode)}</td><td class="cap96-reason">${esc(a.reason)}</td><td>${proDetailButton(r.symbol)}</td></tr>`}
+  window.renderCapitalAllocation=function(){
+    const all=v960AllocationRows();
+    const core=all.filter(x=>x.alloc.clsName==='core'), balanced=all.filter(x=>x.alloc.clsName==='balanced'), small=all.filter(x=>x.alloc.clsName==='small'), zero=all.filter(x=>x.alloc.clsName==='zero');
+    const totalMax=all.filter(x=>x.alloc.clsName!=='zero').reduce((s,x)=>s+(num(x.alloc.max)||0),0);
+    const best=core[0]||balanced[0]||small[0];
+    return `${header('حاكم تخصيص رأس المال V9.6','يربط مستوى المخاطرة بالعائد المتوقع وحاكم السلامة لتحديد حجم مركز مقترح بدل الاكتفاء بقرار Buy/Watch')}${quickJump()}<div class="cap96-hero"><b>قاعدة V9.6:</b> لا يوجد سهم يأخذ حجم مركز كبير لأنه يملك عائدًا عاليًا فقط. حجم المركز يتحدد من: المخاطرة، الخسارة حتى وقف الخسارة، قوة المصادر، Safety، وقرار حاكم التوصيات.</div><section class="cap96-grid"><div class="cap96-card"><span>مراكز أساسية</span><b class="pos">${fmt0(core.length)}</b><small>أحجام أكبر نسبيًا</small></div><div class="cap96-card"><span>مراكز متوسطة</span><b>${fmt0(balanced.length)}</b><small>تنفيذ محدود ومشروط</small></div><div class="cap96-card"><span>مضاربة/مراقبة صغيرة</span><b>${fmt0(small.length)}</b><small>حجم صغير أو مراقبة فقط</small></div><div class="cap96-card"><span>لا تخصيص</span><b class="neg">${fmt0(zero.length)}</b><small>محجوب أو غير كافٍ</small></div><div class="cap96-card"><span>أفضل مرشح</span><b>${esc(best?best.r.symbol:'-')}</b><small>${best?esc(best.alloc.label):''}</small></div><div class="cap96-card"><span>إجمالي أقصى نظري</span><b>${fmt(totalMax,1)}%</b><small>لا يعني استخدامه بالكامل</small></div></section><section class="cap96-split"><div class="panel"><h3>جدول تخصيص رأس المال</h3><div class="tablewrap"><table class="compact-table cap96-table"><thead><tr><th>#</th><th>الرمز</th><th>الاسم</th><th>تخصيص V9.6</th><th>المخاطر</th><th>Risk</th><th>الحاكم</th><th>Safety</th><th>المصادر</th><th>ربح هدف1</th><th>ربح هدف2</th><th>خسارة وقف</th><th>R/R</th><th>ميزانية خسارة</th><th>نطاق التخصيص</th><th>النمط</th><th>السبب</th><th>إجراء</th></tr></thead><tbody>${all.slice(0,170).map(v960RenderAllocationRow).join('')}</tbody></table></div></div><div class="leftstack"><div class="panel"><h3>قواعد حجم المركز</h3><div class="cap96-note good"><b>منخفضة المخاطر + EXECUTABLE:</b> نطاق أكبر نسبيًا بشرط سعر دخول ووقف واضح.</div><div class="cap96-note"><b>متوسطة المخاطر:</b> تنفيذ محدود ومشروط بتأكيد السعر والسيولة.</div><div class="cap96-note warn"><b>عالية المخاطر:</b> مضاربة صغيرة فقط، حتى لو العائد المتوقع كبير.</div><div class="cap96-note bad"><b>Blocked:</b> تخصيص 0% حتى تتحسن البيانات أو الخطة.</div></div><div class="panel"><h3>ميزانية المخاطر</h3><div class="cap96-budget"><div><span>Low Risk</span><b>0.90%</b></div><div><span>Medium</span><b>0.55%</b></div><div><span>High</span><b>0.25%</b></div></div><div class="muted" style="margin-top:8px">المقصود: أقصى خسارة مقبولة من إجمالي المحفظة إذا ضرب وقف الخسارة، وليست نسبة التخصيص نفسها.</div></div><div class="panel"><h3>أفضل أحجام مقترحة</h3>${all.filter(x=>x.alloc.max>0).slice(0,8).map((x,i)=>`<div class="quickrow"><b>${i+1}</b><div><b>${esc(x.r.symbol)}</b><br><small>${esc(x.alloc.label)} — ${esc(x.risk.ar)}</small></div><span>${fmt(x.alloc.max,1)}%</span></div>`).join('')||'<div class="muted">لا توجد مراكز مقترحة الآن.</div>'}</div></div></section>`;
+  };
+  const __v960OldContent=content;
+  content=function(){if(EGX.screen==='capitalAllocation')return renderCapitalAllocation();return __v960OldContent();};
+  side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['decisionQueue','قائمة القرار التنفيذي','🚦'],['capitalAllocation','تخصيص رأس المال','💰'],['coverageBooster','توسيع التغطية','🧭'],['riskReturn','المخاطر والعائد','📊'],['safetyGovernor','حاكم التوصيات','🛡'],['multiSourceIntel','ذكاء المصادر','☷'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['portfolioDecision','قرارات المحفظة','⚖'],['alertsCenter','مركز التنبيهات','🚨'],['dailyBrief','تقرير القرار اليومي','▧'],['stockSearch','بحث وتحليل سهم','⌕'],['sessionMemory','ذاكرة الجلسات','▣'],['historyBackfill','استكمال التاريخ','⏳'],['chartLab','تاريخ وشارت','▥'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V9.6 Risk Budget</div></div></div><div class="statusbar"><span class="live">حاكم تخصيص رأس المال مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
+  quickJump=function(){const base=[['home','⌂ الرئيسية'],['decisionQueue','🚦 قائمة القرار'],['capitalAllocation','💰 تخصيص رأس المال'],['riskReturn','📊 المخاطر والعائد'],['coverageBooster','🧭 توسيع التغطية'],['safetyGovernor','🛡 حاكم التوصيات'],['multiSourceIntel','☷ ذكاء المصادر'],['rankingEngine','≡ الأولويات'],['performanceIndex','✓ مؤشر الدقة'],['dataOps','☷ تدقيق البيانات'],['portfolio','◈ المحفظة']];return `<div class="screen-jump v894-jump">${base.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
+})();
+
 })();
 
 init().catch(e=>{
