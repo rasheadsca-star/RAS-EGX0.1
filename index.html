@@ -1,128 +1,132 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <title>EGX Pro Hub — V8.10.6 Emergency Recovery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>EGX Pro Hub — V8.11.0 Plain Recovery</title>
   <style>
-    :root{--bg:#06101e;--panel:#0b1d33;--panel2:#07182c;--line:#1f4164;--text:#e9f5ff;--muted:#9fb6ce;--good:#20d67a;--bad:#ff5964;--warn:#ffc857;--blue:#2d8cff;--cyan:#16d5d9}
-    *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#06101e,#020714);color:var(--text);font-family:Tahoma,Arial,sans-serif;font-size:14px;overflow:hidden}
-    .app{display:grid;grid-template-columns:260px 1fr;min-height:100vh;max-height:100vh}
-    aside{border-left:1px solid var(--line);background:#071425;padding:16px;overflow:auto}
-    main{padding:16px;overflow:auto;direction:rtl}
-    .brand{display:flex;align-items:center;gap:10px;margin-bottom:18px}.logo{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#14d86e,#0aa9ff);font-weight:800}.version{font-size:12px;color:var(--muted)}
-    .nav button,.top-actions button{width:100%;margin:5px 0;padding:11px;border:1px solid var(--line);background:#0a2039;color:var(--text);border-radius:10px;cursor:pointer;text-align:right}.nav button.active{background:#146bd8}.top-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.top-actions button{width:auto;text-align:center;padding:10px 14px}
-    h1{font-size:24px;margin:0 0 8px}.subtitle{color:var(--muted);margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(6,minmax(150px,1fr));gap:10px}.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:13px;min-height:90px}.card .label{color:var(--muted);font-size:12px}.card .value{font-size:24px;font-weight:800;margin-top:8px}.good{color:var(--good)}.bad{color:var(--bad)}.warn{color:var(--warn)}.blue{color:#75b7ff}
-    .section{margin-top:14px;background:rgba(9,31,56,.8);border:1px solid var(--line);border-radius:14px;padding:12px}.section h2{margin:0 0 10px;font-size:17px}.table-wrap{max-height:58vh;overflow:auto;border:1px solid var(--line);border-radius:12px;background:#061426;direction:ltr}.table-wrap table{direction:rtl;width:max-content;min-width:100%;border-collapse:separate;border-spacing:0}.table-wrap th,.table-wrap td{padding:9px 11px;border-bottom:1px solid #163452;border-left:1px solid #102a45;white-space:nowrap;text-align:right}.table-wrap th{position:sticky;top:0;background:#0d2743;z-index:3;color:#dff3ff}.table-wrap td.sticky,.table-wrap th.sticky{position:sticky;right:0;background:#0b213a;z-index:4}.table-wrap td.sticky2,.table-wrap th.sticky2{position:sticky;right:90px;background:#0b213a;z-index:4}.pill{display:inline-flex;align-items:center;border-radius:999px;padding:4px 9px;border:1px solid var(--line);background:#0b2946;font-size:12px}.pill.p1{background:#073c2a;color:#6bffad;border-color:#0f8c55}.pill.p2{background:#0a3152;color:#7fd1ff}.pill.blocked{background:#3c0814;color:#ff9dad;border-color:#a02a44}.mono{font-family:Consolas,monospace}.small{font-size:12px;color:var(--muted)}.err{background:#2d0b16;border:1px solid #9c2d45;color:#ffdbe1;border-radius:12px;padding:12px;margin:10px 0}.ok{background:#082d20;border:1px solid #10764e;color:#caffdf;border-radius:12px;padding:12px;margin:10px 0}.hidden{display:none}.footer{margin-top:18px;color:var(--muted);font-size:12px}
-    @media(max-width:1100px){.app{grid-template-columns:1fr}aside{position:static}.grid{grid-template-columns:repeat(2,1fr)}body{overflow:auto}.app{max-height:none}.top-actions button{width:100%}}
+    :root{--bg:#06101e;--panel:#0b1d33;--line:#24496d;--text:#eaf6ff;--muted:#9fb5cc;--good:#22c55e;--bad:#ef4444;--warn:#f59e0b;--blue:#38bdf8}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;font-size:14px} .app{display:grid;grid-template-columns:280px 1fr;min-height:100vh}.side{background:#071326;border-left:1px solid var(--line);padding:18px;position:sticky;top:0;height:100vh;overflow:auto}.brand{font-size:22px;font-weight:900;line-height:1.3}.ver{color:var(--blue);font-size:12px;margin-top:4px}.nav button{width:100%;margin:6px 0;padding:12px;border:1px solid var(--line);border-radius:12px;background:#0b1d33;color:var(--text);cursor:pointer;text-align:right;font-weight:700}.nav button.active,.nav button:hover{background:#1266c3}.main{padding:20px;overflow:auto}.hero{border:1px solid var(--line);background:linear-gradient(180deg,#0b213d,#07182c);border-radius:18px;padding:18px;margin-bottom:14px}.hero h1{margin:0 0 8px}.grid{display:grid;grid-template-columns:repeat(4,minmax(180px,1fr));gap:12px;margin:12px 0}.card{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:14px;min-height:95px}.label{color:var(--muted);font-size:12px}.value{font-size:28px;font-weight:900;margin-top:8px}.good{color:var(--good)}.bad{color:var(--bad)}.warn{color:var(--warn)}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.toolbar button{padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0b1d33;color:var(--text);cursor:pointer}.tablebox{border:1px solid var(--line);border-radius:14px;background:#06172b;max-height:calc(100vh - 260px);overflow:auto;position:relative}.tablebox table{border-collapse:separate;border-spacing:0;min-width:1200px;width:max-content}.tablebox th,.tablebox td{border-bottom:1px solid rgba(120,160,210,.18);border-left:1px solid rgba(120,160,210,.12);padding:10px 12px;white-space:nowrap;text-align:right}.tablebox th{position:sticky;top:0;background:#0b2542;z-index:3}.tablebox td.stick,.tablebox th.stick{position:sticky;right:0;background:#0b1d33;z-index:2}.tablebox th.stick{z-index:4}.pill{display:inline-block;padding:5px 10px;border-radius:999px;border:1px solid var(--line);font-weight:800}.pill.ok{background:#06351f;color:#7dffb2}.pill.block{background:#35101a;color:#ff95a8}.small{font-size:12px;color:var(--muted)}.err{padding:14px;border:1px solid #7f1d1d;background:#2a0c17;border-radius:14px;color:#ffd4d4;margin:10px 0}.hidden{display:none}@media(max-width:900px){.app{grid-template-columns:1fr}.side{position:relative;height:auto}.grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 <div class="app">
-  <aside>
-    <div class="brand"><div class="logo">EGX</div><div><b>EGX Pro Hub</b><div class="version">V8.10.6 Zero-Dependency Recovery</div></div></div>
-    <div class="ok">وضع إنقاذ: الواجهة تعمل بدون أي كود قديم أو Service Worker قديم.</div>
+  <aside class="side">
+    <div class="brand">EGX Pro Hub</div>
+    <div class="ver">V8.11.0 Plain Recovery</div>
+    <p class="small">نسخة إنقاذ مستقلة. لا تعتمد على كود الواجهة القديم.</p>
     <div class="nav">
-      <button class="active" data-view="home">الرئيسية الآمنة</button>
-      <button data-view="ranking">الترتيب الآمن</button>
-      <button data-view="data">حالة البيانات</button>
-      <button data-view="audit">تدقيق المصادر</button>
-      <button data-view="help">تعليمات الاستقرار</button>
+      <button class="active" data-screen="home">الرئيسية</button>
+      <button data-screen="ranking">الترتيب الآمن</button>
+      <button data-screen="market">السوق</button>
+      <button data-screen="data">حالة البيانات</button>
     </div>
-    <div class="footer">لا يغير هذا الوضع أي بيانات. يقرأ فقط ملفات data الحالية.</div>
   </aside>
-  <main>
-    <div class="top-actions">
-      <button onclick="hardRefresh()">تحديث كامل</button>
-      <button onclick="clearBrowserCache()">مسح كاش التطبيق</button>
-      <button onclick="location.href='?v=8106&t='+Date.now()">فتح بنسخة جديدة</button>
-    </div>
-    <section id="view-home">
-      <h1>الرئيسية الآمنة</h1>
-      <div class="subtitle">هذه نسخة إنقاذ مستقرة لعرض البيانات بدون الاعتماد على الكود المكسور.</div>
-      <div id="loadStatus"></div>
-      <div class="grid" id="cards"></div>
-      <div class="section"><h2>قائمة مختصرة من أفضل الترتيب الحالي</h2><div class="table-wrap"><table id="topTable"></table></div></div>
+  <main class="main">
+    <section class="hero">
+      <h1>الرئيسية التنفيذية</h1>
+      <div class="small">لو ظهرت هذه الصفحة، فالنسخة الجديدة تعمل، ولا يوجد تحميل للكود القديم الذي سبب خطأ class.</div>
+      <div id="loadStatus" class="small">جاري تحميل ملفات البيانات...</div>
     </section>
-    <section id="view-ranking" class="hidden"><h1>الترتيب الآمن</h1><div class="subtitle">يعرض final-opportunity-ranking أو final-multisource-ranking إن وجد.</div><div class="table-wrap"><table id="rankingTable"></table></div></section>
-    <section id="view-data" class="hidden"><h1>حالة البيانات</h1><div id="dataStatus"></div></section>
-    <section id="view-audit" class="hidden"><h1>تدقيق المصادر</h1><div class="subtitle">عرض مبسط لملفات Multi-Source إن كانت موجودة.</div><div class="table-wrap"><table id="auditTable"></table></div></section>
-    <section id="view-help" class="hidden"><h1>تعليمات الاستقرار</h1><div class="section"><h2>ماذا نفعل الآن؟</h2><p>بعد فتح التطبيق، لا ترفع ملفات data يدويًا. تأكد أن Workflow يعمل أخضر. بعد ذلك نعيد بناء Multi-Source تدريجيًا بدون لمس خطة الدخول والأهداف.</p><p>لو ظهرت أسعار أو أهداف غير منطقية، اعتمد على هذه النسخة كعرض بيانات فقط ولا تعتمد على التوصيات التنفيذية قبل إصلاح محرك الخطة.</p></div></section>
+    <section id="home" class="screen">
+      <div class="grid" id="cards"></div>
+      <h2>أفضل فرص مراقبة بعد تنقية الأرقام غير المنطقية</h2>
+      <div id="topTable"></div>
+    </section>
+    <section id="ranking" class="screen hidden">
+      <h2>جدول الترتيب الآمن</h2>
+      <div class="toolbar"><button id="exportCsv">تصدير CSV</button><button id="reloadBtn">إعادة تحميل</button></div>
+      <div id="rankingTable"></div>
+    </section>
+    <section id="market" class="screen hidden"><h2>بيانات السوق</h2><div id="marketTable"></div></section>
+    <section id="data" class="screen hidden"><h2>حالة البيانات</h2><div id="dataBox"></div></section>
   </main>
 </div>
 <script>
-'use strict';
-window.$class = window.$class || function(){ return Array.from(arguments).filter(Boolean).join(' '); };
-const DATA = {};
-const files = {
-  market:'data/market.json', cache:'data/full-market-cache.json', ranking:'data/final-opportunity-ranking.json', multiRanking:'data/final-multisource-ranking.json', health:'data/app-health-status.json', source:'data/source-health.json', gateway:'data/source-gateway-report.json', perf:'data/recommendation-performance-index.json', audit:'data/source-evidence-matrix.json', multi:'data/multi-source-intelligence.json'
-};
-function qs(id){return document.getElementById(id)}
-function num(x){ if(x==null||x==='') return null; const n=Number(String(x).replace(/,/g,'')); return Number.isFinite(n)?n:null; }
-function fmt(x,d=2){ const n=num(x); return n==null?'-':n.toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:n<1&&n>0?3:0}); }
-function pct(x){ const n=num(x); return n==null?'-':(n.toFixed(1)+'%'); }
-function rowsOf(v){ if(Array.isArray(v)) return v; if(v&&Array.isArray(v.data)) return v.data; if(v&&Array.isArray(v.items)) return v.items; if(v&&Array.isArray(v.rows)) return v.rows; if(v&&Array.isArray(v.ranking)) return v.ranking; if(v&&Array.isArray(v.top)) return v.top; return []; }
-async function loadJson(name,path){ try{ const r=await fetch(path+'?v=8106&t='+Date.now(),{cache:'no-store'}); if(!r.ok) throw new Error(r.status); DATA[name]=await r.json(); return true; }catch(e){ DATA[name]=null; return false; } }
-async function init(){
-  await unregisterOldWorkers();
-  const status=[]; for(const [k,p] of Object.entries(files)){ status.push([k, await loadJson(k,p)]); }
-  render(status); bindNav();
-}
-async function unregisterOldWorkers(){
-  try{ if('serviceWorker' in navigator){ const regs=await navigator.serviceWorker.getRegistrations(); await Promise.all(regs.map(r=>r.unregister())); } if(window.caches){ const keys=await caches.keys(); await Promise.all(keys.map(k=>caches.delete(k))); } }catch(e){}
-}
-function getRanking(){ const a=rowsOf(DATA.multiRanking); if(a.length) return a; return rowsOf(DATA.ranking); }
-function getMarket(){ const a=rowsOf(DATA.market); if(a.length) return a; return rowsOf(DATA.cache); }
-function getSymbol(r){ return r.symbol||r.code||r.ticker||r.Symbol||'-'; }
-function getName(r){ return r.name||r.companyName||r.company||r.arabicName||r.Name||'-'; }
-function getPrice(r){ return num(r.price??r.lastPrice??r.close??r.last??r.currentPrice); }
-function getClass(r){ return r.classification||r.priority||r.grade||r.finalClass||r.recommendationClass||'-'; }
-function getScore(r){ return num(r.score??r.finalScore??r.confidence??r.finalConfidence??r.probability); }
-function sanePlan(r){
-  const p=getPrice(r); let entryFrom=num(r.entryFrom), entryTo=num(r.entryTo), t1=num(r.target1), t2=num(r.target2), sl=num(r.stopLoss);
-  const invalid = !p || [entryFrom,entryTo,t1,sl].some(x=>x==null) || Math.abs((entryFrom||0)-p)/p>0.25 || Math.abs((t1||0)-p)/p>0.5;
-  if(invalid && p){ entryFrom=p*0.985; entryTo=p*1.005; t1=p*1.035; t2=p*1.065; sl=p*0.965; }
-  const gain = p&&t1?((t1-p)/p*100):null; const rr = p&&t1&&sl&&p>sl?((t1-p)/(p-sl)):null;
-  return {entryFrom,entryTo,t1,t2,sl,gain,rr,derived:invalid};
-}
-function render(status){
-  qs('loadStatus').innerHTML = `<div class="${status.some(x=>x[1])?'ok':'err'}">تم تحميل ${status.filter(x=>x[1]).length} من ${status.length} ملفات بيانات.</div>`;
-  const ranking=getRanking(), market=getMarket(); const health=DATA.health||{}, source=DATA.source||{}, gateway=DATA.gateway||{};
-  const cards=[
-    ['حالة التطبيق', health.ok===false?'تحذير':'يعمل', health.ok===false?'warn':'good'],
-    ['عدد أسهم السوق', market.length||source.totalUniverse||'-', 'blue'],
-    ['عدد الترتيب', ranking.length||'-','blue'],
-    ['تغطية السوق', pct(source.universeCoveragePct||source.coveragePct||gateway.coveragePct),'good'],
-    ['آخر تحديث', source.generatedAt||gateway.generatedAt||health.generatedAt||'-','blue'],
-    ['وضع التشغيل','Recovery','warn']
-  ];
-  qs('cards').innerHTML=cards.map(c=>`<div class="card"><div class="label">${c[0]}</div><div class="value ${c[2]}">${c[1]}</div></div>`).join('');
-  buildRankingTable(qs('topTable'), ranking.slice(0,12)); buildRankingTable(qs('rankingTable'), ranking); buildDataStatus(status); buildAudit();
-}
-function buildRankingTable(el, rows){
-  const head=['#','الرمز','اسم السهم','التصنيف','Score','السعر','الدخول','هدف 1','وقف','ربح هدف1','R/R','ملاحظات'];
-  el.innerHTML='<thead><tr>'+head.map((h,i)=>`<th class="${i===1?'sticky':i===2?'sticky2':''}">${h}</th>`).join('')+'</tr></thead><tbody>'+rows.map((r,i)=>{
-    const plan=sanePlan(r), cls=getClass(r), blocked=String(cls).toLowerCase().includes('block');
-    return `<tr><td>${i+1}</td><td class="sticky mono">${getSymbol(r)}</td><td class="sticky2">${getName(r)}</td><td><span class="pill ${String(cls).toLowerCase()==='p1'?'p1':String(cls).toLowerCase()==='p2'?'p2':blocked?'blocked':''}">${cls}</span></td><td>${fmt(getScore(r),0)}</td><td>${fmt(getPrice(r),3)}</td><td>${fmt(plan.entryFrom,3)} - ${fmt(plan.entryTo,3)}</td><td class="good">${fmt(plan.t1,3)}</td><td class="bad">${fmt(plan.sl,3)}</td><td class="good">${pct(plan.gain)}</td><td>${fmt(plan.rr,2)}</td><td class="small">${plan.derived?'خطة محافظة مشتقة بسبب نقص/خلل الخطة الأصلية':''}</td></tr>`;
-  }).join('')+'</tbody>';
-}
-function buildDataStatus(status){
-  qs('dataStatus').innerHTML = '<div class="grid">'+status.map(([k,ok])=>`<div class="card"><div class="label">${files[k]}</div><div class="value ${ok?'good':'bad'}">${ok?'موجود':'غير موجود'}</div></div>`).join('')+'</div>';
-}
-function buildAudit(){
-  const rows=rowsOf(DATA.audit).length?rowsOf(DATA.audit):rowsOf(DATA.multi); const el=qs('auditTable');
-  if(!rows.length){el.innerHTML='<tbody><tr><td>لا توجد بيانات تدقيق مصادر حاليًا.</td></tr></tbody>';return;}
-  const sample=rows[0]||{}; const cols=['symbol','name','priceSource','sourceStrength','volume','liquidity','support','resistance','decision','reason'].filter(c=>c in sample || c==='symbol'||c==='name');
-  el.innerHTML='<thead><tr>'+cols.map(c=>`<th>${c}</th>`).join('')+'</tr></thead><tbody>'+rows.slice(0,300).map(r=>'<tr>'+cols.map(c=>`<td>${r[c]??(c==='symbol'?getSymbol(r):c==='name'?getName(r):'-')}</td>`).join('')+'</tr>').join('')+'</tbody>';
-}
-function bindNav(){ document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active')); b.classList.add('active'); const v=b.dataset.view; document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden')); qs('view-'+v).classList.remove('hidden');}); }
-async function clearBrowserCache(){ await unregisterOldWorkers(); alert('تم مسح كاش التطبيق. سيتم إعادة التحميل الآن.'); location.href='?v=8106&t='+Date.now(); }
-function hardRefresh(){ location.reload(true); }
-window.addEventListener('error', e=>{ const d=document.createElement('div'); d.className='err'; d.textContent='خطأ واجهة: '+(e.message||'unknown'); document.body.prepend(d); });
-init();
+(function(){
+  'use strict';
+  var DATA = { ranking: [], market: [], health: {}, status: [] };
+  function now(){ return Date.now(); }
+  function toNum(v){ if(v===null||v===undefined) return NaN; if(typeof v==='number') return v; var s=String(v).replace(/,/g,'').replace(/%/g,'').trim(); var n=Number(s); return isFinite(n)?n:NaN; }
+  function fmt(n,d){ n=toNum(n); if(!isFinite(n)) return '-'; return n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+  function pct(n){ n=toNum(n); if(!isFinite(n)) return '-'; return fmt(n,1)+'%'; }
+  function pick(obj,names){ for(var i=0;i<names.length;i++){ if(obj && obj[names[i]]!==undefined && obj[names[i]]!==null && obj[names[i]]!=='') return obj[names[i]]; } return undefined; }
+  function sym(row){ return String(pick(row,['symbol','code','ticker','رمز']) || '').trim(); }
+  function name(row){ return String(pick(row,['name','arabicName','companyName','اسم السهم']) || sym(row) || '-').trim(); }
+  function price(row){ return toNum(pick(row,['price','lastPrice','close','last','currentPrice','السعر'])); }
+  function computePlan(row){
+    var p = price(row);
+    var entryFrom = toNum(pick(row,['entryFrom','entry_from','entryLow']));
+    var entryTo = toNum(pick(row,['entryTo','entry_to','entryHigh']));
+    var target1 = toNum(pick(row,['target1','target','target_1']));
+    var target2 = toNum(pick(row,['target2','target_2']));
+    var stopLoss = toNum(pick(row,['stopLoss','stop','stop_loss']));
+    var invalid = false;
+    function far(x){ return isFinite(p) && isFinite(x) && p>0 && (x > p*3 || x < p*0.25); }
+    if(!isFinite(p) || p<=0){ invalid=true; }
+    if(far(entryFrom)||far(entryTo)||far(target1)||far(target2)||far(stopLoss)){ invalid=true; }
+    if(!isFinite(entryFrom)||!isFinite(entryTo)||!isFinite(target1)||!isFinite(stopLoss)||invalid){
+      entryFrom = p*0.97; entryTo = p*1.01; target1 = p*1.035; target2 = p*1.06; stopLoss = p*0.94;
+    }
+    var rr = (target1 - p) / Math.max(0.000001, p - stopLoss);
+    if(!isFinite(rr) || rr<0 || rr>10) rr = NaN;
+    var gain = ((target1-p)/p)*100;
+    if(!isFinite(gain) || gain<-50 || gain>50) gain = NaN;
+    return {entryFrom:entryFrom, entryTo:entryTo, target1:target1, target2:target2, stopLoss:stopLoss, rr:rr, gain:gain, planWasSanitized:invalid};
+  }
+  function classify(row){
+    var p=price(row), plan=computePlan(row), s=sym(row);
+    var rank=String(pick(row,['classification','rank','priority','grade','التصنيف']) || '').trim();
+    var score=toNum(pick(row,['score','finalScore','confidence','finalConfidence']));
+    var blocked=false, reasons=[];
+    if(!s){ blocked=true; reasons.push('رمز غير متاح'); }
+    if(!isFinite(p)||p<=0){ blocked=true; reasons.push('سعر غير صالح'); }
+    if(plan.planWasSanitized) reasons.push('تم تصحيح خطة غير منطقية');
+    if(isFinite(plan.rr) && plan.rr<0.7) reasons.push('R/R ضعيف');
+    if(!isFinite(score)) score=0;
+    if(blocked) rank='Blocked'; else if(!rank || rank==='-' || rank==='undefined') rank = score>=80?'P1':score>=70?'P2':'Watch';
+    return {rank:rank, score:score, blocked:blocked, reasons:reasons.join('، ') || 'مقبول للمراجعة'};
+  }
+  function asArray(x){ if(Array.isArray(x)) return x; if(x && Array.isArray(x.data)) return x.data; if(x && Array.isArray(x.items)) return x.items; if(x && Array.isArray(x.ranking)) return x.ranking; if(x && Array.isArray(x.rows)) return x.rows; return []; }
+  function fetchJson(path){ return fetch(path + '?v=' + now(), {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error(path+' '+r.status); return r.json(); }); }
+  function table(rows, limit){
+    rows = rows || []; if(limit) rows = rows.slice(0,limit);
+    var html='<div class="tablebox"><table><thead><tr><th class="stick">#</th><th>الرمز</th><th>اسم السهم</th><th>السعر</th><th>التصنيف</th><th>Score</th><th>الدخول</th><th>هدف 1</th><th>وقف</th><th>ربح هدف 1</th><th>R/R</th><th>ملاحظات</th></tr></thead><tbody>';
+    rows.forEach(function(r,i){ var p=price(r), pl=computePlan(r), c=classify(r); var cls=(String(c.rank).toLowerCase().indexOf('block')>=0)?'block':'ok';
+      html+='<tr><td class="stick">'+(i+1)+'</td><td><b>'+sym(r)+'</b></td><td>'+name(r)+'</td><td>'+fmt(p,p<1?3:2)+'</td><td><span class="pill '+cls+'">'+c.rank+'</span></td><td>'+fmt(c.score,0)+'</td><td>'+fmt(pl.entryFrom,p<1?3:2)+' - '+fmt(pl.entryTo,p<1?3:2)+'</td><td class="good">'+fmt(pl.target1,p<1?3:2)+'</td><td class="bad">'+fmt(pl.stopLoss,p<1?3:2)+'</td><td class="good">'+pct(pl.gain)+'</td><td>'+fmt(pl.rr,2)+'</td><td>'+c.reasons+'</td></tr>';
+    });
+    html+='</tbody></table></div>'; return html;
+  }
+  function renderCards(){
+    var rows=DATA.ranking; var p1=rows.filter(function(r){return String(classify(r).rank).toUpperCase()==='P1';}).length; var blocked=rows.filter(function(r){return String(classify(r).rank).toLowerCase().indexOf('block')>=0;}).length;
+    var cards=[['حالة التطبيق','يعمل','good'],['عدد الترتيب',rows.length,''],['P1',p1,'good'],['Blocked',blocked,'warn'],['تغطية السوق',pick(DATA.health,['coveragePct','universeCoveragePct']) || '-',''],['آخر تحديث',pick(DATA.health,['generatedAt','lastUpdated','updatedAt']) || '-','']];
+    document.getElementById('cards').innerHTML = cards.map(function(c){return '<div class="card"><div class="label">'+c[0]+'</div><div class="value '+c[2]+'">'+c[1]+'</div></div>';}).join('');
+  }
+  function render(){
+    DATA.ranking.sort(function(a,b){ return classify(b).score - classify(a).score; });
+    renderCards(); document.getElementById('topTable').innerHTML=table(DATA.ranking,8); document.getElementById('rankingTable').innerHTML=table(DATA.ranking); document.getElementById('marketTable').innerHTML=table(DATA.market,80);
+    document.getElementById('dataBox').innerHTML='<div class="grid"><div class="card"><div class="label">ملفات تم تحميلها</div><div class="value good">'+DATA.status.filter(function(x){return x.ok}).length+'/'+DATA.status.length+'</div></div><div class="card"><div class="label">Ranking rows</div><div class="value">'+DATA.ranking.length+'</div></div><div class="card"><div class="label">Market rows</div><div class="value">'+DATA.market.length+'</div></div></div><pre class="card" style="white-space:pre-wrap">'+JSON.stringify(DATA.status,null,2)+'</pre>';
+    document.getElementById('loadStatus').textContent='تم تحميل البيانات. هذه نسخة إنقاذ مستقلة ومؤقتة.';
+  }
+  function load(){
+    var rankingSources=['data/final-opportunity-ranking.json','data/final-multisource-ranking.json','data/actionable-watchlist.json','data/recommendations.json'];
+    var healthSources=['data/source-health.json','data/data-operations-center.json','data/app-health-status.json'];
+    Promise.all(rankingSources.map(function(p){return fetchJson(p).then(function(j){DATA.status.push({file:p,ok:true,count:asArray(j).length}); return asArray(j);}).catch(function(e){DATA.status.push({file:p,ok:false,error:String(e.message)}); return [];}))).then(function(list){
+      var best=[]; list.forEach(function(arr){ if(arr.length>best.length) best=arr; }); DATA.ranking=best;
+      return fetchJson('data/market.json').then(function(j){DATA.market=asArray(j); DATA.status.push({file:'data/market.json',ok:true,count:DATA.market.length});}).catch(function(e){DATA.status.push({file:'data/market.json',ok:false,error:String(e.message)});});
+    }).then(function(){
+      return Promise.all(healthSources.map(function(p){return fetchJson(p).then(function(j){ DATA.health=Object.assign(DATA.health,j||{}); DATA.status.push({file:p,ok:true});}).catch(function(e){DATA.status.push({file:p,ok:false,error:String(e.message)});});}));
+    }).then(render).catch(function(e){document.getElementById('loadStatus').innerHTML='<span class="err">فشل التحميل: '+String(e.message)+'</span>';});
+  }
+  document.querySelectorAll('.nav button').forEach(function(btn){ btn.addEventListener('click', function(){ document.querySelectorAll('.nav button').forEach(function(b){b.classList.remove('active')}); btn.classList.add('active'); document.querySelectorAll('.screen').forEach(function(s){s.classList.add('hidden')}); document.getElementById(btn.getAttribute('data-screen')).classList.remove('hidden'); }); });
+  document.getElementById('reloadBtn').addEventListener('click', function(){ location.reload(); });
+  document.getElementById('exportCsv').addEventListener('click', function(){ var rows=DATA.ranking.map(function(r){ var p=price(r), pl=computePlan(r), c=classify(r); return [sym(r),name(r),p,c.rank,c.score,pl.entryFrom,pl.entryTo,pl.target1,pl.stopLoss,pl.gain,pl.rr,c.reasons]; }); var csv='symbol,name,price,rank,score,entryFrom,entryTo,target1,stopLoss,gain,rr,notes\n'+rows.map(function(a){return a.map(function(v){return '"'+String(v).replace(/"/g,'""')+'"';}).join(',');}).join('\n'); var blob=new Blob([csv],{type:'text/csv'}); var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='egx-recovery-ranking.csv'; a.click(); });
+  if('serviceWorker' in navigator){ navigator.serviceWorker.getRegistrations().then(function(regs){ regs.forEach(function(r){r.unregister();}); }); }
+  load();
+})();
 </script>
 </body>
 </html>
