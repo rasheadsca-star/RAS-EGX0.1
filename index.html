@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EGX Pro Hub — Professional Terminal V9.7 Portfolio-Aware Allocation Governor</title>
+  <title>EGX Pro Hub — Professional Terminal V9.8 Coverage Loop Allocation Governor</title>
   <style>
     :root{
       --bg:#050914;--bg2:#071326;--card:#08182d;--card2:#0a1d36;
@@ -537,6 +537,21 @@
     .rr95-rule.warn{border-color:rgba(245,158,11,.30);background:rgba(245,158,11,.10);color:#fde68a}
     .rr95-rule.bad{border-color:rgba(239,68,68,.30);background:rgba(239,68,68,.10);color:#fecaca}
 
+  
+
+/* ===================== V9.8 Trusted Coverage Loop ===================== */
+.cover98-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:12px 0}
+.cover98-card{background:linear-gradient(180deg,rgba(8,24,45,.92),rgba(5,13,27,.88));border:1px solid rgba(119,169,235,.20);border-radius:18px;padding:12px;line-height:1.75}
+.cover98-card span{display:block;color:#93a9c9;font-size:11px}.cover98-card b{display:block;font-size:24px;margin-top:4px}.cover98-card small{display:block;color:#9fb5d6;margin-top:4px}
+.cover98-meter{height:11px;border-radius:999px;background:#1f314d;overflow:hidden;margin-top:8px}.cover98-meter i{display:block;height:100%;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e)}
+.cover98-note{border-radius:16px;padding:12px;margin:10px 0;line-height:1.9;border:1px solid rgba(119,169,235,.20);background:rgba(7,19,38,.74);color:#dbeafe}
+.cover98-note.good{border-color:rgba(34,197,94,.30);background:rgba(34,197,94,.08);color:#bbf7d0}.cover98-note.warn{border-color:rgba(245,158,11,.32);background:rgba(245,158,11,.10);color:#fde68a}.cover98-note.bad{border-color:rgba(239,68,68,.34);background:rgba(239,68,68,.12);color:#fecaca}
+.cover98-pill{display:inline-flex;align-items:center;justify-content:center;min-width:76px;border-radius:999px;padding:5px 8px;border:1px solid rgba(119,169,235,.22);background:rgba(7,19,38,.80);font-size:10px;font-weight:950}
+.cover98-pill.ready{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.34);color:#bbf7d0}.cover98-pill.watch{background:rgba(245,158,11,.14);border-color:rgba(245,158,11,.34);color:#fde68a}.cover98-pill.block{background:rgba(239,68,68,.14);border-color:rgba(239,68,68,.34);color:#fecaca}
+.cover98-src{display:grid;grid-template-columns:120px 1fr 80px 110px;gap:8px;align-items:center;border-bottom:1px solid rgba(119,169,235,.10);padding:9px 0}.cover98-src:last-child{border-bottom:0}.cover98-src small{color:#93a9c9}
+.cover98-reason{white-space:normal!important;line-height:1.65;color:#cfe3ff;min-width:260px}
+@media(max-width:900px){.cover98-src{grid-template-columns:1fr}.cover98-grid{grid-template-columns:1fr}}
+
   </style>
 
 <!-- EGX Pro Hub PWA -->
@@ -573,7 +588,7 @@ const SAMPLE=[
 {symbol:"JUFO",name_ar:"جهينة للصناعات الغذائية",sector:"أغذية ومشروبات",price:15.85,changePct:-.44,valueTraded:12700000,volume:792000,support1:15.30,resistance1:16.40,entryFrom:15.60,entryTo:15.90,target1:16.40,target2:17.30,stopLoss:14.90,finalConfidence:61,dataQualityScore:74,grade:"B-",signal:"WATCH",recommendation:"مراقبة",reason:"انتظار اختراق مقاومة",priority:10}
 ];
 
-const EGX={buildId:'v945-risk-return-coverage-booster',screen:localStorage.getItem("egx_v61_screen")||"home",query:"",filter:"all",confidence:"all",sector:"all",selected:null,rows:[],source:{},market:{},alerts:{},history:{},historyIndicators:{},historyHealth:{},portfolio:[],portfolioText:localStorage.getItem("egx_v61_portfolio")||"COMI,5000,77.50\nETEL,10000,18.20\nEFGH,15000,16.10\nTMGH,7500,30.40\nCCAP,20000,2.41",watchlist:JSON.parse(localStorage.getItem("egx_v64_watchlist")||"[]"),news:{},newsIntel:{},newsCollector:{},accuracy:{},accuracyLatest:{},accuracyHistory:{},appHealth:{},regressionReport:{},historyIntegrity:{},sectorCompletion:{},smartAlertRules:{},dailyBrief:{},accuracyInterpretation:{},confidenceGuard:{},sessionMemory:{},priceFreshness:{},priceReconciliation:{},historyBackfillPlan:{},finalRanking:{},portfolioDecisionRules:{},alertDecisionCenter:{},dataOperations:{},workflowSourceVerification:{},fetchStatus:{},sourceFetchReport:{},sourceGatewayReport:{},sourceAlerts:{},unifiedDecisionBoard:{},signalQuality:{},actionableWatchlist:{},entryTriggers:{},recommendationOutcomeTracker:{},executiveHome:{},enginesConsole:{},recommendationPerformanceIndex:{},mubasherTools:{},multiSourceIntelligence:{},sourceEvidenceMatrix:{},finalMultisourceRanking:{},pro:{}};
+const EGX={buildId:'v980-coverage-loop',screen:localStorage.getItem("egx_v61_screen")||"home",query:"",filter:"all",confidence:"all",sector:"all",selected:null,rows:[],source:{},market:{},alerts:{},history:{},historyIndicators:{},historyHealth:{},portfolio:[],portfolioText:localStorage.getItem("egx_v61_portfolio")||"COMI,5000,77.50\nETEL,10000,18.20\nEFGH,15000,16.10\nTMGH,7500,30.40\nCCAP,20000,2.41",watchlist:JSON.parse(localStorage.getItem("egx_v64_watchlist")||"[]"),news:{},newsIntel:{},newsCollector:{},accuracy:{},accuracyLatest:{},accuracyHistory:{},appHealth:{},regressionReport:{},historyIntegrity:{},sectorCompletion:{},smartAlertRules:{},dailyBrief:{},accuracyInterpretation:{},confidenceGuard:{},sessionMemory:{},priceFreshness:{},priceReconciliation:{},historyBackfillPlan:{},finalRanking:{},portfolioDecisionRules:{},alertDecisionCenter:{},dataOperations:{},workflowSourceVerification:{},fetchStatus:{},sourceFetchReport:{},sourceGatewayReport:{},sourceAlerts:{},unifiedDecisionBoard:{},signalQuality:{},actionableWatchlist:{},entryTriggers:{},recommendationOutcomeTracker:{},executiveHome:{},enginesConsole:{},recommendationPerformanceIndex:{},mubasherTools:{},multiSourceIntelligence:{},sourceEvidenceMatrix:{},finalMultisourceRanking:{},pro:{}};
 if(new URLSearchParams(location.search).get("classic")==="1"){EGX.screen="classic"}
 
 function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
@@ -4172,9 +4187,49 @@ function renderRecommendationValidationPanel(){
       render();
     };
   };
-  side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['decisionQueue','قائمة القرار التنفيذي','🚦'],['capitalAllocation','تخصيص رأس المال','💰'],['portfolioAwareAllocation','تخصيص مرتبط بالمحفظة','🧮'],['coverageBooster','توسيع التغطية','🧭'],['riskReturn','المخاطر والعائد','📊'],['safetyGovernor','حاكم التوصيات','🛡'],['multiSourceIntel','ذكاء المصادر','☷'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['portfolioDecision','قرارات المحفظة','⚖'],['alertsCenter','مركز التنبيهات','🚨'],['dailyBrief','تقرير القرار اليومي','▧'],['stockSearch','بحث وتحليل سهم','⌕'],['sessionMemory','ذاكرة الجلسات','▣'],['historyBackfill','استكمال التاريخ','⏳'],['chartLab','تاريخ وشارت','▥'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V9.7 Portfolio-Aware</div></div></div><div class="statusbar"><span class="live">حاكم التخصيص المرتبط بالمحفظة مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
+  side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['decisionQueue','قائمة القرار التنفيذي','🚦'],['capitalAllocation','تخصيص رأس المال','💰'],['portfolioAwareAllocation','تخصيص مرتبط بالمحفظة','🧮'],['coverageBooster','توسيع التغطية','🧭'],['riskReturn','المخاطر والعائد','📊'],['safetyGovernor','حاكم التوصيات','🛡'],['multiSourceIntel','ذكاء المصادر','☷'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['portfolioDecision','قرارات المحفظة','⚖'],['alertsCenter','مركز التنبيهات','🚨'],['dailyBrief','تقرير القرار اليومي','▧'],['stockSearch','بحث وتحليل سهم','⌕'],['sessionMemory','ذاكرة الجلسات','▣'],['historyBackfill','استكمال التاريخ','⏳'],['chartLab','تاريخ وشارت','▥'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V9.8 Coverage Loop</div></div></div><div class="statusbar"><span class="live">حاكم التخصيص المرتبط بالمحفظة مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
   quickJump=function(){const base=[['home','⌂ الرئيسية'],['decisionQueue','🚦 قائمة القرار'],['capitalAllocation','💰 تخصيص رأس المال'],['portfolioAwareAllocation','🧮 مرتبط بالمحفظة'],['riskReturn','📊 المخاطر والعائد'],['coverageBooster','🧭 توسيع التغطية'],['safetyGovernor','🛡 حاكم التوصيات'],['multiSourceIntel','☷ ذكاء المصادر'],['rankingEngine','≡ الأولويات'],['performanceIndex','✓ مؤشر الدقة'],['dataOps','☷ تدقيق البيانات'],['portfolio','◈ المحفظة']];return `<div class="screen-jump v894-jump">${base.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
 })();
+
+(function(){
+  if(!window.EGX){return}
+  EGX.coverageLoop = EGX.coverageLoop || {};
+  const __v980OldInit = init;
+  init = async function(){
+    await __v980OldInit();
+    try{ EGX.coverageLoop = await loadJson('data/evidence-coverage-loop-status.json',{}); }catch(e){ EGX.coverageLoop = {}; }
+    render();
+  };
+  function v980Rows(){
+    const cl=EGX.coverageLoop||{}, m=EGX.sourceEvidenceMatrix||{}, ms=EGX.multiSourceIntelligence||{};
+    const rows = Array.isArray(cl.rows)&&cl.rows.length ? cl.rows : (Array.isArray(m.rows)&&m.rows.length?m.rows:(Array.isArray(ms.rows)?ms.rows:[]));
+    return rows;
+  }
+  function v980Pct(x){x=num(x);return x==null?0:Math.max(0,Math.min(100,x));}
+  function v980StateClass(s){s=String(s||'').toUpperCase(); if(/READY|OK|ACCEPTED|TRUSTED/.test(s))return'ready'; if(/BLOCK|FAILED|MISSING|REJECT/.test(s))return'block'; return'watch'}
+  function renderCoverageLoop(){
+    const cl=EGX.coverageLoop||{}, rows=v980Rows();
+    const sum=cl.summary||EGX.multiSourceIntelligence?.summary||EGX.sourceEvidenceMatrix?.summary||{};
+    const total=num(sum.totalUniverse??sum.totalSymbols??sum.marketUniverse??EGX.source.totalUniverse??224)||224;
+    const ready=num(sum.reliableSymbols??sum.analysisReadySymbols??sum.readySymbols??rows.filter(x=>v980StateClass(x.coverageStatus||x.finalDataDecision||x.decision)==='ready').length)||0;
+    const pctv=v980Pct(sum.reliableCoveragePct??sum.analysisReadyCoveragePct??(ready/Math.max(1,total)*100));
+    const target=num(sum.targetCoveragePct)||80;
+    const blocked=num(sum.blockedSymbols??rows.filter(x=>v980StateClass(x.coverageStatus||x.finalDataDecision||x.decision)==='block').length)||0;
+    const watch=num(sum.watchOnlySymbols??rows.filter(x=>v980StateClass(x.coverageStatus||x.finalDataDecision||x.decision)==='watch').length)||0;
+    const srcs=Array.isArray(cl.sources)?cl.sources:(Array.isArray(EGX.mubasherTools?.sources)?EGX.mubasherTools.sources:[]);
+    const attempts=cl.attempts||sum.attempts||{};
+    const topReasons=(cl.exclusionReasons||sum.exclusionReasons||[]).slice(0,8);
+    const status=pctv>=target?'good':pctv>=65?'warn':'bad';
+    const note=pctv>=target?'تم الوصول لهدف التغطية الموثوقة 80% أو أكثر.':'التغطية لم تصل بعد إلى 80%؛ سيستمر الـ Workflow في استخدام المصادر البديلة والكاش الآمن لتقليل المحجوب دون كسر قواعد السلامة.';
+    return `${header('V9.8 حلقة توسيع التغطية الموثوقة','محاولات تكرارية لجمع ودمج بيانات الأسهم من مباشر والمصادر البديلة حتى الوصول إلى 80% تحليل موثوق قدر الإمكان')}${quickJump()}<div class="cover98-note ${status}"><b>الهدف:</b> رفع الأسهم القابلة للتحليل إلى 80% من السوق. <br>${esc(note)}</div><section class="cover98-grid"><div class="cover98-card"><span>التغطية الموثوقة</span><b>${fmt(pctv,1)}%</b><div class="cover98-meter"><i style="width:${pctv}%"></i></div><small>${fmt0(ready)} / ${fmt0(total)} سهم</small></div><div class="cover98-card"><span>هدف التغطية</span><b>${fmt0(target)}%</b><small>الحد الأدنى المطلوب</small></div><div class="cover98-card"><span>Watch / يحتاج تأكيد</span><b>${fmt0(watch)}</b><small>لا يتم استبعاده نهائيًا</small></div><div class="cover98-card"><span>محجوب بسبب واضح</span><b class="neg">${fmt0(blocked)}</b><small>يجب توضيح سبب الاستبعاد</small></div><div class="cover98-card"><span>عدد المحاولات</span><b>${fmt0(attempts.totalAttempts??attempts.cycles??0)}</b><small>مصادر + إعادة محاولة</small></div><div class="cover98-card"><span>آخر تحديث</span><b style="font-size:15px">${cl.generatedAt?esc(new Date(cl.generatedAt).toLocaleString('en-GB')):'-'}</b><small>Workflow data loop</small></div></section><section class="two-col"><div class="panel"><h3>مصادر ومحاولات الجلب</h3>${srcs.map(s=>`<div class="cover98-src"><b>${esc(s.id||s.name||s.title||'-')}</b><small>${esc(s.title||s.url||s.note||'')}</small><span class="cover98-pill ${s.ok?'ready':'watch'}">${s.ok?'OK':'Fallback'}</span><span>${fmt0(s.count||s.rows||0)} صف</span></div>`).join('')||'<div class="muted">سيظهر تقرير المصادر بعد تشغيل Workflow.</div>'}</div><div class="panel"><h3>أسباب الاستبعاد الأعلى</h3>${topReasons.length?topReasons.map(x=>`<div class="quickrow"><b>${fmt0(x.count||0)}</b><div><b>${esc(x.reason||x.name||'-')}</b><br><small>${esc(x.note||'')}</small></div><span>${fmt(v980Pct((x.count||0)/Math.max(1,total)*100),1)}%</span></div>`).join(''):'<div class="muted">لا توجد أسباب استبعاد مجمعة بعد.</div>'}</div></section><section class="panel" style="margin-top:12px"><h3>كل الأسهم حسب حالة التغطية</h3><div class="tablewrap"><table class="compact-table" style="min-width:1500px"><thead><tr><th>#</th><th>الرمز</th><th>الاسم</th><th>حالة التغطية</th><th>قوة الدليل</th><th>تأكيدات</th><th>مصادر</th><th>السعر</th><th>الحجم/القيمة</th><th>الدعم/المقاومة</th><th>سبب الاستبعاد/النقص</th></tr></thead><tbody>${rows.slice(0,224).map((r,i)=>{const st=r.coverageStatus||r.finalDataDecision||r.decision||r.status;const cls=v980StateClass(st);const sources=Array.isArray(r.confirmationSources)?r.confirmationSources:(Array.isArray(r.sourcesList)?r.sourcesList:Object.keys(r.sources||{}));return `<tr><td>${i+1}</td><td class="symbol">${esc(r.symbol)}</td><td>${esc(r.name||r.name_ar||r.arabicName||'')}</td><td><span class="cover98-pill ${cls}">${esc(st||'-')}</span></td><td class="${(num(r.sourceStrengthScore||r.evidenceScore)||0)>=70?'pos':''}">${fmt0(r.sourceStrengthScore||r.evidenceScore)}%</td><td>${fmt0(r.confirmationCount||r.confirmations)}</td><td>${esc((sources||[]).slice(0,5).join(' + '))}</td><td>${esc(r.priceStatus||r.priceEvidence||'-')}</td><td>${esc(r.volumeStatus||r.liquidityStatus||'-')}</td><td>${esc(r.supportStatus||r.supportResistanceStatus||'-')}</td><td class="cover98-reason">${esc(r.exclusionReason||r.reason||r.finalReason||'')}</td></tr>`}).join('')}</tbody></table></div></section>`;
+  }
+  const __v980OldContent = content;
+  content = function(){ if(EGX.screen==='coverageLoop') return renderCoverageLoop(); return __v980OldContent(); };
+  const __v980OldSide = side;
+  side = function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['decisionQueue','قائمة القرار التنفيذي','🚦'],['coverageLoop','تغطية موثوقة 80%','🔁'],['capitalAllocation','تخصيص رأس المال','💰'],['portfolioAwareAllocation','تخصيص مرتبط بالمحفظة','🧮'],['coverageBooster','توسيع التغطية','🧭'],['riskReturn','المخاطر والعائد','📊'],['safetyGovernor','حاكم التوصيات','🛡'],['multiSourceIntel','ذكاء المصادر','☷'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['stockSearch','بحث وتحليل سهم','⌕'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V9.8 Coverage Loop</div></div></div><div class="statusbar"><span class="live">حلقة التغطية الموثوقة مفعلة</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
+  quickJump=function(){const base=[['home','⌂ الرئيسية'],['decisionQueue','🚦 قائمة القرار'],['coverageLoop','🔁 تغطية 80%'],['capitalAllocation','💰 تخصيص رأس المال'],['portfolioAwareAllocation','🧮 مرتبط بالمحفظة'],['riskReturn','📊 المخاطر والعائد'],['coverageBooster','🧭 توسيع التغطية'],['safetyGovernor','🛡 حاكم التوصيات'],['multiSourceIntel','☷ ذكاء المصادر'],['rankingEngine','≡ الأولويات'],['performanceIndex','✓ مؤشر الدقة'],['dataOps','☷ تدقيق البيانات'],['portfolio','◈ المحفظة']];return `<div class="screen-jump v894-jump">${base.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
+})();
+
 
 })();
 
