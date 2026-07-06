@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EGX Pro Hub — Professional Terminal V8.10.3 Safe Plan + Source Gate</title>
+  <title>EGX Pro Hub — Professional Terminal V8.10.3.1 Runtime Guard</title>
   <style>
     :root{
       --bg:#050914;--bg2:#071326;--card:#08182d;--card2:#0a1d36;
@@ -528,6 +528,23 @@
 <div id="app"></div>
 
 <script>
+/* ===================== V8.10.3.1 Runtime Guard Hotfix =====================
+   Prevents legacy helper errors like $class is not defined after mixed patches. */
+(function(){
+  try{
+    if(typeof window.$class !== 'function'){
+      window.$class = function(condition, yes, no){
+        if(arguments.length === 0) return '';
+        if(arguments.length === 1) return String(condition || '');
+        return condition ? String(yes || '') : String(no || '');
+      };
+    }
+    if(typeof window.$text !== 'function'){
+      window.$text = function(v){ return v == null ? '' : String(v); };
+    }
+  }catch(e){}
+})();
+
 (function(){
 "use strict";
 
@@ -1030,7 +1047,7 @@ function side(){const nav=[
 ["confidenceGuard","حارس الثقة","🛡"],
 ["settings","الإعدادات","⚙"],
 ["mobile","موبايل","▣"]
-];return`<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><p>Professional Terminal V8.10.3 Safe Plan + Source Gate</p></div></div><div class="nav-title">لوحة التحكم</div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[1]}</span><span class="ico">${n[2]}</span></button>`).join("")}</nav><div class="footer"><div class="live">متصل</div><div class="muted" style="margin-top:8px">بيانات عامة ومتأخرة — مساعد قرار فقط.</div><button class="btn warn" id="classicBtn" style="margin-top:10px;width:100%">الوضع الكلاسيكي</button></div></aside>`}
+];return`<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><p>Professional Terminal V8.10.3.1 Runtime Guard</p></div></div><div class="nav-title">لوحة التحكم</div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[1]}</span><span class="ico">${n[2]}</span></button>`).join("")}</nav><div class="footer"><div class="live">متصل</div><div class="muted" style="margin-top:8px">بيانات عامة ومتأخرة — مساعد قرار فقط.</div><button class="btn warn" id="classicBtn" style="margin-top:10px;width:100%">الوضع الكلاسيكي</button></div></aside>`}
 function header(title,sub){const last=EGX.source.generatedAt||EGX.source.lastSuccessAt||EGX.market.updatedAt||new Date().toISOString();return`<div class="head"><div><h2>${title}</h2><p>${sub}</p></div><div class="actions"><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق التغطية: السوق المصري</span><span class="chip warn"><i class="dot"></i> وضع المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${esc(new Date(last).toLocaleString("en-GB"))}</span><span class="chip info"><i class="dot"></i> الكاش: ${fmt0(EGX.source.cacheRows||EGX.rows.length)} / ${fmt0(EGX.source.totalUniverse||EGX.rows.length)}</span><span class="chip"><i class="dot"></i> جودة البيانات: ${fmt0(EGX.source.avgDataQuality||100)}%</span><span class="chip info"><i class="dot"></i> تاريخ 50 جلسة: ${fmt0((EGX.historyHealth&&EGX.historyHealth.symbolsWithComplete50)||0)} سهم</span><span class="chip"><i class="dot"></i> V8.10.3 Safe Plan + Source Gate</span></div>`}
 function kpis(){const p=pulse();const hs=historyGlobalStats();return`<section class="kpis">${kpi("عدد الفرص",fmt0(p.rows),"Universe "+fmt0(EGX.source.totalUniverse||p.rows))}${kpi("سجل 50 جلسة",fmt0(hs.with50),`متوسط ${fmt0(hs.avg)} جلسة`)}${kpi("سجل فعلي جزئي",fmt0(hs.withAny),`من ${fmt0(hs.total)} سهم`)}${kpi("فرص تخفيف مخاطر",fmt0(p.risk),"راجع الوقف",true)}${kpi("متوسط الثقة",fmt0(p.avg)+"%","يعرض التاريخ إن وجد")}${kpi("اتساع السوق",p.breadth.toFixed(2),p.status)}</section>`}
 function topFive(){const top=sorted().slice(0,5);return`<div class="panel"><h3>أفضل 5 فرص اليوم <span>🏆</span></h3><div class="list">${top.map((r,i)=>`<div class="listrow"><span class="rank">${i+1}</span><b>${esc(r.symbol)}</b><span>${fmt0(r.finalConfidence)}%</span><div></div><div class="bar"><span style="width:${Math.min(100,r.finalConfidence)}%"></span></div></div>`).join("")}</div></div>`}
@@ -3397,7 +3414,7 @@ function side(){
     ["dailyBrief","تقرير القرار اليومي","▧"],["stockSearch","بحث وتحليل سهم","⌕"],["sessionMemory","ذاكرة الجلسات","▣"],
     ["historyBackfill","استكمال التاريخ","⏳"],["chartLab","تاريخ وشارت","▥"],["health","صحة التطبيق","◉"],["regressionQA","فحص الثبات","✓"],["settings","الإعدادات","⚙"]
   ];
-  return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V8.10.3 Safe Plan + Source Gate</div></div></div><div class="statusbar"><span class="live">تشغيل تجريبي للجلسة</span><span>${new Date().toLocaleDateString("en-GB")}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[2]}</span>${n[1]}</button>`).join("")}</nav></aside>`;
+  return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V8.10.3.1 Runtime Guard</div></div></div><div class="statusbar"><span class="live">تشغيل تجريبي للجلسة</span><span>${new Date().toLocaleDateString("en-GB")}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[2]}</span>${n[1]}</button>`).join("")}</nav></aside>`;
 }
 
 
@@ -3531,7 +3548,7 @@ function side(){
     ["dailyBrief","تقرير القرار اليومي","▧"],["stockSearch","بحث وتحليل سهم","⌕"],["sessionMemory","ذاكرة الجلسات","▣"],
     ["historyBackfill","استكمال التاريخ","⏳"],["chartLab","تاريخ وشارت","▥"],["health","صحة التطبيق","◉"],["regressionQA","فحص الثبات","✓"],["settings","الإعدادات","⚙"]
   ];
-  return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V8.10.3 Safe Plan + Source Gate</div></div></div><div class="statusbar"><span class="live">الرئيسية التنفيذية مفعلة</span><span>${new Date().toLocaleDateString("en-GB")}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[2]}</span>${n[1]}</button>`).join("")}</nav></aside>`;
+  return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V8.10.3.1 Runtime Guard</div></div></div><div class="statusbar"><span class="live">الرئيسية التنفيذية مفعلة</span><span>${new Date().toLocaleDateString("en-GB")}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?"active":""}"><span>${n[2]}</span>${n[1]}</button>`).join("")}</nav></aside>`;
 }
 
 
@@ -3583,7 +3600,7 @@ function renderPriceSourceAudit(){const d=v898PriceAuditData(),s=d.summary||{},r
 const __v898OldQuickJump=quickJump;
 quickJump=function(){const base=[['home','⌂ الرئيسية'],['enginesConsole','⚙ لوحة التشغيل'],['recommendationValidation','☑ تحقق التوصيات'],['priceSourceAudit','⇆ مصدر السعر'],['performanceIndex','✓ مؤشر الدقة'],['rankingEngine','≡ الأولويات'],['dataOps','☷ تدقيق البيانات'],['portfolio','◈ المحفظة']];return `<div class="screen-jump v894-jump">${base.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
 const __v898OldSide=side;
-side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['portfolioDecision','قرارات المحفظة','⚖'],['alertsCenter','مركز التنبيهات','🚨'],['dailyBrief','تقرير القرار اليومي','▧'],['stockSearch','بحث وتحليل سهم','⌕'],['sessionMemory','ذاكرة الجلسات','▣'],['historyBackfill','استكمال التاريخ','⏳'],['chartLab','تاريخ وشارت','▥'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V8.10.0 Table Scroll</div></div></div><div class="statusbar"><span class="live">تحقق التوصيات ومصدر السعر مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
+side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['enginesConsole','لوحة التشغيل','⚙'],['recommendationValidation','تحقق التوصيات','☑'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['portfolioDecision','قرارات المحفظة','⚖'],['alertsCenter','مركز التنبيهات','🚨'],['dailyBrief','تقرير القرار اليومي','▧'],['stockSearch','بحث وتحليل سهم','⌕'],['sessionMemory','ذاكرة الجلسات','▣'],['historyBackfill','استكمال التاريخ','⏳'],['chartLab','تاريخ وشارت','▥'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V8.10.3.1 Runtime Guard</div></div></div><div class="statusbar"><span class="live">تحقق التوصيات ومصدر السعر مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
 const __v898OldContent=content;
 content=function(){if(EGX.screen==='recommendationValidation')return renderRecommendationValidationPanel();if(EGX.screen==='priceSourceAudit')return renderPriceSourceAudit();return __v898OldContent();};
 const __v898OldInit=init;
