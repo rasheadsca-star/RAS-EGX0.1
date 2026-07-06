@@ -1,15 +1,15 @@
 {
   "ok": true,
   "engine": "v8_9_3_executive_home",
-  "generatedAt": "2026-07-06T10:10:49.697Z",
+  "generatedAt": "2026-07-06T10:26:32.559Z",
   "summary": {
     "dataStatus": "ok",
-    "coveragePct": 92,
-    "marketRows": 206,
+    "coveragePct": 92.4,
+    "marketRows": 207,
     "source": "mubasher_symbol_pages_precise_enriched",
     "actionableCount": 218,
     "aPlus": 1,
-    "aOrBetter": 5,
+    "aOrBetter": 4,
     "criticalAlerts": 8,
     "historyAverage": 5,
     "historyComplete50": 0,
@@ -20,7 +20,7 @@
   },
   "topOpportunities": [
     {
-      "rank": 42,
+      "rank": 38,
       "symbol": "TAQA",
       "name": "طاقة عربية",
       "tier": "C",
@@ -60,7 +60,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/TAQA/"
     },
     {
-      "rank": 43,
+      "rank": 39,
       "symbol": "WCDF",
       "name": "مطاحن وسط وغرب الدلتا",
       "tier": "C",
@@ -99,7 +99,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/WCDF/"
     },
     {
-      "rank": 44,
+      "rank": 40,
       "symbol": "CPME",
       "name": "كاتاليست بارتنرز",
       "tier": "C",
@@ -138,7 +138,7 @@
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/CPME/"
     },
     {
-      "rank": 45,
+      "rank": 41,
       "symbol": "ELNA",
       "name": "النصر لتصنيع الحاصلات الزراعية",
       "tier": "C",
@@ -268,13 +268,13 @@
       "compositeScore": 0,
       "confidence": 100,
       "dataQualityScore": 100,
-      "technicalScore": 38.1,
+      "technicalScore": 35.1,
       "liquidityScore": 50,
       "financialScore": 55,
       "newsScore": 52,
       "historySessions": 5,
-      "price": 0.67,
-      "priceDisplay": "0.670",
+      "price": 0.68,
+      "priceDisplay": "0.680",
       "changePct": -0.6,
       "turnover": 21007102,
       "volume": 31229358,
@@ -291,11 +291,12 @@
       "precisionRisk": true,
       "executionAllowed": false,
       "blocks": [
+        "price_mismatch",
         "price_precision_risk",
         "weak_rr",
         "limited_history"
       ],
-      "reason": "تحت Pivot + سيولة مقبولة + مساحة قبل المقاومة | لا يوجد سجل تاريخي كافٍ (3/50) | Snapshot evidence: 141 observations / 3 dates, score 86%. ليس 50 جلسة. | موجود في محرك الأولويات | موجود في التوصيات اليومية | السعر أقل من 1 جنيه ويحتاج تأكيد 3 خانات قبل أي توصية تنفيذية | السعر داخل نطاق الدخول | تاريخ محدود 5/50",
+      "reason": "تحت Pivot + سيولة مقبولة + مساحة قبل المقاومة | لا يوجد سجل تاريخي كافٍ (3/50) | Snapshot evidence: 141 observations / 3 dates, score 86%. ليس 50 جلسة. | موجود في محرك الأولويات | موجود في التوصيات اليومية | السعر أقل من 1 جنيه ويحتاج تأكيد 3 خانات قبل أي توصية تنفيذية | السعر داخل نطاق الدخول | تاريخ محدود 5/50 | يوجد فرق سعر يحتاج مراجعة",
       "decisionNote": "لا تنفيذ: السعر يحتاج تأكيد 3 خانات | مشترك بين الفرص اليومية ومحرك الأولويات | تاريخ محدود 5/50",
       "sourceUrl": "https://english.mubasher.info/markets/EGX/stocks/AIDC/"
     },
@@ -436,9 +437,9 @@
       "type": "price_conflict",
       "symbol": "ABUK",
       "title": "تعارض سعر",
-      "text": "final=69.62, recommendation=67.94, market=69.62, cache=67.94",
+      "text": "final=69.71, recommendation=67.94, market=69.71, cache=67.94",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 2.47%"
+      "why": "max/min internal price spread 2.61%"
     },
     {
       "id": "price:price_conflict:ACAMD:تعارض سعر",
@@ -453,6 +454,18 @@
       "why": "max/min internal price spread 4.44%"
     },
     {
+      "id": "price:price_conflict:ACAP:تعارض سعر",
+      "level": "critical",
+      "priority": "عاجل",
+      "source": "price",
+      "type": "price_conflict",
+      "symbol": "ACAP",
+      "title": "تعارض سعر",
+      "text": "final=8.74, recommendation=8.56, market=8.74, cache=8.56",
+      "action": "مراجعة السعر قبل أي قرار قوي",
+      "why": "max/min internal price spread 2.10%"
+    },
+    {
       "id": "price:price_conflict:ACGC:تعارض سعر",
       "level": "critical",
       "priority": "عاجل",
@@ -460,9 +473,9 @@
       "type": "price_conflict",
       "symbol": "ACGC",
       "title": "تعارض سعر",
-      "text": "final=9.57, recommendation=9.23, market=9.57, cache=9.23",
+      "text": "final=9.55, recommendation=9.23, market=9.55, cache=9.23",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 3.68%"
+      "why": "max/min internal price spread 3.47%"
     },
     {
       "id": "price:price_conflict:ADCI:تعارض سعر",
@@ -484,9 +497,9 @@
       "type": "price_conflict",
       "symbol": "ADIB",
       "title": "تعارض سعر",
-      "text": "final=47.06, recommendation=46.64, market=47.06, cache=46.64",
+      "text": "final=47.29, recommendation=46.64, market=47.29, cache=46.64",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 0.90%"
+      "why": "max/min internal price spread 1.39%"
     },
     {
       "id": "price:price_conflict:ADPC:تعارض سعر",
@@ -496,9 +509,9 @@
       "type": "price_conflict",
       "symbol": "ADPC",
       "title": "تعارض سعر",
-      "text": "final=3.55, recommendation=3.45, market=3.55, cache=3.45",
+      "text": "final=3.56, recommendation=3.45, market=3.56, cache=3.45",
       "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 2.90%"
+      "why": "max/min internal price spread 3.19%"
     },
     {
       "id": "price:price_conflict:ADRI:تعارض سعر",
@@ -511,18 +524,6 @@
       "text": "final=7.46, recommendation=null, market=7.46, cache=null",
       "action": "مراجعة السعر قبل أي قرار قوي",
       "why": "max/min internal price spread 2.75%"
-    },
-    {
-      "id": "price:price_conflict:AFDI:تعارض سعر",
-      "level": "critical",
-      "priority": "عاجل",
-      "source": "price",
-      "type": "price_conflict",
-      "symbol": "AFDI",
-      "title": "تعارض سعر",
-      "text": "final=45.1, recommendation=44.34, market=45.1, cache=44.34",
-      "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 1.71%"
     }
   ],
   "nextActions": [
