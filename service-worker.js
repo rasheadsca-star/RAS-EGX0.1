@@ -1,20 +1,15 @@
-// V8.10.5 Emergency stable rollback service worker cleanup
-// This SW intentionally clears old EGX Pro Hub caches and then unregisters itself.
-self.addEventListener('install', (event) => {
+// EGX Pro Hub V8.10.6 Emergency Cache Reset Service Worker
+// This file intentionally does not cache anything.
+self.addEventListener('install', event => {
   self.skipWaiting();
-  event.waitUntil(
-    caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k))))
-  );
 });
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', event => {
   event.waitUntil((async () => {
-    try {
-      const keys = await caches.keys();
-      await Promise.all(keys.map(k => caches.delete(k)));
-      const clientsList = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
-      for (const client of clientsList) client.navigate(client.url);
-      await self.registration.unregister();
-    } catch (e) {}
+    const keys = await caches.keys();
+    await Promise.all(keys.map(k => caches.delete(k)));
+    await self.clients.claim();
   })());
 });
-self.addEventListener('fetch', () => {});
+self.addEventListener('fetch', event => {
+  event.respondWith(fetch(event.request, { cache: 'no-store' }).catch(() => fetch(event.request)));
+});
