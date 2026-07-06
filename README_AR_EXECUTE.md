@@ -1,13 +1,38 @@
-# V8.10.6 Zero-Dependency Recovery
+# V9.1 Data Evidence Core
 
-ارفع ملفين فقط في جذر المشروع:
+## ارفع هذه الملفات فقط
 
-- index.html
-- service-worker.js
+- `index.html`
+- `service-worker.js`
+- `scripts/collect-mubasher-analysis-tools.js`
+- `scripts/build-multi-source-intelligence.js`
+- `scripts/apply-multisource-intelligence-to-ranking.js`
 
-لا ترفع أي ملفات data ولا تشغل Workflow قبل التأكد أن الصفحة فتحت.
+## لا ترفع
 
-بعد الرفع افتح:
-https://rasheadsca-star.github.io/RAS-EGX0.1/?v=8106
+- أي ملف داخل `data`
+- `data/scan-state.json`
+- `data/full-market-cache.json`
 
-ثم Ctrl + Shift + R أو افتح في نافذة InPrivate.
+## بعد الرفع
+
+Commit message:
+
+```text
+Install V9.1 data evidence core
+```
+
+ثم شغّل:
+
+```text
+Actions → Update EGX Market Data → Run workflow
+history_maintenance = false
+```
+
+## ماذا يضيف؟
+
+- مركز واضح باسم `ذكاء المصادر` في القائمة.
+- Collector أكثر مرونة لأدوات مباشر، ويحافظ على آخر قراءة جيدة إذا فشل مصدر مؤقتًا.
+- Source Evidence Matrix مستقلة لكل سهم.
+- بوابة أدلة تخفض أو تحجب التوصية عند ضعف المصدر.
+- لا تعيد حساب السعر أو الدخول أو الهدف أو وقف الخسارة.
