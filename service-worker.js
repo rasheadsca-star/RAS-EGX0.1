@@ -1,5 +1,5 @@
-// EGX Pro Hub V10.2 Coverage UI Reader Fix
-const CACHE_NAME='egx-pro-hub-v1020-coverage-ui-reader-fix';
+// EGX Pro Hub V10.3 Accuracy Tracker Hardening
+const CACHE_NAME='egx-pro-hub-v1030-accuracy-tracker-hardening';
 self.addEventListener('install',e=>{self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)));await self.clients.claim();})());});
 self.addEventListener('fetch',event=>{

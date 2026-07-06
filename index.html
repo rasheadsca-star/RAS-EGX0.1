@@ -4231,6 +4231,123 @@ function renderRecommendationValidationPanel(){
 })();
 
 
+/* ===================== V10.3 Accuracy Tracker Hardening ===================== */
+(function v1030AccuracyHardening(){
+  try{
+    const style=document.createElement('style');
+    style.textContent=`
+      .acc103-hero{border:1px solid rgba(56,189,248,.28);background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(34,197,94,.07));border-radius:18px;padding:13px;margin:10px 0;line-height:1.9;color:#dbeafe}
+      .acc103-hero.warn{border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.10);color:#fde68a}
+      .acc103-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0}
+      .acc103-card{background:rgba(7,19,38,.78);border:1px solid rgba(119,169,235,.18);border-radius:16px;padding:12px;min-height:88px}
+      .acc103-card span{display:block;color:#93a9c9;font-size:11px}.acc103-card b{display:block;font-size:22px;margin-top:5px;color:#eef7ff}.acc103-card small{display:block;color:#9fb5d6;margin-top:4px;line-height:1.6}
+      .acc103-split{display:grid;grid-template-columns:1.25fr .75fr;gap:12px;align-items:start}.acc103-table{min-width:1560px!important}.acc103-table td{vertical-align:top!important;line-height:1.55!important}.acc103-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:950;border:1px solid rgba(119,169,235,.2);background:rgba(7,19,38,.75);color:#dbeafe}.acc103-pill.target{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.35);color:#bbf7d0}.acc103-pill.stop{background:rgba(239,68,68,.14);border-color:rgba(239,68,68,.35);color:#fecaca}.acc103-pill.open{background:rgba(14,165,233,.12);border-color:rgba(14,165,233,.33);color:#bfdbfe}.acc103-pill.invalid{background:rgba(245,158,11,.14);border-color:rgba(245,158,11,.35);color:#fde68a}.acc103-note{border:1px solid rgba(119,169,235,.16);background:rgba(7,19,38,.72);border-radius:14px;padding:10px;margin:8px 0;line-height:1.8;color:#cfe3ff}.acc103-note.good{border-color:rgba(34,197,94,.28);background:rgba(34,197,94,.09);color:#bbf7d0}.acc103-note.warn{border-color:rgba(245,158,11,.28);background:rgba(245,158,11,.10);color:#fde68a}.acc103-note.bad{border-color:rgba(239,68,68,.30);background:rgba(239,68,68,.10);color:#fecaca}.acc103-bar{height:8px;border-radius:999px;background:rgba(30,41,59,.9);overflow:hidden;margin-top:6px}.acc103-bar i{display:block;height:100%;background:linear-gradient(90deg,#22c55e,#0ea5e9)}
+      @media(max-width:1100px){.acc103-split{grid-template-columns:1fr}.acc103-table{min-width:1220px!important}}
+    `;
+    document.head.appendChild(style);
+  }catch(e){}
+
+  function v1030A(x){return Array.isArray(x)?x:[]}
+  function v1030N(x){try{return num(x)}catch(e){const n=Number(x);return Number.isFinite(n)?n:null}}
+  function v1030Pct(x){const n=v1030N(x);return n==null?'--':fmt(n,1)+'%'}
+  function v1030Rows(){
+    const rv=EGX.recommendationValidation||{}, ot=EGX.recommendationOutcomeTracker||{}, al=EGX.actionableWatchlist||{}, fr=EGX.finalRanking||{};
+    let rows=[];
+    try{rows=rows.concat(typeof v898Rows==='function'?v898Rows(rv):v1030A(rv.rows));}catch(e){rows=rows.concat(v1030A(rv.rows));}
+    try{rows=rows.concat(typeof v898Rows==='function'?v898Rows(ot):v1030A(ot.rows));}catch(e){rows=rows.concat(v1030A(ot.rows));}
+    if(!rows.length){
+      const a=v1030A(al.rows).length?v1030A(al.rows):v1030A(al.items);
+      const f=v1030A(fr.rows).length?v1030A(fr.rows):v1030A(fr.items);
+      rows=rows.concat(a).concat(f).slice(0,120).map(r=>({...r,status:'open',statusLabel:'مفتوح / يحتاج متابعة'}));
+    }
+    const seen=new Set();
+    return rows.filter(r=>r&&r.symbol).map((r,i)=>({...r,__i:i})).filter(r=>{const key=String(r.symbol).toUpperCase()+'|'+String(r.date||r.generatedAt||r.entry||r.entryFrom||r.__i); if(seen.has(key))return false; seen.add(key); return true;});
+  }
+  function v1030Grade(r){
+    const txt=String(r.classification||r.tier||r.grade||r.priorityClass||r.finalGrade||r.priority||r.recommendationTier||'').toUpperCase();
+    if(/P\s*1|\bA\+|EXECUTABLE_A/.test(txt))return 'P1';
+    if(/P\s*2|\bA\b|EXECUTABLE_B/.test(txt))return 'P2';
+    if(/P\s*3|\bB\b|WATCH/.test(txt))return 'WATCH';
+    if(/BLOCK/.test(txt))return 'BLOCKED';
+    return 'OTHER';
+  }
+  function v1030Entry(r){return v1030N(r.entry??r.entryPrice??r.entryFrom??r.buyFrom??r.entry_to??r.entryTo)}
+  function v1030Target(r){return v1030N(r.target1??r.firstTarget??r.target??r.tp1)}
+  function v1030Target2(r){return v1030N(r.target2??r.secondTarget??r.tp2)}
+  function v1030Stop(r){return v1030N(r.stopLoss??r.stop??r.sl)}
+  function v1030Current(r){return v1030N(r.current??r.currentPrice??r.price??r.lastPrice)}
+  function v1030Plan(r){
+    const entry=v1030Entry(r), target=v1030Target(r), stop=v1030Stop(r);
+    if(!(entry>0)||!(target>0)||!(stop>0))return {state:'missing',valid:false,reason:'خطة ناقصة'};
+    if(!(stop<entry&&target>entry))return {state:'invalid',valid:false,reason:'هدف/وقف غير منطقي'};
+    return {state:'valid',valid:true,reason:'خطة منطقية'};
+  }
+  function v1030Status(r){
+    const raw=String(r.status||r.statusLabel||r.outcome||r.result||r.finalOutcome||'').toLowerCase();
+    const plan=v1030Plan(r);
+    if(!plan.valid)return 'invalid';
+    if(/target2|target 2|هدف\s*2|tp2/.test(raw))return 'target2';
+    if(/target1|target|هدف|tp1|success|hit/.test(raw) && !/stop/.test(raw))return 'target1';
+    if(/stop|وقف|loss|failed|fail/.test(raw))return 'stop';
+    return 'open';
+  }
+  function v1030StatusLabel(s){return s==='target2'?'هدف 2':s==='target1'?'هدف 1':s==='stop'?'وقف':s==='invalid'?'خطة غير صالحة':'مفتوح'}
+  function v1030Return(r){
+    const cur=v1030Current(r), ent=v1030Entry(r);
+    if(v1030N(r.openReturnPct)!=null)return v1030N(r.openReturnPct);
+    if(v1030N(r.actualReturn)!=null)return v1030N(r.actualReturn);
+    if(cur>0&&ent>0)return (cur-ent)/ent*100;
+    return null;
+  }
+  function v1030MaxGain(r){return v1030N(r.maxGainPct??r.maxProfitPct??r.bestReturnPct)}
+  function v1030Draw(r){return v1030N(r.maxDrawdownPct??r.drawdownPct??r.worstReturnPct)}
+  function v1030Horizon(r){return r.horizon||r.sessionsAfter||r.holdingDays||r.ageSessions||r.followupSessions||'-'}
+  function v1030Summarize(rows){
+    const norm=rows.map(r=>({r,grade:v1030Grade(r),status:v1030Status(r),plan:v1030Plan(r)}));
+    const closed=norm.filter(x=>x.status==='target1'||x.status==='target2'||x.status==='stop');
+    const targets=closed.filter(x=>x.status==='target1'||x.status==='target2');
+    const stops=closed.filter(x=>x.status==='stop');
+    const open=norm.filter(x=>x.status==='open');
+    const invalid=norm.filter(x=>x.status==='invalid');
+    const successRate=closed.length?targets.length/closed.length*100:null;
+    const stopRate=closed.length?stops.length/closed.length*100:null;
+    const execClosed=closed.filter(x=>x.grade==='P1'||x.grade==='P2');
+    const execTargets=execClosed.filter(x=>x.status==='target1'||x.status==='target2');
+    const execRate=execClosed.length?execTargets.length/execClosed.length*100:null;
+    const byGrade=['P1','P2','WATCH','OTHER','BLOCKED'].map(g=>{const all=norm.filter(x=>x.grade===g), c=all.filter(x=>x.status==='target1'||x.status==='target2'||x.status==='stop'), t=c.filter(x=>x.status==='target1'||x.status==='target2'), st=c.filter(x=>x.status==='stop');return{grade:g,total:all.length,closed:c.length,targets:t.length,stops:st.length,rate:c.length?t.length/c.length*100:null,open:all.filter(x=>x.status==='open').length,invalid:all.filter(x=>x.status==='invalid').length}});
+    const avgOpen=open.length?open.reduce((s,x)=>s+(v1030Return(x.r)||0),0)/open.length:null;
+    const avgGain=norm.length?norm.reduce((s,x)=>s+(v1030MaxGain(x.r)||0),0)/norm.length:null;
+    const avgDraw=norm.length?norm.reduce((s,x)=>s+Math.abs(v1030Draw(x.r)||0),0)/norm.length:null;
+    return {norm,closed,targets,stops,open,invalid,successRate,stopRate,execClosed,execTargets,execRate,byGrade,avgOpen,avgGain,avgDraw};
+  }
+  window.renderRecommendationValidationPanel=function(){
+    const d=EGX.recommendationValidation||{}, rows=v1030Rows(), sm=v1030Summarize(rows);
+    const old=d.summary||{};
+    const oldTarget=(num(old.target1Hit)||0)+(num(old.target2Hit)||0), oldStop=num(old.stopHit)||0;
+    const mismatch=(oldTarget!==0||oldStop!==0) && (Math.abs(oldTarget-sm.targets.length)>3 || Math.abs(oldStop-sm.stops.length)>3);
+    const idx=sm.closed.length?Math.round(sm.successRate):null;
+    const hero=sm.closed.length?`المؤشر الآن يحسب النتائج المحسومة فقط. المفتوح لا يدخل في النجاح أو الفشل. تم قياس ${fmt0(sm.closed.length)} إشارة محسومة من ${fmt0(rows.length)}.`:`لا توجد عينة محسومة كافية بعد. الشاشة ستعرض الإشارات المفتوحة كمتابعة فقط ولا تحسبها فشلًا.`;
+    function rowHtml(x,i){const r=x.r, st=x.status, cls=st==='stop'?'stop':(st==='target1'||st==='target2')?'target':st==='invalid'?'invalid':'open';const plan=x.plan;return `<tr><td>${i+1}</td><td><b class="symbol">${esc(r.symbol)}</b><br><small>${esc(r.name||r.name_ar||x.grade||'')}</small></td><td><span class="acc103-pill ${cls}">${v1030StatusLabel(st)}</span><br><small>${esc(x.grade)}</small></td><td>${esc(plan.reason)}</td><td>${fmt(v1030Entry(r))}</td><td>${fmt(v1030Current(r))}</td><td><span class="pos">${fmt(v1030Target(r))}</span><br><span class="muted">${fmt(v1030Target2(r))}</span></td><td><span class="neg">${fmt(v1030Stop(r))}</span></td><td class="${(v1030Return(r)||0)>=0?'pos':'neg'}">${v1030Return(r)==null?'--':pct(v1030Return(r))}</td><td class="pos">${v1030MaxGain(r)==null?'--':pct(v1030MaxGain(r))}</td><td class="neg">${v1030Draw(r)==null?'--':pct(-Math.abs(v1030Draw(r)))}</td><td>${esc(v1030Horizon(r))}</td><td>${st==='open'?'قيد المتابعة':st==='invalid'?'لا تدخل في الدقة حتى إصلاح الخطة':st==='stop'?'فشل محسوم':'نجاح محسوم'}</td></tr>`}
+    return `${header('V10.3 تحقق التوصيات المحسّن','مؤشر دقة محكوم: يفصل المفتوح عن المحسوم، ويكشف الخطط غير الصالحة، ويحسب P1/P2 منفصلًا عن Watch.')}${quickJump()}<div class="acc103-hero ${mismatch?'warn':''}"><b>قاعدة V10.3:</b> ${esc(hero)} ${mismatch?'تم تجاهل ملخص قديم متعارض وإعادة الحساب من الصفوف المعروضة.':''}</div><section class="acc103-grid"><div class="acc103-card"><span>مؤشر الدقة المحسوم</span><b>${idx==null?'Warm-up':fmt0(idx)+'%'}</b><div class="acc103-bar"><i style="width:${idx==null?0:Math.max(0,Math.min(100,idx))}%"></i></div><small>نجاح / نتائج محسومة فقط</small></div><div class="acc103-card"><span>محسومة / مفتوحة</span><b>${fmt0(sm.closed.length)} / ${fmt0(sm.open.length)}</b><small>المفتوح لا يحسب فشلًا</small></div><div class="acc103-card"><span>هدف / وقف</span><b><span class="pos">${fmt0(sm.targets.length)}</span> / <span class="neg">${fmt0(sm.stops.length)}</span></b><small>نتائج فعلية محسومة</small></div><div class="acc103-card"><span>P1/P2 محسوم</span><b>${sm.execRate==null?'--':fmt0(sm.execRate)+'%'}</b><small>${fmt0(sm.execTargets.length)} نجاح من ${fmt0(sm.execClosed.length)}</small></div><div class="acc103-card"><span>خطط غير صالحة</span><b class="${sm.invalid.length?'neg':''}">${fmt0(sm.invalid.length)}</b><small>تستبعد من الدقة حتى إصلاح الهدف/الوقف</small></div><div class="acc103-card"><span>متوسط المفتوح</span><b class="${(sm.avgOpen||0)>=0?'pos':'neg'}">${sm.avgOpen==null?'--':pct(sm.avgOpen)}</b><small>للمتابعة فقط</small></div></section><section class="acc103-split"><div class="panel"><h3>سجل التوصيات — V10.3</h3><div class="tablewrap"><table class="compact-table acc103-table"><thead><tr><th>#</th><th>السهم</th><th>الحالة</th><th>صلاحية الخطة</th><th>الدخول</th><th>الحالي</th><th>هدف1/2</th><th>وقف</th><th>العائد الحالي</th><th>أقصى ربح</th><th>أقصى هبوط</th><th>الأفق</th><th>القراءة</th></tr></thead><tbody>${sm.norm.slice(0,120).map(rowHtml).join('')||'<tr><td colspan="13" class="muted">لا توجد توصيات مقاسة بعد.</td></tr>'}</tbody></table></div></div><div class="leftstack"><div class="panel"><h3>دقة حسب التصنيف</h3>${sm.byGrade.map(g=>`<div class="quickrow"><b>${esc(g.grade)}</b><div><b>${g.rate==null?'--':fmt0(g.rate)+'%'}</b><br><small>محسوم ${fmt0(g.closed)} · مفتوح ${fmt0(g.open)} · غير صالح ${fmt0(g.invalid)}</small></div><span><span class="pos">${fmt0(g.targets)}</span>/<span class="neg">${fmt0(g.stops)}</span></span></div>`).join('')}</div><div class="panel"><h3>تفسير المؤشر</h3><div class="acc103-note good"><b>النجاح:</b> يحسب فقط عند تحقق هدف 1 أو هدف 2.</div><div class="acc103-note bad"><b>الفشل:</b> يحسب فقط عند ضرب وقف الخسارة.</div><div class="acc103-note warn"><b>المفتوح:</b> لا يعتبر نجاحًا ولا فشلًا حتى انتهاء المتابعة أو تحقق هدف/وقف.</div><div class="acc103-note ${sm.invalid.length?'bad':''}"><b>الخطة غير الصالحة:</b> هدف أقل من الدخول أو وقف أعلى من الدخول لا يدخل في الدقة.</div></div><div class="panel"><h3>مؤشرات مساعدة</h3><div class="ministat"><span>نسبة الوقف المحسومة</span><b class="${(sm.stopRate||0)>35?'neg':''}">${sm.stopRate==null?'--':fmt(sm.stopRate,1)+'%'}</b></div><div class="ministat"><span>متوسط أقصى ربح</span><b class="pos">${sm.avgGain==null?'--':pct(sm.avgGain)}</b></div><div class="ministat"><span>متوسط أقصى هبوط</span><b class="neg">${sm.avgDraw==null?'--':pct(-Math.abs(sm.avgDraw))}</b></div></div></div></section>`;
+  };
+  const __v1030OldContent=content;
+  content=function(){if(EGX.screen==='recommendationValidation')return renderRecommendationValidationPanel();return __v1030OldContent();};
+  const __v1030OldInit=init;
+  init=async function(){
+    await __v1030OldInit();
+    try{
+      const [rv,ot,pi]=await Promise.all([loadJson('data/recommendation-validation-panel.json',{}),loadJson('data/recommendation-outcome-tracker.json',{}),loadJson('data/recommendation-performance-index.json',{})]);
+      if(rv&&Object.keys(rv).length)EGX.recommendationValidation=rv;
+      if(ot&&Object.keys(ot).length)EGX.recommendationOutcomeTracker=ot;
+      if(pi&&Object.keys(pi).length)EGX.recommendationPerformanceIndex=pi;
+    }catch(e){console.warn('V10.3 accuracy extra load skipped',e)}
+    render();
+  };
+  side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['decisionQueue','قائمة القرار التنفيذي','🚦'],['coverageLoop','تغطية حقيقية 80%','🔁'],['recommendationValidation','تحقق التوصيات','☑'],['capitalAllocation','تخصيص رأس المال','💰'],['portfolioAwareAllocation','تخصيص مرتبط بالمحفظة','🧮'],['riskReturn','المخاطر والعائد','📊'],['safetyGovernor','حاكم التوصيات','🛡'],['multiSourceIntel','ذكاء المصادر','☷'],['enginesConsole','لوحة التشغيل','⚙'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['stockSearch','بحث وتحليل سهم','⌕'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V10.3 Accuracy Hardening</div></div></div><div class="statusbar"><span class="live">تحقق التوصيات المحسّن مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
+  quickJump=function(){const base=[['home','⌂ الرئيسية'],['decisionQueue','🚦 قائمة القرار'],['coverageLoop','🔁 تغطية حقيقية 80%'],['recommendationValidation','☑ تحقق التوصيات'],['capitalAllocation','💰 تخصيص رأس المال'],['portfolioAwareAllocation','🧮 مرتبط بالمحفظة'],['riskReturn','📊 المخاطر والعائد'],['safetyGovernor','🛡 حاكم التوصيات'],['multiSourceIntel','☷ ذكاء المصادر'],['rankingEngine','≡ الأولويات'],['performanceIndex','✓ مؤشر الدقة'],['dataOps','☷ تدقيق البيانات'],['portfolio','◈ المحفظة']];return `<div class="screen-jump v894-jump">${base.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
+})();
+
+
 })();
 
 init().catch(e=>{
