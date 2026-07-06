@@ -1,5 +1,5 @@
-/* EGX Pro Hub V9.8 Trusted Coverage Loop — cache rescue service worker */
-const CACHE_NAME = 'egx-pro-hub-v9-8-trusted-coverage-loop';
+/* EGX Pro Hub V9.9 Precision Coverage Loop — cache rescue service worker */
+const CACHE_NAME = 'egx-pro-hub-v9-9-precision-coverage-loop';
 self.addEventListener('install', event => { self.skipWaiting(); });
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))).then(() => self.clients.claim()));
