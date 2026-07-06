@@ -1,11 +1,14 @@
-/* EGX Pro Hub V9.9 Precision Coverage Loop — cache rescue service worker */
-const CACHE_NAME = 'egx-pro-hub-v9-9-precision-coverage-loop';
-self.addEventListener('install', event => { self.skipWaiting(); });
-self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+// EGX Pro Hub V10.0 Real Coverage Recovery Engine
+const CACHE_NAME='egx-pro-hub-v1000-real-coverage-recovery';
+self.addEventListener('install',e=>{self.skipWaiting();});
+self.addEventListener('activate',e=>{e.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)));await self.clients.claim();})());});
+self.addEventListener('fetch',event=>{
+  const req=event.request;
+  if(req.method!=='GET')return;
+  const url=new URL(req.url);
+  if(url.pathname.includes('/data/') || url.searchParams.has('v')){
+    event.respondWith(fetch(req,{cache:'no-store'}).catch(()=>caches.match(req)));
+    return;
+  }
+  event.respondWith(fetch(req).catch(()=>caches.match(req)));
 });
-async function networkFirst(request){
-  try { return await fetch(request, { cache: 'no-store' }); }
-  catch(e){ const cache = await caches.open(CACHE_NAME); const cached = await cache.match(request); return cached || new Response('Offline and no cached copy available', { status: 503 }); }
-}
-self.addEventListener('fetch', event => { if(event.request.method !== 'GET') return; event.respondWith(networkFirst(event.request)); });
