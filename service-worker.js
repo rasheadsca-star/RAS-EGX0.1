@@ -1,5 +1,5 @@
-// EGX Pro Hub V10.6.1 Adaptive MA Starter Engine
-const CACHE_NAME='egx-pro-hub-v1061-adaptive-ma-starter-engine';
+// EGX Pro Hub V10.6.2 Today Tomorrow Decision Center
+const CACHE_NAME='egx-pro-hub-v1062-today-tomorrow-decision-center';
 self.addEventListener('install',e=>{self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)));await self.clients.claim();})());});
 self.addEventListener('fetch',event=>{

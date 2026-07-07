@@ -5004,6 +5004,144 @@ function renderRecommendationValidationPanel(){
   }catch(e){console.warn('V10.6.1 search access skipped',e)}
 })();
 
+
+/* ===================== V10.6.2 Today / Tomorrow Decision Center ===================== */
+(function v1062TodayTomorrowDecisionCenter(){
+  try{
+    EGX.buildId='v1062-today-tomorrow-decision-center';
+    const style=document.createElement('style');
+    style.textContent=`
+      .ux1062-decision-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:12px 0 14px}.ux1062-tile{border:1px solid rgba(125,211,252,.18);border-radius:18px;padding:15px;background:linear-gradient(180deg,rgba(8,24,45,.96),rgba(4,13,27,.92));min-height:112px;position:relative;overflow:hidden}.ux1062-tile b{display:block;font-size:30px;color:#fff;margin:5px 0}.ux1062-tile span{color:#a9c1df;font-size:12px;font-weight:900}.ux1062-tile small{color:#8da7c8;line-height:1.65;display:block}.ux1062-tile.good{border-color:rgba(34,197,94,.35);background:linear-gradient(135deg,rgba(34,197,94,.14),rgba(7,19,38,.92))}.ux1062-tile.warn{border-color:rgba(245,158,11,.38);background:linear-gradient(135deg,rgba(245,158,11,.13),rgba(7,19,38,.92))}.ux1062-tile.bad{border-color:rgba(239,68,68,.38);background:linear-gradient(135deg,rgba(239,68,68,.13),rgba(7,19,38,.92))}.ux1062-tile.info{border-color:rgba(56,189,248,.38);background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(7,19,38,.92))}
+      .ux1062-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:12px;align-items:start}.ux1062-panel{border:1px solid rgba(125,211,252,.18);background:linear-gradient(180deg,rgba(8,24,45,.94),rgba(4,13,27,.92));border-radius:18px;padding:14px}.ux1062-panel h3{display:flex;justify-content:space-between;align-items:center;margin:0 0 12px;color:#eef7ff;font-size:17px}.ux1062-panel h3 span{font-size:12px;color:#91b4d8}.ux1062-stack{display:flex;flex-direction:column;gap:12px}.ux1062-note{border:1px solid rgba(125,211,252,.16);background:rgba(2,8,23,.55);border-radius:15px;padding:12px;line-height:1.85;color:#cfe3ff}.ux1062-note.good{border-color:rgba(34,197,94,.30);background:rgba(34,197,94,.11)}.ux1062-note.warn{border-color:rgba(245,158,11,.32);background:rgba(245,158,11,.10);color:#fde68a}.ux1062-note.bad{border-color:rgba(239,68,68,.32);background:rgba(239,68,68,.10);color:#fecaca}.ux1062-note b{color:#fff}
+      .ux1062-tablewrap{overflow:auto;border:1px solid rgba(125,211,252,.14);border-radius:16px;background:rgba(2,8,23,.38)}.ux1062-table{width:100%;min-width:1160px;border-collapse:separate;border-spacing:0}.ux1062-table th{position:sticky;top:0;background:#071a31;color:#b9d7f8;font-size:12px;text-align:right;padding:12px 10px;border-bottom:1px solid rgba(125,211,252,.18);z-index:2}.ux1062-table td{padding:13px 10px;border-bottom:1px solid rgba(125,211,252,.10);vertical-align:middle;line-height:1.55}.ux1062-table tr:hover{background:rgba(14,165,233,.06)}.ux1062-symbol{font-size:15px;font-weight:1000;color:#fff}.ux1062-company{font-size:12px;color:#a9c1df}.ux1062-small{font-size:11px;color:#8da7c8}.ux1062-price{font-weight:1000;color:#eaf6ff}.ux1062-pos{color:#22c55e!important}.ux1062-neg{color:#fb7185!important}.ux1062-warn{color:#fbbf24!important}.ux1062-badge{display:inline-flex;align-items:center;justify-content:center;min-width:112px;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:1000;border:1px solid rgba(125,211,252,.24);white-space:nowrap}.ux1062-badge.today{color:#bbf7d0;border-color:rgba(34,197,94,.36);background:rgba(34,197,94,.13)}.ux1062-badge.tomorrow{color:#fde68a;border-color:rgba(245,158,11,.38);background:rgba(245,158,11,.12)}.ux1062-badge.watch{color:#bfdbfe;border-color:rgba(56,189,248,.34);background:rgba(14,165,233,.10)}.ux1062-badge.no{color:#fecaca;border-color:rgba(239,68,68,.34);background:rgba(239,68,68,.12)}
+      .ux1062-reason{max-width:360px}.ux1062-reason b{color:#eaf6ff}.ux1062-action{display:flex;flex-direction:column;gap:6px}.ux1062-btn{border:1px solid rgba(56,189,248,.32);background:rgba(14,165,233,.12);color:#dbeafe;border-radius:12px;padding:7px 10px;font-weight:900;cursor:pointer}.ux1062-btn:hover{background:rgba(14,165,233,.20);color:#fff}.ux1062-btn.good{border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.12)}.ux1062-btn.warn{border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.12)}.ux1062-read-path{display:grid;gap:8px}.ux1062-read-path div{border:1px solid rgba(125,211,252,.14);border-radius:14px;background:rgba(2,8,23,.42);padding:10px;line-height:1.75}.ux1062-read-path b{color:#fff}.ux1062-section-title{margin:12px 0 8px;color:#8fb5df;font-size:11px;font-weight:1000;text-transform:uppercase;letter-spacing:.4px}
+      .ux1062-jump{grid-template-columns:repeat(6,minmax(0,1fr))!important}.ux1062-jump button[data-screen="todayDecision"]{border-color:rgba(34,197,94,.42);background:linear-gradient(135deg,rgba(34,197,94,.17),rgba(14,165,233,.10))}.ux106-side .nav button.ux1062-primary-nav{border-color:rgba(34,197,94,.38);background:rgba(34,197,94,.08)}
+      @media(max-width:1250px){.ux1062-layout{grid-template-columns:1fr}.ux1062-decision-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.ux1062-jump{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media(max-width:760px){.ux1062-decision-strip{grid-template-columns:1fr}.ux1062-table{min-width:980px}}
+    `;
+    document.head.appendChild(style);
+
+    const H={};
+    H.n=x=>{try{const v=(typeof num==='function')?num(x):Number(String(x??'').replace(/,/g,''));return Number.isFinite(v)?v:null}catch(e){return null}};
+    H.e=x=>{try{return esc(x)}catch(e){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}};
+    H.f=x=>{try{return fmt(x)}catch(e){const n=H.n(x);return n==null?'--':n.toFixed(2)}};
+    H.f0=x=>{try{return fmt0(x)}catch(e){const n=H.n(x);return n==null?'0':String(Math.round(n))}};
+    H.p=x=>{try{return pct(x)}catch(e){const n=H.n(x);return n==null?'--':n.toFixed(1)+'%'}};
+    H.sym=r=>String(r?.symbol||r?.code||r?.ticker||'').trim().toUpperCase();
+    H.name=r=>String(r?.name_ar||r?.name||r?.companyName||r?.company||'');
+    H.price=r=>H.n(r?.price??r?.lastPrice??r?.currentPrice??r?.close??r?.current??r?.last);
+    H.entry=r=>H.n(r?.entryFrom??r?.entry??r?.entryPrice??r?.buyFrom??r?.entryTo);
+    H.entryTo=r=>H.n(r?.entryTo??r?.entryRangeTo??r?.buyTo??r?.entryFrom??r?.entry);
+    H.target=r=>H.n(r?.target1??r?.target??r?.firstTarget??r?.tp1);
+    H.stop=r=>H.n(r?.stopLoss??r?.stop??r?.sl);
+    H.rr=r=>{const native=H.n(r?.riskReward??r?.riskRewardRatio??r?.rr);if(native>0&&native<20)return native;const e=H.entry(r),t=H.target(r),s=H.stop(r);return e>0&&t>0&&s>0&&e>s?(t-e)/(e-s):null};
+    H.plan=r=>{const e=H.entry(r),t=H.target(r),s=H.stop(r);return !!(e>0&&t>0&&s>0&&s<e&&t>e)};
+    H.liq=r=>H.n(r?.liquidityScore??r?.liquidity??r?.liqScore??r?.valueScore??r?.volumeScore)??70;
+    H.trend=r=>H.n(r?.trendScore??r?.trend??r?.technicalScore??r?.maTrendScore)??70;
+    H.mom=r=>H.n(r?.momentumScore??r?.momentum??r?.momScore??r?.changeScore)??65;
+    H.risk=r=>H.n(r?.riskScore??r?.risk??r?.volatilityRisk)??42;
+    H.score=r=>H.n(r?.compositeScore??r?.rulebookScore??r?.score??r?.confidence??r?.finalConfidence??r?.adjustedConfidence)??60;
+    H.isBlocked=r=>{const s=String(r?.rulebookPriority||r?.classification||r?.decision||r?.recommendation||r?.action||r?.status||'').toUpperCase();return /NO_TRADE|AVOID|BLOCK|DATA_CONFLICT|INVALID|HIGH_RISK|محجوب|تجنب|لا تداول|خطة غير صالحة/.test(s)};
+    H.isWatch=r=>{const s=String(r?.rulebookPriority||r?.classification||r?.decision||r?.recommendation||r?.action||r?.status||'').toUpperCase();return /WATCH|مراقبة|انتظار/.test(s)};
+    H.isBuy=r=>{const s=String(r?.rulebookPriority||r?.classification||r?.decision||r?.recommendation||r?.action||r?.status||'').toUpperCase();return /BUY|P1|P2|شراء|EXECUTABLE/.test(s)};
+    H.inEntry=(p,a,b)=>{if(!(p>0&&a>0))return false;const hi=b>0?b:a*1.015,lo=Math.min(a,hi),up=Math.max(a,hi);return p>=lo&&p<=up};
+    H.entryNote=(p,a,b)=>{if(!(p>0&&a>0))return 'نطاق الدخول غير مكتمل';const hi=b>0?b:a*1.015;if(H.inEntry(p,a,hi))return 'داخل نطاق الدخول';if(p<a)return 'أقل من الدخول — انتظر تأكيد الارتداد';return 'أعلى من الدخول — انتظر عودة/اختراق مؤكد'};
+    H.all=()=>{
+      const raw=(Array.isArray(EGX.rows)?EGX.rows:[]).filter(r=>H.sym(r));
+      return raw.map((r,i)=>{
+        const p=H.price(r), e=H.entry(r), et=H.entryTo(r), t=H.target(r), s=H.stop(r), rr=H.rr(r), liq=H.liq(r), tr=H.trend(r), mom=H.mom(r), risk=H.risk(r), score=H.score(r);
+        const plan=H.plan(r), buy=H.isBuy(r), blocked=H.isBlocked(r), watch=H.isWatch(r);
+        const gates=[
+          {ok:plan,t:'خطة دخول/هدف/وقف صالحة'},
+          {ok:rr>=1.5,t:'R/R لا يقل عن 1.5'},
+          {ok:liq>=60,t:'سيولة ≥ 60'},
+          {ok:tr>=60,t:'اتجاه مقبول'},
+          {ok:mom>=55,t:'زخم مقبول'},
+          {ok:risk<=45,t:'مخاطر ≤ 45'},
+          {ok:!blocked,t:'غير محجوب'}
+        ];
+        const hardOk=gates.every(g=>g.ok);
+        let cls='NO';
+        if(hardOk && buy && H.inEntry(p,e,et)) cls='TODAY';
+        else if(hardOk && (buy||watch||score>=72)) cls='TOMORROW';
+        else if(!blocked && (watch||score>=60||liq>=60)) cls='WATCH';
+        const why=[];
+        if(cls==='TODAY'){why.push('اجتاز Rulebook');why.push('السعر داخل نطاق الدخول');why.push('وقف وهدف واضحان');}
+        else if(cls==='TOMORROW'){why.push('قوي لكن يحتاج تأكيد السعر/الجلسة');why.push(H.entryNote(p,e,et));}
+        else if(cls==='WATCH'){why.push('قابل للمراقبة وليس دخول الآن');why.push(gates.filter(g=>!g.ok).map(g=>g.t).slice(0,2).join(' + ')||'يحتاج تأكيد إضافي');}
+        else{why.push('لا تدخل الآن');why.push(gates.filter(g=>!g.ok).map(g=>g.t).slice(0,3).join(' + ')||'محجوب بواسطة قواعد السلامة');}
+        return {raw:r,i,symbol:H.sym(r),name:H.name(r),price:p,entry:e,entryTo:et,target:t,stop:s,rr,liq,tr,mom,risk,score,cls,why,gates,entryTxt:H.entryNote(p,e,et)};
+      }).sort((a,b)=>({TODAY:4,TOMORROW:3,WATCH:2,NO:1}[b.cls]-{TODAY:4,TOMORROW:3,WATCH:2,NO:1}[a.cls]||b.score-a.score||((b.rr||0)-(a.rr||0)));
+    };
+    H.badge=x=>x==='TODAY'?'<span class="ux1062-badge today">جاهز للمراجعة اليوم</span>':x==='TOMORROW'?'<span class="ux1062-badge tomorrow">غدًا / انتظار تأكيد</span>':x==='WATCH'?'<span class="ux1062-badge watch">مراقبة فقط</span>':'<span class="ux1062-badge no">لا تدخل</span>';
+    H.row=x=>`<tr data-symbol="${H.e(x.symbol)}"><td><div class="ux1062-symbol">${H.e(x.symbol)}</div><div class="ux1062-company">${H.e(x.name||'-')}</div></td><td>${H.badge(x.cls)}<div class="ux1062-small">Score ${H.f0(x.score)} · Risk ${H.f0(x.risk)}</div></td><td><b class="ux1062-price">${H.f(x.price)}</b><div class="ux1062-small">${H.e(x.entryTxt)}</div></td><td><b>${H.f(x.entry)} - ${H.f(x.entryTo)}</b><div class="ux1062-small">نطاق الدخول</div></td><td><span class="ux1062-pos">${H.f(x.target)}</span><div class="ux1062-small">هدف 1</div><span class="ux1062-neg">${H.f(x.stop)}</span><div class="ux1062-small">وقف</div></td><td><b class="${(x.rr||0)>=1.5?'ux1062-pos':'ux1062-warn'}">${x.rr==null?'--':H.f(x.rr)}</b><div class="ux1062-small">عائد/مخاطرة</div></td><td><div class="ux1062-small">سيولة <b>${H.f0(x.liq)}</b></div><div class="ux1062-small">اتجاه <b>${H.f0(x.tr)}</b></div><div class="ux1062-small">زخم <b>${H.f0(x.mom)}</b></div></td><td class="ux1062-reason"><b>${H.e(x.why[0]||'')}</b><div class="ux1062-small">${H.e(x.why.slice(1).join('، '))}</div></td><td class="ux1062-action"><button class="ux1062-btn good" data-screen="stockSearch" data-symbol="${H.e(x.symbol)}">تحليل السهم</button><button class="ux1062-btn" data-screen="rankingEngine">محرك القرار</button></td></tr>`;
+    H.table=(rows,limit=80)=>`<div class="ux1062-tablewrap"><table class="ux1062-table"><thead><tr><th>السهم</th><th>قرار اليوم/غدًا</th><th>السعر</th><th>الدخول</th><th>الهدف / الوقف</th><th>R/R</th><th>فني/سيولة</th><th>سبب القرار</th><th>إجراء</th></tr></thead><tbody>${rows.slice(0,limit).map(H.row).join('')||'<tr><td colspan="9" class="muted">لا توجد نتائج كافية.</td></tr>'}</tbody></table></div>`;
+    H.tile=(t,v,s,cls='')=>`<div class="ux1062-tile ${cls}"><span>${H.e(t)}</span><b>${H.e(v)}</b><small>${H.e(s||'')}</small></div>`;
+
+    function renderTodayDecision1062(){
+      const rows=H.all(), today=rows.filter(x=>x.cls==='TODAY'), tomorrow=rows.filter(x=>x.cls==='TOMORROW'), watch=rows.filter(x=>x.cls==='WATCH'), no=rows.filter(x=>x.cls==='NO');
+      const primary=today.length?today:tomorrow;
+      return `${header('قرار اليوم / غدًا','شاشة تنفيذية مختصرة: ماذا يمكن مراجعته للشراء الآن، وما الذي ينتظر تأكيدًا، وما الذي لا يدخل؟')}${quickJump()}<div class="ux1062-decision-strip">${H.tile('جاهز للمراجعة اليوم',H.f0(today.length),'من فرص الشراء وداخل نطاق الدخول','good')}${H.tile('مناسب للمتابعة غدًا',H.f0(tomorrow.length),'قوي لكن يحتاج تأكيد السعر/الجلسة','warn')}${H.tile('مراقبة فقط',H.f0(watch.length),'ليس قرار شراء الآن','info')}${H.tile('لا تدخل',H.f0(no.length),'فشل شرط إلزامي أو مخاطرة مرتفعة','bad')}</div><div class="ux1062-layout"><div class="ux1062-panel"><h3>${today.length?'أسهم للمراجعة اليوم':'لا توجد فرص جاهزة اليوم — اعرض أفضل فرص الغد'} <span>${H.f0(primary.length)} سهم</span></h3>${H.table(primary,60)}</div><div class="ux1062-stack"><div class="ux1062-panel"><h3>كيف تستخدم هذه الشاشة؟ <span>مسار قرار</span></h3><div class="ux1062-read-path"><div><b>1) اليوم:</b> لا تراجع إلا الأسهم داخل نطاق الدخول ومعها وقف وهدف و R/R مناسب.</div><div><b>2) غدًا:</b> أسهم قوية لكن لا تدخلها قبل تأكيد أول الجلسة أو عودة السعر للنطاق.</div><div><b>3) المراقبة:</b> ليست شراء؛ ضع تنبيهًا لاختراق/سيولة/دخول.</div><div><b>4) لا تدخل:</b> فشل شرط إلزامي أو مخاطرة أعلى من المسموح.</div></div></div><div class="ux1062-panel"><h3>تحذير مهم</h3><div class="ux1062-note warn">هذه الشاشة لا تعطي أمر شراء تلقائي. القرار النهائي يحتاج مراجعة السعر الحقيقي أثناء الجلسة، وحجم التداول، والالتزام الصارم بوقف الخسارة.</div><div class="ux1062-note good">الشراء العملي يبدأ من هنا، والتحقق التفصيلي يتم من محرك القرار أو تحليل السهم.</div></div></div></div>`;
+    }
+
+    const previousContent1062=content;
+    content=function(){
+      if(EGX.screen==='todayDecision'||EGX.screen==='dailyDecision')return renderTodayDecision1062();
+      return previousContent1062();
+    };
+
+    const oldQuickJump1062=quickJump;
+    quickJump=function(){
+      const items=[['home','⌂ الرئيسية'],['todayDecision','🎯 قرار اليوم'],['rankingEngine','⚡ محرك القرار'],['buyOpportunities','✅ فرص الشراء'],['stockSearch','🔎 تحليل سهم'],['monitoring','🔔 المراقبة']];
+      return `<div class="screen-jump ux106-jump ux1062-jump">${items.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`;
+    };
+
+    const oldHeader1062=header;
+    header=function(title,sub){
+      const last=EGX.source?.generatedAt||EGX.source?.lastSuccessAt||EGX.market?.updatedAt||new Date().toISOString();
+      const q=String(EGX.stockSearchQuery||localStorage.getItem('egx_v717_stock_query')||EGX.selected||'');
+      return `<div class="head"><div><h2>${H.e(title)}</h2><p>${H.e(sub||'')}</p></div><div class="actions"><div class="ux1061-search"><input id="globalStockSearchInput" value="${H.e(q)}" placeholder="بحث سريع: اكتب رمز أو اسم السهم"><button class="btn primary" id="globalStockSearchBtn">🔎 تحليل سهم</button></div><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق السوق: EGX</span><span class="chip warn"><i class="dot"></i> المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${H.e(new Date(last).toLocaleString('en-GB'))}</span><span class="chip info"><i class="dot"></i> التغطية: ${H.f0(EGX.source?.reliableCoveragePct||EGX.source?.coveragePct||0)}%</span><span class="chip"><i class="dot"></i> V10.6.2 Today Decision</span></div>`;
+    };
+
+    side=function(){
+      const nav=[
+        ['الرئيسية','main'],
+        ['home','الرئيسية','ملخص القرار اليومي','⌂'],
+        ['todayDecision','قرار اليوم / غدًا','جاهز اليوم أو انتظار','🎯','ux1062-primary-nav'],
+        ['rankingEngine','محرك القرار','Rulebook + Adaptive MA','⚡'],
+        ['buyOpportunities','فرص الشراء','P1/P2 فقط','✅'],
+        ['stockSearch','بحث وتحليل سهم','بحث مباشر + تحليل Pro','🔎','ux1061-search-nav'],
+        ['monitoring','المراقبة والتنبيهات','Watch + Alerts','🔔'],
+        ['portfolioRiskHub','المحفظة والمخاطر','تخصيص ومخاطر','💼'],
+        ['تحليل داعم','support'],
+        ['chartLab','تاريخ وشارت','شارت وتحليل تاريخي','▧'],
+        ['marketSectors','السوق والقطاعات','اتجاه السوق','📊'],
+        ['newsDisclosures','الأخبار والإفصاحات','محفزات ومخاطر','📰'],
+        ['performanceIndex','أداء التوصيات','P1/P2 Accuracy','✓'],
+        ['dataQualityHub','جودة البيانات','مصادر وتشخيص','▤'],
+        ['settings','الإعدادات','','⚙']
+      ];
+      let html='';
+      nav.forEach(n=>{if(n[1]==='main'||n[1]==='support')html+=`<div class="ux106-section-title ux1062-section-title">${H.e(n[0])}</div>`;else html+=`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''} ${n[4]||''}"><span>${n[3]}</span>${H.e(n[1])}${n[2]?`<small>${H.e(n[2])}</small>`:''}</button>`});
+      return `<aside class="side ux106-side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V10.6.2<br>Today / Tomorrow Decision</div></div></div><div class="statusbar"><span class="live">قرار اليوم ظاهر دائمًا</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${html}</nav></aside>`;
+    };
+
+    const oldBind1062=bind;
+    bind=function(){
+      oldBind1062();
+      document.querySelectorAll('button[data-screen="stockSearch"][data-symbol],button[data-open-stock]').forEach(btn=>{
+        btn.onclick=e=>{
+          e.preventDefault(); e.stopPropagation();
+          const q=btn.dataset.symbol||btn.dataset.openStock||'';
+          if(typeof openStockAnalysis1061==='function') openStockAnalysis1061(q);
+          else {EGX.selected=q;EGX.screen='stockSearch';localStorage.setItem('egx_v61_screen','stockSearch');render();}
+        };
+      });
+    };
+
+    setTimeout(()=>{try{if(['home','todayDecision','rankingEngine','buyOpportunities','stockSearch'].includes(EGX.screen))render();}catch(e){console.warn('V10.6.2 today decision render skipped',e)}},1000);
+  }catch(e){console.warn('V10.6.2 today decision skipped',e)}
+})();
+
 init().catch(e=>{
   console.error("EGX init failed", e);
   const app=document.getElementById("app");
