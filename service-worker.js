@@ -1,5 +1,5 @@
-// EGX Pro Hub V10.3.2 Accuracy Source Lock
-const CACHE_NAME='egx-pro-hub-v1032-accuracy-source-lock';
+// EGX Pro Hub V10.4 Accuracy Source Lock
+const CACHE_NAME='egx-pro-hub-v1040-accuracy-source-lock';
 self.addEventListener('install',e=>{self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)));await self.clients.claim();})());});
 self.addEventListener('fetch',event=>{
