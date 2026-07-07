@@ -1,5 +1,5 @@
-// EGX Pro Hub V10.4.1 Rulebook Priority Integration
-const CACHE_NAME='egx-pro-hub-v1041-rulebook-priority-integration';
+// EGX Pro Hub V10.5 Adaptive MA Starter Engine
+const CACHE_NAME='egx-pro-hub-v1050-adaptive-ma-starter-engine';
 self.addEventListener('install',e=>{self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)));await self.clients.claim();})());});
 self.addEventListener('fetch',event=>{

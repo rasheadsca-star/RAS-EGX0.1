@@ -4685,6 +4685,151 @@ function renderRecommendationValidationPanel(){
   setTimeout(()=>{try{if(EGX.screen==='rulebookEngine'||EGX.screen==='rankingEngine')render();}catch(e){console.warn('rulebook render refresh failed',e)}},900);
 })();
 
+
+/* ===================== V10.5 Adaptive MA Starter Technical Engine ===================== */
+(function v1050AdaptiveMAStarterEngine(){
+  try{
+    EGX.buildId='v1050-adaptive-ma-starter-engine';
+    const st=document.createElement('style');
+    st.textContent=`
+      .ma105-hero{border:1px solid rgba(34,197,94,.32);background:linear-gradient(135deg,rgba(34,197,94,.14),rgba(14,165,233,.10));border-radius:18px;padding:14px;margin:10px 0;line-height:1.9;color:#dbeafe}
+      .ma105-hero b{color:#fff}.ma105-grid{display:grid;grid-template-columns:repeat(6,minmax(140px,1fr));gap:10px;margin:12px 0}.ma105-card{border:1px solid rgba(119,169,235,.18);border-radius:16px;background:linear-gradient(180deg,rgba(8,24,45,.94),rgba(6,18,35,.92));padding:12px;min-height:92px}.ma105-card span{display:block;color:#9fb5d6;font-size:11px}.ma105-card b{display:block;color:#eef7ff;font-size:22px;margin-top:5px}.ma105-card small{display:block;color:#93a9c9;margin-top:5px;line-height:1.5}
+      .ma105-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:950;border:1px solid rgba(119,169,235,.22);background:rgba(7,19,38,.78);color:#dbeafe;white-space:nowrap}.ma105-pill.ok{border-color:rgba(34,197,94,.38);background:rgba(34,197,94,.13);color:#bbf7d0}.ma105-pill.warn{border-color:rgba(245,158,11,.38);background:rgba(245,158,11,.13);color:#fde68a}.ma105-pill.bad{border-color:rgba(239,68,68,.38);background:rgba(239,68,68,.13);color:#fecaca}.ma105-pill.info{border-color:rgba(14,165,233,.38);background:rgba(14,165,233,.13);color:#bfdbfe}
+      .ma105-table{min-width:2050px!important}.ma105-table td{vertical-align:top!important;line-height:1.55!important}.ma105-techbox{min-width:150px}.ma105-techbox b{display:block}.ma105-techbox small{display:block;color:#93a9c9}.ma105-reasons{max-width:340px}.ma105-reasons div{margin-bottom:3px}.ma105-gate-ok{color:#bbf7d0}.ma105-gate-bad{color:#fecaca}.ma105-bar{height:8px;background:rgba(30,41,59,.92);border-radius:999px;overflow:hidden;margin-top:6px}.ma105-bar i{display:block;height:100%;background:linear-gradient(90deg,#22c55e,#0ea5e9)}
+      .ma105-note{border:1px solid rgba(119,169,235,.16);background:rgba(7,19,38,.72);border-radius:14px;padding:10px;margin:8px 0;line-height:1.8;color:#cfe3ff}.ma105-note.warn{border-color:rgba(245,158,11,.28);background:rgba(245,158,11,.10);color:#fde68a}.ma105-note.bad{border-color:rgba(239,68,68,.30);background:rgba(239,68,68,.10);color:#fecaca}.ma105-note.good{border-color:rgba(34,197,94,.28);background:rgba(34,197,94,.09);color:#bbf7d0}
+      @media(max-width:1100px){.ma105-grid{grid-template-columns:repeat(2,1fr)}.ma105-table{min-width:1600px!important}}
+    `;
+    document.head.appendChild(st);
+  }catch(e){}
+
+  const N=x=>{try{const v=(typeof num==='function')?num(x):Number(x);return Number.isFinite(v)?v:null}catch(e){const v=Number(x);return Number.isFinite(v)?v:null}};
+  const clamp=(x,a=0,b=100)=>Math.max(a,Math.min(b,x));
+  const F=x=>{try{return fmt(x)}catch(e){const n=N(x);return n==null?'--':n.toFixed(2)}};
+  const F0=x=>{try{return fmt0(x)}catch(e){const n=N(x);return n==null?'0':String(Math.round(n))}};
+  const P=x=>{try{return pct(x)}catch(e){const n=N(x);return n==null?'--':n.toFixed(1)+'%'}};
+  const E=x=>{try{return esc(x)}catch(e){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}};
+  function rowsOf(x){if(Array.isArray(x))return x;if(!x||typeof x!=='object')return [];for(const k of ['rows','items','signals','recommendations','all','data'])if(Array.isArray(x[k]))return x[k];return []}
+  function sym(r){return String(r.symbol||r.code||r.ticker||'').trim().toUpperCase()}
+  function normTxt(v){return String(v||'').toUpperCase()}
+  function rowMap(srcs){const m=new Map();srcs.forEach(s=>rowsOf(s).forEach(r=>{const k=sym(r);if(k&&!m.has(k))m.set(k,r)}));return m}
+  function mergeRows105(){
+    const base=[];
+    [EGX.rows,EGX.fullMarketCache,EGX.finalMultisourceRanking,EGX.finalRanking,EGX.actionableWatchlist,EGX.sourceEvidenceMatrix,EGX.recommendationSafetyGovernor,EGX.multiSourceIntelligence].forEach(s=>rowsOf(s).forEach(r=>base.push(r)));
+    const out=new Map();
+    base.forEach(r=>{const k=sym(r);if(!k)return;out.set(k,{...(out.get(k)||{}),...r});});
+    const evidence=rowMap([EGX.sourceEvidenceMatrix,EGX.multiSourceIntelligence]);
+    const safety=rowMap([EGX.recommendationSafetyGovernor]);
+    const final=rowMap([EGX.finalMultisourceRanking,EGX.finalRanking,EGX.actionableWatchlist]);
+    out.forEach((r,k)=>{out.set(k,{...r,__ev:evidence.get(k)||{},__safe:safety.get(k)||{},__final:final.get(k)||{}})});
+    return [...out.values()].filter(r=>sym(r));
+  }
+  function price(r){return N(r.price??r.lastPrice??r.currentPrice??r.close??r.basePrice??r.current)}
+  function volume(r){return N(r.volume??r.baseVolume??r.tradedVolume??r.totalVolume)}
+  function value(r){return N(r.valueTraded??r.turnover??r.baseValue??r.tradedValue??r.value)}
+  function entry(r){return N(r.entryFrom??r.entry??r.entryPrice??r.buyFrom??r.entryTo)}
+  function entryTo(r){return N(r.entryTo??r.entryRangeTo??r.buyTo??r.entryFrom??r.entry)}
+  function target1(r){return N(r.target1??r.target??r.firstTarget??r.tp1)}
+  function target2(r){return N(r.target2??r.secondTarget??r.tp2)}
+  function stop(r){return N(r.stopLoss??r.stop??r.sl)}
+  function chg(r){return N(r.changePct??r.change??r.dayChangePct)}
+  function sector(r){return String(r.sector||r.sectorName||r.__ev?.sector||r.__final?.sector||'غير مصنف')}
+  function hasBadSector(s){return !s||/غير\s*مصنف|unknown|undefined|null/i.test(s)}
+  function plan(r){const e=entry(r),t=target1(r),s=stop(r);if(!(e>0)||!(t>0)||!(s>0))return{valid:false,reason:'خطة ناقصة'};if(!(s<e&&t>e))return{valid:false,reason:'هدف/وقف غير منطقي'};return{valid:true,reason:'خطة صالحة'}}
+  function rr(r){const e=entry(r),t=target1(r),s=stop(r);const native=N(r.riskReward??r.riskRewardRatio??r.rr);if(native>0&&native<20)return native;if(e>0&&t>0&&s>0&&e>s)return (t-e)/(e-s);return null}
+  function expRet(r){const e=entry(r),t=target1(r);return e>0&&t>0?(t-e)/e*100:N(r.expectedReturnPct??r.targetReturnPct)}
+  function expRet2(r){const e=entry(r),t=target2(r);return e>0&&t>0?(t-e)/e*100:N(r.extendedReturnPct)}
+  function stopRisk(r){const e=entry(r),s=stop(r);return e>0&&s>0?(e-s)/e*100:N(r.stopRiskPct??r.downsidePct)}
+  function sourceStrength(r){return N(r.sourceStrengthScore??r.sourceStrength??r.evidenceScore??r.__ev?.sourceStrengthScore??r.__ev?.evidenceScore??r.__safe?.sourceStrengthScore??r.finalConfidence)}
+  function dataQuality(r){return N(r.dataQualityScore??r.qualityScore??r.__ev?.dataQualityScore??r.__safe?.dataQualityScore??sourceStrength(r))}
+  function isPriceOk(r){const txt=normTxt(JSON.stringify({a:r.priceStatus,b:r.__ev?.priceStatus,c:r.__safe?.priceStatus,d:r.decision,e:r.reason}));if(/CONFLICT|OUTDATED|MISSING|غير موجود|تعارض|قديم/.test(txt))return false;return price(r)>0}
+  function dataState(r){if(!price(r))return 'MISSING';if(!isPriceOk(r))return 'CONFLICT';const dq=dataQuality(r);if(dq!=null&&dq<55)return 'WEAK';return 'GOOD'}
+  function avg(arr){const xs=arr.map(N).filter(x=>x!=null&&x>0);return xs.length?xs.reduce((a,b)=>a+b,0)/xs.length:null}
+  function historyActualPoints(r){
+    let pts=[];
+    try{ if(typeof historyPoints==='function') pts=(historyPoints(r,50)||[]).filter(p=>p&&p.actual!==false&&N(p.close)>0); }catch(e){}
+    if(pts.length>=2) return pts;
+    try{
+      const raw=(typeof rawHistoryFor==='function')?rawHistoryFor(sym(r)):[];
+      let prev=null; const out=[];
+      raw.forEach((p,i)=>{let pt;if(typeof normalizeHistoryPoint==='function')pt=normalizeHistoryPoint(p,i,prev);else if(typeof p==='number')pt={close:N(p),volume:null,date:String(i+1),actual:true};else pt={close:N(p.close||p.price||p.last||p.Close||p['إغلاق']),volume:N(p.volume||p.Volume||p.vol),date:String(p.date||p.Date||i+1),actual:true};if(pt&&N(pt.close)>0){out.push(pt);prev=N(pt.close)}});
+      if(out.length>=2) return out.slice(-50);
+    }catch(e){}
+    return [];
+  }
+  function adaptiveMA(r){
+    const pts=historyActualPoints(r);
+    const n=pts.length;
+    const closes=pts.map(p=>N(p.close)).filter(x=>x>0);
+    const vols=pts.map(p=>N(p.volume)).filter(x=>x>0);
+    const last=closes[closes.length-1]||price(r)||0;
+    let stage='INSUFFICIENT',label='أقل من 6 جلسات',pill='bad',primaryWindow=0,primaryMA=null,prevMA=null,ma20=null,ma50=null,ret5=null,retN=null,volRatio5=null,score=45,confidenceCap=55;
+    if(n>=6){
+      primaryWindow=n<20?n:(n<50?20:50);
+      primaryMA=avg(closes.slice(-primaryWindow));
+      if(closes.length>primaryWindow) prevMA=avg(closes.slice(-primaryWindow-1,-1));
+      retN=(last-closes[0])/Math.max(0.0001,closes[0])*100;
+      const c6=closes[closes.length-6]; if(c6>0)ret5=(last-c6)/c6*100;
+      const todayVol=volume(r)||vols[vols.length-1]||0;
+      const baseVol=avg(vols.slice(-6,-1)); if(todayVol>0&&baseVol>0)volRatio5=todayVol/baseVol;
+      if(n<10){stage='MA6_STARTER';label='MA'+n+' Starter';pill='warn';confidenceCap=72;}
+      else if(n<20){stage='MA'+n+'_BUILDING';label='MA'+n+' متدرج';pill='info';confidenceCap=80;}
+      else if(n<50){stage='MA20_ACTIVE';label='MA20 نشط + تراكم MA50';pill='ok';confidenceCap=90;ma20=avg(closes.slice(-20));}
+      else {stage='MA20_MA50_MATURE';label='MA20/MA50 مكتمل';pill='ok';confidenceCap=100;ma20=avg(closes.slice(-20));ma50=avg(closes.slice(-50));}
+      score=50;
+      if(last>0&&primaryMA>0&&last>primaryMA)score+=18;else score-=10;
+      if(prevMA!=null){if(primaryMA>prevMA)score+=14;else score-=8;} else if(retN!=null){if(retN>0)score+=8;else score-=6;}
+      if(ret5!=null){if(ret5>0)score+=10;if(ret5>3)score+=8;if(ret5>9)score-=8;if(ret5<-3)score-=12;}
+      if(volRatio5!=null){if(volRatio5>=1.3)score+=9;else if(volRatio5>=1.05)score+=4;else if(volRatio5<.65)score-=8;}
+      if(ma20&&last>ma20)score+=8;
+      if(ma50&&ma20&&ma20>ma50)score+=12;
+      score=clamp(score,0,confidenceCap);
+    }
+    return {n,stage,label,pill,primaryWindow,primaryMA,prevMA,ma20,ma50,ret5,retN,volRatio5,score,confidenceCap,last};
+  }
+  function liquidityScore(r){const val=value(r)||0,vol=volume(r)||0;let s=0;if(val>=50000000)s=95;else if(val>=15000000)s=82;else if(val>=5000000)s=68;else if(val>=1500000)s=55;else if(val>0)s=40;else s=20;if(vol>=1000000)s+=8;else if(vol>=250000)s+=4;const ss=sourceStrength(r);if(ss>=80)s+=6;return clamp(s)}
+  function adaptiveTrendScore(r){const ma=adaptiveMA(r);let s=ma.score;const p=price(r),sup=N(r.support1??r.nearestSupport??r.support),res=N(r.resistance1??r.nearestResistance??r.resistance);if(p>0&&sup>0&&p>sup)s+=6;if(p>0&&res>0&&res>p)s+=4;if(chg(r)!=null&&chg(r)<-1.5)s-=6;return clamp(s,0,ma.confidenceCap)}
+  function adaptiveMomentumScore(r){const ma=adaptiveMA(r);let s=45;if(ma.n>=6){s=52;if(ma.ret5!=null){if(ma.ret5>0)s+=12;if(ma.ret5>2.5)s+=9;if(ma.ret5>7)s+=5;if(ma.ret5>12)s-=12;if(ma.ret5<-2)s-=14;}if(ma.volRatio5!=null){if(ma.volRatio5>=1.3)s+=13;else if(ma.volRatio5>=1.05)s+=7;else if(ma.volRatio5<.7)s-=8;}if(ma.last>0&&ma.primaryMA>0&&ma.last>ma.primaryMA)s+=8;else s-=8;}else{const c=chg(r);if(c>0)s+=8;if(c>2)s+=6;if(c<-2)s-=10;}return clamp(s,0,ma.confidenceCap)}
+  function rrScore(r){const R=rr(r),sr=stopRisk(r),er=expRet(r);let s=35;if(R!=null){if(R>=2)s=92;else if(R>=1.5)s=78;else if(R>=1)s=58;else s=35}if(sr!=null&&sr>6)s-=12;if(sr!=null&&sr<=3)s+=8;if(er!=null&&er<1.5)s-=12;return clamp(s)}
+  function newsScore(r){const n=N(r.newsScore??r.newsSentimentScore??r.__final?.newsScore??r.__ev?.newsScore);if(n!=null)return clamp(n+50,0,100);const txt=normTxt(JSON.stringify(r));if(/NEGATIVE|سلبي|وقف|تحقيق|غرامة/.test(txt))return 35;if(/POSITIVE|إيجابي|توزيع|ارباح|نتائج/.test(txt))return 65;return 50}
+  function financialScore(r){const n=N(r.financialScore??r.financialQualityScore??r.__final?.financialScore??r.__ev?.financialScore);if(n!=null)return clamp(n);const txt=normTxt(JSON.stringify(r.__ev||{}));if(/FINANCIAL|RATIO|FINANCIALRATIOS/.test(txt))return 62;return 50}
+  function sectorScore(r){const sec=sector(r);let s=hasBadSector(sec)?35:58;const n=N(r.sectorScore??r.sectorStrengthScore);if(n!=null)s=n;const txt=normTxt(JSON.stringify(r));if(/SECTOR.*STRONG|قطاع قوي|قوي داخل قطاع/.test(txt))s+=20;return clamp(s)}
+  function riskScore(r){const native=N(r.riskScore??r.riskLevelScore??r.__safe?.riskScore);if(native!=null&&native>=0&&native<=100)return native;let risk=28;const sr=stopRisk(r),liq=liquidityScore(r),R=rr(r),c=chg(r),p=price(r),ma=adaptiveMA(r);if(sr!=null){if(sr>6)risk+=16;else if(sr>4)risk+=8;else if(sr<2.5)risk-=6}if(liq<60)risk+=14;if(R!=null&&R<1.5)risk+=14;if(c!=null&&c>8)risk+=10;if(ma.ret5!=null&&ma.ret5>12)risk+=10;if(ma.n<6)risk+=18;if(p>0&&p<1)risk+=8;const txt=normTxt(JSON.stringify(r));if(/HIGH_RISK|مضار|SPECULATIVE|عالية/.test(txt))risk+=18;if(/PRICE_REVIEW|DATA_CONFLICT|تعارض|مراجعة سعر/.test(txt))risk+=16;return clamp(risk)}
+  function classify105(r){const pl=plan(r),R=rr(r),ma=adaptiveMA(r),liq=liquidityScore(r),trend=adaptiveTrendScore(r),mom=adaptiveMomentumScore(r),rrs=rrScore(r),news=newsScore(r),fin=financialScore(r),sec=sectorScore(r),risk=riskScore(r),dq=dataQuality(r)||0,ds=dataState(r);const composite=clamp(liq*.20+trend*.20+mom*.15+rrs*.20+news*.10+fin*.10+sec*.05 - (risk>45?Math.min(25,(risk-45)*.8):0));
+    const gates=[];function gate(ok,label){gates.push({ok,label});}
+    gate(ds==='GOOD','بيانات GOOD');gate(ma.n>=6,'تاريخ فعلي ≥ 6 جلسات');gate(liq>=60,'سيولة ≥ 60');gate(trend>=65,'اتجاه Adaptive MA ≥ 65');gate(mom>=60,'زخم 5 جلسات ≥ 60');gate(pl.valid,'خطة دخول/هدف/وقف صالحة');gate(R>=1.5,'R/R ≥ 1.5');gate(risk<=45,'Risk ≤ 45');gate(news>=20,'News فوق -30');gate(isPriceOk(r),'السعر مؤكد');
+    const hardFail=!pl.valid||ds!=='GOOD'||!isPriceOk(r)||!(R>=1)||liq<40||ma.n<6;
+    let cls='NO_TRADE',label='NO TRADE',pill='ma105-pill',horizon='SHORT_TERM';
+    const highReturn=(expRet(r)||0)>=10||(expRet2(r)||0)>=15;
+    if(ds==='MISSING'||ds==='CONFLICT'){cls='DATA_CONFLICT';label=ds==='MISSING'?'DATA MISSING':'DATA CONFLICT';pill='ma105-pill info'}
+    else if(ma.n<6){cls='NO_TRADE';label='NO TRADE - HISTORY';pill='ma105-pill bad'}
+    else if(risk>65&&highReturn){cls='HIGH_RISK_SPECULATIVE';label='HIGH RISK SPECULATIVE';pill='ma105-pill warn'}
+    else if(!hardFail && composite>=85 && liq>=60 && trend>=65 && mom>=60 && R>=1.5 && risk<=45){cls='BUY_NOW';label='BUY NOW';pill='ma105-pill ok'}
+    else if(!hardFail && composite>=75 && liq>=60 && trend>=60 && mom>=55 && R>=1.5 && risk<=55){cls='BUY_REVIEW';label='BUY REVIEW';pill='ma105-pill ok'}
+    else if(composite>=65 && !/MISSING|CONFLICT/.test(ds)){cls='WATCHLIST';label='WATCHLIST';pill='ma105-pill warn'}
+    else if(composite<50||risk>75){cls='AVOID';label='AVOID';pill='ma105-pill bad'}
+    if((mom>=70&&liq>=60&&(expRet(r)||0)<=10)||String(cls).includes('BUY'))horizon='VERY_SHORT_TERM';
+    const reasons=[];if(ma.n>=6)reasons.push('تحليل فني متدرج '+ma.label);else reasons.push('تاريخ أقل من 6 جلسات');if(ma.last>0&&ma.primaryMA>0&&ma.last>ma.primaryMA)reasons.push('السعر أعلى من '+(ma.primaryWindow?'MA'+ma.primaryWindow:'MA'));if(ma.ret5!=null)reasons.push('أداء 5 جلسات '+P(ma.ret5));if(ma.volRatio5!=null)reasons.push('Volume Ratio 5 = '+F(ma.volRatio5));if(liq>=60)reasons.push('سيولة مقبولة');else reasons.push('سيولة ضعيفة/تحتاج تأكيد');if(pl.valid)reasons.push('خطة صالحة');if(R>=1.5)reasons.push('R/R مناسب');if(risk>45)reasons.push('مخاطر أعلى من التنفيذ العادي');if(ds!=='GOOD')reasons.push('جودة بيانات ليست GOOD');
+    const risks=[];if(ma.n<6)risks.push('لا يوجد تاريخ كافٍ لـ MA Starter');if(ma.n>=6&&ma.n<20)risks.push('تحليل مبكر قبل MA20');if(risk>45)risks.push('مخاطر مرتفعة');if(liq<60)risks.push('صعوبة دخول/خروج محتملة');if(R<1.5)risks.push('عائد/مخاطرة ضعيف');if(!pl.valid)risks.push(pl.reason);if(hasBadSector(sector(r)))risks.push('قطاع غير مصنف');
+    return{symbol:sym(r),name:r.name||r.name_ar||'',price:price(r),ma,liq,trend,mom,rrs,news,fin,sec,risk,data:dq,dataState:ds,composite,cls,label,pill,horizon,gates,reasons,risks,plan:pl,R,er:expRet(r),er2:expRet2(r),sr:stopRisk(r),sector:sector(r),row:r};}
+  function rows105(){return mergeRows105().map(classify105).sort((a,b)=>{const ord={BUY_NOW:0,BUY_REVIEW:1,WATCHLIST:2,HIGH_RISK_SPECULATIVE:3,NO_TRADE:4,DATA_CONFLICT:5,AVOID:6};return (ord[a.cls]??9)-(ord[b.cls]??9)||b.composite-a.composite;});}
+  function rbPriorityClass(cls){return ({BUY_NOW:'p1',BUY_REVIEW:'p2',WATCHLIST:'p3',HIGH_RISK_SPECULATIVE:'blocked',NO_TRADE:'blocked',DATA_CONFLICT:'blocked',AVOID:'blocked'}[cls]||'blocked')}
+  function rbExecutionAllowed(x){return x.cls==='BUY_NOW'||x.cls==='BUY_REVIEW'}
+  function scoreCell(v,max=100){const n=clamp(N(v)||0,0,max);return `<div class="rb104-scorecell"><b>${F0(n)}</b><div class="ma105-bar"><i style="width:${max===100?n:n/max*100}%"></i></div></div>`}
+  function gateHtml(x){return x.gates.map(g=>`<span class="${g.ok?'ma105-gate-ok':'ma105-gate-bad'}">${g.ok?'✓':'✕'} ${E(g.label)}</span>`).join('<br>')}
+  function maBox(x){const m=x.ma;return `<div class="ma105-techbox"><span class="ma105-pill ${m.pill}">${E(m.label)}</span><b>${m.primaryMA?F(m.primaryMA):'--'}</b><small>جلسات فعلية: ${F0(m.n)} / 50</small><small>${m.ret5==null?'أداء 5 جلسات: --':'أداء 5 جلسات: '+P(m.ret5)}</small><small>${m.volRatio5==null?'VR5: --':'VR5: '+F(m.volRatio5)}</small></div>`}
+  function renderAdaptivePriority(){
+    const rows=rows105();const p1=rows.filter(x=>x.cls==='BUY_NOW'),p2=rows.filter(x=>x.cls==='BUY_REVIEW'),early=rows.filter(x=>x.ma.n>=6&&x.ma.n<20),mid=rows.filter(x=>x.ma.n>=20&&x.ma.n<50),mature=rows.filter(x=>x.ma.n>=50),insuf=rows.filter(x=>x.ma.n<6),best=rows[0]||{};
+    return `${header('محرك الأولويات + Adaptive MA','V10.5 Starter Engine: يبدأ تلقائيًا من MA6 عند وجود 6 جلسات فعلية، ثم يرتفع يوميًا MA7/MA8… حتى MA20، وبعدها يتراكم نحو MA50 بدون إنشاء شاشة مكررة.')}${quickJump()}<div class="ma105-hero"><b>تغيير V10.5:</b> أصبح Trend وMomentum داخل محرك الأولويات مبنيين على تاريخ الجلسات الفعلي المتاح. لا BUY NOW إذا كان التاريخ أقل من 6 جلسات، ومع كل جلسة جديدة يرتفع العمق الفني تلقائيًا من MA6 حتى MA20 ثم MA50.</div><section class="ma105-grid"><div class="ma105-card"><span>أفضل مرشح</span><b>${E(best.symbol||'-')}</b><small>${best.symbol?E(best.label+' · '+F0(best.composite)+'/100 · '+best.ma.label):'-'}</small></div><div class="ma105-card"><span>P1 BUY NOW</span><b>${F0(p1.length)}</b><small>اجتاز Rulebook + Adaptive MA</small></div><div class="ma105-card"><span>P2 BUY REVIEW</span><b>${F0(p2.length)}</b><small>شراء مشروط بالمراجعة</small></div><div class="ma105-card"><span>MA6 → MA19</span><b>${F0(early.length)}</b><small>مرحلة فنية مبكرة</small></div><div class="ma105-card"><span>MA20 Active</span><b>${F0(mid.length)}</b><small>متوسط الأجل يبدأ</small></div><div class="ma105-card"><span>MA50 / غير كافٍ</span><b>${F0(mature.length)} / ${F0(insuf.length)}</b><small>ناضج / أقل من 6 جلسات</small></div></section><section class="panel"><h3>جدول الأولويات بعد Adaptive MA <span>${F0(rows.length)}</span></h3><div class="tablewrap no-x"><table class="compact-table rank95-table ma105-table"><thead><tr><th>#</th><th>الرمز</th><th>السهم</th><th>Rulebook Priority</th><th>Adaptive MA</th><th>Composite</th><th>سيولة</th><th>اتجاه</th><th>زخم</th><th>R/R</th><th>Risk</th><th>السعر</th><th>الدخول</th><th>هدف/وقف</th><th>ربح1</th><th>أسباب القبول/الرفض</th><th>الحالة التنفيذية</th><th>إجراء</th></tr></thead><tbody>${rows.map((x,i)=>`<tr data-symbol="${E(x.symbol)}"><td>${i+1}</td><td class="symbol">${E(x.symbol)}</td><td>${E(x.name)}<br><small>${E(x.sector)}</small></td><td><span class="rank95-pill ${rbPriorityClass(x.cls)}">${E(x.label)}</span><br><span class="${x.pill}">${E(x.horizon)}</span></td><td>${maBox(x)}</td><td>${scoreCell(x.composite)}</td><td>${scoreCell(x.liq)}</td><td>${scoreCell(x.trend)}</td><td>${scoreCell(x.mom)}</td><td><b>${x.R==null?'--':F(x.R)}</b><br><small>${F0(x.rrs)}/100</small></td><td><b class="${x.risk>45?'neg':'pos'}">${F0(x.risk)}</b></td><td>${(typeof v93PriceCell==='function')?v93PriceCell(x.row):F(x.price)}</td><td>${F(entry(x.row))} - ${F(entryTo(x.row))}</td><td><span class="pos">${F(target1(x.row))}</span><br><span class="neg">${F(stop(x.row))}</span></td><td class="${(x.er||0)>=0?'pos':'neg'}">${x.er==null?'--':P(x.er)}</td><td class="ma105-reasons"><div><b>أسباب:</b> ${E(x.reasons.join('، ')||'-')}</div><div><b>مخاطر:</b> ${E(x.risks.join('، ')||'لا توجد مخاطر بارزة')}</div><div style="margin-top:5px">${gateHtml(x)}</div></td><td>${rbExecutionAllowed(x)?'<span class="rb104-gate-ok">✓ قابل للمراجعة التنفيذية</span>':'<span class="rb104-gate-bad">✕ ليس P1/P2</span>'}<br><small>${x.ma.n<6?'ممنوع تنفيذياً حتى تتوفر 6 جلسات فعلية':x.ma.n<20?'مؤهل مبكرًا لكن قبل MA20':'عمق فني أفضل'}</small></td><td>${typeof proDetailButton==='function'?proDetailButton(x.symbol):''}</td></tr>`).join('')}</tbody></table></div></section>`;
+  }
+  renderFinalRankingEngine=function(){return renderAdaptivePriority();};
+  const prevContent=content;
+  content=function(){if(EGX.screen==='rulebookEngine'||EGX.screen==='rankingEngine')return renderAdaptivePriority();return prevContent();};
+  quickJump=function(){const base=[['home','⌂ الرئيسية'],['rankingEngine','≡ الأولويات + Adaptive MA'],['decisionQueue','🚦 قائمة القرار'],['coverageLoop','🔁 تغطية حقيقية 80%'],['recommendationValidation','☑ دقة تنفيذية'],['capitalAllocation','💰 تخصيص رأس المال'],['riskReturn','📊 المخاطر والعائد'],['safetyGovernor','🛡 حاكم التوصيات'],['multiSourceIntel','☷ ذكاء المصادر']];return `<div class="screen-jump v894-jump">${base.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
+  header=function(title,sub){const last=EGX.source?.generatedAt||EGX.source?.lastSuccessAt||EGX.market?.updatedAt||new Date().toISOString();return `<div class="head"><div><h2>${E(title)}</h2><p>${E(sub||'')}</p></div><div class="actions"><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق التغطية: السوق المصري</span><span class="chip warn"><i class="dot"></i> وضع المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${E(new Date(last).toLocaleString('en-GB'))}</span><span class="chip info"><i class="dot"></i> الكاش: ${F0(EGX.source?.cacheRows||EGX.rows?.length)} / ${F0(EGX.source?.totalUniverse||EGX.rows?.length)}</span><span class="chip"><i class="dot"></i> جودة البيانات: ${F0(EGX.source?.avgDataQuality||100)}%</span><span class="chip"><i class="dot"></i> V10.5 Adaptive MA Starter Engine</span></div>`};
+  side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['rankingEngine','محرك الأولويات + Adaptive MA','≡'],['decisionQueue','قائمة القرار التنفيذي','🚦'],['coverageLoop','تغطية حقيقية 80%','🔁'],['recommendationValidation','دقة تنفيذية','☑'],['capitalAllocation','تخصيص رأس المال','💰'],['portfolioAwareAllocation','تخصيص مرتبط بالمحفظة','🧮'],['riskReturn','المخاطر والعائد','📊'],['safetyGovernor','حاكم التوصيات','🛡'],['multiSourceIntel','ذكاء المصادر','☷'],['enginesConsole','لوحة التشغيل','⚙'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['dataOps','مركز تدقيق البيانات','▤'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['stockSearch','بحث وتحليل سهم','⌕'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V10.5 Adaptive MA Starter Engine</div></div></div><div class="statusbar"><span class="live">MA6→MA20→MA50 داخل محرك الأولويات</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
+  setTimeout(()=>{try{if(EGX.screen==='rulebookEngine'||EGX.screen==='rankingEngine')render();}catch(e){console.warn('adaptive ma render refresh failed',e)}},1000);
+})();
+
 init().catch(e=>{
   console.error("EGX init failed", e);
   const app=document.getElementById("app");
