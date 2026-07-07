@@ -4350,6 +4350,109 @@ function renderRecommendationValidationPanel(){
 
 })();
 
+
+/* ===================== V10.3.1 Accuracy Formula Fix ===================== */
+(function v1031AccuracyFormulaFix(){
+  try{
+    const style=document.createElement('style');
+    style.textContent=`
+      .acc131-hero{border:1px solid rgba(34,197,94,.30);background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(14,165,233,.08));border-radius:18px;padding:13px;margin:10px 0;line-height:1.9;color:#dcfce7}
+      .acc131-hero.warn{border-color:rgba(245,158,11,.36);background:rgba(245,158,11,.10);color:#fde68a}
+      .acc131-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:10px;margin:12px 0}
+      .acc131-card{background:rgba(7,19,38,.78);border:1px solid rgba(119,169,235,.18);border-radius:16px;padding:12px;min-height:92px}
+      .acc131-card span{display:block;color:#93a9c9;font-size:11px}.acc131-card b{display:block;font-size:22px;margin-top:5px;color:#eef7ff}.acc131-card small{display:block;color:#9fb5d6;margin-top:4px;line-height:1.6}
+      .acc131-split{display:grid;grid-template-columns:1.24fr .76fr;gap:12px;align-items:start}.acc131-table{min-width:1600px!important}.acc131-table td{vertical-align:top!important;line-height:1.55!important}
+      .acc131-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:950;border:1px solid rgba(119,169,235,.2);background:rgba(7,19,38,.75);color:#dbeafe}.acc131-pill.target{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.35);color:#bbf7d0}.acc131-pill.stop{background:rgba(239,68,68,.14);border-color:rgba(239,68,68,.35);color:#fecaca}.acc131-pill.open{background:rgba(14,165,233,.12);border-color:rgba(14,165,233,.33);color:#bfdbfe}.acc131-pill.invalid{background:rgba(245,158,11,.14);border-color:rgba(245,158,11,.35);color:#fde68a}.acc131-pill.excluded{background:rgba(100,116,139,.14);border-color:rgba(148,163,184,.28);color:#cbd5e1}
+      .acc131-note{border:1px solid rgba(119,169,235,.16);background:rgba(7,19,38,.72);border-radius:14px;padding:10px;margin:8px 0;line-height:1.8;color:#cfe3ff}.acc131-note.good{border-color:rgba(34,197,94,.28);background:rgba(34,197,94,.09);color:#bbf7d0}.acc131-note.warn{border-color:rgba(245,158,11,.28);background:rgba(245,158,11,.10);color:#fde68a}.acc131-note.bad{border-color:rgba(239,68,68,.30);background:rgba(239,68,68,.10);color:#fecaca}
+      .acc131-bar{height:8px;border-radius:999px;background:rgba(30,41,59,.9);overflow:hidden;margin-top:6px}.acc131-bar i{display:block;height:100%;background:linear-gradient(90deg,#22c55e,#0ea5e9)}
+      @media(max-width:1100px){.acc131-split{grid-template-columns:1fr}.acc131-table{min-width:1250px!important}}
+    `;
+    document.head.appendChild(style);
+  }catch(e){}
+
+  function A(x){return Array.isArray(x)?x:[]}
+  function N(x){try{return num(x)}catch(e){const n=Number(x);return Number.isFinite(n)?n:null}}
+  function Rows(x){if(Array.isArray(x))return x;if(!x||typeof x!=='object')return [];for(const k of ['rows','items','signals','recommendations','data'])if(Array.isArray(x[k]))return x[k];return []}
+  function normTxt(x){return String(x||'').toUpperCase().replace(/[_\-]+/g,' ')}
+  function rawTxt(r){return normTxt([r.status,r.statusLabel,r.outcome,r.result,r.finalOutcome,r.decision,r.recommendation,r.grade,r.classification,r.priorityClass,r.safetyDecision,r.safetyStatus,r.executionDecision,r.finalDataDecision,r.coverageStatus].filter(Boolean).join(' '))}
+  function grade(r){
+    const t=rawTxt(r);
+    if(/\bP\s*1\b|EXECUTABLE\s*A|REVIEW\s*A|\bA\+\b/.test(t))return 'P1';
+    if(/\bP\s*2\b|EXECUTABLE\s*B|REVIEW\s*B|\bA\b/.test(t))return 'P2';
+    if(/WATCH|MONITOR|مراقبة|تحليل فقط|ANALYSIS/.test(t))return 'WATCH';
+    if(/BLOCK|محجوب|لا تخصيص|NO EXECUTION/.test(t))return 'BLOCKED';
+    return 'OTHER';
+  }
+  function isExecutable(r){
+    const t=rawTxt(r), g=grade(r);
+    if(/WATCH|مراقبة فقط|WATCH ONLY|تحليل فقط|ANALYSIS READY|PRICE REVIEW|BLOCK|محجوب|لا تخصيص|NO EXECUTION|INVALID/.test(t))return false;
+    if(/EXECUTABLE\s*REVIEW|قابل\s*للمراجعة|مراجعة\s*تنفيذ|P\s*1|P\s*2/.test(t))return g==='P1'||g==='P2';
+    return g==='P1'||g==='P2';
+  }
+  function entry(r){return N(r.entry??r.entryPrice??r.entryFrom??r.buyFrom??r.entry_to??r.entryTo)}
+  function target(r){return N(r.target1??r.firstTarget??r.target??r.tp1)}
+  function target2(r){return N(r.target2??r.secondTarget??r.tp2)}
+  function stop(r){return N(r.stopLoss??r.stop??r.sl)}
+  function current(r){return N(r.current??r.currentPrice??r.price??r.lastPrice)}
+  function plan(r){
+    const e=entry(r), t=target(r), s=stop(r);
+    if(!(e>0)||!(t>0)||!(s>0))return {valid:false,state:'missing',reason:'خطة ناقصة'};
+    if(!(s<e&&t>e))return {valid:false,state:'invalid',reason:'هدف/وقف غير منطقي'};
+    return {valid:true,state:'valid',reason:'خطة صالحة'};
+  }
+  function status(r){
+    const txt=rawTxt(r), p=plan(r);
+    if(!p.valid)return 'invalid';
+    if(/TARGET\s*2|TP\s*2|هدف\s*2|هدف ثاني/.test(txt))return 'target2';
+    if((/TARGET\s*1|TARGET|TP\s*1|هدف|SUCCESS|HIT|حقق/.test(txt))&&!/STOP|وقف|LOSS|FAIL/.test(txt))return 'target1';
+    if(/STOP|وقف|LOSS|FAILED|FAIL|ضرب وقف/.test(txt))return 'stop';
+    return 'open';
+  }
+  function statusLabel(s){return s==='target2'?'هدف 2':s==='target1'?'هدف 1':s==='stop'?'وقف':s==='invalid'?'خطة غير صالحة':'مفتوح'}
+  function openReturn(r){const v=N(r.openReturnPct??r.actualReturn??r.returnPct);if(v!=null)return v;const c=current(r),e=entry(r);return c>0&&e>0?(c-e)/e*100:null}
+  function gain(r){return N(r.maxGainPct??r.maxProfitPct??r.bestReturnPct)}
+  function draw(r){return N(r.maxDrawdownPct??r.drawdownPct??r.worstReturnPct)}
+  function getRows(){
+    const rv=EGX.recommendationValidation||{}, ot=EGX.recommendationOutcomeTracker||{}, aw=EGX.actionableWatchlist||{}, fr=EGX.finalRanking||{};
+    let rows=[];
+    rows=rows.concat(Rows(rv)).concat(Rows(ot));
+    if(!rows.length)rows=rows.concat(Rows(aw)).concat(Rows(fr)).map(r=>({...r,status:'open',statusLabel:'مفتوح / يحتاج متابعة'}));
+    const seen=new Set();
+    return rows.filter(r=>r&&r.symbol).map((r,i)=>({...r,__i:i})).filter(r=>{const key=String(r.symbol).toUpperCase()+'|'+String(r.date||r.generatedAt||r.followupDate||r.entry||r.entryFrom||r.__i);if(seen.has(key))return false;seen.add(key);return true;});
+  }
+  function summarize(rows){
+    const norm=rows.map(r=>({r,grade:grade(r),exec:isExecutable(r),status:status(r),plan:plan(r)}));
+    const exec=norm.filter(x=>x.exec);
+    const execValid=exec.filter(x=>x.plan.valid);
+    const execInvalid=exec.filter(x=>!x.plan.valid);
+    const execClosed=execValid.filter(x=>['target1','target2','stop'].includes(x.status));
+    const execTargets=execClosed.filter(x=>x.status==='target1'||x.status==='target2');
+    const execStops=execClosed.filter(x=>x.status==='stop');
+    const execOpen=execValid.filter(x=>x.status==='open');
+    const excluded=norm.filter(x=>!x.exec);
+    const watch=excluded.filter(x=>x.grade==='WATCH');
+    const analysisOnly=excluded.filter(x=>x.grade!=='WATCH'&&x.grade!=='BLOCKED');
+    const blocked=excluded.filter(x=>x.grade==='BLOCKED');
+    const rate=execClosed.length?execTargets.length/execClosed.length*100:null;
+    const stopRate=execClosed.length?execStops.length/execClosed.length*100:null;
+    const pStats=['P1','P2'].map(g=>{const all=execValid.filter(x=>x.grade===g), closed=all.filter(x=>['target1','target2','stop'].includes(x.status)), targets=closed.filter(x=>x.status==='target1'||x.status==='target2'), stops=closed.filter(x=>x.status==='stop');return{grade:g,total:all.length,closed:closed.length,targets:targets.length,stops:stops.length,open:all.filter(x=>x.status==='open').length,rate:closed.length?targets.length/closed.length*100:null}});
+    const avgOpen=execOpen.length?execOpen.reduce((s,x)=>s+(openReturn(x.r)||0),0)/execOpen.length:null;
+    const avgGain=execValid.length?execValid.reduce((s,x)=>s+(gain(x.r)||0),0)/execValid.length:null;
+    const avgDraw=execValid.length?execValid.reduce((s,x)=>s+Math.abs(draw(x.r)||0),0)/execValid.length:null;
+    return{norm,exec,execValid,execInvalid,execClosed,execTargets,execStops,execOpen,excluded,watch,analysisOnly,blocked,rate,stopRate,pStats,avgOpen,avgGain,avgDraw};
+  }
+  function badge(s,extra){return `<span class="acc131-pill ${extra||s}">${esc(statusLabel(s))}</span>`}
+  window.renderRecommendationValidationPanel=function(){
+    const rows=getRows(), sm=summarize(rows), idx=sm.rate==null?null:Math.round(sm.rate);
+    const hero=sm.execClosed.length?`المؤشر يحسب EXECUTABLE_REVIEW فقط. تم استبعاد أسهم Watch/Analysis Ready/Blocked من الدقة التنفيذية. العينة المحسومة: ${fmt0(sm.execClosed.length)} من ${fmt0(sm.execValid.length)} توصية تنفيذية صالحة.`:`لا توجد عينة تنفيذية محسومة كافية. التغطية التحليلية لا تدخل في دقة التنفيذ.`;
+    function rowHtml(x,i){const r=x.r, st=x.status, cls=x.exec?(st==='stop'?'stop':(st==='target1'||st==='target2')?'target':st==='invalid'?'invalid':'open'):'excluded';return `<tr><td>${i+1}</td><td><b>${esc(r.symbol)}</b><br><small>${esc(r.name||r.name_ar||'')}</small></td><td>${x.exec?'<span class="pos">تنفيذي</span>':'<span class="muted">مستبعد من الدقة</span>'}<br><small>${esc(x.grade)}</small></td><td>${badge(st,cls)}</td><td>${esc(x.plan.reason)}</td><td>${fmt(entry(r))}</td><td>${fmt(current(r))}</td><td><span class="pos">${fmt(target(r))}</span><br><span class="muted">${fmt(target2(r))}</span></td><td><span class="neg">${fmt(stop(r))}</span></td><td class="${(openReturn(r)||0)>=0?'pos':'neg'}">${openReturn(r)==null?'--':pct(openReturn(r))}</td><td class="pos">${gain(r)==null?'--':pct(gain(r))}</td><td class="neg">${draw(r)==null?'--':pct(-Math.abs(draw(r)))}</td><td>${x.exec?(st==='open'?'قيد متابعة تنفيذية':st==='stop'?'فشل تنفيذي محسوم':(st==='target1'||st==='target2')?'نجاح تنفيذي محسوم':'خارج الدقة حتى إصلاح الخطة'):'Watch/تحليل فقط — لا يدخل مؤشر الدقة'}</td></tr>`}
+    return `${header('V10.3.1 تثبيت معادلة دقة التوصيات','الدقة التنفيذية تقاس على P1/P2 أو EXECUTABLE_REVIEW فقط. التغطية الواسعة والمراقبة لا تدخل في النجاح أو الفشل.')}${quickJump()}<div class="acc131-hero ${sm.execClosed.length<5?'warn':''}"><b>قاعدة V10.3.1:</b> ${esc(hero)}</div><section class="acc131-grid"><div class="acc131-card"><span>الدقة التنفيذية فقط</span><b>${idx==null?'Warm-up':fmt0(idx)+'%'}</b><div class="acc131-bar"><i style="width:${idx==null?0:Math.max(0,Math.min(100,idx))}%"></i></div><small>نجاح من النتائج التنفيذية المحسومة فقط</small></div><div class="acc131-card"><span>تنفيذي محسوم / مفتوح</span><b>${fmt0(sm.execClosed.length)} / ${fmt0(sm.execOpen.length)}</b><small>المفتوح لا يحسب نجاح أو فشل</small></div><div class="acc131-card"><span>هدف / وقف تنفيذي</span><b><span class="pos">${fmt0(sm.execTargets.length)}</span> / <span class="neg">${fmt0(sm.execStops.length)}</span></b><small>بعد استبعاد Watch والتحليل فقط</small></div><div class="acc131-card"><span>مستبعد من الدقة</span><b>${fmt0(sm.excluded.length)}</b><small>Watch: ${fmt0(sm.watch.length)} · Analysis: ${fmt0(sm.analysisOnly.length)} · Blocked: ${fmt0(sm.blocked.length)}</small></div><div class="acc131-card"><span>خطط تنفيذية غير صالحة</span><b class="${sm.execInvalid.length?'neg':''}">${fmt0(sm.execInvalid.length)}</b><small>لا تدخل في الدقة حتى إصلاح الهدف/الوقف</small></div><div class="acc131-card"><span>متوسط التنفيذ المفتوح</span><b class="${(sm.avgOpen||0)>=0?'pos':'neg'}">${sm.avgOpen==null?'--':pct(sm.avgOpen)}</b><small>P1/P2 المفتوحة فقط</small></div></section><section class="acc131-split"><div class="panel"><h3>سجل التوصيات — تنفيذية فقط مقابل مراقبة</h3><div class="tablewrap"><table class="compact-table acc131-table"><thead><tr><th>#</th><th>السهم</th><th>احتساب الدقة</th><th>الحالة</th><th>صلاحية الخطة</th><th>الدخول</th><th>الحالي</th><th>هدف1/2</th><th>وقف</th><th>العائد الحالي</th><th>أقصى ربح</th><th>أقصى هبوط</th><th>القراءة</th></tr></thead><tbody>${sm.norm.slice(0,140).map(rowHtml).join('')||'<tr><td colspan="13" class="muted">لا توجد توصيات مقاسة بعد.</td></tr>'}</tbody></table></div></div><div class="leftstack"><div class="panel"><h3>دقة P1 / P2</h3>${sm.pStats.map(g=>`<div class="quickrow"><b>${esc(g.grade)}</b><div><b>${g.rate==null?'--':fmt0(g.rate)+'%'}</b><br><small>محسوم ${fmt0(g.closed)} · مفتوح ${fmt0(g.open)}</small></div><span><span class="pos">${fmt0(g.targets)}</span>/<span class="neg">${fmt0(g.stops)}</span></span></div>`).join('')}</div><div class="panel"><h3>فصل التغطية عن الدقة</h3><div class="acc131-note good"><b>التغطية:</b> تعني أن السهم قابل للتحليل أو المراقبة.</div><div class="acc131-note warn"><b>الدقة:</b> تقيس فقط P1/P2 أو EXECUTABLE_REVIEW بعد تحقق هدف أو وقف.</div><div class="acc131-note bad"><b>لا يدخل الدقة:</b> Watch Only، Analysis Ready، Price Review، Blocked، والخطط غير الصالحة.</div></div><div class="panel"><h3>مؤشرات مساعدة</h3><div class="ministat"><span>نسبة الوقف التنفيذية</span><b class="${(sm.stopRate||0)>35?'neg':''}">${sm.stopRate==null?'--':fmt(sm.stopRate,1)+'%'}</b></div><div class="ministat"><span>متوسط أقصى ربح</span><b class="pos">${sm.avgGain==null?'--':pct(sm.avgGain)}</b></div><div class="ministat"><span>متوسط أقصى هبوط</span><b class="neg">${sm.avgDraw==null?'--':pct(-Math.abs(sm.avgDraw))}</b></div></div></div></section>`;
+  };
+  const __v1031OldContent=content;
+  content=function(){if(EGX.screen==='recommendationValidation')return renderRecommendationValidationPanel();return __v1031OldContent();};
+  side=function(){const nav=[['home','الرئيسية التنفيذية','⌂'],['decisionQueue','قائمة القرار التنفيذي','🚦'],['coverageLoop','تغطية حقيقية 80%','🔁'],['recommendationValidation','تحقق التوصيات','☑'],['capitalAllocation','تخصيص رأس المال','💰'],['portfolioAwareAllocation','تخصيص مرتبط بالمحفظة','🧮'],['riskReturn','المخاطر والعائد','📊'],['safetyGovernor','حاكم التوصيات','🛡'],['multiSourceIntel','ذكاء المصادر','☷'],['enginesConsole','لوحة التشغيل','⚙'],['priceSourceAudit','تدقيق مصدر السعر','⇆'],['performanceIndex','مؤشر الدقة','✓'],['preSession','فحص قبل الجلسة','✅'],['dataOps','مركز تدقيق البيانات','▤'],['sourceVerify','تحقق الجلب','🔎'],['priceReconcile','تدقيق الأسعار','⇆'],['dailyOpportunities','الفرص اليومية','◎'],['rankingEngine','محرك الأولويات','≡'],['dashboard','لوحة السوق','⌁'],['portfolio','المحفظة والتقارير الذكية','◈'],['stockSearch','بحث وتحليل سهم','⌕'],['settings','الإعدادات','⚙']];return `<aside class="side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V10.3.1 Accuracy Formula</div></div></div><div class="statusbar"><span class="live">دقة تنفيذية فقط مفعل</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${nav.map(n=>`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[2]}</span>${n[1]}</button>`).join('')}</nav></aside>`};
+})();
+
 init().catch(e=>{
   console.error("EGX init failed", e);
   const app=document.getElementById("app");

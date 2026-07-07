@@ -1,5 +1,5 @@
-// EGX Pro Hub V10.3 Accuracy Tracker Hardening
-const CACHE_NAME='egx-pro-hub-v1030-accuracy-tracker-hardening';
+// EGX Pro Hub V10.3.1 Accuracy Formula Fix
+const CACHE_NAME='egx-pro-hub-v1031-accuracy-formula-fix';
 self.addEventListener('install',e=>{self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)));await self.clients.claim();})());});
 self.addEventListener('fetch',event=>{
