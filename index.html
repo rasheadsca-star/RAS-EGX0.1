@@ -4831,7 +4831,7 @@ function renderRecommendationValidationPanel(){
 })();
 
 
-/* ===================== V10.6 UX Decision Navigation Redesign ===================== */
+/* ===================== V10.6.1 Search Access Redesign ===================== */
 (function v1060UXDecisionNavigationRedesign(){
   try{
     EGX.buildId='v1060-ux-decision-navigation-redesign';
@@ -4907,9 +4907,101 @@ function renderRecommendationValidationPanel(){
     return previousContent106();
   };
   quickJump=function(){const items=[['home','⌂ الرئيسية'],['rankingEngine','⚡ محرك القرار'],['buyOpportunities','✅ فرص الشراء'],['monitoring','🔔 المراقبة'],['portfolioRiskHub','💼 المحفظة']];return `<div class="screen-jump ux106-jump">${items.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`};
-  header=function(title,sub){const last=EGX.source?.generatedAt||EGX.source?.lastSuccessAt||EGX.market?.updatedAt||new Date().toISOString();return `<div class="head"><div><h2>${U.e(title)}</h2><p>${U.e(sub||'')}</p></div><div class="actions"><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق السوق: EGX</span><span class="chip warn"><i class="dot"></i> المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${U.e(new Date(last).toLocaleString('en-GB'))}</span><span class="chip info"><i class="dot"></i> التغطية: ${U.f0(EGX.source?.reliableCoveragePct||EGX.source?.coveragePct||0)}%</span><span class="chip"><i class="dot"></i> V10.6 UX Decision Navigation</span></div>`};
-  side=function(){const nav=[['الرئيسية','main'],['home','الرئيسية','ملخص القرار اليومي','⌂'],['rankingEngine','محرك القرار','Rulebook + Adaptive MA','⚡'],['buyOpportunities','فرص الشراء','P1/P2 فقط','✅'],['monitoring','المراقبة والتنبيهات','Watch + Alerts','🔔'],['portfolioRiskHub','المحفظة والمخاطر','تخصيص ومخاطر','💼'],['تحليل داعم','support'],['marketSectors','السوق والقطاعات','اتجاه السوق','📊'],['newsDisclosures','الأخبار والإفصاحات','محفزات ومخاطر','📰'],['performanceIndex','أداء التوصيات','P1/P2 Accuracy','✓'],['dataQualityHub','جودة البيانات','مصادر وتشخيص','▤'],['settings','الإعدادات','','⚙']];let html='';nav.forEach(n=>{if(n[1]==='main'||n[1]==='support')html+=`<div class="ux106-section-title">${U.e(n[0])}</div>`;else html+=`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[3]}</span>${U.e(n[1])}${n[2]?`<small>${U.e(n[2])}</small>`:''}</button>`});return `<aside class="side ux106-side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V10.6<br>UX Decision Navigation</div></div></div><div class="statusbar"><span class="live">Decision-first UI</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${html}</nav></aside>`};
+  header=function(title,sub){const last=EGX.source?.generatedAt||EGX.source?.lastSuccessAt||EGX.market?.updatedAt||new Date().toISOString();return `<div class="head"><div><h2>${U.e(title)}</h2><p>${U.e(sub||'')}</p></div><div class="actions"><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق السوق: EGX</span><span class="chip warn"><i class="dot"></i> المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${U.e(new Date(last).toLocaleString('en-GB'))}</span><span class="chip info"><i class="dot"></i> التغطية: ${U.f0(EGX.source?.reliableCoveragePct||EGX.source?.coveragePct||0)}%</span><span class="chip"><i class="dot"></i> V10.6.1 Search Access</span></div>`};
+  side=function(){const nav=[['الرئيسية','main'],['home','الرئيسية','ملخص القرار اليومي','⌂'],['rankingEngine','محرك القرار','Rulebook + Adaptive MA','⚡'],['buyOpportunities','فرص الشراء','P1/P2 فقط','✅'],['monitoring','المراقبة والتنبيهات','Watch + Alerts','🔔'],['portfolioRiskHub','المحفظة والمخاطر','تخصيص ومخاطر','💼'],['تحليل داعم','support'],['marketSectors','السوق والقطاعات','اتجاه السوق','📊'],['newsDisclosures','الأخبار والإفصاحات','محفزات ومخاطر','📰'],['performanceIndex','أداء التوصيات','P1/P2 Accuracy','✓'],['dataQualityHub','جودة البيانات','مصادر وتشخيص','▤'],['settings','الإعدادات','','⚙']];let html='';nav.forEach(n=>{if(n[1]==='main'||n[1]==='support')html+=`<div class="ux106-section-title">${U.e(n[0])}</div>`;else html+=`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''}"><span>${n[3]}</span>${U.e(n[1])}${n[2]?`<small>${U.e(n[2])}</small>`:''}</button>`});return `<aside class="side ux106-side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V10.6.1<br>Search + Decision Navigation</div></div></div><div class="statusbar"><span class="live">Decision-first UI</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${html}</nav></aside>`};
   setTimeout(()=>{try{if(['home','rankingEngine','buyOpportunities','monitoring'].includes(EGX.screen))render();}catch(e){console.warn('V10.6 render refresh failed',e)}},900);
+})();
+
+
+/* ===================== V10.6.1 Search & Stock Analysis Access Fix ===================== */
+(function v1061SearchStockAnalysisAccess(){
+  try{
+    const style=document.createElement('style');
+    style.textContent=`
+      .ux1061-search{display:flex;align-items:center;gap:7px;min-width:310px;max-width:430px;flex:1}
+      .ux1061-search input{width:100%;height:38px;border-radius:12px;border:1px solid rgba(56,189,248,.28);background:rgba(2,8,23,.72);color:#eaf6ff;padding:0 12px;font-weight:800;outline:none}
+      .ux1061-search input:focus{border-color:rgba(34,211,238,.75);box-shadow:0 0 0 3px rgba(34,211,238,.08)}
+      .ux1061-search button{height:38px;border-radius:12px;white-space:nowrap}
+      .ux1061-critical{background:linear-gradient(135deg,rgba(14,165,233,.22),rgba(34,197,94,.10))!important;border-color:rgba(56,189,248,.40)!important}
+      .ux106-side .nav button.ux1061-search-nav{border-color:rgba(56,189,248,.34);background:rgba(14,165,233,.08)}
+      @media(max-width:900px){.ux1061-search{min-width:100%;order:3}.head .actions{width:100%;flex-wrap:wrap}}
+    `;
+    document.head.appendChild(style);
+
+    const oldHeader1061=header;
+    header=function(title,sub){
+      const last=EGX.source?.generatedAt||EGX.source?.lastSuccessAt||EGX.market?.updatedAt||new Date().toISOString();
+      const q=String(EGX.stockSearchQuery||localStorage.getItem('egx_v717_stock_query')||EGX.selected||'');
+      return `<div class="head"><div><h2>${esc(title)}</h2><p>${esc(sub||'')}</p></div><div class="actions"><div class="ux1061-search"><input id="globalStockSearchInput" value="${esc(q)}" placeholder="بحث سريع: اكتب رمز أو اسم السهم"><button class="btn primary" id="globalStockSearchBtn">🔎 تحليل سهم</button></div><button class="btn primary" id="refresh">⚡ تحديث البيانات</button><button class="btn" id="export">تصدير CSV</button><button class="btn" onclick="window.print()">طباعة</button><button class="btn warn" id="classicTop">الشكل الكلاسيكي</button></div></div><div class="chips"><span class="chip"><i class="dot"></i> نطاق السوق: EGX</span><span class="chip warn"><i class="dot"></i> المصدر: Public Delayed</span><span class="chip info"><i class="dot"></i> آخر تحديث: ${esc(new Date(last).toLocaleString('en-GB'))}</span><span class="chip info"><i class="dot"></i> التغطية: ${fmt0(EGX.source?.reliableCoveragePct||EGX.source?.coveragePct||0)}%</span><span class="chip"><i class="dot"></i> V10.6.1 Search Access</span></div>`;
+    };
+
+    quickJump=function(){
+      const items=[['home','⌂ الرئيسية'],['rankingEngine','⚡ محرك القرار'],['buyOpportunities','✅ فرص الشراء'],['stockSearch','🔎 بحث وتحليل سهم'],['monitoring','🔔 المراقبة'],['portfolioRiskHub','💼 المحفظة']];
+      return `<div class="screen-jump ux106-jump">${items.map(i=>`<button data-screen="${i[0]}" class="${EGX.screen===i[0]?'active':''}">${i[1]}</button>`).join('')}</div>`;
+    };
+
+    side=function(){
+      const nav=[
+        ['الرئيسية','main'],
+        ['home','الرئيسية','ملخص القرار اليومي','⌂'],
+        ['rankingEngine','محرك القرار','Rulebook + Adaptive MA','⚡'],
+        ['buyOpportunities','فرص الشراء','P1/P2 فقط','✅'],
+        ['stockSearch','بحث وتحليل سهم','بحث مباشر + تحليل Pro','🔎','ux1061-search-nav'],
+        ['monitoring','المراقبة والتنبيهات','Watch + Alerts','🔔'],
+        ['portfolioRiskHub','المحفظة والمخاطر','تخصيص ومخاطر','💼'],
+        ['تحليل داعم','support'],
+        ['chartLab','تاريخ وشارت','شارت وتحليل تاريخي','▧'],
+        ['marketSectors','السوق والقطاعات','اتجاه السوق','📊'],
+        ['newsDisclosures','الأخبار والإفصاحات','محفزات ومخاطر','📰'],
+        ['performanceIndex','أداء التوصيات','P1/P2 Accuracy','✓'],
+        ['dataQualityHub','جودة البيانات','مصادر وتشخيص','▤'],
+        ['settings','الإعدادات','','⚙']
+      ];
+      let html='';
+      nav.forEach(n=>{
+        if(n[1]==='main'||n[1]==='support') html+=`<div class="ux106-section-title">${esc(n[0])}</div>`;
+        else html+=`<button data-screen="${n[0]}" class="${EGX.screen===n[0]?'active':''} ${n[4]||''}"><span>${n[3]}</span>${esc(n[1])}${n[2]?`<small>${esc(n[2])}</small>`:''}</button>`;
+      });
+      return `<aside class="side ux106-side"><div class="brand"><div class="logo">EGX</div><div><h1>EGX Pro Hub</h1><div class="sub">Professional Terminal V10.6.1<br>Search + Decision Navigation</div></div></div><div class="statusbar"><span class="live">بحث وتحليل السهم ظاهر دائمًا</span><span>${new Date().toLocaleDateString('en-GB')}</span></div><nav class="nav">${html}</nav></aside>`;
+    };
+
+    function openStockAnalysis1061(raw){
+      const q=String(raw||'').trim();
+      if(q){
+        EGX.stockSearchQuery=q;
+        localStorage.setItem('egx_v717_stock_query',q);
+        const key=(typeof cleanSymbol==='function')?cleanSymbol(q):q.toUpperCase();
+        const found=(EGX.rows||[]).find(r=>String(r.symbol||r.ticker||'').toUpperCase()===key) || (EGX.rows||[]).find(r=>String(r.name_ar||r.name||'').includes(q));
+        if(found) EGX.selected=String(found.symbol||found.ticker||'').toUpperCase();
+        else if(/^[A-Za-z0-9.]{2,10}$/.test(q)) EGX.selected=key;
+      }
+      EGX.screen='stockSearch';
+      localStorage.setItem('egx_v61_screen','stockSearch');
+      render();
+    }
+
+    const oldBind1061=bind;
+    bind=function(){
+      oldBind1061();
+      document.querySelectorAll('button[data-screen="stockSearch"][data-symbol],button[data-open-stock]').forEach(btn=>{
+        btn.onclick=e=>{
+          e.preventDefault();
+          e.stopPropagation();
+          openStockAnalysis1061(btn.dataset.symbol||btn.dataset.openStock||'');
+        };
+      });
+      const gi=document.getElementById('globalStockSearchInput');
+      const gb=document.getElementById('globalStockSearchBtn');
+      if(gi){
+        gi.onkeydown=e=>{if(e.key==='Enter')openStockAnalysis1061(gi.value)};
+      }
+      if(gb){
+        gb.onclick=e=>{e.preventDefault();e.stopPropagation();openStockAnalysis1061(gi?gi.value:'')};
+      }
+    };
+
+    setTimeout(()=>{try{render();}catch(e){console.warn('V10.6.1 search access render skipped',e)}},300);
+  }catch(e){console.warn('V10.6.1 search access skipped',e)}
 })();
 
 init().catch(e=>{
