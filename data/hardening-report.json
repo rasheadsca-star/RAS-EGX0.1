@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "engine": "quality_hardening_v1_0",
+  "generatedAt": "2026-07-08T20:07:07.500Z",
+  "historyTargetSessions": 50,
+  "counters": {
+    "namesCleaned": 779,
+    "executionBlocked": 616,
+    "confidenceCapped": 833,
+    "dailyBriefFiltered": 6
+  },
+  "files": {
+    "market": true,
+    "recommendations": true,
+    "finalRanking": true,
+    "dailyBrief": true,
+    "confidenceGuard": true
+  },
+  "inputs": {
+    "knownSymbolNames": 241,
+    "priceRows": 224,
+    "priceConflicts": 152,
+    "precisionRisks": 22,
+    "stalePrices": 3,
+    "historyRows": 224,
+    "avgSessions": 6.89,
+    "full50Symbols": 0
+  },
+  "policy": {
+    "conflict": "executionAllowed=false, grade=Blocked, signal WATCH_BUY downgraded to WAIT",
+    "precisionRisk": "executionAllowed=false until 3-decimal price is confirmed",
+    "incompleteHistory": "confidence capped until 50 sessions are available",
+    "pollutedNames": "replace script/ad polluted name fields using config/egx-symbols.csv or symbol fallback"
+  }
+}
