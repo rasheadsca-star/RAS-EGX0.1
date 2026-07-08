@@ -1,11 +1,18 @@
 {
   "name": "egx-pro-hub-web-auto-mubasher-safe",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "commonjs",
   "scripts": {
-    "fetch": "node scripts/fetch-market-data.js"
+    "fetch": "node scripts/fetch-market-data.js",
+    "quality:hardening": "node scripts/apply-quality-hardening.js",
+    "update-data": "node scripts/collect-market-gateway.js && node scripts/build-history-50-engine.js && node scripts/build-price-reconciliation-report.js && node scripts/build-final-opportunity-ranking.js && node scripts/build-confidence-guard-report.js && node scripts/build-daily-decision-brief.js && node scripts/apply-quality-hardening.js",
+    "start": "npx serve . -l 3000",
+    "serve": "npx serve . -l 3000"
   },
   "engines": {
-    "node": "22.x"
+    "node": ">=22 <25"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
   }
 }
