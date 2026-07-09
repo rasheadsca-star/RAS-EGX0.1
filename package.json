@@ -1,14 +1,14 @@
 {
   "name": "egx-pro-hub-goal-decision-center",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "commonjs",
   "scripts": {
     "fetch": "node scripts/fetch-market-data.js",
+    "mubasher:primary": "node scripts/collect-mubasher-primary-feeds.js",
     "quality:hardening": "node scripts/apply-quality-hardening.js",
-    "goal:decision": "node scripts/build-goal-integrated-decision.js",
-    "goal:version": "node scripts/build-version-manifest.js",
-    "goal": "node scripts/apply-quality-hardening.js && node scripts/build-goal-integrated-decision.js && node scripts/build-version-manifest.js",
-    "update-data": "node scripts/collect-market-gateway.js && node scripts/build-history-50-engine.js && node scripts/build-price-reconciliation-report.js && node scripts/build-final-opportunity-ranking.js && node scripts/build-confidence-guard-report.js && node scripts/build-daily-decision-brief.js && npm run goal",
+    "goal:decision": "node scripts/apply-quality-hardening.js && node scripts/build-goal-integrated-decision.js && node scripts/build-version-manifest.js",
+    "goal": "npm run mubasher:primary && npm run goal:decision",
+    "update-data": "node scripts/fetch-market-data.js && npm run mubasher:primary && node scripts/build-history-50-engine.js && node scripts/build-price-reconciliation-report.js && node scripts/build-final-opportunity-ranking.js && node scripts/build-confidence-guard-report.js && node scripts/build-daily-decision-brief.js && npm run goal:decision",
     "start": "npx serve . -l 3000",
     "serve": "npx serve . -l 3000"
   },
@@ -16,6 +16,6 @@
     "node": ">=22 <25"
   },
   "devDependencies": {
-    "serve": "^14.2.4"
+    "serve": "^14.2.6"
   }
 }
