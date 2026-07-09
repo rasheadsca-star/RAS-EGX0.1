@@ -1,7 +1,7 @@
 {
   "ok": true,
   "engine": "v10_0_real_coverage_source_evidence_matrix",
-  "generatedAt": "2026-07-09T04:48:40.527Z",
+  "generatedAt": "2026-07-09T06:40:59.453Z",
   "summary": {
     "targetCoveragePct": 80,
     "totalUniverse": 224,
@@ -12803,8 +12803,8 @@
       "coverageStatus": "ANALYSIS_READY_INTERNAL_CACHE",
       "sourceStrengthScore": 100,
       "evidenceScore": 100,
-      "confirmationCount": 8,
-      "confirmations": 8,
+      "confirmationCount": 9,
+      "confirmations": 9,
       "confirmationSources": [
         "internal:price",
         "internal:volume/value",
@@ -12813,7 +12813,8 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance"
+        "external:supportResistance",
+        "external:priceBoard"
       ],
       "evidenceSources": [
         "internal:price",
@@ -12823,7 +12824,8 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance"
+        "external:supportResistance",
+        "external:priceBoard"
       ],
       "coreSignalCount": 5,
       "internalCacheUsed": true,
@@ -12835,8 +12837,8 @@
       "volumeStatus": "حجم/قيمة من الكاش",
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة سعرية منطقية",
-      "sourceCount": 3,
-      "currentExternalSourceCount": 3,
+      "sourceCount": 4,
+      "currentExternalSourceCount": 4,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -12898,6 +12900,36 @@
             ],
             "numeric": [],
             "rowText": "INFI/support-resistance','within",
+            "fallback": true
+          }
+        },
+        "priceBoard": {
+          "sourceId": "mubasherPrices",
+          "title": "Mubasher EGX Price Board",
+          "currentRunOk": true,
+          "staleFallback": false,
+          "row": {
+            "symbol": "INFI",
+            "sourceId": "mubasherPrices",
+            "group": "priceBoard",
+            "rowIndex": 4,
+            "name": "INFI",
+            "cells": [
+              "INFI) بيان من الشركةاسم الشركة : الاسماعيلية الوطنية للصناعات الغذائية (فوديكو) 08:17 ص موضوع الاعلان : تسوية عدد من وثائق صندوق المؤشراسم الشركة : وثائق استثمار شركة صناديق المؤشرات -"
+            ],
+            "numeric": [
+              {
+                "raw": "08",
+                "value": 8,
+                "isPercent": false
+              },
+              {
+                "raw": "17 ",
+                "value": 17,
+                "isPercent": false
+              }
+            ],
+            "rowText": "INFI) بيان من الشركةاسم الشركة : الاسماعيلية الوطنية للصناعات الغذائية (فوديكو) 08:17 ص موضوع الاعلان : تسوية عدد من وثائق صندوق المؤشراسم الشركة : وثائق استثمار شركة صناديق المؤشرات -",
             "fallback": true
           }
         }
@@ -13393,8 +13425,8 @@
       "coverageStatus": "ANALYSIS_READY_INTERNAL_CACHE",
       "sourceStrengthScore": 100,
       "evidenceScore": 100,
-      "confirmationCount": 8,
-      "confirmations": 8,
+      "confirmationCount": 9,
+      "confirmations": 9,
       "confirmationSources": [
         "internal:price",
         "internal:volume/value",
@@ -13403,7 +13435,8 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance"
+        "external:supportResistance",
+        "external:priceBoard"
       ],
       "evidenceSources": [
         "internal:price",
@@ -13413,7 +13446,8 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance"
+        "external:supportResistance",
+        "external:priceBoard"
       ],
       "coreSignalCount": 5,
       "internalCacheUsed": true,
@@ -13425,8 +13459,8 @@
       "volumeStatus": "حجم/قيمة من الكاش",
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة سعرية منطقية",
-      "sourceCount": 3,
-      "currentExternalSourceCount": 3,
+      "sourceCount": 4,
+      "currentExternalSourceCount": 4,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -13488,6 +13522,51 @@
             ],
             "numeric": [],
             "rowText": "JUFO/support-resistance','within",
+            "fallback": true
+          }
+        },
+        "priceBoard": {
+          "sourceId": "mubasherPrices",
+          "title": "Mubasher EGX Price Board",
+          "currentRunOk": true,
+          "staleFallback": false,
+          "row": {
+            "symbol": "JUFO",
+            "sourceId": "mubasherPrices",
+            "group": "priceBoard",
+            "rowIndex": 3,
+            "name": "JUFO",
+            "cells": [
+              "JUFO) - محضر إجتماع الجمعية العامة غير العادية المنعقدة في 28/04/2026 (موثق)اسم الشركة: جهينة للصناعات الغذ 08:21 ص العنوان : الاسماعيلية الوطنية للصناعات الغذائية (فوديكو) ("
+            ],
+            "numeric": [
+              {
+                "raw": "28",
+                "value": 28,
+                "isPercent": false
+              },
+              {
+                "raw": "04",
+                "value": 4,
+                "isPercent": false
+              },
+              {
+                "raw": "2026 ",
+                "value": 2026,
+                "isPercent": false
+              },
+              {
+                "raw": "08",
+                "value": 8,
+                "isPercent": false
+              },
+              {
+                "raw": "21 ",
+                "value": 21,
+                "isPercent": false
+              }
+            ],
+            "rowText": "JUFO) - محضر إجتماع الجمعية العامة غير العادية المنعقدة في 28/04/2026 (موثق)اسم الشركة: جهينة للصناعات الغذ 08:21 ص العنوان : الاسماعيلية الوطنية للصناعات الغذائية (فوديكو) (",
             "fallback": true
           }
         }
@@ -16719,8 +16798,8 @@
       "coverageStatus": "ANALYSIS_READY_INTERNAL_CACHE",
       "sourceStrengthScore": 100,
       "evidenceScore": 100,
-      "confirmationCount": 9,
-      "confirmations": 9,
+      "confirmationCount": 8,
+      "confirmations": 8,
       "confirmationSources": [
         "internal:price",
         "internal:volume/value",
@@ -16729,8 +16808,7 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance",
-        "external:priceBoard"
+        "external:supportResistance"
       ],
       "evidenceSources": [
         "internal:price",
@@ -16740,8 +16818,7 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance",
-        "external:priceBoard"
+        "external:supportResistance"
       ],
       "coreSignalCount": 5,
       "internalCacheUsed": true,
@@ -16753,8 +16830,8 @@
       "volumeStatus": "حجم/قيمة من الكاش",
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة سعرية منطقية",
-      "sourceCount": 4,
-      "currentExternalSourceCount": 4,
+      "sourceCount": 3,
+      "currentExternalSourceCount": 3,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -16816,56 +16893,6 @@
             ],
             "numeric": [],
             "rowText": "MPRC/support-resistance','within",
-            "fallback": true
-          }
-        },
-        "priceBoard": {
-          "sourceId": "mubasherPrices",
-          "title": "Mubasher EGX Price Board",
-          "currentRunOk": true,
-          "staleFallback": false,
-          "row": {
-            "symbol": "MPRC",
-            "sourceId": "mubasherPrices",
-            "group": "priceBoard",
-            "rowIndex": 2,
-            "name": "MPRC",
-            "cells": [
-              "MPRC) - محضر إجتماع الجمعية العامة غير العادية المنعقدة في 30/03/2026 (موثق)اسم الشركة: المصريه لمد 8 يوليو 02:26 م العنوان: بنك قطر الوطني ("
-            ],
-            "numeric": [
-              {
-                "raw": "30",
-                "value": 30,
-                "isPercent": false
-              },
-              {
-                "raw": "03",
-                "value": 3,
-                "isPercent": false
-              },
-              {
-                "raw": "2026 ",
-                "value": 2026,
-                "isPercent": false
-              },
-              {
-                "raw": "8 ",
-                "value": 8,
-                "isPercent": false
-              },
-              {
-                "raw": "02",
-                "value": 2,
-                "isPercent": false
-              },
-              {
-                "raw": "26 ",
-                "value": 26,
-                "isPercent": false
-              }
-            ],
-            "rowText": "MPRC) - محضر إجتماع الجمعية العامة غير العادية المنعقدة في 30/03/2026 (موثق)اسم الشركة: المصريه لمد 8 يوليو 02:26 م العنوان: بنك قطر الوطني (",
             "fallback": true
           }
         }
@@ -20075,8 +20102,8 @@
       "coverageStatus": "ANALYSIS_READY_INTERNAL_CACHE",
       "sourceStrengthScore": 100,
       "evidenceScore": 100,
-      "confirmationCount": 9,
-      "confirmations": 9,
+      "confirmationCount": 8,
+      "confirmations": 8,
       "confirmationSources": [
         "internal:price",
         "internal:volume/value",
@@ -20085,8 +20112,7 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance",
-        "external:priceBoard"
+        "external:supportResistance"
       ],
       "evidenceSources": [
         "internal:price",
@@ -20096,8 +20122,7 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance",
-        "external:priceBoard"
+        "external:supportResistance"
       ],
       "coreSignalCount": 5,
       "internalCacheUsed": true,
@@ -20109,8 +20134,8 @@
       "volumeStatus": "حجم/قيمة من الكاش",
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة سعرية منطقية",
-      "sourceCount": 4,
-      "currentExternalSourceCount": 4,
+      "sourceCount": 3,
+      "currentExternalSourceCount": 3,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -20172,56 +20197,6 @@
             ],
             "numeric": [],
             "rowText": "QNBE/support-resistance','within",
-            "fallback": true
-          }
-        },
-        "priceBoard": {
-          "sourceId": "mubasherPrices",
-          "title": "Mubasher EGX Price Board",
-          "currentRunOk": true,
-          "staleFallback": false,
-          "row": {
-            "symbol": "QNBE",
-            "sourceId": "mubasherPrices",
-            "group": "priceBoard",
-            "rowIndex": 4,
-            "name": "QNBE",
-            "cells": [
-              "QNBE) تعلن نتائج أعمالها المستقلة عن الفترة: من 01/01/2026 إلى 30/06/2026اسم البنك: بنك قطر الوطنيكود الترقيم المزيد if(window.midata.is"
-            ],
-            "numeric": [
-              {
-                "raw": "01",
-                "value": 1,
-                "isPercent": false
-              },
-              {
-                "raw": "01",
-                "value": 1,
-                "isPercent": false
-              },
-              {
-                "raw": "2026 ",
-                "value": 2026,
-                "isPercent": false
-              },
-              {
-                "raw": "30",
-                "value": 30,
-                "isPercent": false
-              },
-              {
-                "raw": "06",
-                "value": 6,
-                "isPercent": false
-              },
-              {
-                "raw": "2026",
-                "value": 2026,
-                "isPercent": false
-              }
-            ],
-            "rowText": "QNBE) تعلن نتائج أعمالها المستقلة عن الفترة: من 01/01/2026 إلى 30/06/2026اسم البنك: بنك قطر الوطنيكود الترقيم المزيد if(window.midata.is",
             "fallback": true
           }
         }
@@ -21189,8 +21164,8 @@
       "coverageStatus": "ANALYSIS_READY_INTERNAL_CACHE",
       "sourceStrengthScore": 100,
       "evidenceScore": 100,
-      "confirmationCount": 8,
-      "confirmations": 8,
+      "confirmationCount": 9,
+      "confirmations": 9,
       "confirmationSources": [
         "internal:price",
         "internal:volume/value",
@@ -21199,7 +21174,8 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance"
+        "external:supportResistance",
+        "external:priceBoard"
       ],
       "evidenceSources": [
         "internal:price",
@@ -21209,7 +21185,8 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance"
+        "external:supportResistance",
+        "external:priceBoard"
       ],
       "coreSignalCount": 5,
       "internalCacheUsed": true,
@@ -21221,8 +21198,8 @@
       "volumeStatus": "حجم/قيمة من الكاش",
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة سعرية منطقية",
-      "sourceCount": 3,
-      "currentExternalSourceCount": 3,
+      "sourceCount": 4,
+      "currentExternalSourceCount": 4,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -21284,6 +21261,25 @@
             ],
             "numeric": [],
             "rowText": "SAUD/support-resistance','within",
+            "fallback": true
+          }
+        },
+        "priceBoard": {
+          "sourceId": "mubasherPrices",
+          "title": "Mubasher EGX Price Board",
+          "currentRunOk": true,
+          "staleFallback": false,
+          "row": {
+            "symbol": "SAUD",
+            "sourceId": "mubasherPrices",
+            "group": "priceBoard",
+            "rowIndex": 1,
+            "name": "SAUD",
+            "cells": [
+              "SAUD) - نموذج تقرير إفصاح للبنك عن مجلس الإدارة وهيكل المساهميناسم البنك: بنك البركة مصركود الترقيم الدولي: "
+            ],
+            "numeric": [],
+            "rowText": "SAUD) - نموذج تقرير إفصاح للبنك عن مجلس الإدارة وهيكل المساهميناسم البنك: بنك البركة مصركود الترقيم الدولي: ",
             "fallback": true
           }
         }
@@ -21425,8 +21421,8 @@
       "coverageStatus": "ANALYSIS_READY_INTERNAL_CACHE",
       "sourceStrengthScore": 100,
       "evidenceScore": 100,
-      "confirmationCount": 8,
-      "confirmations": 8,
+      "confirmationCount": 9,
+      "confirmations": 9,
       "confirmationSources": [
         "internal:price",
         "internal:volume/value",
@@ -21435,7 +21431,8 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance"
+        "external:supportResistance",
+        "external:priceBoard"
       ],
       "evidenceSources": [
         "internal:price",
@@ -21445,7 +21442,8 @@
         "internal:data quality",
         "external:volume",
         "external:liquidity",
-        "external:supportResistance"
+        "external:supportResistance",
+        "external:priceBoard"
       ],
       "coreSignalCount": 5,
       "internalCacheUsed": true,
@@ -21457,8 +21455,8 @@
       "volumeStatus": "حجم/قيمة من الكاش",
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة سعرية منطقية",
-      "sourceCount": 3,
-      "currentExternalSourceCount": 3,
+      "sourceCount": 4,
+      "currentExternalSourceCount": 4,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -21520,6 +21518,36 @@
             ],
             "numeric": [],
             "rowText": "SCFM/support-resistance','within",
+            "fallback": true
+          }
+        },
+        "priceBoard": {
+          "sourceId": "mubasherPrices",
+          "title": "Mubasher EGX Price Board",
+          "currentRunOk": true,
+          "staleFallback": false,
+          "row": {
+            "symbol": "SCFM",
+            "sourceId": "mubasherPrices",
+            "group": "priceBoard",
+            "rowIndex": 2,
+            "name": "SCFM",
+            "cells": [
+              "SCFM) قرارات مجلس ادارة الشركةاسم الشركة: مطاحن ومخابز جنوب القاهرة والجيزةكود الترقيم الدول 08:26 ص العنوان: جهينة للصناعات الغذائية ("
+            ],
+            "numeric": [
+              {
+                "raw": "08",
+                "value": 8,
+                "isPercent": false
+              },
+              {
+                "raw": "26 ",
+                "value": 26,
+                "isPercent": false
+              }
+            ],
+            "rowText": "SCFM) قرارات مجلس ادارة الشركةاسم الشركة: مطاحن ومخابز جنوب القاهرة والجيزةكود الترقيم الدول 08:26 ص العنوان: جهينة للصناعات الغذائية (",
             "fallback": true
           }
         }

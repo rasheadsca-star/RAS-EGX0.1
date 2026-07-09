@@ -1,26 +1,77 @@
 {
   "ok": true,
   "app": "RAS EGX Pro Hub",
-  "version": "1.1.0",
-  "build": "GOAL Integrated Decision Center",
-  "generatedAt": "2026-07-09T04:48:42.382Z",
-  "commit": "9040ba2",
+  "version": "1.2.0",
+  "generatedAt": "2026-07-09T06:41:00.994Z",
+  "commit": "5580caf",
   "branch": "main",
-  "node": "v24.18.0",
-  "engines": {
-    "node": ">=22 <25"
+  "goalIntegrated": true,
+  "mubasherPrimaryEnabled": true,
+  "qualityHardeningEnabled": true,
+  "decisionCenterEnabled": true,
+  "mubasherCoverage": {
+    "generatedAt": "2026-07-09T06:38:40.419Z",
+    "ok": true,
+    "engine": "mubasher_primary_feeds_collector_v1_3",
+    "totalSymbols": 224,
+    "currentRunSymbols": 220,
+    "staleFallbackUsed": false,
+    "staleAgeHours": null,
+    "minPriceCoveragePct": 45,
+    "minSupportResistanceCoveragePct": 25,
+    "supportResistanceMeetsThreshold": false,
+    "supportResistanceRequiredForExecution": true,
+    "priceSymbols": 212,
+    "volumeSymbols": 220,
+    "turnoverSymbols": 220,
+    "liquiditySymbols": 220,
+    "supportResistanceSymbols": 0,
+    "priceCoveragePct": 94.6,
+    "liquidityCoveragePct": 98.2,
+    "supportResistanceCoveragePct": 0,
+    "bulkTools": [
+      {
+        "id": "volumeMonitor",
+        "group": "volume",
+        "url": "https://www.mubasher.info/analysis-tools/volume-monitor/EGX",
+        "httpStatus": 200,
+        "ok": false,
+        "rowCount": 0,
+        "angularPlaceholdersDetected": true,
+        "note": "Bulk page returned Angular placeholders; profile-page fallback is required."
+      },
+      {
+        "id": "liquidityMonitor",
+        "group": "liquidity",
+        "url": "https://www.mubasher.info/analysis-tools/liquidity-monitor/EGX",
+        "httpStatus": 200,
+        "ok": false,
+        "rowCount": 0,
+        "angularPlaceholdersDetected": true,
+        "note": "Bulk page returned Angular placeholders; profile-page fallback is required."
+      },
+      {
+        "id": "supportResistanceMonitor",
+        "group": "supportResistance",
+        "url": "https://www.mubasher.info/analysis-tools/stocks-support-resistance/EGX",
+        "httpStatus": 200,
+        "ok": false,
+        "rowCount": 0,
+        "angularPlaceholdersDetected": true,
+        "note": "Bulk page returned Angular placeholders; profile-page fallback is required."
+      }
+    ],
+    "marketMerge": {
+      "updated": true,
+      "count": 212,
+      "path": "data/market.json"
+    },
+    "warning": "Mubasher support/resistance coverage below execution threshold: SR 0%. Recommendations with missing SR remain monitor-only.",
+    "failureReason": ""
   },
-  "features": [
-    "Today Decision Center",
-    "Quality Hardening Gate",
-    "Excluded Opportunities Board",
-    "Intraday vs Next Session Definitions",
-    "Backtesting Ledger",
-    "Data Status Banner"
-  ],
-  "activeReports": {
-    "hardening": true,
-    "todayDecisionCenter": true,
-    "backtestLedger": true
-  }
+  "notes": [
+    "Mubasher price, volume/turnover, and support/resistance are mandatory before executable decisions.",
+    "Bulk Mubasher analysis-tool pages are audited; public stock pages are used as primary fallback when bulk pages return Angular placeholders.",
+    "GitHub Actions does not require npm install for CI data generation."
+  ]
 }
