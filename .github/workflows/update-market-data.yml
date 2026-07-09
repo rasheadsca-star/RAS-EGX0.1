@@ -28,13 +28,12 @@ jobs:
           node-version: 24
           package-manager-cache: false
 
-      - name: Install optional local tooling
+      - name: Validate Node.js runtime
         run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          elif [ -f package.json ]; then
-            npm install --no-audit --no-fund
-          fi
+          node --version
+          npm --version
+          echo "No npm install is required in CI; all data/decision scripts use built-in Node.js APIs."
+          echo "This avoids npm ci failing when package-lock.json is stale."
 
       - name: Mandatory market collector
         run: node scripts/fetch-market-data.js
