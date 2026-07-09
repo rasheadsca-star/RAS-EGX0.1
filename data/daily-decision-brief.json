@@ -1,7 +1,7 @@
 {
   "ok": true,
   "engine": "v8_9_daily_decision_brief",
-  "generatedAt": "2026-07-08T20:07:06.635Z",
+  "generatedAt": "2026-07-09T04:48:42.030Z",
   "state": "warn",
   "market": {
     "avgChange": -0.816,
@@ -23,15 +23,51 @@
   },
   "accuracy": {},
   "institutional": {
-    "generatedAt": "2026-07-08T18:25:22.831Z",
+    "generatedAt": "2026-07-09T04:48:40.737Z",
     "total": 221
   },
   "opportunities": [
     {
+      "symbol": "ETRS",
+      "name": "إيجيترانس",
+      "confidence": 55,
+      "rawConfidence": 58,
+      "sessions": 0,
+      "price": 10.6,
+      "entryFrom": 10.39,
+      "entryTo": 10.71,
+      "target1": 11.43,
+      "target2": 12.15,
+      "stopLoss": 10.08,
+      "rr": 1.6,
+      "targetProbability": 51,
+      "potentialProfitPct": 7.83,
+      "expectedReturnPct": 1.59,
+      "priorityScore": 51,
+      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم + مساحة قبل المقاومة",
+      "originalConfidence": 58,
+      "finalConfidence": 55,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
       "symbol": "EXPA",
       "name": "البنك المصري لتنمية الصادرات",
-      "confidence": 58,
-      "rawConfidence": 100,
+      "confidence": 55,
+      "rawConfidence": 58,
       "sessions": 0,
       "price": 18.33,
       "entryFrom": 18.21,
@@ -40,24 +76,70 @@
       "target2": 20.21,
       "stopLoss": 17.67,
       "rr": 1.24,
-      "targetProbability": 58,
+      "targetProbability": 50,
       "potentialProfitPct": 4.47,
-      "expectedReturnPct": 2.13,
-      "priorityScore": 71,
-      "reason": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم | لا يوجد سجل تاريخي كافٍ (4/50) | Snapshot evidence: 170 observations / 4 dates, score 88%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "name_ar": "البنك المصري لتنمية الصادرات",
-      "name_en": "Export Development Bank of Egypt",
-      "historySessions": 8,
-      "historyCompletenessPct": 16,
+      "expectedReturnPct": 0.44,
+      "priorityScore": 50,
+      "reason": "فوق Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم",
+      "originalConfidence": 58,
+      "finalConfidence": 55,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "FAITA",
+      "name": "بنك فيصل الإسلامي",
+      "confidence": 55,
+      "rawConfidence": 58,
+      "sessions": 0,
+      "price": 0.99,
+      "entryFrom": 0.98,
+      "entryTo": 0.98,
+      "target1": 1.03,
+      "target2": 1.09,
+      "stopLoss": 0.96,
+      "rr": 1.33,
+      "targetProbability": 50,
+      "potentialProfitPct": 4.04,
+      "expectedReturnPct": 0.51,
+      "priorityScore": 50,
+      "reason": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
+      "originalConfidence": 58,
+      "finalConfidence": 55,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
       "symbol": "ROTO",
       "name": "رواد السياحة",
-      "confidence": 58,
-      "rawConfidence": 100,
+      "confidence": 55,
+      "rawConfidence": 58,
       "sessions": 0,
       "price": 41.48,
       "entryFrom": 40.24,
@@ -66,24 +148,178 @@
       "target2": 49.08,
       "stopLoss": 38.04,
       "rr": 1.09,
-      "targetProbability": 58,
+      "targetProbability": 49,
       "potentialProfitPct": 9.04,
-      "expectedReturnPct": 3.84,
-      "priorityScore": 70,
-      "reason": "تحت Pivot + السعر إيجابي + سيولة مقبولة + مساحة قبل المقاومة | لا يوجد سجل تاريخي كافٍ (3/50) | Snapshot evidence: 141 observations / 3 dates, score 86%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "name_ar": "رواد السياحة",
-      "name_en": "Rowad Tourism Company",
-      "historySessions": 7,
-      "historyCompletenessPct": 14,
+      "expectedReturnPct": 0.2,
+      "priorityScore": 49,
+      "reason": "تحت Pivot + السعر إيجابي + سيولة مقبولة + مساحة قبل المقاومة",
+      "originalConfidence": 58,
+      "finalConfidence": 55,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "COPR",
+      "name": "كوبر للاستثمار التجاري والتطوير العقاري",
+      "confidence": 55,
+      "rawConfidence": 58,
+      "sessions": 0,
+      "price": 0.36,
+      "entryFrom": 0.35,
+      "entryTo": 0.36,
+      "target1": 0.38,
+      "target2": 0.4,
+      "stopLoss": 0.34,
+      "rr": 1,
+      "targetProbability": 49,
+      "potentialProfitPct": 5.56,
+      "expectedReturnPct": -0.11,
+      "priorityScore": 49,
+      "reason": "تحت Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "originalConfidence": 58,
+      "finalConfidence": 55,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "OFH",
+      "name": "أو بي المالية القابضة",
+      "confidence": 55,
+      "rawConfidence": 58,
+      "sessions": 0,
+      "price": 0.6,
+      "entryFrom": 0.58,
+      "entryTo": 0.59,
+      "target1": 0.63,
+      "target2": 0.66,
+      "stopLoss": 0.57,
+      "rr": 1,
+      "targetProbability": 49,
+      "potentialProfitPct": 5,
+      "expectedReturnPct": -0.1,
+      "priorityScore": 49,
+      "reason": "تحت Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "originalConfidence": 58,
+      "finalConfidence": 55,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "ARAB",
+      "name": "المطورون العرب القابضة",
+      "confidence": 55,
+      "rawConfidence": 58,
+      "sessions": 0,
+      "price": 0.21,
+      "entryFrom": 0.21,
+      "entryTo": 0.21,
+      "target1": 0.22,
+      "target2": 0.23,
+      "stopLoss": 0.2,
+      "rr": 1,
+      "targetProbability": 49,
+      "potentialProfitPct": 4.76,
+      "expectedReturnPct": -0.1,
+      "priorityScore": 49,
+      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "originalConfidence": 58,
+      "finalConfidence": 55,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "SPMD",
+      "name": "سبيد ميديكال",
+      "confidence": 55,
+      "rawConfidence": 58,
+      "sessions": 0,
+      "price": 0.43,
+      "entryFrom": 0.42,
+      "entryTo": 0.43,
+      "target1": 0.45,
+      "target2": 0.47,
+      "stopLoss": 0.41,
+      "rr": 1,
+      "targetProbability": 49,
+      "potentialProfitPct": 4.65,
+      "expectedReturnPct": -0.09,
+      "priorityScore": 49,
+      "reason": "تحت Pivot + السعر إيجابي + سيولة مقبولة + قريب من دعم + قريب جدًا من المقاومة",
+      "originalConfidence": 58,
+      "finalConfidence": 55,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
       "symbol": "RMDA",
       "name": "راميدا",
-      "confidence": 58,
-      "rawConfidence": 100,
+      "confidence": 55,
+      "rawConfidence": 58,
       "sessions": 0,
       "price": 5.01,
       "entryFrom": 4.93,
@@ -92,24 +328,34 @@
       "target2": 5.52,
       "stopLoss": 4.78,
       "rr": 1,
-      "targetProbability": 58,
+      "targetProbability": 49,
       "potentialProfitPct": 4.59,
-      "expectedReturnPct": 1.84,
-      "priorityScore": 70,
-      "reason": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم | لا يوجد سجل تاريخي كافٍ (4/50) | Snapshot evidence: 170 observations / 4 dates, score 88%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "name_ar": "راميدا",
-      "name_en": "Tenth of Ramadan for Pharmaceutical Industries and Diagnostic Reagents Rameda",
-      "historySessions": 8,
-      "historyCompletenessPct": 16,
+      "expectedReturnPct": -0.09,
+      "priorityScore": 49,
+      "reason": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "originalConfidence": 58,
+      "finalConfidence": 55,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
       "symbol": "UBEE",
       "name": "البنك المتحد",
-      "confidence": 58,
-      "rawConfidence": 100,
+      "confidence": 55,
+      "rawConfidence": 58,
       "sessions": 0,
       "price": 13.47,
       "entryFrom": 13.32,
@@ -118,205 +364,270 @@
       "target2": 14.85,
       "stopLoss": 12.92,
       "rr": 1.11,
-      "targetProbability": 58,
+      "targetProbability": 49,
       "potentialProfitPct": 4.53,
-      "expectedReturnPct": 1.95,
-      "priorityScore": 70,
-      "reason": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم | لا يوجد سجل تاريخي كافٍ (3/50) | Snapshot evidence: 163 observations / 3 dates, score 86%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "name_ar": "البنك المتحد",
-      "name_en": "The United Bank",
-      "historySessions": 7,
-      "historyCompletenessPct": 14,
+      "expectedReturnPct": 0.14,
+      "priorityScore": 49,
+      "reason": "فوق Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
+      "originalConfidence": 58,
+      "finalConfidence": 55,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     }
   ],
   "risks": [
     {
+      "symbol": "VALU",
+      "name": "فاليو",
+      "recommendation": "مراقبة فقط",
+      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة",
+      "price": 12.05,
+      "stopLoss": 11.48,
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH"
+    },
+    {
       "symbol": "ALCN",
       "name": "الإسكندرية لتداول الحاويات والبضائع",
-      "recommendation": "حذر / تخفيف",
-      "reason": "تحت Pivot + سيولة ضعيفة + قريب من دعم | لا يوجد سجل تاريخي كافٍ (4/50) | Snapshot evidence: 169 observations / 4 dates, score 86%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "recommendation": "مراقبة فقط",
+      "reason": "تحت Pivot + سيولة ضعيفة + قريب من دعم | تاريخ غير كافٍ جدًا 0/50 جلسة : مراقبة فقط",
       "price": 28.34,
       "stopLoss": 27.17,
-      "name_ar": "الإسكندرية لتداول الحاويات والبضائع",
-      "name_en": "Alexandria Container & Cargo Handling Company",
-      "historySessions": 8,
-      "historyCompletenessPct": 16,
-      "priceState": "conflict",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH"
     },
     {
       "symbol": "ADIB",
       "name": "مصرف أبو ظبي الإسلامي مصر",
-      "recommendation": "حذر / تخفيف",
-      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم + مساحة قبل المقاومة | لا يوجد سجل تاريخي كافٍ (4/50) | Snapshot evidence: 170 observations / 4 dates, score 87%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "recommendation": "مراقبة فقط",
+      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم + مساحة قبل المقاومة",
       "price": 46.64,
       "stopLoss": 44.95,
-      "name_ar": "مصرف أبو ظبي الإسلامي مصر",
-      "name_en": "Abu Dhabi Islamic Bank Egypt",
-      "historySessions": 8,
-      "historyCompletenessPct": 16,
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH"
     },
     {
       "symbol": "IRON",
       "name": "الحديد والصلب",
-      "recommendation": "حذر / تخفيف",
-      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة | لا يوجد سجل تاريخي كافٍ (4/50) | Snapshot evidence: 170 observations / 4 dates, score 86%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "recommendation": "مراقبة فقط",
+      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة",
       "price": 32.21,
       "stopLoss": 31.32,
-      "name_ar": "الحديد والصلب",
-      "name_en": "Egyptian Iron and Steel Company",
-      "historySessions": 8,
-      "historyCompletenessPct": 16,
-      "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "VALU",
-      "name": "فاليو",
-      "recommendation": "حذر / تخفيف",
-      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة ضعيفة + قريب من دعم + مساحة قبل المقاومة | لا يوجد سجل تاريخي كافٍ (3/50) | Snapshot evidence: 163 observations / 3 dates, score 86%. ليس 50 جلسة. | News impact (إيجابي): 11, trusted source adjustment 1. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "price": 12.05,
-      "stopLoss": 11.48,
-      "name_ar": "فاليو",
-      "name_en": "U Consumer Finance S.A.E.",
-      "historySessions": 7,
-      "historyCompletenessPct": 14,
-      "priceState": "conflict",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH"
     },
     {
       "symbol": "CLHO",
       "name": "مستشفى كليوباترا",
-      "recommendation": "حذر / تخفيف",
-      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم | لا يوجد سجل تاريخي كافٍ (4/50) | Snapshot evidence: 170 observations / 4 dates, score 86%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "recommendation": "مراقبة فقط",
+      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + قريب من دعم",
       "price": 16.5,
       "stopLoss": 15.92,
-      "name_ar": "مستشفى كليوباترا",
-      "name_en": "Cleopatra Hospitals Group S.A.E.",
-      "historySessions": 8,
-      "historyCompletenessPct": 16,
-      "priceState": "conflict",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH"
     },
     {
       "symbol": "TAQA",
       "name": "طاقة عربية",
-      "recommendation": "حذر / تخفيف",
-      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + كسر دعم | لا يوجد سجل تاريخي كافٍ (3/50) | Snapshot evidence: 163 observations / 3 dates, score 86%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "recommendation": "مراقبة فقط",
+      "reason": "تحت Pivot + ضغط سعري سلبي + سيولة مقبولة + كسر دعم",
       "price": 14.46,
       "stopLoss": 14.23,
-      "name_ar": "طاقة عربية",
-      "name_en": "طاقة",
-      "historySessions": 7,
-      "historyCompletenessPct": 14,
-      "priceState": "conflict",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH"
     },
     {
       "symbol": "ORWE",
       "name": "النساجون الشرقيون",
-      "recommendation": "حذر / تخفيف",
-      "reason": "تحت Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة | لا يوجد سجل تاريخي كافٍ (3/50) | Snapshot evidence: 163 observations / 3 dates, score 85%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "recommendation": "مراقبة فقط",
+      "reason": "تحت Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
       "price": 22.39,
       "stopLoss": 21.67,
-      "name_ar": "النساجون الشرقيون",
-      "name_en": "Oriental Weavers Carpets Company",
-      "historySessions": 7,
-      "historyCompletenessPct": 14,
-      "priceState": "conflict",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH"
     },
     {
       "symbol": "CICH",
       "name": "سي آي كابيتال",
-      "recommendation": "حذر / تخفيف",
-      "reason": "تحت Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة | لا يوجد سجل تاريخي كافٍ (4/50) | Snapshot evidence: 170 observations / 4 dates, score 85%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "recommendation": "مراقبة فقط",
+      "reason": "تحت Pivot + سيولة ضعيفة + قريب من دعم + قريب جدًا من المقاومة",
       "price": 11.87,
       "stopLoss": 11.53,
-      "name_ar": "سي آي كابيتال",
-      "name_en": "CI Capital Holding For Financial Investments",
-      "historySessions": 8,
-      "historyCompletenessPct": 16,
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH"
     },
     {
       "symbol": "EGBE",
       "name": "البنك المصري الخليجي",
-      "recommendation": "حذر / تخفيف",
-      "reason": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم | لا يوجد سجل تاريخي كافٍ (4/50) | Snapshot evidence: 170 observations / 4 dates, score 85%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة | دقة السعر غير كافية خصوصًا للأسهم أقل من 1 جنيه؛ يلزم تأكيد 3 خانات عشرية.",
+      "recommendation": "مراقبة فقط",
+      "reason": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب من دعم",
       "price": 0.45,
       "stopLoss": 0.43,
-      "name_ar": "البنك المصري الخليجي",
-      "name_en": "Egyptian Gulf Bank",
-      "historySessions": 8,
-      "historyCompletenessPct": 16,
-      "priceState": "precision_risk",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "دقة السعر غير كافية خصوصًا للأسهم أقل من 1 جنيه؛ يلزم تأكيد 3 خانات عشرية.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "دقة سعر غير كافية",
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH"
     },
     {
       "symbol": "MOIL",
       "name": "ماريدايف",
-      "recommendation": "حذر / تخفيف",
-      "reason": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب جدًا من المقاومة | لا يوجد سجل تاريخي كافٍ (3/50) | Snapshot evidence: 163 observations / 3 dates, score 84%. ليس 50 جلسة. | تم خفض الثقة لعدم اكتمال سجل 50 جلسة | دقة السعر غير كافية خصوصًا للأسهم أقل من 1 جنيه؛ يلزم تأكيد 3 خانات عشرية.",
+      "recommendation": "مراقبة فقط",
+      "reason": "تحت Pivot + السعر إيجابي + سيولة ضعيفة + قريب جدًا من المقاومة",
       "price": 0.48,
       "stopLoss": 0.45,
-      "name_ar": "ماريدايف",
-      "name_en": "Maridive and Oil Services",
-      "historySessions": 7,
-      "historyCompletenessPct": 14,
-      "priceState": "precision_risk",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "دقة السعر غير كافية خصوصًا للأسهم أقل من 1 جنيه؛ يلزم تأكيد 3 خانات عشرية.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "دقة سعر غير كافية",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH"
     }
   ],
   "marketAlerts": [
@@ -330,8 +641,24 @@
       "symbol": "AALR",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 6.54%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:ABUK:تعارض سعر يحتاج مراجعة",
@@ -343,8 +670,24 @@
       "symbol": "ABUK",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 4.65%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:ACAMD:تعارض سعر يحتاج مراجعة",
@@ -356,8 +699,24 @@
       "symbol": "ACAMD",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 3.11%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:ACAP:تعارض سعر يحتاج مراجعة",
@@ -369,8 +728,24 @@
       "symbol": "ACAP",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 3.04%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:ACGC:تعارض سعر يحتاج مراجعة",
@@ -382,8 +757,24 @@
       "symbol": "ACGC",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 2.93%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:ADCI:تعارض سعر يحتاج مراجعة",
@@ -395,8 +786,24 @@
       "symbol": "ADCI",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 3.87%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:ADPC:تعارض سعر يحتاج مراجعة",
@@ -408,8 +815,24 @@
       "symbol": "ADPC",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 1.74%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:AFDI:تعارض سعر يحتاج مراجعة",
@@ -421,8 +844,24 @@
       "symbol": "AFDI",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 2.03%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:AFMC:تعارض سعر يحتاج مراجعة",
@@ -434,8 +873,24 @@
       "symbol": "AFMC",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 2.20%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:AIDC:تعارض سعر يحتاج مراجعة",
@@ -447,8 +902,24 @@
       "symbol": "AIDC",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 1.52%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:AIFI:تعارض سعر يحتاج مراجعة",
@@ -460,8 +931,24 @@
       "symbol": "AIFI",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 1.99%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:AJWA:تعارض سعر يحتاج مراجعة",
@@ -473,8 +960,24 @@
       "symbol": "AJWA",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 3.16%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:ALCN:تعارض سعر يحتاج مراجعة",
@@ -486,8 +989,24 @@
       "symbol": "ALCN",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 2.19%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:ALUM:تعارض سعر يحتاج مراجعة",
@@ -499,8 +1018,24 @@
       "symbol": "ALUM",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 7.23%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "price:critical:price_conflict:AMER:تعارض سعر يحتاج مراجعة",
@@ -512,8 +1047,24 @@
       "symbol": "AMER",
       "title": "تعارض سعر يحتاج مراجعة",
       "trigger": "اختلاف بين مصادر السعر: max/min internal price spread 15.29%",
-      "action": "لا تعتمد على نقطة دخول/هدف لهذا السهم قبل مراجعة السعر",
-      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف"
+      "action": "WATCH",
+      "reason": "تعارض السعر يؤثر مباشرة على الدخول والوقف والأهداف",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "history:warning:history_incomplete:market:تاريخ 50 جلسة غير مكتمل",
@@ -525,8 +1076,24 @@
       "symbol": null,
       "title": "تاريخ 50 جلسة غير مكتمل",
       "trigger": "مكتمل 0/224 — متوسط 6.8/50 جلسة",
-      "action": "شغّل history_maintenance=true فقط عند الحاجة وليس في كل تحديث يومي",
-      "reason": "التحليل التاريخي الطويل لا يجب أن يرفع الثقة قبل اكتمال السجل"
+      "action": "WATCH",
+      "reason": "التحليل التاريخي الطويل لا يجب أن يرفع الثقة قبل اكتمال السجل",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "ranking:opportunity:ranked_opportunity:ROTO:P1 — فرصة مرتبة #1",
@@ -538,8 +1105,24 @@
       "symbol": "ROTO",
       "title": "P1 — فرصة مرتبة #1",
       "trigger": "الثقة 88% | R/R 1.19 | عائد متوقع 7.3%",
-      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "reason": "احتمال الهدف 88% | ربح هدف1 9.4% | عائد متوقع 7.3% | R/R 1.19 | السعر مدقق | تاريخ 7/50"
+      "action": "WATCH",
+      "reason": "احتمال الهدف 88%",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "ranking:opportunity:ranked_opportunity:ELEC:P1 — فرصة مرتبة #2",
@@ -551,8 +1134,24 @@
       "symbol": "ELEC",
       "title": "P1 — فرصة مرتبة #2",
       "trigger": "الثقة 88% | R/R 1.11 | عائد متوقع 3.7%",
-      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "reason": "احتمال الهدف 88% | ربح هدف1 4.8% | عائد متوقع 3.7% | R/R 1.11 | السعر مدقق | تاريخ 7/50"
+      "action": "WATCH",
+      "reason": "احتمال الهدف 88%",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "ranking:opportunity:ranked_opportunity:EXPA:P1 — فرصة مرتبة #3",
@@ -564,8 +1163,24 @@
       "symbol": "EXPA",
       "title": "P1 — فرصة مرتبة #3",
       "trigger": "الثقة 88% | R/R 1.14 | عائد متوقع 3.3%",
-      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "reason": "احتمال الهدف 88% | ربح هدف1 4.3% | عائد متوقع 3.3% | R/R 1.14 | السعر مدقق | تاريخ 8/50"
+      "action": "WATCH",
+      "reason": "احتمال الهدف 88%",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     },
     {
       "id": "ranking:opportunity:ranked_opportunity:UBEE:P1 — فرصة مرتبة #4",
@@ -577,15 +1192,25 @@
       "symbol": "UBEE",
       "title": "P1 — فرصة مرتبة #4",
       "trigger": "الثقة 87% | R/R 1.32 | عائد متوقع 3.8%",
-      "action": "راجع سعر الدخول والوقف قبل أي قرار، والبيانات عامة ومتأخرة",
-      "reason": "احتمال الهدف 87% | ربح هدف1 4.9% | عائد متوقع 3.8% | R/R 1.32 | السعر مدقق | تاريخ 7/50"
+      "action": "WATCH",
+      "reason": "احتمال الهدف 87%",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historySessions": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "decision": "MONITOR_ONLY",
+      "recommendation": "مراقبة فقط"
     }
   ],
-  "note": "Public/delayed market brief. Not investment advice. Portfolio-specific alerts are computed locally in the browser.",
-  "notes": [
-    "تم تطبيق فلتر جودة نهائي: أي سهم لديه تعارض سعر أو دقة غير كافية أو قيود تنفيذية لا يظهر كفرصة تنفيذية.",
-    "الثقة مخفضة تلقائيًا عند عدم اكتمال سجل 50 جلسة."
-  ],
-  "qualityHardeningApplied": true,
-  "qualityHardeningAt": "2026-07-08T20:07:07.498Z"
+  "note": "Public/delayed market brief. Not investment advice. Portfolio-specific alerts are computed locally in the browser."
 }

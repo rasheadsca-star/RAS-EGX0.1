@@ -1,19 +1,20 @@
 {
   "version": "5.5.0-sector-investor-flow",
-  "generatedAt": "2026-07-02T21:06:39.299Z",
+  "generatedAt": "2026-07-09T04:47:47.805Z",
   "source": "public-delayed-generated-files",
   "note": "تحليل ومراقبة فقط وليس أوامر تداول. لا يلمس scan-state أو full-market-cache.",
   "diagnostics": {
-    "stockRows": 233,
+    "stockRows": 236,
     "totalUniverseFromHealth": 224,
     "cacheRowsFromHealth": 221,
-    "sectorCoveragePct": 70.39,
-    "unclassifiedCount": 69,
+    "sectorCoveragePct": 69.07,
+    "unclassifiedCount": 73,
     "unclassifiedSymbols": [
       "ACAP",
       "ACGC",
       "AFMC",
       "AIHC",
+      "AJWA",
       "ALCN",
       "AMER",
       "AMIA",
@@ -49,6 +50,7 @@
       "KORA",
       "KWIN",
       "LCSW",
+      "MAAL",
       "MEGM",
       "MFSC",
       "MILS",
@@ -70,8 +72,10 @@
       "SAE",
       "SCCD",
       "SCFM",
+      "SDTI",
       "SMFR",
       "TAQA",
+      "TYCN",
       "UEFM",
       "UNIP",
       "VLMR",
@@ -83,11 +87,11 @@
   },
   "summary": {
     "totalSectors": 20,
-    "totalMarketValue": 7530390801.94,
+    "totalMarketValue": 7545813417.63,
     "mostLiquidSector": "عقارات وإنشاءات",
     "nextSector": "عقارات وإنشاءات",
     "nextSectorReason": "قيادة محتملة",
-    "sectorCoveragePct": 70.39
+    "sectorCoveragePct": 69.07
   },
   "sectors": [
     {
@@ -95,6 +99,7 @@
       "symbols": [
         "AALR",
         "ACAMD",
+        "ADRI",
         "AFDI",
         "AIDC",
         "ARAB",
@@ -119,7 +124,6 @@
         "IDRE",
         "KRDI",
         "LUTS",
-        "MAAL",
         "MASR",
         "MENA",
         "MMAT",
@@ -140,14 +144,14 @@
         "ZMID"
       ],
       "activeSymbols": 44,
-      "advancing": 26,
-      "declining": 18,
-      "unchanged": 1,
-      "totalValue": 1690845520.29,
-      "totalVolume": 643685018,
-      "weightedChangeSum": 1307487434.8016,
-      "confidenceSum": 2828,
-      "confidenceCount": 44,
+      "advancing": 24,
+      "declining": 19,
+      "unchanged": 2,
+      "totalValue": 1681039651.07,
+      "totalVolume": 642328163,
+      "weightedChangeSum": 1295655769.0743,
+      "confidenceSum": 2578,
+      "confidenceCount": 43,
       "unclassifiedCount": 0,
       "topSymbols": [
         {
@@ -157,7 +161,7 @@
           "value": 202932544,
           "changePct": -0.06,
           "volume": 2145971,
-          "confidence": 69
+          "confidence": 58
         },
         {
           "symbol": "PHDC",
@@ -166,7 +170,7 @@
           "value": 184163824,
           "changePct": -0.34,
           "volume": 12620888,
-          "confidence": 63
+          "confidence": 58
         },
         {
           "symbol": "ELKA",
@@ -175,12 +179,12 @@
           "value": 120265288,
           "changePct": 3.01,
           "volume": 86626327,
-          "confidence": 64
+          "confidence": 58
         },
         {
           "symbol": "OCDI",
           "name_ar": "سوديك",
-          "name_en": "Sixth of October for Development and Investment Company SODIC",
+          "name_en": "Sixth of October for Development and Investment Company",
           "value": 113697808,
           "changePct": 2.18,
           "volume": 4524224,
@@ -202,7 +206,7 @@
           "value": 96645864,
           "changePct": -0.61,
           "volume": 14747522,
-          "confidence": 73
+          "confidence": 58
         },
         {
           "symbol": "OBRI",
@@ -220,19 +224,19 @@
           "value": 76794560,
           "changePct": -0.49,
           "volume": 2015953,
-          "confidence": 66
+          "confidence": 58
         }
       ],
       "symbolsCount": 45,
       "avgChangePct": 0.77,
-      "liquiditySharePct": 22.45,
-      "breadthScore": 17.78,
+      "liquiditySharePct": 22.28,
+      "breadthScore": 11.11,
       "liquidityScore": 100,
       "volumeScore": 100,
-      "momentumScore": 60.63,
+      "momentumScore": 58.94,
       "participationScore": 97.78,
-      "avgConfidence": 64.27,
-      "rotationScore": 84.39,
+      "avgConfidence": 59.95,
+      "rotationScore": 83.46,
       "phase": "قيادة محتملة"
     },
     {
@@ -242,6 +246,7 @@
         "ACGC",
         "AFMC",
         "AIHC",
+        "AJWA",
         "ALCN",
         "AMER",
         "AMIA",
@@ -277,6 +282,7 @@
         "KORA",
         "KWIN",
         "LCSW",
+        "MAAL",
         "MEGM",
         "MFSC",
         "MILS",
@@ -298,8 +304,10 @@
         "SAE",
         "SCCD",
         "SCFM",
+        "SDTI",
         "SMFR",
         "TAQA",
+        "TYCN",
         "UEFM",
         "UNIP",
         "VLMR",
@@ -308,16 +316,16 @@
         "WKOL",
         "ZEOT"
       ],
-      "activeSymbols": 59,
-      "advancing": 39,
+      "activeSymbols": 63,
+      "advancing": 36,
       "declining": 19,
-      "unchanged": 11,
-      "totalValue": 1460552167.13,
-      "totalVolume": 343118151,
-      "weightedChangeSum": 6545490813.429401,
-      "confidenceSum": 3568,
-      "confidenceCount": 61,
-      "unclassifiedCount": 69,
+      "unchanged": 18,
+      "totalValue": 1588035190.38,
+      "totalVolume": 348452904,
+      "weightedChangeSum": 5518442499.6844,
+      "confidenceSum": 3561,
+      "confidenceCount": 65,
+      "unclassifiedCount": 73,
       "topSymbols": [
         {
           "symbol": "KORA",
@@ -326,7 +334,7 @@
           "value": 489545952,
           "changePct": 0.58,
           "volume": 140856835,
-          "confidence": 71
+          "confidence": 58
         },
         {
           "symbol": "RUBX",
@@ -353,7 +361,16 @@
           "value": 107994776,
           "changePct": 1.9,
           "volume": 3819108,
-          "confidence": 74
+          "confidence": 58
+        },
+        {
+          "symbol": "TYCN",
+          "name_ar": "تايكون القابضة",
+          "name_en": "Tycoon Holding Company",
+          "value": 103780592,
+          "changePct": -10.1,
+          "volume": 3603158,
+          "confidence": 58
         },
         {
           "symbol": "OIH",
@@ -362,7 +379,7 @@
           "value": 63213592,
           "changePct": 0,
           "volume": 44825768,
-          "confidence": 65
+          "confidence": 58
         },
         {
           "symbol": "ZEOT",
@@ -371,7 +388,7 @@
           "value": 46621616,
           "changePct": 1.38,
           "volume": 4197768,
-          "confidence": 69
+          "confidence": 58
         },
         {
           "symbol": "AMER",
@@ -380,28 +397,19 @@
           "value": 35663152,
           "changePct": 1.24,
           "volume": 14698793,
-          "confidence": 75
-        },
-        {
-          "symbol": "ASCM",
-          "name_ar": "أسيك للتعدين أسكوم",
-          "name_en": "ASEC Company for Mining ASCOM",
-          "value": 34461340,
-          "changePct": 0.19,
-          "volume": 577768,
-          "confidence": 60
+          "confidence": 58
         }
       ],
-      "symbolsCount": 69,
-      "avgChangePct": 4.48,
-      "liquiditySharePct": 19.4,
-      "breadthScore": 28.99,
-      "liquidityScore": 86.38,
-      "volumeScore": 53.31,
-      "momentumScore": 93.1,
-      "participationScore": 85.51,
-      "avgConfidence": 58.49,
-      "rotationScore": 80.56,
+      "symbolsCount": 73,
+      "avgChangePct": 3.48,
+      "liquiditySharePct": 21.05,
+      "breadthScore": 23.29,
+      "liquidityScore": 94.47,
+      "volumeScore": 54.25,
+      "momentumScore": 83.62,
+      "participationScore": 86.3,
+      "avgConfidence": 54.78,
+      "rotationScore": 80.4,
       "phase": "قيادة محتملة"
     },
     {
@@ -432,14 +440,14 @@
       ],
       "symbolsCount": 1,
       "avgChangePct": 5.87,
-      "liquiditySharePct": 9.73,
+      "liquiditySharePct": 9.71,
       "breadthScore": 100,
-      "liquidityScore": 43.32,
-      "volumeScore": 23.17,
+      "liquidityScore": 43.57,
+      "volumeScore": 23.22,
       "momentumScore": 100,
       "participationScore": 100,
       "avgConfidence": 73,
-      "rotationScore": 65.94,
+      "rotationScore": 66.03,
       "phase": "مراقبة نشطة"
     },
     {
@@ -464,13 +472,13 @@
         "SPMD"
       ],
       "activeSymbols": 17,
-      "advancing": 11,
-      "declining": 5,
+      "advancing": 12,
+      "declining": 4,
       "unchanged": 1,
       "totalValue": 689060398.41,
       "totalVolume": 131847583,
-      "weightedChangeSum": 3061206541.1138,
-      "confidenceSum": 1083,
+      "weightedChangeSum": 3061552907.6112003,
+      "confidenceSum": 1054,
       "confidenceCount": 17,
       "unclassifiedCount": 0,
       "topSymbols": [
@@ -499,7 +507,7 @@
           "value": 58644828,
           "changePct": -8.36,
           "volume": 917255,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "CLHO",
@@ -508,7 +516,7 @@
           "value": 36514660,
           "changePct": -2.69,
           "volume": 2213449,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "PHAR",
@@ -517,7 +525,7 @@
           "value": 22833844,
           "changePct": 0.94,
           "volume": 259510,
-          "confidence": 59
+          "confidence": 58
         },
         {
           "symbol": "AXPH",
@@ -544,19 +552,19 @@
           "value": 16143680,
           "changePct": -0.55,
           "volume": 886050,
-          "confidence": 60
+          "confidence": 58
         }
       ],
       "symbolsCount": 17,
       "avgChangePct": 4.44,
-      "liquiditySharePct": 9.15,
-      "breadthScore": 35.29,
-      "liquidityScore": 40.75,
-      "volumeScore": 20.48,
-      "momentumScore": 94.36,
+      "liquiditySharePct": 9.13,
+      "breadthScore": 47.06,
+      "liquidityScore": 40.99,
+      "volumeScore": 20.53,
+      "momentumScore": 97.31,
       "participationScore": 100,
-      "avgConfidence": 63.71,
-      "rotationScore": 62.02,
+      "avgConfidence": 62,
+      "rotationScore": 62.82,
       "phase": "مراقبة نشطة"
     },
     {
@@ -576,7 +584,7 @@
       "totalValue": 265700206.5,
       "totalVolume": 18461678,
       "weightedChangeSum": 1650057019.275,
-      "confidenceSum": 399,
+      "confidenceSum": 388,
       "confidenceCount": 6,
       "unclassifiedCount": 0,
       "topSymbols": [
@@ -605,7 +613,7 @@
           "value": 15920868,
           "changePct": 0.8,
           "volume": 92851,
-          "confidence": 59
+          "confidence": 58
         },
         {
           "symbol": "ARCC",
@@ -614,7 +622,7 @@
           "value": 14691625,
           "changePct": 0.64,
           "volume": 264897,
-          "confidence": 59
+          "confidence": 58
         },
         {
           "symbol": "SCEM",
@@ -623,7 +631,7 @@
           "value": 10562418,
           "changePct": 2.09,
           "volume": 167168,
-          "confidence": 67
+          "confidence": 58
         },
         {
           "symbol": "MBSC",
@@ -637,171 +645,14 @@
       ],
       "symbolsCount": 6,
       "avgChangePct": 6.21,
-      "liquiditySharePct": 3.53,
+      "liquiditySharePct": 3.52,
       "breadthScore": 100,
-      "liquidityScore": 15.71,
+      "liquidityScore": 15.81,
       "volumeScore": 2.87,
       "momentumScore": 100,
       "participationScore": 100,
-      "avgConfidence": 66.5,
-      "rotationScore": 52.58,
-      "phase": "هادئ"
-    },
-    {
-      "sector": "تجارة وتوزيع",
-      "symbols": [
-        "MTIE",
-        "RAYA"
-      ],
-      "activeSymbols": 2,
-      "advancing": 2,
-      "declining": 0,
-      "unchanged": 0,
-      "totalValue": 113465656,
-      "totalVolume": 13791703,
-      "weightedChangeSum": 205492232.71999997,
-      "confidenceSum": 145,
-      "confidenceCount": 2,
-      "unclassifiedCount": 0,
-      "topSymbols": [
-        {
-          "symbol": "RAYA",
-          "name_ar": "راية القابضة",
-          "name_en": "Raya Holding Company for Financial Investments",
-          "value": 70436032,
-          "changePct": 0.26,
-          "volume": 9094994,
-          "confidence": 70
-        },
-        {
-          "symbol": "MTIE",
-          "name_ar": "إم إم جروب",
-          "name_en": "MM Group for Industry and International Trade",
-          "value": 43029624,
-          "changePct": 4.35,
-          "volume": 4696709,
-          "confidence": 75
-        }
-      ],
-      "symbolsCount": 2,
-      "avgChangePct": 1.81,
-      "liquiditySharePct": 1.51,
-      "breadthScore": 100,
-      "liquidityScore": 6.71,
-      "volumeScore": 2.14,
-      "momentumScore": 89.49,
-      "participationScore": 100,
-      "avgConfidence": 72.5,
-      "rotationScore": 46.77,
-      "phase": "هادئ"
-    },
-    {
-      "sector": "بتروكيماويات وكيماويات",
-      "symbols": [
-        "ABUK",
-        "AMOC",
-        "EGCH",
-        "FERC",
-        "KZPC",
-        "MFPC",
-        "MICH",
-        "SIPC",
-        "SKPC"
-      ],
-      "activeSymbols": 9,
-      "advancing": 8,
-      "declining": 1,
-      "unchanged": 0,
-      "totalValue": 235020588,
-      "totalVolume": 11135100,
-      "weightedChangeSum": 204936516.555,
-      "confidenceSum": 566,
-      "confidenceCount": 9,
-      "unclassifiedCount": 0,
-      "topSymbols": [
-        {
-          "symbol": "ABUK",
-          "name_ar": "أبو قير للأسمدة",
-          "name_en": "Abu Qir Fertilizers & Chemical Industries Company",
-          "value": 100987840,
-          "changePct": 0.55,
-          "volume": 1477849,
-          "confidence": 69
-        },
-        {
-          "symbol": "MFPC",
-          "name_ar": "موبكو",
-          "name_en": "Misr Fertilizer Production Company",
-          "value": 49545416,
-          "changePct": 2.36,
-          "volume": 1384756,
-          "confidence": 75
-        },
-        {
-          "symbol": "AMOC",
-          "name_ar": "الإسكندرية للزيوت المعدنية",
-          "name_en": "Alexandria Mineral Oils Company",
-          "value": 26245326,
-          "changePct": 0.39,
-          "volume": 3388140,
-          "confidence": 67
-        },
-        {
-          "symbol": "SKPC",
-          "name_ar": "سيدي كرير للبتروكيماويات",
-          "name_en": "Sidi Kerir Petrochemicals",
-          "value": 22193644,
-          "changePct": 0.19,
-          "volume": 1391581,
-          "confidence": 55
-        },
-        {
-          "symbol": "EGCH",
-          "name_ar": "كيما",
-          "name_en": "Egyptian Chemical Industries",
-          "value": 21150138,
-          "changePct": 0.66,
-          "volume": 1714118,
-          "confidence": 59
-        },
-        {
-          "symbol": "MICH",
-          "name_ar": "مصر لصناعة الكيماويات",
-          "name_en": "Misr Chemical Industries",
-          "value": 5252988.5,
-          "changePct": -1.21,
-          "volume": 138392,
-          "confidence": 57
-        },
-        {
-          "symbol": "SIPC",
-          "name_ar": "سبأ الدولية للأدوية",
-          "name_en": "Sabaa International Company for Pharmaceutical and Chemical Industry",
-          "value": 4282196.5,
-          "changePct": 1.5,
-          "volume": 1277109,
-          "confidence": 71
-        },
-        {
-          "symbol": "KZPC",
-          "name_ar": "كفر الزيات للمبيدات",
-          "name_en": "Kafr El Zayat For Pesticides & Chemicals",
-          "value": 2760068.5,
-          "changePct": 1.19,
-          "volume": 327839,
-          "confidence": 58
-        }
-      ],
-      "symbolsCount": 9,
-      "avgChangePct": 0.87,
-      "liquiditySharePct": 3.12,
-      "breadthScore": 77.78,
-      "liquidityScore": 13.9,
-      "volumeScore": 1.73,
-      "momentumScore": 76.42,
-      "participationScore": 100,
-      "avgConfidence": 62.89,
-      "rotationScore": 44.34,
+      "avgConfidence": 64.67,
+      "rotationScore": 52.43,
       "phase": "هادئ"
     },
     {
@@ -824,18 +675,17 @@
         "OFH",
         "SEIG",
         "SEIGA",
-        "TYCN",
         "VALU"
       ],
-      "activeSymbols": 17,
-      "advancing": 10,
-      "declining": 8,
-      "unchanged": 1,
-      "totalValue": 543601142.45,
-      "totalVolume": 169653275,
-      "weightedChangeSum": -335471351.33879983,
-      "confidenceSum": 1041,
-      "confidenceCount": 18,
+      "activeSymbols": 16,
+      "advancing": 9,
+      "declining": 7,
+      "unchanged": 2,
+      "totalValue": 439820550.46,
+      "totalVolume": 166050117,
+      "weightedChangeSum": 712040457.1534001,
+      "confidenceSum": 934,
+      "confidenceCount": 17,
       "unclassifiedCount": 0,
       "topSymbols": [
         {
@@ -845,16 +695,7 @@
           "value": 238822608,
           "changePct": 0.68,
           "volume": 81001361,
-          "confidence": 65
-        },
-        {
-          "symbol": "TYCN",
-          "name_ar": "تايكون القابضة",
-          "name_en": "Tycoon Holding Company",
-          "value": 103780592,
-          "changePct": -10.1,
-          "volume": 3603158,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "HRHO",
@@ -872,12 +713,12 @@
           "value": 28663984,
           "changePct": 0.85,
           "volume": 6003829,
-          "confidence": 67
+          "confidence": 58
         },
         {
           "symbol": "EBSC",
           "name_ar": "أصول إي إس بي للوساطة",
-          "name_en": "Osool ESB Securities Brokerage",
+          "name_en": "Osool",
           "value": 22478382,
           "changePct": 20,
           "volume": 10886117,
@@ -890,7 +731,7 @@
           "value": 20557628,
           "changePct": 2.72,
           "volume": 2675138,
-          "confidence": 64
+          "confidence": 58
         },
         {
           "symbol": "VALU",
@@ -899,7 +740,7 @@
           "value": 16918606,
           "changePct": -2.36,
           "volume": 1391280,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "ASPI",
@@ -909,18 +750,75 @@
           "changePct": -1.24,
           "volume": 39126645,
           "confidence": 55
+        },
+        {
+          "symbol": "OFH",
+          "name_ar": "أو بي المالية القابضة",
+          "name_en": "O B Financial Holding",
+          "value": 12189206,
+          "changePct": 1.69,
+          "volume": 20417435,
+          "confidence": 58
         }
       ],
-      "symbolsCount": 19,
-      "avgChangePct": -0.62,
-      "liquiditySharePct": 7.22,
-      "breadthScore": 10.53,
-      "liquidityScore": 32.15,
-      "volumeScore": 26.36,
-      "momentumScore": 47.69,
-      "participationScore": 89.47,
-      "avgConfidence": 57.83,
-      "rotationScore": 44.24,
+      "symbolsCount": 18,
+      "avgChangePct": 1.62,
+      "liquiditySharePct": 5.83,
+      "breadthScore": 11.11,
+      "liquidityScore": 26.16,
+      "volumeScore": 25.85,
+      "momentumScore": 65.73,
+      "participationScore": 88.89,
+      "avgConfidence": 54.94,
+      "rotationScore": 47.14,
+      "phase": "هادئ"
+    },
+    {
+      "sector": "تجارة وتوزيع",
+      "symbols": [
+        "MTIE",
+        "RAYA"
+      ],
+      "activeSymbols": 2,
+      "advancing": 2,
+      "declining": 0,
+      "unchanged": 0,
+      "totalValue": 113465656,
+      "totalVolume": 13791703,
+      "weightedChangeSum": 205492232.71999997,
+      "confidenceSum": 133,
+      "confidenceCount": 2,
+      "unclassifiedCount": 0,
+      "topSymbols": [
+        {
+          "symbol": "RAYA",
+          "name_ar": "راية القابضة",
+          "name_en": "Raya Holding Company for Financial Investments",
+          "value": 70436032,
+          "changePct": 0.26,
+          "volume": 9094994,
+          "confidence": 58
+        },
+        {
+          "symbol": "MTIE",
+          "name_ar": "إم إم جروب",
+          "name_en": "MM Group for Industry and International Trade",
+          "value": 43029624,
+          "changePct": 4.35,
+          "volume": 4696709,
+          "confidence": 75
+        }
+      ],
+      "symbolsCount": 2,
+      "avgChangePct": 1.81,
+      "liquiditySharePct": 1.5,
+      "breadthScore": 100,
+      "liquidityScore": 6.75,
+      "volumeScore": 2.15,
+      "momentumScore": 89.49,
+      "participationScore": 100,
+      "avgConfidence": 66.5,
+      "rotationScore": 46.18,
       "phase": "هادئ"
     },
     {
@@ -941,24 +839,24 @@
         "UBEE"
       ],
       "activeSymbols": 13,
-      "advancing": 10,
-      "declining": 3,
+      "advancing": 11,
+      "declining": 2,
       "unchanged": 0,
       "totalValue": 468802217.16,
       "totalVolume": 6384839,
-      "weightedChangeSum": -141637853.1191,
-      "confidenceSum": 784,
+      "weightedChangeSum": -138853385.22709998,
+      "confidenceSum": 752,
       "confidenceCount": 13,
       "unclassifiedCount": 0,
       "topSymbols": [
         {
           "symbol": "COMI",
           "name_ar": "البنك التجاري الدولي",
-          "name_en": "Commercial International Bank Egypt (CIB) S.A.E.",
+          "name_en": "Commercial International Bank Egypt (",
           "value": 313894240,
           "changePct": -0.16,
           "volume": 2459727,
-          "confidence": 62
+          "confidence": 58
         },
         {
           "symbol": "ADIB",
@@ -967,7 +865,7 @@
           "value": 75135304,
           "changePct": -3.82,
           "volume": 1594922,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "HDBK",
@@ -992,9 +890,9 @@
           "name_ar": "قطر الوطني الأهلي",
           "name_en": "Qatar National Bank",
           "value": 7265665.5,
-          "changePct": 1.45,
+          "changePct": 1.6,
           "volume": 138819,
-          "confidence": 61
+          "confidence": 58
         },
         {
           "symbol": "SAUD",
@@ -1012,28 +910,137 @@
           "value": 4091537.75,
           "changePct": 1.1,
           "volume": 171636,
-          "confidence": 67
+          "confidence": 58
         },
         {
           "symbol": "FAIT",
           "name_ar": "بنك فيصل الإسلامي",
           "name_en": "Faisal Islamic Bank of Egypt",
           "value": 3868023,
-          "changePct": -0.14,
+          "changePct": 0.08,
           "volume": 105576,
-          "confidence": 61
+          "confidence": 58
         }
       ],
       "symbolsCount": 13,
       "avgChangePct": -0.3,
-      "liquiditySharePct": 6.23,
-      "breadthScore": 53.85,
-      "liquidityScore": 27.73,
+      "liquiditySharePct": 6.21,
+      "breadthScore": 69.23,
+      "liquidityScore": 27.89,
       "volumeScore": 0.99,
-      "momentumScore": 61.04,
+      "momentumScore": 64.94,
       "participationScore": 100,
-      "avgConfidence": 60.31,
-      "rotationScore": 44.2,
+      "avgConfidence": 57.85,
+      "rotationScore": 45.18,
+      "phase": "هادئ"
+    },
+    {
+      "sector": "بتروكيماويات وكيماويات",
+      "symbols": [
+        "ABUK",
+        "AMOC",
+        "EGCH",
+        "FERC",
+        "KZPC",
+        "MFPC",
+        "MICH",
+        "SIPC",
+        "SKPC"
+      ],
+      "activeSymbols": 9,
+      "advancing": 7,
+      "declining": 2,
+      "unchanged": 0,
+      "totalValue": 235020588,
+      "totalVolume": 11135100,
+      "weightedChangeSum": 203057881.925,
+      "confidenceSum": 532,
+      "confidenceCount": 9,
+      "unclassifiedCount": 0,
+      "topSymbols": [
+        {
+          "symbol": "ABUK",
+          "name_ar": "أبو قير للأسمدة",
+          "name_en": "Abu Qir Fertilizers & Chemical Industries Company",
+          "value": 100987840,
+          "changePct": 0.55,
+          "volume": 1477849,
+          "confidence": 58
+        },
+        {
+          "symbol": "MFPC",
+          "name_ar": "موبكو",
+          "name_en": "Misr Fertilizer Production Company",
+          "value": 49545416,
+          "changePct": 2.36,
+          "volume": 1384756,
+          "confidence": 75
+        },
+        {
+          "symbol": "AMOC",
+          "name_ar": "الإسكندرية للزيوت المعدنية",
+          "name_en": "Alexandria Mineral Oils Company",
+          "value": 26245326,
+          "changePct": 0.39,
+          "volume": 3388140,
+          "confidence": 58
+        },
+        {
+          "symbol": "SKPC",
+          "name_ar": "سيدي كرير للبتروكيماويات",
+          "name_en": "Sidi Kerir Petrochemicals",
+          "value": 22193644,
+          "changePct": 0.19,
+          "volume": 1391581,
+          "confidence": 55
+        },
+        {
+          "symbol": "EGCH",
+          "name_ar": "كيما",
+          "name_en": "Egyptian Chemical Industries",
+          "value": 21150138,
+          "changePct": 0.66,
+          "volume": 1714118,
+          "confidence": 58
+        },
+        {
+          "symbol": "MICH",
+          "name_ar": "مصر لصناعة الكيماويات",
+          "name_en": "Misr Chemical Industries",
+          "value": 5252988.5,
+          "changePct": -1.21,
+          "volume": 138392,
+          "confidence": 57
+        },
+        {
+          "symbol": "SIPC",
+          "name_ar": "سبأ الدولية للأدوية",
+          "name_en": "Sabaa International Company for Pharmaceutical and Chemical Industry",
+          "value": 4282196.5,
+          "changePct": 1.5,
+          "volume": 1277109,
+          "confidence": 58
+        },
+        {
+          "symbol": "KZPC",
+          "name_ar": "كفر الزيات للمبيدات",
+          "name_en": "Kafr El Zayat For Pesticides & Chemicals",
+          "value": 2760068.5,
+          "changePct": 0.83,
+          "volume": 327839,
+          "confidence": 58
+        }
+      ],
+      "symbolsCount": 9,
+      "avgChangePct": 0.86,
+      "liquiditySharePct": 3.11,
+      "breadthScore": 55.56,
+      "liquidityScore": 13.98,
+      "volumeScore": 1.73,
+      "momentumScore": 70.8,
+      "participationScore": 100,
+      "avgConfidence": 59.11,
+      "rotationScore": 42.3,
       "phase": "هادئ"
     },
     {
@@ -1050,7 +1057,7 @@
       "totalValue": 61392211.75,
       "totalVolume": 1507232,
       "weightedChangeSum": 31287986.8525,
-      "confidenceSum": 205,
+      "confidenceSum": 174,
       "confidenceCount": 3,
       "unclassifiedCount": 0,
       "topSymbols": [
@@ -1061,7 +1068,7 @@
           "value": 32627008,
           "changePct": 0.52,
           "volume": 853873,
-          "confidence": 64
+          "confidence": 58
         },
         {
           "symbol": "ETEL",
@@ -1070,7 +1077,7 @@
           "value": 25011672,
           "changePct": 0.34,
           "volume": 269394,
-          "confidence": 72
+          "confidence": 58
         },
         {
           "symbol": "RACC",
@@ -1079,19 +1086,19 @@
           "value": 3753531.75,
           "changePct": 1.55,
           "volume": 383965,
-          "confidence": 69
+          "confidence": 58
         }
       ],
       "symbolsCount": 3,
       "avgChangePct": 0.51,
-      "liquiditySharePct": 0.82,
+      "liquiditySharePct": 0.81,
       "breadthScore": 100,
-      "liquidityScore": 3.63,
+      "liquidityScore": 3.65,
       "volumeScore": 0.23,
       "momentumScore": 79.08,
       "participationScore": 100,
-      "avgConfidence": 68.33,
-      "rotationScore": 41.86,
+      "avgConfidence": 58,
+      "rotationScore": 40.84,
       "phase": "هادئ"
     },
     {
@@ -1108,7 +1115,7 @@
       "totalValue": 177873669,
       "totalVolume": 893545,
       "weightedChangeSum": 228209880.64999998,
-      "confidenceSum": 200,
+      "confidenceSum": 174,
       "confidenceCount": 3,
       "unclassifiedCount": 0,
       "topSymbols": [
@@ -1119,7 +1126,7 @@
           "value": 156812608,
           "changePct": 1.39,
           "volume": 215556,
-          "confidence": 69
+          "confidence": 58
         },
         {
           "symbol": "ORWE",
@@ -1128,7 +1135,7 @@
           "value": 13097640,
           "changePct": -0.27,
           "volume": 586090,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "SWDY",
@@ -1137,19 +1144,19 @@
           "value": 7963421,
           "changePct": 1.73,
           "volume": 91899,
-          "confidence": 71
+          "confidence": 58
         }
       ],
       "symbolsCount": 3,
       "avgChangePct": 1.28,
       "liquiditySharePct": 2.36,
       "breadthScore": 33.33,
-      "liquidityScore": 10.52,
+      "liquidityScore": 10.58,
       "volumeScore": 0.14,
       "momentumScore": 68.6,
       "participationScore": 100,
-      "avgConfidence": 66.67,
-      "rotationScore": 40.95,
+      "avgConfidence": 58,
+      "rotationScore": 40.1,
       "phase": "هادئ"
     },
     {
@@ -1167,7 +1174,7 @@
       "totalValue": 152722000.25,
       "totalVolume": 7757647,
       "weightedChangeSum": 88895366.03,
-      "confidenceSum": 258,
+      "confidenceSum": 247,
       "confidenceCount": 4,
       "unclassifiedCount": 0,
       "topSymbols": [
@@ -1178,7 +1185,7 @@
           "value": 103475176,
           "changePct": 0,
           "volume": 5627677,
-          "confidence": 63
+          "confidence": 58
         },
         {
           "symbol": "EFIH",
@@ -1196,7 +1203,7 @@
           "value": 15266653,
           "changePct": 1.07,
           "volume": 24420,
-          "confidence": 64
+          "confidence": 58
         },
         {
           "symbol": "DGTZ",
@@ -1210,14 +1217,14 @@
       ],
       "symbolsCount": 4,
       "avgChangePct": 0.58,
-      "liquiditySharePct": 2.03,
+      "liquiditySharePct": 2.02,
       "breadthScore": 50,
-      "liquidityScore": 9.03,
+      "liquidityScore": 9.08,
       "volumeScore": 1.21,
       "momentumScore": 67.16,
       "participationScore": 100,
-      "avgConfidence": 64.5,
-      "rotationScore": 39.94,
+      "avgConfidence": 61.75,
+      "rotationScore": 39.68,
       "phase": "هادئ"
     },
     {
@@ -1235,14 +1242,14 @@
       "totalValue": 47075238.5,
       "totalVolume": 8119488,
       "weightedChangeSum": 70479900.61999999,
-      "confidenceSum": 251,
+      "confidenceSum": 246,
       "confidenceCount": 4,
       "unclassifiedCount": 0,
       "topSymbols": [
         {
           "symbol": "CIRA",
           "name_ar": "القاهرة للاستثمار والتنمية العقارية",
-          "name_en": "Cairo For Investment And Real Estate Developments CIRA Education",
+          "name_en": "سيرا|القاهرة للاستثمار",
           "value": 29981598,
           "changePct": 2.27,
           "volume": 1037761,
@@ -1255,7 +1262,7 @@
           "value": 7488742,
           "changePct": 0.57,
           "volume": 470132,
-          "confidence": 59
+          "confidence": 58
         },
         {
           "symbol": "CAED",
@@ -1264,7 +1271,7 @@
           "value": 5111428.5,
           "changePct": -0.88,
           "volume": 70708,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "MOED",
@@ -1273,19 +1280,19 @@
           "value": 4493470,
           "changePct": 0.59,
           "volume": 6540887,
-          "confidence": 60
+          "confidence": 58
         }
       ],
       "symbolsCount": 4,
       "avgChangePct": 1.5,
-      "liquiditySharePct": 0.63,
+      "liquiditySharePct": 0.62,
       "breadthScore": 50,
-      "liquidityScore": 2.78,
+      "liquidityScore": 2.8,
       "volumeScore": 1.26,
       "momentumScore": 74.48,
       "participationScore": 100,
-      "avgConfidence": 62.75,
-      "rotationScore": 39.78,
+      "avgConfidence": 61.5,
+      "rotationScore": 39.66,
       "phase": "هادئ"
     },
     {
@@ -1295,17 +1302,18 @@
         "ATQA",
         "ECAP",
         "EGAL",
+        "ESRS",
         "IRON",
         "ISMQ"
       ],
-      "activeSymbols": 6,
+      "activeSymbols": 7,
       "advancing": 2,
-      "declining": 3,
+      "declining": 4,
       "unchanged": 1,
-      "totalValue": 221694781.5,
-      "totalVolume": 19252286,
-      "weightedChangeSum": 428687568.1,
-      "confidenceSum": 373,
+      "totalValue": 221751817.5,
+      "totalVolume": 19252776,
+      "weightedChangeSum": 429687665.59000003,
+      "confidenceSum": 369,
       "confidenceCount": 6,
       "unclassifiedCount": 0,
       "topSymbols": [
@@ -1334,7 +1342,7 @@
           "value": 29877492,
           "changePct": -0.36,
           "volume": 104529,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "ECAP",
@@ -1352,35 +1360,44 @@
           "value": 5501174.5,
           "changePct": -1.56,
           "volume": 169859,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "ALUM",
           "name_ar": "الألومنيوم العربية",
           "name_en": "Arab Aluminum Company",
           "value": 2800217,
-          "changePct": 0.9,
+          "changePct": 1.47,
           "volume": 131456,
           "confidence": 58
+        },
+        {
+          "symbol": "ESRS",
+          "name_ar": "' ### Size: [[320,50],[300,50],[300,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Ezz Steel SAE",
+          "name_en": "' ### Size: [[320,50],[300,50],[300,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Ezz Steel SAE",
+          "value": 57036,
+          "changePct": -10.45,
+          "volume": 490,
+          "confidence": 0
         }
       ],
-      "symbolsCount": 6,
-      "avgChangePct": 1.93,
+      "symbolsCount": 7,
+      "avgChangePct": 1.94,
       "liquiditySharePct": 2.94,
-      "breadthScore": -16.67,
-      "liquidityScore": 13.11,
-      "volumeScore": 2.99,
-      "momentumScore": 61.3,
+      "breadthScore": -28.57,
+      "liquidityScore": 13.19,
+      "volumeScore": 3,
+      "momentumScore": 58.36,
       "participationScore": 100,
-      "avgConfidence": 62.17,
-      "rotationScore": 39.65,
+      "avgConfidence": 61.5,
+      "rotationScore": 38.72,
       "phase": "هادئ"
     },
     {
       "sector": "أغذية ومشروبات",
       "symbols": [
         "ADPC",
-        "AJWA",
+        "AIFI",
         "ALRA",
         "DOMT",
         "EFID",
@@ -1396,14 +1413,14 @@
         "SUGR"
       ],
       "activeSymbols": 13,
-      "advancing": 7,
-      "declining": 3,
+      "advancing": 6,
+      "declining": 4,
       "unchanged": 5,
-      "totalValue": 182831622.75,
-      "totalVolume": 24113176,
-      "weightedChangeSum": 100501616.42999999,
-      "confidenceSum": 806,
-      "confidenceCount": 13,
+      "totalValue": 187869751.65,
+      "totalVolume": 30676290,
+      "weightedChangeSum": 78948082.12200001,
+      "confidenceSum": 712,
+      "confidenceCount": 12,
       "unclassifiedCount": 0,
       "topSymbols": [
         {
@@ -1422,7 +1439,7 @@
           "value": 32336042,
           "changePct": 0,
           "volume": 17594356,
-          "confidence": 65
+          "confidence": 58
         },
         {
           "symbol": "OLFI",
@@ -1431,7 +1448,7 @@
           "value": 23131916,
           "changePct": -0.54,
           "volume": 1040171,
-          "confidence": 59
+          "confidence": 58
         },
         {
           "symbol": "ISMA",
@@ -1440,7 +1457,7 @@
           "value": 17405066,
           "changePct": -1.36,
           "volume": 613331,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "EFID",
@@ -1449,7 +1466,16 @@
           "value": 17269084,
           "changePct": 0.15,
           "volume": 630474,
-          "confidence": 59
+          "confidence": 58
+        },
+        {
+          "symbol": "AIFI",
+          "name_ar": "50],[300,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Atlas For Investment and Food Industries",
+          "name_en": "50],[300,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Atlas For Investment and Food Industries",
+          "value": 13551561.899999999,
+          "changePct": -0.97,
+          "volume": 6610518,
+          "confidence": 0
         },
         {
           "symbol": "SNFC",
@@ -1458,37 +1484,28 @@
           "value": 11049329,
           "changePct": -1.15,
           "volume": 914365,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "JUFO",
           "name_ar": "جهينة للصناعات الغذائية",
           "name_en": "Juhayna Food Industries S.A.E.",
           "value": 8522418,
-          "changePct": 0.1,
+          "changePct": 0.91,
           "volume": 287540,
-          "confidence": 57
-        },
-        {
-          "symbol": "AJWA",
-          "name_ar": "أجواء للصناعات الغذائية",
-          "name_en": "AJWA For Food Industries Egypt",
-          "value": 8513433,
-          "changePct": 1.74,
-          "volume": 47404,
-          "confidence": 60
+          "confidence": 58
         }
       ],
       "symbolsCount": 15,
-      "avgChangePct": 0.55,
-      "liquiditySharePct": 2.43,
-      "breadthScore": 26.67,
-      "liquidityScore": 10.81,
-      "volumeScore": 3.75,
-      "momentumScore": 61.06,
+      "avgChangePct": 0.42,
+      "liquiditySharePct": 2.49,
+      "breadthScore": 13.33,
+      "liquidityScore": 11.18,
+      "volumeScore": 4.78,
+      "momentumScore": 56.7,
       "participationScore": 86.67,
-      "avgConfidence": 62,
-      "rotationScore": 37.53,
+      "avgConfidence": 59.33,
+      "rotationScore": 36.24,
       "phase": "هادئ"
     },
     {
@@ -1506,8 +1523,8 @@
       "unchanged": 1,
       "totalValue": 241768977.97,
       "totalVolume": 17916675,
-      "weightedChangeSum": -47547513.3816,
-      "confidenceSum": 323,
+      "weightedChangeSum": -48561550.4004,
+      "confidenceSum": 290,
       "confidenceCount": 5,
       "unclassifiedCount": 0,
       "topSymbols": [
@@ -1518,7 +1535,7 @@
           "value": 198041456,
           "changePct": -0.23,
           "volume": 2088206,
-          "confidence": 71
+          "confidence": 58
         },
         {
           "symbol": "DSCW",
@@ -1527,7 +1544,7 @@
           "value": 22641850,
           "changePct": 0,
           "volume": 13099217,
-          "confidence": 62
+          "confidence": 58
         },
         {
           "symbol": "KABO",
@@ -1536,7 +1553,7 @@
           "value": 13916596,
           "changePct": -0.31,
           "volume": 2198392,
-          "confidence": 61
+          "confidence": 58
         },
         {
           "symbol": "SPIN",
@@ -1545,28 +1562,28 @@
           "value": 6671999,
           "changePct": 0.07,
           "volume": 472129,
-          "confidence": 60
+          "confidence": 58
         },
         {
           "symbol": "APSW",
           "name_ar": "يونيراب بولفارا",
           "name_en": "Unirab Polvara Spinning & Weaving",
           "value": 497076.97,
-          "changePct": 3.72,
+          "changePct": 1.68,
           "volume": 58731,
-          "confidence": 69
+          "confidence": 58
         }
       ],
       "symbolsCount": 5,
       "avgChangePct": -0.2,
-      "liquiditySharePct": 3.21,
+      "liquiditySharePct": 3.2,
       "breadthScore": 0,
-      "liquidityScore": 14.3,
-      "volumeScore": 2.78,
-      "momentumScore": 48.43,
+      "liquidityScore": 14.38,
+      "volumeScore": 2.79,
+      "momentumScore": 48.39,
       "participationScore": 100,
-      "avgConfidence": 64.6,
-      "rotationScore": 36.41,
+      "avgConfidence": 58,
+      "rotationScore": 35.77,
       "phase": "هادئ"
     },
     {
@@ -1577,19 +1594,18 @@
         "PHTV",
         "ROTO",
         "RTVC",
-        "SDTI",
         "SPHT",
         "TRTO"
       ],
-      "activeSymbols": 7,
-      "advancing": 5,
-      "declining": 3,
-      "unchanged": 0,
-      "totalValue": 105194817.28,
-      "totalVolume": 4944328,
-      "weightedChangeSum": 105712805.83750002,
-      "confidenceSum": 410,
-      "confidenceCount": 8,
+      "activeSymbols": 6,
+      "advancing": 4,
+      "declining": 2,
+      "unchanged": 1,
+      "totalValue": 101625706.03,
+      "totalVolume": 4868241,
+      "weightedChangeSum": 101594343.385,
+      "confidenceSum": 347,
+      "confidenceCount": 7,
       "unclassifiedCount": 0,
       "topSymbols": [
         {
@@ -1599,7 +1615,7 @@
           "value": 61890540,
           "changePct": 1.43,
           "volume": 3524544,
-          "confidence": 68
+          "confidence": 58
         },
         {
           "symbol": "ROTO",
@@ -1608,7 +1624,7 @@
           "value": 24024040,
           "changePct": 0.22,
           "volume": 576715,
-          "confidence": 59
+          "confidence": 58
         },
         {
           "symbol": "MHOT",
@@ -1617,15 +1633,6 @@
           "value": 11601942,
           "changePct": 0.62,
           "volume": 337060,
-          "confidence": 59
-        },
-        {
-          "symbol": "SDTI",
-          "name_ar": "شرم دريمز",
-          "name_en": "SHARM DREAMS Co. for Touristic Investment",
-          "value": 3569111.25,
-          "changePct": 0.69,
-          "volume": 76087,
           "confidence": 58
         },
         {
@@ -1633,7 +1640,7 @@
           "name_ar": "بيراميزا للفنادق",
           "name_en": "Pyramisa Hotels & Resorts",
           "value": 2508755.5,
-          "changePct": 1.07,
+          "changePct": 0.41,
           "volume": 9236,
           "confidence": 58
         },
@@ -1651,9 +1658,9 @@
           "name_ar": "عبر المحيطات للسياحة",
           "name_en": "Trans Oceans Tours",
           "value": 0.03,
-          "changePct": -2.94,
+          "changePct": 0,
           "volume": 1,
-          "confidence": 28
+          "confidence": 35
         },
         {
           "symbol": "SPHT",
@@ -1665,16 +1672,16 @@
           "confidence": 25
         }
       ],
-      "symbolsCount": 8,
+      "symbolsCount": 7,
       "avgChangePct": 1,
-      "liquiditySharePct": 1.4,
-      "breadthScore": 25,
-      "liquidityScore": 6.22,
-      "volumeScore": 0.77,
-      "momentumScore": 64.29,
-      "participationScore": 87.5,
-      "avgConfidence": 51.25,
-      "rotationScore": 35.45,
+      "liquiditySharePct": 1.35,
+      "breadthScore": 28.57,
+      "liquidityScore": 6.05,
+      "volumeScore": 0.76,
+      "momentumScore": 65.14,
+      "participationScore": 85.71,
+      "avgConfidence": 49.57,
+      "rotationScore": 35.3,
       "phase": "هادئ"
     },
     {
@@ -1690,18 +1697,18 @@
       "totalValue": 90954114,
       "totalVolume": 7791961,
       "weightedChangeSum": -87787784.58000001,
-      "confidenceSum": 123,
+      "confidenceSum": 116,
       "confidenceCount": 2,
       "unclassifiedCount": 0,
       "topSymbols": [
         {
           "symbol": "ETRS",
           "name_ar": "إيجيترانس",
-          "name_en": "Egyptian Transport & Commercial Services EGYTRANS NOSCO",
+          "name_en": "Egyptian Transport & Commercial Services EGYTRANS",
           "value": 78709920,
           "changePct": -1.12,
           "volume": 7417475,
-          "confidence": 63
+          "confidence": 58
         },
         {
           "symbol": "CSAG",
@@ -1710,19 +1717,19 @@
           "value": 12244194,
           "changePct": 0.03,
           "volume": 374486,
-          "confidence": 60
+          "confidence": 58
         }
       ],
       "symbolsCount": 2,
       "avgChangePct": -0.97,
       "liquiditySharePct": 1.21,
       "breadthScore": -50,
-      "liquidityScore": 5.38,
+      "liquidityScore": 5.41,
       "volumeScore": 1.21,
       "momentumScore": 29.78,
       "participationScore": 100,
-      "avgConfidence": 61.5,
-      "rotationScore": 27.15,
+      "avgConfidence": 58,
+      "rotationScore": 26.81,
       "phase": "هادئ"
     },
     {
@@ -1755,7 +1762,7 @@
       "avgChangePct": -0.27,
       "liquiditySharePct": 0.21,
       "breadthScore": -100,
-      "liquidityScore": 0.94,
+      "liquidityScore": 0.95,
       "volumeScore": 0.07,
       "momentumScore": 22.84,
       "participationScore": 100,
@@ -1793,74 +1800,74 @@
       "avgChangePct": -1.66,
       "liquiditySharePct": 0.44,
       "breadthScore": -100,
-      "liquidityScore": 1.98,
+      "liquidityScore": 1.99,
       "volumeScore": 0.16,
       "momentumScore": 11.72,
       "participationScore": 100,
       "avgConfidence": 54,
-      "rotationScore": 19.63,
+      "rotationScore": 19.64,
       "phase": "هادئ"
     }
   ],
   "liquidityDistribution": [
     {
       "sector": "عقارات وإنشاءات",
-      "value": 1690845520.29,
-      "sharePct": 22.45,
+      "value": 1681039651.07,
+      "sharePct": 22.28,
       "activeSymbols": 44
     },
     {
       "sector": "غير مصنف",
-      "value": 1460552167.13,
-      "sharePct": 19.4,
-      "activeSymbols": 59
+      "value": 1588035190.38,
+      "sharePct": 21.05,
+      "activeSymbols": 63
     },
     {
       "sector": "استثمارات قابضة ومتنوعة",
       "value": 732462272,
-      "sharePct": 9.73,
+      "sharePct": 9.71,
       "activeSymbols": 1
     },
     {
       "sector": "رعاية صحية ودواء",
       "value": 689060398.41,
-      "sharePct": 9.15,
+      "sharePct": 9.13,
       "activeSymbols": 17
     },
     {
       "sector": "أسمنت ومواد بناء",
       "value": 265700206.5,
-      "sharePct": 3.53,
+      "sharePct": 3.52,
       "activeSymbols": 6
+    },
+    {
+      "sector": "خدمات مالية غير مصرفية",
+      "value": 439820550.46,
+      "sharePct": 5.83,
+      "activeSymbols": 16
     },
     {
       "sector": "تجارة وتوزيع",
       "value": 113465656,
-      "sharePct": 1.51,
+      "sharePct": 1.5,
       "activeSymbols": 2
-    },
-    {
-      "sector": "بتروكيماويات وكيماويات",
-      "value": 235020588,
-      "sharePct": 3.12,
-      "activeSymbols": 9
-    },
-    {
-      "sector": "خدمات مالية غير مصرفية",
-      "value": 543601142.45,
-      "sharePct": 7.22,
-      "activeSymbols": 17
     },
     {
       "sector": "بنوك وخدمات مالية مصرفية",
       "value": 468802217.16,
-      "sharePct": 6.23,
+      "sharePct": 6.21,
       "activeSymbols": 13
+    },
+    {
+      "sector": "بتروكيماويات وكيماويات",
+      "value": 235020588,
+      "sharePct": 3.11,
+      "activeSymbols": 9
     },
     {
       "sector": "اتصالات وإعلام وتكنولوجيا",
       "value": 61392211.75,
-      "sharePct": 0.82,
+      "sharePct": 0.81,
       "activeSymbols": 3
     },
     {
@@ -1872,38 +1879,38 @@
     {
       "sector": "تكنولوجيا ومدفوعات",
       "value": 152722000.25,
-      "sharePct": 2.03,
+      "sharePct": 2.02,
       "activeSymbols": 4
     },
     {
       "sector": "تعليم وخدمات",
       "value": 47075238.5,
-      "sharePct": 0.63,
+      "sharePct": 0.62,
       "activeSymbols": 4
     },
     {
       "sector": "معادن ومواد أساسية",
-      "value": 221694781.5,
+      "value": 221751817.5,
       "sharePct": 2.94,
-      "activeSymbols": 6
+      "activeSymbols": 7
     },
     {
       "sector": "أغذية ومشروبات",
-      "value": 182831622.75,
-      "sharePct": 2.43,
+      "value": 187869751.65,
+      "sharePct": 2.49,
       "activeSymbols": 13
     },
     {
       "sector": "منسوجات وملابس",
       "value": 241768977.97,
-      "sharePct": 3.21,
+      "sharePct": 3.2,
       "activeSymbols": 5
     },
     {
       "sector": "سياحة وترفيه",
-      "value": 105194817.28,
-      "sharePct": 1.4,
-      "activeSymbols": 7
+      "value": 101625706.03,
+      "sharePct": 1.35,
+      "activeSymbols": 6
     },
     {
       "sector": "نقل وخدمات لوجستية",
@@ -1927,38 +1934,38 @@
   "optimalPortfolioBySector": [
     {
       "sector": "عقارات وإنشاءات",
-      "suggestedWeightPct": 21.08,
-      "reason": "قيادة محتملة؛ سيولة 22.45%؛ تغير مرجح 0.77%"
+      "suggestedWeightPct": 20.7,
+      "reason": "قيادة محتملة؛ سيولة 22.28%؛ تغير مرجح 0.77%"
     },
     {
       "sector": "استثمارات قابضة ومتنوعة",
-      "suggestedWeightPct": 16.47,
-      "reason": "مراقبة نشطة؛ سيولة 9.73%؛ تغير مرجح 5.87%"
+      "suggestedWeightPct": 16.37,
+      "reason": "مراقبة نشطة؛ سيولة 9.71%؛ تغير مرجح 5.87%"
     },
     {
       "sector": "رعاية صحية ودواء",
-      "suggestedWeightPct": 15.49,
-      "reason": "مراقبة نشطة؛ سيولة 9.15%؛ تغير مرجح 4.44%"
+      "suggestedWeightPct": 15.58,
+      "reason": "مراقبة نشطة؛ سيولة 9.13%؛ تغير مرجح 4.44%"
     },
     {
       "sector": "أسمنت ومواد بناء",
-      "suggestedWeightPct": 13.14,
-      "reason": "هادئ؛ سيولة 3.53%؛ تغير مرجح 6.21%"
-    },
-    {
-      "sector": "تجارة وتوزيع",
-      "suggestedWeightPct": 11.68,
-      "reason": "هادئ؛ سيولة 1.51%؛ تغير مرجح 1.81%"
-    },
-    {
-      "sector": "بتروكيماويات وكيماويات",
-      "suggestedWeightPct": 11.08,
-      "reason": "هادئ؛ سيولة 3.12%؛ تغير مرجح 0.87%"
+      "suggestedWeightPct": 13,
+      "reason": "هادئ؛ سيولة 3.52%؛ تغير مرجح 6.21%"
     },
     {
       "sector": "خدمات مالية غير مصرفية",
-      "suggestedWeightPct": 11.05,
-      "reason": "هادئ؛ سيولة 7.22%؛ تغير مرجح -0.62%"
+      "suggestedWeightPct": 11.69,
+      "reason": "هادئ؛ سيولة 5.83%؛ تغير مرجح 1.62%"
+    },
+    {
+      "sector": "تجارة وتوزيع",
+      "suggestedWeightPct": 11.45,
+      "reason": "هادئ؛ سيولة 1.5%؛ تغير مرجح 1.81%"
+    },
+    {
+      "sector": "بنوك وخدمات مالية مصرفية",
+      "suggestedWeightPct": 11.2,
+      "reason": "هادئ؛ سيولة 6.21%؛ تغير مرجح -0.3%"
     }
   ],
   "dataQualityActions": [

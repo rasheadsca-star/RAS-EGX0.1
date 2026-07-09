@@ -1,8 +1,8 @@
 {
   "ok": true,
   "engine": "v8_9_1_confidence_guard",
-  "generatedAt": "2026-07-08T20:07:06.683Z",
-  "score": 54,
+  "generatedAt": "2026-07-09T04:48:41.978Z",
+  "score": 59,
   "state": "bad",
   "summary": {
     "historyAverageSessions": 6.84,
@@ -11,19 +11,9 @@
     "sourceCoveragePct": 94.6,
     "stalePrices": 6,
     "priceConflicts": 164,
-    "guards": 4,
-    "executionBlockedByHardening": 616,
-    "namesCleanedByHardening": 779,
-    "confidenceCappedByHardening": 833
+    "guards": 4
   },
   "guards": [
-    {
-      "id": "hard_execution_gate",
-      "level": "critical",
-      "title": "بوابة منع التنفيذ",
-      "message": "تم منع ترقية أي سهم لديه تعارض سعر، دقة غير كافية، أو قيود تنفيذية إلى شراء قابل للتنفيذ.",
-      "action": "راجع hardening-report.json وسجل price-reconciliation قبل أي قرار شراء سريع."
-    },
     {
       "id": "history_limited",
       "level": "warning",
@@ -57,176 +47,1177 @@
     {
       "symbol": "ROTO",
       "name": "رواد السياحة",
-      "grade": "P1",
-      "rawProbability": 88,
-      "guardedProbability": 58,
-      "finalScore": 94,
+      "grade": "P2",
+      "rawProbability": 69,
+      "guardedProbability": 63,
+      "finalScore": 71,
       "historySessions": 7,
       "priceState": "ok",
       "notes": [
         "تاريخ محدود 7/50"
       ],
-      "name_ar": "رواد السياحة",
-      "name_en": "Rowad Tourism Company",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
       "symbol": "ELEC",
       "name": "الكابلات الكهربائية المصرية",
-      "grade": "P1",
-      "rawProbability": 88,
-      "guardedProbability": 58,
-      "finalScore": 92,
+      "grade": "P2",
+      "rawProbability": 69,
+      "guardedProbability": 63,
+      "finalScore": 69,
       "historySessions": 7,
       "priceState": "ok",
       "notes": [
         "تاريخ محدود 7/50"
       ],
-      "name_ar": "الكابلات الكهربائية المصرية",
-      "name_en": "Electro Cable Egypt",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
       "symbol": "EXPA",
       "name": "البنك المصري لتنمية الصادرات",
-      "grade": "P1",
-      "rawProbability": 88,
-      "guardedProbability": 58,
-      "finalScore": 91,
+      "grade": "P2",
+      "rawProbability": 69,
+      "guardedProbability": 63,
+      "finalScore": 69,
       "historySessions": 8,
       "priceState": "ok",
       "notes": [
         "تاريخ محدود 8/50"
       ],
-      "name_ar": "البنك المصري لتنمية الصادرات",
-      "name_en": "Export Development Bank of Egypt",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "IFAP",
+      "name": "الدولية للمحاصيل الزراعية",
+      "grade": "P2",
+      "rawProbability": 68,
+      "guardedProbability": 62,
+      "finalScore": 69,
+      "historySessions": 8,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 8/50"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
       "symbol": "UBEE",
       "name": "البنك المتحد",
-      "grade": "P1",
-      "rawProbability": 87,
-      "guardedProbability": 58,
-      "finalScore": 91,
+      "grade": "P2",
+      "rawProbability": 68,
+      "guardedProbability": 62,
+      "finalScore": 69,
       "historySessions": 7,
       "priceState": "ok",
       "notes": [
         "تاريخ محدود 7/50"
       ],
-      "name_ar": "البنك المتحد",
-      "name_en": "The United Bank",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
-      "symbol": "IFAP",
-      "name": "الدولية للمحاصيل الزراعية",
-      "grade": "P1",
-      "rawProbability": 87,
-      "guardedProbability": 58,
-      "finalScore": 91,
-      "historySessions": 8,
+      "symbol": "MEGM",
+      "name": "الشرق الأوسط لصناعة الزجاج",
+      "grade": "P3",
+      "rawProbability": 68,
+      "guardedProbability": 62,
+      "finalScore": 67,
+      "historySessions": 7,
       "priceState": "ok",
       "notes": [
-        "تاريخ محدود 8/50"
+        "تاريخ محدود 7/50"
       ],
-      "name_ar": "الدولية للمحاصيل الزراعية",
-      "name_en": "International Company for Agricultural Crops",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "AREH",
+      "name": "المجموعة المصرية العقارية",
+      "grade": "P3",
+      "rawProbability": 65,
+      "guardedProbability": 54,
+      "finalScore": 63,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "EMFD",
+      "name": "إعمار مصر",
+      "grade": "P3",
+      "rawProbability": 65,
+      "guardedProbability": 54,
+      "finalScore": 63,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "ZEOT",
+      "name": "الزيوت المستخلصة",
+      "grade": "P3",
+      "rawProbability": 65,
+      "guardedProbability": 54,
+      "finalScore": 62,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
       "symbol": "RMDA",
       "name": "راميدا",
-      "grade": "P1",
-      "rawProbability": 82,
+      "grade": "P3",
+      "rawProbability": 64,
       "guardedProbability": 58,
-      "finalScore": 88,
+      "finalScore": 65,
       "historySessions": 8,
       "priceState": "ok",
       "notes": [
         "تاريخ محدود 8/50"
       ],
-      "name_ar": "راميدا",
-      "name_en": "Tenth of Ramadan for Pharmaceutical Industries and Diagnostic Reagents Rameda",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "EAST",
+      "name": "الشرقية إيسترن كومباني",
+      "grade": "P3",
+      "rawProbability": 64,
+      "guardedProbability": 53,
+      "finalScore": 61,
+      "historySessions": 8,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 8/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "ARCC",
+      "name": "العربية للأسمنت",
+      "grade": "P3",
+      "rawProbability": 64,
+      "guardedProbability": 53,
+      "finalScore": 61,
+      "historySessions": 8,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 8/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "OIH",
+      "name": "أوراسكوم للاستثمار القابضة",
+      "grade": "P3",
+      "rawProbability": 64,
+      "guardedProbability": 53,
+      "finalScore": 60,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "CIRA",
+      "name": "القاهرة للاستثمار والتنمية العقارية",
+      "grade": "P3",
+      "rawProbability": 63,
+      "guardedProbability": 57,
+      "finalScore": 62,
+      "historySessions": 8,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 8/50"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "SEIGA",
+      "name": "السعودية المصرية للاستثمار والتمويل",
+      "grade": "P3",
+      "rawProbability": 63,
+      "guardedProbability": 57,
+      "finalScore": 62,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "CNFN",
+      "name": "كونتكت المالية القابضة",
+      "grade": "P3",
+      "rawProbability": 63,
+      "guardedProbability": 57,
+      "finalScore": 61,
+      "historySessions": 8,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 8/50"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "SDTI",
+      "name": "شرم دريمز",
+      "grade": "P3",
+      "rawProbability": 63,
+      "guardedProbability": 52,
+      "finalScore": 59,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "MILS",
+      "name": "مطاحن شمال القاهرة",
+      "grade": "P3",
+      "rawProbability": 63,
+      "guardedProbability": 52,
+      "finalScore": 60,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
       "symbol": "CIEB",
       "name": "كريدي أجريكول مصر",
-      "grade": "P1",
-      "rawProbability": 81,
-      "guardedProbability": 58,
-      "finalScore": 86,
+      "grade": "P3",
+      "rawProbability": 62,
+      "guardedProbability": 56,
+      "finalScore": 61,
       "historySessions": 8,
       "priceState": "ok",
       "notes": [
         "تاريخ محدود 8/50"
       ],
-      "name_ar": "كريدي أجريكول مصر",
-      "name_en": "Credit Agricole Egypt Bank",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
-      "symbol": "BONY",
-      "name": "بنيان للتنمية والتجارة",
-      "grade": "Blocked",
-      "rawProbability": 74,
-      "guardedProbability": 38,
-      "finalScore": 45,
+      "symbol": "CCRS",
+      "name": "الخليجية الكندية للاستثمار العقاري",
+      "grade": "P3",
+      "rawProbability": 62,
+      "guardedProbability": 51,
+      "finalScore": 61,
       "historySessions": 7,
-      "priceState": "conflict",
+      "priceState": "ok",
       "notes": [
         "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
+        "قيود: R/R ضعيف"
       ],
-      "name_ar": "بنيان للتنمية والتجارة",
-      "name_en": "Bonyan for Development and Trade",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "QNBE",
+      "name": "قطر الوطني الأهلي",
+      "grade": "P3",
+      "rawProbability": 62,
+      "guardedProbability": 51,
+      "finalScore": 60,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "MBSC",
+      "name": "مصر بني سويف للأسمنت",
+      "grade": "P3",
+      "rawProbability": 61,
+      "guardedProbability": 50,
+      "finalScore": 59,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "UEFM",
+      "name": "مطاحن مصر العليا",
+      "grade": "P3",
+      "rawProbability": 60,
+      "guardedProbability": 54,
+      "finalScore": 58,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "ATQA",
+      "name": "مصر الوطنية للصلب عتاقة",
+      "grade": "Watch",
+      "rawProbability": 64,
+      "guardedProbability": 53,
+      "finalScore": 60,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "SAUD",
+      "name": "بنك البركة مصر",
+      "grade": "Watch",
+      "rawProbability": 63,
+      "guardedProbability": 52,
+      "finalScore": 59,
+      "historySessions": 8,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 8/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "KZPC",
+      "name": "كفر الزيات للمبيدات",
+      "grade": "Watch",
+      "rawProbability": 62,
+      "guardedProbability": 51,
+      "finalScore": 58,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "SUGR",
+      "name": "الدلتا للسكر",
+      "grade": "Watch",
+      "rawProbability": 62,
+      "guardedProbability": 51,
+      "finalScore": 58,
+      "historySessions": 8,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 8/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "EGAS",
+      "name": "غاز مصر",
+      "grade": "Watch",
+      "rawProbability": 62,
+      "guardedProbability": 51,
+      "finalScore": 58,
+      "historySessions": 7,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "MMAT",
+      "name": "مرسى مرسى علم للتنمية السياحية",
+      "grade": "Watch",
+      "rawProbability": 58,
+      "guardedProbability": 47,
+      "finalScore": 52,
+      "historySessions": 3,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 3/50",
+        "قيود: R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (3/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (3/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 3/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "APSW",
+      "name": "يونيراب بولفارا",
+      "grade": "Watch",
+      "rawProbability": 52,
+      "guardedProbability": 33,
+      "finalScore": 50,
+      "historySessions": 7,
+      "priceState": "stale",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "سعر قديم",
+        "قيود: سعر قديم"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "SAIB",
+      "name": "بنك الشركة المصرفية العربية الدولية",
+      "grade": "Watch",
+      "rawProbability": 47,
+      "guardedProbability": 41,
+      "finalScore": 55,
+      "historySessions": 0,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 0/50"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 0/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "EGSA",
+      "name": "نايل سات",
+      "grade": "Watch",
+      "rawProbability": 45,
+      "guardedProbability": 34,
+      "finalScore": 40,
+      "historySessions": 0,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 0/50",
+        "قيود: R/R ضعيف، لا يوجد ربح واضح"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 0/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "EOSB",
+      "name": "العروبة للسمسرة",
+      "grade": "Watch",
+      "rawProbability": 43,
+      "guardedProbability": 24,
+      "finalScore": 40,
+      "historySessions": 2,
+      "priceState": "stale",
+      "notes": [
+        "تاريخ محدود 2/50",
+        "سعر قديم",
+        "قيود: سعر قديم، R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (2/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (2/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 2/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "GPPL",
+      "name": "جولدن بيراميدز بلازا",
+      "grade": "Watch",
+      "rawProbability": 36,
+      "guardedProbability": 25,
+      "finalScore": 30,
+      "historySessions": 0,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 0/50",
+        "قيود: R/R ضعيف، لا يوجد ربح واضح"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 0/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "SPHT",
+      "name": "الشمس بيراميدز",
+      "grade": "Watch",
+      "rawProbability": 31,
+      "guardedProbability": 20,
+      "finalScore": 25,
+      "historySessions": 0,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 0/50",
+        "قيود: R/R ضعيف، لا يوجد ربح واضح"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 0/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "NDRL",
+      "name": "الحفر الوطنية",
+      "grade": "Watch",
+      "rawProbability": 31,
+      "guardedProbability": 20,
+      "finalScore": 25,
+      "historySessions": 0,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 0/50",
+        "قيود: R/R ضعيف، لا يوجد ربح واضح"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 0/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "POCO",
+      "name": "بورسعيد لتداول الحاويات",
+      "grade": "Watch",
+      "rawProbability": 31,
+      "guardedProbability": 20,
+      "finalScore": 25,
+      "historySessions": 0,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 0/50",
+        "قيود: R/R ضعيف، لا يوجد ربح واضح"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 0/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
+    },
+    {
+      "symbol": "ICLE",
+      "name": "الدولية للتأجير التمويلي",
+      "grade": "Watch",
+      "rawProbability": 31,
+      "guardedProbability": 20,
+      "finalScore": 25,
+      "historySessions": 0,
+      "priceState": "ok",
+      "notes": [
+        "تاريخ محدود 0/50",
+        "قيود: R/R ضعيف، لا يوجد ربح واضح"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
+      "blocks": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (0/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 0/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
       "symbol": "KORA",
       "name": "قرة للطاقة",
       "grade": "Blocked",
-      "rawProbability": 75,
-      "guardedProbability": 39,
-      "finalScore": 45,
+      "rawProbability": 56,
+      "guardedProbability": 20,
+      "finalScore": 58,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -234,25 +1225,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "قرة للطاقة",
-      "name_en": "Korra for Energy and Investment Projects",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
-      "symbol": "MFSC",
-      "name": "مصر للأسواق الحرة",
+      "symbol": "BONY",
+      "name": "بنيان للتنمية والتجارة",
       "grade": "Blocked",
-      "rawProbability": 73,
-      "guardedProbability": 37,
-      "finalScore": 45,
+      "rawProbability": 55,
+      "guardedProbability": 19,
+      "finalScore": 59,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -260,25 +1260,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "مصر للأسواق الحرة",
-      "name_en": "Egypt Free Shops",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "ASCM",
       "name": "أسيك للتعدين أسكوم",
       "grade": "Blocked",
-      "rawProbability": 74,
-      "guardedProbability": 38,
-      "finalScore": 45,
+      "rawProbability": 55,
+      "guardedProbability": 19,
+      "finalScore": 58,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -286,24 +1295,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "أسيك للتعدين أسكوم",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "ISPH",
       "name": "ابن سينا فارما",
       "grade": "Blocked",
-      "rawProbability": 74,
-      "guardedProbability": 38,
-      "finalScore": 45,
+      "rawProbability": 55,
+      "guardedProbability": 19,
+      "finalScore": 57,
       "historySessions": 8,
       "priceState": "conflict",
       "notes": [
@@ -311,25 +1330,69 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "ابن سينا فارما",
-      "name_en": "Ibnsina Pharma",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "MFSC",
+      "name": "مصر للأسواق الحرة",
+      "grade": "Blocked",
+      "rawProbability": 54,
+      "guardedProbability": 18,
+      "finalScore": 58,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
         "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "SVCE",
       "name": "جنوب الوادي للأسمنت",
       "grade": "Blocked",
-      "rawProbability": 73,
-      "guardedProbability": 37,
-      "finalScore": 45,
+      "rawProbability": 54,
+      "guardedProbability": 18,
+      "finalScore": 57,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -337,25 +1400,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "جنوب الوادي للأسمنت",
-      "name_en": "South Valley Cement Company",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "MPCI",
       "name": "ممفيس للأدوية",
       "grade": "Blocked",
-      "rawProbability": 73,
-      "guardedProbability": 37,
-      "finalScore": 45,
+      "rawProbability": 54,
+      "guardedProbability": 18,
+      "finalScore": 56,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -363,25 +1435,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "ممفيس للأدوية",
-      "name_en": "Memphis Pharmaceuticals & Chemical Industries",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "IDRE",
       "name": "الإسماعيلية للتطوير العقاري",
       "grade": "Blocked",
-      "rawProbability": 72,
-      "guardedProbability": 36,
-      "finalScore": 45,
+      "rawProbability": 53,
+      "guardedProbability": 17,
+      "finalScore": 56,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -389,25 +1470,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "الإسماعيلية للتطوير العقاري",
-      "name_en": "Ismailia Development and Real Estate",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "DOMT",
       "name": "دومتي",
       "grade": "Blocked",
-      "rawProbability": 72,
-      "guardedProbability": 36,
-      "finalScore": 45,
+      "rawProbability": 53,
+      "guardedProbability": 17,
+      "finalScore": 55,
       "historySessions": 8,
       "priceState": "conflict",
       "notes": [
@@ -415,25 +1505,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "دومتي",
-      "name_en": "Arabian Food Industries",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "HRHO",
       "name": "إي إف جي القابضة",
       "grade": "Blocked",
-      "rawProbability": 72,
-      "guardedProbability": 36,
-      "finalScore": 45,
+      "rawProbability": 53,
+      "guardedProbability": 17,
+      "finalScore": 54,
       "historySessions": 8,
       "priceState": "conflict",
       "notes": [
@@ -441,24 +1540,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "إي إف جي القابضة",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "DAPH",
       "name": "المشروعات الصناعية والهندسية",
       "grade": "Blocked",
-      "rawProbability": 71,
-      "guardedProbability": 35,
-      "finalScore": 45,
+      "rawProbability": 52,
+      "guardedProbability": 16,
+      "finalScore": 54,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -466,25 +1575,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "المشروعات الصناعية والهندسية",
-      "name_en": "Development & Engineering Consultants",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "ETRS",
       "name": "إيجيترانس",
       "grade": "Blocked",
-      "rawProbability": 71,
-      "guardedProbability": 35,
-      "finalScore": 45,
+      "rawProbability": 52,
+      "guardedProbability": 16,
+      "finalScore": 52,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -492,25 +1610,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "إيجيترانس",
-      "name_en": "Egyptian Transport & Commercial Services EGYTRANS",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "MTIE",
       "name": "إم إم جروب",
       "grade": "Blocked",
-      "rawProbability": 71,
-      "guardedProbability": 35,
-      "finalScore": 45,
+      "rawProbability": 52,
+      "guardedProbability": 16,
+      "finalScore": 52,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -518,25 +1645,69 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "إم إم جروب",
-      "name_en": "MM Group for Industry and International Trade",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "NIPH",
+      "name": "النيل للأدوية",
+      "grade": "Blocked",
+      "rawProbability": 52,
+      "guardedProbability": 16,
+      "finalScore": 51,
+      "historySessions": 8,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 8/50",
         "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "ARVA",
       "name": "العربية للصمامات",
       "grade": "Blocked",
-      "rawProbability": 70,
-      "guardedProbability": 34,
-      "finalScore": 45,
+      "rawProbability": 51,
+      "guardedProbability": 15,
+      "finalScore": 51,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -544,51 +1715,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "العربية للصمامات",
-      "name_en": "Arab Valves Company",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "AXPH",
-      "name": "الإسكندرية للأدوية",
-      "grade": "Blocked",
-      "rawProbability": 70,
-      "guardedProbability": 34,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
       ],
-      "name_ar": "الإسكندرية للأدوية",
-      "name_en": "Alexandria Pharmaceuticals & Chemical Industries",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "SCEM",
       "name": "سيناء للأسمنت",
       "grade": "Blocked",
-      "rawProbability": 70,
-      "guardedProbability": 34,
-      "finalScore": 45,
+      "rawProbability": 51,
+      "guardedProbability": 15,
+      "finalScore": 51,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -596,25 +1750,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "سيناء للأسمنت",
-      "name_en": "Sinai Cement",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
-      "symbol": "EASB",
-      "name": "ثمار للوساطة",
+      "symbol": "AXPH",
+      "name": "الإسكندرية للأدوية",
       "grade": "Blocked",
-      "rawProbability": 65,
-      "guardedProbability": 29,
-      "finalScore": 45,
+      "rawProbability": 51,
+      "guardedProbability": 15,
+      "finalScore": 51,
       "historySessions": 8,
       "priceState": "conflict",
       "notes": [
@@ -622,50 +1785,348 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "ثمار للوساطة",
-      "name_en": "Egyptian Arabian Company Themar for securities Brokerage",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "SCTS",
-      "name": "قناة السويس لتوطين التكنولوجيا",
-      "grade": "Blocked",
-      "rawProbability": 69,
-      "guardedProbability": 33,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
       ],
-      "name_ar": "قناة السويس لتوطين التكنولوجيا",
-      "name_en": "Suez Canal Company for Technology Settling",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "ATLC",
       "name": "التوفيق للتأجير التمويلي",
       "grade": "Blocked",
-      "rawProbability": 69,
-      "guardedProbability": 33,
+      "rawProbability": 50,
+      "guardedProbability": 14,
+      "finalScore": 50,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "FAIT",
+      "name": "بنك فيصل الإسلامي",
+      "grade": "Blocked",
+      "rawProbability": 50,
+      "guardedProbability": 14,
+      "finalScore": 49,
+      "historySessions": 8,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 8/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "GPIM",
+      "name": "جي بي آي للنمو العمراني",
+      "grade": "Blocked",
+      "rawProbability": 50,
+      "guardedProbability": 14,
+      "finalScore": 48,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "SCTS",
+      "name": "قناة السويس لتوطين التكنولوجيا",
+      "grade": "Blocked",
+      "rawProbability": 50,
+      "guardedProbability": 14,
+      "finalScore": 50,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "CPCI",
+      "name": "القاهرة للأدوية",
+      "grade": "Blocked",
+      "rawProbability": 49,
+      "guardedProbability": 13,
+      "finalScore": 46,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "TALM",
+      "name": "تعليم لخدمات الإدارة",
+      "grade": "Blocked",
+      "rawProbability": 48,
+      "guardedProbability": 12,
+      "finalScore": 48,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "MPCO",
+      "name": "المنصورة للدواجن",
+      "grade": "Blocked",
+      "rawProbability": 48,
+      "guardedProbability": 12,
+      "finalScore": 46,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "GBCO",
+      "name": "جي بي كوربوريشن",
+      "grade": "Blocked",
+      "rawProbability": 47,
+      "guardedProbability": 11,
+      "finalScore": 48,
+      "historySessions": 8,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 8/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "ORAS",
+      "name": "أوراسكوم كونستراكشون",
+      "grade": "Blocked",
+      "rawProbability": 47,
+      "guardedProbability": 11,
+      "finalScore": 47,
+      "historySessions": 8,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 8/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "ECAP",
+      "name": "العز للسيراميك والبورسلين الجوهرة",
+      "grade": "Blocked",
+      "rawProbability": 47,
+      "guardedProbability": 11,
       "finalScore": 45,
       "historySessions": 7,
       "priceState": "conflict",
@@ -674,71 +2135,344 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "التوفيق للتأجير التمويلي",
-      "name_en": "Al Tawfeek Leasing Company",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "NCCW",
+      "name": "النصر للأعمال المدنية",
+      "grade": "Blocked",
+      "rawProbability": 47,
+      "guardedProbability": 11,
+      "finalScore": 45,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
         "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "قيود: تعارض سعر، R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "PHAR",
+      "name": "إيبيكو",
+      "grade": "Blocked",
+      "rawProbability": 47,
+      "guardedProbability": 11,
+      "finalScore": 44,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "PHDC",
+      "name": "بالم هيلز للتعمير",
+      "grade": "Blocked",
+      "rawProbability": 47,
+      "guardedProbability": 11,
+      "finalScore": 43,
+      "historySessions": 8,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 8/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "EASB",
+      "name": "ثمار للوساطة",
+      "grade": "Blocked",
+      "rawProbability": 46,
+      "guardedProbability": 10,
+      "finalScore": 51,
+      "historySessions": 8,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 8/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "ADIB",
       "name": "مصرف أبو ظبي الإسلامي مصر",
-      "grade": "P2",
-      "rawProbability": 65,
-      "guardedProbability": 54,
-      "finalScore": 78,
+      "grade": "Blocked",
+      "rawProbability": 46,
+      "guardedProbability": 35,
+      "finalScore": 49,
       "historySessions": 8,
       "priceState": "ok",
       "notes": [
         "تاريخ محدود 8/50",
         "قيود: إشارة مخاطر"
       ],
-      "name_ar": "مصرف أبو ظبي الإسلامي مصر",
-      "name_en": "Abu Dhabi Islamic Bank Egypt",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "MONITOR_ONLY",
+      "goalDecisionLabel": "مراقبة فقط",
       "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "decision": "MONITOR_ONLY",
+      "action": "WATCH",
+      "recommendation": "مراقبة فقط"
     },
     {
-      "symbol": "FAIT",
-      "name": "بنك فيصل الإسلامي",
+      "symbol": "OCPH",
+      "name": "أكتوبر فارما",
       "grade": "Blocked",
-      "rawProbability": 69,
-      "guardedProbability": 33,
-      "finalScore": 45,
+      "rawProbability": 46,
+      "guardedProbability": 10,
+      "finalScore": 43,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "EFIC",
+      "name": "المالية والصناعية المصرية",
+      "grade": "Blocked",
+      "rawProbability": 46,
+      "guardedProbability": 10,
+      "finalScore": 43,
+      "historySessions": 7,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 7/50",
+        "تعارض سعر",
+        "قيود: تعارض سعر، R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "ORHD",
+      "name": "أوراسكوم للتنمية مصر",
+      "grade": "Blocked",
+      "rawProbability": 46,
+      "guardedProbability": 10,
+      "finalScore": 42,
       "historySessions": 8,
       "priceState": "conflict",
       "notes": [
         "تاريخ محدود 8/50",
         "تعارض سعر",
-        "قيود: تعارض سعر"
+        "قيود: تعارض سعر، R/R ضعيف"
       ],
-      "name_ar": "بنك فيصل الإسلامي",
-      "name_en": "Faisal Islamic Bank of Egypt",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
+    },
+    {
+      "symbol": "RAYA",
+      "name": "راية القابضة",
+      "grade": "Blocked",
+      "rawProbability": 46,
+      "guardedProbability": 10,
+      "finalScore": 41,
+      "historySessions": 8,
+      "priceState": "conflict",
+      "notes": [
+        "تاريخ محدود 8/50",
         "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "قيود: تعارض سعر، R/R ضعيف"
+      ],
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
+      "executionAllowed": false,
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
+      "blocks": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "ELNA",
       "name": "النصر لتصنيع الحاصلات الزراعية",
       "grade": "Blocked",
-      "rawProbability": 68,
-      "guardedProbability": 32,
+      "rawProbability": 45,
+      "guardedProbability": 9,
       "finalScore": 45,
       "historySessions": 2,
       "priceState": "conflict",
@@ -747,719 +2481,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "النصر لتصنيع الحاصلات الزراعية",
-      "name_en": "El Nasr Manufacturing Agricultural Crops",
-      "historyCompletenessPct": 4,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 2/50"
-      ]
-    },
-    {
-      "symbol": "GBCO",
-      "name": "جي بي كوربوريشن",
-      "grade": "Blocked",
-      "rawProbability": 66,
-      "guardedProbability": 30,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (2/50 جلسة): مراقبة فقط"
       ],
-      "name_ar": "جي بي كوربوريشن",
-      "name_en": "GB Corp",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "TALM",
-      "name": "تعليم لخدمات الإدارة",
-      "grade": "Blocked",
-      "rawProbability": 67,
-      "guardedProbability": 31,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (2/50 جلسة): مراقبة فقط"
       ],
-      "name_ar": "تعليم لخدمات الإدارة",
-      "name_en": "Taaleem Management Services Company",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "ORAS",
-      "name": "أوراسكوم كونستراكشون",
-      "grade": "Blocked",
-      "rawProbability": 66,
-      "guardedProbability": 30,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ],
-      "name_ar": "أوراسكوم كونستراكشون",
-      "name_en": "Orascom Construction PLC",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "MEGM",
-      "name": "الشرق الأوسط لصناعة الزجاج",
-      "grade": "P3",
-      "rawProbability": 87,
-      "guardedProbability": 58,
-      "finalScore": 91,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50"
-      ],
-      "name_ar": "الشرق الأوسط لصناعة الزجاج",
-      "name_en": "Middle East Glass Manufacturing",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "CIRA",
-      "name": "القاهرة للاستثمار والتنمية العقارية",
-      "grade": "P3",
-      "rawProbability": 82,
-      "guardedProbability": 58,
-      "finalScore": 87,
-      "historySessions": 8,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 8/50"
-      ],
-      "name_ar": "القاهرة للاستثمار والتنمية العقارية",
-      "name_en": "سيرا|القاهرة للاستثمار",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "AREH",
-      "name": "المجموعة المصرية العقارية",
-      "grade": "P3",
-      "rawProbability": 84,
-      "guardedProbability": 58,
-      "finalScore": 87,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "المجموعة المصرية العقارية",
-      "name_en": "Real Estate Egyptian Consortium",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "EMFD",
-      "name": "إعمار مصر",
-      "grade": "P3",
-      "rawProbability": 84,
-      "guardedProbability": 58,
-      "finalScore": 87,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "إعمار مصر",
-      "name_en": "Emaar Misr for Development Company",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "ZEOT",
-      "name": "الزيوت المستخلصة",
-      "grade": "P3",
-      "rawProbability": 84,
-      "guardedProbability": 58,
-      "finalScore": 87,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "الزيوت المستخلصة",
-      "name_en": "Extracted Oil & Derivatives",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "EAST",
-      "name": "الشرقية إيسترن كومباني",
-      "grade": "P3",
-      "rawProbability": 83,
-      "guardedProbability": 58,
-      "finalScore": 86,
-      "historySessions": 8,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "الشرقية إيسترن كومباني",
-      "name_en": "Eastern Company S.A.E",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "ARCC",
-      "name": "العربية للأسمنت",
-      "grade": "P3",
-      "rawProbability": 83,
-      "guardedProbability": 58,
-      "finalScore": 86,
-      "historySessions": 8,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "العربية للأسمنت",
-      "name_en": "Arabian Cement Company S.A.E.",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "OIH",
-      "name": "أوراسكوم للاستثمار القابضة",
-      "grade": "P3",
-      "rawProbability": 83,
-      "guardedProbability": 58,
-      "finalScore": 86,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "أوراسكوم للاستثمار القابضة",
-      "name_en": "Orascom Investment Holding",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "CNFN",
-      "name": "كونتكت المالية القابضة",
-      "grade": "P3",
-      "rawProbability": 82,
-      "guardedProbability": 58,
-      "finalScore": 86,
-      "historySessions": 8,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 8/50"
-      ],
-      "name_ar": "كونتكت المالية القابضة",
-      "name_en": "Contact Financial Holding",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "CCRS",
-      "name": "الخليجية الكندية للاستثمار العقاري",
-      "grade": "P3",
-      "rawProbability": 81,
-      "guardedProbability": 58,
-      "finalScore": 86,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "الخليجية الكندية للاستثمار العقاري",
-      "name_en": "Gulf Canadian Company for Arab Real Estate Investment",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "ATQA",
-      "name": "مصر الوطنية للصلب عتاقة",
-      "grade": "P3",
-      "rawProbability": 83,
-      "guardedProbability": 58,
-      "finalScore": 85,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "مصر الوطنية للصلب عتاقة",
-      "name_en": "Misr National Steel Ataqa",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "MILS",
-      "name": "مطاحن شمال القاهرة",
-      "grade": "P3",
-      "rawProbability": 82,
-      "guardedProbability": 58,
-      "finalScore": 85,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "مطاحن شمال القاهرة",
-      "name_en": "North Cairo Flour Mills",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "SDTI",
-      "name": "شرم دريمز",
-      "grade": "P3",
-      "rawProbability": 82,
-      "guardedProbability": 58,
-      "finalScore": 85,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "شرم دريمز",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "QNBE",
-      "name": "قطر الوطني الأهلي",
-      "grade": "P3",
-      "rawProbability": 80,
-      "guardedProbability": 58,
-      "finalScore": 85,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "قطر الوطني الأهلي",
-      "name_en": "Qatar National Bank",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "MBSC",
-      "name": "مصر بني سويف للأسمنت",
-      "grade": "P3",
-      "rawProbability": 80,
-      "guardedProbability": 58,
-      "finalScore": 84,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "مصر بني سويف للأسمنت",
-      "name_en": "Misr Beni Suef Cement",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "UEFM",
-      "name": "مطاحن مصر العليا",
-      "grade": "P3",
-      "rawProbability": 79,
-      "guardedProbability": 58,
-      "finalScore": 84,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50"
-      ],
-      "name_ar": "مطاحن مصر العليا",
-      "name_en": "Upper Egypt Mills Company",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "SAUD",
-      "name": "بنك البركة مصر",
-      "grade": "P3",
-      "rawProbability": 81,
-      "guardedProbability": 58,
-      "finalScore": 83,
-      "historySessions": 8,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "بنك البركة مصر",
-      "name_en": "alBaraka Bank Egypt",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "KZPC",
-      "name": "كفر الزيات للمبيدات",
-      "grade": "P3",
-      "rawProbability": 81,
-      "guardedProbability": 58,
-      "finalScore": 83,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "كفر الزيات للمبيدات",
-      "name_en": "Kafr El Zayat For Pesticides & Chemicals",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "EGAS",
-      "name": "غاز مصر",
-      "grade": "P3",
-      "rawProbability": 81,
-      "guardedProbability": 58,
-      "finalScore": 83,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "غاز مصر",
-      "name_en": "Egypt Gas Company",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "SUGR",
-      "name": "الدلتا للسكر",
-      "grade": "P3",
-      "rawProbability": 81,
-      "guardedProbability": 58,
-      "finalScore": 83,
-      "historySessions": 8,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "قيود: R/R ضعيف"
-      ],
-      "name_ar": "الدلتا للسكر",
-      "name_en": "Delta Sugar Company",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "SEIGA",
-      "name": "السعودية المصرية للاستثمار والتمويل",
-      "grade": "P3",
-      "rawProbability": 82,
-      "guardedProbability": 58,
-      "finalScore": 83,
-      "historySessions": 7,
-      "priceState": "ok",
-      "notes": [
-        "تاريخ محدود 7/50"
-      ],
-      "name_ar": "السعودية المصرية للاستثمار والتمويل",
-      "name_en": "Saudi Egyptian Investment & Finance",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة",
-      "blocks": [
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "APSW",
-      "name": "يونيراب بولفارا",
-      "grade": "Blocked",
-      "rawProbability": 71,
-      "guardedProbability": 52,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "stale",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "سعر قديم",
-        "قيود: سعر قديم"
-      ],
-      "name_ar": "يونيراب بولفارا",
-      "name_en": "Unirab Polvara Spinning & Weaving",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | السعر قديم/غير مؤكد؛ لا يصلح لقرار سريع قبل تحديث المصدر.",
-      "executionAllowed": false,
-      "executionBlockReason": "السعر قديم/غير مؤكد؛ لا يصلح لقرار سريع قبل تحديث المصدر.",
-      "decision": "WAIT",
-      "blocks": [
-        "سعر قديم",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "NIPH",
-      "name": "النيل للأدوية",
-      "grade": "Blocked",
-      "rawProbability": 70,
-      "guardedProbability": 34,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ],
-      "name_ar": "النيل للأدوية",
-      "name_en": "El Nile Co. for Pharmaceuticals and Chemical Industries",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "HDBK",
-      "name": "بنك التعمير والإسكان",
-      "grade": "Blocked",
-      "rawProbability": 61,
-      "guardedProbability": 25,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ],
-      "name_ar": "بنك التعمير والإسكان",
-      "name_en": "Housing and Development Bank Egypt",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "GPIM",
-      "name": "جي بي آي للنمو العمراني",
-      "grade": "Blocked",
-      "rawProbability": 69,
-      "guardedProbability": 33,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ],
-      "name_ar": "جي بي آي للنمو العمراني",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "MHOT",
-      "name": "مصر للفنادق",
-      "grade": "Blocked",
-      "rawProbability": 60,
-      "guardedProbability": 24,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ],
-      "name_ar": "مصر للفنادق",
-      "name_en": "Misr Hotels Company",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "CPCI",
-      "name": "القاهرة للأدوية",
-      "grade": "Blocked",
-      "rawProbability": 68,
-      "guardedProbability": 32,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ],
-      "name_ar": "القاهرة للأدوية",
-      "name_en": "Kahira Pharmaceuticals & Chemical Industries",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "MPCO",
-      "name": "المنصورة للدواجن",
-      "grade": "Blocked",
-      "rawProbability": 67,
-      "guardedProbability": 31,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ],
-      "name_ar": "المنصورة للدواجن",
-      "name_en": "Mansoura Poultry",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 2/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "EBSC",
       "name": "أصول إي إس بي للوساطة",
       "grade": "Blocked",
-      "rawProbability": 64,
-      "guardedProbability": 28,
-      "finalScore": 45,
+      "rawProbability": 45,
+      "guardedProbability": 9,
+      "finalScore": 46,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -1467,51 +2516,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "أصول إي إس بي للوساطة",
-      "name_en": "Osool",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "PHAR",
-      "name": "إيبيكو",
-      "grade": "Blocked",
-      "rawProbability": 66,
-      "guardedProbability": 30,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
       ],
-      "name_ar": "إيبيكو",
-      "name_en": "Egyptian International Pharmaceutical Industries Company",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "PRMH",
       "name": "برايم القابضة",
       "grade": "Blocked",
-      "rawProbability": 64,
-      "guardedProbability": 28,
-      "finalScore": 45,
+      "rawProbability": 45,
+      "guardedProbability": 9,
+      "finalScore": 44,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -1519,155 +2551,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر"
       ],
-      "name_ar": "برايم القابضة",
-      "name_en": "Prime Holding",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "PHDC",
-      "name": "بالم هيلز للتعمير",
-      "grade": "Blocked",
-      "rawProbability": 66,
-      "guardedProbability": 30,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
       ],
-      "name_ar": "بالم هيلز للتعمير",
-      "name_en": "Palm Hills Developments S.A.E.",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "NCCW",
-      "name": "النصر للأعمال المدنية",
-      "grade": "Blocked",
-      "rawProbability": 65,
-      "guardedProbability": 29,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
       ],
-      "name_ar": "النصر للأعمال المدنية",
-      "name_en": "Nasr Company for Civil Works",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "ECAP",
-      "name": "العز للسيراميك والبورسلين الجوهرة",
-      "grade": "Blocked",
-      "rawProbability": 65,
-      "guardedProbability": 29,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر"
-      ],
-      "name_ar": "العز للسيراميك والبورسلين الجوهرة",
-      "name_en": "Al Ezz Ceramics & Porcelain",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "OCPH",
-      "name": "أكتوبر فارما",
-      "grade": "Blocked",
-      "rawProbability": 65,
-      "guardedProbability": 29,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ],
-      "name_ar": "أكتوبر فارما",
-      "name_en": "October Pharma",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "EFIC",
-      "name": "المالية والصناعية المصرية",
-      "grade": "Blocked",
-      "rawProbability": 65,
-      "guardedProbability": 29,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ],
-      "name_ar": "المالية والصناعية المصرية",
-      "name_en": "Egyptian Financial and Industrial SAE",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "RTVC",
       "name": "رمكو لإنشاء القرى السياحية",
       "grade": "Blocked",
-      "rawProbability": 64,
-      "guardedProbability": 28,
-      "finalScore": 45,
+      "rawProbability": 45,
+      "guardedProbability": 9,
+      "finalScore": 43,
       "historySessions": 7,
       "priceState": "conflict",
       "notes": [
@@ -1675,25 +2586,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر، R/R ضعيف"
       ],
-      "name_ar": "رمكو لإنشاء القرى السياحية",
-      "name_en": "Remco Tourism Villages Construction",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (7/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 7/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "BTFH",
       "name": "بلتون القابضة",
       "grade": "Blocked",
-      "rawProbability": 64,
-      "guardedProbability": 28,
-      "finalScore": 45,
+      "rawProbability": 45,
+      "guardedProbability": 9,
+      "finalScore": 42,
       "historySessions": 8,
       "priceState": "conflict",
       "notes": [
@@ -1701,25 +2621,34 @@
         "تعارض سعر",
         "قيود: تعارض سعر، R/R ضعيف"
       ],
-      "name_ar": "بلتون القابضة",
-      "name_en": "Beltone Holding S.A.E",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
+      ],
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     },
     {
       "symbol": "TMGH",
       "name": "مجموعة طلعت مصطفى",
       "grade": "Blocked",
-      "rawProbability": 64,
-      "guardedProbability": 28,
-      "finalScore": 45,
+      "rawProbability": 45,
+      "guardedProbability": 9,
+      "finalScore": 42,
       "historySessions": 8,
       "priceState": "conflict",
       "notes": [
@@ -1727,254 +2656,27 @@
         "تعارض سعر",
         "قيود: تعارض سعر، R/R ضعيف"
       ],
-      "name_ar": "مجموعة طلعت مصطفى",
-      "name_en": "Talaat Moustafa Group Holding",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
+      "originalConfidence": 0,
+      "finalConfidence": 0,
+      "historyRequiredSessions": 50,
       "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
+      "monitorOnly": true,
+      "goalDecisionGate": "BLOCKED",
+      "goalDecisionLabel": "مستبعد من الشراء",
       "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "ZMID",
-      "name": "زهراء المعادي",
-      "grade": "Blocked",
-      "rawProbability": 64,
-      "guardedProbability": 28,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
       ],
-      "name_ar": "زهراء المعادي",
-      "name_en": "Zahraa El Maadi Investment and Development",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "FWRY",
-      "name": "فوري لتكنولوجيا البنوك والمدفوعات الإلكترونية",
-      "grade": "Blocked",
-      "rawProbability": 64,
-      "guardedProbability": 28,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
+      "hardeningReasons": [
+        "تعارض سعر: لا يسمح بالتنفيذ",
+        "تاريخ غير كافٍ جدًا (8/50 جلسة): مراقبة فقط"
       ],
-      "name_ar": "فوري لتكنولوجيا البنوك والمدفوعات الإلكترونية",
-      "name_en": "Fawry for Banking Technology and Electronic Payments S.A.E.",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "ORHD",
-      "name": "أوراسكوم للتنمية مصر",
-      "grade": "Blocked",
-      "rawProbability": 65,
-      "guardedProbability": 29,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ],
-      "name_ar": "أوراسكوم للتنمية مصر",
-      "name_en": "Orascom Development Egypt S.A.E.",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "RAYA",
-      "name": "راية القابضة",
-      "grade": "Blocked",
-      "rawProbability": 65,
-      "guardedProbability": 29,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ],
-      "name_ar": "راية القابضة",
-      "name_en": "Raya Holding Company for Financial Investments",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "SWDY",
-      "name": "السويدي إليكتريك",
-      "grade": "Blocked",
-      "rawProbability": 63,
-      "guardedProbability": 27,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ],
-      "name_ar": "السويدي إليكتريك",
-      "name_en": "El Sewedy Electric Company",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "OLFI",
-      "name": "عبور لاند",
-      "grade": "Blocked",
-      "rawProbability": 63,
-      "guardedProbability": 27,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ],
-      "name_ar": "عبور لاند",
-      "name_en": "Obour Land for Food Industries",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "SKPC",
-      "name": "سيدي كرير للبتروكيماويات",
-      "grade": "Blocked",
-      "rawProbability": 63,
-      "guardedProbability": 27,
-      "finalScore": 45,
-      "historySessions": 8,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 8/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ],
-      "name_ar": "سيدي كرير للبتروكيماويات",
-      "name_en": "Sidi Kerir Petrochemicals",
-      "historyCompletenessPct": 16,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 8/50"
-      ]
-    },
-    {
-      "symbol": "VLMRA",
-      "name": "فالمور القابضة",
-      "grade": "Blocked",
-      "rawProbability": 63,
-      "guardedProbability": 27,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ],
-      "name_ar": "فالمور القابضة",
-      "name_en": "Valmore Holding S.A.E.",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
-    },
-    {
-      "symbol": "MCRO",
-      "name": "ماكرو جروب",
-      "grade": "Blocked",
-      "rawProbability": 63,
-      "guardedProbability": 27,
-      "finalScore": 45,
-      "historySessions": 7,
-      "priceState": "conflict",
-      "notes": [
-        "تاريخ محدود 7/50",
-        "تعارض سعر",
-        "قيود: تعارض سعر، R/R ضعيف"
-      ],
-      "name_ar": "ماكرو جروب",
-      "name_en": "Macro Group Pharmaceuticals Macro Capital",
-      "historyCompletenessPct": 14,
-      "reason": "تم خفض الثقة لعدم اكتمال سجل 50 جلسة | تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "executionAllowed": false,
-      "executionBlockReason": "تعارض سعر بين المصادر؛ ممنوع تحويله إلى قرار تنفيذ قبل مراجعة السعر.",
-      "decision": "WAIT",
-      "blocks": [
-        "تعارض سعر",
-        "تاريخ غير مكتمل 7/50"
-      ]
+      "reason": "تعارض سعر: لا يسمح بالتنفيذ | تاريخ غير كافٍ جدًا 8/50 جلسة : مراقبة فقط",
+      "signal": "INVALID",
+      "decision": "NO_TRADE",
+      "action": "NO_TRADE",
+      "recommendation": "لا شراء"
     }
   ],
-  "note": "Explains why confidence should be guarded while historical depth or price freshness is incomplete.",
-  "qualityHardeningApplied": true,
-  "qualityHardeningAt": "2026-07-08T20:07:07.499Z"
+  "note": "Explains why confidence should be guarded while historical depth or price freshness is incomplete."
 }
