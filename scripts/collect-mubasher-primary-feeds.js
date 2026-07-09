@@ -177,7 +177,7 @@ async function fetchText(url, label) {
       signal: ctrl.signal,
       redirect: 'follow',
       headers: {
-        'user-agent': 'Mozilla/5.0 (compatible; RAS-EGX-GOAL/1.2; +https://github.com/rasheadsca-star/RAS-EGX0.1)',
+        'user-agent': 'Mozilla/5.0 (compatible; RAS-EGX-GOAL/1.3; +https://github.com/rasheadsca-star/RAS-EGX0.1)',
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,application/json;q=0.8,*/*;q=0.7',
         'accept-language': 'en-US,en;q=0.9,ar;q=0.8',
         'cache-control': 'no-cache',
@@ -216,12 +216,29 @@ function parseBulkToolRows(html, tool, universeSet) {
   return rows;
 }
 
+function parseValueFromText(text, labelVariants) {
+  const labels = Array.isArray(labelVariants) ? labelVariants : [labelVariants];
+  const compact = String(text || '').replace(/\s+/g, ' ').trim();
+  for (const label of labels) {
+    // Mubasher sometimes puts the label and value in separate tags, and after
+    // stripping HTML they become one long line. Accept a small gap between the
+    // label and the first numeric value.
+    const re = new RegExp(`${escapeRegExp(label)}(?:\\s|[:：]|&nbsp;|<[^>]+>){0,20}[^0-9+\\-−]{0,80}([-+−]?\\d[\\d,]*(?:\\.\\d+)?%?)`, 'i');
+    const m = compact.match(re);
+    if (m) {
+      const n = finite(m[1]);
+      if (n !== null) return n;
+    }
+  }
+  return null;
+}
+
 function parseValueAfterLabel(lines, labelVariants) {
   const labels = Array.isArray(labelVariants) ? labelVariants : [labelVariants];
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     for (const label of labels) {
-      const re = new RegExp(`${escapeRegExp(label)}\\s+([-+]?\\d[\\d,]*(?:\\.\\d+)?%?)`, 'i');
+      const re = new RegExp(`${escapeRegExp(label)}\\s+([-+−]?\\d[\\d,]*(?:\\.\\d+)?%?)`, 'i');
       const m = line.match(re);
       if (m) return finite(m[1]);
       if (new RegExp(`^${escapeRegExp(label)}$`, 'i').test(line) && lines[i + 1]) {
@@ -230,7 +247,9 @@ function parseValueAfterLabel(lines, labelVariants) {
       }
     }
   }
-  return null;
+  // Critical v1.3 fallback: support/resistance pages often collapse into one
+  // long text line under Node fetch, so the old line-by-line parser returned 0%.
+  return parseValueFromText(lines.join(' '), labels);
 }
 
 function parseLineAfter(lines, labelRegex) {
@@ -295,27 +314,50 @@ function parseProfile(symbol, html, url) {
 
 function parseSupportResistance(symbol, html, url) {
   const lines = linesOf(html);
+  const allText = stripHtml(html).replace(/\s+/g, ' ').trim();
   const lineText = lines.join(' ');
-  const sectionIdx = lines.findIndex(x => /^##\s*Support and resistance/i.test(x) || /^Support and resistance$/i.test(x));
-  const scoped = sectionIdx >= 0 ? lines.slice(sectionIdx, Math.min(lines.length, sectionIdx + 35)) : lines;
+  const sectionIdx = lines.findIndex(x => /Support and resistance/i.test(x));
+  let scoped = sectionIdx >= 0 ? lines.slice(sectionIdx, Math.min(lines.length, sectionIdx + 55)) : lines;
+
+  // If the HTML was collapsed into one long line, isolate the Support and
+  // resistance section from the full text. This is the core fix for SR 0%.
+  const srStart = allText.search(/Support and resistance/i);
+  const srEnd = srStart >= 0 ? allText.slice(srStart).search(/\b(Trending|Markets|News|Companies|Analysis Tools)\b/i) : -1;
+  const sectionText = srStart >= 0
+    ? allText.slice(srStart, srEnd > 0 ? srStart + srEnd : Math.min(allText.length, srStart + 1500))
+    : allText;
+  if (sectionIdx < 0 && sectionText) scoped = [sectionText];
 
   const price = (() => {
     if (sectionIdx >= 0) {
-      for (let i = sectionIdx + 1; i < Math.min(lines.length, sectionIdx + 8); i++) {
+      for (let i = sectionIdx + 1; i < Math.min(lines.length, sectionIdx + 10); i++) {
         const n = finite(lines[i]);
         if (n !== null) return n;
       }
     }
-    return null;
+    const m = sectionText.match(/Support and resistance\s+([-+−]?\d[\d,]*(?:\.\d+)?)/i);
+    return m ? finite(m[1]) : null;
   })();
 
-  const volume = parseValueAfterLabel(scoped, 'Volume');
-  const priceToPivotPct = parseValueAfterLabel(scoped, 'Price to pivot point');
-  const resistance2 = parseValueAfterLabel(scoped, ['Second resistance level (r2)', 'Second resistance level']);
-  const resistance1 = parseValueAfterLabel(scoped, ['First resistance level (r1)', 'First resistance level']);
-  const pivotPoint = parseValueAfterLabel(scoped, ['Pivot point']);
-  const support1 = parseValueAfterLabel(scoped, ['First support level (s1)', 'First support level (d1)', 'First support level']);
-  const support2 = parseValueAfterLabel(scoped, ['Second support level (s2)', 'Second support level (d1)', 'Second support level']);
+  const volume = first(parseValueAfterLabel(scoped, 'Volume'), parseValueFromText(sectionText, 'Volume'));
+  const priceToPivotPct = first(parseValueAfterLabel(scoped, 'Price to pivot point'), parseValueFromText(sectionText, 'Price to pivot point'));
+  const resistance2 = first(
+    parseValueAfterLabel(scoped, ['Second resistance level (r2)', 'Second resistance level']),
+    parseValueFromText(sectionText, ['Second resistance level (r2)', 'Second resistance level'])
+  );
+  const resistance1 = first(
+    parseValueAfterLabel(scoped, ['First resistance level (r1)', 'First resistance level']),
+    parseValueFromText(sectionText, ['First resistance level (r1)', 'First resistance level'])
+  );
+  const pivotPoint = first(parseValueAfterLabel(scoped, ['Pivot point']), parseValueFromText(sectionText, ['Pivot point']));
+  const support1 = first(
+    parseValueAfterLabel(scoped, ['First support level (s1)', 'First support level (d1)', 'First support level']),
+    parseValueFromText(sectionText, ['First support level (s1)', 'First support level (d1)', 'First support level'])
+  );
+  const support2 = first(
+    parseValueAfterLabel(scoped, ['Second support level (s2)', 'Second support level (d1)', 'Second support level']),
+    parseValueFromText(sectionText, ['Second support level (s2)', 'Second support level (d1)', 'Second support level'])
+  );
   const lastUpdateLine = lines.find(x => /^Last update:/i.test(x)) || '';
 
   return {
@@ -330,7 +372,7 @@ function parseSupportResistance(symbol, html, url) {
     pivotPoint: finite(pivotPoint),
     support1: finite(support1),
     support2: finite(support2),
-    delayed: /Data is delayed 15 minutes|All data are 15 minutes late/i.test(lineText),
+    delayed: /Data is delayed 15 minutes|All data are 15 minutes late/i.test(lineText || allText),
     parsed: Boolean(finite(resistance1) || finite(support1) || finite(pivotPoint)),
   };
 }
@@ -449,7 +491,7 @@ function buildDerivedFeeds(rows, bulkResults) {
   return {
     volume: {
       ok: volumeRows.length > 0,
-      engine: 'mubasher_primary_volume_from_stock_pages_v1_2',
+      engine: 'mubasher_primary_volume_from_stock_pages_v1_3',
       generatedAt: RUN_AT,
       sourceUrl: BULK_TOOLS.find(x => x.group === 'volume')?.url,
       sourceMode: bulk.volume?.ok ? 'bulk_analysis_tool' : 'profile_page_primary_fallback',
@@ -460,7 +502,7 @@ function buildDerivedFeeds(rows, bulkResults) {
     },
     liquidity: {
       ok: liquidityRows.length > 0,
-      engine: 'mubasher_primary_liquidity_from_stock_turnover_v1_2',
+      engine: 'mubasher_primary_liquidity_from_stock_turnover_v1_3',
       generatedAt: RUN_AT,
       sourceUrl: BULK_TOOLS.find(x => x.group === 'liquidity')?.url,
       sourceMode: bulk.liquidity?.ok ? 'bulk_analysis_tool' : 'profile_page_turnover_primary_fallback',
@@ -471,7 +513,7 @@ function buildDerivedFeeds(rows, bulkResults) {
     },
     supportResistance: {
       ok: srRows.length > 0,
-      engine: 'mubasher_primary_support_resistance_from_stock_pages_v1_2',
+      engine: 'mubasher_primary_support_resistance_from_stock_pages_v1_3',
       generatedAt: RUN_AT,
       sourceUrl: BULK_TOOLS.find(x => x.group === 'supportResistance')?.url,
       sourceMode: bulk.supportResistance?.ok ? 'bulk_analysis_tool' : 'per_symbol_support_resistance_page_primary_fallback',
@@ -600,17 +642,23 @@ function makeSummary(rows, bulkResults, marketMerge, staleFallback = null) {
   const current = rows.filter(r => r.currentRunOk).length;
   const priceCoveragePct = Number((price / Math.max(1, total) * 100).toFixed(1));
   const srCoveragePct = Number((sr / Math.max(1, total) * 100).toFixed(1));
-  const ok = total > 0 && priceCoveragePct >= MIN_PRICE_COVERAGE && srCoveragePct >= MIN_SR_COVERAGE;
+  const srMeetsThreshold = srCoveragePct >= MIN_SR_COVERAGE;
+  // CI should fail only when Mubasher price coverage itself is unusable.
+  // Missing SR blocks execution inside the decision gate, but should not stop
+  // the whole data refresh job and hide the successful price/liquidity update.
+  const ok = total > 0 && priceCoveragePct >= MIN_PRICE_COVERAGE;
   return {
     generatedAt: RUN_AT,
     ok,
-    engine: 'mubasher_primary_feeds_collector_v1_2',
+    engine: 'mubasher_primary_feeds_collector_v1_3',
     totalSymbols: total,
     currentRunSymbols: current,
     staleFallbackUsed: Boolean(staleFallback),
     staleAgeHours: staleFallback?.staleAgeHours ?? null,
     minPriceCoveragePct: MIN_PRICE_COVERAGE,
     minSupportResistanceCoveragePct: MIN_SR_COVERAGE,
+    supportResistanceMeetsThreshold: srMeetsThreshold,
+    supportResistanceRequiredForExecution: true,
     priceSymbols: price,
     volumeSymbols: volume,
     turnoverSymbols: turnover,
@@ -630,7 +678,8 @@ function makeSummary(rows, bulkResults, marketMerge, staleFallback = null) {
       note: x.note,
     })),
     marketMerge,
-    failureReason: ok ? '' : `Mubasher mandatory coverage below threshold: price ${priceCoveragePct}% / SR ${srCoveragePct}%.`,
+    warning: srMeetsThreshold ? '' : `Mubasher support/resistance coverage below execution threshold: SR ${srCoveragePct}%. Recommendations with missing SR remain monitor-only.`,
+    failureReason: ok ? '' : `Mubasher mandatory price coverage below threshold: price ${priceCoveragePct}%.`,
   };
 }
 
@@ -638,7 +687,7 @@ async function main() {
   fs.mkdirSync(DATA_DIR, { recursive: true });
   const universe = buildUniverse();
   if (!universe.length) {
-    const report = { ok: false, engine: 'mubasher_primary_feeds_collector_v1_2', generatedAt: RUN_AT, error: 'No universe symbols found in data files.' };
+    const report = { ok: false, engine: 'mubasher_primary_feeds_collector_v1_3', generatedAt: RUN_AT, error: 'No universe symbols found in data files.' };
     writeJson(p('data/mubasher-primary-fields-report.json'), report);
     console.error(report.error);
     process.exit(2);
@@ -676,7 +725,7 @@ async function main() {
   const summary = makeSummary(primaryRows, bulkResults, marketMerge, staleFallback);
   const primaryReport = {
     ok: summary.ok || Boolean(staleFallback?.staleOk),
-    engine: 'mubasher_primary_feeds_collector_v1_2',
+    engine: 'mubasher_primary_feeds_collector_v1_3',
     generatedAt: RUN_AT,
     delayed: true,
     note: 'Primary feed uses Mubasher stock pages and per-symbol support-resistance pages. Bulk analysis-tool pages are audited and used only if raw rows are available.',
@@ -687,6 +736,7 @@ async function main() {
   writeJson(p('data/mubasher-primary-fields-report.json'), primaryReport);
 
   console.log('Mubasher primary summary:', JSON.stringify(summary, null, 2));
+  if (summary.warning) console.warn(summary.warning);
   if (!primaryReport.ok) {
     console.error(summary.failureReason || 'Mubasher mandatory primary feed failed.');
     process.exit(2);
@@ -694,7 +744,7 @@ async function main() {
 }
 
 main().catch(e => {
-  const report = { ok: false, engine: 'mubasher_primary_feeds_collector_v1_2', generatedAt: RUN_AT, error: String(e && e.stack || e) };
+  const report = { ok: false, engine: 'mubasher_primary_feeds_collector_v1_3', generatedAt: RUN_AT, error: String(e && e.stack || e) };
   writeJson(p('data/mubasher-primary-fields-report.json'), report);
   console.error(e);
   process.exit(2);
