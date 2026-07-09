@@ -16,6 +16,13 @@ concurrency:
 jobs:
   update-market-data:
     runs-on: ubuntu-latest
+    env:
+      EGX_MUBASHER_CONCURRENCY: '4'
+      EGX_MUBASHER_TIMEOUT_MS: '25000'
+      EGX_MUBASHER_REQUEST_DELAY_MS: '120'
+      EGX_MUBASHER_MIN_PRICE_COVERAGE: '45'
+      EGX_MUBASHER_MIN_SR_COVERAGE: '25'
+      EGX_MUBASHER_STALE_OK_HOURS: '36'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -37,6 +44,9 @@ jobs:
 
       - name: Mandatory market collector
         run: node scripts/fetch-market-data.js
+
+      - name: Mandatory Mubasher primary feeds
+        run: npm run mubasher:primary
 
       - name: Optional legacy intelligence builders
         run: |
@@ -96,17 +106,17 @@ jobs:
           if [ -f scripts/build-daily-decision-brief.js ]; then node scripts/build-daily-decision-brief.js; else echo "::warning::build-daily-decision-brief.js missing"; fi
 
       - name: /GOAL integrated quality and decision gate
-        run: npm run goal
+        run: npm run goal:decision
 
       - name: Commit generated market data and GOAL reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/*.json VERSION.json package.json index.html app.js styles.css scripts/*.js .github/workflows/update-market-data.yml || true
+          git add data/*.json VERSION.json package.json scripts/*.js .github/workflows/update-market-data.yml || true
           if git diff --cached --quiet; then
             echo "No generated data changes to commit."
           else
-            git commit -m "Apply integrated EGX GOAL decision center"
+            git commit -m "Use Mubasher primary feeds in GOAL decision center"
             git pull --rebase
             git push
           fi
