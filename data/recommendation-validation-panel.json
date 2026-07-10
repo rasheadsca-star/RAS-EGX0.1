@@ -1,19 +1,19 @@
 {
   "ok": true,
   "engine": "v8_9_8_recommendation_validation_panel",
-  "generatedAt": "2026-07-09T15:37:47.327Z",
+  "generatedAt": "2026-07-10T01:59:51.961Z",
   "summary": {
     "totalSignals": 224,
-    "evaluated": 112,
-    "open": 112,
-    "fullSuccess": 105,
+    "evaluated": 111,
+    "open": 113,
+    "fullSuccess": 104,
     "target1Hit": 77,
-    "target2Hit": 28,
+    "target2Hit": 27,
     "stopHit": 7,
-    "successRatePct": 93.8,
+    "successRatePct": 93.7,
     "stopRatePct": 6.3,
-    "avgOpenReturnPct": 0.97,
-    "avgMaxGainPct": 0.95,
+    "avgOpenReturnPct": 0.99,
+    "avgMaxGainPct": 0.97,
     "avgDrawdownPct": 0,
     "validationIndex": 61.6,
     "grade": "متوسط",
@@ -1727,6 +1727,25 @@
       "maxGainPct": -1.96,
       "maxDrawdownPct": 0,
       "openReturnPct": -1.96,
+      "confidence": 48,
+      "source": "merged"
+    },
+    {
+      "symbol": "EGSA",
+      "name": "نايل سات",
+      "grade": "Watch",
+      "action": "مراقبة فقط",
+      "entry": 8.71,
+      "current": 9.08,
+      "target1": 9.398,
+      "target2": 9.68,
+      "stopLoss": 8.579,
+      "status": "open",
+      "statusLabel": "مفتوحة",
+      "score": 50,
+      "maxGainPct": 4.25,
+      "maxDrawdownPct": 0,
+      "openReturnPct": 4.25,
       "confidence": 48,
       "source": "merged"
     },
@@ -4220,25 +4239,6 @@
       "source": "merged"
     },
     {
-      "symbol": "EGSA",
-      "name": "نايل سات",
-      "grade": "Watch",
-      "action": "مراقبة فقط",
-      "entry": 0.97,
-      "current": 9.08,
-      "target1": 1.035,
-      "target2": 1.066,
-      "stopLoss": 0.94,
-      "status": "target2",
-      "statusLabel": "وصل هدف 2",
-      "score": 100,
-      "maxGainPct": 836.08,
-      "maxDrawdownPct": 0,
-      "openReturnPct": null,
-      "confidence": 45,
-      "source": "merged"
-    },
-    {
       "symbol": "SEIG",
       "name": "السعودية المصرية للاستثمار والتمويل",
       "grade": "",
@@ -4277,6 +4277,8 @@
       "source": "merged"
     }
   ],
-  "recommendations": [],
+  "recommendations": [
+    "لا تعتبر التوصيات المفتوحة فاشلة؛ انتظر الوصول إلى هدف أو وقف أو نهاية فترة التقييم."
+  ],
   "interpretation": "المؤشر يقيس النتائج المحسومة فقط، ويعرض المفتوح منفصلًا حتى لا تتحول التوصيات قيد المتابعة إلى فشل وهمي."
 }
