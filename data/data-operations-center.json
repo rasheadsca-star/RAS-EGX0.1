@@ -1,13 +1,13 @@
 {
   "ok": true,
   "engine": "v8_9_1_data_operations_center_clear",
-  "generatedAt": "2026-07-14T10:14:28.845Z",
-  "score": 22,
+  "generatedAt": "2026-07-14T14:18:25.157Z",
+  "score": 14,
   "state": "bad",
   "summary": {
-    "ok": 2,
-    "warn": 3,
-    "bad": 3,
+    "ok": 3,
+    "warn": 1,
+    "bad": 4,
     "total": 8
   },
   "checks": [
@@ -15,23 +15,23 @@
       "id": "fetcher",
       "name": "جلب البيانات",
       "state": "ok",
-      "value": "accepted 209 صف",
-      "message": "مصدر mubasher_symbol_pages_precise_enriched قبل 209 صف",
+      "value": "accepted 213 صف",
+      "message": "مصدر mubasher_symbol_pages_precise_enriched قبل 213 صف",
       "action": "متابعة بدون Reset"
     },
     {
       "id": "coverage",
       "name": "تغطية السوق",
-      "state": "warn",
-      "value": "93.3%",
-      "message": "تغطية مقبولة مع نقص محدود",
-      "action": "تشغيل Workflow لاحقًا عند الحاجة"
+      "state": "ok",
+      "value": "95.1%",
+      "message": "تغطية ممتازة",
+      "action": "متابعة"
     },
     {
       "id": "price",
       "name": "تدقيق الأسعار",
       "state": "bad",
-      "value": "184 تعارض / 7 قديم",
+      "value": "181 تعارض / 10 قديم",
       "message": "يوجد تعارض أسعار مؤثر",
       "action": "افتح تدقيق الأسعار"
     },
@@ -55,16 +55,16 @@
       "id": "alerts",
       "name": "مركز التنبيهات",
       "state": "bad",
-      "value": "عاجل 20 / مهم 1 / فرص 8 / مراقبة 1",
+      "value": "عاجل 20 / مهم 1 / فرص 8 / مراقبة 0",
       "message": "ابدأ بالتنبيهات العاجلة",
       "action": "افتح مركز التنبيهات"
     },
     {
       "id": "confidence_guard",
       "name": "حارس الثقة",
-      "state": "warn",
-      "value": "62%",
-      "message": "تاريخ 6.8/50 وتغطية 95.1%",
+      "state": "bad",
+      "value": "59%",
+      "message": "تاريخ 6.8/50 وتغطية 93.3%",
       "action": "راجع تفسير الثقة قبل الاعتماد على النتائج"
     },
     {
