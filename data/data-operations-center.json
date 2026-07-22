@@ -1,13 +1,13 @@
 {
   "ok": true,
   "engine": "v8_9_1_data_operations_center_clear",
-  "generatedAt": "2026-07-21T14:36:17.630Z",
-  "score": 14,
+  "generatedAt": "2026-07-22T10:41:17.689Z",
+  "score": 28,
   "state": "bad",
   "summary": {
     "ok": 3,
-    "warn": 1,
-    "bad": 4,
+    "warn": 2,
+    "bad": 3,
     "total": 8
   },
   "checks": [
@@ -31,7 +31,7 @@
       "id": "price",
       "name": "تدقيق الأسعار",
       "state": "bad",
-      "value": "185 تعارض / 8 قديم",
+      "value": "188 تعارض / 6 قديم",
       "message": "يوجد تعارض أسعار مؤثر",
       "action": "افتح تدقيق الأسعار"
     },
@@ -55,16 +55,16 @@
       "id": "alerts",
       "name": "مركز التنبيهات",
       "state": "bad",
-      "value": "عاجل 20 / مهم 1 / فرص 8 / مراقبة 0",
+      "value": "عاجل 20 / مهم 1 / فرص 8 / مراقبة 1",
       "message": "ابدأ بالتنبيهات العاجلة",
       "action": "افتح مركز التنبيهات"
     },
     {
       "id": "confidence_guard",
       "name": "حارس الثقة",
-      "state": "bad",
-      "value": "59%",
-      "message": "تاريخ 6.8/50 وتغطية 94.6%",
+      "state": "warn",
+      "value": "62%",
+      "message": "تاريخ 6.8/50 وتغطية 95.5%",
       "action": "راجع تفسير الثقة قبل الاعتماد على النتائج"
     },
     {
