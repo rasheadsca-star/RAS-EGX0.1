@@ -1,18 +1,18 @@
 {
   "ok": true,
   "engine": "v9_6_portfolio_decision_rules",
-  "generatedAt": "2026-08-05T10:52:18.289Z",
+  "generatedAt": "2026-08-05T14:37:55.648Z",
   "total": 221,
   "rules": [
     {
-      "symbol": "ETRS",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 64,
-      "expectedReturnPct": 3.73,
-      "rr": 1.87,
+      "symbol": "VALU",
+      "grade": "P2",
+      "action": "hold_or_add_on_confirmation",
+      "targetProbability": 68,
+      "expectedReturnPct": 1.84,
+      "rr": 1.1,
       "priceState": "ok",
-      "why": "احتمال الهدف 64% | ربح هدف1 8.3% | عائد متوقع 3.7% | R/R 1.87 | السعر مدقق | تاريخ 7/50"
+      "why": "احتمال الهدف 68% | ربح هدف1 4.8% | عائد متوقع 1.8% | R/R 1.10 | السعر مدقق | تاريخ 7/50"
     },
     {
       "symbol": "ICID",
@@ -35,44 +35,34 @@
       "why": "احتمال الهدف 63% | ربح هدف1 4.5% | عائد متوقع 0.6% | R/R 0.75 | السعر مدقق | تاريخ 7/50"
     },
     {
-      "symbol": "EMFD",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 61,
-      "expectedReturnPct": 0.17,
-      "rr": 0.74,
-      "priceState": "ok",
-      "why": "احتمال الهدف 61% | ربح هدف1 2.0% | عائد متوقع 0.2% | R/R 0.74 | السعر مدقق | تاريخ 7/50"
-    },
-    {
-      "symbol": "EGSA",
+      "symbol": "MENA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 59,
-      "expectedReturnPct": 1.04,
-      "rr": 1.39,
+      "expectedReturnPct": -0.18,
+      "rr": 0.64,
       "priceState": "ok",
-      "why": "احتمال الهدف 59% | ربح هدف1 3.5% | عائد متوقع 1.0% | R/R 1.39 | السعر مدقق | تاريخ 0/50"
+      "why": "احتمال الهدف 59% | ربح هدف1 3.5% | عائد متوقع -0.2% | R/R 0.64 | السعر مدقق | تاريخ 7/50 | قيود: R/R ضعيف"
     },
     {
       "symbol": "ATLC",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 58,
-      "expectedReturnPct": -0.68,
-      "rr": 0.53,
+      "targetProbability": 59,
+      "expectedReturnPct": -0.4,
+      "rr": 0.58,
       "priceState": "ok",
-      "why": "احتمال الهدف 58% | ربح هدف1 3.2% | عائد متوقع -0.7% | R/R 0.53 | السعر مدقق | تاريخ 7/50 | قيود: R/R ضعيف"
+      "why": "احتمال الهدف 59% | ربح هدف1 3.4% | عائد متوقع -0.4% | R/R 0.58 | السعر مدقق | تاريخ 7/50 | قيود: R/R ضعيف"
     },
     {
-      "symbol": "EAST",
+      "symbol": "EGSA",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 50,
-      "expectedReturnPct": 1.98,
-      "rr": 8.94,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 50% | ربح هدف1 4.4% | عائد متوقع 2.0% | R/R 8.94 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
+      "targetProbability": 58,
+      "expectedReturnPct": 0.61,
+      "rr": 1.03,
+      "priceState": "ok",
+      "why": "احتمال الهدف 58% | ربح هدف1 3.5% | عائد متوقع 0.6% | R/R 1.03 | السعر مدقق | تاريخ 0/50"
     },
     {
       "symbol": "SEIGA",
@@ -85,14 +75,24 @@
       "why": "احتمال الهدف 58% | ربح هدف1 4.4% | عائد متوقع 0.0% | R/R 0.74 | السعر مدقق | تاريخ 7/50"
     },
     {
-      "symbol": "VALU",
+      "symbol": "EAST",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 51,
-      "expectedReturnPct": 0.95,
-      "rr": 1.27,
+      "targetProbability": 49,
+      "expectedReturnPct": 1.31,
+      "rr": 3.48,
       "priceState": "conflict",
-      "why": "احتمال الهدف 51% | ربح هدف1 7.6% | عائد متوقع 0.9% | R/R 1.27 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
+      "why": "احتمال الهدف 49% | ربح هدف1 3.8% | عائد متوقع 1.3% | R/R 3.48 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
+    },
+    {
+      "symbol": "ETRS",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 48,
+      "expectedReturnPct": 2.46,
+      "rr": 2.46,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 48% | ربح هدف1 9.2% | عائد متوقع 2.5% | R/R 2.46 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
     },
     {
       "symbol": "KORA",
@@ -105,44 +105,14 @@
       "why": "احتمال الهدف 48% | ربح هدف1 6.0% | عائد متوقع 2.4% | R/R 6.67 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
     },
     {
-      "symbol": "ISMQ",
+      "symbol": "GBCO",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 48,
-      "expectedReturnPct": 1.99,
-      "rr": 2.33,
+      "targetProbability": 45,
+      "expectedReturnPct": 1.35,
+      "rr": 2.84,
       "priceState": "conflict",
-      "why": "احتمال الهدف 48% | ربح هدف1 7.7% | عائد متوقع 2.0% | R/R 2.33 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
-    },
-    {
-      "symbol": "SVCE",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 46,
-      "expectedReturnPct": 1.57,
-      "rr": 1.78,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 46% | ربح هدف1 9.9% | عائد متوقع 1.6% | R/R 1.78 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
-    },
-    {
-      "symbol": "ORAS",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 46,
-      "expectedReturnPct": 1.17,
-      "rr": 2.8,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 46% | ربح هدف1 4.4% | عائد متوقع 1.2% | R/R 2.80 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
-    },
-    {
-      "symbol": "EASB",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 44,
-      "expectedReturnPct": 2.85,
-      "rr": 5.08,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 44% | ربح هدف1 8.6% | عائد متوقع 2.8% | R/R 5.08 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
+      "why": "احتمال الهدف 45% | ربح هدف1 5.3% | عائد متوقع 1.4% | R/R 2.84 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
     },
     {
       "symbol": "OBRI",
@@ -159,80 +129,90 @@
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 40,
-      "expectedReturnPct": 39.65,
-      "rr": 18.02,
+      "expectedReturnPct": 38.92,
+      "rr": 17.72,
       "priceState": "conflict",
-      "why": "احتمال الهدف 40% | ربح هدف1 108.1% | عائد متوقع 39.6% | R/R 18.02 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
+      "why": "احتمال الهدف 40% | ربح هدف1 106.3% | عائد متوقع 38.9% | R/R 17.72 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
+    },
+    {
+      "symbol": "ISMQ",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 45,
+      "expectedReturnPct": 0.33,
+      "rr": 1.38,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 45% | ربح هدف1 6.3% | عائد متوقع 0.3% | R/R 1.38 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
+    },
+    {
+      "symbol": "ORAS",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 45,
+      "expectedReturnPct": 0.27,
+      "rr": 1.47,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 45% | ربح هدف1 3.5% | عائد متوقع 0.3% | R/R 1.47 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
     },
     {
       "symbol": "SNFC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 40,
-      "expectedReturnPct": 1.73,
-      "rr": 2.22,
+      "expectedReturnPct": 1.89,
+      "rr": 2.29,
       "priceState": "conflict",
-      "why": "احتمال الهدف 40% | ربح هدف1 13.3% | عائد متوقع 1.7% | R/R 2.22 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
+      "why": "احتمال الهدف 40% | ربح هدف1 13.7% | عائد متوقع 1.9% | R/R 2.29 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
     },
     {
-      "symbol": "ARCC",
+      "symbol": "SVCE",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 44,
-      "expectedReturnPct": -2.12,
-      "rr": 0.53,
+      "expectedReturnPct": -1.02,
+      "rr": 0.97,
       "priceState": "conflict",
-      "why": "احتمال الهدف 44% | ربح هدف1 3.5% | عائد متوقع -2.1% | R/R 0.53 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 44% | ربح هدف1 7.5% | عائد متوقع -1.0% | R/R 0.97 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
     },
     {
       "symbol": "RAYA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 43,
-      "expectedReturnPct": -1.22,
-      "rr": 0.84,
+      "expectedReturnPct": -0.95,
+      "rr": 0.93,
       "priceState": "conflict",
-      "why": "احتمال الهدف 43% | ربح هدف1 4.9% | عائد متوقع -1.2% | R/R 0.84 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
+      "why": "احتمال الهدف 43% | ربح هدف1 5.2% | عائد متوقع -1.0% | R/R 0.93 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
     },
     {
-      "symbol": "SCTS",
+      "symbol": "EASB",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 42,
-      "expectedReturnPct": -1.91,
-      "rr": 0.94,
+      "targetProbability": 41,
+      "expectedReturnPct": 0.27,
+      "rr": 1.61,
       "priceState": "conflict",
-      "why": "احتمال الهدف 42% | ربح هدف1 9.5% | عائد متوقع -1.9% | R/R 0.94 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
+      "why": "احتمال الهدف 41% | ربح هدف1 6.2% | عائد متوقع 0.3% | R/R 1.61 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
     },
     {
       "symbol": "HDBK",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 34,
-      "expectedReturnPct": 32.15,
-      "rr": 17.7,
+      "expectedReturnPct": 32.25,
+      "rr": 17.75,
       "priceState": "conflict",
-      "why": "احتمال الهدف 34% | ربح هدف1 106.2% | عائد متوقع 32.2% | R/R 17.70 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
+      "why": "احتمال الهدف 34% | ربح هدف1 106.5% | عائد متوقع 32.3% | R/R 17.75 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر"
     },
     {
       "symbol": "MHOT",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": 30.03,
-      "rr": 17.2,
+      "expectedReturnPct": 29.76,
+      "rr": 17.06,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 103.2% | عائد متوقع 30.0% | R/R 17.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
-    },
-    {
-      "symbol": "EBSC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 38,
-      "expectedReturnPct": -1.57,
-      "rr": 1.27,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 38% | ربح هدف1 14.7% | عائد متوقع -1.6% | R/R 1.27 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
+      "why": "احتمال الهدف 33% | ربح هدف1 102.4% | عائد متوقع 29.8% | R/R 17.06 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
     },
     {
       "symbol": "BIOC",
@@ -245,174 +225,164 @@
       "why": "احتمال الهدف 40% | ربح هدف1 3.5% | عائد متوقع -2.2% | R/R 0.58 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
+      "symbol": "AFMC",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 40,
+      "expectedReturnPct": -2.2,
+      "rr": 0.58,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 40% | ربح هدف1 3.5% | عائد متوقع -2.2% | R/R 0.58 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "SCTS",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 37,
+      "expectedReturnPct": -2.4,
+      "rr": 1.04,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 37% | ربح هدف1 10.1% | عائد متوقع -2.4% | R/R 1.04 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
+    },
+    {
+      "symbol": "EBSC",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 37,
+      "expectedReturnPct": -2.85,
+      "rr": 1.08,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 37% | ربح هدف1 13.5% | عائد متوقع -2.8% | R/R 1.08 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
+    },
+    {
+      "symbol": "EMFD",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 39,
+      "expectedReturnPct": -3.09,
+      "rr": 0.48,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 39% | ربح هدف1 3.5% | عائد متوقع -3.1% | R/R 0.48 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
       "symbol": "CNFN",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 39,
-      "expectedReturnPct": -2.75,
-      "rr": 0.52,
+      "expectedReturnPct": -3.1,
+      "rr": 0.48,
       "priceState": "conflict",
-      "why": "احتمال الهدف 39% | ربح هدف1 3.5% | عائد متوقع -2.8% | R/R 0.52 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 39% | ربح هدف1 3.5% | عائد متوقع -3.1% | R/R 0.48 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "EGTS",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 39,
+      "expectedReturnPct": -2.89,
+      "rr": 0.34,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 39% | ربح هدف1 2.1% | عائد متوقع -2.9% | R/R 0.34 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "AREH",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 39,
-      "expectedReturnPct": -2.83,
-      "rr": 0.51,
+      "expectedReturnPct": -3.88,
+      "rr": 0.41,
       "priceState": "conflict",
-      "why": "احتمال الهدف 39% | ربح هدف1 3.5% | عائد متوقع -2.8% | R/R 0.51 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 39% | ربح هدف1 3.5% | عائد متوقع -3.9% | R/R 0.41 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "QNBE",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 39,
-      "expectedReturnPct": -4.79,
-      "rr": 0.35,
+      "expectedReturnPct": -5.26,
+      "rr": 0.32,
       "priceState": "conflict",
-      "why": "احتمال الهدف 39% | ربح هدف1 3.5% | عائد متوقع -4.8% | R/R 0.35 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 39% | ربح هدف1 3.5% | عائد متوقع -5.3% | R/R 0.32 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "SUGR",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 38,
-      "expectedReturnPct": -2.79,
-      "rr": 0.53,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -2.8% | R/R 0.53 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "KZPC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 38,
-      "expectedReturnPct": -3.42,
-      "rr": 0.46,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -3.4% | R/R 0.46 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "MBSC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 38,
-      "expectedReturnPct": -3.47,
-      "rr": 0.45,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -3.5% | R/R 0.45 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "SAUD",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 38,
-      "expectedReturnPct": -3.5,
-      "rr": 0.45,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -3.5% | R/R 0.45 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "GMCI",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 39,
-      "expectedReturnPct": -7.03,
-      "rr": 0.26,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 39% | ربح هدف1 3.5% | عائد متوقع -7.0% | R/R 0.26 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "PHDC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 37,
-      "expectedReturnPct": -2.73,
-      "rr": 0.55,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 37% | ربح هدف1 3.5% | عائد متوقع -2.7% | R/R 0.55 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "TMGH",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 37,
-      "expectedReturnPct": -2.79,
+      "expectedReturnPct": -2.67,
       "rr": 0.54,
       "priceState": "conflict",
-      "why": "احتمال الهدف 37% | ربح هدف1 3.5% | عائد متوقع -2.8% | R/R 0.54 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -2.7% | R/R 0.54 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "FWRY",
+      "symbol": "ARCC",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 37,
-      "expectedReturnPct": -2.94,
-      "rr": 0.52,
+      "targetProbability": 38,
+      "expectedReturnPct": -4.21,
+      "rr": 0.39,
       "priceState": "conflict",
-      "why": "احتمال الهدف 37% | ربح هدف1 3.5% | عائد متوقع -2.9% | R/R 0.52 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -4.2% | R/R 0.39 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "ACAMD",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 36,
-      "expectedReturnPct": -3.43,
-      "rr": 0.48,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -3.4% | R/R 0.48 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "EGAL",
+      "symbol": "SKPC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 36,
-      "expectedReturnPct": -3.59,
-      "rr": 0.46,
+      "expectedReturnPct": -1.98,
+      "rr": 0.69,
       "priceState": "conflict",
-      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -3.6% | R/R 0.46 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "ATQA",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 36,
-      "expectedReturnPct": -3.73,
-      "rr": 0.45,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -3.7% | R/R 0.45 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -2.0% | R/R 0.69 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "EDFM",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 38,
-      "expectedReturnPct": -10.95,
+      "expectedReturnPct": -11.25,
+      "rr": 0.17,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -11.3% | R/R 0.17 | السعر متعارض | تاريخ 3/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "RTVC",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 36,
+      "expectedReturnPct": -3.31,
       "rr": 0.18,
       "priceState": "conflict",
-      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -10.9% | R/R 0.18 | السعر متعارض | تاريخ 3/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 36% | ربح هدف1 1.0% | عائد متوقع -3.3% | R/R 0.18 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "EGTS",
+      "symbol": "EGAL",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 36,
-      "expectedReturnPct": -4.02,
-      "rr": 0.42,
+      "expectedReturnPct": -3.87,
+      "rr": 0.44,
       "priceState": "conflict",
-      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -4.0% | R/R 0.42 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -3.9% | R/R 0.44 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "OIH",
+      "symbol": "ACAMD",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 36,
-      "expectedReturnPct": -5.48,
-      "rr": 0.33,
+      "expectedReturnPct": -3.94,
+      "rr": 0.43,
       "priceState": "conflict",
-      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -5.5% | R/R 0.33 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -3.9% | R/R 0.43 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "ATQA",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 36,
+      "expectedReturnPct": -4.62,
+      "rr": 0.38,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -4.6% | R/R 0.38 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "CIEB",
@@ -425,14 +395,34 @@
       "why": "احتمال الهدف 35% | ربح هدف1 3.0% | عائد متوقع -2.8% | R/R 0.50 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "GGRN",
+      "symbol": "ECAP",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 35,
-      "expectedReturnPct": -4.15,
-      "rr": 0.42,
+      "expectedReturnPct": -3.55,
+      "rr": 0.48,
       "priceState": "conflict",
-      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -4.1% | R/R 0.42 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -3.6% | R/R 0.48 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "FAIT",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 36,
+      "expectedReturnPct": -3.63,
+      "rr": 0.17,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 36% | ربح هدف1 1.1% | عائد متوقع -3.6% | R/R 0.17 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "OIH",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 36,
+      "expectedReturnPct": -7.3,
+      "rr": 0.26,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -7.3% | R/R 0.26 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "ELEC",
@@ -445,64 +435,84 @@
       "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -4.4% | R/R 0.41 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "EFIC",
+      "symbol": "MBSC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 35,
-      "expectedReturnPct": -4.61,
-      "rr": 0.39,
+      "expectedReturnPct": -5.97,
+      "rr": 0.32,
       "priceState": "conflict",
-      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -4.6% | R/R 0.39 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -6.0% | R/R 0.32 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "EXPA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 35,
-      "expectedReturnPct": -8.24,
-      "rr": 0.24,
+      "expectedReturnPct": -7.88,
+      "rr": 0.25,
       "priceState": "conflict",
-      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -8.2% | R/R 0.24 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -7.9% | R/R 0.25 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "IFAP",
+      "symbol": "TMGH",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 34,
-      "expectedReturnPct": -4.29,
-      "rr": 0.42,
+      "expectedReturnPct": -4.2,
+      "rr": 0.43,
       "priceState": "conflict",
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -4.3% | R/R 0.42 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -4.2% | R/R 0.43 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "PHDC",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 34,
+      "expectedReturnPct": -4.78,
+      "rr": 0.39,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -4.8% | R/R 0.39 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "UBEE",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 34,
+      "expectedReturnPct": -4.84,
+      "rr": 0.38,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -4.8% | R/R 0.38 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "KZPC",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 34,
+      "expectedReturnPct": -5.43,
+      "rr": 0.35,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -5.4% | R/R 0.35 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "BTFH",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 34,
-      "expectedReturnPct": -4.9,
-      "rr": 0.38,
+      "expectedReturnPct": -5.84,
+      "rr": 0.33,
       "priceState": "conflict",
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -4.9% | R/R 0.38 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "HRHO",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 33,
-      "expectedReturnPct": -3.06,
-      "rr": 0.46,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 2.7% | عائد متوقع -3.1% | R/R 0.46 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -5.8% | R/R 0.33 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "TAQA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -3.49,
-      "rr": 0.5,
+      "expectedReturnPct": -3.37,
+      "rr": 0.52,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -3.5% | R/R 0.50 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -3.4% | R/R 0.52 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "DEIN",
@@ -519,110 +529,150 @@
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 35,
-      "expectedReturnPct": -9.36,
+      "expectedReturnPct": -9.8,
       "rr": 0.21,
       "priceState": "conflict",
-      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -9.4% | R/R 0.21 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -9.8% | R/R 0.21 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "ZEOT",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 35,
-      "expectedReturnPct": -12.63,
-      "rr": 0.16,
+      "expectedReturnPct": -10.87,
+      "rr": 0.19,
       "priceState": "conflict",
-      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -12.6% | R/R 0.16 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -10.9% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "CIRA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 35,
-      "expectedReturnPct": -14.29,
-      "rr": 0.15,
+      "expectedReturnPct": -14.77,
+      "rr": 0.14,
       "priceState": "conflict",
-      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -14.3% | R/R 0.15 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -14.8% | R/R 0.14 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "GGCC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 35,
-      "expectedReturnPct": -34.18,
+      "expectedReturnPct": -36.58,
       "rr": 0.06,
       "priceState": "conflict",
-      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -34.2% | R/R 0.06 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -36.6% | R/R 0.06 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "IFAP",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 34,
+      "expectedReturnPct": -6.5,
+      "rr": 0.3,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -6.5% | R/R 0.30 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "SAUD",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 34,
+      "expectedReturnPct": -6.51,
+      "rr": 0.3,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -6.5% | R/R 0.30 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "CCRS",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 34,
-      "expectedReturnPct": -7.59,
-      "rr": 0.26,
+      "expectedReturnPct": -8.27,
+      "rr": 0.24,
       "priceState": "conflict",
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -7.6% | R/R 0.26 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -8.3% | R/R 0.24 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "ORHD",
+      "symbol": "CLHO",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -5.58,
-      "rr": 0.35,
+      "expectedReturnPct": -5.14,
+      "rr": 0.37,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -5.6% | R/R 0.35 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -5.1% | R/R 0.37 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "ABUK",
+      "symbol": "FWRY",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -5.82,
+      "expectedReturnPct": -5.25,
+      "rr": 0.37,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -5.3% | R/R 0.37 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "APSW",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 33,
+      "expectedReturnPct": -5.65,
       "rr": 0.34,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -5.8% | R/R 0.34 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -5.7% | R/R 0.34 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "RMDA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 34,
-      "expectedReturnPct": -10.51,
+      "expectedReturnPct": -10.6,
       "rr": 0.2,
       "priceState": "conflict",
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -10.5% | R/R 0.20 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -10.6% | R/R 0.20 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "EGAS",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 34,
-      "expectedReturnPct": -11.09,
-      "rr": 0.19,
+      "expectedReturnPct": -11.39,
+      "rr": 0.18,
       "priceState": "conflict",
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -11.1% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "SDTI",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 34,
-      "expectedReturnPct": -18.15,
-      "rr": 0.12,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -18.1% | R/R 0.12 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -11.4% | R/R 0.18 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "MILS",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 34,
-      "expectedReturnPct": -22.8,
-      "rr": 0.1,
+      "expectedReturnPct": -24.78,
+      "rr": 0.09,
       "priceState": "conflict",
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -22.8% | R/R 0.10 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -24.8% | R/R 0.09 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "ABUK",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 33,
+      "expectedReturnPct": -6.55,
+      "rr": 0.3,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -6.5% | R/R 0.30 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "COMI",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 33,
+      "expectedReturnPct": -6.7,
+      "rr": 0.3,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -6.7% | R/R 0.30 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "MASR",
@@ -635,261 +685,181 @@
       "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -6.7% | R/R 0.30 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "COMI",
+      "symbol": "ORHD",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -6.8,
+      "expectedReturnPct": -7.06,
       "rr": 0.29,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -6.8% | R/R 0.29 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -7.1% | R/R 0.29 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "CCAP",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -7.71,
-      "rr": 0.26,
+      "expectedReturnPct": -7.38,
+      "rr": 0.27,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -7.7% | R/R 0.26 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "ZMID",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 33,
-      "expectedReturnPct": -7.86,
-      "rr": 0.26,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -7.9% | R/R 0.26 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "ECAP",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -4.45,
-      "rr": 0.43,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -4.4% | R/R 0.43 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "CSAG",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -4.89,
-      "rr": 0.4,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -4.9% | R/R 0.40 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "MFSC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -5.4,
-      "rr": 0.35,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.4% | عائد متوقع -5.4% | R/R 0.35 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "CERA",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -5.67,
-      "rr": 0.35,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -5.7% | R/R 0.35 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "CLHO",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -5.72,
-      "rr": 0.35,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -5.7% | R/R 0.35 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -7.4% | R/R 0.27 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "VLMRA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -5.82,
-      "rr": 0.34,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -5.8% | R/R 0.34 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "MPCO",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -5.89,
-      "rr": 0.34,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -5.9% | R/R 0.34 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "ORWE",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -5.99,
+      "expectedReturnPct": -5.98,
       "rr": 0.33,
       "priceState": "conflict",
       "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -6.0% | R/R 0.33 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "FERC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 31,
-      "expectedReturnPct": -3.79,
-      "rr": 0.5,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -3.8% | R/R 0.50 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "RUBX",
+      "symbol": "ZMID",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -9.31,
-      "rr": 0.17,
+      "expectedReturnPct": -8.82,
+      "rr": 0.24,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 2.6% | عائد متوقع -9.3% | R/R 0.17 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -8.8% | R/R 0.24 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "UEFM",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -9.41,
-      "rr": 0.22,
+      "expectedReturnPct": -10.43,
+      "rr": 0.2,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -9.4% | R/R 0.22 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -10.4% | R/R 0.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "OCDI",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -10.7,
-      "rr": 0.2,
+      "expectedReturnPct": -12.66,
+      "rr": 0.17,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -10.7% | R/R 0.20 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -12.7% | R/R 0.17 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "GTWL",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -11.25,
-      "rr": 0.19,
+      "expectedReturnPct": -12.89,
+      "rr": 0.17,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -11.3% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "NHPS",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 33,
-      "expectedReturnPct": -16.19,
-      "rr": 0.14,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -16.2% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -12.9% | R/R 0.17 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "LCSW",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -16.21,
+      "expectedReturnPct": -15.16,
       "rr": 0.14,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -16.2% | R/R 0.14 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -15.2% | R/R 0.14 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "NHPS",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 33,
+      "expectedReturnPct": -16.71,
+      "rr": 0.13,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -16.7% | R/R 0.13 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "MPCI",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -16.35,
+      "expectedReturnPct": -17.09,
       "rr": 0.13,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -16.4% | R/R 0.13 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -17.1% | R/R 0.13 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "ELKA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -18.98,
-      "rr": 0.12,
+      "expectedReturnPct": -19.77,
+      "rr": 0.11,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -19.0% | R/R 0.12 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -19.8% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "SDTI",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 33,
+      "expectedReturnPct": -20.55,
+      "rr": 0.11,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -20.6% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "DTPP",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -22.94,
-      "rr": 0.1,
+      "expectedReturnPct": -23.94,
+      "rr": 0.09,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -22.9% | R/R 0.10 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -23.9% | R/R 0.09 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "NIPH",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 33,
-      "expectedReturnPct": -25.84,
+      "expectedReturnPct": -26.13,
       "rr": 0.09,
       "priceState": "conflict",
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -25.8% | R/R 0.09 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -26.1% | R/R 0.09 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "MCQE",
+      "symbol": "GGRN",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -6.45,
+      "expectedReturnPct": -6.19,
+      "rr": 0.33,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -6.2% | R/R 0.33 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "MPCO",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -6.21,
+      "rr": 0.32,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -6.2% | R/R 0.32 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "ISMA",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -6.51,
       "rr": 0.31,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -6.5% | R/R 0.31 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -6.5% | R/R 0.31 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "EFID",
+      "symbol": "CERA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -6.85,
-      "rr": 0.3,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -6.8% | R/R 0.30 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "OLFI",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -7.01,
-      "rr": 0.29,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -7.0% | R/R 0.29 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "EEII",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -7.04,
+      "expectedReturnPct": -7.05,
       "rr": 0.29,
       "priceState": "conflict",
       "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -7.0% | R/R 0.29 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
@@ -899,250 +869,290 @@
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -7.56,
-      "rr": 0.27,
+      "expectedReturnPct": -7.13,
+      "rr": 0.29,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -7.6% | R/R 0.27 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -7.1% | R/R 0.29 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "ISMA",
+      "symbol": "MCQE",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -7.77,
-      "rr": 0.27,
+      "expectedReturnPct": -7.46,
+      "rr": 0.28,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -7.8% | R/R 0.27 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -7.5% | R/R 0.28 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "EHDR",
+      "symbol": "CSAG",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -7.96,
-      "rr": 0.26,
+      "expectedReturnPct": -7.47,
+      "rr": 0.28,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -8.0% | R/R 0.26 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -7.5% | R/R 0.28 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "COSG",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -8.09,
+      "expectedReturnPct": -7.73,
+      "rr": 0.27,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -7.7% | R/R 0.27 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "EEII",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -7.91,
       "rr": 0.26,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -8.1% | R/R 0.26 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -7.9% | R/R 0.26 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "MTIE",
+      "symbol": "OLFI",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -9.08,
-      "rr": 0.23,
+      "expectedReturnPct": -8.04,
+      "rr": 0.26,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -9.1% | R/R 0.23 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -8.0% | R/R 0.26 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "ISPH",
+      "symbol": "EFID",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -9.73,
-      "rr": 0.22,
+      "expectedReturnPct": -8.2,
+      "rr": 0.26,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -9.7% | R/R 0.22 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -8.2% | R/R 0.26 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "EHDR",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -9,
+      "rr": 0.24,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -9.0% | R/R 0.24 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "ASCM",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -10.08,
-      "rr": 0.21,
+      "expectedReturnPct": -9.28,
+      "rr": 0.23,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -10.1% | R/R 0.21 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -9.3% | R/R 0.23 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "IDRE",
+      "symbol": "ADCI",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -10.9,
-      "rr": 0.2,
+      "expectedReturnPct": -9.47,
+      "rr": 0.22,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -10.9% | R/R 0.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "DSCW",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -10.94,
-      "rr": 0.2,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -10.9% | R/R 0.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "MPRC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -11.03,
-      "rr": 0.2,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -11.0% | R/R 0.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "EGCH",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -11.06,
-      "rr": 0.2,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -11.1% | R/R 0.20 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "ELSH",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -11.39,
-      "rr": 0.19,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -11.4% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "AMOC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -11.42,
-      "rr": 0.19,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -11.4% | R/R 0.19 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "EFIH",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 32,
-      "expectedReturnPct": -11.52,
-      "rr": 0.19,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -11.5% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -9.5% | R/R 0.22 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "PRCL",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -11.94,
+      "expectedReturnPct": -9.87,
+      "rr": 0.22,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -9.9% | R/R 0.22 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "EGCH",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -10.47,
+      "rr": 0.21,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -10.5% | R/R 0.21 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "MPRC",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -10.56,
+      "rr": 0.2,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -10.6% | R/R 0.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "ISPH",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -10.74,
+      "rr": 0.2,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -10.7% | R/R 0.20 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "DSCW",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -11.22,
+      "rr": 0.19,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -11.2% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "MTIE",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -11.57,
+      "rr": 0.19,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -11.6% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "EFIH",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -11.73,
+      "rr": 0.19,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -11.7% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "ELSH",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -11.79,
       "rr": 0.18,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -11.9% | R/R 0.18 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -11.8% | R/R 0.18 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "AMOC",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -11.96,
+      "rr": 0.18,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -12.0% | R/R 0.18 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "IDRE",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 32,
+      "expectedReturnPct": -12.05,
+      "rr": 0.18,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -12.1% | R/R 0.18 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "ETEL",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -12.35,
+      "expectedReturnPct": -12.38,
       "rr": 0.18,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -12.3% | R/R 0.18 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -12.4% | R/R 0.18 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "PRDC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -15.37,
-      "rr": 0.14,
+      "expectedReturnPct": -15.04,
+      "rr": 0.15,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -15.4% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -15.0% | R/R 0.15 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "HELI",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -15.9,
+      "expectedReturnPct": -15.96,
       "rr": 0.14,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -15.9% | R/R 0.14 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -16.0% | R/R 0.14 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "CRST",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -25.03,
+      "expectedReturnPct": -25.63,
       "rr": 0.09,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -25.0% | R/R 0.09 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -25.6% | R/R 0.09 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "AMES",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -31.16,
+      "expectedReturnPct": -33.99,
       "rr": 0.07,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -31.2% | R/R 0.07 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -34.0% | R/R 0.07 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "AMER",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 32,
-      "expectedReturnPct": -38.81,
+      "expectedReturnPct": -41.45,
       "rr": 0.06,
       "priceState": "conflict",
-      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -38.8% | R/R 0.06 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -41.5% | R/R 0.06 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "CANA",
+      "symbol": "FERC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -6.11,
-      "rr": 0.34,
+      "expectedReturnPct": -4.09,
+      "rr": 0.47,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -6.1% | R/R 0.34 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "ALCN",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 31,
-      "expectedReturnPct": -6.39,
-      "rr": 0.32,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -6.4% | R/R 0.32 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -4.1% | R/R 0.47 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "ACAP",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -6.63,
-      "rr": 0.31,
+      "expectedReturnPct": -6.3,
+      "rr": 0.33,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -6.6% | R/R 0.31 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -6.3% | R/R 0.33 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "EALR",
+      "symbol": "CANA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -7.04,
-      "rr": 0.3,
+      "expectedReturnPct": -6.35,
+      "rr": 0.32,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -7.0% | R/R 0.30 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -6.4% | R/R 0.32 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "GPIM",
@@ -1155,84 +1165,54 @@
       "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -7.1% | R/R 0.29 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "AJWA",
+      "symbol": "ALCN",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -7.14,
+      "expectedReturnPct": -7.13,
       "rr": 0.29,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -7.1% | R/R 0.29 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "SPIN",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 31,
-      "expectedReturnPct": -7.31,
-      "rr": 0.29,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -7.3% | R/R 0.29 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "NAPR",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 31,
-      "expectedReturnPct": -7.63,
-      "rr": 0.28,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -7.6% | R/R 0.28 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -7.1% | R/R 0.29 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "DOMT",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -8.18,
-      "rr": 0.26,
+      "expectedReturnPct": -7.26,
+      "rr": 0.29,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -8.2% | R/R 0.26 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -7.3% | R/R 0.29 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "BINV",
+      "symbol": "SPIN",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 30,
-      "expectedReturnPct": -5.69,
-      "rr": 0.36,
+      "targetProbability": 31,
+      "expectedReturnPct": -7.35,
+      "rr": 0.29,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -5.7% | R/R 0.36 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -7.3% | R/R 0.29 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "GRCA",
+      "symbol": "EFIC",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 30,
-      "expectedReturnPct": -5.76,
-      "rr": 0.36,
+      "targetProbability": 31,
+      "expectedReturnPct": -7.78,
+      "rr": 0.27,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -5.8% | R/R 0.36 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -7.8% | R/R 0.27 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "DGTZ",
+      "symbol": "NAPR",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 30,
-      "expectedReturnPct": -5.98,
-      "rr": 0.35,
+      "targetProbability": 31,
+      "expectedReturnPct": -7.9,
+      "rr": 0.27,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -6.0% | R/R 0.35 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "NEDA",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 29,
-      "expectedReturnPct": -1.92,
-      "rr": 0.44,
-      "priceState": "ok",
-      "why": "احتمال الهدف 29% | ربح هدف1 1.5% | عائد متوقع -1.9% | R/R 0.44 | السعر مدقق | تاريخ 7/50 | قيود: R/R ضعيف، إشارة مخاطر"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -7.9% | R/R 0.27 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "DCCC",
@@ -1245,17 +1225,37 @@
       "why": "احتمال الهدف 29% | ربح هدف1 4.5% | عائد متوقع -3.0% | R/R 0.75 | السعر مدقق | تاريخ 7/50 | قيود: إشارة مخاطر"
     },
     {
+      "symbol": "AJWA",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 31,
+      "expectedReturnPct": -8.74,
+      "rr": 0.25,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -8.7% | R/R 0.25 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
       "symbol": "JUFO",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -9.93,
-      "rr": 0.22,
+      "expectedReturnPct": -9.5,
+      "rr": 0.23,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -9.9% | R/R 0.22 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -9.5% | R/R 0.23 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "ADCI",
+      "symbol": "TALM",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 31,
+      "expectedReturnPct": -10.1,
+      "rr": 0.22,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -10.1% | R/R 0.22 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "ORWE",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
@@ -1269,20 +1269,10 @@
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -10.68,
-      "rr": 0.2,
+      "expectedReturnPct": -11.79,
+      "rr": 0.19,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -10.7% | R/R 0.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "ADPC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 31,
-      "expectedReturnPct": -10.82,
-      "rr": 0.2,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -10.8% | R/R 0.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -11.8% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "MEPA",
@@ -1295,171 +1285,151 @@
       "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -11.9% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "NARE",
+      "symbol": "MAAL",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -11.92,
-      "rr": 0.19,
+      "expectedReturnPct": -12.63,
+      "rr": 0.18,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -11.9% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "TALM",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 31,
-      "expectedReturnPct": -11.96,
-      "rr": 0.19,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -12.0% | R/R 0.19 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -12.6% | R/R 0.18 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "ACGC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -12.04,
+      "expectedReturnPct": -12.65,
       "rr": 0.18,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -12.0% | R/R 0.18 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -12.7% | R/R 0.18 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "MAAL",
+      "symbol": "ADPC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -13.02,
+      "expectedReturnPct": -13.4,
       "rr": 0.17,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -13.0% | R/R 0.17 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "DAPH",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 31,
-      "expectedReturnPct": -14.63,
-      "rr": 0.15,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -14.6% | R/R 0.15 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -13.4% | R/R 0.17 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "SWDY",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -14.81,
-      "rr": 0.15,
+      "expectedReturnPct": -13.81,
+      "rr": 0.16,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -14.8% | R/R 0.15 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "ENGC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 31,
-      "expectedReturnPct": -14.92,
-      "rr": 0.15,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -14.9% | R/R 0.15 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "CPCI",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 31,
-      "expectedReturnPct": -15.08,
-      "rr": 0.15,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -15.1% | R/R 0.15 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -13.8% | R/R 0.16 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "TANM",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -15.49,
-      "rr": 0.15,
+      "expectedReturnPct": -14.31,
+      "rr": 0.16,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -15.5% | R/R 0.15 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -14.3% | R/R 0.16 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "SCEM",
+      "symbol": "CPCI",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -15.61,
-      "rr": 0.14,
+      "expectedReturnPct": -14.78,
+      "rr": 0.15,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -15.6% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -14.8% | R/R 0.15 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "NARE",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 31,
+      "expectedReturnPct": -14.83,
+      "rr": 0.15,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -14.8% | R/R 0.15 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "MCRO",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -16.04,
-      "rr": 0.14,
+      "expectedReturnPct": -15.03,
+      "rr": 0.15,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -16.0% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -15.0% | R/R 0.15 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "ENGC",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 31,
+      "expectedReturnPct": -15.41,
+      "rr": 0.15,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -15.4% | R/R 0.15 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "INFI",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -16.07,
+      "expectedReturnPct": -15.75,
       "rr": 0.14,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -16.1% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -15.8% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "RREI",
+      "symbol": "DAPH",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -16.52,
+      "expectedReturnPct": -15.93,
       "rr": 0.14,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -16.5% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -15.9% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "KABO",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -17.08,
-      "rr": 0.13,
+      "expectedReturnPct": -16.4,
+      "rr": 0.14,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -17.1% | R/R 0.13 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -16.4% | R/R 0.14 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "MICH",
+      "symbol": "SCEM",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -17.2,
+      "expectedReturnPct": -17.53,
       "rr": 0.13,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -17.2% | R/R 0.13 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -17.5% | R/R 0.13 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "NINH",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -17.58,
+      "expectedReturnPct": -17.87,
       "rr": 0.13,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -17.6% | R/R 0.13 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -17.9% | R/R 0.13 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "AALR",
+      "symbol": "RREI",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -18.49,
+      "expectedReturnPct": -18.5,
       "rr": 0.12,
       "priceState": "conflict",
       "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -18.5% | R/R 0.12 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
@@ -1469,350 +1439,390 @@
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -19.49,
+      "expectedReturnPct": -19.25,
       "rr": 0.12,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -19.5% | R/R 0.12 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -19.2% | R/R 0.12 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "MICH",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 31,
+      "expectedReturnPct": -19.47,
+      "rr": 0.12,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -19.5% | R/R 0.12 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "ODIN",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -20.75,
+      "expectedReturnPct": -20.59,
       "rr": 0.11,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -20.8% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -20.6% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "PHAR",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -25.49,
-      "rr": 0.09,
+      "expectedReturnPct": -24.07,
+      "rr": 0.1,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -25.5% | R/R 0.09 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -24.1% | R/R 0.10 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "UEGC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 31,
-      "expectedReturnPct": -33.29,
+      "expectedReturnPct": -33.54,
       "rr": 0.07,
       "priceState": "conflict",
-      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -33.3% | R/R 0.07 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 31% | ربح هدف1 3.5% | عائد متوقع -33.5% | R/R 0.07 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "UBEE",
+      "symbol": "BINV",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -4.62,
-      "rr": 0.17,
+      "expectedReturnPct": -6.17,
+      "rr": 0.34,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 1.2% | عائد متوقع -4.6% | R/R 0.17 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -6.2% | R/R 0.34 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "DGTZ",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 30,
+      "expectedReturnPct": -6.44,
+      "rr": 0.33,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -6.4% | R/R 0.33 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "GRCA",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 30,
+      "expectedReturnPct": -9.12,
+      "rr": 0.24,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -9.1% | R/R 0.24 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "EALR",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 30,
+      "expectedReturnPct": -9.43,
+      "rr": 0.23,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -9.4% | R/R 0.23 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "WCDF",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -9.35,
-      "rr": 0.24,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -9.4% | R/R 0.24 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "WKOL",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 30,
-      "expectedReturnPct": -9.53,
+      "expectedReturnPct": -9.7,
       "rr": 0.23,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -9.5% | R/R 0.23 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -9.7% | R/R 0.23 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "GSSC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -9.92,
-      "rr": 0.22,
+      "expectedReturnPct": -10.37,
+      "rr": 0.21,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -9.9% | R/R 0.22 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -10.4% | R/R 0.21 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "RUBX",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 30,
+      "expectedReturnPct": -10.83,
+      "rr": 0.09,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 30% | ربح هدف1 1.5% | عائد متوقع -10.8% | R/R 0.09 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "ALUM",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -10.26,
-      "rr": 0.22,
+      "expectedReturnPct": -11.48,
+      "rr": 0.2,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -10.3% | R/R 0.22 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -11.5% | R/R 0.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "SCFM",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -11.27,
-      "rr": 0.2,
+      "expectedReturnPct": -12.48,
+      "rr": 0.18,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -11.3% | R/R 0.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -12.5% | R/R 0.18 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "WKOL",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 30,
+      "expectedReturnPct": -12.62,
+      "rr": 0.18,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -12.6% | R/R 0.18 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "PHTV",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -13.76,
-      "rr": 0.17,
+      "expectedReturnPct": -15.81,
+      "rr": 0.15,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -13.8% | R/R 0.17 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -15.8% | R/R 0.15 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "EPCO",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -16.15,
+      "expectedReturnPct": -16.57,
       "rr": 0.14,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -16.2% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "AFDI",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 30,
-      "expectedReturnPct": -20.16,
-      "rr": 0.12,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -20.2% | R/R 0.12 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "SEIG",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 30,
-      "expectedReturnPct": -21.36,
-      "rr": 0.11,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -21.4% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "GIHD",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 30,
-      "expectedReturnPct": -21.75,
-      "rr": 0.11,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -21.8% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -16.6% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "SIPC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -22.48,
-      "rr": 0.1,
+      "expectedReturnPct": -20.25,
+      "rr": 0.12,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -22.5% | R/R 0.10 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -20.3% | R/R 0.12 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "AFDI",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 30,
+      "expectedReturnPct": -21.08,
+      "rr": 0.11,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -21.1% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "SEIG",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 30,
+      "expectedReturnPct": -21.57,
+      "rr": 0.11,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -21.6% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "UNIT",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -22.95,
+      "expectedReturnPct": -22.12,
+      "rr": 0.11,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -22.1% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "GIHD",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 30,
+      "expectedReturnPct": -22.29,
       "rr": 0.1,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -23.0% | R/R 0.10 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -22.3% | R/R 0.10 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "AMIA",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -23.78,
+      "expectedReturnPct": -22.82,
       "rr": 0.1,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -23.8% | R/R 0.10 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -22.8% | R/R 0.10 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "AALR",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 30,
+      "expectedReturnPct": -24.46,
+      "rr": 0.1,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -24.5% | R/R 0.10 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "CAED",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 30,
-      "expectedReturnPct": -30.14,
+      "expectedReturnPct": -29.72,
       "rr": 0.08,
       "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -30.1% | R/R 0.08 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -29.7% | R/R 0.08 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "AFMC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 30,
-      "expectedReturnPct": -46.78,
-      "rr": 0.05,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -46.8% | R/R 0.05 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "MFPC",
+      "symbol": "HRHO",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 29,
-      "expectedReturnPct": -5.52,
+      "expectedReturnPct": -5.3,
       "rr": 0.09,
       "priceState": "conflict",
-      "why": "احتمال الهدف 29% | ربح هدف1 0.7% | عائد متوقع -5.5% | R/R 0.09 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 29% | ربح هدف1 0.7% | عائد متوقع -5.3% | R/R 0.09 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "BONY",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 29,
-      "expectedReturnPct": -6.27,
+      "expectedReturnPct": -5.52,
+      "rr": 0.17,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 29% | ربح هدف1 1.4% | عائد متوقع -5.5% | R/R 0.17 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "MFPC",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 29,
+      "expectedReturnPct": -5.68,
       "rr": 0.07,
       "priceState": "conflict",
-      "why": "احتمال الهدف 29% | ربح هدف1 0.6% | عائد متوقع -6.3% | R/R 0.07 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "APSW",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 29,
-      "expectedReturnPct": -7,
-      "rr": 0.02,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 29% | ربح هدف1 0.2% | عائد متوقع -7.0% | R/R 0.02 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
-    },
-    {
-      "symbol": "SMFR",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 29,
-      "expectedReturnPct": -12.66,
-      "rr": 0.18,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 29% | ربح هدف1 3.5% | عائد متوقع -12.7% | R/R 0.18 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 29% | ربح هدف1 0.5% | عائد متوقع -5.7% | R/R 0.07 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "MIPH",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 29,
-      "expectedReturnPct": -14.5,
-      "rr": 0.16,
+      "expectedReturnPct": -13.63,
+      "rr": 0.17,
       "priceState": "conflict",
-      "why": "احتمال الهدف 29% | ربح هدف1 3.5% | عائد متوقع -14.5% | R/R 0.16 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 29% | ربح هدف1 3.5% | عائد متوقع -13.6% | R/R 0.17 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "SMFR",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 29,
+      "expectedReturnPct": -14.05,
+      "rr": 0.17,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 29% | ربح هدف1 3.5% | عائد متوقع -14.0% | R/R 0.17 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "CEFM",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 29,
-      "expectedReturnPct": -21.62,
+      "expectedReturnPct": -22.1,
       "rr": 0.11,
       "priceState": "conflict",
-      "why": "احتمال الهدف 29% | ربح هدف1 3.5% | عائد متوقع -21.6% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 29% | ربح هدف1 3.5% | عائد متوقع -22.1% | R/R 0.11 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "RACC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 28,
-      "expectedReturnPct": -5.17,
-      "rr": 0.2,
+      "expectedReturnPct": -4.61,
+      "rr": 0.3,
       "priceState": "conflict",
-      "why": "احتمال الهدف 28% | ربح هدف1 1.6% | عائد متوقع -5.2% | R/R 0.20 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 28% | ربح هدف1 2.2% | عائد متوقع -4.6% | R/R 0.30 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+    },
+    {
+      "symbol": "MFSC",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 28,
+      "expectedReturnPct": -8.59,
+      "rr": 0.04,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 28% | ربح هدف1 0.4% | عائد متوقع -8.6% | R/R 0.04 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
       "symbol": "AXPH",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 28,
-      "expectedReturnPct": -10.18,
-      "rr": 0.02,
+      "expectedReturnPct": -10,
+      "rr": 0.03,
       "priceState": "conflict",
-      "why": "احتمال الهدف 28% | ربح هدف1 0.2% | عائد متوقع -10.2% | R/R 0.02 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
+      "why": "احتمال الهدف 28% | ربح هدف1 0.4% | عائد متوقع -10.0% | R/R 0.03 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف"
     },
     {
-      "symbol": "EPPK",
+      "symbol": "NEDA",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 26,
-      "expectedReturnPct": -8.28,
-      "rr": 0.12,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 26% | ربح هدف1 1.4% | عائد متوقع -8.3% | R/R 0.12 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف"
+      "targetProbability": 20,
+      "expectedReturnPct": -3.05,
+      "rr": 0.18,
+      "priceState": "stale",
+      "why": "احتمال الهدف 20% | ربح هدف1 0.7% | عائد متوقع -3.1% | R/R 0.18 | السعر قديم | تاريخ 7/50 | قيود: سعر قديم، R/R ضعيف، إشارة مخاطر"
     },
     {
       "symbol": "ELWA",
       "grade": "P3",
       "action": "watch_only",
-      "targetProbability": 15,
-      "expectedReturnPct": -2.49,
-      "rr": 2.91,
+      "targetProbability": 11,
+      "expectedReturnPct": -3.24,
+      "rr": 3.17,
       "priceState": "conflict",
-      "why": "احتمال الهدف 15% | ربح هدف1 17.5% | عائد متوقع -2.5% | R/R 2.91 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، إشارة مخاطر"
-    },
-    {
-      "symbol": "IRON",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 17,
-      "expectedReturnPct": -2.7,
-      "rr": 0.8,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 17% | ربح هدف1 3.1% | عائد متوقع -2.7% | R/R 0.80 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، إشارة مخاطر"
-    },
-    {
-      "symbol": "LUTS",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 5,
-      "expectedReturnPct": -4.38,
-      "rr": 4.32,
-      "priceState": "precision_risk",
-      "why": "احتمال الهدف 5% | ربح هدف1 25.8% | عائد متوقع -4.4% | R/R 4.32 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، إشارة مخاطر"
-    },
-    {
-      "symbol": "FAITA",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 5,
-      "expectedReturnPct": -1.68,
-      "rr": 2.5,
-      "priceState": "precision_risk",
-      "why": "احتمال الهدف 5% | ربح هدف1 5.1% | عائد متوقع -1.7% | R/R 2.50 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية"
+      "why": "احتمال الهدف 11% | ربح هدف1 18.9% | عائد متوقع -3.2% | R/R 3.17 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، إشارة مخاطر"
     },
     {
       "symbol": "MOSC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 6,
-      "expectedReturnPct": -11.25,
-      "rr": 0.29,
+      "expectedReturnPct": -11.56,
+      "rr": 0.28,
       "priceState": "conflict",
-      "why": "احتمال الهدف 6% | ربح هدف1 3.5% | عائد متوقع -11.2% | R/R 0.29 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
+      "why": "احتمال الهدف 6% | ربح هدف1 3.5% | عائد متوقع -11.6% | R/R 0.28 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
     },
     {
       "symbol": "KWIN",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 6,
-      "expectedReturnPct": -24.5,
+      "expectedReturnPct": -25.88,
       "rr": 0.13,
       "priceState": "conflict",
-      "why": "احتمال الهدف 6% | ربح هدف1 3.5% | عائد متوقع -24.5% | R/R 0.13 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
+      "why": "احتمال الهدف 6% | ربح هدف1 3.5% | عائد متوقع -25.9% | R/R 0.13 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
+    },
+    {
+      "symbol": "LUTS",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 5,
+      "expectedReturnPct": -5.13,
+      "rr": 1.9,
+      "priceState": "precision_risk",
+      "why": "احتمال الهدف 5% | ربح هدف1 11.4% | عائد متوقع -5.1% | R/R 1.90 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، إشارة مخاطر"
     },
     {
       "symbol": "GDWA",
@@ -1849,30 +1859,20 @@
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 5,
-      "expectedReturnPct": -11.96,
-      "rr": 0.27,
+      "expectedReturnPct": -13.68,
+      "rr": 0.24,
       "priceState": "precision_risk",
-      "why": "احتمال الهدف 5% | ربح هدف1 3.4% | عائد متوقع -12.0% | R/R 0.27 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
+      "why": "احتمال الهدف 5% | ربح هدف1 3.5% | عائد متوقع -13.7% | R/R 0.24 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
     },
     {
-      "symbol": "KRDI",
+      "symbol": "COPR",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 5,
-      "expectedReturnPct": -14.44,
+      "expectedReturnPct": -14.08,
       "rr": 0.23,
       "priceState": "precision_risk",
-      "why": "احتمال الهدف 5% | ربح هدف1 3.6% | عائد متوقع -14.4% | R/R 0.23 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
-    },
-    {
-      "symbol": "AIDC",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 5,
-      "expectedReturnPct": -14.79,
-      "rr": 0.18,
-      "priceState": "precision_risk",
-      "why": "احتمال الهدف 5% | ربح هدف1 2.9% | عائد متوقع -14.8% | R/R 0.18 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
+      "why": "احتمال الهدف 5% | ربح هدف1 3.5% | عائد متوقع -14.1% | R/R 0.23 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
     },
     {
       "symbol": "ARAB",
@@ -1885,14 +1885,24 @@
       "why": "احتمال الهدف 5% | ربح هدف1 3.3% | عائد متوقع -15.7% | R/R 0.20 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
     },
     {
-      "symbol": "COPR",
+      "symbol": "AIDC",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 5,
-      "expectedReturnPct": -16.05,
+      "expectedReturnPct": -15.99,
+      "rr": 0.08,
+      "priceState": "precision_risk",
+      "why": "احتمال الهدف 5% | ربح هدف1 1.4% | عائد متوقع -16.0% | R/R 0.08 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
+    },
+    {
+      "symbol": "KRDI",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 5,
+      "expectedReturnPct": -16.45,
       "rr": 0.2,
       "priceState": "precision_risk",
-      "why": "احتمال الهدف 5% | ربح هدف1 3.4% | عائد متوقع -16.0% | R/R 0.20 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
+      "why": "احتمال الهدف 5% | ربح هدف1 3.5% | عائد متوقع -16.4% | R/R 0.20 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
     },
     {
       "symbol": "UNIP",
@@ -1909,20 +1919,20 @@
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 5,
-      "expectedReturnPct": -23.57,
-      "rr": 0.14,
+      "expectedReturnPct": -25.4,
+      "rr": 0.13,
       "priceState": "precision_risk",
-      "why": "احتمال الهدف 5% | ربح هدف1 3.6% | عائد متوقع -23.6% | R/R 0.14 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
+      "why": "احتمال الهدف 5% | ربح هدف1 3.5% | عائد متوقع -25.4% | R/R 0.13 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
     },
     {
-      "symbol": "MOIN",
+      "symbol": "MOIL",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 5,
-      "expectedReturnPct": -24.17,
-      "rr": 0.14,
-      "priceState": "conflict",
-      "why": "احتمال الهدف 5% | ربح هدف1 3.5% | عائد متوقع -24.2% | R/R 0.14 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
+      "expectedReturnPct": -31.02,
+      "rr": 0.1,
+      "priceState": "precision_risk",
+      "why": "احتمال الهدف 5% | ربح هدف1 3.4% | عائد متوقع -31.0% | R/R 0.10 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف، إشارة مخاطر"
     },
     {
       "symbol": "ASPI",
@@ -1935,24 +1945,54 @@
       "why": "احتمال الهدف 5% | ربح هدف1 3.6% | عائد متوقع -31.5% | R/R 0.11 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
     },
     {
-      "symbol": "MOIL",
+      "symbol": "MOIN",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 5,
-      "expectedReturnPct": -31.96,
-      "rr": 0.1,
+      "expectedReturnPct": -35.65,
+      "rr": 0.09,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 5% | ربح هدف1 3.5% | عائد متوقع -35.7% | R/R 0.09 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
+    },
+    {
+      "symbol": "FAITA",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 5,
+      "expectedReturnPct": -2.68,
+      "rr": 1.33,
       "priceState": "precision_risk",
-      "why": "احتمال الهدف 5% | ربح هدف1 3.5% | عائد متوقع -32.0% | R/R 0.10 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف، إشارة مخاطر"
+      "why": "احتمال الهدف 5% | ربح هدف1 4.0% | عائد متوقع -2.7% | R/R 1.33 | السعر دقة غير كافية | تاريخ 7/50 | قيود: سعر قديم، دقة سعر غير كافية"
+    },
+    {
+      "symbol": "VLMR",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 5,
+      "expectedReturnPct": -4.03,
+      "rr": 1,
+      "priceState": "precision_risk",
+      "why": "احتمال الهدف 5% | ربح هدف1 4.5% | عائد متوقع -4.0% | R/R 1.00 | السعر دقة غير كافية | تاريخ 7/50 | قيود: دقة سعر غير كافية"
     },
     {
       "symbol": "ADIB",
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 8,
-      "expectedReturnPct": -11.99,
+      "expectedReturnPct": -12.19,
       "rr": 0.26,
       "priceState": "conflict",
-      "why": "احتمال الهدف 8% | ربح هدف1 3.5% | عائد متوقع -12.0% | R/R 0.26 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
+      "why": "احتمال الهدف 8% | ربح هدف1 3.5% | عائد متوقع -12.2% | R/R 0.26 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
+    },
+    {
+      "symbol": "IRON",
+      "grade": "P3",
+      "action": "watch_only",
+      "targetProbability": 7,
+      "expectedReturnPct": -7.61,
+      "rr": 0.41,
+      "priceState": "conflict",
+      "why": "احتمال الهدف 7% | ربح هدف1 3.5% | عائد متوقع -7.6% | R/R 0.41 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
     },
     {
       "symbol": "CPME",
@@ -1969,10 +2009,10 @@
       "grade": "P3",
       "action": "watch_only",
       "targetProbability": 6,
-      "expectedReturnPct": -9.58,
-      "rr": 0.34,
+      "expectedReturnPct": -9.97,
+      "rr": 0.32,
       "priceState": "conflict",
-      "why": "احتمال الهدف 6% | ربح هدف1 3.5% | عائد متوقع -9.6% | R/R 0.34 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
+      "why": "احتمال الهدف 6% | ربح هدف1 3.5% | عائد متوقع -10.0% | R/R 0.32 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر"
     },
     {
       "symbol": "MOED",
@@ -1993,16 +2033,6 @@
       "rr": 0.6,
       "priceState": "precision_risk",
       "why": "احتمال الهدف 5% | ربح هدف1 3.3% | عائد متوقع -5.1% | R/R 0.60 | السعر دقة غير كافية | تاريخ 7/50 | قيود: دقة سعر غير كافية، R/R ضعيف"
-    },
-    {
-      "symbol": "VLMR",
-      "grade": "P3",
-      "action": "watch_only",
-      "targetProbability": 5,
-      "expectedReturnPct": -5.44,
-      "rr": 0.5,
-      "priceState": "precision_risk",
-      "why": "احتمال الهدف 5% | ربح هدف1 2.9% | عائد متوقع -5.4% | R/R 0.50 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية، R/R ضعيف"
     },
     {
       "symbol": "CFGH",
@@ -2045,26 +2075,6 @@
       "why": "احتمال الهدف 5% | ربح هدف1 3.3% | عائد متوقع -6.2% | R/R 0.50 | السعر دقة غير كافية | تاريخ 3/50 | قيود: سعر قديم، دقة سعر غير كافية، R/R ضعيف"
     },
     {
-      "symbol": "GBCO",
-      "grade": "Watch",
-      "action": "watch",
-      "targetProbability": 57,
-      "expectedReturnPct": -0.22,
-      "rr": 0.66,
-      "priceState": "ok",
-      "why": "احتمال الهدف 57% | ربح هدف1 2.8% | عائد متوقع -0.2% | R/R 0.66 | السعر مدقق | تاريخ 8/50 | قيود: R/R ضعيف"
-    },
-    {
-      "symbol": "SKPC",
-      "grade": "Watch",
-      "action": "watch",
-      "targetProbability": 57,
-      "expectedReturnPct": -0.28,
-      "rr": 0.55,
-      "priceState": "ok",
-      "why": "احتمال الهدف 57% | ربح هدف1 1.3% | عائد متوقع -0.3% | R/R 0.55 | السعر مدقق | تاريخ 8/50 | قيود: R/R ضعيف"
-    },
-    {
       "symbol": "SAIB",
       "grade": "Watch",
       "action": "watch",
@@ -2079,40 +2089,10 @@
       "grade": "Watch",
       "action": "watch",
       "targetProbability": 55,
-      "expectedReturnPct": -0.28,
-      "rr": 0.73,
+      "expectedReturnPct": -0.67,
+      "rr": 0.62,
       "priceState": "ok",
-      "why": "احتمال الهدف 55% | ربح هدف1 4.3% | عائد متوقع -0.3% | R/R 0.73 | السعر مدقق | تاريخ 8/50"
-    },
-    {
-      "symbol": "FAIT",
-      "grade": "Watch",
-      "action": "watch",
-      "targetProbability": 55,
-      "expectedReturnPct": -1.63,
-      "rr": 0.3,
-      "priceState": "ok",
-      "why": "احتمال الهدف 55% | ربح هدف1 1.7% | عائد متوقع -1.6% | R/R 0.30 | السعر مدقق | تاريخ 8/50 | قيود: R/R ضعيف"
-    },
-    {
-      "symbol": "MENA",
-      "grade": "Watch",
-      "action": "watch",
-      "targetProbability": 55,
-      "expectedReturnPct": -1.96,
-      "rr": 0.11,
-      "priceState": "ok",
-      "why": "احتمال الهدف 55% | ربح هدف1 0.6% | عائد متوقع -2.0% | R/R 0.11 | السعر مدقق | تاريخ 7/50 | قيود: R/R ضعيف"
-    },
-    {
-      "symbol": "RTVC",
-      "grade": "Watch",
-      "action": "watch",
-      "targetProbability": 54,
-      "expectedReturnPct": -1.83,
-      "rr": 0.24,
-      "priceState": "ok",
-      "why": "احتمال الهدف 54% | ربح هدف1 1.3% | عائد متوقع -1.8% | R/R 0.24 | السعر مدقق | تاريخ 7/50 | قيود: R/R ضعيف"
+      "why": "احتمال الهدف 55% | ربح هدف1 3.9% | عائد متوقع -0.7% | R/R 0.62 | السعر مدقق | تاريخ 8/50 | قيود: R/R ضعيف"
     },
     {
       "symbol": "RAKT",
@@ -2135,6 +2115,16 @@
       "why": "احتمال الهدف 49% | ربح هدف1 3.5% | عائد متوقع -0.1% | R/R 0.96 | السعر مدقق | تاريخ 0/50"
     },
     {
+      "symbol": "GMCI",
+      "grade": "Watch",
+      "action": "watch",
+      "targetProbability": 50,
+      "expectedReturnPct": -2.42,
+      "rr": 0.47,
+      "priceState": "stale",
+      "why": "احتمال الهدف 50% | ربح هدف1 4.3% | عائد متوقع -2.4% | R/R 0.47 | السعر قديم | تاريخ 7/50 | قيود: سعر قديم، R/R ضعيف"
+    },
+    {
       "symbol": "MMAT",
       "grade": "Watch",
       "action": "watch",
@@ -2153,6 +2143,16 @@
       "rr": 0.34,
       "priceState": "stale",
       "why": "احتمال الهدف 45% | ربح هدف1 1.5% | عائد متوقع -1.8% | R/R 0.34 | السعر قديم | تاريخ 2/50 | قيود: سعر قديم، R/R ضعيف"
+    },
+    {
+      "symbol": "EPPK",
+      "grade": "Watch",
+      "action": "watch",
+      "targetProbability": 44,
+      "expectedReturnPct": -3.07,
+      "rr": 0.5,
+      "priceState": "stale",
+      "why": "احتمال الهدف 44% | ربح هدف1 4.5% | عائد متوقع -3.1% | R/R 0.50 | السعر قديم | تاريخ 7/50 | قيود: سعر قديم، R/R ضعيف"
     },
     {
       "symbol": "ARVA",
