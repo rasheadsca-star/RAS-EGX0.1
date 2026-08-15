@@ -63,6 +63,7 @@ jobs:
           const marketRegression=require('./data/v20/market-explorer-regression.json');
           const fa=regression.finalAcceptance;
           const native=marketRegression.fullMarketNative;
+          const explain=native?.explainability;
           if(regression.ok!==true) throw new Error('V20 regression is not green');
           if(!fa || fa.researchPlatformReady!==true) throw new Error('V20 research platform acceptance is not ready');
           if(fa.finalStatus!=='RESEARCH_PLATFORM_READY_EXECUTION_NOT_READY') throw new Error(`Unexpected final status: ${fa?.finalStatus}`);
@@ -75,13 +76,26 @@ jobs:
           if(current.governance?.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET') throw new Error('Current champion drift');
           if(current.governance?.automaticPromotion!==false || current.governance?.promotionAllowed!==false) throw new Error('Automatic promotion must remain disabled');
           if(marketRegression.ok!==true || marketRegression.checks?.fullMarketNativeSelectionIntegrated!==true || marketRegression.checks?.fullMarketNativePublishedEvidencePersisted!==true) throw new Error('Full-market Native acceptance is not green');
+          if(marketRegression.checks?.fullMarketNativeExplainabilityPersisted!==true || marketRegression.checks?.fullMarketNativeExplainabilityNonInfluential!==true) throw new Error('Native explainability acceptance is not green');
           if(!native || native.engineId!=='V20_FULL_MARKET_NATIVE_SELECTION_V1') throw new Error('Full-market Native engine evidence missing');
           if(native.candidateUniverseIsFullMarketIndependent!==true || native.legacySeedDependency!==false) throw new Error('Native candidate universe must remain independent from Legacy seed');
           if(native.researchOnly!==true || native.executionPermission!==false || native.productionAllocation!==false) throw new Error('Native engine research-only governance drift');
           if(Number(native.summary?.legacyScoringContributionPct)!==0) throw new Error('Legacy scoring contribution must remain 0%');
           if(Number(native.summary?.publishedResearchCandidateCount)!==30 || !Array.isArray(native.publishedCandidates) || native.publishedCandidates.length!==30) throw new Error('Native Top 30 evidence not persisted');
           if(!native.publishedCandidates.every(row=>Number(row.netRiskReward)>=0.7)) throw new Error('Native published candidate below Net R/R quality gate');
-          for(const check of ['nativeResearchPanelLoaded','nativeResearchLegacyContributionZeroVisible','nativeResearchOutsideLegacyCandidateVisible','nativeResearchDialogOpened','nativeResearchExecutionSeparationVisible','nativeResearchLegacyContributionZeroInDialog']) if(browser.checks?.[check]?.ok!==true) throw new Error(`Native browser acceptance missing: ${check}`);
+          if(!explain || !Array.isArray(explain.rows) || explain.rows.length!==Number(native.candidateUniverseCount)) throw new Error('Native explainability must cover the full candidate universe');
+          if(Number(explain.summary?.universeCount)!==Number(native.candidateUniverseCount)) throw new Error('Native explainability universe summary mismatch');
+          if(Number(explain.summary?.publishedCount)!==30) throw new Error('Native explainability published count mismatch');
+          if(Number(explain.summary?.eligibleCount)!==Number(native.summary?.nativeResearchRecommendationCount)) throw new Error('Native explainability eligible count mismatch');
+          if(explain.policy?.explainabilityInfluencesScore!==false || explain.policy?.explainabilityInfluencesExecution!==false || explain.policy?.explainabilityInfluencesChampion!==false) throw new Error('Native explainability governance drift');
+          if(!explain.rows.every(row=>Array.isArray(row.whyRankedHere)&&Array.isArray(row.whyExcluded)&&row.governance?.explainabilityInfluencesScore===false)) throw new Error('Native explainability row contract incomplete');
+          for(const check of [
+            'nativeResearchPanelLoaded','nativeResearchIsPrimaryRanking','legacyBaselineIsSecondary',
+            'nativeResearchLegacyContributionZeroVisible','nativeResearchOutsideLegacyCandidateVisible','nativeWhyRankedVisible',
+            'nativeResearchDialogOpened','nativeResearchExecutionSeparationVisible','nativeResearchWhyRankedDialogVisible',
+            'nativeResearchLegacyContributionZeroInDialog','nativeExcludedExplorerLoaded','nativeWhyExcludedVisible',
+            'nativeWhyExcludedDialogVisible','nativeBaselineComparisonLoaded'
+          ]) if(browser.checks?.[check]?.ok!==true) throw new Error(`Native browser acceptance missing: ${check}`);
           for(const file of [
             'v20/index.html','v20/health.html','v20/performance.html','v20/research.html','v20/technical.html',
             'v20/top5.html','v20/history.html','v20/backtest.html','v20/remediation.html','v20/native-research.js','v20/native-research.css',
@@ -99,7 +113,11 @@ jobs:
             nativeEngine:native.engineId,
             nativeUniverse:native.candidateUniverseCount,
             nativePublished:native.publishedCandidates.length,
-            nativeLegacyContributionPct:native.summary?.legacyScoringContributionPct
+            nativeEligible:native.summary?.nativeResearchRecommendationCount,
+            nativeExplainabilityRows:explain.rows.length,
+            nativeLegacyContributionPct:native.summary?.legacyScoringContributionPct,
+            nativePrimaryRanking:browser.checks?.nativeResearchIsPrimaryRanking?.ok===true,
+            legacyBaselineSecondary:browser.checks?.legacyBaselineIsSecondary?.ok===true
           },null,2));
           NODE
 
@@ -123,6 +141,9 @@ jobs:
             "deploymentPath": "/v20/",
             "releaseMode": "RESEARCH_ONLY_EXECUTION_BLOCKED",
             "activeChampion": "V16_9_EQUAL_WEIGHT_BASKET",
+            "nativePrimaryResearchRanking": true,
+            "legacyBaselineSecondary": true,
+            "nativeExplainabilityFullUniverse": true,
             "publishedAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           }
           JSON
@@ -144,7 +165,7 @@ jobs:
           node --check v20/app.js
           node --check v20/native-research.js
           node --check v20/performance.js
-          node -e "JSON.parse(require('fs').readFileSync('v20/deployment.json','utf8')); JSON.parse(require('fs').readFileSync('data/v20/current.json','utf8')); JSON.parse(require('fs').readFileSync('data/v20/market-explorer-regression.json','utf8'));"
+          node -e "const d=JSON.parse(require('fs').readFileSync('v20/deployment.json','utf8')); const m=JSON.parse(require('fs').readFileSync('data/v20/market-explorer-regression.json','utf8')); if(d.nativePrimaryResearchRanking!==true||d.legacyBaselineSecondary!==true||d.nativeExplainabilityFullUniverse!==true) process.exit(1); if((m.fullMarketNative?.explainability?.rows||[]).length!==Number(m.fullMarketNative?.candidateUniverseCount||0)) process.exit(1);"
 
       - name: Commit isolated V20 release
         shell: bash
@@ -165,6 +186,7 @@ jobs:
         run: |
           echo "### EGX PRO V20 published" >> "$GITHUB_STEP_SUMMARY"
           echo "URL: https://rasheadsca-star.github.io/RAS-EGX0.1/v20/" >> "$GITHUB_STEP_SUMMARY"
-          echo "Native: V20_FULL_MARKET_NATIVE_SELECTION_V1 / Top 30 persisted / Legacy contribution 0%" >> "$GITHUB_STEP_SUMMARY"
+          echo "Native: Primary Research Ranking / Full-market explainability / Top 30 persisted / Legacy contribution 0%" >> "$GITHUB_STEP_SUMMARY"
+          echo "Baseline: Secondary comparison only" >> "$GITHUB_STEP_SUMMARY"
           echo "Mode: RESEARCH_ONLY / EXECUTION_BLOCKED" >> "$GITHUB_STEP_SUMMARY"
           echo "Champion: V16_9_EQUAL_WEIGHT_BASKET" >> "$GITHUB_STEP_SUMMARY"
