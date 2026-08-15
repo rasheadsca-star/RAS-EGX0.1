@@ -1,0 +1,57 @@
+name: Export EGX PRO V20 Source
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/export-egx-pro-v20-source.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  export-v20-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout published V20 source commit
+        uses: actions/checkout@v6
+        with:
+          repository: rasheadsca-star/RAS-EGX-PRO2026-NEXT
+          ref: 3d2b389a2f5c2704b2eb7c9bc2b35e9478976d0d
+          fetch-depth: 1
+          path: source
+
+      - name: Verify exact published source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "3d2b389a2f5c2704b2eb7c9bc2b35e9478976d0d"
+          test -f source/v20/index.html
+          test -f source/scripts/v20/build-stock-profiles.cjs
+          test -f source/data/v20/regression.json
+          test -f source/.github/workflows/v20-integrated-decision-platform.yml
+
+      - name: Build exact full-source ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C source archive \
+            --format=zip \
+            --prefix=EGX_PRO_V20_FULL_SOURCE/ \
+            --output="$GITHUB_WORKSPACE/EGX_PRO_V20_FULL_SOURCE_3d2b389a2f5c.zip" \
+            HEAD
+          sha256sum EGX_PRO_V20_FULL_SOURCE_3d2b389a2f5c.zip > EGX_PRO_V20_FULL_SOURCE_3d2b389a2f5c.sha256
+          ls -lh EGX_PRO_V20_FULL_SOURCE_3d2b389a2f5c.zip
+
+      - name: Upload V20 source ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: EGX_PRO_V20_FULL_SOURCE_3d2b389a2f5c
+          path: |
+            EGX_PRO_V20_FULL_SOURCE_3d2b389a2f5c.zip
+            EGX_PRO_V20_FULL_SOURCE_3d2b389a2f5c.sha256
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
