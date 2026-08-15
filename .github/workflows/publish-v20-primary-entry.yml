@@ -1,0 +1,206 @@
+name: Publish V20 Direct Primary Entry
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publish-v20-primary-entry.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-v20-direct-primary-entry
+  cancel-in-progress: true
+
+jobs:
+  publish-direct-entry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout deployment repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Fetch V20 direct-entry source
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .v20-source .v17-runtime
+          git clone --depth 1 --filter=blob:none --no-checkout --branch develop/v20-integrated-decision-platform \
+            https://github.com/rasheadsca-star/RAS-EGX-PRO2026-NEXT.git .v20-source
+          git -C .v20-source sparse-checkout init --cone
+          git -C .v20-source sparse-checkout set v20 data/v20 scripts/v20
+          git -C .v20-source checkout
+          git -C .v20-source rev-parse HEAD > .v20-source-sha
+
+      - name: Enforce source entry-point-only diff
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE_SHA="0a417391b58c23a8857f7013c37e30986afd1240"
+          git -C .v20-source fetch --no-tags --depth=1 origin "$BASE_SHA"
+          changed="$(git -C .v20-source diff --name-only "$BASE_SHA" HEAD)"
+          violations="$(printf '%s\n' "$changed" | grep -Ev '^(v20/index\.html|v20/native-research\.js|scripts/v20/primary-entry-point-acceptance\.cjs|\.github/workflows/v20-primary-entry-point-acceptance\.yml)$' || true)"
+          test -z "$violations" || { echo "Source scope violation:"; echo "$violations"; exit 1; }
+          test -z "$(git -C .v20-source diff --name-only "$BASE_SHA" HEAD -- scripts/v20/build-full-market-native-selection.cjs scripts/v20/build-v17-production-decision-core.cjs scripts/v20/build-final-decision-contract.cjs scripts/v20/build-funded-nav.cjs data/v20/final-decision-contract.json data/v20/v17-production-decision-core.json data/v20/native-current.json)" || { echo "Algorithm/data-contract drift"; exit 1; }
+
+      - name: Re-certify direct entry from committed source
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd .v20-source
+          GITHUB_WORKSPACE="$PWD" node scripts/v20/primary-entry-point-acceptance.cjs
+          GITHUB_WORKSPACE="$PWD" node scripts/v20/decision-board-browser-certification.cjs
+          node - <<'NODE'
+          const fs=require('fs');
+          const contract=require('./data/v20/final-decision-contract.json');
+          const core=require('./data/v20/v17-production-decision-core.json');
+          const native=require('./data/v20/native-current.json');
+          const cert=require('./data/v20/v17-centric-final-certification.json');
+          const browser=require('./data/v20/decision-board-browser-certification.json');
+          const registry=require('./data/v20/champion-challenger-registry.json');
+          const assert=(ok,msg)=>{if(!ok)throw new Error(msg);};
+          assert(cert.ok===true&&cert.critical===0&&cert.major===0,'Canonical product certification not clean');
+          assert(contract.architecture==='V17_CENTRIC_V20_NATIVE_DISCOVERY','Architecture drift');
+          assert(core.policy?.v17IsAuthoritativeForProductionEligibility===true&&core.policy?.v20NativeMayOverrideV17===false,'V17 authority drift');
+          assert(native.executionPermission===false&&native.productionAllocation===false&&native.automaticPromotion===false,'Native authority drift');
+          assert(Number(native.legacyScoringContributionPct)===0,'Legacy scoring contribution drift');
+          assert(registry.activeChampion==='V16_9_EQUAL_WEIGHT_BASKET'&&registry.automaticPromotion===false,'Champion governance drift');
+          assert(browser.ok===true&&browser.failedCount===0&&(browser.consoleErrors||[]).length===0,'Fresh direct-entry browser certification failed');
+          assert(JSON.stringify((browser.viewportResults||[]).map(v=>v.width))===JSON.stringify([1440,1024,768,430,390]),'Viewport set drift');
+          if(contract.sessionStatus!=='EXECUTION_GRADE'){
+            assert(Number(contract.summary?.productionActionableCount)===0&&Number(contract.summary?.productionNewExposurePct)===0,'Closed-gate production leak');
+          }
+          const index=fs.readFileSync('./v20/index.html','utf8');
+          const compat=fs.readFileSync('./v20/native-research.js','utf8');
+          assert((index.match(/decision-board\.css/g)||[]).length===1,'Decision Board CSS not loaded exactly once');
+          assert((index.match(/decision-board\.js/g)||[]).length===1,'Decision Board JS not loaded exactly once');
+          assert(!/decision-board\.(?:js|css)/i.test(compat),'Compatibility loader still injects Decision Board assets');
+          console.log(JSON.stringify({ok:true,sourceCommit:process.env.GITHUB_SHA,entryPoint:'v20/index.html',directLoad:true,dynamicInjection:false,browserFailed:browser.failedCount,sessionStatus:contract.sessionStatus,actionable:contract.summary?.productionActionableCount},null,2));
+          NODE
+
+      - name: Materialize exact certified V17 runtime package
+        shell: bash
+        run: |
+          set -euo pipefail
+          V17_SHA="$(node -e "console.log(require('./.v20-source/data/v20/v17-centric-final-certification.json').source.v17Commit)")"
+          git -C .v20-source fetch --no-tags --depth=1 origin "$V17_SHA"
+          mkdir -p .v17-runtime
+          git -C .v20-source archive "$V17_SHA" data/v17 | tar -x -C .v17-runtime
+          test -f .v17-runtime/data/v17/resilient-session-status.json
+          echo "$V17_SHA" > .v17-source-sha
+
+      - name: Publish exact direct-entry V20 package
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE_SHA="$(cat .v20-source-sha)"
+          V17_SHA="$(cat .v17-source-sha)"
+          rm -rf v20 data/v20 data/v17
+          mkdir -p data
+          cp -R .v20-source/v20 ./v20
+          cp -R .v20-source/data/v20 ./data/v20
+          cp -R .v17-runtime/data/v17 ./data/v17
+          node - <<'NODE'
+          const fs=require('fs');
+          const sourceSha=fs.readFileSync('.v20-source-sha','utf8').trim();
+          const v17Sha=fs.readFileSync('.v17-source-sha','utf8').trim();
+          const contract=require('./data/v20/final-decision-contract.json');
+          const cert=require('./data/v20/v17-centric-final-certification.json');
+          const native=require('./data/v20/native-current.json');
+          const browser=require('./data/v20/decision-board-browser-certification.json');
+          const registry=require('./data/v20/champion-challenger-registry.json');
+          const deployment={
+            release:'EGX PRO V20',
+            sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',
+            sourceBranch:'develop/v20-integrated-decision-platform',
+            sourceCommit:sourceSha,
+            certificationWorkflowCommit:cert.source.workflowCommit,
+            certifiedV17Commit:v17Sha,
+            deploymentRepository:'rasheadsca-star/RAS-EGX0.1',
+            deploymentPath:'/v20/',
+            architecture:contract.architecture,
+            primaryDecisionUi:'DECISION_BOARD_V17_CENTRIC',
+            primaryEntryPoint:'v20/index.html',
+            primaryEntryPointDirect:true,
+            dynamicDecisionBoardInjectionRequired:false,
+            directEntryBrowserCertified:true,
+            decisionSupportCertified:true,
+            productStatus:contract.productStatus,
+            sessionDate:contract.sessionDate,
+            sessionStatus:contract.sessionStatus,
+            releaseMode:contract.sessionStatus==='EXECUTION_GRADE'?'DECISION_SUPPORT_EXECUTION_GRADE':'RESEARCH_ONLY_EXECUTION_BLOCKED',
+            productionActionableCount:Number(contract.summary.productionActionableCount||0),
+            productionNewExposurePct:Number(contract.summary.productionNewExposurePct||0),
+            activeChampion:registry.activeChampion,
+            automaticPromotion:false,
+            automaticBrokerExecution:false,
+            nativeDiscoveryOnly:true,
+            nativeEngine:native.engineId,
+            nativeModelVersion:native.modelVersion,
+            nativePublishedCandidateCount:native.publishedCandidates.length,
+            nativeExecutionPermission:false,
+            nativeProductionAllocation:false,
+            legacyNativeScoringContributionPct:0,
+            browserE2ECertified:browser.ok===true&&browser.failedCount===0,
+            certifiedResponsiveWidths:(browser.viewportResults||[]).map(v=>v.width),
+            publishedAt:new Date().toISOString()
+          };
+          fs.writeFileSync('v20/deployment.json',`${JSON.stringify(deployment,null,2)}\n`,'utf8');
+          NODE
+
+      - name: Validate deployed direct entry
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check v20/decision-board.js
+          node --check v20/native-research.js
+          node - <<'NODE'
+          const fs=require('fs');
+          const d=require('./v20/deployment.json');
+          const c=require('./data/v20/final-decision-contract.json');
+          const b=require('./data/v20/decision-board-browser-certification.json');
+          const index=fs.readFileSync('./v20/index.html','utf8');
+          const compat=fs.readFileSync('./v20/native-research.js','utf8');
+          if(d.primaryEntryPoint!=='v20/index.html'||d.primaryEntryPointDirect!==true||d.dynamicDecisionBoardInjectionRequired!==false||d.directEntryBrowserCertified!==true)throw Error('Direct-entry deployment metadata missing');
+          if((index.match(/<link\b[^>]*decision-board\.css/g)||[]).length!==1)throw Error('Deployed Decision Board CSS count mismatch');
+          if((index.match(/<script\b[^>]*decision-board\.js/g)||[]).length!==1)throw Error('Deployed Decision Board JS count mismatch');
+          if(/decision-board\.(?:js|css)/i.test(compat))throw Error('Deployed compatibility loader injects core Decision Board');
+          if(!/opportunities-panel legacy-secondary-panel/.test(index))throw Error('Legacy panel not secondary');
+          if(b.ok!==true||b.failedCount!==0||(b.consoleErrors||[]).length!==0)throw Error('Fresh browser certification not green');
+          if(JSON.stringify(d.certifiedResponsiveWidths)!==JSON.stringify([1440,1024,768,430,390]))throw Error('Responsive certification drift');
+          if(c.sessionStatus!=='EXECUTION_GRADE'&&(Number(d.productionActionableCount)!==0||Number(d.productionNewExposurePct)!==0))throw Error('Closed-gate production leak');
+          console.log(JSON.stringify({ok:true,sourceCommit:d.sourceCommit,primaryEntryPoint:d.primaryEntryPoint,directLoad:d.primaryEntryPointDirect,dynamicInjection:d.dynamicDecisionBoardInjectionRequired,browserE2E:d.browserE2ECertified,widths:d.certifiedResponsiveWidths,sessionStatus:d.sessionStatus,actionable:d.productionActionableCount},null,2));
+          NODE
+
+      - name: Commit direct-entry release
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add v20 data/v20 data/v17
+          if git diff --cached --quiet; then
+            echo "Direct-entry deployment already current"
+            exit 0
+          fi
+          SOURCE_SHA="$(cat .v20-source-sha)"
+          git commit -m "Publish V20 direct primary entry ${SOURCE_SHA:0:12}"
+          git push origin HEAD:main
+
+      - name: Publication summary
+        run: |
+          echo "### V20 direct primary entry published" >> "$GITHUB_STEP_SUMMARY"
+          echo "Entry: /v20/index.html" >> "$GITHUB_STEP_SUMMARY"
+          echo "Primary: Decision Board — V17-Centric" >> "$GITHUB_STEP_SUMMARY"
+          echo "Direct Decision Board CSS/JS: PASS" >> "$GITHUB_STEP_SUMMARY"
+          echo "Dynamic Decision Board injection: REMOVED" >> "$GITHUB_STEP_SUMMARY"
+          echo "Browser: 1440 / 1024 / 768 / 430 / 390 PASS" >> "$GITHUB_STEP_SUMMARY"
