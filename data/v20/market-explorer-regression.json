@@ -1,6 +1,6 @@
 {
   "schemaVersion": "20.0.0-market-explorer-regression-2",
-  "generatedAt": "2026-08-15T15:39:02.978Z",
+  "generatedAt": "2026-08-15T15:54:58.130Z",
   "ok": true,
   "failedCount": 0,
   "failures": [],
@@ -633,16 +633,16 @@
         "nativeResearchTier": "RESEARCH_C",
         "discoveryScore": 87.7,
         "liquidity2Score": 82.5,
-        "srConfluenceScore": 95.1,
+        "srConfluenceScore": 95.2,
         "srMethodCount": 2,
         "technicalScore": 69.5,
-        "netRiskReward": 1.553,
-        "entryLow": 363.389,
-        "entryHigh": 369.3954,
-        "stop": 354.8085,
-        "target1": 397.711,
+        "netRiskReward": 1.555,
+        "entryLow": 363.3195,
+        "entryHigh": 369.3502,
+        "stop": 354.7043,
+        "target1": 397.7805,
         "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
-        "entryDistancePct": 3.02,
+        "entryDistancePct": 3.03,
         "rankingTieBreaker": {
           "contract": "V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2",
           "appliesOnlyOnExactScoreTie": true,
@@ -651,10 +651,10 @@
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "alignmentSafetyPriority": 2,
           "scoreBeforeRegimeAndCaps": 79.3,
-          "entryDistancePct": 3.02,
-          "netRiskReward": 1.553,
+          "entryDistancePct": 3.03,
+          "netRiskReward": 1.555,
           "liquidity2Score": 82.5,
-          "srConfluenceScore": 95.1,
+          "srConfluenceScore": 95.2,
           "technicalScore": 69.5,
           "discoveryScore": 87.7
         },
@@ -2414,15 +2414,15 @@
           "componentScores": {
             "dataEvidence": 100,
             "liquidity": 82.5,
-            "supportResistance": 95.1,
+            "supportResistance": 95.2,
             "netRiskReward": 71.3,
             "tradePlanAlignment": 30,
             "currentTechnical": 69.5
           },
-          "netRiskReward": 1.553,
+          "netRiskReward": 1.555,
           "srMethodCount": 2,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
-          "entryDistancePct": 3.02,
+          "entryDistancePct": 3.03,
           "rankingTieBreaker": {
             "contract": "V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2",
             "appliesOnlyOnExactScoreTie": true,
@@ -2431,18 +2431,18 @@
             "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
             "alignmentSafetyPriority": 2,
             "scoreBeforeRegimeAndCaps": 79.3,
-            "entryDistancePct": 3.02,
-            "netRiskReward": 1.553,
+            "entryDistancePct": 3.03,
+            "netRiskReward": 1.555,
             "liquidity2Score": 82.5,
-            "srConfluenceScore": 95.1,
+            "srConfluenceScore": 95.2,
             "technicalScore": 69.5,
             "discoveryScore": 87.7
           },
           "tradePlan": {
-            "entryLow": 363.389,
-            "entryHigh": 369.3954,
-            "stop": 354.8085,
-            "target1": 397.711,
+            "entryLow": 363.3195,
+            "entryHigh": 369.3502,
+            "stop": 354.7043,
+            "target1": 397.7805,
             "target2": 406.9667
           },
           "strongestEvidence": [
@@ -2452,7 +2452,7 @@
             },
             {
               "component": "supportResistance",
-              "score": 95.1
+              "score": 95.2
             },
             {
               "component": "liquidity",
@@ -8019,6 +8019,84 @@
           "publicationState": "EXCLUDED_FROM_NATIVE_RESEARCH_RANKING"
         },
         {
+          "ticker": "SCFM",
+          "nameAr": "South Cairo and Giza Flour Mills and Bakeries",
+          "nameEn": "South Cairo and Giza Flour Mills and Bakeries",
+          "price": 280.32,
+          "sessionDate": "2026-08-13",
+          "wasInLegacySeedUniverse": false,
+          "baselineResearchRank": null,
+          "discoveryScore": 91.3,
+          "nativeResearchScore": 80.2,
+          "scoreBeforeRegimeAndCaps": 80.2,
+          "minimumFinalResearchScore": 50,
+          "minimumNetRiskReward": 0.7,
+          "availableNonLegacyWeightPct": 90,
+          "approvedNonLegacyWeightPct": 90,
+          "recommendationEligible": false,
+          "componentScores": {
+            "dataEvidence": 100,
+            "liquidity": 77.6,
+            "supportResistance": 99.2,
+            "netRiskReward": 29.7,
+            "tradePlanAlignment": 100,
+            "currentTechnical": 90.7
+          },
+          "netRiskReward": 0.411,
+          "srMethodCount": 3,
+          "alignmentState": "IN_ENTRY_RANGE",
+          "entryDistancePct": null,
+          "rankingTieBreaker": null,
+          "tradePlan": {
+            "entryLow": 278,
+            "entryHigh": 280.32,
+            "stop": 271.1199,
+            "target1": 286.4767,
+            "target2": 293.89
+          },
+          "strongestEvidence": [
+            {
+              "component": "dataEvidence",
+              "score": 100
+            },
+            {
+              "component": "tradePlanAlignment",
+              "score": 100
+            },
+            {
+              "component": "supportResistance",
+              "score": 99.2
+            }
+          ],
+          "whyRankedHere": [
+            "FULL_MARKET_NATIVE_DISCOVERY",
+            "LIQUIDITY_STRONG",
+            "SR_CONFLUENCE_STRONG",
+            "TECHNICAL_STRONG",
+            "ENTRY_ALIGNED",
+            "DATA_EVIDENCE_STRONG"
+          ],
+          "whyExcluded": [
+            "NET_RR_BELOW_NATIVE_MINIMUM"
+          ],
+          "caps": [],
+          "readiness": {
+            "preselectionEligible": true,
+            "structurallyReady": true,
+            "tradePlanReady": true,
+            "minimumNetRiskRewardPassed": false,
+            "allNonLegacyComponentsAvailable": true
+          },
+          "governance": {
+            "researchOnly": true,
+            "scoreIsConfidence": false,
+            "executionPermission": false,
+            "productionAllocation": false,
+            "explainabilityInfluencesScore": false
+          },
+          "publicationState": "EXCLUDED_FROM_NATIVE_RESEARCH_RANKING"
+        },
+        {
           "ticker": "ASCM",
           "nameAr": "Asek Company for Mining - Ascom",
           "nameEn": "Asek Company for Mining - Ascom",
@@ -8066,84 +8144,6 @@
             {
               "component": "supportResistance",
               "score": 98.9
-            }
-          ],
-          "whyRankedHere": [
-            "FULL_MARKET_NATIVE_DISCOVERY",
-            "LIQUIDITY_STRONG",
-            "SR_CONFLUENCE_STRONG",
-            "TECHNICAL_STRONG",
-            "ENTRY_ALIGNED",
-            "DATA_EVIDENCE_STRONG"
-          ],
-          "whyExcluded": [
-            "NET_RR_BELOW_NATIVE_MINIMUM"
-          ],
-          "caps": [],
-          "readiness": {
-            "preselectionEligible": true,
-            "structurallyReady": true,
-            "tradePlanReady": true,
-            "minimumNetRiskRewardPassed": false,
-            "allNonLegacyComponentsAvailable": true
-          },
-          "governance": {
-            "researchOnly": true,
-            "scoreIsConfidence": false,
-            "executionPermission": false,
-            "productionAllocation": false,
-            "explainabilityInfluencesScore": false
-          },
-          "publicationState": "EXCLUDED_FROM_NATIVE_RESEARCH_RANKING"
-        },
-        {
-          "ticker": "SCFM",
-          "nameAr": "South Cairo and Giza Flour Mills and Bakeries",
-          "nameEn": "South Cairo and Giza Flour Mills and Bakeries",
-          "price": 280.32,
-          "sessionDate": "2026-08-13",
-          "wasInLegacySeedUniverse": false,
-          "baselineResearchRank": null,
-          "discoveryScore": 89.2,
-          "nativeResearchScore": 79.4,
-          "scoreBeforeRegimeAndCaps": 79.4,
-          "minimumFinalResearchScore": 50,
-          "minimumNetRiskReward": 0.7,
-          "availableNonLegacyWeightPct": 90,
-          "approvedNonLegacyWeightPct": 90,
-          "recommendationEligible": false,
-          "componentScores": {
-            "dataEvidence": 100,
-            "liquidity": 77.6,
-            "supportResistance": 99.2,
-            "netRiskReward": 28.5,
-            "tradePlanAlignment": 100,
-            "currentTechnical": 80.6
-          },
-          "netRiskReward": 0.392,
-          "srMethodCount": 3,
-          "alignmentState": "IN_ENTRY_RANGE",
-          "entryDistancePct": null,
-          "rankingTieBreaker": null,
-          "tradePlan": {
-            "entryLow": 278,
-            "entryHigh": 280.32,
-            "stop": 270.601,
-            "target1": 286.4767,
-            "target2": 293.89
-          },
-          "strongestEvidence": [
-            {
-              "component": "dataEvidence",
-              "score": 100
-            },
-            {
-              "component": "tradePlanAlignment",
-              "score": 100
-            },
-            {
-              "component": "supportResistance",
-              "score": 99.2
             }
           ],
           "whyRankedHere": [
@@ -8407,6 +8407,82 @@
           "publicationState": "EXCLUDED_FROM_NATIVE_RESEARCH_RANKING"
         },
         {
+          "ticker": "OCPH",
+          "nameAr": "October Pharma SAE",
+          "nameEn": "October Pharma SAE",
+          "price": 290,
+          "sessionDate": "2026-08-13",
+          "wasInLegacySeedUniverse": true,
+          "baselineResearchRank": 29,
+          "discoveryScore": 82.4,
+          "nativeResearchScore": 77.8,
+          "scoreBeforeRegimeAndCaps": 77.8,
+          "minimumFinalResearchScore": 50,
+          "minimumNetRiskReward": 0.7,
+          "availableNonLegacyWeightPct": 90,
+          "approvedNonLegacyWeightPct": 90,
+          "recommendationEligible": false,
+          "componentScores": {
+            "dataEvidence": 100,
+            "liquidity": 82.5,
+            "supportResistance": 91,
+            "netRiskReward": 26.7,
+            "tradePlanAlignment": 100,
+            "currentTechnical": 47.3
+          },
+          "netRiskReward": 0.361,
+          "srMethodCount": 3,
+          "alignmentState": "IN_ENTRY_RANGE",
+          "entryDistancePct": null,
+          "rankingTieBreaker": null,
+          "tradePlan": {
+            "entryLow": 274,
+            "entryHigh": 290,
+            "stop": 249.4616,
+            "target1": 307,
+            "target2": 339.0768
+          },
+          "strongestEvidence": [
+            {
+              "component": "dataEvidence",
+              "score": 100
+            },
+            {
+              "component": "tradePlanAlignment",
+              "score": 100
+            },
+            {
+              "component": "supportResistance",
+              "score": 91
+            }
+          ],
+          "whyRankedHere": [
+            "LIQUIDITY_STRONG",
+            "SR_CONFLUENCE_STRONG",
+            "ENTRY_ALIGNED",
+            "DATA_EVIDENCE_STRONG"
+          ],
+          "whyExcluded": [
+            "NET_RR_BELOW_NATIVE_MINIMUM"
+          ],
+          "caps": [],
+          "readiness": {
+            "preselectionEligible": true,
+            "structurallyReady": true,
+            "tradePlanReady": true,
+            "minimumNetRiskRewardPassed": false,
+            "allNonLegacyComponentsAvailable": true
+          },
+          "governance": {
+            "researchOnly": true,
+            "scoreIsConfidence": false,
+            "executionPermission": false,
+            "productionAllocation": false,
+            "explainabilityInfluencesScore": false
+          },
+          "publicationState": "EXCLUDED_FROM_NATIVE_RESEARCH_RANKING"
+        },
+        {
           "ticker": "ELEC",
           "nameAr": "Electro Cable Co SAE - Egypt",
           "nameEn": "Electro Cable Co SAE - Egypt",
@@ -8568,10 +8644,10 @@
           "price": 5.98,
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": true,
-          "baselineResearchRank": 9,
-          "discoveryScore": 84.9,
-          "nativeResearchScore": 77.4,
-          "scoreBeforeRegimeAndCaps": 77.4,
+          "baselineResearchRank": 8,
+          "discoveryScore": 85,
+          "nativeResearchScore": 76.9,
+          "scoreBeforeRegimeAndCaps": 76.9,
           "minimumFinalResearchScore": 50,
           "minimumNetRiskReward": 0.7,
           "availableNonLegacyWeightPct": 90,
@@ -8580,12 +8656,12 @@
           "componentScores": {
             "dataEvidence": 100,
             "liquidity": 80.6,
-            "supportResistance": 97.5,
-            "netRiskReward": 19.5,
+            "supportResistance": 97.7,
+            "netRiskReward": 16.8,
             "tradePlanAlignment": 100,
             "currentTechnical": 56.2
           },
-          "netRiskReward": 0.244,
+          "netRiskReward": 0.21,
           "srMethodCount": 3,
           "alignmentState": "IN_ENTRY_RANGE",
           "entryDistancePct": null,
@@ -8593,9 +8669,9 @@
           "tradePlan": {
             "entryLow": 5.9,
             "entryHigh": 5.98,
-            "stop": 5.7536,
+            "stop": 5.7113,
             "target1": 6.08,
-            "target2": 6.2729
+            "target2": 6.3575
           },
           "strongestEvidence": [
             {
@@ -8608,7 +8684,7 @@
             },
             {
               "component": "supportResistance",
-              "score": 97.5
+              "score": 97.7
             }
           ],
           "whyRankedHere": [
@@ -8766,6 +8842,82 @@
           ],
           "whyRankedHere": [
             "FULL_MARKET_NATIVE_DISCOVERY",
+            "SR_CONFLUENCE_STRONG",
+            "TECHNICAL_STRONG",
+            "ENTRY_ALIGNED",
+            "DATA_EVIDENCE_STRONG"
+          ],
+          "whyExcluded": [
+            "NET_RR_BELOW_NATIVE_MINIMUM"
+          ],
+          "caps": [],
+          "readiness": {
+            "preselectionEligible": true,
+            "structurallyReady": true,
+            "tradePlanReady": true,
+            "minimumNetRiskRewardPassed": false,
+            "allNonLegacyComponentsAvailable": true
+          },
+          "governance": {
+            "researchOnly": true,
+            "scoreIsConfidence": false,
+            "executionPermission": false,
+            "productionAllocation": false,
+            "explainabilityInfluencesScore": false
+          },
+          "publicationState": "EXCLUDED_FROM_NATIVE_RESEARCH_RANKING"
+        },
+        {
+          "ticker": "GBCO",
+          "nameAr": "GB Corp",
+          "nameEn": "GB Corp",
+          "price": 31.53,
+          "sessionDate": "2026-08-13",
+          "wasInLegacySeedUniverse": true,
+          "baselineResearchRank": 4,
+          "discoveryScore": 85,
+          "nativeResearchScore": 75.8,
+          "scoreBeforeRegimeAndCaps": 75.8,
+          "minimumFinalResearchScore": 50,
+          "minimumNetRiskReward": 0.7,
+          "availableNonLegacyWeightPct": 90,
+          "approvedNonLegacyWeightPct": 90,
+          "recommendationEligible": false,
+          "componentScores": {
+            "dataEvidence": 100,
+            "liquidity": 68.6,
+            "supportResistance": 94.1,
+            "netRiskReward": 29.7,
+            "tradePlanAlignment": 100,
+            "currentTechnical": 78.1
+          },
+          "netRiskReward": 0.412,
+          "srMethodCount": 3,
+          "alignmentState": "IN_ENTRY_RANGE",
+          "entryDistancePct": null,
+          "rankingTieBreaker": null,
+          "tradePlan": {
+            "entryLow": 31.2033,
+            "entryHigh": 31.53,
+            "stop": 30.666,
+            "target1": 32.1533,
+            "target2": 32.45
+          },
+          "strongestEvidence": [
+            {
+              "component": "dataEvidence",
+              "score": 100
+            },
+            {
+              "component": "tradePlanAlignment",
+              "score": 100
+            },
+            {
+              "component": "supportResistance",
+              "score": 94.1
+            }
+          ],
+          "whyRankedHere": [
             "SR_CONFLUENCE_STRONG",
             "TECHNICAL_STRONG",
             "ENTRY_ALIGNED",
@@ -8998,81 +9150,6 @@
             "FULL_MARKET_NATIVE_DISCOVERY",
             "SR_CONFLUENCE_STRONG",
             "TECHNICAL_STRONG",
-            "ENTRY_ALIGNED",
-            "DATA_EVIDENCE_STRONG"
-          ],
-          "whyExcluded": [
-            "NET_RR_BELOW_NATIVE_MINIMUM"
-          ],
-          "caps": [],
-          "readiness": {
-            "preselectionEligible": true,
-            "structurallyReady": true,
-            "tradePlanReady": true,
-            "minimumNetRiskRewardPassed": false,
-            "allNonLegacyComponentsAvailable": true
-          },
-          "governance": {
-            "researchOnly": true,
-            "scoreIsConfidence": false,
-            "executionPermission": false,
-            "productionAllocation": false,
-            "explainabilityInfluencesScore": false
-          },
-          "publicationState": "EXCLUDED_FROM_NATIVE_RESEARCH_RANKING"
-        },
-        {
-          "ticker": "GBCO",
-          "nameAr": "GB Corp",
-          "nameEn": "GB Corp",
-          "price": 31.53,
-          "sessionDate": "2026-08-13",
-          "wasInLegacySeedUniverse": true,
-          "baselineResearchRank": 4,
-          "discoveryScore": 82.5,
-          "nativeResearchScore": 75.1,
-          "scoreBeforeRegimeAndCaps": 75.1,
-          "minimumFinalResearchScore": 50,
-          "minimumNetRiskReward": 0.7,
-          "availableNonLegacyWeightPct": 90,
-          "approvedNonLegacyWeightPct": 90,
-          "recommendationEligible": false,
-          "componentScores": {
-            "dataEvidence": 100,
-            "liquidity": 68.6,
-            "supportResistance": 94.2,
-            "netRiskReward": 29.6,
-            "tradePlanAlignment": 100,
-            "currentTechnical": 65.2
-          },
-          "netRiskReward": 0.41,
-          "srMethodCount": 3,
-          "alignmentState": "IN_ENTRY_RANGE",
-          "entryDistancePct": null,
-          "rankingTieBreaker": null,
-          "tradePlan": {
-            "entryLow": 31.2033,
-            "entryHigh": 31.53,
-            "stop": 30.661,
-            "target1": 32.1533,
-            "target2": 32.45
-          },
-          "strongestEvidence": [
-            {
-              "component": "dataEvidence",
-              "score": 100
-            },
-            {
-              "component": "tradePlanAlignment",
-              "score": 100
-            },
-            {
-              "component": "supportResistance",
-              "score": 94.2
-            }
-          ],
-          "whyRankedHere": [
-            "SR_CONFLUENCE_STRONG",
             "ENTRY_ALIGNED",
             "DATA_EVIDENCE_STRONG"
           ],
@@ -10175,9 +10252,9 @@
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": false,
           "baselineResearchRank": null,
-          "discoveryScore": 83.8,
-          "nativeResearchScore": 71.2,
-          "scoreBeforeRegimeAndCaps": 71.2,
+          "discoveryScore": 83.7,
+          "nativeResearchScore": 71.1,
+          "scoreBeforeRegimeAndCaps": 71.1,
           "minimumFinalResearchScore": 50,
           "minimumNetRiskReward": 0.7,
           "availableNonLegacyWeightPct": 90,
@@ -10186,12 +10263,12 @@
           "componentScores": {
             "dataEvidence": 100,
             "liquidity": 65.6,
-            "supportResistance": 90.7,
-            "netRiskReward": 9.9,
+            "supportResistance": 90.2,
+            "netRiskReward": 9.8,
             "tradePlanAlignment": 100,
-            "currentTechnical": 80
+            "currentTechnical": 80.1
           },
-          "netRiskReward": 0.124,
+          "netRiskReward": 0.123,
           "srMethodCount": 3,
           "alignmentState": "IN_ENTRY_RANGE",
           "entryDistancePct": null,
@@ -10199,9 +10276,9 @@
           "tradePlan": {
             "entryLow": 34.4533,
             "entryHigh": 34.88,
-            "stop": 33.7626,
+            "stop": 33.7546,
             "target1": 35.2533,
-            "target2": 36.2614
+            "target2": 36.2774
           },
           "strongestEvidence": [
             {
@@ -10214,7 +10291,7 @@
             },
             {
               "component": "supportResistance",
-              "score": 90.7
+              "score": 90.2
             }
           ],
           "whyRankedHere": [
@@ -10327,7 +10404,7 @@
           "price": 1.51,
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": true,
-          "baselineResearchRank": 8,
+          "baselineResearchRank": 9,
           "discoveryScore": 79.1,
           "nativeResearchScore": 70.4,
           "scoreBeforeRegimeAndCaps": 70.4,
@@ -10631,7 +10708,7 @@
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": false,
           "baselineResearchRank": null,
-          "discoveryScore": 76.5,
+          "discoveryScore": 76.9,
           "nativeResearchScore": 69.7,
           "scoreBeforeRegimeAndCaps": 69.7,
           "minimumFinalResearchScore": 50,
@@ -10642,12 +10719,12 @@
           "componentScores": {
             "dataEvidence": 100,
             "liquidity": 54.4,
-            "supportResistance": 93.4,
-            "netRiskReward": 28.6,
+            "supportResistance": 93.5,
+            "netRiskReward": 28.5,
             "tradePlanAlignment": 100,
-            "currentTechnical": 57.4
+            "currentTechnical": 59.3
           },
-          "netRiskReward": 0.394,
+          "netRiskReward": 0.391,
           "srMethodCount": 3,
           "alignmentState": "IN_ENTRY_RANGE",
           "entryDistancePct": null,
@@ -10655,9 +10732,9 @@
           "tradePlan": {
             "entryLow": 12.2433,
             "entryHigh": 12.38,
-            "stop": 11.9996,
+            "stop": 11.9963,
             "target1": 12.6333,
-            "target2": 12.8673
+            "target2": 12.8741
           },
           "strongestEvidence": [
             {
@@ -10670,7 +10747,7 @@
             },
             {
               "component": "supportResistance",
-              "score": 93.4
+              "score": 93.5
             }
           ],
           "whyRankedHere": [
@@ -13444,7 +13521,7 @@
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": false,
           "baselineResearchRank": null,
-          "discoveryScore": 90.1,
+          "discoveryScore": 90,
           "nativeResearchScore": 55,
           "scoreBeforeRegimeAndCaps": 73.3,
           "minimumFinalResearchScore": 50,
@@ -13456,21 +13533,21 @@
             "dataEvidence": 100,
             "liquidity": 82.5,
             "supportResistance": 97.5,
-            "netRiskReward": 30.1,
+            "netRiskReward": 30.4,
             "tradePlanAlignment": 30,
-            "currentTechnical": 79.2
+            "currentTechnical": 78.9
           },
-          "netRiskReward": 0.419,
+          "netRiskReward": 0.423,
           "srMethodCount": 2,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "entryDistancePct": null,
           "rankingTieBreaker": null,
           "tradePlan": {
             "entryLow": 32.2433,
-            "entryHigh": 32.5275,
-            "stop": 31.8373,
+            "entryHigh": 32.5257,
+            "stop": 31.8398,
             "target1": 33.0933,
-            "target2": 33.602
+            "target2": 33.597
           },
           "strongestEvidence": [
             {
@@ -13612,7 +13689,7 @@
           "baselineResearchRank": null,
           "discoveryScore": 90.3,
           "nativeResearchScore": 55,
-          "scoreBeforeRegimeAndCaps": 70.2,
+          "scoreBeforeRegimeAndCaps": 70.3,
           "minimumFinalResearchScore": 50,
           "minimumNetRiskReward": 0.7,
           "availableNonLegacyWeightPct": 90,
@@ -13622,19 +13699,19 @@
             "dataEvidence": 100,
             "liquidity": 82.5,
             "supportResistance": 95.4,
-            "netRiskReward": 12.6,
+            "netRiskReward": 12.8,
             "tradePlanAlignment": 30,
-            "currentTechnical": 82.5
+            "currentTechnical": 82.3
           },
-          "netRiskReward": 0.158,
+          "netRiskReward": 0.16,
           "srMethodCount": 3,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "entryDistancePct": null,
           "rankingTieBreaker": null,
           "tradePlan": {
             "entryLow": 327.9867,
-            "entryHigh": 331.319,
-            "stop": 323.2263,
+            "entryHigh": 331.3013,
+            "stop": 323.2516,
             "target1": 334.9,
             "target2": 339.9867
           },
@@ -14023,9 +14100,9 @@
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": false,
           "baselineResearchRank": null,
-          "discoveryScore": 91.7,
+          "discoveryScore": 91.6,
           "nativeResearchScore": 55,
-          "scoreBeforeRegimeAndCaps": 71,
+          "scoreBeforeRegimeAndCaps": 75,
           "minimumFinalResearchScore": 50,
           "minimumNetRiskReward": 0.7,
           "availableNonLegacyWeightPct": 90,
@@ -14034,12 +14111,12 @@
           "componentScores": {
             "dataEvidence": 100,
             "liquidity": 80.7,
-            "supportResistance": 95.2,
-            "netRiskReward": 17.8,
+            "supportResistance": 94.3,
+            "netRiskReward": 42.2,
             "tradePlanAlignment": 30,
-            "currentTechnical": 92.4
+            "currentTechnical": 92.7
           },
-          "netRiskReward": 0.223,
+          "netRiskReward": 0.679,
           "srMethodCount": 3,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "entryDistancePct": null,
@@ -14047,8 +14124,8 @@
           "tradePlan": {
             "entryLow": 2.92,
             "entryHigh": 2.9578,
-            "stop": 2.866,
-            "target1": 3,
+            "stop": 2.8659,
+            "target1": 3.05,
             "target2": 3.06
           },
           "strongestEvidence": [
@@ -14058,11 +14135,11 @@
             },
             {
               "component": "supportResistance",
-              "score": 95.2
+              "score": 94.3
             },
             {
               "component": "currentTechnical",
-              "score": 92.4
+              "score": 92.7
             }
           ],
           "whyRankedHere": [
@@ -14513,9 +14590,9 @@
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": false,
           "baselineResearchRank": null,
-          "discoveryScore": 70.8,
+          "discoveryScore": 70.9,
           "nativeResearchScore": 55,
-          "scoreBeforeRegimeAndCaps": 58,
+          "scoreBeforeRegimeAndCaps": 58.2,
           "minimumFinalResearchScore": 50,
           "minimumNetRiskReward": 0.7,
           "availableNonLegacyWeightPct": 90,
@@ -14524,22 +14601,22 @@
           "componentScores": {
             "dataEvidence": 100,
             "liquidity": 36.9,
-            "supportResistance": 96.6,
-            "netRiskReward": 39.8,
+            "supportResistance": 96.5,
+            "netRiskReward": 40.5,
             "tradePlanAlignment": 30,
-            "currentTechnical": 52.1
+            "currentTechnical": 52.8
           },
-          "netRiskReward": 0.621,
+          "netRiskReward": 0.638,
           "srMethodCount": 3,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "entryDistancePct": null,
           "rankingTieBreaker": null,
           "tradePlan": {
             "entryLow": 1.8633,
-            "entryHigh": 1.8919,
-            "stop": 1.8225,
+            "entryHigh": 1.8913,
+            "stop": 1.8233,
             "target1": 1.9533,
-            "target2": 1.9816
+            "target2": 1.98
           },
           "strongestEvidence": [
             {
@@ -14548,11 +14625,11 @@
             },
             {
               "component": "supportResistance",
-              "score": 96.6
+              "score": 96.5
             },
             {
               "component": "currentTechnical",
-              "score": 52.1
+              "score": 52.8
             }
           ],
           "whyRankedHere": [
@@ -14759,9 +14836,9 @@
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": true,
           "baselineResearchRank": 27,
-          "discoveryScore": 86.6,
+          "discoveryScore": 86.5,
           "nativeResearchScore": 55,
-          "scoreBeforeRegimeAndCaps": 68.3,
+          "scoreBeforeRegimeAndCaps": 68.1,
           "minimumFinalResearchScore": 50,
           "minimumNetRiskReward": 0.7,
           "availableNonLegacyWeightPct": 90,
@@ -14771,21 +14848,21 @@
             "dataEvidence": 100,
             "liquidity": 78.7,
             "supportResistance": 91.3,
-            "netRiskReward": 15.1,
+            "netRiskReward": 13.5,
             "tradePlanAlignment": 30,
-            "currentTechnical": 73.4
+            "currentTechnical": 73.1
           },
-          "netRiskReward": 0.189,
+          "netRiskReward": 0.169,
           "srMethodCount": 3,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "entryDistancePct": null,
           "rankingTieBreaker": null,
           "tradePlan": {
             "entryLow": 86.01,
-            "entryHigh": 87.0165,
-            "stop": 84.5721,
+            "entryHigh": 87.0589,
+            "stop": 84.5116,
             "target1": 88.1,
-            "target2": 89.9858
+            "target2": 90.1068
           },
           "strongestEvidence": [
             {
@@ -15167,7 +15244,7 @@
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": false,
           "baselineResearchRank": null,
-          "discoveryScore": 87.2,
+          "discoveryScore": 87.3,
           "nativeResearchScore": 55,
           "scoreBeforeRegimeAndCaps": 68,
           "minimumFinalResearchScore": 50,
@@ -15179,19 +15256,19 @@
             "dataEvidence": 100,
             "liquidity": 79,
             "supportResistance": 90.1,
-            "netRiskReward": 11.8,
+            "netRiskReward": 11.6,
             "tradePlanAlignment": 30,
-            "currentTechnical": 77.6
+            "currentTechnical": 78.1
           },
-          "netRiskReward": 0.148,
+          "netRiskReward": 0.145,
           "srMethodCount": 3,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "entryDistancePct": null,
           "rankingTieBreaker": null,
           "tradePlan": {
             "entryLow": 8.64,
-            "entryHigh": 8.7428,
-            "stop": 8.4931,
+            "entryHigh": 8.7434,
+            "stop": 8.4923,
             "target1": 8.84,
             "target2": 8.9
           },
@@ -15663,7 +15740,7 @@
           "baselineResearchRank": null,
           "discoveryScore": 87.5,
           "nativeResearchScore": 55,
-          "scoreBeforeRegimeAndCaps": 68.5,
+          "scoreBeforeRegimeAndCaps": 68.4,
           "minimumFinalResearchScore": 50,
           "minimumNetRiskReward": 0.7,
           "availableNonLegacyWeightPct": 90,
@@ -15673,21 +15750,21 @@
             "dataEvidence": 100,
             "liquidity": 73.1,
             "supportResistance": 99.2,
-            "netRiskReward": 19.3,
+            "netRiskReward": 19,
             "tradePlanAlignment": 30,
             "currentTechnical": 78.5
           },
-          "netRiskReward": 0.241,
+          "netRiskReward": 0.237,
           "srMethodCount": 3,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "entryDistancePct": null,
           "rankingTieBreaker": null,
           "tradePlan": {
             "entryLow": 7.1033,
-            "entryHigh": 7.1684,
-            "stop": 7.0103,
+            "entryHigh": 7.169,
+            "stop": 7.0094,
             "target1": 7.26,
-            "target2": 7.4261
+            "target2": 7.4278
           },
           "strongestEvidence": [
             {
@@ -15906,9 +15983,9 @@
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": false,
           "baselineResearchRank": null,
-          "discoveryScore": 88.2,
+          "discoveryScore": 91.5,
           "nativeResearchScore": 55,
-          "scoreBeforeRegimeAndCaps": 70,
+          "scoreBeforeRegimeAndCaps": 68.3,
           "minimumFinalResearchScore": 50,
           "minimumNetRiskReward": 0.7,
           "availableNonLegacyWeightPct": 90,
@@ -15917,22 +15994,22 @@
           "componentScores": {
             "dataEvidence": 100,
             "liquidity": 81,
-            "supportResistance": 96.8,
-            "netRiskReward": 16.3,
+            "supportResistance": 96.7,
+            "netRiskReward": 1,
             "tradePlanAlignment": 30,
-            "currentTechnical": 72.7
+            "currentTechnical": 89.1
           },
-          "netRiskReward": 0.204,
+          "netRiskReward": 0.012,
           "srMethodCount": 3,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "entryDistancePct": null,
           "rankingTieBreaker": null,
           "tradePlan": {
             "entryLow": 9.37,
-            "entryHigh": 9.5114,
-            "stop": 9.168,
+            "entryHigh": 9.5854,
+            "stop": 9.0623,
             "target1": 9.65,
-            "target2": 10.034
+            "target2": 10.07
           },
           "strongestEvidence": [
             {
@@ -15941,17 +16018,18 @@
             },
             {
               "component": "supportResistance",
-              "score": 96.8
+              "score": 96.7
             },
             {
-              "component": "liquidity",
-              "score": 81
+              "component": "currentTechnical",
+              "score": 89.1
             }
           ],
           "whyRankedHere": [
             "FULL_MARKET_NATIVE_DISCOVERY",
             "LIQUIDITY_STRONG",
             "SR_CONFLUENCE_STRONG",
+            "TECHNICAL_STRONG",
             "DATA_EVIDENCE_STRONG",
             "DEFENSIVE_CAP_APPLIED"
           ],
@@ -16116,87 +16194,6 @@
             "FULL_MARKET_NATIVE_DISCOVERY",
             "SR_CONFLUENCE_STRONG",
             "TECHNICAL_STRONG",
-            "DATA_EVIDENCE_STRONG",
-            "DEFENSIVE_CAP_APPLIED"
-          ],
-          "whyExcluded": [
-            "NET_RR_BELOW_NATIVE_MINIMUM"
-          ],
-          "caps": [
-            {
-              "code": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
-              "maxScore": 55
-            }
-          ],
-          "readiness": {
-            "preselectionEligible": true,
-            "structurallyReady": true,
-            "tradePlanReady": true,
-            "minimumNetRiskRewardPassed": false,
-            "allNonLegacyComponentsAvailable": true
-          },
-          "governance": {
-            "researchOnly": true,
-            "scoreIsConfidence": false,
-            "executionPermission": false,
-            "productionAllocation": false,
-            "explainabilityInfluencesScore": false
-          },
-          "publicationState": "EXCLUDED_FROM_NATIVE_RESEARCH_RANKING"
-        },
-        {
-          "ticker": "OCPH",
-          "nameAr": "October Pharma SAE",
-          "nameEn": "October Pharma SAE",
-          "price": 290,
-          "sessionDate": "2026-08-13",
-          "wasInLegacySeedUniverse": true,
-          "baselineResearchRank": 29,
-          "discoveryScore": 82.4,
-          "nativeResearchScore": 55,
-          "scoreBeforeRegimeAndCaps": 70.6,
-          "minimumFinalResearchScore": 50,
-          "minimumNetRiskReward": 0.7,
-          "availableNonLegacyWeightPct": 90,
-          "approvedNonLegacyWeightPct": 90,
-          "recommendationEligible": false,
-          "componentScores": {
-            "dataEvidence": 100,
-            "liquidity": 82.5,
-            "supportResistance": 91,
-            "netRiskReward": 30.2,
-            "tradePlanAlignment": 30,
-            "currentTechnical": 47.3
-          },
-          "netRiskReward": 0.42,
-          "srMethodCount": 3,
-          "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
-          "entryDistancePct": null,
-          "rankingTieBreaker": null,
-          "tradePlan": {
-            "entryLow": 274,
-            "entryHigh": 289.1226,
-            "stop": 252.3963,
-            "target1": 307,
-            "target2": 333.2075
-          },
-          "strongestEvidence": [
-            {
-              "component": "dataEvidence",
-              "score": 100
-            },
-            {
-              "component": "supportResistance",
-              "score": 91
-            },
-            {
-              "component": "liquidity",
-              "score": 82.5
-            }
-          ],
-          "whyRankedHere": [
-            "LIQUIDITY_STRONG",
-            "SR_CONFLUENCE_STRONG",
             "DATA_EVIDENCE_STRONG",
             "DEFENSIVE_CAP_APPLIED"
           ],
@@ -16895,7 +16892,7 @@
           "baselineResearchRank": null,
           "discoveryScore": 81.8,
           "nativeResearchScore": 55,
-          "scoreBeforeRegimeAndCaps": 71.7,
+          "scoreBeforeRegimeAndCaps": 71.6,
           "minimumFinalResearchScore": 50,
           "minimumNetRiskReward": 0.7,
           "availableNonLegacyWeightPct": 90,
@@ -16904,22 +16901,22 @@
           "componentScores": {
             "dataEvidence": 100,
             "liquidity": 80.3,
-            "supportResistance": 95.9,
-            "netRiskReward": 38.6,
+            "supportResistance": 96,
+            "netRiskReward": 38.1,
             "tradePlanAlignment": 30,
-            "currentTechnical": 42.5
+            "currentTechnical": 42.3
           },
-          "netRiskReward": 0.59,
+          "netRiskReward": 0.577,
           "srMethodCount": 3,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "entryDistancePct": null,
           "rankingTieBreaker": null,
           "tradePlan": {
             "entryLow": 10.78,
-            "entryHigh": 10.8894,
-            "stop": 10.6238,
+            "entryHigh": 10.8911,
+            "stop": 10.6213,
             "target1": 11.15,
-            "target2": 11.3325
+            "target2": 11.3375
           },
           "strongestEvidence": [
             {
@@ -16928,7 +16925,7 @@
             },
             {
               "component": "supportResistance",
-              "score": 95.9
+              "score": 96
             },
             {
               "component": "liquidity",
@@ -17714,9 +17711,9 @@
           "sessionDate": "2026-08-13",
           "wasInLegacySeedUniverse": false,
           "baselineResearchRank": null,
-          "discoveryScore": 85.3,
+          "discoveryScore": 85,
           "nativeResearchScore": 55,
-          "scoreBeforeRegimeAndCaps": 66,
+          "scoreBeforeRegimeAndCaps": 65.7,
           "minimumFinalResearchScore": 50,
           "minimumNetRiskReward": 0.7,
           "availableNonLegacyWeightPct": 90,
@@ -17725,22 +17722,22 @@
           "componentScores": {
             "dataEvidence": 100,
             "liquidity": 65.5,
-            "supportResistance": 90.5,
-            "netRiskReward": 23.2,
+            "supportResistance": 89,
+            "netRiskReward": 22.8,
             "tradePlanAlignment": 30,
             "currentTechnical": 87.9
           },
-          "netRiskReward": 0.303,
+          "netRiskReward": 0.296,
           "srMethodCount": 3,
           "alignmentState": "ABOVE_ENTRY_RANGE_DO_NOT_CHASE",
           "entryDistancePct": null,
           "rankingTieBreaker": null,
           "tradePlan": {
             "entryLow": 614.5267,
-            "entryHigh": 623.0299,
-            "stop": 602.3793,
+            "entryHigh": 623.1277,
+            "stop": 602.2396,
             "target1": 634.15,
-            "target2": 655.0849
+            "target2": 655.3642
           },
           "strongestEvidence": [
             {
@@ -17749,7 +17746,7 @@
             },
             {
               "component": "supportResistance",
-              "score": 90.5
+              "score": 89
             },
             {
               "component": "currentTechnical",
