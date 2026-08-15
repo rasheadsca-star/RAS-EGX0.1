@@ -29,11 +29,11 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Fetch isolated V20 release package
+      - name: Fetch certified V20 source package
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf .v20-source
+          rm -rf .v20-source .v17-runtime
           git clone \
             --depth 1 \
             --filter=blob:none \
@@ -43,180 +43,181 @@ jobs:
             .v20-source
           cd .v20-source
           git sparse-checkout init --cone
-          git sparse-checkout set v20 data/v20 data/v17
+          git sparse-checkout set v20 data/v20
           git checkout
           git rev-parse HEAD > ../.v20-source-sha
+          cd ..
 
-      - name: Verify V20 release acceptance
+      - name: Verify canonical V17-centric release certification
         shell: bash
         run: |
           set -euo pipefail
           cd .v20-source
           node - <<'NODE'
           const fs=require('fs');
-          const current=require('./data/v20/current.json');
-          const regression=require('./data/v20/regression.json');
-          const browser=require('./data/v20/browser-smoke.json');
-          const ui=require('./data/v20/ui-validation.json');
-          const v18=require('./data/v20/v18-performance-audit-regression.json');
-          const perf=require('./data/v20/performance-evidence-regression.json');
-          const perfRegistry=require('./data/v20/performance-evidence-registry.json');
-          const marketRegression=require('./data/v20/market-explorer-regression.json');
-          const nativeForwardPolicy=require('./data/v20/native-shadow-forward-policy.json');
-          const nativeForward=require('./data/v20/signal-archive/native-shadow/forward.json');
-          const nativeForwardRegression=require('./data/v20/signal-archive/native-shadow/regression.json');
-          const nativeArchiveIndex=require('./data/v20/signal-archive/native-shadow/archive/index.json');
-          const fa=regression.finalAcceptance;
-          const native=marketRegression.fullMarketNative;
-          const explain=native?.explainability;
-          const rd=native?.rankingDiscrimination;
-          const nativePerf=(perfRegistry.entries||[]).find(e=>e.evidenceId==='V20_FULL_MARKET_NATIVE_FORWARD_SHADOW');
+          const contract=require('./data/v20/final-decision-contract.json');
+          const core=require('./data/v20/v17-production-decision-core.json');
+          const native=require('./data/v20/native-current.json');
+          const browser=require('./data/v20/decision-board-browser-certification.json');
+          const cert=require('./data/v20/v17-centric-final-certification.json');
+          const semantic=require('./data/v20/v17-centric-semantic-acceptance.json');
+          const navReg=require('./data/v20/funded-nav-regression.json');
+          const forwardReg=require('./data/v20/signal-archive/native-shadow/regression.json');
+          const perfReg=require('./data/v20/performance-evidence-regression.json');
+          const govReg=require('./data/v20/champion-challenger-regression.json');
+          const registry=require('./data/v20/champion-challenger-registry.json');
+          const sync=require('./data/v20/v17-runtime-sync.json');
 
-          if(regression.ok!==true) throw new Error('V20 regression is not green');
-          if(!fa || fa.researchPlatformReady!==true) throw new Error('V20 research platform acceptance is not ready');
-          if(fa.finalStatus!=='RESEARCH_PLATFORM_READY_EXECUTION_NOT_READY') throw new Error(`Unexpected final status: ${fa?.finalStatus}`);
-          if(fa.executionReady!==false || fa.executionStatus!=='RESEARCH_ONLY') throw new Error('V20 must publish in RESEARCH_ONLY state');
-          if(fa.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET') throw new Error('Champion governance drift');
-          if(Number(fa.appliedExposurePct)!==0 || Number(fa.cashPct)!==100) throw new Error('Closed execution gate must remain 0% exposure / 100% cash');
-          if(browser.ok!==true || (browser.consoleErrors||[]).length!==0) throw new Error('Browser acceptance is not green');
-          if(ui.ok!==true || v18.ok!==true || perf.ok!==true) throw new Error('UI/V18/performance acceptance is not green');
-          if(current.executionStatus!=='RESEARCH_ONLY') throw new Error('Current state must remain RESEARCH_ONLY');
-          if(current.governance?.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET') throw new Error('Current champion drift');
-          if(current.governance?.automaticPromotion!==false || current.governance?.promotionAllowed!==false) throw new Error('Automatic promotion must remain disabled');
+          const assert=(ok,msg)=>{if(!ok)throw new Error(msg);};
+          assert(cert.schemaVersion==='20.0.0-v17-centric-final-certification-1','Unexpected final certification schema');
+          assert(cert.ok===true&&cert.critical===0&&cert.major===0,'Final certification is not clean');
+          assert(cert.architecture?.canonicalDecisionBoard===true&&cert.architecture?.v17Centric===true,'Canonical V17-centric architecture not certified');
+          assert(cert.architecture?.nativeDiscoveryOnly===true&&cert.architecture?.v17ExecutionAuthorityPreserved===true,'Decision authority certification drift');
+          assert(Number(cert.architecture?.legacyNativeScoringContributionPct)===0,'Legacy Native scoring contribution is not zero');
+          assert(cert.product?.productStatus==='PRODUCTION_READY_DECISION_SUPPORT'&&cert.product?.decisionSupportCertified===true,'Decision-support product is not certified');
+          assert(cert.governance?.activeChampion==='V16_9_EQUAL_WEIGHT_BASKET','Champion drift');
+          assert(cert.governance?.automaticPromotion===false&&cert.governance?.automaticBrokerExecution===false&&cert.governance?.v20MayOverrideV17===false,'Governance drift');
 
-          if(marketRegression.ok!==true || marketRegression.checks?.fullMarketNativeSelectionIntegrated!==true || marketRegression.checks?.fullMarketNativePublishedEvidencePersisted!==true) throw new Error('Full-market Native acceptance is not green');
-          if(marketRegression.checks?.fullMarketNativeExplainabilityPersisted!==true || marketRegression.checks?.fullMarketNativeExplainabilityNonInfluential!==true) throw new Error('Native explainability acceptance is not green');
-          if(marketRegression.checks?.fullMarketNativeRankingDiscriminationPersisted!==true || marketRegression.checks?.fullMarketNativeRankingDiscriminationNonMutating!==true || marketRegression.checks?.fullMarketNativeRankingTieBreakMetadataComplete!==true) throw new Error('Native ranking discrimination acceptance is not green');
-          if(!native || native.engineId!=='V20_FULL_MARKET_NATIVE_SELECTION_V1') throw new Error('Full-market Native engine evidence missing');
-          if(native.candidateUniverseIsFullMarketIndependent!==true || native.legacySeedDependency!==false) throw new Error('Native candidate universe must remain independent from Legacy seed');
-          if(native.researchOnly!==true || native.executionPermission!==false || native.productionAllocation!==false) throw new Error('Native engine research-only governance drift');
-          if(Number(native.summary?.legacyScoringContributionPct)!==0) throw new Error('Legacy scoring contribution must remain 0%');
-          if(Number(native.summary?.publishedResearchCandidateCount)!==30 || !Array.isArray(native.publishedCandidates) || native.publishedCandidates.length!==30) throw new Error('Native Top 30 evidence not persisted');
-          if(!native.publishedCandidates.every(row=>Number(row.netRiskReward)>=0.7)) throw new Error('Native published candidate below Net R/R quality gate');
+          assert(contract.schemaVersion==='20.0.0-canonical-stock-decision-contract-1','Unexpected canonical contract schema');
+          assert(contract.architecture==='V17_CENTRIC_V20_NATIVE_DISCOVERY','Canonical architecture drift');
+          assert(contract.productStatus==='PRODUCTION_READY_DECISION_SUPPORT','Canonical product status is not certified');
+          assert(contract.productReadiness?.certificationState==='CERTIFIED'&&contract.productReadiness?.productionReadyDecisionSupportMayBeClaimed===true,'Canonical certification state missing');
+          assert(contract.policy?.v20Discovers===true&&contract.policy?.v17ValidatesAndAuthorizes===true&&contract.policy?.v20NativeCannotOverrideV17===true,'Canonical authority policy drift');
+          assert(Number(contract.policy?.legacyNativeScoringContributionPct)===0,'Canonical Legacy contribution drift');
+          assert(contract.sourceV17Commit===cert.source?.v17Commit,'Canonical/V17 certification SHA mismatch');
+          assert(contract.sessionDate===cert.source?.sessionDate,'Canonical/certification session mismatch');
+          assert(Array.isArray(contract.rows)&&contract.rows.length===Number(contract.summary?.evaluatedCount),'Canonical row count mismatch');
+          assert((contract.rows||[]).every(r=>r.governance?.automaticPromotion===false&&r.governance?.automaticBrokerExecution===false&&r.governance?.v20MayOverrideV17===false),'Per-stock governance drift');
 
-          if(!rd || rd.contract!=='V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2') throw new Error('Native safety-strength ranking contract missing');
-          if(rd.appliesOnlyWhenNativeResearchScoreExactlyTied!==true || rd.mutatesNativeResearchScore!==false || rd.canOverrideHigherNativeResearchScore!==false || rd.scoreMutation!==false || rd.executionInfluence!==false) throw new Error('Native ranking discrimination governance drift');
-          if(!Array.isArray(rd.order) || rd.order[0]!=='alignmentSafetyPriorityAscending' || rd.order[1]!=='scoreBeforeRegimeAndCapsDescending' || rd.order[2]!=='entryDistancePctAscending') throw new Error('Native ranking discrimination precedence drift');
-          if(!native.publishedCandidates.every(row=>row.rankingTieBreaker?.contract===rd.contract && row.rankingTieBreaker?.mutatesNativeResearchScore===false && row.rankingTieBreaker?.canOverrideHigherNativeResearchScore===false && Number.isFinite(Number(row.rankingTieBreaker?.scoreBeforeRegimeAndCaps)))) throw new Error('Native ranking tie-break metadata incomplete');
-          for(let i=1;i<native.publishedCandidates.length;i++) if(Number(native.publishedCandidates[i-1].nativeResearchScore)<Number(native.publishedCandidates[i].nativeResearchScore)) throw new Error('Native ranking allowed lower score to override higher score');
+          assert(core.policy?.v17IsAuthoritativeForProductionEligibility===true&&core.policy?.v20NativeMayOverrideV17===false,'V17 production authority drift');
+          assert(core.sourceV17?.commitSha===cert.source?.v17Commit,'V17 core provenance mismatch');
+          assert(core.sessionDate===contract.sessionDate,'V17 core session mismatch');
 
-          if(!explain || !Array.isArray(explain.rows) || explain.rows.length!==Number(native.candidateUniverseCount)) throw new Error('Native explainability must cover the full candidate universe');
-          if(Number(explain.summary?.universeCount)!==Number(native.candidateUniverseCount) || Number(explain.summary?.publishedCount)!==30 || Number(explain.summary?.eligibleCount)!==Number(native.summary?.nativeResearchRecommendationCount)) throw new Error('Native explainability summary mismatch');
-          if(explain.policy?.explainabilityInfluencesScore!==false || explain.policy?.explainabilityInfluencesExecution!==false || explain.policy?.explainabilityInfluencesChampion!==false) throw new Error('Native explainability governance drift');
-          if(!explain.rows.every(row=>Array.isArray(row.whyRankedHere)&&Array.isArray(row.whyExcluded)&&row.governance?.explainabilityInfluencesScore===false)) throw new Error('Native explainability row contract incomplete');
+          assert(native.engineId==='V20_FULL_MARKET_NATIVE_SELECTION_V1'&&native.modelVersion==='V1','Native V1 evidence missing');
+          assert(native.candidateUniverseIsFullMarketIndependent===true&&native.legacySeedDependency===false,'Native candidate universe independence drift');
+          assert(native.executionPermission===false&&native.productionAllocation===false&&native.automaticPromotion===false,'Native gained production authority');
+          assert(Number(native.legacyScoringContributionPct)===0,'Native Legacy scoring contribution drift');
+          assert(Array.isArray(native.publishedCandidates)&&native.publishedCandidates.length===30&&Number(native.summary?.publishedResearchCandidateCount)===30,'Native Top 30 not persisted');
+          assert(native.publishedCandidates.every(r=>r.researchOnly===true&&r.grantsExecutionPermission===false&&r.grantsProductionAllocation===false),'Native candidate governance drift');
 
-          if(nativeForwardPolicy.schemaVersion!=='20.0.0-native-shadow-forward-policy-1' || nativeForwardPolicy.status!=='METHOD_FROZEN_SHADOW_FORWARD_ONLY') throw new Error('Native shadow forward policy missing/floating');
-          if(nativeForwardPolicy.engineId!==native.engineId || nativeForwardPolicy.rankingContract!==rd.contract) throw new Error('Native shadow forward method contract mismatch');
-          if(nativeForwardPolicy.methodFreeze?.sessionDate!=='2026-08-13' || nativeForwardPolicy.methodFreeze?.sourceCommit!=='9283b72305c581776b5762f04b3b9d7c7dbe6dd1') throw new Error('Native shadow method freeze drift');
-          if(nativeForwardPolicy.methodFreeze?.freezeSessionSnapshotCountsTowardIndependentForward!==false || nativeForwardPolicy.methodFreeze?.retroactiveBackfillCountsTowardIndependentForward!==false) throw new Error('Native shadow baseline/backfill independence drift');
-          if(nativeForwardPolicy.samplePolicy?.sameSessionRevisionsIncreaseIndependentSampleCount!==false || nativeForwardPolicy.samplePolicy?.independentSampleUnit!=='UNIQUE_CANONICAL_MARKET_SESSION_DATE') throw new Error('Native shadow sample-unit drift');
-          if(Number(nativeForwardPolicy.samplePolicy?.minimumIndependentResolvedSessionsForPerformanceReview)!==30 || Number(nativeForwardPolicy.samplePolicy?.minimumIndependentHoldoutSessions)!==20) throw new Error('Native shadow review sample gate drift');
-          if(nativeForwardPolicy.governance?.researchOnly!==true || nativeForwardPolicy.governance?.automaticPromotion!==false || nativeForwardPolicy.governance?.executionPermission!==false || nativeForwardPolicy.governance?.productionAllocation!==false || nativeForwardPolicy.governance?.canChangeChampion!==false) throw new Error('Native shadow governance drift');
+          assert(browser.schemaVersion==='20.0.0-v17-centric-browser-certification-1','Unexpected Decision Board browser schema');
+          assert(browser.ok===true&&browser.failedCount===0&&(browser.failures||[]).length===0,'Decision Board browser certification is not green');
+          assert(browser.architecture===contract.architecture&&browser.sessionDate===contract.sessionDate,'Browser/canonical provenance mismatch');
+          assert((browser.consoleErrors||[]).length===0&&browser.checks?.noRuntimeOrConsoleErrors?.ok===true,'Browser runtime or console errors present');
+          const expectedWidths=[1440,1024,768,430,390];
+          assert(JSON.stringify((browser.viewportResults||[]).map(v=>v.width))===JSON.stringify(expectedWidths),'Certified responsive viewport set mismatch');
+          assert((browser.viewportResults||[]).every(v=>v.ready===true&&v.horizontalOverflow===false&&(v.width>430||v.dialogHorizontalOverflow===false)),'Certified responsive layout failure');
+          for(const key of ['decisionBoardLoaded','decisionBoardNoLoadError','decisionBoardIsPrimary','decisionPipelineFourStages','nativeDiscoveryStageVisible','v17EligibilityStageVisible','v17GlobalGateStageVisible','finalCanonicalDecisionStageVisible','legacyWorkspaceSecondary','nativeScoreSeparationVisible','evidenceStripLoaded','allCanonicalRowsRendered','stockDossierOpened','stockDossierLabelVisible','nativeScoreNotConfidenceVisible','technicalSourceVsProductionVisible','srSourceVsProductionVisible','corporateActionSafetyVisible','globalGateVisibleInDossier','provenanceVisible','legacyContributionZeroVisible','nativeExecutionPermissionDeniedVisible','dossierNoHorizontalOverflow1440']) assert(browser.checks?.[key]?.ok===true,`Decision Board browser check missing: ${key}`);
 
-          if(nativeForwardRegression.ok!==true || nativeForwardRegression.failedCount!==0) throw new Error('Native shadow forward regression is not green');
-          for(const check of ['frozenPolicyBound','separateArchivePreserved','methodFreezeBaselineExcluded','retroactiveBackfillExcluded','uniqueSessionSampleCounting','revisionsDoNotInflateSample','pendingReturnsRemainNull','conservativeForwardResolverPreserved','noSyntheticOrFutureLeakage','transactionCostPreserved','rankingContractFrozen','automaticPromotionDisabled','executionAndChampionUnaffected']) if(nativeForwardRegression.checks?.[check]!==true) throw new Error(`Native shadow regression missing: ${check}`);
-          if(nativeForward.engineId!==native.engineId || nativeForward.rankingContract!==rd.contract || nativeForward.asOfSessionDate!==current.sessionDate) throw new Error('Native shadow forward source mismatch');
-          if(nativeForward.policy?.roundTripTransactionCostPct!==0.6 || nativeForward.policy?.futureRowsAllowed!==false || nativeForward.policy?.syntheticOhlcAllowed!==false || nativeForward.policy?.pendingReturnMustRemainNull!==true || nativeForward.policy?.sameSessionRevisionsIncreaseIndependentSampleCount!==false) throw new Error('Native shadow evaluation policy drift');
-          if(nativeForward.policy?.automaticPromotion!==false || nativeForward.policy?.executionInfluence!==false || nativeForward.policy?.productionAllocationInfluence!==false || nativeForward.policy?.championInfluence!==false) throw new Error('Native shadow influence drift');
-          if(Number(nativeArchiveIndex.canonicalSessionCount)!==new Set((nativeArchiveIndex.entries||[]).filter(e=>e.canonicalForSession===true).map(e=>e.sessionDate)).size) throw new Error('Native shadow canonical session count mismatch');
-          if(Number(nativeArchiveIndex.independentForwardSessionCount)!==new Set((nativeArchiveIndex.entries||[]).filter(e=>e.countsTowardIndependentForward===true).map(e=>e.sessionDate)).size) throw new Error('Native shadow independent session count mismatch');
-          if((nativeArchiveIndex.entries||[]).some(e=>!String(e.file||'').startsWith('data/v20/signal-archive/native-shadow/archive/'))) throw new Error('Native shadow archive contains non-persistent file reference');
-          if((nativeForward.evaluations||[]).some(e=>e.status==='PENDING' && (e.evaluationSessionDate!==null || e.equalWeightGrossReturnPct!==null || e.equalWeightNetReturnPct!==null || e.enteredOnlyAverageNetReturnPct!==null))) throw new Error('Native shadow pending return was fabricated');
+          for(const [name,x] of Object.entries({semantic,navReg,forwardReg,perfReg,govReg})) assert(x.ok===true,`${name} regression not green`);
+          assert(registry.activeChampion==='V16_9_EQUAL_WEIGHT_BASKET'&&registry.automaticPromotion===false,'Champion/challenger registry drift');
+          assert(sync.ok===true&&sync.source?.branch==='develop/v17-rebuild'&&sync.source?.commitSha===cert.source?.v17Commit,'V17 runtime sync provenance drift');
 
-          const independentCount=Number(nativeForward.summary?.independentForwardSessionCount||0);
-          const expectedForwardStatus=independentCount>0?'POST_FREEZE_FORWARD_TRACKING':'METHOD_FREEZE_BASELINE_ONLY';
-          if(perfRegistry.summary?.nativeForwardStatus!==expectedForwardStatus) throw new Error('Native shadow forward status/count mismatch');
-          if(current.sessionDate===nativeForwardPolicy.methodFreeze.sessionDate){
-            if(independentCount!==0 || Number(nativeArchiveIndex.independentForwardSessionCount)!==0) throw new Error('Freeze-session Native evidence falsely counted as independent');
-            if((nativeForward.evaluations||[]).some(e=>e.countsTowardIndependentForward===true)) throw new Error('Freeze-session evaluation falsely independent');
-            if(Object.values(nativeForward.metricsByHorizon||{}).some(m=>m.reviewSampleReady!==false || m.averageNetReturnPct!==null || m.sessionWinRatePct!==null || m.profitFactor!==null)) throw new Error('Native performance review opened before fresh samples');
+          if(contract.sessionStatus!=='EXECUTION_GRADE'){
+            assert(contract.sessionStatus==='RESEARCH_ONLY','Unexpected closed-gate session status');
+            assert(Number(contract.summary?.productionActionableCount)===0&&Number(contract.summary?.productionNewExposurePct)===0,'Closed gate must remain zero ACTIONABLE / zero new exposure');
+            assert(!(contract.rows||[]).some(r=>r.governance?.finalDecisionState==='ACTIONABLE'),'Closed gate contains ACTIONABLE row');
+            assert(browser.checks?.closedGateUiNoActionable?.ok===true,'Closed-gate UI exposes ACTIONABLE');
           }
 
-          if(perf.checks?.nativeShadowForwardEvidenceSeparated!==true || perf.checks?.nativeFreezeBaselineExcluded!==true || perf.checks?.nativeRevisionsCannotInflateSamples!==true || perf.checks?.nativeForwardCannotPromoteAutomatically!==true) throw new Error('Native shadow performance-registry regression not green');
-          if(!nativePerf || nativePerf.evidenceClass!=='LIVE_FORWARD_SHADOW' || nativePerf.decisionUse!=='SEPARATE_SHADOW_FORWARD_EVIDENCE_ONLY' || nativePerf.promotionEligible!==false || nativePerf.metrics!==null) throw new Error('Native shadow performance evidence entry missing/drifted');
-          if(nativePerf.independence?.freshIndependentEvidence!==(independentCount>0)) throw new Error('Native shadow independence classification mismatch');
-          if(nativePerf.governance?.automaticPromotion!==false || nativePerf.governance?.canOpenExecutionGate!==false || nativePerf.governance?.canDriveProductionAllocation!==false || nativePerf.governance?.canChangeChampion!==false) throw new Error('Native shadow performance governance drift');
-
-          for(const check of [
-            'nativeResearchPanelLoaded','nativeResearchIsPrimaryRanking','legacyBaselineIsSecondary',
-            'nativeResearchLegacyContributionZeroVisible','nativeResearchOutsideLegacyCandidateVisible','nativeWhyRankedVisible',
-            'nativeResearchDialogOpened','nativeResearchExecutionSeparationVisible','nativeResearchWhyRankedDialogVisible',
-            'nativeResearchLegacyContributionZeroInDialog','nativeExcludedExplorerLoaded','nativeWhyExcludedVisible',
-            'nativeWhyExcludedDialogVisible','nativeBaselineComparisonLoaded'
-          ]) if(browser.checks?.[check]?.ok!==true) throw new Error(`Native browser acceptance missing: ${check}`);
-
-          for(const check of [
-            'performanceNativeShadowCardRendered','performanceNativeShadowBaselineOnlyVisible',
-            'performanceNativeShadowSampleGateVisible','performanceNativeShadowNoClaimVisible',
-            'performanceNativeShadowPromotionBlockedVisible','performanceNativeShadowNoReturnMetric'
-          ]) if(browser.checks?.[check]?.ok!==true) throw new Error(`Native shadow performance UI acceptance missing: ${check}`);
-
           for(const file of [
-            'v20/index.html','v20/health.html','v20/performance.html','v20/performance.js','v20/performance.css','v20/research.html','v20/technical.html',
-            'v20/top5.html','v20/history.html','v20/backtest.html','v20/remediation.html','v20/native-research.js','v20/native-research.css',
-            'data/v20/current.json','data/v20/regression.json','data/v20/market-explorer-regression.json','data/v20/native-shadow-forward-policy.json',
-            'data/v20/signal-archive/native-shadow/forward.json','data/v20/signal-archive/native-shadow/regression.json','data/v20/signal-archive/native-shadow/archive/index.json',
-            'data/v17/resilient-session-status.json','data/v17/internal-ohlc-support-resistance.json'
-          ]) if(!fs.existsSync(file)) throw new Error(`Release package missing ${file}`);
+            'v20/index.html','v20/app.js','v20/styles.css','v20/native-research.js','v20/decision-board.js','v20/decision-board.css',
+            'data/v20/final-decision-contract.json','data/v20/v17-production-decision-core.json','data/v20/native-current.json','data/v20/native-model-freeze.json',
+            'data/v20/v17-runtime-sync.json','data/v20/v17-centric-semantic-acceptance.json','data/v20/funded-nav.json','data/v20/funded-nav-regression.json',
+            'data/v20/performance-evidence-registry.json','data/v20/performance-evidence-regression.json','data/v20/champion-challenger-registry.json','data/v20/champion-challenger-regression.json',
+            'data/v20/decision-board-browser-certification.json','data/v20/v17-centric-final-certification.json'
+          ]) assert(fs.existsSync(file),`Certified release package missing ${file}`);
 
           console.log(JSON.stringify({
-            finalStatus:fa.finalStatus,
-            executionStatus:fa.executionStatus,
-            champion:fa.activeChampion,
-            browserOk:browser.ok,
-            uiOk:ui.ok,
-            nativeEngine:native.engineId,
-            nativeUniverse:native.candidateUniverseCount,
+            ok:true,
+            architecture:contract.architecture,
+            productStatus:contract.productStatus,
+            sessionStatus:contract.sessionStatus,
+            sessionDate:contract.sessionDate,
+            evaluated:contract.summary?.evaluatedCount,
             nativePublished:native.publishedCandidates.length,
-            nativeEligible:native.summary?.nativeResearchRecommendationCount,
-            nativeExplainabilityRows:explain.rows.length,
-            nativeRankingDiscrimination:rd.contract,
-            nativeLegacyContributionPct:native.summary?.legacyScoringContributionPct,
-            nativeShadowForwardStatus:expectedForwardStatus,
-            nativeShadowCanonicalSessions:nativeArchiveIndex.canonicalSessionCount,
-            nativeShadowIndependentSessions:independentCount,
-            nativeShadowPendingEvaluations:nativeForward.summary?.pendingCount,
-            nativeShadowResolvedIndependentEvaluations:nativeForward.summary?.independentResolvedEvaluationCount,
-            nativeShadowPerformanceUi:true
+            v17RecommendationEligible:core.summary?.recommendationEligibleCount,
+            v17ExecutionEligible:core.summary?.executionEligibleCount,
+            actionable:contract.summary?.productionActionableCount,
+            newExposurePct:contract.summary?.productionNewExposurePct,
+            activeChampion:registry.activeChampion,
+            browserFailed:browser.failedCount,
+            certifiedWidths:expectedWidths,
+            v17Commit:cert.source?.v17Commit
           },null,2));
           NODE
 
-      - name: Publish V20 under isolated /v20 path
+      - name: Materialize exact certified V17 runtime package
+        shell: bash
+        run: |
+          set -euo pipefail
+          V17_SHA="$(node -e "console.log(require('./.v20-source/data/v20/v17-centric-final-certification.json').source.v17Commit)")"
+          git -C .v20-source fetch --no-tags --depth=1 origin "$V17_SHA"
+          rm -rf .v17-runtime
+          mkdir -p .v17-runtime
+          git -C .v20-source archive "$V17_SHA" data/v17 | tar -x -C .v17-runtime
+          test -f .v17-runtime/data/v17/resilient-session-status.json
+          test -f .v17-runtime/data/v17/internal-ohlc-support-resistance.json
+          test -f .v17-runtime/data/v17/liquidity-gate.json
+          node -e "JSON.parse(require('fs').readFileSync('.v17-runtime/data/v17/resilient-session-status.json','utf8'))"
+          echo "$V17_SHA" > .v17-source-sha
+
+      - name: Publish canonical V20 under isolated /v20 path
         shell: bash
         run: |
           set -euo pipefail
           SOURCE_SHA="$(cat .v20-source-sha)"
+          V17_SHA="$(cat .v17-source-sha)"
           rm -rf v20 data/v20 data/v17
           mkdir -p data
           cp -R .v20-source/v20 ./v20
           cp -R .v20-source/data/v20 ./data/v20
-          cp -R .v20-source/data/v17 ./data/v17
-          NATIVE_FORWARD_STATUS="$(node -e "console.log(require('./data/v20/performance-evidence-registry.json').summary.nativeForwardStatus)")"
-          NATIVE_FORWARD_INDEPENDENT="$(node -e "console.log(require('./data/v20/signal-archive/native-shadow/forward.json').summary.independentForwardSessionCount)")"
-          cat > v20/deployment.json <<JSON
-          {
-            "release": "EGX PRO V20",
-            "sourceRepository": "rasheadsca-star/RAS-EGX-PRO2026-NEXT",
-            "sourceBranch": "develop/v20-integrated-decision-platform",
-            "sourceCommit": "$SOURCE_SHA",
-            "deploymentRepository": "rasheadsca-star/RAS-EGX0.1",
-            "deploymentPath": "/v20/",
-            "releaseMode": "RESEARCH_ONLY_EXECUTION_BLOCKED",
-            "activeChampion": "V16_9_EQUAL_WEIGHT_BASKET",
-            "nativePrimaryResearchRanking": true,
-            "legacyBaselineSecondary": true,
-            "nativeExplainabilityFullUniverse": true,
-            "nativeRankingDiscriminationContract": "V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2",
-            "nativeShadowForwardEnabled": true,
-            "nativeShadowForwardMethodFreezeSession": "2026-08-13",
-            "nativeShadowForwardStatus": "$NATIVE_FORWARD_STATUS",
-            "nativeShadowIndependentSessionCount": $NATIVE_FORWARD_INDEPENDENT,
-            "nativeShadowPerformanceUi": true,
-            "publishedAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          }
-          JSON
+          cp -R .v17-runtime/data/v17 ./data/v17
+          node - <<'NODE'
+          const fs=require('fs');
+          const sourceSha=fs.readFileSync('.v20-source-sha','utf8').trim();
+          const v17Sha=fs.readFileSync('.v17-source-sha','utf8').trim();
+          const contract=require('./data/v20/final-decision-contract.json');
+          const cert=require('./data/v20/v17-centric-final-certification.json');
+          const native=require('./data/v20/native-current.json');
+          const browser=require('./data/v20/decision-board-browser-certification.json');
+          const registry=require('./data/v20/champion-challenger-registry.json');
+          const deployment={
+            release:'EGX PRO V20',
+            sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',
+            sourceBranch:'develop/v20-integrated-decision-platform',
+            sourceCommit:sourceSha,
+            certificationWorkflowCommit:cert.source.workflowCommit,
+            certifiedV17Commit:v17Sha,
+            deploymentRepository:'rasheadsca-star/RAS-EGX0.1',
+            deploymentPath:'/v20/',
+            architecture:contract.architecture,
+            primaryDecisionUi:'DECISION_BOARD_V17_CENTRIC',
+            decisionSupportCertified:true,
+            productStatus:contract.productStatus,
+            sessionDate:contract.sessionDate,
+            sessionStatus:contract.sessionStatus,
+            releaseMode:contract.sessionStatus==='EXECUTION_GRADE'?'DECISION_SUPPORT_EXECUTION_GRADE':'RESEARCH_ONLY_EXECUTION_BLOCKED',
+            productionActionableCount:Number(contract.summary.productionActionableCount||0),
+            productionNewExposurePct:Number(contract.summary.productionNewExposurePct||0),
+            activeChampion:registry.activeChampion,
+            automaticPromotion:false,
+            automaticBrokerExecution:false,
+            nativeDiscoveryOnly:true,
+            nativeEngine:native.engineId,
+            nativeModelVersion:native.modelVersion,
+            nativePublishedCandidateCount:native.publishedCandidates.length,
+            nativeExecutionPermission:false,
+            nativeProductionAllocation:false,
+            legacyNativeScoringContributionPct:0,
+            browserE2ECertified:browser.ok===true&&browser.failedCount===0,
+            certifiedResponsiveWidths:(browser.viewportResults||[]).map(v=>v.width),
+            publishedAt:new Date().toISOString()
+          };
+          fs.writeFileSync('v20/deployment.json',`${JSON.stringify(deployment,null,2)}\n`,'utf8');
+          NODE
 
-      - name: Validate deployable static paths
+      - name: Validate deployable canonical static paths
         shell: bash
         run: |
           set -euo pipefail
@@ -224,39 +225,37 @@ jobs:
           test -f v20/app.js
           test -f v20/styles.css
           test -f v20/native-research.js
-          test -f v20/native-research.css
-          test -f v20/performance.js
-          test -f v20/performance.css
-          test -f data/v20/current.json
-          test -f data/v20/stock-profiles.json
-          test -f data/v20/market-explorer.json
-          test -f data/v20/market-explorer-regression.json
-          test -f data/v20/native-shadow-forward-policy.json
-          test -f data/v20/signal-archive/native-shadow/forward.json
-          test -f data/v20/signal-archive/native-shadow/regression.json
-          test -f data/v20/signal-archive/native-shadow/archive/index.json
+          test -f v20/decision-board.js
+          test -f v20/decision-board.css
+          test -f v20/deployment.json
+          test -f data/v20/final-decision-contract.json
+          test -f data/v20/v17-production-decision-core.json
+          test -f data/v20/native-current.json
+          test -f data/v20/decision-board-browser-certification.json
+          test -f data/v20/v17-centric-final-certification.json
           test -f data/v17/resilient-session-status.json
+          test -f data/v17/internal-ohlc-support-resistance.json
           node --check v20/app.js
           node --check v20/native-research.js
-          node --check v20/performance.js
+          node --check v20/decision-board.js
           node - <<'NODE'
-          const fs=require('fs');
-          const d=JSON.parse(fs.readFileSync('v20/deployment.json','utf8'));
-          const m=JSON.parse(fs.readFileSync('data/v20/market-explorer-regression.json','utf8'));
-          const f=JSON.parse(fs.readFileSync('data/v20/signal-archive/native-shadow/forward.json','utf8'));
-          const fr=JSON.parse(fs.readFileSync('data/v20/signal-archive/native-shadow/regression.json','utf8'));
-          if(d.nativePrimaryResearchRanking!==true||d.legacyBaselineSecondary!==true||d.nativeExplainabilityFullUniverse!==true||d.nativeRankingDiscriminationContract!=='V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2') process.exit(1);
-          if(d.nativeShadowForwardEnabled!==true||d.nativeShadowForwardMethodFreezeSession!=='2026-08-13'||d.nativeShadowPerformanceUi!==true) process.exit(1);
-          if(!['METHOD_FREEZE_BASELINE_ONLY','POST_FREEZE_FORWARD_TRACKING'].includes(d.nativeShadowForwardStatus)) process.exit(1);
-          if(Number(d.nativeShadowIndependentSessionCount)!==Number(f.summary?.independentForwardSessionCount)) process.exit(1);
-          if(Number(d.nativeShadowIndependentSessionCount)===0&&d.nativeShadowForwardStatus!=='METHOD_FREEZE_BASELINE_ONLY') process.exit(1);
-          if(Number(d.nativeShadowIndependentSessionCount)>0&&d.nativeShadowForwardStatus!=='POST_FREEZE_FORWARD_TRACKING') process.exit(1);
-          if((m.fullMarketNative?.explainability?.rows||[]).length!==Number(m.fullMarketNative?.candidateUniverseCount||0)) process.exit(1);
-          if(m.fullMarketNative?.rankingDiscrimination?.contract!==d.nativeRankingDiscriminationContract) process.exit(1);
-          if(fr.ok!==true) process.exit(1);
+          const d=require('./v20/deployment.json');
+          const c=require('./data/v20/final-decision-contract.json');
+          const cert=require('./data/v20/v17-centric-final-certification.json');
+          const b=require('./data/v20/decision-board-browser-certification.json');
+          const core=require('./data/v20/v17-production-decision-core.json');
+          if(d.architecture!=='V17_CENTRIC_V20_NATIVE_DISCOVERY'||d.primaryDecisionUi!=='DECISION_BOARD_V17_CENTRIC')throw Error('Deployment architecture drift');
+          if(d.decisionSupportCertified!==true||d.productStatus!=='PRODUCTION_READY_DECISION_SUPPORT')throw Error('Deployment certification missing');
+          if(d.certifiedV17Commit!==cert.source.v17Commit||d.certifiedV17Commit!==c.sourceV17Commit||d.certifiedV17Commit!==core.sourceV17.commitSha)throw Error('Deployment V17 SHA mismatch');
+          if(d.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET'||d.automaticPromotion!==false||d.automaticBrokerExecution!==false)throw Error('Deployment governance drift');
+          if(d.nativeDiscoveryOnly!==true||d.nativeExecutionPermission!==false||d.nativeProductionAllocation!==false||Number(d.legacyNativeScoringContributionPct)!==0)throw Error('Deployment Native authority drift');
+          if(d.browserE2ECertified!==true||b.ok!==true||b.failedCount!==0)throw Error('Deployment browser certification missing');
+          if(JSON.stringify(d.certifiedResponsiveWidths)!==JSON.stringify([1440,1024,768,430,390]))throw Error('Deployment responsive certification drift');
+          if(c.sessionStatus!=='EXECUTION_GRADE'&&(Number(d.productionActionableCount)!==0||Number(d.productionNewExposurePct)!==0||d.releaseMode!=='RESEARCH_ONLY_EXECUTION_BLOCKED'))throw Error('Closed-gate deployment leak');
+          console.log(JSON.stringify({ok:true,sourceCommit:d.sourceCommit,v17Commit:d.certifiedV17Commit,architecture:d.architecture,productStatus:d.productStatus,sessionStatus:d.sessionStatus,actionable:d.productionActionableCount,newExposurePct:d.productionNewExposurePct,champion:d.activeChampion,browserE2E:d.browserE2ECertified,widths:d.certifiedResponsiveWidths},null,2));
           NODE
 
-      - name: Commit isolated V20 release
+      - name: Commit isolated certified V20 release
         shell: bash
         run: |
           set -euo pipefail
@@ -264,21 +263,27 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add v20 data/v20 data/v17
           if git diff --cached --quiet; then
-            echo "V20 deployment tree already current"
+            echo "Certified V20 deployment tree already current"
             exit 0
           fi
           SOURCE_SHA="$(cat .v20-source-sha)"
-          git commit -m "Publish EGX PRO V20 ${SOURCE_SHA:0:12}"
+          git commit -m "Publish certified V17-centric EGX PRO V20 ${SOURCE_SHA:0:12}"
           git push origin HEAD:main
 
       - name: Publication summary
+        shell: bash
         run: |
-          echo "### EGX PRO V20 published" >> "$GITHUB_STEP_SUMMARY"
-          echo "URL: https://rasheadsca-star.github.io/RAS-EGX0.1/v20/" >> "$GITHUB_STEP_SUMMARY"
-          echo "Native: Primary Research Ranking / Full-market explainability / Top 30 persisted / Legacy contribution 0%" >> "$GITHUB_STEP_SUMMARY"
-          echo "Ranking ties: V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2 (score-preserving, cap-preserving)" >> "$GITHUB_STEP_SUMMARY"
-          echo "Native Forward: method-frozen shadow evidence / unique canonical sessions / same-session revisions do not inflate sample / no automatic promotion" >> "$GITHUB_STEP_SUMMARY"
-          echo "Native Shadow Performance UI: sample gate visible / no premature return claim / promotion blocked" >> "$GITHUB_STEP_SUMMARY"
-          echo "Forward status is future-safe: Baseline-only at 0 independent sessions, Post-freeze tracking after the first fresh canonical session" >> "$GITHUB_STEP_SUMMARY"
-          echo "Mode: RESEARCH_ONLY / EXECUTION_BLOCKED" >> "$GITHUB_STEP_SUMMARY"
-          echo "Champion: V16_9_EQUAL_WEIGHT_BASKET" >> "$GITHUB_STEP_SUMMARY"
+          set -euo pipefail
+          node - <<'NODE' >> "$GITHUB_STEP_SUMMARY"
+          const d=require('./v20/deployment.json');
+          console.log('### EGX PRO V20 — certified V17-centric release');
+          console.log('URL: https://rasheadsca-star.github.io/RAS-EGX0.1/v20/');
+          console.log(`Architecture: ${d.architecture}`);
+          console.log(`Product: ${d.productStatus}`);
+          console.log(`Session: ${d.sessionStatus}`);
+          console.log(`Decision Board E2E: ${d.browserE2ECertified?'PASS':'FAIL'} (${d.certifiedResponsiveWidths.join(' / ')})`);
+          console.log(`Native: discovery only / ${d.nativePublishedCandidateCount} published / Legacy scoring 0% / no execution authority`);
+          console.log(`Production: ${d.productionActionableCount} ACTIONABLE / ${d.productionNewExposurePct}% new exposure`);
+          console.log(`Champion: ${d.activeChampion} / automatic promotion disabled`);
+          console.log(`Certified V17 SHA: ${d.certifiedV17Commit}`);
+          NODE
