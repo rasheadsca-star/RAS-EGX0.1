@@ -1,0 +1,151 @@
+name: Publish EGX PRO V20
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publish-egx-pro-v20.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-egx-pro-v20
+  cancel-in-progress: true
+
+jobs:
+  publish-v20:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout deployment repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Fetch isolated V20 release package
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .v20-source
+          git clone \
+            --depth 1 \
+            --filter=blob:none \
+            --no-checkout \
+            --branch develop/v20-integrated-decision-platform \
+            https://github.com/rasheadsca-star/RAS-EGX-PRO2026-NEXT.git \
+            .v20-source
+          cd .v20-source
+          git sparse-checkout init --cone
+          git sparse-checkout set v20 data/v20 data/v17
+          git checkout
+          git rev-parse HEAD > ../.v20-source-sha
+
+      - name: Verify V20 release acceptance
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd .v20-source
+          node - <<'NODE'
+          const fs=require('fs');
+          const current=require('./data/v20/current.json');
+          const regression=require('./data/v20/regression.json');
+          const browser=require('./data/v20/browser-smoke.json');
+          const ui=require('./data/v20/ui-validation.json');
+          const v18=require('./data/v20/v18-performance-audit-regression.json');
+          const perf=require('./data/v20/performance-evidence-regression.json');
+          const fa=regression.finalAcceptance;
+          if(regression.ok!==true) throw new Error('V20 regression is not green');
+          if(!fa || fa.researchPlatformReady!==true) throw new Error('V20 research platform acceptance is not ready');
+          if(fa.finalStatus!=='RESEARCH_PLATFORM_READY_EXECUTION_NOT_READY') throw new Error(`Unexpected final status: ${fa?.finalStatus}`);
+          if(fa.executionReady!==false || fa.executionStatus!=='RESEARCH_ONLY') throw new Error('V20 must publish in RESEARCH_ONLY state');
+          if(fa.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET') throw new Error('Champion governance drift');
+          if(Number(fa.appliedExposurePct)!==0 || Number(fa.cashPct)!==100) throw new Error('Closed execution gate must remain 0% exposure / 100% cash');
+          if(browser.ok!==true || (browser.consoleErrors||[]).length!==0) throw new Error('Browser acceptance is not green');
+          if(ui.ok!==true || v18.ok!==true || perf.ok!==true) throw new Error('UI/V18/performance acceptance is not green');
+          if(current.executionStatus!=='RESEARCH_ONLY') throw new Error('Current state must remain RESEARCH_ONLY');
+          if(current.governance?.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET') throw new Error('Current champion drift');
+          if(current.governance?.automaticPromotion!==false || current.governance?.promotionAllowed!==false) throw new Error('Automatic promotion must remain disabled');
+          for(const file of [
+            'v20/index.html','v20/health.html','v20/performance.html','v20/research.html','v20/technical.html',
+            'v20/top5.html','v20/history.html','v20/backtest.html','v20/remediation.html','v20/portfolio.html',
+            'data/v20/current.json','data/v20/regression.json','data/v17/resilient-session-status.json',
+            'data/v17/internal-ohlc-support-resistance.json'
+          ]) if(!fs.existsSync(file)) throw new Error(`Release package missing ${file}`);
+          console.log(JSON.stringify({
+            finalStatus:fa.finalStatus,
+            researchPlatformReady:fa.researchPlatformReady,
+            executionReady:fa.executionReady,
+            executionStatus:fa.executionStatus,
+            champion:fa.activeChampion,
+            browserOk:browser.ok,
+            uiOk:ui.ok
+          },null,2));
+          NODE
+
+      - name: Publish V20 under isolated /v20 path
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE_SHA="$(cat .v20-source-sha)"
+          rm -rf v20 data/v20 data/v17
+          mkdir -p data
+          cp -R .v20-source/v20 ./v20
+          cp -R .v20-source/data/v20 ./data/v20
+          cp -R .v20-source/data/v17 ./data/v17
+          cat > v20/deployment.json <<JSON
+          {
+            "release": "EGX PRO V20",
+            "sourceRepository": "rasheadsca-star/RAS-EGX-PRO2026-NEXT",
+            "sourceBranch": "develop/v20-integrated-decision-platform",
+            "sourceCommit": "$SOURCE_SHA",
+            "deploymentRepository": "rasheadsca-star/RAS-EGX0.1",
+            "deploymentPath": "/v20/",
+            "releaseMode": "RESEARCH_ONLY_EXECUTION_BLOCKED",
+            "activeChampion": "V16_9_EQUAL_WEIGHT_BASKET",
+            "publishedAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+          JSON
+
+      - name: Validate deployable static paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f v20/index.html
+          test -f v20/app.js
+          test -f v20/styles.css
+          test -f data/v20/current.json
+          test -f data/v20/stock-profiles.json
+          test -f data/v20/market-explorer.json
+          test -f data/v17/resilient-session-status.json
+          node --check v20/app.js
+          node --check v20/performance.js
+          node -e "JSON.parse(require('fs').readFileSync('v20/deployment.json','utf8')); JSON.parse(require('fs').readFileSync('data/v20/current.json','utf8'));"
+
+      - name: Commit isolated V20 release
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add v20 data/v20 data/v17
+          if git diff --cached --quiet; then
+            echo "V20 deployment tree already current"
+            exit 0
+          fi
+          SOURCE_SHA="$(cat .v20-source-sha)"
+          git commit -m "Publish EGX PRO V20 ${SOURCE_SHA:0:12}"
+          git push origin HEAD:main
+
+      - name: Publication summary
+        run: |
+          echo "### EGX PRO V20 published" >> "$GITHUB_STEP_SUMMARY"
+          echo "URL: https://rasheadsca-star.github.io/RAS-EGX0.1/v20/" >> "$GITHUB_STEP_SUMMARY"
+          echo "Mode: RESEARCH_ONLY / EXECUTION_BLOCKED" >> "$GITHUB_STEP_SUMMARY"
+          echo "Champion: V16_9_EQUAL_WEIGHT_BASKET" >> "$GITHUB_STEP_SUMMARY"
