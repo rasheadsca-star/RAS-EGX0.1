@@ -60,11 +60,17 @@ jobs:
           const ui=require('./data/v20/ui-validation.json');
           const v18=require('./data/v20/v18-performance-audit-regression.json');
           const perf=require('./data/v20/performance-evidence-regression.json');
+          const perfRegistry=require('./data/v20/performance-evidence-registry.json');
           const marketRegression=require('./data/v20/market-explorer-regression.json');
+          const nativeForwardPolicy=require('./data/v20/native-shadow-forward-policy.json');
+          const nativeForward=require('./data/v20/signal-archive/native-shadow/forward.json');
+          const nativeForwardRegression=require('./data/v20/signal-archive/native-shadow/regression.json');
+          const nativeArchiveIndex=require('./data/v20/signal-archive/native-shadow/archive/index.json');
           const fa=regression.finalAcceptance;
           const native=marketRegression.fullMarketNative;
           const explain=native?.explainability;
           const rd=native?.rankingDiscrimination;
+          const nativePerf=(perfRegistry.entries||[]).find(e=>e.evidenceId==='V20_FULL_MARKET_NATIVE_FORWARD_SHADOW');
           if(regression.ok!==true) throw new Error('V20 regression is not green');
           if(!fa || fa.researchPlatformReady!==true) throw new Error('V20 research platform acceptance is not ready');
           if(fa.finalStatus!=='RESEARCH_PLATFORM_READY_EXECUTION_NOT_READY') throw new Error(`Unexpected final status: ${fa?.finalStatus}`);
@@ -89,16 +95,40 @@ jobs:
           if(rd.appliesOnlyWhenNativeResearchScoreExactlyTied!==true || rd.mutatesNativeResearchScore!==false || rd.canOverrideHigherNativeResearchScore!==false || rd.scoreMutation!==false || rd.executionInfluence!==false) throw new Error('Native ranking discrimination governance drift');
           if(!Array.isArray(rd.order) || rd.order[0]!=='alignmentSafetyPriorityAscending' || rd.order[1]!=='scoreBeforeRegimeAndCapsDescending' || rd.order[2]!=='entryDistancePctAscending') throw new Error('Native ranking discrimination precedence drift');
           if(!native.publishedCandidates.every(row=>row.rankingTieBreaker?.contract===rd.contract && row.rankingTieBreaker?.mutatesNativeResearchScore===false && row.rankingTieBreaker?.canOverrideHigherNativeResearchScore===false && Number.isFinite(Number(row.rankingTieBreaker?.scoreBeforeRegimeAndCaps)))) throw new Error('Native published ranking tie-break metadata incomplete');
-          for(let i=1;i<native.publishedCandidates.length;i++){
-            const prev=native.publishedCandidates[i-1],cur=native.publishedCandidates[i];
-            if(Number(prev.nativeResearchScore)<Number(cur.nativeResearchScore)) throw new Error('Native ranking allowed lower score to override higher score');
-          }
+          for(let i=1;i<native.publishedCandidates.length;i++) if(Number(native.publishedCandidates[i-1].nativeResearchScore)<Number(native.publishedCandidates[i].nativeResearchScore)) throw new Error('Native ranking allowed lower score to override higher score');
           if(!explain || !Array.isArray(explain.rows) || explain.rows.length!==Number(native.candidateUniverseCount)) throw new Error('Native explainability must cover the full candidate universe');
           if(Number(explain.summary?.universeCount)!==Number(native.candidateUniverseCount)) throw new Error('Native explainability universe summary mismatch');
           if(Number(explain.summary?.publishedCount)!==30) throw new Error('Native explainability published count mismatch');
           if(Number(explain.summary?.eligibleCount)!==Number(native.summary?.nativeResearchRecommendationCount)) throw new Error('Native explainability eligible count mismatch');
           if(explain.policy?.explainabilityInfluencesScore!==false || explain.policy?.explainabilityInfluencesExecution!==false || explain.policy?.explainabilityInfluencesChampion!==false) throw new Error('Native explainability governance drift');
           if(!explain.rows.every(row=>Array.isArray(row.whyRankedHere)&&Array.isArray(row.whyExcluded)&&row.governance?.explainabilityInfluencesScore===false)) throw new Error('Native explainability row contract incomplete');
+
+          if(nativeForwardPolicy.schemaVersion!=='20.0.0-native-shadow-forward-policy-1' || nativeForwardPolicy.status!=='METHOD_FROZEN_SHADOW_FORWARD_ONLY') throw new Error('Native shadow forward policy missing/floating');
+          if(nativeForwardPolicy.engineId!==native.engineId || nativeForwardPolicy.rankingContract!==rd.contract) throw new Error('Native shadow forward method contract mismatch');
+          if(nativeForwardPolicy.methodFreeze?.sessionDate!=='2026-08-13' || nativeForwardPolicy.methodFreeze?.sourceCommit!=='9283b72305c581776b5762f04b3b9d7c7dbe6dd1') throw new Error('Native shadow method freeze drift');
+          if(nativeForwardPolicy.methodFreeze?.freezeSessionSnapshotCountsTowardIndependentForward!==false || nativeForwardPolicy.methodFreeze?.retroactiveBackfillCountsTowardIndependentForward!==false) throw new Error('Native shadow baseline/backfill independence drift');
+          if(nativeForwardPolicy.samplePolicy?.sameSessionRevisionsIncreaseIndependentSampleCount!==false || nativeForwardPolicy.samplePolicy?.independentSampleUnit!=='UNIQUE_CANONICAL_MARKET_SESSION_DATE') throw new Error('Native shadow sample-unit drift');
+          if(Number(nativeForwardPolicy.samplePolicy?.minimumIndependentResolvedSessionsForPerformanceReview)!==30 || Number(nativeForwardPolicy.samplePolicy?.minimumIndependentHoldoutSessions)!==20) throw new Error('Native shadow review sample gate drift');
+          if(nativeForwardPolicy.governance?.researchOnly!==true || nativeForwardPolicy.governance?.automaticPromotion!==false || nativeForwardPolicy.governance?.executionPermission!==false || nativeForwardPolicy.governance?.productionAllocation!==false || nativeForwardPolicy.governance?.canChangeChampion!==false) throw new Error('Native shadow governance drift');
+          if(nativeForwardRegression.ok!==true || nativeForwardRegression.failedCount!==0) throw new Error('Native shadow forward regression is not green');
+          for(const check of ['frozenPolicyBound','separateArchivePreserved','methodFreezeBaselineExcluded','retroactiveBackfillExcluded','uniqueSessionSampleCounting','revisionsDoNotInflateSample','pendingReturnsRemainNull','conservativeForwardResolverPreserved','noSyntheticOrFutureLeakage','transactionCostPreserved','rankingContractFrozen','automaticPromotionDisabled','executionAndChampionUnaffected']) if(nativeForwardRegression.checks?.[check]!==true) throw new Error(`Native shadow regression missing: ${check}`);
+          if(nativeForward.engineId!==native.engineId || nativeForward.rankingContract!==rd.contract || nativeForward.asOfSessionDate!==current.sessionDate) throw new Error('Native shadow forward source mismatch');
+          if(nativeForward.policy?.roundTripTransactionCostPct!==0.6 || nativeForward.policy?.futureRowsAllowed!==false || nativeForward.policy?.syntheticOhlcAllowed!==false || nativeForward.policy?.pendingReturnMustRemainNull!==true || nativeForward.policy?.sameSessionRevisionsIncreaseIndependentSampleCount!==false) throw new Error('Native shadow forward evaluation policy drift');
+          if(nativeForward.policy?.automaticPromotion!==false || nativeForward.policy?.executionInfluence!==false || nativeForward.policy?.productionAllocationInfluence!==false || nativeForward.policy?.championInfluence!==false) throw new Error('Native shadow forward influence drift');
+          if(Number(nativeArchiveIndex.canonicalSessionCount)!==new Set((nativeArchiveIndex.entries||[]).filter(e=>e.canonicalForSession===true).map(e=>e.sessionDate)).size) throw new Error('Native shadow canonical session count mismatch');
+          if(Number(nativeArchiveIndex.independentForwardSessionCount)!==new Set((nativeArchiveIndex.entries||[]).filter(e=>e.countsTowardIndependentForward===true).map(e=>e.sessionDate)).size) throw new Error('Native shadow independent session count mismatch');
+          if((nativeArchiveIndex.entries||[]).some(e=>!String(e.file||'').startsWith('data/v20/signal-archive/native-shadow/archive/'))) throw new Error('Native shadow archive contains non-persistent file reference');
+          if((nativeForward.evaluations||[]).some(e=>e.status==='PENDING' && (e.evaluationSessionDate!==null || e.equalWeightGrossReturnPct!==null || e.equalWeightNetReturnPct!==null || e.enteredOnlyAverageNetReturnPct!==null))) throw new Error('Native shadow pending return was fabricated');
+          if(current.sessionDate===nativeForwardPolicy.methodFreeze.sessionDate){
+            if(Number(nativeForward.summary?.independentForwardSessionCount)!==0 || Number(nativeArchiveIndex.independentForwardSessionCount)!==0) throw new Error('Freeze-session Native shadow evidence falsely counted as independent');
+            if((nativeForward.evaluations||[]).some(e=>e.countsTowardIndependentForward===true)) throw new Error('Freeze-session evaluation falsely independent');
+            if(Object.values(nativeForward.metricsByHorizon||{}).some(m=>m.reviewSampleReady!==false || m.averageNetReturnPct!==null || m.sessionWinRatePct!==null || m.profitFactor!==null)) throw new Error('Native shadow performance review opened before fresh samples');
+          }
+          if(perf.checks?.nativeShadowForwardEvidenceSeparated!==true || perf.checks?.nativeFreezeBaselineExcluded!==true || perf.checks?.nativeRevisionsCannotInflateSamples!==true || perf.checks?.nativeForwardCannotPromoteAutomatically!==true) throw new Error('Native shadow performance-registry regression not green');
+          if(!nativePerf || nativePerf.evidenceClass!=='LIVE_FORWARD_SHADOW' || nativePerf.decisionUse!=='SEPARATE_SHADOW_FORWARD_EVIDENCE_ONLY' || nativePerf.promotionEligible!==false) throw new Error('Native shadow performance evidence entry missing/drifted');
+          if(nativePerf.independence?.freshIndependentEvidence!==(Number(nativeForward.summary?.independentForwardSessionCount)>0)) throw new Error('Native shadow independence classification mismatch');
+          if(nativePerf.governance?.automaticPromotion!==false || nativePerf.governance?.canOpenExecutionGate!==false || nativePerf.governance?.canDriveProductionAllocation!==false || nativePerf.governance?.canChangeChampion!==false) throw new Error('Native shadow performance governance drift');
+
           for(const check of [
             'nativeResearchPanelLoaded','nativeResearchIsPrimaryRanking','legacyBaselineIsSecondary',
             'nativeResearchLegacyContributionZeroVisible','nativeResearchOutsideLegacyCandidateVisible','nativeWhyRankedVisible',
@@ -109,8 +139,9 @@ jobs:
           for(const file of [
             'v20/index.html','v20/health.html','v20/performance.html','v20/research.html','v20/technical.html',
             'v20/top5.html','v20/history.html','v20/backtest.html','v20/remediation.html','v20/native-research.js','v20/native-research.css',
-            'data/v20/current.json','data/v20/regression.json','data/v20/market-explorer-regression.json','data/v17/resilient-session-status.json',
-            'data/v17/internal-ohlc-support-resistance.json'
+            'data/v20/current.json','data/v20/regression.json','data/v20/market-explorer-regression.json','data/v20/native-shadow-forward-policy.json',
+            'data/v20/signal-archive/native-shadow/forward.json','data/v20/signal-archive/native-shadow/regression.json','data/v20/signal-archive/native-shadow/archive/index.json',
+            'data/v17/resilient-session-status.json','data/v17/internal-ohlc-support-resistance.json'
           ]) if(!fs.existsSync(file)) throw new Error(`Release package missing ${file}`);
           console.log(JSON.stringify({
             finalStatus:fa.finalStatus,
@@ -127,6 +158,11 @@ jobs:
             nativeExplainabilityRows:explain.rows.length,
             nativeRankingDiscrimination:rd.contract,
             nativeLegacyContributionPct:native.summary?.legacyScoringContributionPct,
+            nativeShadowForwardStatus:perfRegistry.summary?.nativeForwardStatus,
+            nativeShadowCanonicalSessions:nativeArchiveIndex.canonicalSessionCount,
+            nativeShadowIndependentSessions:nativeForward.summary?.independentForwardSessionCount,
+            nativeShadowPendingEvaluations:nativeForward.summary?.pendingCount,
+            nativeShadowResolvedIndependentEvaluations:nativeForward.summary?.independentResolvedEvaluationCount,
             nativePrimaryRanking:browser.checks?.nativeResearchIsPrimaryRanking?.ok===true,
             legacyBaselineSecondary:browser.checks?.legacyBaselineIsSecondary?.ok===true
           },null,2));
@@ -142,6 +178,8 @@ jobs:
           cp -R .v20-source/v20 ./v20
           cp -R .v20-source/data/v20 ./data/v20
           cp -R .v20-source/data/v17 ./data/v17
+          NATIVE_FORWARD_STATUS="$(node -e "console.log(require('./data/v20/performance-evidence-registry.json').summary.nativeForwardStatus)")"
+          NATIVE_FORWARD_INDEPENDENT="$(node -e "console.log(require('./data/v20/signal-archive/native-shadow/forward.json').summary.independentForwardSessionCount)")"
           cat > v20/deployment.json <<JSON
           {
             "release": "EGX PRO V20",
@@ -156,6 +194,10 @@ jobs:
             "legacyBaselineSecondary": true,
             "nativeExplainabilityFullUniverse": true,
             "nativeRankingDiscriminationContract": "V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2",
+            "nativeShadowForwardEnabled": true,
+            "nativeShadowForwardMethodFreezeSession": "2026-08-13",
+            "nativeShadowForwardStatus": "$NATIVE_FORWARD_STATUS",
+            "nativeShadowIndependentSessionCount": $NATIVE_FORWARD_INDEPENDENT,
             "publishedAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           }
           JSON
@@ -173,11 +215,27 @@ jobs:
           test -f data/v20/stock-profiles.json
           test -f data/v20/market-explorer.json
           test -f data/v20/market-explorer-regression.json
+          test -f data/v20/native-shadow-forward-policy.json
+          test -f data/v20/signal-archive/native-shadow/forward.json
+          test -f data/v20/signal-archive/native-shadow/regression.json
+          test -f data/v20/signal-archive/native-shadow/archive/index.json
           test -f data/v17/resilient-session-status.json
           node --check v20/app.js
           node --check v20/native-research.js
           node --check v20/performance.js
-          node -e "const d=JSON.parse(require('fs').readFileSync('v20/deployment.json','utf8')); const m=JSON.parse(require('fs').readFileSync('data/v20/market-explorer-regression.json','utf8')); if(d.nativePrimaryResearchRanking!==true||d.legacyBaselineSecondary!==true||d.nativeExplainabilityFullUniverse!==true||d.nativeRankingDiscriminationContract!=='V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2') process.exit(1); if((m.fullMarketNative?.explainability?.rows||[]).length!==Number(m.fullMarketNative?.candidateUniverseCount||0)) process.exit(1); if(m.fullMarketNative?.rankingDiscrimination?.contract!==d.nativeRankingDiscriminationContract) process.exit(1);"
+          node - <<'NODE'
+          const fs=require('fs');
+          const d=JSON.parse(fs.readFileSync('v20/deployment.json','utf8'));
+          const m=JSON.parse(fs.readFileSync('data/v20/market-explorer-regression.json','utf8'));
+          const f=JSON.parse(fs.readFileSync('data/v20/signal-archive/native-shadow/forward.json','utf8'));
+          const fr=JSON.parse(fs.readFileSync('data/v20/signal-archive/native-shadow/regression.json','utf8'));
+          if(d.nativePrimaryResearchRanking!==true||d.legacyBaselineSecondary!==true||d.nativeExplainabilityFullUniverse!==true||d.nativeRankingDiscriminationContract!=='V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2') process.exit(1);
+          if(d.nativeShadowForwardEnabled!==true||d.nativeShadowForwardMethodFreezeSession!=='2026-08-13'||d.nativeShadowForwardStatus!=='METHOD_FREEZE_BASELINE_ONLY') process.exit(1);
+          if(Number(d.nativeShadowIndependentSessionCount)!==Number(f.summary?.independentForwardSessionCount)) process.exit(1);
+          if((m.fullMarketNative?.explainability?.rows||[]).length!==Number(m.fullMarketNative?.candidateUniverseCount||0)) process.exit(1);
+          if(m.fullMarketNative?.rankingDiscrimination?.contract!==d.nativeRankingDiscriminationContract) process.exit(1);
+          if(fr.ok!==true) process.exit(1);
+          NODE
 
       - name: Commit isolated V20 release
         shell: bash
@@ -200,6 +258,7 @@ jobs:
           echo "URL: https://rasheadsca-star.github.io/RAS-EGX0.1/v20/" >> "$GITHUB_STEP_SUMMARY"
           echo "Native: Primary Research Ranking / Full-market explainability / Top 30 persisted / Legacy contribution 0%" >> "$GITHUB_STEP_SUMMARY"
           echo "Ranking ties: V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2 (score-preserving, cap-preserving)" >> "$GITHUB_STEP_SUMMARY"
+          echo "Native Forward: method-frozen shadow evidence / unique canonical sessions / same-session revisions do not inflate sample / no automatic promotion" >> "$GITHUB_STEP_SUMMARY"
           echo "Baseline: Secondary comparison only" >> "$GITHUB_STEP_SUMMARY"
           echo "Mode: RESEARCH_ONLY / EXECUTION_BLOCKED" >> "$GITHUB_STEP_SUMMARY"
           echo "Champion: V16_9_EQUAL_WEIGHT_BASKET" >> "$GITHUB_STEP_SUMMARY"
