@@ -64,6 +64,7 @@ jobs:
           const fa=regression.finalAcceptance;
           const native=marketRegression.fullMarketNative;
           const explain=native?.explainability;
+          const rd=native?.rankingDiscrimination;
           if(regression.ok!==true) throw new Error('V20 regression is not green');
           if(!fa || fa.researchPlatformReady!==true) throw new Error('V20 research platform acceptance is not ready');
           if(fa.finalStatus!=='RESEARCH_PLATFORM_READY_EXECUTION_NOT_READY') throw new Error(`Unexpected final status: ${fa?.finalStatus}`);
@@ -77,12 +78,21 @@ jobs:
           if(current.governance?.automaticPromotion!==false || current.governance?.promotionAllowed!==false) throw new Error('Automatic promotion must remain disabled');
           if(marketRegression.ok!==true || marketRegression.checks?.fullMarketNativeSelectionIntegrated!==true || marketRegression.checks?.fullMarketNativePublishedEvidencePersisted!==true) throw new Error('Full-market Native acceptance is not green');
           if(marketRegression.checks?.fullMarketNativeExplainabilityPersisted!==true || marketRegression.checks?.fullMarketNativeExplainabilityNonInfluential!==true) throw new Error('Native explainability acceptance is not green');
+          if(marketRegression.checks?.fullMarketNativeRankingDiscriminationPersisted!==true || marketRegression.checks?.fullMarketNativeRankingDiscriminationNonMutating!==true || marketRegression.checks?.fullMarketNativeRankingTieBreakMetadataComplete!==true) throw new Error('Native ranking discrimination acceptance is not green');
           if(!native || native.engineId!=='V20_FULL_MARKET_NATIVE_SELECTION_V1') throw new Error('Full-market Native engine evidence missing');
           if(native.candidateUniverseIsFullMarketIndependent!==true || native.legacySeedDependency!==false) throw new Error('Native candidate universe must remain independent from Legacy seed');
           if(native.researchOnly!==true || native.executionPermission!==false || native.productionAllocation!==false) throw new Error('Native engine research-only governance drift');
           if(Number(native.summary?.legacyScoringContributionPct)!==0) throw new Error('Legacy scoring contribution must remain 0%');
           if(Number(native.summary?.publishedResearchCandidateCount)!==30 || !Array.isArray(native.publishedCandidates) || native.publishedCandidates.length!==30) throw new Error('Native Top 30 evidence not persisted');
           if(!native.publishedCandidates.every(row=>Number(row.netRiskReward)>=0.7)) throw new Error('Native published candidate below Net R/R quality gate');
+          if(!rd || rd.contract!=='V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2') throw new Error('Native safety-strength ranking contract missing');
+          if(rd.appliesOnlyWhenNativeResearchScoreExactlyTied!==true || rd.mutatesNativeResearchScore!==false || rd.canOverrideHigherNativeResearchScore!==false || rd.scoreMutation!==false || rd.executionInfluence!==false) throw new Error('Native ranking discrimination governance drift');
+          if(!Array.isArray(rd.order) || rd.order[0]!=='alignmentSafetyPriorityAscending' || rd.order[1]!=='scoreBeforeRegimeAndCapsDescending' || rd.order[2]!=='entryDistancePctAscending') throw new Error('Native ranking discrimination precedence drift');
+          if(!native.publishedCandidates.every(row=>row.rankingTieBreaker?.contract===rd.contract && row.rankingTieBreaker?.mutatesNativeResearchScore===false && row.rankingTieBreaker?.canOverrideHigherNativeResearchScore===false && Number.isFinite(Number(row.rankingTieBreaker?.scoreBeforeRegimeAndCaps)))) throw new Error('Native published ranking tie-break metadata incomplete');
+          for(let i=1;i<native.publishedCandidates.length;i++){
+            const prev=native.publishedCandidates[i-1],cur=native.publishedCandidates[i];
+            if(Number(prev.nativeResearchScore)<Number(cur.nativeResearchScore)) throw new Error('Native ranking allowed lower score to override higher score');
+          }
           if(!explain || !Array.isArray(explain.rows) || explain.rows.length!==Number(native.candidateUniverseCount)) throw new Error('Native explainability must cover the full candidate universe');
           if(Number(explain.summary?.universeCount)!==Number(native.candidateUniverseCount)) throw new Error('Native explainability universe summary mismatch');
           if(Number(explain.summary?.publishedCount)!==30) throw new Error('Native explainability published count mismatch');
@@ -115,6 +125,7 @@ jobs:
             nativePublished:native.publishedCandidates.length,
             nativeEligible:native.summary?.nativeResearchRecommendationCount,
             nativeExplainabilityRows:explain.rows.length,
+            nativeRankingDiscrimination:rd.contract,
             nativeLegacyContributionPct:native.summary?.legacyScoringContributionPct,
             nativePrimaryRanking:browser.checks?.nativeResearchIsPrimaryRanking?.ok===true,
             legacyBaselineSecondary:browser.checks?.legacyBaselineIsSecondary?.ok===true
@@ -144,6 +155,7 @@ jobs:
             "nativePrimaryResearchRanking": true,
             "legacyBaselineSecondary": true,
             "nativeExplainabilityFullUniverse": true,
+            "nativeRankingDiscriminationContract": "V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2",
             "publishedAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           }
           JSON
@@ -165,7 +177,7 @@ jobs:
           node --check v20/app.js
           node --check v20/native-research.js
           node --check v20/performance.js
-          node -e "const d=JSON.parse(require('fs').readFileSync('v20/deployment.json','utf8')); const m=JSON.parse(require('fs').readFileSync('data/v20/market-explorer-regression.json','utf8')); if(d.nativePrimaryResearchRanking!==true||d.legacyBaselineSecondary!==true||d.nativeExplainabilityFullUniverse!==true) process.exit(1); if((m.fullMarketNative?.explainability?.rows||[]).length!==Number(m.fullMarketNative?.candidateUniverseCount||0)) process.exit(1);"
+          node -e "const d=JSON.parse(require('fs').readFileSync('v20/deployment.json','utf8')); const m=JSON.parse(require('fs').readFileSync('data/v20/market-explorer-regression.json','utf8')); if(d.nativePrimaryResearchRanking!==true||d.legacyBaselineSecondary!==true||d.nativeExplainabilityFullUniverse!==true||d.nativeRankingDiscriminationContract!=='V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2') process.exit(1); if((m.fullMarketNative?.explainability?.rows||[]).length!==Number(m.fullMarketNative?.candidateUniverseCount||0)) process.exit(1); if(m.fullMarketNative?.rankingDiscrimination?.contract!==d.nativeRankingDiscriminationContract) process.exit(1);"
 
       - name: Commit isolated V20 release
         shell: bash
@@ -187,6 +199,7 @@ jobs:
           echo "### EGX PRO V20 published" >> "$GITHUB_STEP_SUMMARY"
           echo "URL: https://rasheadsca-star.github.io/RAS-EGX0.1/v20/" >> "$GITHUB_STEP_SUMMARY"
           echo "Native: Primary Research Ranking / Full-market explainability / Top 30 persisted / Legacy contribution 0%" >> "$GITHUB_STEP_SUMMARY"
+          echo "Ranking ties: V20_SAFETY_STRENGTH_LEXICOGRAPHIC_TIE_BREAK_V2 (score-preserving, cap-preserving)" >> "$GITHUB_STEP_SUMMARY"
           echo "Baseline: Secondary comparison only" >> "$GITHUB_STEP_SUMMARY"
           echo "Mode: RESEARCH_ONLY / EXECUTION_BLOCKED" >> "$GITHUB_STEP_SUMMARY"
           echo "Champion: V16_9_EQUAL_WEIGHT_BASKET" >> "$GITHUB_STEP_SUMMARY"
