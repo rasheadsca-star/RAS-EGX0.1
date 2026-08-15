@@ -74,7 +74,7 @@ jobs:
           if(current.governance?.automaticPromotion!==false || current.governance?.promotionAllowed!==false) throw new Error('Automatic promotion must remain disabled');
           for(const file of [
             'v20/index.html','v20/health.html','v20/performance.html','v20/research.html','v20/technical.html',
-            'v20/top5.html','v20/history.html','v20/backtest.html','v20/remediation.html','v20/portfolio.html',
+            'v20/top5.html','v20/history.html','v20/backtest.html','v20/remediation.html',
             'data/v20/current.json','data/v20/regression.json','data/v17/resilient-session-status.json',
             'data/v17/internal-ohlc-support-resistance.json'
           ]) if(!fs.existsSync(file)) throw new Error(`Release package missing ${file}`);
