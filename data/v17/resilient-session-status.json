@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "17.0.0-resilient-session-gate-6",
+  "generatedAt": "2026-08-14T15:09:14.832Z",
+  "status": "DEGRADED",
+  "mode": "DEGRADED",
+  "reasons": [
+    "INTERNAL_SR_COVERAGE_BELOW_95",
+    "INTERNAL_SR_FRESHNESS_BELOW_98",
+    "CRITICAL_FIELDS_BELOW_95",
+    "CRITICAL_SOURCE_CONFLICT",
+    "INTERNAL_SR_NOT_EXECUTION_CANDIDATE"
+  ],
+  "sessionAligned": true,
+  "coveragePct": 92.5,
+  "freshnessPct": 91.25,
+  "criticalFieldsPct": 92.5,
+  "sourcesUsed": [
+    "MANDATORY_MARKET_COLLECTOR",
+    "VERIFIED_PRICE_SOURCE_SESSION",
+    "INTERNAL_OHLC_PIVOT",
+    "V11_1_LIQUIDITY_RULES_V17_CURRENT_RUN",
+    "MUBASHER_DIRECT_VALIDATION",
+    "MUBASHER_RENDERED_VALIDATION"
+  ],
+  "sourceConflicts": [
+    {
+      "symbol": "AFMC",
+      "source": "MUBASHER_DIRECT",
+      "state": "CURRENT_CRITICAL_CONFLICT",
+      "maxDiffPct": 13.67,
+      "critical": true
+    }
+  ],
+  "missingSymbols": [
+    "SAIB",
+    "MEGM",
+    "SEIGA",
+    "ABUK",
+    "MFPC",
+    "ELNA"
+  ],
+  "executionGrade": false,
+  "priceTruth": {
+    "healthy": true,
+    "researchMinimumHealthy": true,
+    "sourceSessionVerified": true,
+    "verifiedSessionDate": "2026-08-13",
+    "marketCoveragePct": 96,
+    "sourceCoveragePct": 100,
+    "stale": false,
+    "sourceAgeMinutes": 2.6,
+    "lastSourceUpdate": "2026-08-14T15:06:12.283Z",
+    "sourceName": "mubasher_symbol_pages_precise_enriched",
+    "sessionTruthSource": "data/v17/market-session-truth.json",
+    "contract": "MANDATORY_MARKET_COLLECTOR_IS_PRICE_TRUTH_AND_SESSION_MUST_BE_SOURCE_VERIFIED_FOR_EXECUTION"
+  },
+  "executionInputs": {
+    "ready": false,
+    "sourceSession": {
+      "verified": true,
+      "sessionDate": "2026-08-13",
+      "externalValidationConflict": false
+    },
+    "supportResistanceReady": true,
+    "supportResistanceMethod": "INTERNAL_OHLC_PIVOT_WITH_MUBASHER_VALIDATION",
+    "internal": {
+      "researchReady": true,
+      "executionCandidateReady": false,
+      "sourceSessionVerified": true,
+      "coveragePct": 92.5,
+      "freshnessPct": 91.25,
+      "criticalFieldsPct": 92.5,
+      "averageFreshConfidence": 0.803,
+      "referenceSessionDate": "2026-08-13",
+      "sessionCompletionConfirmed": true
+    },
+    "liquidity": {
+      "gatePassed": true,
+      "sourceSessionVerified": true,
+      "sessionAligned": true,
+      "referenceSessionDate": "2026-08-13",
+      "candidateUniverseCount": 80,
+      "candidateEvidenceCoveragePct": 96.25,
+      "candidateExecutionOkCount": 66,
+      "candidateExecutionOkPct": 82.5,
+      "thresholds": {
+        "intradayMinCurrentTurnover": 5000000,
+        "intradayMinAvg20Turnover": 2000000,
+        "shortTermMinTurnover": 1000000,
+        "executionMinLiquidityScore": 65,
+        "conditionalMinLiquidityScore": 45,
+        "minimumCandidateEvidenceCoveragePct": 95
+      },
+      "engine": "v17_wrapper_of_v11_1_liquidity_gate"
+    },
+    "liquidityGatePassed": true
+  },
+  "sourceState": {
+    "availableRows": 221,
+    "marketRows": 215,
+    "cacheRows": 221,
+    "lastSourceUpdate": "2026-08-14T15:06:12.283Z",
+    "sourceAgeMinutes": 2.6,
+    "stale": false
+  },
+  "confidencePolicy": {
+    "confidenceCap": 0.82,
+    "confidenceCapPct": 82,
+    "allowResearchRanking": true,
+    "allowAutomaticPromotion": false,
+    "allowExecutionGradeClaim": false,
+    "requireExplicitDegradedLabel": true
+  },
+  "readiness": {
+    "researchReady": true,
+    "priceTruthHealthy": true,
+    "sourceSessionVerified": true,
+    "executionReady": false
+  },
+  "sourceAuditSummary": {
+    "total": 223,
+    "allowed": 223,
+    "blocked": 0,
+    "precisionBlocked": 0,
+    "conflicts": 0,
+    "stale": 0,
+    "subPound": 22,
+    "sourceCoveragePct": 100,
+    "marketCoveragePct": 96
+  },
+  "invariant": "V16 champion and main branch are not modified or promoted by this V17 lab gate."
+}

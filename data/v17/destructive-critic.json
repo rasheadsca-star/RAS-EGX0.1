@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "17.0.0-destructive-critic-5",
+  "generatedAt": "2026-08-14T15:09:19.853Z",
+  "critic": "V17_DESTRUCTIVE_ADVERSARIAL_REVIEWER_V5",
+  "verdict": "NO_COMMENTS",
+  "counts": {
+    "CRITICAL": 0,
+    "MAJOR": 0,
+    "MINOR": 0,
+    "INFO": 0
+  },
+  "totalFindings": 0,
+  "findings": [],
+  "baseCritic": {
+    "schemaVersion": "17.0.0-destructive-critic-4",
+    "verdict": "COMMENTS_FOUND",
+    "totalFindings": 3,
+    "ignoredSupersededWiringFindings": [
+      {
+        "code": "CRITIC_V2_NOT_IN_WORKFLOW",
+        "location": "workflow"
+      },
+      {
+        "code": "CRITIC_V3_NOT_MANDATORY_MARKET",
+        "location": "workflow"
+      },
+      {
+        "code": "CRITIC_V4_NOT_MANDATORY",
+        "location": "market"
+      }
+    ]
+  },
+  "publicationArchitecture": {
+    "buildReviewReadOnly": true,
+    "buildPushLines": [],
+    "buildCommitLines": [],
+    "marketCanonicalPublisher": true,
+    "marketPushes": [
+      "git push origin HEAD:develop/v17-rebuild"
+    ]
+  },
+  "coverage": {
+    "sessionTruth": true,
+    "historyTemporalIntegrity": true,
+    "internalSrFormula": true,
+    "internalSrCoverageRecompute": true,
+    "liquidityIndependentRecompute": true,
+    "decisionExecutionLeak": true,
+    "snapshotHistoricalChampionLeak": true,
+    "immutableLedger": true,
+    "ambiguityPolicy": true,
+    "championChallenger": true,
+    "runtimeIsolation": true,
+    "workflowIsolation": true,
+    "independentReviewZeroTolerance": true,
+    "historicalAllocationSemantics": true,
+    "finalizerAttestation": true,
+    "dualWorkflowCriticEnforcement": true,
+    "criticVersionSupersessionHandledExplicitly": true,
+    "realChromiumJavascriptRuntime": true,
+    "desktopRuntime": true,
+    "mobileRuntime": true,
+    "consoleAndPageErrors": true,
+    "networkRuntimeFailures": true,
+    "navigationAndSearch": true,
+    "canonicalPublisherRace": true,
+    "buildReviewReadOnly": true,
+    "marketSolePublisher": true,
+    "publishedEvidenceFreshness": true,
+    "guardPatternFalsePositiveExcluded": true,
+    "lowerCriticVersionWiringSupersession": true
+  },
+  "rule": "Critic V5 is additive. Build Review must be read-only and Market Workflow must be the sole canonical data publisher. Guard/search text is not treated as an executable git command. Only lower-critic direct-wiring findings may be superseded when V5 is mandatory; all substantive lower-critic findings remain blocking."
+}

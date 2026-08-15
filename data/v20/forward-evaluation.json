@@ -1,0 +1,486 @@
+{
+  "schemaVersion": "20.0.0-forward-evaluation-3",
+  "horizonsSessions": [
+    1,
+    3,
+    5,
+    10,
+    20
+  ],
+  "updatedAt": "2026-08-15T12:52:54.686Z",
+  "asOfSessionDate": "2026-08-13",
+  "authoritativeEvidence": {
+    "file": "data/v20/forward-evaluation.json",
+    "selfContainedStatus": true,
+    "selfContainedRegression": true,
+    "derivedSidecarsAreAuthoritative": false,
+    "derivedSidecars": [
+      "data/v20/forward-resolution-status.json",
+      "data/v20/forward-evaluation-regression.json"
+    ]
+  },
+  "resolutionPolicy": {
+    "immutableSignalArchiveMutationAllowed": false,
+    "appliedPortfolioAndResearchSeparated": true,
+    "legacyPortfolioReturnFieldsMeaning": "APPLIED_PORTFOLIO_ONLY",
+    "pendingReturnMustRemainNull": true,
+    "marketSessionCalendar": "MULTI_SYMBOL_TRUSTED_OHLC_DATE_CONSENSUS",
+    "calendarConsensusPct": 50,
+    "calendarMinimumVotes": 5,
+    "entryPolicy": "FIRST_CONSENSUS_MARKET_SESSION_OPEN_ONLY_WITHIN_ISSUED_ENTRY_RANGE",
+    "delayedEntryAfterFirstSessionAllowed": false,
+    "sameSessionTargetStopAmbiguity": "TREAT_AS_STOP",
+    "gapBelowStopPolicy": "EXIT_AT_ACTUAL_OPEN_IF_WORSE_THAN_STOP",
+    "gapAboveTargetPolicy": "CREDIT_CAPPED_AT_TARGET1",
+    "horizonClosePolicy": "CLOSE_AT_HORIZON_SESSION_CLOSE_IF_NO_PRIOR_EXIT",
+    "roundTripTransactionCostPct": 0.6,
+    "avoidStatusResearchEvaluationAllowed": false,
+    "hardReviewOrInvalidPlanResearchEvaluationAllowed": false,
+    "futureRowsAllowed": false,
+    "syntheticOhlcAllowed": false
+  },
+  "calendarEvidence": [
+    {
+      "signalDate": "2026-08-13",
+      "asOfSessionDate": "2026-08-13",
+      "historyCount": 28,
+      "requiredVotes": 14,
+      "consensusPct": 50,
+      "acceptedSessions": [],
+      "candidates": []
+    }
+  ],
+  "historyEvidence": {
+    "requestedTickerCount": 30,
+    "trustedHistoryTickerCount": 28,
+    "liveYahooRefreshCount": 27,
+    "cachedFallbackCount": 1,
+    "unavailableTickers": [
+      {
+        "ticker": "KORA",
+        "blockers": [
+          "NO_ACCEPTABLE_HISTORY_DOCUMENT"
+        ],
+        "attempts": [
+          {
+            "source": "yahoo_live",
+            "ok": false,
+            "error": "Yahoo history failed for KORA: KORA.CA: All HTTP attempts failed. https://query1.finance.yahoo.com/v8/finance/chart/KORA.CA?range=3mo&interval=1d&events=history&includeAdjustedClose=true attempt 1: HTTP 404 from https://query1.finance.yahoo.com/v8/finance/chart/KORA.CA?range=3mo&interval=1d&events=history&includeAdjustedClose=true | https://query2.finance.yahoo.com/v8/finance/chart/KORA.CA?range=3mo&interval=1d&events=history&includeAdjustedClose=true attempt 1: HTTP 404 from https://query2.finance.yahoo.com/v8/finance/chart/KORA.CA?range=3mo&interval=1d&events=history&includeAdjustedClose=true"
+          }
+        ]
+      },
+      {
+        "ticker": "BONY",
+        "blockers": [
+          "NO_ACCEPTABLE_HISTORY_DOCUMENT"
+        ],
+        "attempts": [
+          {
+            "source": "yahoo_live",
+            "ok": false,
+            "error": "Yahoo history failed for BONY: BONY.CA: All HTTP attempts failed. https://query1.finance.yahoo.com/v8/finance/chart/BONY.CA?range=3mo&interval=1d&events=history&includeAdjustedClose=true attempt 1: HTTP 404 from https://query1.finance.yahoo.com/v8/finance/chart/BONY.CA?range=3mo&interval=1d&events=history&includeAdjustedClose=true | https://query2.finance.yahoo.com/v8/finance/chart/BONY.CA?range=3mo&interval=1d&events=history&includeAdjustedClose=true attempt 1: HTTP 404 from https://query2.finance.yahoo.com/v8/finance/chart/BONY.CA?range=3mo&interval=1d&events=history&includeAdjustedClose=true"
+          }
+        ]
+      }
+    ],
+    "futureRowsRejected": 0
+  },
+  "resolutionStatus": {
+    "schemaVersion": "20.0.0-forward-resolution-status-2",
+    "generatedAt": "2026-08-15T12:52:54.645Z",
+    "asOfSessionDate": "2026-08-13",
+    "signalCount": 2,
+    "evaluationCount": 10,
+    "resolvedCount": 0,
+    "pendingCount": 10,
+    "appliedCashResolvedCount": 0,
+    "researchResolvedCount": 0,
+    "researchAmbiguousCount": 0,
+    "acceptedFutureSessionsBySignalDate": [
+      {
+        "signalDate": "2026-08-13",
+        "sessions": []
+      }
+    ]
+  },
+  "evaluationRegression": {
+    "schemaVersion": "20.0.0-forward-evaluation-regression-2",
+    "generatedAt": "2026-08-15T12:52:54.686Z",
+    "asOfSessionDate": "2026-08-13",
+    "authoritativeFile": "data/v20/forward-evaluation.json",
+    "ok": true,
+    "failedCount": 0,
+    "failures": [],
+    "evidence": {
+      "signalCount": 2,
+      "evaluationCount": 10,
+      "resolvedCount": 0,
+      "pendingCount": 10,
+      "immutableArchiveCount": 2,
+      "fabricatedSameSessionResolutionCount": 0,
+      "embeddedStatusMatchesEvaluations": true
+    }
+  },
+  "evaluations": [
+    {
+      "sessionDate": "2026-08-13",
+      "immutableSignalHash": "be0fc90dd56cf6044344264cd4a9fcd59e83ac0910b12a2f5e26faa8a9ca2c5c",
+      "horizonSessions": 1,
+      "status": "PENDING",
+      "evaluationSessionDate": null,
+      "portfolioReturnGrossPct": null,
+      "portfolioReturnNetPct": null,
+      "resolvedPositionCount": 0,
+      "ambiguousPositionCount": 0,
+      "note": "Horizon remains pending until enough trusted consensus market sessions exist after signal issuance. No return is inferred from weekends or calendar assumptions.",
+      "appliedPortfolio": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "appliedExposurePct": 0,
+        "grossReturnPct": null,
+        "netReturnPct": null
+      },
+      "researchEvaluation": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "candidateCount": null,
+        "resolvedCount": 0,
+        "equalWeightIssuedGrossReturnPct": null,
+        "equalWeightIssuedNetReturnPct": null,
+        "decisionUse": "RESEARCH_DIAGNOSTIC_ONLY_NOT_PRODUCTION_PERFORMANCE",
+        "appliedToProduction": false
+      },
+      "resolutionAttempt": {
+        "attemptedAt": "2026-08-15T12:52:54.645Z",
+        "asOfSessionDate": "2026-08-13",
+        "state": "WAITING_FOR_MARKET_SESSIONS",
+        "acceptedFutureSessionCount": 0,
+        "requiredHorizonSessions": 1,
+        "calendarRequiredVotes": 14,
+        "calendarHistoryCount": 28
+      }
+    },
+    {
+      "sessionDate": "2026-08-13",
+      "immutableSignalHash": "be0fc90dd56cf6044344264cd4a9fcd59e83ac0910b12a2f5e26faa8a9ca2c5c",
+      "horizonSessions": 10,
+      "status": "PENDING",
+      "evaluationSessionDate": null,
+      "portfolioReturnGrossPct": null,
+      "portfolioReturnNetPct": null,
+      "resolvedPositionCount": 0,
+      "ambiguousPositionCount": 0,
+      "note": "Horizon remains pending until enough trusted consensus market sessions exist after signal issuance. No return is inferred from weekends or calendar assumptions.",
+      "appliedPortfolio": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "appliedExposurePct": 0,
+        "grossReturnPct": null,
+        "netReturnPct": null
+      },
+      "researchEvaluation": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "candidateCount": null,
+        "resolvedCount": 0,
+        "equalWeightIssuedGrossReturnPct": null,
+        "equalWeightIssuedNetReturnPct": null,
+        "decisionUse": "RESEARCH_DIAGNOSTIC_ONLY_NOT_PRODUCTION_PERFORMANCE",
+        "appliedToProduction": false
+      },
+      "resolutionAttempt": {
+        "attemptedAt": "2026-08-15T12:52:54.645Z",
+        "asOfSessionDate": "2026-08-13",
+        "state": "WAITING_FOR_MARKET_SESSIONS",
+        "acceptedFutureSessionCount": 0,
+        "requiredHorizonSessions": 10,
+        "calendarRequiredVotes": 14,
+        "calendarHistoryCount": 28
+      }
+    },
+    {
+      "sessionDate": "2026-08-13",
+      "immutableSignalHash": "be0fc90dd56cf6044344264cd4a9fcd59e83ac0910b12a2f5e26faa8a9ca2c5c",
+      "horizonSessions": 20,
+      "status": "PENDING",
+      "evaluationSessionDate": null,
+      "portfolioReturnGrossPct": null,
+      "portfolioReturnNetPct": null,
+      "resolvedPositionCount": 0,
+      "ambiguousPositionCount": 0,
+      "note": "Horizon remains pending until enough trusted consensus market sessions exist after signal issuance. No return is inferred from weekends or calendar assumptions.",
+      "appliedPortfolio": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "appliedExposurePct": 0,
+        "grossReturnPct": null,
+        "netReturnPct": null
+      },
+      "researchEvaluation": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "candidateCount": null,
+        "resolvedCount": 0,
+        "equalWeightIssuedGrossReturnPct": null,
+        "equalWeightIssuedNetReturnPct": null,
+        "decisionUse": "RESEARCH_DIAGNOSTIC_ONLY_NOT_PRODUCTION_PERFORMANCE",
+        "appliedToProduction": false
+      },
+      "resolutionAttempt": {
+        "attemptedAt": "2026-08-15T12:52:54.645Z",
+        "asOfSessionDate": "2026-08-13",
+        "state": "WAITING_FOR_MARKET_SESSIONS",
+        "acceptedFutureSessionCount": 0,
+        "requiredHorizonSessions": 20,
+        "calendarRequiredVotes": 14,
+        "calendarHistoryCount": 28
+      }
+    },
+    {
+      "sessionDate": "2026-08-13",
+      "immutableSignalHash": "be0fc90dd56cf6044344264cd4a9fcd59e83ac0910b12a2f5e26faa8a9ca2c5c",
+      "horizonSessions": 3,
+      "status": "PENDING",
+      "evaluationSessionDate": null,
+      "portfolioReturnGrossPct": null,
+      "portfolioReturnNetPct": null,
+      "resolvedPositionCount": 0,
+      "ambiguousPositionCount": 0,
+      "note": "Horizon remains pending until enough trusted consensus market sessions exist after signal issuance. No return is inferred from weekends or calendar assumptions.",
+      "appliedPortfolio": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "appliedExposurePct": 0,
+        "grossReturnPct": null,
+        "netReturnPct": null
+      },
+      "researchEvaluation": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "candidateCount": null,
+        "resolvedCount": 0,
+        "equalWeightIssuedGrossReturnPct": null,
+        "equalWeightIssuedNetReturnPct": null,
+        "decisionUse": "RESEARCH_DIAGNOSTIC_ONLY_NOT_PRODUCTION_PERFORMANCE",
+        "appliedToProduction": false
+      },
+      "resolutionAttempt": {
+        "attemptedAt": "2026-08-15T12:52:54.645Z",
+        "asOfSessionDate": "2026-08-13",
+        "state": "WAITING_FOR_MARKET_SESSIONS",
+        "acceptedFutureSessionCount": 0,
+        "requiredHorizonSessions": 3,
+        "calendarRequiredVotes": 14,
+        "calendarHistoryCount": 28
+      }
+    },
+    {
+      "sessionDate": "2026-08-13",
+      "immutableSignalHash": "be0fc90dd56cf6044344264cd4a9fcd59e83ac0910b12a2f5e26faa8a9ca2c5c",
+      "horizonSessions": 5,
+      "status": "PENDING",
+      "evaluationSessionDate": null,
+      "portfolioReturnGrossPct": null,
+      "portfolioReturnNetPct": null,
+      "resolvedPositionCount": 0,
+      "ambiguousPositionCount": 0,
+      "note": "Horizon remains pending until enough trusted consensus market sessions exist after signal issuance. No return is inferred from weekends or calendar assumptions.",
+      "appliedPortfolio": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "appliedExposurePct": 0,
+        "grossReturnPct": null,
+        "netReturnPct": null
+      },
+      "researchEvaluation": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "candidateCount": null,
+        "resolvedCount": 0,
+        "equalWeightIssuedGrossReturnPct": null,
+        "equalWeightIssuedNetReturnPct": null,
+        "decisionUse": "RESEARCH_DIAGNOSTIC_ONLY_NOT_PRODUCTION_PERFORMANCE",
+        "appliedToProduction": false
+      },
+      "resolutionAttempt": {
+        "attemptedAt": "2026-08-15T12:52:54.645Z",
+        "asOfSessionDate": "2026-08-13",
+        "state": "WAITING_FOR_MARKET_SESSIONS",
+        "acceptedFutureSessionCount": 0,
+        "requiredHorizonSessions": 5,
+        "calendarRequiredVotes": 14,
+        "calendarHistoryCount": 28
+      }
+    },
+    {
+      "sessionDate": "2026-08-13",
+      "immutableSignalHash": "f4e1b70ec5a55a4aa2df9ea48e0188e5696696c44d6fdfcf0e9c7ef81c3e0257",
+      "horizonSessions": 1,
+      "status": "PENDING",
+      "evaluationSessionDate": null,
+      "portfolioReturnGrossPct": null,
+      "portfolioReturnNetPct": null,
+      "resolvedPositionCount": 0,
+      "ambiguousPositionCount": 0,
+      "note": "Horizon remains pending until enough trusted consensus market sessions exist after signal issuance. No return is inferred from weekends or calendar assumptions.",
+      "appliedPortfolio": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "appliedExposurePct": 0,
+        "grossReturnPct": null,
+        "netReturnPct": null
+      },
+      "researchEvaluation": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "candidateCount": null,
+        "resolvedCount": 0,
+        "equalWeightIssuedGrossReturnPct": null,
+        "equalWeightIssuedNetReturnPct": null,
+        "decisionUse": "RESEARCH_DIAGNOSTIC_ONLY_NOT_PRODUCTION_PERFORMANCE",
+        "appliedToProduction": false
+      },
+      "resolutionAttempt": {
+        "attemptedAt": "2026-08-15T12:52:54.645Z",
+        "asOfSessionDate": "2026-08-13",
+        "state": "WAITING_FOR_MARKET_SESSIONS",
+        "acceptedFutureSessionCount": 0,
+        "requiredHorizonSessions": 1,
+        "calendarRequiredVotes": 14,
+        "calendarHistoryCount": 28
+      }
+    },
+    {
+      "sessionDate": "2026-08-13",
+      "immutableSignalHash": "f4e1b70ec5a55a4aa2df9ea48e0188e5696696c44d6fdfcf0e9c7ef81c3e0257",
+      "horizonSessions": 10,
+      "status": "PENDING",
+      "evaluationSessionDate": null,
+      "portfolioReturnGrossPct": null,
+      "portfolioReturnNetPct": null,
+      "resolvedPositionCount": 0,
+      "ambiguousPositionCount": 0,
+      "note": "Horizon remains pending until enough trusted consensus market sessions exist after signal issuance. No return is inferred from weekends or calendar assumptions.",
+      "appliedPortfolio": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "appliedExposurePct": 0,
+        "grossReturnPct": null,
+        "netReturnPct": null
+      },
+      "researchEvaluation": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "candidateCount": null,
+        "resolvedCount": 0,
+        "equalWeightIssuedGrossReturnPct": null,
+        "equalWeightIssuedNetReturnPct": null,
+        "decisionUse": "RESEARCH_DIAGNOSTIC_ONLY_NOT_PRODUCTION_PERFORMANCE",
+        "appliedToProduction": false
+      },
+      "resolutionAttempt": {
+        "attemptedAt": "2026-08-15T12:52:54.645Z",
+        "asOfSessionDate": "2026-08-13",
+        "state": "WAITING_FOR_MARKET_SESSIONS",
+        "acceptedFutureSessionCount": 0,
+        "requiredHorizonSessions": 10,
+        "calendarRequiredVotes": 14,
+        "calendarHistoryCount": 28
+      }
+    },
+    {
+      "sessionDate": "2026-08-13",
+      "immutableSignalHash": "f4e1b70ec5a55a4aa2df9ea48e0188e5696696c44d6fdfcf0e9c7ef81c3e0257",
+      "horizonSessions": 20,
+      "status": "PENDING",
+      "evaluationSessionDate": null,
+      "portfolioReturnGrossPct": null,
+      "portfolioReturnNetPct": null,
+      "resolvedPositionCount": 0,
+      "ambiguousPositionCount": 0,
+      "note": "Horizon remains pending until enough trusted consensus market sessions exist after signal issuance. No return is inferred from weekends or calendar assumptions.",
+      "appliedPortfolio": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "appliedExposurePct": 0,
+        "grossReturnPct": null,
+        "netReturnPct": null
+      },
+      "researchEvaluation": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "candidateCount": null,
+        "resolvedCount": 0,
+        "equalWeightIssuedGrossReturnPct": null,
+        "equalWeightIssuedNetReturnPct": null,
+        "decisionUse": "RESEARCH_DIAGNOSTIC_ONLY_NOT_PRODUCTION_PERFORMANCE",
+        "appliedToProduction": false
+      },
+      "resolutionAttempt": {
+        "attemptedAt": "2026-08-15T12:52:54.645Z",
+        "asOfSessionDate": "2026-08-13",
+        "state": "WAITING_FOR_MARKET_SESSIONS",
+        "acceptedFutureSessionCount": 0,
+        "requiredHorizonSessions": 20,
+        "calendarRequiredVotes": 14,
+        "calendarHistoryCount": 28
+      }
+    },
+    {
+      "sessionDate": "2026-08-13",
+      "immutableSignalHash": "f4e1b70ec5a55a4aa2df9ea48e0188e5696696c44d6fdfcf0e9c7ef81c3e0257",
+      "horizonSessions": 3,
+      "status": "PENDING",
+      "evaluationSessionDate": null,
+      "portfolioReturnGrossPct": null,
+      "portfolioReturnNetPct": null,
+      "resolvedPositionCount": 0,
+      "ambiguousPositionCount": 0,
+      "note": "Horizon remains pending until enough trusted consensus market sessions exist after signal issuance. No return is inferred from weekends or calendar assumptions.",
+      "appliedPortfolio": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "appliedExposurePct": 0,
+        "grossReturnPct": null,
+        "netReturnPct": null
+      },
+      "researchEvaluation": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "candidateCount": null,
+        "resolvedCount": 0,
+        "equalWeightIssuedGrossReturnPct": null,
+        "equalWeightIssuedNetReturnPct": null,
+        "decisionUse": "RESEARCH_DIAGNOSTIC_ONLY_NOT_PRODUCTION_PERFORMANCE",
+        "appliedToProduction": false
+      },
+      "resolutionAttempt": {
+        "attemptedAt": "2026-08-15T12:52:54.645Z",
+        "asOfSessionDate": "2026-08-13",
+        "state": "WAITING_FOR_MARKET_SESSIONS",
+        "acceptedFutureSessionCount": 0,
+        "requiredHorizonSessions": 3,
+        "calendarRequiredVotes": 14,
+        "calendarHistoryCount": 28
+      }
+    },
+    {
+      "sessionDate": "2026-08-13",
+      "immutableSignalHash": "f4e1b70ec5a55a4aa2df9ea48e0188e5696696c44d6fdfcf0e9c7ef81c3e0257",
+      "horizonSessions": 5,
+      "status": "PENDING",
+      "evaluationSessionDate": null,
+      "portfolioReturnGrossPct": null,
+      "portfolioReturnNetPct": null,
+      "resolvedPositionCount": 0,
+      "ambiguousPositionCount": 0,
+      "note": "Horizon remains pending until enough trusted consensus market sessions exist after signal issuance. No return is inferred from weekends or calendar assumptions.",
+      "appliedPortfolio": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "appliedExposurePct": 0,
+        "grossReturnPct": null,
+        "netReturnPct": null
+      },
+      "researchEvaluation": {
+        "status": "PENDING_HORIZON_SESSION_NOT_AVAILABLE",
+        "candidateCount": null,
+        "resolvedCount": 0,
+        "equalWeightIssuedGrossReturnPct": null,
+        "equalWeightIssuedNetReturnPct": null,
+        "decisionUse": "RESEARCH_DIAGNOSTIC_ONLY_NOT_PRODUCTION_PERFORMANCE",
+        "appliedToProduction": false
+      },
+      "resolutionAttempt": {
+        "attemptedAt": "2026-08-15T12:52:54.645Z",
+        "asOfSessionDate": "2026-08-13",
+        "state": "WAITING_FOR_MARKET_SESSIONS",
+        "acceptedFutureSessionCount": 0,
+        "requiredHorizonSessions": 5,
+        "calendarRequiredVotes": 14,
+        "calendarHistoryCount": 28
+      }
+    }
+  ]
+}
