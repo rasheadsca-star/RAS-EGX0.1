@@ -2,10 +2,18 @@ name: Refresh Certified EGX PRO V20
 
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Publish even when source commit already matches"
+        required: false
+        default: false
+        type: boolean
   push:
     branches: [main]
     paths:
       - ".github/workflows/refresh-certified-v20.yml"
+  schedule:
+    - cron: "*/30 11-21 * * 0-4"
 
 permissions:
   contents: write
@@ -43,7 +51,26 @@ jobs:
           git -C .v20-source checkout
           git -C .v20-source rev-parse HEAD > .v20-source-sha
 
+      - name: Decide whether publication is required
+        id: need
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE_SHA="$(cat .v20-source-sha)"
+          DEPLOYED_SHA="$(node -e "const fs=require('fs');try{const x=JSON.parse(fs.readFileSync('v20/deployment.json','utf8'));process.stdout.write(String(x.sourceCommit||''))}catch{process.stdout.write('')}" )"
+          FORCE="${{ github.event_name == 'workflow_dispatch' && inputs.force || false }}"
+          echo "source=$SOURCE_SHA" >> "$GITHUB_OUTPUT"
+          echo "deployed=$DEPLOYED_SHA" >> "$GITHUB_OUTPUT"
+          if [ "$FORCE" != "true" ] && [ -n "$DEPLOYED_SHA" ] && [ "$SOURCE_SHA" = "$DEPLOYED_SHA" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Public V20 already matches certified source $SOURCE_SHA."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "V20 publication refresh required: deployed=$DEPLOYED_SHA source=$SOURCE_SHA"
+          fi
+
       - name: Validate certified V20 source
+        if: steps.need.outputs.run == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -72,6 +99,7 @@ jobs:
           NODE
 
       - name: Materialize exact certified V17 runtime
+        if: steps.need.outputs.run == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -85,6 +113,7 @@ jobs:
           printf '%s\n' "$V17_SHA" > .v17-source-sha
 
       - name: Refresh isolated V20 deployment tree
+        if: steps.need.outputs.run == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -141,6 +170,7 @@ jobs:
           node --check v20/decision-board.js
 
       - name: Commit from latest main and push safely
+        if: steps.need.outputs.run == 'true'
         shell: bash
         run: |
           set -euo pipefail
