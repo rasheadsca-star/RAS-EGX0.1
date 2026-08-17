@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "20.0.0-executive-runtime-5",
+  "generatedAt": "2026-08-17T19:17:51.831Z",
+  "operatingMode": "EXECUTIVE_FAIL_CLOSED",
+  "sessionDate": "2026-08-17",
+  "status": "DEGRADED",
+  "executionStatus": "RESEARCH_ONLY",
+  "actionableCount": 0,
+  "recommendedExposurePct": 0,
+  "cashPct": 100,
+  "source": {
+    "v17Branch": "develop/v17-rebuild",
+    "v17Commit": "a512d1acb85ee332425978f2227e28a547bb0c09",
+    "v20Branch": "develop/v20-integrated-decision-platform",
+    "buildMode": "READ_ONLY_AUTHORITATIVE_V17_TO_ISOLATED_V20"
+  },
+  "governance": {
+    "activeChampion": "V16_9_EQUAL_WEIGHT_BASKET",
+    "automaticPromotion": false,
+    "automaticBrokerOrders": false
+  },
+  "isolation": {
+    "mainAppRead": false,
+    "mainAppWrite": false,
+    "v17SourceWrite": false,
+    "v20SourceWrite": false,
+    "deploymentPublishAllowlist": [
+      "data/v20/**",
+      "v20/deployment.json"
+    ]
+  },
+  "gates": {
+    "v17ExecutionGrade": false,
+    "v17SessionAligned": false,
+    "portfolioGuardPassed": true
+  }
+}

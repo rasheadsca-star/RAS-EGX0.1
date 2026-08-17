@@ -1,132 +1,46 @@
 {
   "schemaVersion": "20.0.0-source-health-2",
-  "generatedAt": "2026-08-15T19:16:01.679Z",
-  "sessionDate": "2026-08-13",
+  "generatedAt": "2026-08-17T19:17:42.342Z",
+  "sessionDate": "2026-08-17",
   "status": "DEGRADED",
   "executionGrade": false,
-  "sessionAligned": true,
+  "sessionAligned": false,
   "coveragePct": 98.75,
-  "freshnessPct": 96.25,
+  "freshnessPct": 98.75,
   "criticalFieldsPct": 98.75,
-  "marketCoveragePct": 96,
+  "marketCoveragePct": 96.9,
   "sourceCoveragePct": 100,
-  "sourceAgeMinutes": 3.2,
-  "lastSourceUpdate": "2026-08-15T15:23:36.887Z",
+  "sourceAgeMinutes": 4,
+  "lastSourceUpdate": "2026-08-17T11:05:17.590Z",
   "sourcesUsed": [
     "MANDATORY_MARKET_COLLECTOR",
-    "VERIFIED_PRICE_SOURCE_SESSION",
     "INTERNAL_OHLC_PIVOT",
     "V11_1_LIQUIDITY_RULES_V17_CURRENT_RUN",
     "MUBASHER_DIRECT_VALIDATION",
     "MUBASHER_RENDERED_VALIDATION"
   ],
-  "sourceConflicts": [
-    {
-      "symbol": "AMER",
-      "source": "MUBASHER_DIRECT",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 15.36,
-      "critical": true
-    },
-    {
-      "symbol": "IDRE",
-      "source": "MUBASHER_DIRECT",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 27.1,
-      "critical": true
-    },
-    {
-      "symbol": "ARCC",
-      "source": "MUBASHER_DIRECT",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 13.16,
-      "critical": true
-    },
-    {
-      "symbol": "GGCC",
-      "source": "MUBASHER_DIRECT",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 12.68,
-      "critical": true
-    },
-    {
-      "symbol": "GGCC",
-      "source": "MUBASHER_RENDERED",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 12.99,
-      "critical": true
-    },
-    {
-      "symbol": "EFIC",
-      "source": "MUBASHER_DIRECT",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 10.93,
-      "critical": true
-    },
-    {
-      "symbol": "EFIC",
-      "source": "MUBASHER_RENDERED",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 10.93,
-      "critical": true
-    },
-    {
-      "symbol": "AFMC",
-      "source": "MUBASHER_DIRECT",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 13.67,
-      "critical": true
-    },
-    {
-      "symbol": "CRST",
-      "source": "MUBASHER_DIRECT",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 10.34,
-      "critical": true
-    },
-    {
-      "symbol": "CRST",
-      "source": "MUBASHER_RENDERED",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 10.22,
-      "critical": true
-    },
-    {
-      "symbol": "ICID",
-      "source": "MUBASHER_DIRECT",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 15.54,
-      "critical": true
-    },
-    {
-      "symbol": "ICID",
-      "source": "MUBASHER_RENDERED",
-      "state": "CURRENT_CRITICAL_CONFLICT",
-      "maxDiffPct": 15.57,
-      "critical": true
-    }
-  ],
+  "sourceConflicts": [],
   "missingSymbols": [
     "MEGM"
   ],
   "semanticRowQuality": {
     "semanticCompleteness": true,
-    "completeRows": 182,
-    "partialRows": 33,
+    "completeRows": 179,
+    "partialRows": 38,
     "insufficientRows": 0,
     "currentPriceUnavailableRows": 0,
-    "ohlcValidRows": 182,
-    "ohlcInvalidOrIncompleteRows": 33,
-    "rowsWithQualityIssues": 215,
+    "ohlcValidRows": 179,
+    "ohlcInvalidOrIncompleteRows": 38,
+    "rowsWithQualityIssues": 217,
     "nonPositiveOhlcExposedAsNumeric": 0
   },
   "liquidityGate": {
-    "passed": true,
-    "sessionAligned": true,
-    "executionEligibleSymbolCount": 77
+    "passed": false,
+    "sessionAligned": false,
+    "executionEligibleSymbolCount": 76
   },
   "supportResistance": {
-    "rowCount": 196,
+    "rowCount": 209,
     "researchReady": true,
     "executionCandidateReady": false
   },

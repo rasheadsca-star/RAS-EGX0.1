@@ -1,7 +1,7 @@
 {
   "schemaVersion": "20.0.0-sector-provenance-audit-1",
-  "generatedAt": "2026-08-15T19:16:01.769Z",
-  "sessionDate": "2026-08-13",
+  "generatedAt": "2026-08-17T19:17:42.422Z",
+  "sessionDate": "2026-08-17",
   "decisionSupportOnly": true,
   "policy": {
     "productionSectorConcentrationEnabled": false,
@@ -33,9 +33,9 @@
     "legacyCompletionReport": {
       "file": "data/sector-completion-report.json",
       "engine": "v11_sector_completion_config_map_plus_inference",
-      "totalSymbols": 227,
-      "classifiedSymbols": 147,
-      "coveragePct": 64.76,
+      "totalSymbols": 217,
+      "classifiedSymbols": 144,
+      "coveragePct": 66.36,
       "classifiedUniverseSymbolsRecovered": 144,
       "inferencePossible": true,
       "perSymbolProvenancePreserved": false,
@@ -46,7 +46,7 @@
       "filesScanned": [
         {
           "file": "data/market.json",
-          "rowCount": 215,
+          "rowCount": 217,
           "explicitSectorRowsInV20Universe": 0
         },
         {
@@ -56,7 +56,7 @@
         },
         {
           "file": "data/final-opportunity-ranking.json",
-          "rowCount": 215,
+          "rowCount": 217,
           "explicitSectorRowsInV20Universe": 0
         }
       ],
@@ -67,11 +67,11 @@
     }
   },
   "summary": {
-    "universeCount": 215,
+    "universeCount": 217,
     "productionVerifiedCount": 0,
     "productionVerifiedCoveragePct": 0,
     "researchCandidateCount": 144,
-    "researchCandidateCoveragePct": 66.98,
+    "researchCandidateCoveragePct": 66.36,
     "upstreamExplicitUnverifiedCount": 0,
     "seedMappedCount": 75,
     "legacyClassifiedCount": 144,
@@ -696,6 +696,21 @@
       "explicitEvidence": [],
       "seedSector": null,
       "legacySector": "أسمنت ومواد بناء",
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "CFGH",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": null,
+      "researchProvenance": "UNCLASSIFIED",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": null,
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
@@ -1603,6 +1618,21 @@
     },
     {
       "ticker": "GSSC",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": null,
+      "researchProvenance": "UNCLASSIFIED",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": null,
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "GTEX",
       "productionSector": null,
       "productionProvenance": null,
       "acceptedForProduction": false,
