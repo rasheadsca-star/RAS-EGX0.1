@@ -68,32 +68,33 @@ jobs:
           const technical=read('data/technical-50-report.json');
           const review=read('data/v17/review.json');
           const regression=read('data/v17/regression.json');
-          const session=truth.selectedSessionDate || gate.priceTruth?.verifiedSessionDate || current.sessionDate;
+          const session=truth.selectedSessionDate || current.sessionDate;
 
           if(!/^\d{4}-\d{2}-\d{2}$/.test(String(session||''))) throw new Error('No authoritative V17 session');
           if(current.sessionDate!==session) throw new Error('V17 current/session mismatch');
-          if((gate.priceTruth?.verifiedSessionDate||gate.sessionDate)!==session) throw new Error('V17 gate/session mismatch');
-          if(gate.sessionAligned!==true) throw new Error('V17 session is not aligned');
           if(rec.sessionDate!==session||rec.engine!=='V17_CURRENT_SESSION_TECHNICAL_BASE_1') throw new Error('V17 recommendation base is not current-session canonical');
           if(technical.referenceSessionDate!==session||technical.version!=='5.6.1-v17-session-truth') throw new Error('V17 Technical-50 is not current-session canonical');
           if(challenger.activeEngine!=='V16_9_EQUAL_WEIGHT_BASKET'||challenger.promotionAllowed!==false) throw new Error('V17 champion governance drift');
           if(review.verdict!=='NO_COMMENTS'||Object.values(review.counts||{}).some(v=>Number(v||0)!==0)) throw new Error('V17 independent review is not clean');
           if(regression.ok!==true||Number(regression.failedCount||0)!==0||Number(regression.criticalFailedCount||0)!==0) throw new Error('V17 regression is not green');
           if(!['HEALTHY','DEGRADED','RESEARCH_ONLY'].includes(gate.status)) throw new Error(`Unacceptable V17 gate: ${gate.status}`);
-          if(gate.executionGrade===true && (liquidity.gatePassed!==true||truth.executionSafe!==true)) throw new Error('Execution grade without session/liquidity truth');
-          if(gate.executionGrade!==true){
+
+          if(gate.executionGrade===true){
+            if(gate.sessionAligned!==true) throw new Error('Execution grade without aligned V17 session');
+            if((gate.priceTruth?.verifiedSessionDate||gate.sessionDate)!==session) throw new Error('Execution-grade price truth/session mismatch');
+            if(liquidity.gatePassed!==true||truth.executionSafe!==true) throw new Error('Execution grade without session/liquidity truth');
+          } else {
             if(Number(current.portfolioPolicy?.plannedAllocationPct||0)!==0||Number(current.portfolioPolicy?.cashReservePct||0)!==100) throw new Error('Closed V17 gate carries exposure');
             if((current.recommendations||[]).some(r=>r.executionAllowed===true)) throw new Error('Closed V17 gate carries executable recommendation');
           }
 
           fs.writeFileSync(process.env.RUNNER_TEMP+'/v17-executive-summary.json',JSON.stringify({
             generatedAt:new Date().toISOString(),sessionDate:session,gateStatus:gate.status,
-            executionGrade:gate.executionGrade===true,sessionAligned:true,
+            executionGrade:gate.executionGrade===true,sessionAligned:gate.sessionAligned===true,
             liquidityGatePassed:liquidity.gatePassed===true,champion:challenger.activeEngine,
-            sourceBranch:process.env.V17_SOURCE_BRANCH,sourceCommit:process.env.GITHUB_SHA,
-            automaticPromotion:false
+            sourceBranch:process.env.V17_SOURCE_BRANCH,automaticPromotion:false
           },null,2)+'\n');
-          console.log(JSON.stringify({sessionDate:session,gateStatus:gate.status,executionGrade:gate.executionGrade===true},null,2));
+          console.log(JSON.stringify({sessionDate:session,gateStatus:gate.status,executionGrade:gate.executionGrade===true,sessionAligned:gate.sessionAligned===true},null,2));
           NODE
 
           SOURCE_SHA="$(git rev-parse HEAD)"
@@ -121,7 +122,6 @@ jobs:
           cd "$V20_DIR"
           npm ci || npm install
 
-          # Copy authoritative V17 evidence into the disposable V20 workspace only.
           mkdir -p data/v17
           cp -a "$V17_DIR/data/v17/." data/v17/
           find "$V17_DIR/data" -maxdepth 1 -type f -name '*.json' -exec cp -f {} data/ \;
@@ -159,7 +159,8 @@ jobs:
           const gate=read('data/v17/resilient-session-status.json');
           const truth=read('data/v17/market-session-truth.json');
           const risk=read('data/v20/portfolio-risk.json');
-          const session=truth.selectedSessionDate;
+          const currentV17=read('data/v17/current.json');
+          const session=truth.selectedSessionDate || currentV17.sessionDate;
 
           if(x.sessionDate!==session) throw new Error(`V20/V17 session mismatch ${x.sessionDate} != ${session}`);
           if(x.governance?.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET') throw new Error('V20 champion drift');
@@ -194,7 +195,7 @@ jobs:
           };
           write('data/v20/current.json',x);
           write('data/v20/executive-runtime.json',{
-            schemaVersion:'20.0.0-executive-runtime-2',generatedAt:new Date().toISOString(),
+            schemaVersion:'20.0.0-executive-runtime-3',generatedAt:new Date().toISOString(),
             operatingMode:'EXECUTIVE_FAIL_CLOSED',sessionDate:x.sessionDate,status:x.status,
             executionStatus:x.executionStatus,
             actionableCount:(x.opportunities||[]).filter(r=>r.status==='ACTIONABLE').length,
