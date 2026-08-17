@@ -24,6 +24,15 @@ jobs:
     env:
       V20_SOURCE_BRANCH: develop/v20-integrated-decision-platform
       V17_SOURCE_BRANCH: develop/v17-rebuild
+      V20_REGIME_NETWORK_REFRESH: 'true'
+      V20_REGIME_CONCURRENCY: '6'
+      V20_REGIME_MIN_PARTICIPATION_PCT: '60'
+      V20_REGIME_PRICE_TOLERANCE_PCT: '5'
+      V20_REGIME_MIN_TRUSTED_SESSIONS: '50'
+      V20_REGIME_FETCH_RANGE: '6mo'
+      V20_HISTORY_NETWORK_REFRESH: 'true'
+      V20_HISTORY_CONCURRENCY: '4'
+      V20_HISTORY_CURRENT_PRICE_TOLERANCE_PCT: '5'
 
     steps:
       - name: Checkout deployment repository only
@@ -46,12 +55,14 @@ jobs:
           echo "MAIN_APP_BASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           echo "Only data/v20/** and v20/deployment.json may be published."
 
-      - name: Validate latest authoritative V17 package read-only
+      - name: Prepare authoritative V17 and isolated V20 workspaces
         shell: bash
         run: |
           set -euo pipefail
           V17_DIR="$RUNNER_TEMP/v17-authoritative-runtime"
-          rm -rf "$V17_DIR"
+          V20_DIR="$RUNNER_TEMP/v20-executive-runtime"
+          rm -rf "$V17_DIR" "$V20_DIR"
+
           git clone --quiet --depth=1 --branch "$V17_SOURCE_BRANCH" \
             https://github.com/rasheadsca-star/RAS-EGX-PRO2026-NEXT.git "$V17_DIR"
           cd "$V17_DIR"
@@ -91,25 +102,8 @@ jobs:
           console.log(JSON.stringify({sessionDate:session,gateStatus:gate.status,executionGrade:gate.executionGrade===true,sessionAligned:gate.sessionAligned===true},null,2));
           NODE
 
-          echo "V17_RUNTIME_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          V17_SHA="$(git rev-parse HEAD)"
 
-      - name: Build isolated V20 executive layer
-        shell: bash
-        env:
-          V20_REGIME_NETWORK_REFRESH: 'true'
-          V20_REGIME_CONCURRENCY: '6'
-          V20_REGIME_MIN_PARTICIPATION_PCT: '60'
-          V20_REGIME_PRICE_TOLERANCE_PCT: '5'
-          V20_REGIME_MIN_TRUSTED_SESSIONS: '50'
-          V20_REGIME_FETCH_RANGE: '6mo'
-          V20_HISTORY_NETWORK_REFRESH: 'true'
-          V20_HISTORY_CONCURRENCY: '4'
-          V20_HISTORY_CURRENT_PRICE_TOLERANCE_PCT: '5'
-        run: |
-          set -euo pipefail
-          V17_DIR="$RUNNER_TEMP/v17-authoritative-runtime"
-          V20_DIR="$RUNNER_TEMP/v20-executive-runtime"
-          rm -rf "$V20_DIR"
           git clone --quiet --depth=1 --branch "$V20_SOURCE_BRANCH" \
             https://github.com/rasheadsca-star/RAS-EGX-PRO2026-NEXT.git "$V20_DIR"
           cd "$V20_DIR"
@@ -118,9 +112,6 @@ jobs:
           cp -a "$V17_DIR/data/v17/." data/v17/
           find "$V17_DIR/data" -maxdepth 1 -type f -name '*.json' -exec cp -f {} data/ \;
 
-          # V17 may accept a current research session while deliberately refusing
-          # execution-grade source verification. Bind that research session to the
-          # disposable market snapshot without changing the V17 execution gate.
           node - <<'NODE'
           const fs=require('fs');
           const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
@@ -141,15 +132,45 @@ jobs:
           console.log(JSON.stringify({boundMarketSession:market.sessionDate,executionVerified:market.sessionDateExecutionVerified===true},null,2));
           NODE
 
+          echo "V17_RUNTIME_SHA=$V17_SHA" >> "$GITHUB_ENV"
+          echo "V20_DIR=$V20_DIR" >> "$GITHUB_ENV"
+
+      - name: V20 Data Truth and provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$V20_DIR"
+          export GITHUB_WORKSPACE="$V20_DIR"
           node scripts/v20/build-data-truth.cjs
           node scripts/v20/data-quality-regression.cjs
           node scripts/v20/build-sector-provenance-audit.cjs
+
+      - name: V20 Market Regime
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$V20_DIR"
+          export GITHUB_WORKSPACE="$V20_DIR"
           node scripts/v20/build-market-regime.cjs
           node scripts/v20/market-regime-regression.cjs
+
+      - name: V20 Decision and Risk
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$V20_DIR"
+          export GITHUB_WORKSPACE="$V20_DIR"
           node scripts/v20/build-integrated-decision-snapshot.cjs
           node scripts/v20/enrich-risk-reward.cjs
           node scripts/v20/validate-trade-plans.cjs
           node scripts/v20/build-portfolio-risk.cjs
+
+      - name: V20 Technical History and Explorer
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$V20_DIR"
+          export GITHUB_WORKSPACE="$V20_DIR"
           node scripts/v20/build-trusted-technical-history.cjs
           node scripts/v20/technical-history-regression.cjs
           node scripts/v20/build-stock-profiles.cjs
@@ -158,6 +179,11 @@ jobs:
           node scripts/v20/market-explorer-regression.cjs
           node scripts/v20/user-portfolio-regression.cjs
 
+      - name: V20 Executive fail-closed guard
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$V20_DIR"
           node - <<'NODE'
           const fs=require('fs');
           const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
@@ -196,7 +222,7 @@ jobs:
           x.executionPolicy={mode:'MANUAL_DECISION_EXECUTION',automaticBrokerOrders:false,v17GlobalGateAuthoritative:true,currentSessionRequired:true,liquidityRequired:true,supportResistanceRequired:true,tradePlanAlignmentRequired:true,positiveRiskRewardRequired:true,failedGateKeepsCash:true};
           write('data/v20/current.json',x);
           write('data/v20/executive-runtime.json',{
-            schemaVersion:'20.0.0-executive-runtime-4',generatedAt:new Date().toISOString(),operatingMode:'EXECUTIVE_FAIL_CLOSED',
+            schemaVersion:'20.0.0-executive-runtime-5',generatedAt:new Date().toISOString(),operatingMode:'EXECUTIVE_FAIL_CLOSED',
             sessionDate:x.sessionDate,status:x.status,executionStatus:x.executionStatus,actionableCount:actionable.length,
             recommendedExposurePct:exposure,cashPct:Number(x.portfolio?.cashPct||0),
             source:{v17Branch:process.env.V17_SOURCE_BRANCH,v17Commit:process.env.V17_RUNTIME_SHA,v20Branch:process.env.V20_SOURCE_BRANCH,buildMode:'READ_ONLY_AUTHORITATIVE_V17_TO_ISOLATED_V20'},
@@ -211,7 +237,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          V20_DIR="$RUNNER_TEMP/v20-executive-runtime"
           test -f "$V20_DIR/data/v20/current.json"
           test -f "$V20_DIR/data/v20/executive-runtime.json"
 
