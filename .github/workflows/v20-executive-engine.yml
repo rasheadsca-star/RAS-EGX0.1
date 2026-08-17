@@ -3,7 +3,7 @@ name: V20 Executive Engine
 on:
   workflow_dispatch:
   schedule:
-    # 17:20 Africa/Cairo (UTC+3) after the EGX close, Sunday-Thursday.
+    # 17:20 Africa/Cairo (UTC+3), Sunday-Thursday, after EGX close.
     - cron: '20 14 * * 0-4'
   push:
     branches: [main]
@@ -37,16 +37,16 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Record protected MAIN APP baseline
+      - name: Protect MAIN APP
         shell: bash
         run: |
           set -euo pipefail
           test "${GITHUB_REF_NAME}" = "main"
           test -z "$(git status --porcelain)"
           echo "MAIN_APP_BASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
-          echo "Publish allowlist: data/v20/** and v20/deployment.json only"
+          echo "Only data/v20/** and v20/deployment.json may be published."
 
-      - name: Read and validate latest accepted V17 evidence without mutating it
+      - name: Validate latest authoritative V17 package read-only
         shell: bash
         run: |
           set -euo pipefail
@@ -72,35 +72,28 @@ jobs:
 
           if(!/^\d{4}-\d{2}-\d{2}$/.test(String(session||''))) throw new Error('No authoritative V17 session');
           if(current.sessionDate!==session) throw new Error('V17 current/session mismatch');
-          if(rec.sessionDate!==session||rec.engine!=='V17_CURRENT_SESSION_TECHNICAL_BASE_1') throw new Error('V17 recommendation base is not current-session canonical');
-          if(technical.referenceSessionDate!==session||technical.version!=='5.6.1-v17-session-truth') throw new Error('V17 Technical-50 is not current-session canonical');
-          if(challenger.activeEngine!=='V16_9_EQUAL_WEIGHT_BASKET'||challenger.promotionAllowed!==false) throw new Error('V17 champion governance drift');
-          if(review.verdict!=='NO_COMMENTS'||Object.values(review.counts||{}).some(v=>Number(v||0)!==0)) throw new Error('V17 independent review is not clean');
+          if(rec.sessionDate!==session||rec.engine!=='V17_CURRENT_SESSION_TECHNICAL_BASE_1') throw new Error('V17 recommendation base is not canonical');
+          if(technical.referenceSessionDate!==session||technical.version!=='5.6.1-v17-session-truth') throw new Error('V17 Technical-50 is not canonical');
+          if(challenger.activeEngine!=='V16_9_EQUAL_WEIGHT_BASKET'||challenger.promotionAllowed!==false) throw new Error('Champion governance drift');
+          if(review.verdict!=='NO_COMMENTS'||Object.values(review.counts||{}).some(v=>Number(v||0)!==0)) throw new Error('V17 review is not clean');
           if(regression.ok!==true||Number(regression.failedCount||0)!==0||Number(regression.criticalFailedCount||0)!==0) throw new Error('V17 regression is not green');
           if(!['HEALTHY','DEGRADED','RESEARCH_ONLY'].includes(gate.status)) throw new Error(`Unacceptable V17 gate: ${gate.status}`);
 
           if(gate.executionGrade===true){
-            if(gate.sessionAligned!==true) throw new Error('Execution grade without aligned V17 session');
-            if((gate.priceTruth?.verifiedSessionDate||gate.sessionDate)!==session) throw new Error('Execution-grade price truth/session mismatch');
-            if(liquidity.gatePassed!==true||truth.executionSafe!==true) throw new Error('Execution grade without session/liquidity truth');
+            if(gate.sessionAligned!==true) throw new Error('Execution grade without aligned session');
+            if((gate.priceTruth?.verifiedSessionDate||gate.sessionDate)!==session) throw new Error('Execution-grade price truth mismatch');
+            if(liquidity.gatePassed!==true||truth.executionSafe!==true) throw new Error('Execution grade without liquidity/session truth');
           } else {
             if(Number(current.portfolioPolicy?.plannedAllocationPct||0)!==0||Number(current.portfolioPolicy?.cashReservePct||0)!==100) throw new Error('Closed V17 gate carries exposure');
             if((current.recommendations||[]).some(r=>r.executionAllowed===true)) throw new Error('Closed V17 gate carries executable recommendation');
           }
 
-          fs.writeFileSync(process.env.RUNNER_TEMP+'/v17-executive-summary.json',JSON.stringify({
-            generatedAt:new Date().toISOString(),sessionDate:session,gateStatus:gate.status,
-            executionGrade:gate.executionGrade===true,sessionAligned:gate.sessionAligned===true,
-            liquidityGatePassed:liquidity.gatePassed===true,champion:challenger.activeEngine,
-            sourceBranch:process.env.V17_SOURCE_BRANCH,automaticPromotion:false
-          },null,2)+'\n');
           console.log(JSON.stringify({sessionDate:session,gateStatus:gate.status,executionGrade:gate.executionGrade===true,sessionAligned:gate.sessionAligned===true},null,2));
           NODE
 
-          SOURCE_SHA="$(git rev-parse HEAD)"
-          echo "V17_RUNTIME_SHA=$SOURCE_SHA" >> "$GITHUB_ENV"
+          echo "V17_RUNTIME_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
-      - name: Build isolated V20 executive decision layer
+      - name: Build isolated V20 executive layer
         shell: bash
         env:
           V20_REGIME_NETWORK_REFRESH: 'true'
@@ -120,18 +113,33 @@ jobs:
           git clone --quiet --depth=1 --branch "$V20_SOURCE_BRANCH" \
             https://github.com/rasheadsca-star/RAS-EGX-PRO2026-NEXT.git "$V20_DIR"
           cd "$V20_DIR"
-          npm ci || npm install
 
           mkdir -p data/v17
           cp -a "$V17_DIR/data/v17/." data/v17/
           find "$V17_DIR/data" -maxdepth 1 -type f -name '*.json' -exec cp -f {} data/ \;
 
-          node --check scripts/v20/build-data-truth.cjs
-          node --check scripts/v20/build-market-regime.cjs
-          node --check scripts/v20/build-integrated-decision-snapshot.cjs
-          node --check scripts/v20/enrich-risk-reward.cjs
-          node --check scripts/v20/validate-trade-plans.cjs
-          node --check scripts/v20/build-portfolio-risk.cjs
+          # V17 may accept a current research session while deliberately refusing
+          # execution-grade source verification. Bind that research session to the
+          # disposable market snapshot without changing the V17 execution gate.
+          node - <<'NODE'
+          const fs=require('fs');
+          const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+          const write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n');
+          const market=read('data/market.json');
+          const current=read('data/v17/current.json');
+          const truth=read('data/v17/market-session-truth.json');
+          const gate=read('data/v17/resilient-session-status.json');
+          const session=truth.selectedSessionDate || current.sessionDate;
+          if(!/^\d{4}-\d{2}-\d{2}$/.test(String(session||''))) throw new Error('No research session to bind');
+          if(!market.sessionDate){
+            market.sessionDate=session;
+            market.sessionDateMode=gate.executionGrade===true ? 'V17_EXECUTION_VERIFIED_SESSION' : 'V17_RESEARCH_SESSION_REFERENCE';
+            market.sessionDateExecutionVerified=gate.executionGrade===true && gate.sessionAligned===true;
+            market.sessionDateProvenance='data/v17/market-session-truth.json + data/v17/current.json';
+            write('data/market.json',market);
+          }
+          console.log(JSON.stringify({boundMarketSession:market.sessionDate,executionVerified:market.sessionDateExecutionVerified===true},null,2));
+          NODE
 
           node scripts/v20/build-data-truth.cjs
           node scripts/v20/data-quality-regression.cjs
@@ -149,7 +157,6 @@ jobs:
           node scripts/v20/build-market-explorer.cjs
           node scripts/v20/market-explorer-regression.cjs
           node scripts/v20/user-portfolio-regression.cjs
-          node scripts/v20/archive-signal.cjs
 
           node - <<'NODE'
           const fs=require('fs');
@@ -158,8 +165,8 @@ jobs:
           const x=read('data/v20/current.json');
           const gate=read('data/v17/resilient-session-status.json');
           const truth=read('data/v17/market-session-truth.json');
-          const risk=read('data/v20/portfolio-risk.json');
           const currentV17=read('data/v17/current.json');
+          const risk=read('data/v20/portfolio-risk.json');
           const session=truth.selectedSessionDate || currentV17.sessionDate;
 
           if(x.sessionDate!==session) throw new Error(`V20/V17 session mismatch ${x.sessionDate} != ${session}`);
@@ -167,13 +174,13 @@ jobs:
           if(x.governance?.automaticPromotion!==false||x.governance?.promotionAllowed!==false) throw new Error('Automatic promotion is forbidden');
           if(x.portfolio?.automaticOrders!==false) throw new Error('Automatic broker orders are forbidden');
 
+          const actionable=(x.opportunities||[]).filter(r=>r.status==='ACTIONABLE');
           if(gate.executionGrade!==true){
-            if(x.executionStatus==='EXECUTION_GRADE') throw new Error('V20 claims execution grade while V17 gate is closed');
+            if(x.executionStatus==='EXECUTION_GRADE') throw new Error('V20 claims execution while V17 gate is closed');
             if(Number(x.portfolio?.recommendedExposurePct||0)!==0||Number(x.portfolio?.cashPct||0)!==100) throw new Error('Closed gate must remain 100% cash');
-            if((x.opportunities||[]).some(r=>r.status==='ACTIONABLE')) throw new Error('Closed gate produced actionable rows');
-          }
-          if(x.executionStatus==='EXECUTION_GRADE'){
-            for(const row of (x.opportunities||[]).filter(r=>r.status==='ACTIONABLE')){
+            if(actionable.length) throw new Error('Closed gate produced actionable rows');
+          } else {
+            for(const row of actionable){
               if(row.liquidityExecutionEligible!==true) throw new Error(`${row.ticker}: liquidity gate missing`);
               if(row.supportResistance?.executionEligible!==true||row.supportResistance?.sessionAligned!==true) throw new Error(`${row.ticker}: S/R gate missing`);
               if(row.tradePlan?.alignment?.eligibleForActionable!==true||row.tradePlan?.alignment?.state!=='IN_ENTRY_RANGE') throw new Error(`${row.ticker}: entry alignment missing`);
@@ -186,29 +193,21 @@ jobs:
           if(exposure<0||exposure>max+1e-9) throw new Error('Portfolio exposure guard failed');
 
           x.operatingMode='EXECUTIVE_FAIL_CLOSED';
-          x.executionPolicy={
-            mode:'MANUAL_DECISION_EXECUTION',automaticBrokerOrders:false,
-            v17GlobalGateAuthoritative:true,currentSessionRequired:true,
-            liquidityRequired:true,supportResistanceRequired:true,
-            tradePlanAlignmentRequired:true,positiveRiskRewardRequired:true,
-            failedGateKeepsCash:true
-          };
+          x.executionPolicy={mode:'MANUAL_DECISION_EXECUTION',automaticBrokerOrders:false,v17GlobalGateAuthoritative:true,currentSessionRequired:true,liquidityRequired:true,supportResistanceRequired:true,tradePlanAlignmentRequired:true,positiveRiskRewardRequired:true,failedGateKeepsCash:true};
           write('data/v20/current.json',x);
           write('data/v20/executive-runtime.json',{
-            schemaVersion:'20.0.0-executive-runtime-3',generatedAt:new Date().toISOString(),
-            operatingMode:'EXECUTIVE_FAIL_CLOSED',sessionDate:x.sessionDate,status:x.status,
-            executionStatus:x.executionStatus,
-            actionableCount:(x.opportunities||[]).filter(r=>r.status==='ACTIONABLE').length,
+            schemaVersion:'20.0.0-executive-runtime-4',generatedAt:new Date().toISOString(),operatingMode:'EXECUTIVE_FAIL_CLOSED',
+            sessionDate:x.sessionDate,status:x.status,executionStatus:x.executionStatus,actionableCount:actionable.length,
             recommendedExposurePct:exposure,cashPct:Number(x.portfolio?.cashPct||0),
             source:{v17Branch:process.env.V17_SOURCE_BRANCH,v17Commit:process.env.V17_RUNTIME_SHA,v20Branch:process.env.V20_SOURCE_BRANCH,buildMode:'READ_ONLY_AUTHORITATIVE_V17_TO_ISOLATED_V20'},
             governance:{activeChampion:x.governance.activeChampion,automaticPromotion:false,automaticBrokerOrders:false},
             isolation:{mainAppRead:false,mainAppWrite:false,v17SourceWrite:false,v20SourceWrite:false,deploymentPublishAllowlist:['data/v20/**','v20/deployment.json']},
             gates:{v17ExecutionGrade:gate.executionGrade===true,v17SessionAligned:gate.sessionAligned===true,portfolioGuardPassed:risk.invariants?.closedGateMeansZeroAppliedExposure===true}
           });
-          console.log(JSON.stringify({sessionDate:x.sessionDate,executionStatus:x.executionStatus,actionable:(x.opportunities||[]).filter(r=>r.status==='ACTIONABLE').length,exposurePct:exposure,cashPct:x.portfolio.cashPct},null,2));
+          console.log(JSON.stringify({sessionDate:x.sessionDate,executionStatus:x.executionStatus,actionable:actionable.length,exposurePct:exposure,cashPct:x.portfolio.cashPct},null,2));
           NODE
 
-      - name: Publish V20 outputs only and prove MAIN APP isolation
+      - name: Publish V20 only and prove MAIN APP isolation
         shell: bash
         run: |
           set -euo pipefail
@@ -226,12 +225,7 @@ jobs:
           const p='v20/deployment.json';
           let d={}; try{d=JSON.parse(fs.readFileSync(p,'utf8'))}catch{}
           const x=JSON.parse(fs.readFileSync('data/v20/current.json','utf8'));
-          d={...d,publishedAt:new Date().toISOString(),sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',
-            sourceBranch:'develop/v20-integrated-decision-platform',sourceCommit,
-            v17SourceCommit:process.env.V17_RUNTIME_SHA,sessionDate:x.sessionDate,
-            executionStatus:x.executionStatus,operatingMode:'EXECUTIVE_FAIL_CLOSED',
-            automaticBrokerOrders:false,automaticPromotion:false,mainAppMutation:false,
-            publisher:'v20-executive-engine.yml'};
+          d={...d,publishedAt:new Date().toISOString(),sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',sourceBranch:'develop/v20-integrated-decision-platform',sourceCommit,v17SourceCommit:process.env.V17_RUNTIME_SHA,sessionDate:x.sessionDate,executionStatus:x.executionStatus,operatingMode:'EXECUTIVE_FAIL_CLOSED',automaticBrokerOrders:false,automaticPromotion:false,mainAppMutation:false,publisher:'v20-executive-engine.yml'};
           fs.writeFileSync(p,JSON.stringify(d,null,2)+'\n');
           NODE
 
