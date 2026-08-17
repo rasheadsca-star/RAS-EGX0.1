@@ -1,193 +1,23 @@
-name: Refresh Certified EGX PRO V20
+name: Refresh Certified EGX PRO V20 (Retired)
 
 on:
   workflow_dispatch:
-    inputs:
-      force:
-        description: "Publish even when source commit already matches"
-        required: false
-        default: false
-        type: boolean
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/refresh-certified-v20.yml"
-  schedule:
-    - cron: "*/30 11-21 * * 0-4"
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: refresh-certified-egx-pro-v20
-  cancel-in-progress: false
+  group: refresh-certified-egx-pro-v20-retired
+  cancel-in-progress: true
 
 jobs:
-  refresh:
+  retired:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
-      - name: Checkout latest deployment main
-        uses: actions/checkout@v6
-        with:
-          ref: main
-          fetch-depth: 0
-
-      - name: Setup Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: "22"
-
-      - name: Fetch latest certified V20 package
+      - name: Static V20 publisher retired
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf .v20-source .v17-runtime
-          git clone --depth 1 --filter=blob:none --no-checkout \
-            --branch develop/v20-integrated-decision-platform \
-            https://github.com/rasheadsca-star/RAS-EGX-PRO2026-NEXT.git .v20-source
-          git -C .v20-source sparse-checkout init --cone
-          git -C .v20-source sparse-checkout set v20 data/v20
-          git -C .v20-source checkout
-          git -C .v20-source rev-parse HEAD > .v20-source-sha
-
-      - name: Decide whether publication is required
-        id: need
-        shell: bash
-        run: |
-          set -euo pipefail
-          SOURCE_SHA="$(cat .v20-source-sha)"
-          DEPLOYED_SHA="$(node -e "const fs=require('fs');try{const x=JSON.parse(fs.readFileSync('v20/deployment.json','utf8'));process.stdout.write(String(x.sourceCommit||''))}catch{process.stdout.write('')}" )"
-          FORCE="${{ github.event_name == 'workflow_dispatch' && inputs.force || false }}"
-          echo "source=$SOURCE_SHA" >> "$GITHUB_OUTPUT"
-          echo "deployed=$DEPLOYED_SHA" >> "$GITHUB_OUTPUT"
-          if [ "$FORCE" != "true" ] && [ -n "$DEPLOYED_SHA" ] && [ "$SOURCE_SHA" = "$DEPLOYED_SHA" ]; then
-            echo "run=false" >> "$GITHUB_OUTPUT"
-            echo "Public V20 already matches certified source $SOURCE_SHA."
-          else
-            echo "run=true" >> "$GITHUB_OUTPUT"
-            echo "V20 publication refresh required: deployed=$DEPLOYED_SHA source=$SOURCE_SHA"
-          fi
-
-      - name: Validate certified V20 source
-        if: steps.need.outputs.run == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          node - <<'NODE'
-          const fs=require('fs');
-          const base='.v20-source/';
-          const cert=require(`./${base}data/v20/v17-centric-final-certification.json`);
-          const contract=require(`./${base}data/v20/final-decision-contract.json`);
-          const native=require(`./${base}data/v20/native-current.json`);
-          const browser=require(`./${base}data/v20/decision-board-browser-certification.json`);
-          const core=require(`./${base}data/v20/v17-production-decision-core.json`);
-          const registry=require(`./${base}data/v20/champion-challenger-registry.json`);
-          const fail=m=>{throw new Error(m)};
-          if(cert.ok!==true||Number(cert.critical)!==0||Number(cert.major)!==0)fail('V20 final certification is not clean');
-          if(cert.source?.branch!=='develop/v20-integrated-decision-platform')fail('Unexpected V20 source branch');
-          if(contract.architecture!=='V17_CENTRIC_V20_NATIVE_DISCOVERY')fail('V20 architecture drift');
-          if(contract.sessionDate!==cert.source?.sessionDate||native.sessionDate!==contract.sessionDate)fail('V20 session provenance mismatch');
-          if(contract.productStatus!=='PRODUCTION_READY_DECISION_SUPPORT')fail('V20 product certification missing');
-          if(browser.ok!==true||Number(browser.failedCount)!==0)fail('V20 browser certification failed');
-          if(core.policy?.v17IsAuthoritativeForProductionEligibility!==true)fail('V17 authority missing');
-          if(native.executionPermission!==false||native.productionAllocation!==false||Number(native.legacyScoringContributionPct)!==0)fail('Native governance drift');
-          if(registry.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET'||registry.automaticPromotion!==false)fail('Champion governance drift');
-          if(contract.sessionStatus!=='EXECUTION_GRADE'&&(Number(contract.summary?.productionActionableCount)!==0||Number(contract.summary?.productionNewExposurePct)!==0))fail('Closed gate production leak');
-          for(const p of ['v20/index.html','v20/app.js','v20/decision-board.js','v20/decision-board.css','data/v20/native-current.json','data/v20/final-decision-contract.json']) if(!fs.existsSync(base+p))fail(`Missing ${p}`);
-          console.log(JSON.stringify({ok:true,sessionDate:contract.sessionDate,sessionStatus:contract.sessionStatus,nativePublished:native.publishedCandidates?.length||0,v17Commit:cert.source?.v17Commit},null,2));
-          NODE
-
-      - name: Materialize exact certified V17 runtime
-        if: steps.need.outputs.run == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          V17_SHA="$(node -e "console.log(require('./.v20-source/data/v20/v17-centric-final-certification.json').source.v17Commit)")"
-          git -C .v20-source fetch --no-tags --depth=1 origin "$V17_SHA"
-          mkdir -p .v17-runtime
-          git -C .v20-source archive "$V17_SHA" data/v17 | tar -x -C .v17-runtime
-          test -f .v17-runtime/data/v17/resilient-session-status.json
-          test -f .v17-runtime/data/v17/internal-ohlc-support-resistance.json
-          test -f .v17-runtime/data/v17/liquidity-gate.json
-          printf '%s\n' "$V17_SHA" > .v17-source-sha
-
-      - name: Refresh isolated V20 deployment tree
-        if: steps.need.outputs.run == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          rm -rf v20 data/v20 data/v17
-          mkdir -p data
-          cp -R .v20-source/v20 ./v20
-          cp -R .v20-source/data/v20 ./data/v20
-          cp -R .v17-runtime/data/v17 ./data/v17
-          node - <<'NODE'
-          const fs=require('fs');
-          const sourceCommit=fs.readFileSync('.v20-source-sha','utf8').trim();
-          const certifiedV17Commit=fs.readFileSync('.v17-source-sha','utf8').trim();
-          const contract=require('./data/v20/final-decision-contract.json');
-          const native=require('./data/v20/native-current.json');
-          const browser=require('./data/v20/decision-board-browser-certification.json');
-          const registry=require('./data/v20/champion-challenger-registry.json');
-          const cert=require('./data/v20/v17-centric-final-certification.json');
-          const deployment={
-            release:'EGX PRO V20',
-            sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',
-            sourceBranch:'develop/v20-integrated-decision-platform',
-            sourceCommit,
-            certificationWorkflowCommit:cert.source.workflowCommit,
-            certifiedV17Commit,
-            deploymentRepository:'rasheadsca-star/RAS-EGX0.1',
-            deploymentPath:'/v20/',
-            architecture:contract.architecture,
-            primaryDecisionUi:'DECISION_BOARD_V17_CENTRIC',
-            decisionSupportCertified:true,
-            productStatus:contract.productStatus,
-            sessionDate:contract.sessionDate,
-            sessionStatus:contract.sessionStatus,
-            releaseMode:contract.sessionStatus==='EXECUTION_GRADE'?'DECISION_SUPPORT_EXECUTION_GRADE':'RESEARCH_ONLY_EXECUTION_BLOCKED',
-            productionActionableCount:Number(contract.summary?.productionActionableCount||0),
-            productionNewExposurePct:Number(contract.summary?.productionNewExposurePct||0),
-            activeChampion:registry.activeChampion,
-            automaticPromotion:false,
-            automaticBrokerExecution:false,
-            nativeDiscoveryOnly:true,
-            nativeEngine:native.engineId,
-            nativeModelVersion:native.modelVersion,
-            nativePublishedCandidateCount:native.publishedCandidates?.length||0,
-            nativeExecutionPermission:false,
-            nativeProductionAllocation:false,
-            legacyNativeScoringContributionPct:0,
-            browserE2ECertified:browser.ok===true&&Number(browser.failedCount)===0,
-            certifiedResponsiveWidths:(browser.viewportResults||[]).map(v=>v.width),
-            publishedAt:new Date().toISOString()
-          };
-          fs.writeFileSync('v20/deployment.json',JSON.stringify(deployment,null,2)+'\n');
-          NODE
-          node --check v20/app.js
-          node --check v20/native-research.js
-          node --check v20/decision-board.js
-
-      - name: Commit from latest main and push safely
-        if: steps.need.outputs.run == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add v20 data/v20 data/v17
-          if git diff --cached --quiet; then
-            echo "Certified V20 deployment tree already current."
-            exit 0
-          fi
-          SOURCE_SHA="$(cat .v20-source-sha)"
-          git commit -m "Refresh certified EGX PRO V20 ${SOURCE_SHA:0:12}"
-          for attempt in 1 2 3; do
-            git fetch origin main
-            if git rebase -X ours origin/main && git push origin HEAD:main; then
-              exit 0
-            fi
-            git rebase --abort >/dev/null 2>&1 || true
-            [ "$attempt" = "3" ] && exit 1
-          done
+          echo "This legacy static-mirror publisher is retired."
+          echo "V20 Executive Engine is the sole automated publisher of V20 runtime data."
+          echo "No repository files are changed by this workflow."
