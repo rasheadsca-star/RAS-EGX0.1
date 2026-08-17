@@ -1,0 +1,163 @@
+{
+  "schemaVersion": "20.0.0-native-vs-main-comparison-1",
+  "generatedAt": "2026-08-17T19:49:41.790Z",
+  "sessionDate": "2026-08-17",
+  "comparisonType": "SELECTION_SNAPSHOT_AND_FORWARD_EVALUATION_BASELINE",
+  "native": {
+    "engineId": "V20_FULL_MARKET_NATIVE_SELECTION_V1",
+    "fullMarketIndependent": true,
+    "legacyScoringContributionPct": 0,
+    "top10": [
+      "MCRO",
+      "ATQA",
+      "GRCA",
+      "EHDR",
+      "PRCL",
+      "DAPH",
+      "ASPI",
+      "ISPH",
+      "ADPC",
+      "AFMC"
+    ]
+  },
+  "mainApp": {
+    "source": "data/today-decision-center.json",
+    "engine": "goal_reconciled_ranked_opportunities_v17_internal_sr_liquidity_gated",
+    "top10": [],
+    "selectionLogicReference": "MAIN_APP_MARKET_FILTERS_AND_FIXED_THRESHOLDS"
+  },
+  "legacyRanking": {
+    "source": "data/final-opportunity-ranking.json",
+    "top10": [
+      "NIPH",
+      "EGTS",
+      "ARCC",
+      "CCRS",
+      "PHDC",
+      "ORAS",
+      "RACC",
+      "EAST",
+      "GBCO",
+      "MFSC"
+    ]
+  },
+  "v16_9Champion": {
+    "source": "data/research/v16-v169-basket-engine.json",
+    "signalDate": "2026-08-05",
+    "basketSize": 4,
+    "basket": [
+      "MOIN",
+      "GGCC",
+      "AMER",
+      "ORWE"
+    ],
+    "sameSession": false
+  },
+  "overlap": {
+    "nativeVsMainAppTop10": {
+      "leftCount": 10,
+      "rightCount": 0,
+      "sharedCount": 0,
+      "overlapPctOfLeft": 0,
+      "shared": [],
+      "leftOnly": [
+        "MCRO",
+        "ATQA",
+        "GRCA",
+        "EHDR",
+        "PRCL",
+        "DAPH",
+        "ASPI",
+        "ISPH",
+        "ADPC",
+        "AFMC"
+      ],
+      "rightOnly": []
+    },
+    "nativeVsLegacyRankingTop10": {
+      "leftCount": 10,
+      "rightCount": 10,
+      "sharedCount": 0,
+      "overlapPctOfLeft": 0,
+      "shared": [],
+      "leftOnly": [
+        "MCRO",
+        "ATQA",
+        "GRCA",
+        "EHDR",
+        "PRCL",
+        "DAPH",
+        "ASPI",
+        "ISPH",
+        "ADPC",
+        "AFMC"
+      ],
+      "rightOnly": [
+        "NIPH",
+        "EGTS",
+        "ARCC",
+        "CCRS",
+        "PHDC",
+        "ORAS",
+        "RACC",
+        "EAST",
+        "GBCO",
+        "MFSC"
+      ]
+    },
+    "nativeVsV16_9CurrentBasket": {
+      "leftCount": 10,
+      "rightCount": 4,
+      "sharedCount": 0,
+      "overlapPctOfLeft": 0,
+      "shared": [],
+      "leftOnly": [
+        "MCRO",
+        "ATQA",
+        "GRCA",
+        "EHDR",
+        "PRCL",
+        "DAPH",
+        "ASPI",
+        "ISPH",
+        "ADPC",
+        "AFMC"
+      ],
+      "rightOnly": [
+        "MOIN",
+        "GGCC",
+        "AMER",
+        "ORWE"
+      ]
+    }
+  },
+  "nativeDiscovery": {
+    "outsideLegacySeedCount": 152,
+    "top10OutsideLegacySeedCount": 9
+  },
+  "forwardEvaluation": {
+    "status": "PENDING_FUTURE_SESSIONS",
+    "selectionDate": "2026-08-17",
+    "horizonsSessions": [
+      1,
+      3,
+      5
+    ],
+    "metricsPlanned": [
+      "averageReturnPct",
+      "medianReturnPct",
+      "winRatePct",
+      "profitFactor",
+      "maximumDrawdownPct",
+      "topKOverlapAndHitRate"
+    ],
+    "note": "This file compares current selections now; outcome performance requires future completed sessions and must not be inferred from same-session rankings."
+  },
+  "governance": {
+    "nativeSelectsV20Opportunities": true,
+    "v17ControlsExecution": true,
+    "mainAppMutated": false,
+    "automaticPromotion": false,
+    "automaticBrokerOrders": false
+  }
+}

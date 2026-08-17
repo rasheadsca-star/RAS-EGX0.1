@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "20.0.0-executive-runtime-5",
-  "generatedAt": "2026-08-17T19:17:51.831Z",
+  "schemaVersion": "20.0.0-executive-runtime-7",
+  "generatedAt": "2026-08-17T19:49:42.125Z",
   "operatingMode": "EXECUTIVE_FAIL_CLOSED",
   "sessionDate": "2026-08-17",
   "status": "DEGRADED",
@@ -8,14 +8,39 @@
   "actionableCount": 0,
   "recommendedExposurePct": 0,
   "cashPct": 100,
+  "selectionEngine": {
+    "engineId": "V20_FULL_MARKET_NATIVE_SELECTION_V1",
+    "mode": "V20_NATIVE_FULL_MARKET_PRIMARY_SELECTION",
+    "sessionDate": "2026-08-17",
+    "candidateUniverse": "V20_MASTER_UNIVERSE_FULL_MARKET",
+    "candidateUniverseCount": 217,
+    "candidateUniverseIsFullMarketIndependent": true,
+    "legacySeedDependency": false,
+    "legacyReferenceUsedForComparisonOnly": true,
+    "legacyScoringContributionPct": 0,
+    "scoreIsConfidence": false,
+    "rankingSource": "data/v20/full-market-native-selection.json",
+    "regressionOk": true,
+    "v17GlobalExecutionAuthority": true,
+    "automaticPromotion": false,
+    "automaticBrokerOrders": false,
+    "activeChampionReference": "V16_9_EQUAL_WEIGHT_BASKET"
+  },
+  "nativeResearchSessionReference": {
+    "enabled": true,
+    "coveragePct": 100,
+    "executionInfluence": false
+  },
   "source": {
     "v17Branch": "develop/v17-rebuild",
     "v17Commit": "a512d1acb85ee332425978f2227e28a547bb0c09",
     "v20Branch": "develop/v20-integrated-decision-platform",
-    "buildMode": "READ_ONLY_AUTHORITATIVE_V17_TO_ISOLATED_V20"
+    "buildMode": "FULL_MARKET_NATIVE_SELECTION_WITH_RESEARCH_SESSION_REFERENCE_AND_READ_ONLY_V17_EXECUTION_AUTHORITY"
   },
   "governance": {
-    "activeChampion": "V16_9_EQUAL_WEIGHT_BASKET",
+    "activeChampionReference": "V16_9_EQUAL_WEIGHT_BASKET",
+    "nativeSelectsV20Opportunities": true,
+    "v17ControlsExecution": true,
     "automaticPromotion": false,
     "automaticBrokerOrders": false
   },
@@ -32,6 +57,8 @@
   "gates": {
     "v17ExecutionGrade": false,
     "v17SessionAligned": false,
+    "nativeRegressionPassed": true,
+    "researchOverlayExecutionLeak": false,
     "portfolioGuardPassed": true
   }
 }
