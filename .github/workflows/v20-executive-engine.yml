@@ -80,7 +80,6 @@ jobs:
           const review=read('data/v17/review.json');
           const regression=read('data/v17/regression.json');
           const session=truth.selectedSessionDate || current.sessionDate;
-
           if(!/^\d{4}-\d{2}-\d{2}$/.test(String(session||''))) throw new Error('No authoritative V17 session');
           if(current.sessionDate!==session) throw new Error('V17 current/session mismatch');
           if(rec.sessionDate!==session||rec.engine!=='V17_CURRENT_SESSION_TECHNICAL_BASE_1') throw new Error('V17 recommendation base is not canonical');
@@ -89,7 +88,6 @@ jobs:
           if(review.verdict!=='NO_COMMENTS'||Object.values(review.counts||{}).some(v=>Number(v||0)!==0)) throw new Error('V17 review is not clean');
           if(regression.ok!==true||Number(regression.failedCount||0)!==0||Number(regression.criticalFailedCount||0)!==0) throw new Error('V17 regression is not green');
           if(!['HEALTHY','DEGRADED','RESEARCH_ONLY'].includes(gate.status)) throw new Error(`Unacceptable V17 gate: ${gate.status}`);
-
           if(gate.executionGrade===true){
             if(gate.sessionAligned!==true) throw new Error('Execution grade without aligned session');
             if((gate.priceTruth?.verifiedSessionDate||gate.sessionDate)!==session) throw new Error('Execution-grade price truth mismatch');
@@ -98,12 +96,10 @@ jobs:
             if(Number(current.portfolioPolicy?.plannedAllocationPct||0)!==0||Number(current.portfolioPolicy?.cashReservePct||0)!==100) throw new Error('Closed V17 gate carries exposure');
             if((current.recommendations||[]).some(r=>r.executionAllowed===true)) throw new Error('Closed V17 gate carries executable recommendation');
           }
-
           console.log(JSON.stringify({sessionDate:session,gateStatus:gate.status,executionGrade:gate.executionGrade===true,sessionAligned:gate.sessionAligned===true},null,2));
           NODE
 
           V17_SHA="$(git rev-parse HEAD)"
-
           git clone --quiet --depth=1 --branch "$V20_SOURCE_BRANCH" \
             https://github.com/rasheadsca-star/RAS-EGX-PRO2026-NEXT.git "$V20_DIR"
           cd "$V20_DIR"
@@ -122,13 +118,11 @@ jobs:
           const gate=read('data/v17/resilient-session-status.json');
           const session=truth.selectedSessionDate || current.sessionDate;
           if(!/^\d{4}-\d{2}-\d{2}$/.test(String(session||''))) throw new Error('No research session to bind');
-          if(!market.sessionDate){
-            market.sessionDate=session;
-            market.sessionDateMode=gate.executionGrade===true ? 'V17_EXECUTION_VERIFIED_SESSION' : 'V17_RESEARCH_SESSION_REFERENCE';
-            market.sessionDateExecutionVerified=gate.executionGrade===true && gate.sessionAligned===true;
-            market.sessionDateProvenance='data/v17/market-session-truth.json + data/v17/current.json';
-            write('data/market.json',market);
-          }
+          market.sessionDate=session;
+          market.sessionDateMode=gate.executionGrade===true ? 'V17_EXECUTION_VERIFIED_SESSION' : 'V17_RESEARCH_SESSION_REFERENCE';
+          market.sessionDateExecutionVerified=gate.executionGrade===true && gate.sessionAligned===true;
+          market.sessionDateProvenance='data/v17/market-session-truth.json + data/v17/current.json';
+          write('data/market.json',market);
           console.log(JSON.stringify({boundMarketSession:market.sessionDate,executionVerified:market.sessionDateExecutionVerified===true},null,2));
           NODE
 
@@ -154,18 +148,17 @@ jobs:
           node scripts/v20/build-market-regime.cjs
           node scripts/v20/market-regime-regression.cjs
 
-      - name: V20 Decision and Risk
+      - name: V20 Base decision contract
         shell: bash
         run: |
           set -euo pipefail
           cd "$V20_DIR"
           export GITHUB_WORKSPACE="$V20_DIR"
+          # Establish the common V20 governance/session contract first.
+          # Native full-market selection replaces only the opportunity source later.
           node scripts/v20/build-integrated-decision-snapshot.cjs
-          node scripts/v20/enrich-risk-reward.cjs
-          node scripts/v20/validate-trade-plans.cjs
-          node scripts/v20/build-portfolio-risk.cjs
 
-      - name: V20 Technical History and Explorer
+      - name: V20 Full-market native discovery
         shell: bash
         run: |
           set -euo pipefail
@@ -177,6 +170,24 @@ jobs:
           node scripts/v20/sector-provenance-regression.cjs
           node scripts/v20/build-market-explorer.cjs
           node scripts/v20/market-explorer-regression.cjs
+          # Explicit native rebuild keeps the executive contract independent of any
+          # legacy candidate seed even if market-explorer orchestration changes later.
+          node scripts/v20/build-full-market-native-technical.cjs
+          node scripts/v20/build-full-market-native-selection.cjs
+          node scripts/v20/full-market-native-regression.cjs
+          node scripts/v20/build-native-explainability.cjs
+
+      - name: V20 Native executive decision and risk
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$V20_DIR"
+          export GITHUB_WORKSPACE="$V20_DIR"
+          node scripts/v20/build-native-executive-current.cjs
+          node scripts/v20/enrich-risk-reward.cjs
+          node scripts/v20/validate-trade-plans.cjs
+          node scripts/v20/build-portfolio-risk.cjs
+          node scripts/v20/native-executive-current-regression.cjs
           node scripts/v20/user-portfolio-regression.cjs
 
       - name: V20 Executive fail-closed guard
@@ -193,12 +204,19 @@ jobs:
           const truth=read('data/v17/market-session-truth.json');
           const currentV17=read('data/v17/current.json');
           const risk=read('data/v20/portfolio-risk.json');
+          const nativeReg=read('data/v20/native-executive-current-regression.json');
           const session=truth.selectedSessionDate || currentV17.sessionDate;
 
           if(x.sessionDate!==session) throw new Error(`V20/V17 session mismatch ${x.sessionDate} != ${session}`);
-          if(x.governance?.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET') throw new Error('V20 champion drift');
+          if(x.governance?.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET') throw new Error('V20 champion reference drift');
           if(x.governance?.automaticPromotion!==false||x.governance?.promotionAllowed!==false) throw new Error('Automatic promotion is forbidden');
           if(x.portfolio?.automaticOrders!==false) throw new Error('Automatic broker orders are forbidden');
+          if(x.selectionEngine?.engineId!=='V20_FULL_MARKET_NATIVE_SELECTION_V1') throw new Error('Native selection engine missing');
+          if(x.selectionEngine?.mode!=='V20_NATIVE_FULL_MARKET_PRIMARY_SELECTION') throw new Error('Native selection is not primary');
+          if(x.selectionEngine?.candidateUniverseIsFullMarketIndependent!==true||x.selectionEngine?.legacySeedDependency!==false) throw new Error('Native independence invariant failed');
+          if(Number(x.selectionEngine?.legacyScoringContributionPct)!==0) throw new Error('Legacy score leaked into native selection');
+          if(nativeReg.ok!==true||Number(nativeReg.failedCount||0)!==0) throw new Error('Native executive regression is not green');
+          if((x.opportunities||[]).some(r=>r.provenance?.rankingSource!=='data/v20/full-market-native-selection.json')) throw new Error('Non-native opportunity source detected');
 
           const actionable=(x.opportunities||[]).filter(r=>r.status==='ACTIONABLE');
           if(gate.executionGrade!==true){
@@ -219,18 +237,19 @@ jobs:
           if(exposure<0||exposure>max+1e-9) throw new Error('Portfolio exposure guard failed');
 
           x.operatingMode='EXECUTIVE_FAIL_CLOSED';
-          x.executionPolicy={mode:'MANUAL_DECISION_EXECUTION',automaticBrokerOrders:false,v17GlobalGateAuthoritative:true,currentSessionRequired:true,liquidityRequired:true,supportResistanceRequired:true,tradePlanAlignmentRequired:true,positiveRiskRewardRequired:true,failedGateKeepsCash:true};
+          x.executionPolicy={mode:'MANUAL_DECISION_EXECUTION',automaticBrokerOrders:false,v17GlobalGateAuthoritative:true,nativeFullMarketSelectionPrimary:true,currentSessionRequired:true,liquidityRequired:true,supportResistanceRequired:true,tradePlanAlignmentRequired:true,positiveRiskRewardRequired:true,failedGateKeepsCash:true};
           write('data/v20/current.json',x);
           write('data/v20/executive-runtime.json',{
-            schemaVersion:'20.0.0-executive-runtime-5',generatedAt:new Date().toISOString(),operatingMode:'EXECUTIVE_FAIL_CLOSED',
+            schemaVersion:'20.0.0-executive-runtime-6',generatedAt:new Date().toISOString(),operatingMode:'EXECUTIVE_FAIL_CLOSED',
             sessionDate:x.sessionDate,status:x.status,executionStatus:x.executionStatus,actionableCount:actionable.length,
             recommendedExposurePct:exposure,cashPct:Number(x.portfolio?.cashPct||0),
-            source:{v17Branch:process.env.V17_SOURCE_BRANCH,v17Commit:process.env.V17_RUNTIME_SHA,v20Branch:process.env.V20_SOURCE_BRANCH,buildMode:'READ_ONLY_AUTHORITATIVE_V17_TO_ISOLATED_V20'},
-            governance:{activeChampion:x.governance.activeChampion,automaticPromotion:false,automaticBrokerOrders:false},
+            selectionEngine:x.selectionEngine,
+            source:{v17Branch:process.env.V17_SOURCE_BRANCH,v17Commit:process.env.V17_RUNTIME_SHA,v20Branch:process.env.V20_SOURCE_BRANCH,buildMode:'FULL_MARKET_NATIVE_SELECTION_WITH_READ_ONLY_V17_EXECUTION_AUTHORITY'},
+            governance:{activeChampionReference:x.governance.activeChampion,nativeSelectsV20Opportunities:true,v17ControlsExecution:true,automaticPromotion:false,automaticBrokerOrders:false},
             isolation:{mainAppRead:false,mainAppWrite:false,v17SourceWrite:false,v20SourceWrite:false,deploymentPublishAllowlist:['data/v20/**','v20/deployment.json']},
-            gates:{v17ExecutionGrade:gate.executionGrade===true,v17SessionAligned:gate.sessionAligned===true,portfolioGuardPassed:risk.invariants?.closedGateMeansZeroAppliedExposure===true}
+            gates:{v17ExecutionGrade:gate.executionGrade===true,v17SessionAligned:gate.sessionAligned===true,nativeRegressionPassed:true,portfolioGuardPassed:risk.invariants?.closedGateMeansZeroAppliedExposure===true}
           });
-          console.log(JSON.stringify({sessionDate:x.sessionDate,executionStatus:x.executionStatus,actionable:actionable.length,exposurePct:exposure,cashPct:x.portfolio.cashPct},null,2));
+          console.log(JSON.stringify({sessionDate:x.sessionDate,selectionEngine:x.selectionEngine.engineId,executionStatus:x.executionStatus,actionable:actionable.length,exposurePct:exposure,cashPct:x.portfolio.cashPct},null,2));
           NODE
 
       - name: Publish V20 only and prove MAIN APP isolation
@@ -239,6 +258,8 @@ jobs:
           set -euo pipefail
           test -f "$V20_DIR/data/v20/current.json"
           test -f "$V20_DIR/data/v20/executive-runtime.json"
+          test -f "$V20_DIR/data/v20/native-vs-main-comparison.json"
+          test -f "$V20_DIR/data/v20/native-executive-current-regression.json"
 
           mkdir -p data/v20
           cp -a "$V20_DIR/data/v20/." data/v20/
@@ -250,7 +271,7 @@ jobs:
           const p='v20/deployment.json';
           let d={}; try{d=JSON.parse(fs.readFileSync(p,'utf8'))}catch{}
           const x=JSON.parse(fs.readFileSync('data/v20/current.json','utf8'));
-          d={...d,publishedAt:new Date().toISOString(),sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',sourceBranch:'develop/v20-integrated-decision-platform',sourceCommit,v17SourceCommit:process.env.V17_RUNTIME_SHA,sessionDate:x.sessionDate,executionStatus:x.executionStatus,operatingMode:'EXECUTIVE_FAIL_CLOSED',automaticBrokerOrders:false,automaticPromotion:false,mainAppMutation:false,publisher:'v20-executive-engine.yml'};
+          d={...d,publishedAt:new Date().toISOString(),sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',sourceBranch:'develop/v20-integrated-decision-platform',sourceCommit,v17SourceCommit:process.env.V17_RUNTIME_SHA,sessionDate:x.sessionDate,executionStatus:x.executionStatus,operatingMode:'EXECUTIVE_FAIL_CLOSED',selectionEngine:x.selectionEngine?.engineId||null,selectionMode:x.selectionEngine?.mode||null,fullMarketNativeSelection:x.selectionEngine?.candidateUniverseIsFullMarketIndependent===true,legacySeedDependency:x.selectionEngine?.legacySeedDependency??null,automaticBrokerOrders:false,automaticPromotion:false,mainAppMutation:false,publisher:'v20-executive-engine.yml'};
           fs.writeFileSync(p,JSON.stringify(d,null,2)+'\n');
           NODE
 
@@ -269,7 +290,9 @@ jobs:
           const r=JSON.parse(fs.readFileSync('data/v20/executive-runtime.json','utf8'));
           if(r.isolation?.mainAppWrite!==false) throw new Error('MAIN APP write isolation not asserted');
           if(x.operatingMode!=='EXECUTIVE_FAIL_CLOSED') throw new Error('V20 executive mode missing');
-          console.log(JSON.stringify({publishReady:true,sessionDate:x.sessionDate,executionStatus:x.executionStatus,operatingMode:x.operatingMode},null,2));
+          if(x.selectionEngine?.mode!=='V20_NATIVE_FULL_MARKET_PRIMARY_SELECTION') throw new Error('Native primary selection missing at publish boundary');
+          if(x.selectionEngine?.legacySeedDependency!==false) throw new Error('Legacy seed dependency returned');
+          console.log(JSON.stringify({publishReady:true,sessionDate:x.sessionDate,selectionEngine:x.selectionEngine.engineId,executionStatus:x.executionStatus,operatingMode:x.operatingMode},null,2));
           NODE
 
           if git diff --cached --quiet; then
@@ -279,6 +302,6 @@ jobs:
 
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'V20 executive: publish current fail-closed decision cycle'
+          git commit -m 'V20 native executive: publish full-market decision cycle'
           git pull --rebase origin main
           git push origin HEAD:main
