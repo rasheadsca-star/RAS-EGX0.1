@@ -20,16 +20,8 @@ concurrency:
 jobs:
   rebuild-v20-executive:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 40
     env:
-      EGX_MUBASHER_CONCURRENCY: '4'
-      EGX_MUBASHER_TIMEOUT_MS: '25000'
-      EGX_SR_CONCURRENCY: '8'
-      EGX_SR_TIMEOUT_MS: '25000'
-      EGX_SR_MIN_ROWS: '80'
-      EGX_INTERNAL_SR_MIN_COVERAGE: '95'
-      EGX_INTERNAL_SR_MIN_FRESHNESS: '98'
-      EGX_INTERNAL_SR_MIN_CONFIDENCE: '0.80'
       V20_SOURCE_BRANCH: develop/v20-integrated-decision-platform
       V17_SOURCE_BRANCH: develop/v17-rebuild
 
@@ -50,106 +42,19 @@ jobs:
         run: |
           set -euo pipefail
           test "${GITHUB_REF_NAME}" = "main"
-          git status --porcelain
+          test -z "$(git status --porcelain)"
           echo "MAIN_APP_BASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
-          echo "The executive cycle may publish only data/v20/** and v20/deployment.json."
+          echo "Publish allowlist: data/v20/** and v20/deployment.json only"
 
-      - name: Build fresh V17 evidence in an isolated temporary workspace
+      - name: Read and validate latest accepted V17 evidence without mutating it
         shell: bash
         run: |
           set -euo pipefail
-          V17_DIR="$RUNNER_TEMP/v17-executive-runtime"
+          V17_DIR="$RUNNER_TEMP/v17-authoritative-runtime"
           rm -rf "$V17_DIR"
           git clone --quiet --depth=1 --branch "$V17_SOURCE_BRANCH" \
             https://github.com/rasheadsca-star/RAS-EGX-PRO2026-NEXT.git "$V17_DIR"
           cd "$V17_DIR"
-
-          npm ci || npm install
-
-          success=0
-          for attempt in 1 2 3; do
-            if node scripts/fetch-market-data.js; then success=1; break; fi
-            echo "::warning::Market collector attempt ${attempt} failed"
-            sleep 10
-          done
-          test "$success" = "1" || { echo "Fresh market collection failed"; exit 1; }
-
-          node scripts/stable/v16-mubasher-session-evidence-enricher.cjs
-
-          npm install --no-save --no-package-lock cheerio@1.0.0
-          node scripts/collect-mubasher-direct-stock-sr.js || \
-            echo "::warning::Direct Mubasher S/R validation unavailable; fail-closed gates will decide."
-
-          node scripts/v17/market-session-truth.cjs
-          node scripts/v17/repair-session-history.cjs
-
-          for s in \
-            scripts/build-price-source-audit.js \
-            scripts/build-price-freshness-report.js \
-            scripts/build-workflow-source-verification.js \
-            scripts/build-session-memory-status.js \
-            scripts/build-symbol-audit.js; do
-            [ ! -f "$s" ] || node "$s" || true
-          done
-
-          node scripts/v17/build-internal-ohlc-sr.cjs
-          node scripts/v17/build-liquidity-gate.cjs
-          node scripts/v17/resilient-session-gate.cjs
-
-          for s in \
-            scripts/build-v52-intelligence.js \
-            scripts/build-v54-universe-index.js \
-            scripts/build-v55-sector-investor-flow.js \
-            scripts/build-v56-history-50.js \
-            scripts/build-v56-technical-report.js \
-            scripts/collect-egx-investor-type.js \
-            scripts/collect-v56-news.js \
-            scripts/build-multi-source-intelligence.js \
-            scripts/apply-multisource-intelligence-to-ranking.js \
-            scripts/build-institutional-score.js \
-            scripts/build-signal-quality-engine.js \
-            scripts/build-entry-trigger-engine.js \
-            scripts/build-alert-decision-center.js \
-            scripts/build-actionable-watchlist.js \
-            scripts/build-data-operations-center.js \
-            scripts/build-engines-console-report.js \
-            scripts/build-executive-home-report.js \
-            scripts/build-workflow-budget-status.js \
-            scripts/build-sector-completion-report.js \
-            scripts/build-recommendation-outcome-tracker.js \
-            scripts/build-recommendation-accuracy.js \
-            scripts/build-recommendation-performance-index.js \
-            scripts/build-accuracy-interpretation-report.js \
-            scripts/build-recommendation-validation-panel.js \
-            scripts/build-portfolio-decision-rules.js \
-            scripts/build-rebalancing-candidates.js; do
-            [ ! -f "$s" ] || node "$s" || echo "::warning::$s failed"
-          done
-
-          node scripts/v17/rebuild-current-recommendation-base.cjs
-          node scripts/v17/build-pre-session-intelligence.cjs
-          node scripts/apply-news-impact-to-recommendations.js
-          node scripts/v17/repair-session-history.cjs
-
-          [ ! -f scripts/build-history-50-engine.js ] || node scripts/build-history-50-engine.js
-          [ ! -f scripts/build-price-reconciliation-report.js ] || node scripts/build-price-reconciliation-report.js
-          node scripts/build-final-opportunity-ranking.js
-          [ ! -f scripts/build-confidence-guard-report.js ] || node scripts/build-confidence-guard-report.js
-          [ ! -f scripts/build-daily-decision-brief.js ] || node scripts/build-daily-decision-brief.js
-
-          node scripts/v17/build-internal-ohlc-sr.cjs
-          node scripts/v17/audit-sr-history-gaps.cjs
-          node scripts/v17/build-liquidity-gate.cjs
-          node scripts/v17/resilient-session-gate.cjs
-          node scripts/build-goal-integrated-decision.js
-          node scripts/v17/challenger-gate.cjs
-
-          node scripts/v17/build-snapshot.cjs
-          node scripts/v17/resolve-ledger.cjs
-          node scripts/v17/build-snapshot.cjs
-          node scripts/v17/enrich-snapshot.cjs
-          node scripts/v17/finalize-snapshot.cjs
-          node scripts/v17/snapshot-provenance-guard.cjs
 
           node - <<'NODE'
           const fs=require('fs');
@@ -161,29 +66,40 @@ jobs:
           const challenger=read('data/v17/challenger-status.json');
           const rec=read('data/recommendations.json');
           const technical=read('data/technical-50-report.json');
-          const session=truth.selectedSessionDate;
-          if(!/^\d{4}-\d{2}-\d{2}$/.test(String(session||''))) throw new Error('No verified V17 session');
+          const review=read('data/v17/review.json');
+          const regression=read('data/v17/regression.json');
+          const session=truth.selectedSessionDate || gate.priceTruth?.verifiedSessionDate || current.sessionDate;
+
+          if(!/^\d{4}-\d{2}-\d{2}$/.test(String(session||''))) throw new Error('No authoritative V17 session');
           if(current.sessionDate!==session) throw new Error('V17 current/session mismatch');
           if((gate.priceTruth?.verifiedSessionDate||gate.sessionDate)!==session) throw new Error('V17 gate/session mismatch');
+          if(gate.sessionAligned!==true) throw new Error('V17 session is not aligned');
           if(rec.sessionDate!==session||rec.engine!=='V17_CURRENT_SESSION_TECHNICAL_BASE_1') throw new Error('V17 recommendation base is not current-session canonical');
           if(technical.referenceSessionDate!==session||technical.version!=='5.6.1-v17-session-truth') throw new Error('V17 Technical-50 is not current-session canonical');
           if(challenger.activeEngine!=='V16_9_EQUAL_WEIGHT_BASKET'||challenger.promotionAllowed!==false) throw new Error('V17 champion governance drift');
+          if(review.verdict!=='NO_COMMENTS'||Object.values(review.counts||{}).some(v=>Number(v||0)!==0)) throw new Error('V17 independent review is not clean');
+          if(regression.ok!==true||Number(regression.failedCount||0)!==0||Number(regression.criticalFailedCount||0)!==0) throw new Error('V17 regression is not green');
           if(!['HEALTHY','DEGRADED','RESEARCH_ONLY'].includes(gate.status)) throw new Error(`Unacceptable V17 gate: ${gate.status}`);
-          if(gate.executionGrade===true && (gate.sessionAligned!==true||liquidity.gatePassed!==true||truth.executionSafe!==true)) throw new Error('Execution grade without all global gates');
+          if(gate.executionGrade===true && (liquidity.gatePassed!==true||truth.executionSafe!==true)) throw new Error('Execution grade without session/liquidity truth');
           if(gate.executionGrade!==true){
             if(Number(current.portfolioPolicy?.plannedAllocationPct||0)!==0||Number(current.portfolioPolicy?.cashReservePct||0)!==100) throw new Error('Closed V17 gate carries exposure');
             if((current.recommendations||[]).some(r=>r.executionAllowed===true)) throw new Error('Closed V17 gate carries executable recommendation');
           }
+
           fs.writeFileSync(process.env.RUNNER_TEMP+'/v17-executive-summary.json',JSON.stringify({
             generatedAt:new Date().toISOString(),sessionDate:session,gateStatus:gate.status,
-            executionGrade:gate.executionGrade===true,sessionAligned:gate.sessionAligned===true,
+            executionGrade:gate.executionGrade===true,sessionAligned:true,
             liquidityGatePassed:liquidity.gatePassed===true,champion:challenger.activeEngine,
-            sourceBranch:process.env.V17_SOURCE_BRANCH,automaticPromotion:false
+            sourceBranch:process.env.V17_SOURCE_BRANCH,sourceCommit:process.env.GITHUB_SHA,
+            automaticPromotion:false
           },null,2)+'\n');
-          console.log(JSON.stringify({session,gate:gate.status,executionGrade:gate.executionGrade===true,liquidity:liquidity.gatePassed===true},null,2));
+          console.log(JSON.stringify({sessionDate:session,gateStatus:gate.status,executionGrade:gate.executionGrade===true},null,2));
           NODE
 
-      - name: Build V20 executive decision layer in a separate temporary workspace
+          SOURCE_SHA="$(git rev-parse HEAD)"
+          echo "V17_RUNTIME_SHA=$SOURCE_SHA" >> "$GITHUB_ENV"
+
+      - name: Build isolated V20 executive decision layer
         shell: bash
         env:
           V20_REGIME_NETWORK_REFRESH: 'true'
@@ -197,7 +113,7 @@ jobs:
           V20_HISTORY_CURRENT_PRICE_TOLERANCE_PCT: '5'
         run: |
           set -euo pipefail
-          V17_DIR="$RUNNER_TEMP/v17-executive-runtime"
+          V17_DIR="$RUNNER_TEMP/v17-authoritative-runtime"
           V20_DIR="$RUNNER_TEMP/v20-executive-runtime"
           rm -rf "$V20_DIR"
           git clone --quiet --depth=1 --branch "$V20_SOURCE_BRANCH" \
@@ -205,12 +121,10 @@ jobs:
           cd "$V20_DIR"
           npm ci || npm install
 
-          # Materialize fresh V17 evidence only inside this disposable V20 workspace.
+          # Copy authoritative V17 evidence into the disposable V20 workspace only.
           mkdir -p data/v17
           cp -a "$V17_DIR/data/v17/." data/v17/
           find "$V17_DIR/data" -maxdepth 1 -type f -name '*.json' -exec cp -f {} data/ \;
-
-          cat "$RUNNER_TEMP/v17-executive-summary.json"
 
           node --check scripts/v20/build-data-truth.cjs
           node --check scripts/v20/build-market-regime.cjs
@@ -246,10 +160,12 @@ jobs:
           const truth=read('data/v17/market-session-truth.json');
           const risk=read('data/v20/portfolio-risk.json');
           const session=truth.selectedSessionDate;
+
           if(x.sessionDate!==session) throw new Error(`V20/V17 session mismatch ${x.sessionDate} != ${session}`);
           if(x.governance?.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET') throw new Error('V20 champion drift');
           if(x.governance?.automaticPromotion!==false||x.governance?.promotionAllowed!==false) throw new Error('Automatic promotion is forbidden');
           if(x.portfolio?.automaticOrders!==false) throw new Error('Automatic broker orders are forbidden');
+
           if(gate.executionGrade!==true){
             if(x.executionStatus==='EXECUTION_GRADE') throw new Error('V20 claims execution grade while V17 gate is closed');
             if(Number(x.portfolio?.recommendedExposurePct||0)!==0||Number(x.portfolio?.cashPct||0)!==100) throw new Error('Closed gate must remain 100% cash');
@@ -263,29 +179,27 @@ jobs:
               if(row.tradePlan?.target1Metrics?.valid!==true) throw new Error(`${row.ticker}: invalid risk/reward plan`);
             }
           }
+
           const max=Number(x.portfolio?.maximumTotalAllocationPct||0);
           const exposure=Number(x.portfolio?.recommendedExposurePct||0);
           if(exposure<0||exposure>max+1e-9) throw new Error('Portfolio exposure guard failed');
 
           x.operatingMode='EXECUTIVE_FAIL_CLOSED';
           x.executionPolicy={
-            mode:'MANUAL_DECISION_EXECUTION',
-            automaticBrokerOrders:false,
-            v17GlobalGateAuthoritative:true,
-            currentSessionRequired:true,
-            liquidityRequired:true,
-            supportResistanceRequired:true,
-            tradePlanAlignmentRequired:true,
-            positiveRiskRewardRequired:true,
+            mode:'MANUAL_DECISION_EXECUTION',automaticBrokerOrders:false,
+            v17GlobalGateAuthoritative:true,currentSessionRequired:true,
+            liquidityRequired:true,supportResistanceRequired:true,
+            tradePlanAlignmentRequired:true,positiveRiskRewardRequired:true,
             failedGateKeepsCash:true
           };
           write('data/v20/current.json',x);
           write('data/v20/executive-runtime.json',{
-            schemaVersion:'20.0.0-executive-runtime-1',generatedAt:new Date().toISOString(),
+            schemaVersion:'20.0.0-executive-runtime-2',generatedAt:new Date().toISOString(),
             operatingMode:'EXECUTIVE_FAIL_CLOSED',sessionDate:x.sessionDate,status:x.status,
-            executionStatus:x.executionStatus,actionableCount:(x.opportunities||[]).filter(r=>r.status==='ACTIONABLE').length,
+            executionStatus:x.executionStatus,
+            actionableCount:(x.opportunities||[]).filter(r=>r.status==='ACTIONABLE').length,
             recommendedExposurePct:exposure,cashPct:Number(x.portfolio?.cashPct||0),
-            source:{v17Branch:process.env.V17_SOURCE_BRANCH,v20Branch:process.env.V20_SOURCE_BRANCH,buildMode:'ISOLATED_TEMPORARY_WORKSPACES'},
+            source:{v17Branch:process.env.V17_SOURCE_BRANCH,v17Commit:process.env.V17_RUNTIME_SHA,v20Branch:process.env.V20_SOURCE_BRANCH,buildMode:'READ_ONLY_AUTHORITATIVE_V17_TO_ISOLATED_V20'},
             governance:{activeChampion:x.governance.activeChampion,automaticPromotion:false,automaticBrokerOrders:false},
             isolation:{mainAppRead:false,mainAppWrite:false,v17SourceWrite:false,v20SourceWrite:false,deploymentPublishAllowlist:['data/v20/**','v20/deployment.json']},
             gates:{v17ExecutionGrade:gate.executionGrade===true,v17SessionAligned:gate.sessionAligned===true,portfolioGuardPassed:risk.invariants?.closedGateMeansZeroAppliedExposure===true}
@@ -304,20 +218,19 @@ jobs:
           mkdir -p data/v20
           cp -a "$V20_DIR/data/v20/." data/v20/
 
-          SOURCE_SHA="$(git -C "$V20_DIR" rev-parse HEAD)"
-          node - "$SOURCE_SHA" <<'NODE'
+          V20_SOURCE_SHA="$(git -C "$V20_DIR" rev-parse HEAD)"
+          node - "$V20_SOURCE_SHA" <<'NODE'
           const fs=require('fs');
           const sourceCommit=process.argv[2];
           const p='v20/deployment.json';
           let d={}; try{d=JSON.parse(fs.readFileSync(p,'utf8'))}catch{}
           const x=JSON.parse(fs.readFileSync('data/v20/current.json','utf8'));
-          d={...d,
-            publishedAt:new Date().toISOString(),sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',
+          d={...d,publishedAt:new Date().toISOString(),sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',
             sourceBranch:'develop/v20-integrated-decision-platform',sourceCommit,
-            sessionDate:x.sessionDate,executionStatus:x.executionStatus,operatingMode:'EXECUTIVE_FAIL_CLOSED',
+            v17SourceCommit:process.env.V17_RUNTIME_SHA,sessionDate:x.sessionDate,
+            executionStatus:x.executionStatus,operatingMode:'EXECUTIVE_FAIL_CLOSED',
             automaticBrokerOrders:false,automaticPromotion:false,mainAppMutation:false,
-            publisher:'v20-executive-engine.yml'
-          };
+            publisher:'v20-executive-engine.yml'};
           fs.writeFileSync(p,JSON.stringify(d,null,2)+'\n');
           NODE
 
