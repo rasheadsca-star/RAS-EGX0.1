@@ -1,6 +1,6 @@
 {
   "schemaVersion": "20.0.0-sector-provenance-audit-1",
-  "generatedAt": "2026-08-18T14:54:30.922Z",
+  "generatedAt": "2026-08-18T21:37:36.358Z",
   "sessionDate": "2026-08-18",
   "decisionSupportOnly": true,
   "policy": {
@@ -33,9 +33,9 @@
     "legacyCompletionReport": {
       "file": "data/sector-completion-report.json",
       "engine": "v11_sector_completion_config_map_plus_inference",
-      "totalSymbols": 217,
+      "totalSymbols": 219,
       "classifiedSymbols": 144,
-      "coveragePct": 66.36,
+      "coveragePct": 65.75,
       "classifiedUniverseSymbolsRecovered": 144,
       "inferencePossible": true,
       "perSymbolProvenancePreserved": false,
@@ -46,7 +46,7 @@
       "filesScanned": [
         {
           "file": "data/market.json",
-          "rowCount": 217,
+          "rowCount": 219,
           "explicitSectorRowsInV20Universe": 0
         },
         {
@@ -56,7 +56,7 @@
         },
         {
           "file": "data/final-opportunity-ranking.json",
-          "rowCount": 217,
+          "rowCount": 219,
           "explicitSectorRowsInV20Universe": 0
         }
       ],
@@ -67,11 +67,11 @@
     }
   },
   "summary": {
-    "universeCount": 217,
+    "universeCount": 219,
     "productionVerifiedCount": 0,
     "productionVerifiedCoveragePct": 0,
     "researchCandidateCount": 144,
-    "researchCandidateCoveragePct": 66.36,
+    "researchCandidateCoveragePct": 65.75,
     "upstreamExplicitUnverifiedCount": 0,
     "seedMappedCount": 75,
     "legacyClassifiedCount": 144,
@@ -471,6 +471,21 @@
       "explicitEvidence": [],
       "seedSector": null,
       "legacySector": "عقارات وإنشاءات",
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "ARVA",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": null,
+      "researchProvenance": "UNCLASSIFIED",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": null,
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
@@ -2698,6 +2713,21 @@
     },
     {
       "ticker": "RACC",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": null,
+      "researchProvenance": "UNCLASSIFIED",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": null,
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "RAKT",
       "productionSector": null,
       "productionProvenance": null,
       "acceptedForProduction": false,
