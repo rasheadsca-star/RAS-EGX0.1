@@ -185,6 +185,45 @@ jobs:
           node scripts/v20/build-full-market-native-selection.cjs
           node scripts/v20/full-market-native-regression.cjs
 
+          # Canonical research compatibility artifact consumed by MAIN APP.
+          # These builders do not retune scores; they only finalize the frozen V1
+          # tie-break/explainability contract and serialize the current session.
+          node scripts/v20/build-native-explainability-v1.cjs
+          node scripts/v20/finalize-native-ranking-v1.cjs
+          node scripts/v20/build-native-model-freeze.cjs
+          node scripts/v20/build-native-current.cjs
+          node scripts/v20/native-current-regression.cjs
+
+          node - <<'NODE'
+          const fs=require('fs');
+          const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+          const write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n');
+          const native=read('data/v20/native-current.json');
+          const nativeReg=read('data/v20/native-current-regression.json');
+          const selection=read('data/v20/full-market-native-selection.json');
+          const v17=read('data/v17/current.json');
+          const truth=read('data/v17/market-session-truth.json');
+          const sourceSession=truth.selectedSessionDate || v17.sessionDate;
+          if(nativeReg.ok!==true) throw new Error('Native current regression failed');
+          if(native.sessionDate!==sourceSession||selection.sessionDate!==sourceSession) throw new Error(`Native freshness mismatch native=${native.sessionDate} selection=${selection.sessionDate} source=${sourceSession}`);
+          if(native.engineId!=='V20_FULL_MARKET_NATIVE_SELECTION_V1') throw new Error('Native engine identity drift');
+          if(native.executionPermission!==false||native.productionAllocation!==false||native.automaticPromotion!==false) throw new Error('Native research artifact gained production authority');
+          const next=s=>{const d=new Date(`${s}T12:00:00Z`);do d.setUTCDate(d.getUTCDate()+1);while([5,6].includes(d.getUTCDay()));return d.toISOString().slice(0,10)};
+          write('data/v20/native-freshness-status.json',{
+            schemaVersion:'20.0.0-native-freshness-status-1',
+            generatedAt:new Date().toISOString(),
+            status:'FRESH_FOR_NEXT_TRADING_SESSION_RESEARCH',
+            sourceSession,
+            nativeSession:native.sessionDate,
+            forNextTradingSession:next(sourceSession),
+            engineId:native.engineId,
+            top3:native.publishedCandidates.slice(0,3).map(r=>({rank:r.rank,ticker:r.ticker,entryLow:r.entryLow,entryHigh:r.entryHigh,stop:r.stop,target1:r.target1,target2:r.target2,nativeResearchScore:r.nativeResearchScore})),
+            governance:{selectionTechniqueChanged:false,rankingContractChanged:false,weightsChanged:false,filtersChanged:false,riskGatesChanged:false,researchOnly:true,executionPermission:false,productionAllocation:false,automaticPromotion:false},
+            publisher:'v20-executive-engine.yml'
+          });
+          console.log(JSON.stringify({nativeCurrentFresh:true,sessionDate:native.sessionDate,nextSession:next(sourceSession),top3:native.publishedCandidates.slice(0,3).map(r=>r.ticker)},null,2));
+          NODE
+
       - name: V20 Native executive decision and risk
         shell: bash
         run: |
@@ -220,9 +259,12 @@ jobs:
           const risk=read('data/v20/portfolio-risk.json');
           const nativeReg=read('data/v20/native-executive-current-regression.json');
           const overlay=read('data/v20/native-research-session-overlay.json');
+          const native=read('data/v20/native-current.json');
+          const freshness=read('data/v20/native-freshness-status.json');
           const session=truth.selectedSessionDate || currentV17.sessionDate;
 
           if(x.sessionDate!==session) throw new Error(`V20/V17 session mismatch ${x.sessionDate} != ${session}`);
+          if(native.sessionDate!==session||freshness.nativeSession!==session) throw new Error('Native current is not session-aligned at executive guard');
           if(x.governance?.activeChampion!=='V16_9_EQUAL_WEIGHT_BASKET') throw new Error('V20 champion reference drift');
           if(x.governance?.automaticPromotion!==false||x.governance?.promotionAllowed!==false) throw new Error('Automatic promotion is forbidden');
           if(x.portfolio?.automaticOrders!==false) throw new Error('Automatic broker orders are forbidden');
@@ -265,9 +307,9 @@ jobs:
             source:{v17Branch:process.env.V17_SOURCE_BRANCH,v17Commit:process.env.V17_RUNTIME_SHA,v20Branch:process.env.V20_SOURCE_BRANCH,buildMode:'FULL_MARKET_NATIVE_SELECTION_WITH_RESEARCH_SESSION_REFERENCE_AND_READ_ONLY_V17_EXECUTION_AUTHORITY'},
             governance:{activeChampionReference:x.governance.activeChampion,nativeSelectsV20Opportunities:true,v17ControlsExecution:true,automaticPromotion:false,automaticBrokerOrders:false},
             isolation:{mainAppRead:false,mainAppWrite:false,v17SourceWrite:false,v20SourceWrite:false,deploymentPublishAllowlist:['data/v20/**','v20/deployment.json']},
-            gates:{v17ExecutionGrade:gate.executionGrade===true,v17SessionAligned:gate.sessionAligned===true,nativeRegressionPassed:true,researchOverlayExecutionLeak:false,portfolioGuardPassed:risk.invariants?.closedGateMeansZeroAppliedExposure===true}
+            gates:{v17ExecutionGrade:gate.executionGrade===true,v17SessionAligned:gate.sessionAligned===true,nativeRegressionPassed:true,nativeCurrentFresh:true,researchOverlayExecutionLeak:false,portfolioGuardPassed:risk.invariants?.closedGateMeansZeroAppliedExposure===true}
           });
-          console.log(JSON.stringify({sessionDate:x.sessionDate,selectionEngine:x.selectionEngine.engineId,executionStatus:x.executionStatus,actionable:actionable.length,exposurePct:exposure,cashPct:x.portfolio.cashPct,nativeResearchCoveragePct:overlay.researchReferenceCoveragePct},null,2));
+          console.log(JSON.stringify({sessionDate:x.sessionDate,selectionEngine:x.selectionEngine.engineId,executionStatus:x.executionStatus,actionable:actionable.length,exposurePct:exposure,cashPct:x.portfolio.cashPct,nativeCurrentSession:native.sessionDate,nativeResearchCoveragePct:overlay.researchReferenceCoveragePct},null,2));
           NODE
 
       - name: Publish V20 only and prove MAIN APP isolation
@@ -277,6 +319,9 @@ jobs:
           test -f "$V20_DIR/data/v20/current.json"
           test -f "$V20_DIR/data/v20/executive-runtime.json"
           test -f "$V20_DIR/data/v20/full-market-native-selection.json"
+          test -f "$V20_DIR/data/v20/native-current.json"
+          test -f "$V20_DIR/data/v20/native-current-regression.json"
+          test -f "$V20_DIR/data/v20/native-freshness-status.json"
           test -f "$V20_DIR/data/v20/native-research-session-overlay.json"
           test -f "$V20_DIR/data/v20/native-vs-main-comparison.json"
           test -f "$V20_DIR/data/v20/native-executive-current-regression.json"
@@ -292,7 +337,10 @@ jobs:
           let d={}; try{d=JSON.parse(fs.readFileSync(p,'utf8'))}catch{}
           const x=JSON.parse(fs.readFileSync('data/v20/current.json','utf8'));
           const overlay=JSON.parse(fs.readFileSync('data/v20/native-research-session-overlay.json','utf8'));
-          d={...d,publishedAt:new Date().toISOString(),sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',sourceBranch:'develop/v20-integrated-decision-platform',sourceCommit,v17SourceCommit:process.env.V17_RUNTIME_SHA,sessionDate:x.sessionDate,executionStatus:x.executionStatus,operatingMode:'EXECUTIVE_FAIL_CLOSED',selectionEngine:x.selectionEngine?.engineId||null,selectionMode:x.selectionEngine?.mode||null,fullMarketNativeSelection:x.selectionEngine?.candidateUniverseIsFullMarketIndependent===true,legacySeedDependency:x.selectionEngine?.legacySeedDependency??null,nativeResearchSessionReference:true,nativeResearchSessionCoveragePct:overlay.researchReferenceCoveragePct,automaticBrokerOrders:false,automaticPromotion:false,mainAppMutation:false,publisher:'v20-executive-engine.yml'};
+          const native=JSON.parse(fs.readFileSync('data/v20/native-current.json','utf8'));
+          const fresh=JSON.parse(fs.readFileSync('data/v20/native-freshness-status.json','utf8'));
+          if(native.sessionDate!==x.sessionDate||fresh.nativeSession!==x.sessionDate) throw new Error('Refusing to publish stale native-current');
+          d={...d,publishedAt:new Date().toISOString(),sourceRepository:'rasheadsca-star/RAS-EGX-PRO2026-NEXT',sourceBranch:'develop/v20-integrated-decision-platform',sourceCommit,v17SourceCommit:process.env.V17_RUNTIME_SHA,sessionDate:x.sessionDate,nativeCurrentSession:native.sessionDate,forNextTradingSession:fresh.forNextTradingSession,executionStatus:x.executionStatus,operatingMode:'EXECUTIVE_FAIL_CLOSED',selectionEngine:x.selectionEngine?.engineId||null,selectionMode:x.selectionEngine?.mode||null,fullMarketNativeSelection:x.selectionEngine?.candidateUniverseIsFullMarketIndependent===true,legacySeedDependency:x.selectionEngine?.legacySeedDependency??null,nativeResearchSessionReference:true,nativeResearchSessionCoveragePct:overlay.researchReferenceCoveragePct,automaticBrokerOrders:false,automaticPromotion:false,mainAppMutation:false,publisher:'v20-executive-engine.yml'};
           fs.writeFileSync(p,JSON.stringify(d,null,2)+'\n');
           NODE
 
@@ -309,12 +357,15 @@ jobs:
           const fs=require('fs');
           const x=JSON.parse(fs.readFileSync('data/v20/current.json','utf8'));
           const r=JSON.parse(fs.readFileSync('data/v20/executive-runtime.json','utf8'));
+          const n=JSON.parse(fs.readFileSync('data/v20/native-current.json','utf8'));
+          const f=JSON.parse(fs.readFileSync('data/v20/native-freshness-status.json','utf8'));
           if(r.isolation?.mainAppWrite!==false) throw new Error('MAIN APP write isolation not asserted');
           if(x.operatingMode!=='EXECUTIVE_FAIL_CLOSED') throw new Error('V20 executive mode missing');
           if(x.selectionEngine?.mode!=='V20_NATIVE_FULL_MARKET_PRIMARY_SELECTION') throw new Error('Native primary selection missing at publish boundary');
           if(x.selectionEngine?.legacySeedDependency!==false) throw new Error('Legacy seed dependency returned');
           if(r.nativeResearchSessionReference?.executionInfluence!==false) throw new Error('Research session reference gained execution influence');
-          console.log(JSON.stringify({publishReady:true,sessionDate:x.sessionDate,selectionEngine:x.selectionEngine.engineId,executionStatus:x.executionStatus,operatingMode:x.operatingMode},null,2));
+          if(n.sessionDate!==x.sessionDate||f.nativeSession!==x.sessionDate) throw new Error('Native freshness boundary failed');
+          console.log(JSON.stringify({publishReady:true,sessionDate:x.sessionDate,nativeCurrentSession:n.sessionDate,forNextTradingSession:f.forNextTradingSession,top3:f.top3?.map(r=>r.ticker),selectionEngine:x.selectionEngine.engineId,executionStatus:x.executionStatus,operatingMode:x.operatingMode},null,2));
           NODE
 
           if git diff --cached --quiet; then
