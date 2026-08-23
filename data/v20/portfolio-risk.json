@@ -1,7 +1,7 @@
 {
   "schemaVersion": "20.0.0-portfolio-risk-2",
-  "generatedAt": "2026-08-20T14:57:17.237Z",
-  "sessionDate": "2026-08-18",
+  "generatedAt": "2026-08-23T14:43:15.131Z",
+  "sessionDate": "2026-08-20",
   "executionStatus": "RESEARCH_ONLY",
   "globalExecutionOpen": false,
   "riskState": "DEFENSIVE",
@@ -17,15 +17,24 @@
     "notExecutionAdvice": true,
     "weightingMethod": "QUALITY_WEIGHTED_SCORE_X_DATA_CONFIDENCE_X_NET_RR_CAPPED_AFTER_TRADE_PLAN_ALIGNMENT",
     "requiresCurrentPriceInsideEntryRange": true,
-    "exposurePct": 12.5,
+    "exposurePct": 20,
     "positions": [
       {
-        "ticker": "CERA",
+        "ticker": "BIOC",
         "rank": 1,
-        "shadowPositionWeightPct": 12.5,
-        "opportunityScore": 82.4,
+        "shadowPositionWeightPct": 9.3586,
+        "opportunityScore": 81.7,
         "dataConfidencePct": 82,
-        "netRiskReward": 0.79,
+        "netRiskReward": 0.723,
+        "tradePlanAlignmentState": "IN_ENTRY_RANGE"
+      },
+      {
+        "ticker": "MENA",
+        "rank": 2,
+        "shadowPositionWeightPct": 10.6414,
+        "opportunityScore": 78.1,
+        "dataConfidencePct": 82,
+        "netRiskReward": 0.86,
         "tradePlanAlignmentState": "IN_ENTRY_RANGE"
       }
     ]
