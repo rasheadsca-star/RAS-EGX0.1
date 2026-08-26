@@ -1,23 +1,23 @@
 {
   "schemaVersion": "20.0.0-native-vs-main-comparison-1",
-  "generatedAt": "2026-08-25T15:08:37.257Z",
-  "sessionDate": "2026-08-24",
+  "generatedAt": "2026-08-26T15:54:50.029Z",
+  "sessionDate": "2026-08-25",
   "comparisonType": "SELECTION_SNAPSHOT_AND_FORWARD_EVALUATION_BASELINE",
   "native": {
     "engineId": "V20_FULL_MARKET_NATIVE_SELECTION_V1",
     "fullMarketIndependent": true,
     "legacyScoringContributionPct": 0,
     "top10": [
-      "SNFC",
-      "EBSC",
       "CCRS",
-      "AMIA",
+      "MAAL",
+      "SUGR",
+      "TALM",
       "LUTS",
-      "GTWL",
-      "DSCW",
-      "ADRI",
-      "KWIN",
-      "AFDI"
+      "MICH",
+      "COSG",
+      "CAED",
+      "MOED",
+      "CPME"
     ]
   },
   "mainApp": {
@@ -29,16 +29,16 @@
   "legacyRanking": {
     "source": "data/final-opportunity-ranking.json",
     "top10": [
-      "PHDC",
+      "GBCO",
       "ACAMD",
-      "CCAP",
       "MEGM",
-      "ADRI",
+      "RTVC",
+      "FWRY",
+      "HRHO",
       "CRST",
       "NIPH",
-      "PHAR",
-      "EBSC",
-      "AXPH"
+      "GTWL",
+      "PRDC"
     ]
   },
   "v16_9Champion": {
@@ -61,47 +61,48 @@
       "overlapPctOfLeft": 0,
       "shared": [],
       "leftOnly": [
-        "SNFC",
-        "EBSC",
         "CCRS",
-        "AMIA",
+        "MAAL",
+        "SUGR",
+        "TALM",
         "LUTS",
-        "GTWL",
-        "DSCW",
-        "ADRI",
-        "KWIN",
-        "AFDI"
+        "MICH",
+        "COSG",
+        "CAED",
+        "MOED",
+        "CPME"
       ],
       "rightOnly": []
     },
     "nativeVsLegacyRankingTop10": {
       "leftCount": 10,
       "rightCount": 10,
-      "sharedCount": 2,
-      "overlapPctOfLeft": 20,
-      "shared": [
-        "EBSC",
-        "ADRI"
-      ],
+      "sharedCount": 0,
+      "overlapPctOfLeft": 0,
+      "shared": [],
       "leftOnly": [
-        "SNFC",
         "CCRS",
-        "AMIA",
+        "MAAL",
+        "SUGR",
+        "TALM",
         "LUTS",
-        "GTWL",
-        "DSCW",
-        "KWIN",
-        "AFDI"
+        "MICH",
+        "COSG",
+        "CAED",
+        "MOED",
+        "CPME"
       ],
       "rightOnly": [
-        "PHDC",
+        "GBCO",
         "ACAMD",
-        "CCAP",
         "MEGM",
+        "RTVC",
+        "FWRY",
+        "HRHO",
         "CRST",
         "NIPH",
-        "PHAR",
-        "AXPH"
+        "GTWL",
+        "PRDC"
       ]
     },
     "nativeVsV16_9CurrentBasket": {
@@ -111,16 +112,16 @@
       "overlapPctOfLeft": 0,
       "shared": [],
       "leftOnly": [
-        "SNFC",
-        "EBSC",
         "CCRS",
-        "AMIA",
+        "MAAL",
+        "SUGR",
+        "TALM",
         "LUTS",
-        "GTWL",
-        "DSCW",
-        "ADRI",
-        "KWIN",
-        "AFDI"
+        "MICH",
+        "COSG",
+        "CAED",
+        "MOED",
+        "CPME"
       ],
       "rightOnly": [
         "MOIN",
@@ -131,12 +132,12 @@
     }
   },
   "nativeDiscovery": {
-    "outsideLegacySeedCount": 25,
-    "top10OutsideLegacySeedCount": 7
+    "outsideLegacySeedCount": 38,
+    "top10OutsideLegacySeedCount": 6
   },
   "forwardEvaluation": {
     "status": "PENDING_FUTURE_SESSIONS",
-    "selectionDate": "2026-08-24",
+    "selectionDate": "2026-08-25",
     "horizonsSessions": [
       1,
       3,

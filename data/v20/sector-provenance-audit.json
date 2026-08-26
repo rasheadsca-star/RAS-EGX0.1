@@ -1,7 +1,7 @@
 {
   "schemaVersion": "20.0.0-sector-provenance-audit-1",
-  "generatedAt": "2026-08-25T15:08:09.252Z",
-  "sessionDate": "2026-08-24",
+  "generatedAt": "2026-08-26T15:54:30.245Z",
+  "sessionDate": "2026-08-25",
   "decisionSupportOnly": true,
   "policy": {
     "productionSectorConcentrationEnabled": false,
@@ -34,9 +34,9 @@
       "file": "data/sector-completion-report.json",
       "engine": "v11_sector_completion_config_map_plus_inference",
       "totalSymbols": 214,
-      "classifiedSymbols": 142,
-      "coveragePct": 66.36,
-      "classifiedUniverseSymbolsRecovered": 142,
+      "classifiedSymbols": 143,
+      "coveragePct": 66.82,
+      "classifiedUniverseSymbolsRecovered": 143,
       "inferencePossible": true,
       "perSymbolProvenancePreserved": false,
       "productionEligible": false,
@@ -70,11 +70,11 @@
     "universeCount": 214,
     "productionVerifiedCount": 0,
     "productionVerifiedCoveragePct": 0,
-    "researchCandidateCount": 142,
-    "researchCandidateCoveragePct": 66.36,
+    "researchCandidateCount": 143,
+    "researchCandidateCoveragePct": 66.82,
     "upstreamExplicitUnverifiedCount": 0,
     "seedMappedCount": 74,
-    "legacyClassifiedCount": 142,
+    "legacyClassifiedCount": 143,
     "conflictCount": 0,
     "productionSectorConcentrationEnabled": false,
     "status": "BLOCKED_UNTIL_VERIFIED_PROVENANCE",
@@ -1347,21 +1347,6 @@
       }
     },
     {
-      "ticker": "EOSB",
-      "productionSector": null,
-      "productionProvenance": null,
-      "acceptedForProduction": false,
-      "researchCandidateSector": null,
-      "researchProvenance": "UNCLASSIFIED",
-      "explicitEvidence": [],
-      "seedSector": null,
-      "legacySector": null,
-      "conflicts": {
-        "explicitConflict": false,
-        "crossSourceConflict": false
-      }
-    },
-    {
       "ticker": "EPCO",
       "productionSector": null,
       "productionProvenance": null,
@@ -1581,6 +1566,21 @@
       "explicitEvidence": [],
       "seedSector": null,
       "legacySector": "عقارات وإنشاءات",
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "GMCI",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": "خدمات مالية غير مصرفية",
+      "researchProvenance": "LEGACY_MIXED_REPORT",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": "خدمات مالية غير مصرفية",
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
