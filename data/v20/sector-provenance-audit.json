@@ -1,7 +1,7 @@
 {
   "schemaVersion": "20.0.0-sector-provenance-audit-1",
-  "generatedAt": "2026-08-26T15:54:30.245Z",
-  "sessionDate": "2026-08-25",
+  "generatedAt": "2026-08-27T23:48:20.210Z",
+  "sessionDate": "2026-08-26",
   "decisionSupportOnly": true,
   "policy": {
     "productionSectorConcentrationEnabled": false,
@@ -33,10 +33,10 @@
     "legacyCompletionReport": {
       "file": "data/sector-completion-report.json",
       "engine": "v11_sector_completion_config_map_plus_inference",
-      "totalSymbols": 214,
-      "classifiedSymbols": 143,
-      "coveragePct": 66.82,
-      "classifiedUniverseSymbolsRecovered": 143,
+      "totalSymbols": 212,
+      "classifiedSymbols": 142,
+      "coveragePct": 66.98,
+      "classifiedUniverseSymbolsRecovered": 142,
       "inferencePossible": true,
       "perSymbolProvenancePreserved": false,
       "productionEligible": false,
@@ -46,7 +46,7 @@
       "filesScanned": [
         {
           "file": "data/market.json",
-          "rowCount": 214,
+          "rowCount": 212,
           "explicitSectorRowsInV20Universe": 0
         },
         {
@@ -56,7 +56,7 @@
         },
         {
           "file": "data/final-opportunity-ranking.json",
-          "rowCount": 214,
+          "rowCount": 212,
           "explicitSectorRowsInV20Universe": 0
         }
       ],
@@ -67,14 +67,14 @@
     }
   },
   "summary": {
-    "universeCount": 214,
+    "universeCount": 212,
     "productionVerifiedCount": 0,
     "productionVerifiedCoveragePct": 0,
-    "researchCandidateCount": 143,
-    "researchCandidateCoveragePct": 66.82,
+    "researchCandidateCount": 142,
+    "researchCandidateCoveragePct": 66.98,
     "upstreamExplicitUnverifiedCount": 0,
     "seedMappedCount": 74,
-    "legacyClassifiedCount": 143,
+    "legacyClassifiedCount": 142,
     "conflictCount": 0,
     "productionSectorConcentrationEnabled": false,
     "status": "BLOCKED_UNTIL_VERIFIED_PROVENANCE",
@@ -711,21 +711,6 @@
       "explicitEvidence": [],
       "seedSector": null,
       "legacySector": "أسمنت ومواد بناء",
-      "conflicts": {
-        "explicitConflict": false,
-        "crossSourceConflict": false
-      }
-    },
-    {
-      "ticker": "CFGH",
-      "productionSector": null,
-      "productionProvenance": null,
-      "acceptedForProduction": false,
-      "researchCandidateSector": null,
-      "researchProvenance": "UNCLASSIFIED",
-      "explicitEvidence": [],
-      "seedSector": null,
-      "legacySector": null,
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
@@ -1566,21 +1551,6 @@
       "explicitEvidence": [],
       "seedSector": null,
       "legacySector": "عقارات وإنشاءات",
-      "conflicts": {
-        "explicitConflict": false,
-        "crossSourceConflict": false
-      }
-    },
-    {
-      "ticker": "GMCI",
-      "productionSector": null,
-      "productionProvenance": null,
-      "acceptedForProduction": false,
-      "researchCandidateSector": "خدمات مالية غير مصرفية",
-      "researchProvenance": "LEGACY_MIXED_REPORT",
-      "explicitEvidence": [],
-      "seedSector": null,
-      "legacySector": "خدمات مالية غير مصرفية",
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
