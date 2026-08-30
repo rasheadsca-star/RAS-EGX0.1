@@ -1,7 +1,7 @@
 {
   "schemaVersion": "20.0.0-sector-provenance-audit-1",
-  "generatedAt": "2026-08-27T23:48:20.210Z",
-  "sessionDate": "2026-08-26",
+  "generatedAt": "2026-08-30T18:05:02.821Z",
+  "sessionDate": "2026-08-30",
   "decisionSupportOnly": true,
   "policy": {
     "productionSectorConcentrationEnabled": false,
@@ -25,7 +25,7 @@
       "file": "config/egx-sector-map.json",
       "description": null,
       "declaredSource": null,
-      "mappedUniverseSymbols": 74,
+      "mappedUniverseSymbols": 75,
       "hasNamePatterns": true,
       "productionEligible": false,
       "reason": "SEED_MAP_IS_RESEARCH_CONTEXT_NOT_AUTHORITATIVE_PROVENANCE"
@@ -33,10 +33,10 @@
     "legacyCompletionReport": {
       "file": "data/sector-completion-report.json",
       "engine": "v11_sector_completion_config_map_plus_inference",
-      "totalSymbols": 212,
-      "classifiedSymbols": 142,
-      "coveragePct": 66.98,
-      "classifiedUniverseSymbolsRecovered": 142,
+      "totalSymbols": 218,
+      "classifiedSymbols": 144,
+      "coveragePct": 66.06,
+      "classifiedUniverseSymbolsRecovered": 144,
       "inferencePossible": true,
       "perSymbolProvenancePreserved": false,
       "productionEligible": false,
@@ -46,7 +46,7 @@
       "filesScanned": [
         {
           "file": "data/market.json",
-          "rowCount": 212,
+          "rowCount": 218,
           "explicitSectorRowsInV20Universe": 0
         },
         {
@@ -56,7 +56,7 @@
         },
         {
           "file": "data/final-opportunity-ranking.json",
-          "rowCount": 212,
+          "rowCount": 218,
           "explicitSectorRowsInV20Universe": 0
         }
       ],
@@ -67,14 +67,14 @@
     }
   },
   "summary": {
-    "universeCount": 212,
+    "universeCount": 218,
     "productionVerifiedCount": 0,
     "productionVerifiedCoveragePct": 0,
-    "researchCandidateCount": 142,
-    "researchCandidateCoveragePct": 66.98,
+    "researchCandidateCount": 144,
+    "researchCandidateCoveragePct": 66.06,
     "upstreamExplicitUnverifiedCount": 0,
-    "seedMappedCount": 74,
-    "legacyClassifiedCount": 142,
+    "seedMappedCount": 75,
+    "legacyClassifiedCount": 144,
     "conflictCount": 0,
     "productionSectorConcentrationEnabled": false,
     "status": "BLOCKED_UNTIL_VERIFIED_PROVENANCE",
@@ -717,6 +717,21 @@
       }
     },
     {
+      "ticker": "CFGH",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": null,
+      "researchProvenance": "UNCLASSIFIED",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": null,
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
       "ticker": "CICH",
       "productionSector": null,
       "productionProvenance": null,
@@ -1272,6 +1287,21 @@
       }
     },
     {
+      "ticker": "ELNA",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": null,
+      "researchProvenance": "UNCLASSIFIED",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": null,
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
       "ticker": "ELSH",
       "productionSector": null,
       "productionProvenance": null,
@@ -1551,6 +1581,21 @@
       "explicitEvidence": [],
       "seedSector": null,
       "legacySector": "عقارات وإنشاءات",
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "GMCI",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": "خدمات مالية غير مصرفية",
+      "researchProvenance": "LEGACY_MIXED_REPORT",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": "خدمات مالية غير مصرفية",
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
@@ -2667,6 +2712,21 @@
       }
     },
     {
+      "ticker": "RAKT",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": null,
+      "researchProvenance": "UNCLASSIFIED",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": null,
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
       "ticker": "RAYA",
       "productionSector": null,
       "productionProvenance": null,
@@ -2751,6 +2811,21 @@
       "explicitEvidence": [],
       "seedSector": null,
       "legacySector": null,
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "SAIB",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": "بنوك وخدمات مالية مصرفية",
+      "researchProvenance": "UNVERIFIED_SEED_MAP",
+      "explicitEvidence": [],
+      "seedSector": "بنوك وخدمات مالية مصرفية",
+      "legacySector": "بنوك وخدمات مالية مصرفية",
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
@@ -3066,6 +3141,21 @@
       "explicitEvidence": [],
       "seedSector": "أسمنت ومواد بناء",
       "legacySector": "أسمنت ومواد بناء",
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "TRTO",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": null,
+      "researchProvenance": "UNCLASSIFIED",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": null,
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
