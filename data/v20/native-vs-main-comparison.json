@@ -1,23 +1,23 @@
 {
   "schemaVersion": "20.0.0-native-vs-main-comparison-1",
-  "generatedAt": "2026-08-30T18:05:25.212Z",
-  "sessionDate": "2026-08-30",
+  "generatedAt": "2026-08-31T20:08:48.949Z",
+  "sessionDate": "2026-08-31",
   "comparisonType": "SELECTION_SNAPSHOT_AND_FORWARD_EVALUATION_BASELINE",
   "native": {
     "engineId": "V20_FULL_MARKET_NATIVE_SELECTION_V1",
     "fullMarketIndependent": true,
     "legacyScoringContributionPct": 0,
     "top10": [
-      "MENA",
-      "EPPK",
-      "KWIN",
-      "AIDC",
-      "OFH",
-      "ZMID",
+      "JUFO",
+      "PHDC",
+      "EBSC",
+      "MOSC",
       "BINV",
-      "RTVC",
-      "OIH",
-      "GGCC"
+      "EGAL",
+      "HDBK",
+      "GPIM",
+      "AIDC",
+      "TALM"
     ]
   },
   "mainApp": {
@@ -29,16 +29,16 @@
   "legacyRanking": {
     "source": "data/final-opportunity-ranking.json",
     "top10": [
-      "BONY",
-      "MEGM",
+      "AJWA",
+      "PRCL",
+      "OLFI",
+      "PHDC",
       "TMGH",
-      "CRST",
+      "LUTS",
+      "ELSH",
+      "BINV",
       "ZMID",
-      "CLHO",
-      "BTFH",
-      "CCAP",
-      "COMI",
-      "KORA"
+      "EGAL"
     ]
   },
   "v16_9Champion": {
@@ -61,83 +61,81 @@
       "overlapPctOfLeft": 0,
       "shared": [],
       "leftOnly": [
-        "MENA",
-        "EPPK",
-        "KWIN",
-        "AIDC",
-        "OFH",
-        "ZMID",
+        "JUFO",
+        "PHDC",
+        "EBSC",
+        "MOSC",
         "BINV",
-        "RTVC",
-        "OIH",
-        "GGCC"
+        "EGAL",
+        "HDBK",
+        "GPIM",
+        "AIDC",
+        "TALM"
       ],
       "rightOnly": []
     },
     "nativeVsLegacyRankingTop10": {
       "leftCount": 10,
       "rightCount": 10,
-      "sharedCount": 1,
-      "overlapPctOfLeft": 10,
+      "sharedCount": 3,
+      "overlapPctOfLeft": 30,
       "shared": [
-        "ZMID"
+        "PHDC",
+        "BINV",
+        "EGAL"
       ],
       "leftOnly": [
-        "MENA",
-        "EPPK",
-        "KWIN",
+        "JUFO",
+        "EBSC",
+        "MOSC",
+        "HDBK",
+        "GPIM",
         "AIDC",
-        "OFH",
-        "BINV",
-        "RTVC",
-        "OIH",
-        "GGCC"
+        "TALM"
       ],
       "rightOnly": [
-        "BONY",
-        "MEGM",
+        "AJWA",
+        "PRCL",
+        "OLFI",
         "TMGH",
-        "CRST",
-        "CLHO",
-        "BTFH",
-        "CCAP",
-        "COMI",
-        "KORA"
+        "LUTS",
+        "ELSH",
+        "ZMID"
       ]
     },
     "nativeVsV16_9CurrentBasket": {
       "leftCount": 10,
       "rightCount": 4,
-      "sharedCount": 1,
-      "overlapPctOfLeft": 10,
-      "shared": [
-        "GGCC"
-      ],
+      "sharedCount": 0,
+      "overlapPctOfLeft": 0,
+      "shared": [],
       "leftOnly": [
-        "MENA",
-        "EPPK",
-        "KWIN",
-        "AIDC",
-        "OFH",
-        "ZMID",
+        "JUFO",
+        "PHDC",
+        "EBSC",
+        "MOSC",
         "BINV",
-        "RTVC",
-        "OIH"
+        "EGAL",
+        "HDBK",
+        "GPIM",
+        "AIDC",
+        "TALM"
       ],
       "rightOnly": [
         "MOIN",
+        "GGCC",
         "AMER",
         "ORWE"
       ]
     }
   },
   "nativeDiscovery": {
-    "outsideLegacySeedCount": 26,
-    "top10OutsideLegacySeedCount": 6
+    "outsideLegacySeedCount": 34,
+    "top10OutsideLegacySeedCount": 4
   },
   "forwardEvaluation": {
     "status": "PENDING_FUTURE_SESSIONS",
-    "selectionDate": "2026-08-30",
+    "selectionDate": "2026-08-31",
     "horizonsSessions": [
       1,
       3,

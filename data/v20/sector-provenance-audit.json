@@ -1,7 +1,7 @@
 {
   "schemaVersion": "20.0.0-sector-provenance-audit-1",
-  "generatedAt": "2026-08-30T18:05:02.821Z",
-  "sessionDate": "2026-08-30",
+  "generatedAt": "2026-08-31T20:08:29.862Z",
+  "sessionDate": "2026-08-31",
   "decisionSupportOnly": true,
   "policy": {
     "productionSectorConcentrationEnabled": false,
@@ -25,7 +25,7 @@
       "file": "config/egx-sector-map.json",
       "description": null,
       "declaredSource": null,
-      "mappedUniverseSymbols": 75,
+      "mappedUniverseSymbols": 74,
       "hasNamePatterns": true,
       "productionEligible": false,
       "reason": "SEED_MAP_IS_RESEARCH_CONTEXT_NOT_AUTHORITATIVE_PROVENANCE"
@@ -33,10 +33,10 @@
     "legacyCompletionReport": {
       "file": "data/sector-completion-report.json",
       "engine": "v11_sector_completion_config_map_plus_inference",
-      "totalSymbols": 218,
-      "classifiedSymbols": 144,
-      "coveragePct": 66.06,
-      "classifiedUniverseSymbolsRecovered": 144,
+      "totalSymbols": 215,
+      "classifiedSymbols": 142,
+      "coveragePct": 66.05,
+      "classifiedUniverseSymbolsRecovered": 142,
       "inferencePossible": true,
       "perSymbolProvenancePreserved": false,
       "productionEligible": false,
@@ -46,7 +46,7 @@
       "filesScanned": [
         {
           "file": "data/market.json",
-          "rowCount": 218,
+          "rowCount": 215,
           "explicitSectorRowsInV20Universe": 0
         },
         {
@@ -56,7 +56,7 @@
         },
         {
           "file": "data/final-opportunity-ranking.json",
-          "rowCount": 218,
+          "rowCount": 215,
           "explicitSectorRowsInV20Universe": 0
         }
       ],
@@ -67,14 +67,14 @@
     }
   },
   "summary": {
-    "universeCount": 218,
+    "universeCount": 215,
     "productionVerifiedCount": 0,
     "productionVerifiedCoveragePct": 0,
-    "researchCandidateCount": 144,
-    "researchCandidateCoveragePct": 66.06,
+    "researchCandidateCount": 142,
+    "researchCandidateCoveragePct": 66.05,
     "upstreamExplicitUnverifiedCount": 0,
-    "seedMappedCount": 75,
-    "legacyClassifiedCount": 144,
+    "seedMappedCount": 74,
+    "legacyClassifiedCount": 142,
     "conflictCount": 0,
     "productionSectorConcentrationEnabled": false,
     "status": "BLOCKED_UNTIL_VERIFIED_PROVENANCE",
@@ -1287,21 +1287,6 @@
       }
     },
     {
-      "ticker": "ELNA",
-      "productionSector": null,
-      "productionProvenance": null,
-      "acceptedForProduction": false,
-      "researchCandidateSector": null,
-      "researchProvenance": "UNCLASSIFIED",
-      "explicitEvidence": [],
-      "seedSector": null,
-      "legacySector": null,
-      "conflicts": {
-        "explicitConflict": false,
-        "crossSourceConflict": false
-      }
-    },
-    {
       "ticker": "ELSH",
       "productionSector": null,
       "productionProvenance": null,
@@ -1587,21 +1572,6 @@
       }
     },
     {
-      "ticker": "GMCI",
-      "productionSector": null,
-      "productionProvenance": null,
-      "acceptedForProduction": false,
-      "researchCandidateSector": "خدمات مالية غير مصرفية",
-      "researchProvenance": "LEGACY_MIXED_REPORT",
-      "explicitEvidence": [],
-      "seedSector": null,
-      "legacySector": "خدمات مالية غير مصرفية",
-      "conflicts": {
-        "explicitConflict": false,
-        "crossSourceConflict": false
-      }
-    },
-    {
       "ticker": "GPIM",
       "productionSector": null,
       "productionProvenance": null,
@@ -1633,6 +1603,21 @@
     },
     {
       "ticker": "GSSC",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": null,
+      "researchProvenance": "UNCLASSIFIED",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": null,
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "GTEX",
       "productionSector": null,
       "productionProvenance": null,
       "acceptedForProduction": false,
@@ -2817,21 +2802,6 @@
       }
     },
     {
-      "ticker": "SAIB",
-      "productionSector": null,
-      "productionProvenance": null,
-      "acceptedForProduction": false,
-      "researchCandidateSector": "بنوك وخدمات مالية مصرفية",
-      "researchProvenance": "UNVERIFIED_SEED_MAP",
-      "explicitEvidence": [],
-      "seedSector": "بنوك وخدمات مالية مصرفية",
-      "legacySector": "بنوك وخدمات مالية مصرفية",
-      "conflicts": {
-        "explicitConflict": false,
-        "crossSourceConflict": false
-      }
-    },
-    {
       "ticker": "SAUD",
       "productionSector": null,
       "productionProvenance": null,
@@ -3141,21 +3111,6 @@
       "explicitEvidence": [],
       "seedSector": "أسمنت ومواد بناء",
       "legacySector": "أسمنت ومواد بناء",
-      "conflicts": {
-        "explicitConflict": false,
-        "crossSourceConflict": false
-      }
-    },
-    {
-      "ticker": "TRTO",
-      "productionSector": null,
-      "productionProvenance": null,
-      "acceptedForProduction": false,
-      "researchCandidateSector": null,
-      "researchProvenance": "UNCLASSIFIED",
-      "explicitEvidence": [],
-      "seedSector": null,
-      "legacySector": null,
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
