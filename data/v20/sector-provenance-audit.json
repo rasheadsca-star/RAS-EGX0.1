@@ -1,7 +1,7 @@
 {
   "schemaVersion": "20.0.0-sector-provenance-audit-1",
-  "generatedAt": "2026-08-31T20:08:29.862Z",
-  "sessionDate": "2026-08-31",
+  "generatedAt": "2026-09-01T17:50:27.923Z",
+  "sessionDate": "2026-09-01",
   "decisionSupportOnly": true,
   "policy": {
     "productionSectorConcentrationEnabled": false,
@@ -33,10 +33,10 @@
     "legacyCompletionReport": {
       "file": "data/sector-completion-report.json",
       "engine": "v11_sector_completion_config_map_plus_inference",
-      "totalSymbols": 215,
-      "classifiedSymbols": 142,
-      "coveragePct": 66.05,
-      "classifiedUniverseSymbolsRecovered": 142,
+      "totalSymbols": 217,
+      "classifiedSymbols": 143,
+      "coveragePct": 65.9,
+      "classifiedUniverseSymbolsRecovered": 143,
       "inferencePossible": true,
       "perSymbolProvenancePreserved": false,
       "productionEligible": false,
@@ -70,11 +70,11 @@
     "universeCount": 215,
     "productionVerifiedCount": 0,
     "productionVerifiedCoveragePct": 0,
-    "researchCandidateCount": 142,
-    "researchCandidateCoveragePct": 66.05,
+    "researchCandidateCount": 143,
+    "researchCandidateCoveragePct": 66.51,
     "upstreamExplicitUnverifiedCount": 0,
     "seedMappedCount": 74,
-    "legacyClassifiedCount": 142,
+    "legacyClassifiedCount": 143,
     "conflictCount": 0,
     "productionSectorConcentrationEnabled": false,
     "status": "BLOCKED_UNTIL_VERIFIED_PROVENANCE",
@@ -867,21 +867,6 @@
       }
     },
     {
-      "ticker": "CPME",
-      "productionSector": null,
-      "productionProvenance": null,
-      "acceptedForProduction": false,
-      "researchCandidateSector": null,
-      "researchProvenance": "UNCLASSIFIED",
-      "explicitEvidence": [],
-      "seedSector": null,
-      "legacySector": null,
-      "conflicts": {
-        "explicitConflict": false,
-        "crossSourceConflict": false
-      }
-    },
-    {
       "ticker": "CRST",
       "productionSector": null,
       "productionProvenance": null,
@@ -928,21 +913,6 @@
     },
     {
       "ticker": "DCCC",
-      "productionSector": null,
-      "productionProvenance": null,
-      "acceptedForProduction": false,
-      "researchCandidateSector": null,
-      "researchProvenance": "UNCLASSIFIED",
-      "explicitEvidence": [],
-      "seedSector": null,
-      "legacySector": null,
-      "conflicts": {
-        "explicitConflict": false,
-        "crossSourceConflict": false
-      }
-    },
-    {
-      "ticker": "DEIN",
       "productionSector": null,
       "productionProvenance": null,
       "acceptedForProduction": false,
@@ -1566,6 +1536,21 @@
       "explicitEvidence": [],
       "seedSector": null,
       "legacySector": "عقارات وإنشاءات",
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "GMCI",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": "خدمات مالية غير مصرفية",
+      "researchProvenance": "LEGACY_MIXED_REPORT",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": "خدمات مالية غير مصرفية",
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
@@ -3111,6 +3096,21 @@
       "explicitEvidence": [],
       "seedSector": "أسمنت ومواد بناء",
       "legacySector": "أسمنت ومواد بناء",
+      "conflicts": {
+        "explicitConflict": false,
+        "crossSourceConflict": false
+      }
+    },
+    {
+      "ticker": "TRTO",
+      "productionSector": null,
+      "productionProvenance": null,
+      "acceptedForProduction": false,
+      "researchCandidateSector": null,
+      "researchProvenance": "UNCLASSIFIED",
+      "explicitEvidence": [],
+      "seedSector": null,
+      "legacySector": null,
       "conflicts": {
         "explicitConflict": false,
         "crossSourceConflict": false
