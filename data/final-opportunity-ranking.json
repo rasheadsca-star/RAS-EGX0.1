@@ -1,7 +1,7 @@
 {
   "ok": true,
   "engine": "v9_0_stable_core_final_ranking_safe_plan",
-  "generatedAt": "2026-09-02T12:51:17.418Z",
+  "generatedAt": "2026-09-02T16:39:30.849Z",
   "total": 221,
   "summary": {
     "p1": 0,
@@ -49,7 +49,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -77,13 +77,78 @@
       "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
     },
     {
+      "symbol": "TMGH",
+      "name": "مجموعة طلعت مصطفى",
+      "grade": "P3",
+      "finalScore": 59,
+      "targetProbability": 61,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": 0.22,
+      "rr": 0.71,
+      "price": 95.53,
+      "priceDisplay": "95.53",
+      "entryFrom": 93.63,
+      "entryTo": 94.31,
+      "target1": 98.874,
+      "target2": 96.03,
+      "stopLoss": 90.83,
+      "support1": 93.16,
+      "resistance1": 98.874,
+      "priceState": "ok",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 51,
+      "blocks": [],
+      "why": "احتمال الهدف 61% | ربح هدف1 3.5% | عائد متوقع 0.2% | R/R 0.71 | السعر مدقق | تاريخ 8/50",
+      "name_ar": "مجموعة طلعت مصطفى",
+      "name_en": "مجموعة طلعت مصطفى",
+      "finalConfidence": 51,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": false,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
       "symbol": "OLFI",
       "name": "عبور لاند",
       "grade": "P3",
-      "finalScore": 56,
-      "targetProbability": 59,
+      "finalScore": 58,
+      "targetProbability": 61,
       "potentialProfitPct": 1.26,
-      "expectedReturnPct": -0.6,
+      "expectedReturnPct": -0.51,
       "rr": 0.38,
       "price": 22.3,
       "priceDisplay": "22.3",
@@ -100,14 +165,14 @@
       "executionBlockReason": "",
       "sourceUsed": "market",
       "historySessions": 8,
-      "confidence": 46,
+      "confidence": 51,
       "blocks": [
         "R/R ضعيف"
       ],
-      "why": "احتمال الهدف 59% | ربح هدف1 1.3% | عائد متوقع -0.6% | R/R 0.38 | السعر مدقق | تاريخ 8/50 | قيود: R/R ضعيف",
+      "why": "احتمال الهدف 61% | ربح هدف1 1.3% | عائد متوقع -0.5% | R/R 0.38 | السعر مدقق | تاريخ 8/50 | قيود: R/R ضعيف",
       "name_ar": "عبور لاند",
       "name_en": "عبور لاند",
-      "finalConfidence": 46,
+      "finalConfidence": 51,
       "coreDataReady": false,
       "missingCoreFields": [
         "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
@@ -116,7 +181,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -181,7 +246,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -194,71 +259,6 @@
           ]
         },
         "historySessions": 7,
-        "priceConflict": false,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "TMGH",
-      "name": "مجموعة طلعت مصطفى",
-      "grade": "P3",
-      "finalScore": 56,
-      "targetProbability": 58,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -0.04,
-      "rr": 0.71,
-      "price": 95.53,
-      "priceDisplay": "95.53",
-      "entryFrom": 93.63,
-      "entryTo": 94.31,
-      "target1": 98.874,
-      "target2": 96.03,
-      "stopLoss": 90.83,
-      "support1": 93.16,
-      "resistance1": 98.874,
-      "priceState": "ok",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 46,
-      "blocks": [],
-      "why": "احتمال الهدف 58% | ربح هدف1 3.5% | عائد متوقع -0.0% | R/R 0.71 | السعر مدقق | تاريخ 8/50",
-      "name_ar": "مجموعة طلعت مصطفى",
-      "name_en": "مجموعة طلعت مصطفى",
-      "finalConfidence": 46,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
         "priceConflict": false,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -313,7 +313,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -378,7 +378,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -445,7 +445,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -513,7 +513,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -581,7 +581,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -650,7 +650,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -722,7 +722,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -794,7 +794,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -866,7 +866,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -938,7 +938,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -1010,7 +1010,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -1080,7 +1080,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1148,7 +1148,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1216,7 +1216,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1284,7 +1284,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1352,7 +1352,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1365,6 +1365,75 @@
           ]
         },
         "historySessions": 2,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "CNFN",
+      "name": "كونتكت المالية القابضة",
+      "grade": "Blocked",
+      "finalScore": 41,
+      "targetProbability": 43,
+      "potentialProfitPct": 3.51,
+      "expectedReturnPct": -1.57,
+      "rr": 0.65,
+      "price": 4.82,
+      "priceDisplay": "4.82",
+      "entryFrom": 4.7,
+      "entryTo": 4.74,
+      "target1": 4.989,
+      "target2": 4.85,
+      "stopLoss": 4.56,
+      "support1": 4.68,
+      "resistance1": 4.989,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 43% | ربح هدف1 3.5% | عائد متوقع -1.6% | R/R 0.65 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "كونتكت المالية القابضة",
+      "name_en": "كونتكت المالية القابضة",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -1420,7 +1489,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1488,7 +1557,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1556,7 +1625,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1624,7 +1693,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1693,7 +1762,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1761,7 +1830,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1829,7 +1898,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1858,23 +1927,23 @@
       "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
     },
     {
-      "symbol": "CNFN",
-      "name": "كونتكت المالية القابضة",
+      "symbol": "MASR",
+      "name": "مدينة مصر للإسكان والتعمير",
       "grade": "Blocked",
-      "finalScore": 39,
+      "finalScore": 37,
       "targetProbability": 41,
-      "potentialProfitPct": 3.51,
-      "expectedReturnPct": -1.75,
-      "rr": 0.65,
-      "price": 4.82,
-      "priceDisplay": "4.82",
-      "entryFrom": 4.7,
-      "entryTo": 4.74,
-      "target1": 4.989,
-      "target2": 4.85,
-      "stopLoss": 4.56,
-      "support1": 4.68,
-      "resistance1": 4.989,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -3.77,
+      "rr": 0.4,
+      "price": 7.71,
+      "priceDisplay": "7.71",
+      "entryFrom": 7.25,
+      "entryTo": 7.42,
+      "target1": 7.98,
+      "target2": 8.219,
+      "stopLoss": 7.03,
+      "support1": 7.21,
+      "resistance1": 7.98,
       "priceState": "conflict",
       "precisionRisk": false,
       "executionAllowed": false,
@@ -1886,9 +1955,9 @@
         "تعارض سعر",
         "R/R ضعيف"
       ],
-      "why": "احتمال الهدف 41% | ربح هدف1 3.5% | عائد متوقع -1.7% | R/R 0.65 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "كونتكت المالية القابضة",
-      "name_en": "كونتكت المالية القابضة",
+      "why": "احتمال الهدف 41% | ربح هدف1 3.5% | عائد متوقع -3.8% | R/R 0.40 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "مدينة مصر للإسكان والتعمير",
+      "name_en": "مدينة مصر للإسكان والتعمير",
       "finalConfidence": 45,
       "coreDataReady": false,
       "missingCoreFields": [
@@ -1898,7 +1967,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1966,7 +2035,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1979,6 +2048,74 @@
           ]
         },
         "historySessions": 7,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "GBCO",
+      "name": "جي بي كوربوريشن",
+      "grade": "Blocked",
+      "finalScore": 45,
+      "targetProbability": 40,
+      "potentialProfitPct": 14.14,
+      "expectedReturnPct": 2.06,
+      "rr": 2.36,
+      "price": 28.85,
+      "priceDisplay": "28.85",
+      "entryFrom": 31.65,
+      "entryTo": 32.39,
+      "target1": 32.93,
+      "target2": 33.41,
+      "stopLoss": 27.119,
+      "support1": 31.49,
+      "resistance1": 32.93,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر"
+      ],
+      "why": "احتمال الهدف 40% | ربح هدف1 14.1% | عائد متوقع 2.1% | R/R 2.36 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر",
+      "name_ar": "جي بي كوربوريشن",
+      "name_en": "جي بي كوربوريشن",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -2035,7 +2172,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2103,212 +2240,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "EAST",
-      "name": "الشرقية إيسترن كومباني",
-      "grade": "Blocked",
-      "finalScore": 37,
-      "targetProbability": 39,
-      "potentialProfitPct": 5.09,
-      "expectedReturnPct": -1.68,
-      "rr": 0.85,
-      "price": 35.96,
-      "priceDisplay": "35.96",
-      "entryFrom": 37.1,
-      "entryTo": 37.41,
-      "target1": 37.79,
-      "target2": 38.08,
-      "stopLoss": 33.802,
-      "support1": 36.92,
-      "resistance1": 37.79,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر"
-      ],
-      "why": "احتمال الهدف 39% | ربح هدف1 5.1% | عائد متوقع -1.7% | R/R 0.85 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر",
-      "name_ar": "الشرقية إيسترن كومباني",
-      "name_en": "الشرقية إيسترن كومباني",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "MASR",
-      "name": "مدينة مصر للإسكان والتعمير",
-      "grade": "Blocked",
-      "finalScore": 35,
-      "targetProbability": 39,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -4.01,
-      "rr": 0.4,
-      "price": 7.71,
-      "priceDisplay": "7.71",
-      "entryFrom": 7.25,
-      "entryTo": 7.42,
-      "target1": 7.98,
-      "target2": 8.219,
-      "stopLoss": 7.03,
-      "support1": 7.21,
-      "resistance1": 7.98,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 39% | ربح هدف1 3.5% | عائد متوقع -4.0% | R/R 0.40 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "مدينة مصر للإسكان والتعمير",
-      "name_en": "مدينة مصر للإسكان والتعمير",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "GBCO",
-      "name": "جي بي كوربوريشن",
-      "grade": "Blocked",
-      "finalScore": 43,
-      "targetProbability": 38,
-      "potentialProfitPct": 14.14,
-      "expectedReturnPct": 1.65,
-      "rr": 2.36,
-      "price": 28.85,
-      "priceDisplay": "28.85",
-      "entryFrom": 31.65,
-      "entryTo": 32.39,
-      "target1": 32.93,
-      "target2": 33.41,
-      "stopLoss": 27.119,
-      "support1": 31.49,
-      "resistance1": 32.93,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر"
-      ],
-      "why": "احتمال الهدف 38% | ربح هدف1 14.1% | عائد متوقع 1.7% | R/R 2.36 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر",
-      "name_ar": "جي بي كوربوريشن",
-      "name_en": "جي بي كوربوريشن",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2377,7 +2309,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2390,6 +2322,74 @@
           ]
         },
         "historySessions": 7,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "EAST",
+      "name": "الشرقية إيسترن كومباني",
+      "grade": "Blocked",
+      "finalScore": 36,
+      "targetProbability": 38,
+      "potentialProfitPct": 5.09,
+      "expectedReturnPct": -1.79,
+      "rr": 0.85,
+      "price": 35.96,
+      "priceDisplay": "35.96",
+      "entryFrom": 37.1,
+      "entryTo": 37.41,
+      "target1": 37.79,
+      "target2": 38.08,
+      "stopLoss": 33.802,
+      "support1": 36.92,
+      "resistance1": 37.79,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 43,
+      "blocks": [
+        "تعارض سعر"
+      ],
+      "why": "احتمال الهدف 38% | ربح هدف1 5.1% | عائد متوقع -1.8% | R/R 0.85 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر",
+      "name_ar": "الشرقية إيسترن كومباني",
+      "name_en": "الشرقية إيسترن كومباني",
+      "finalConfidence": 43,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -2446,7 +2446,76 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "COMI",
+      "name": "البنك التجاري الدولي",
+      "grade": "Blocked",
+      "finalScore": 34,
+      "targetProbability": 38,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -5.38,
+      "rr": 0.32,
+      "price": 138.05,
+      "priceDisplay": "138.05",
+      "entryFrom": 126.91,
+      "entryTo": 128.04,
+      "target1": 142.882,
+      "target2": 147.168,
+      "stopLoss": 123.12,
+      "support1": 126.28,
+      "resistance1": 142.882,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -5.4% | R/R 0.32 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "البنك التجاري الدولي",
+      "name_en": "البنك التجاري الدولي",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2515,7 +2584,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2528,6 +2597,213 @@
           ]
         },
         "historySessions": 7,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "ORAS",
+      "name": "أوراسكوم كونستراكشون",
+      "grade": "Blocked",
+      "finalScore": 32,
+      "targetProbability": 38,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -9.8,
+      "rr": 0.19,
+      "price": 840.03,
+      "priceDisplay": "840.03",
+      "entryFrom": 710.38,
+      "entryTo": 719.87,
+      "target1": 869.431,
+      "target2": 895.514,
+      "stopLoss": 689.18,
+      "support1": 706.85,
+      "resistance1": 869.431,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -9.8% | R/R 0.19 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "أوراسكوم كونستراكشون",
+      "name_en": "أوراسكوم كونستراكشون",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "CCAP",
+      "name": "القلعة للاستثمارات المالية",
+      "grade": "Blocked",
+      "finalScore": 32,
+      "targetProbability": 38,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -12.36,
+      "rr": 0.16,
+      "price": 5.89,
+      "priceDisplay": "5.89",
+      "entryFrom": 4.79,
+      "entryTo": 4.89,
+      "target1": 6.096,
+      "target2": 6.279,
+      "stopLoss": 4.59,
+      "support1": 4.71,
+      "resistance1": 6.096,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -12.4% | R/R 0.16 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "القلعة للاستثمارات المالية",
+      "name_en": "القلعة للاستثمارات المالية",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "CIRA",
+      "name": "القاهرة للاستثمار والتنمية العقارية",
+      "grade": "Blocked",
+      "finalScore": 32,
+      "targetProbability": 38,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -12.86,
+      "rr": 0.15,
+      "price": 35,
+      "priceDisplay": "35",
+      "entryFrom": 28.26,
+      "entryTo": 28.37,
+      "target1": 36.225,
+      "target2": 37.312,
+      "stopLoss": 26.99,
+      "support1": 27.68,
+      "resistance1": 36.225,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -12.9% | R/R 0.15 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "القاهرة للاستثمار والتنمية العقارية",
+      "name_en": "القاهرة للاستثمار والتنمية العقارية",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -2584,7 +2860,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2597,6 +2873,75 @@
           ]
         },
         "historySessions": 3,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "OCDI",
+      "name": "سوديك",
+      "grade": "Blocked",
+      "finalScore": 32,
+      "targetProbability": 38,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -15.84,
+      "rr": 0.13,
+      "price": 33,
+      "priceDisplay": "33",
+      "entryFrom": 24.57,
+      "entryTo": 24.98,
+      "target1": 34.155,
+      "target2": 35.18,
+      "stopLoss": 23.86,
+      "support1": 24.47,
+      "resistance1": 34.155,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 38% | ربح هدف1 3.5% | عائد متوقع -15.8% | R/R 0.13 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "سوديك",
+      "name_en": "سوديك",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -2652,7 +2997,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2720,7 +3065,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2789,7 +3134,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2858,7 +3203,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2887,82 +3232,13 @@
       "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
     },
     {
-      "symbol": "CIRA",
-      "name": "القاهرة للاستثمار والتنمية العقارية",
-      "grade": "Blocked",
-      "finalScore": 31,
-      "targetProbability": 37,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -13.12,
-      "rr": 0.15,
-      "price": 35,
-      "priceDisplay": "35",
-      "entryFrom": 28.26,
-      "entryTo": 28.37,
-      "target1": 36.225,
-      "target2": 37.312,
-      "stopLoss": 26.99,
-      "support1": 27.68,
-      "resistance1": 36.225,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 37% | ربح هدف1 3.5% | عائد متوقع -13.1% | R/R 0.15 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "القاهرة للاستثمار والتنمية العقارية",
-      "name_en": "القاهرة للاستثمار والتنمية العقارية",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
       "symbol": "CIEB",
       "name": "كريدي أجريكول مصر",
       "grade": "Blocked",
-      "finalScore": 32,
-      "targetProbability": 36,
+      "finalScore": 33,
+      "targetProbability": 37,
       "potentialProfitPct": 3.5,
-      "expectedReturnPct": -4.68,
+      "expectedReturnPct": -4.56,
       "rr": 0.38,
       "price": 25.19,
       "priceDisplay": "25.19",
@@ -2984,7 +3260,7 @@
         "تعارض سعر",
         "R/R ضعيف"
       ],
-      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -4.7% | R/R 0.38 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "why": "احتمال الهدف 37% | ربح هدف1 3.5% | عائد متوقع -4.6% | R/R 0.38 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
       "name_ar": "كريدي أجريكول مصر",
       "name_en": "كريدي أجريكول مصر",
       "finalConfidence": 45,
@@ -2996,7 +3272,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3025,23 +3301,23 @@
       "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
     },
     {
-      "symbol": "COMI",
-      "name": "البنك التجاري الدولي",
+      "symbol": "EFID",
+      "name": "إيديتا للصناعات الغذائية",
       "grade": "Blocked",
       "finalScore": 32,
-      "targetProbability": 36,
+      "targetProbability": 37,
       "potentialProfitPct": 3.5,
-      "expectedReturnPct": -5.66,
-      "rr": 0.32,
-      "price": 138.05,
-      "priceDisplay": "138.05",
-      "entryFrom": 126.91,
-      "entryTo": 128.04,
-      "target1": 142.882,
-      "target2": 147.168,
-      "stopLoss": 123.12,
-      "support1": 126.28,
-      "resistance1": 142.882,
+      "expectedReturnPct": -6.48,
+      "rr": 0.28,
+      "price": 30.08,
+      "priceDisplay": "30.08",
+      "entryFrom": 27.19,
+      "entryTo": 27.23,
+      "target1": 31.133,
+      "target2": 32.067,
+      "stopLoss": 26.37,
+      "support1": 27.05,
+      "resistance1": 31.133,
       "priceState": "conflict",
       "precisionRisk": false,
       "executionAllowed": false,
@@ -3053,9 +3329,9 @@
         "تعارض سعر",
         "R/R ضعيف"
       ],
-      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -5.7% | R/R 0.32 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "البنك التجاري الدولي",
-      "name_en": "البنك التجاري الدولي",
+      "why": "احتمال الهدف 37% | ربح هدف1 3.5% | عائد متوقع -6.5% | R/R 0.28 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "إيديتا للصناعات الغذائية",
+      "name_en": "إيديتا للصناعات الغذائية",
       "finalConfidence": 45,
       "coreDataReady": false,
       "missingCoreFields": [
@@ -3065,7 +3341,283 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "SKPC",
+      "name": "سيدي كرير للبتروكيماويات",
+      "grade": "Blocked",
+      "finalScore": 31,
+      "targetProbability": 37,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -10.43,
+      "rr": 0.19,
+      "price": 18.91,
+      "priceDisplay": "18.91",
+      "entryFrom": 15.82,
+      "entryTo": 15.86,
+      "target1": 19.572,
+      "target2": 20.159,
+      "stopLoss": 15.39,
+      "support1": 15.78,
+      "resistance1": 19.572,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 37% | ربح هدف1 3.5% | عائد متوقع -10.4% | R/R 0.19 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "سيدي كرير للبتروكيماويات",
+      "name_en": "سيدي كرير للبتروكيماويات",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "RMDA",
+      "name": "راميدا",
+      "grade": "Blocked",
+      "finalScore": 31,
+      "targetProbability": 37,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -10.75,
+      "rr": 0.18,
+      "price": 5.91,
+      "priceDisplay": "5.91",
+      "entryFrom": 4.92,
+      "entryTo": 4.93,
+      "target1": 6.117,
+      "target2": 6.3,
+      "stopLoss": 4.78,
+      "support1": 4.9,
+      "resistance1": 6.117,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 37% | ربح هدف1 3.5% | عائد متوقع -10.7% | R/R 0.18 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "راميدا",
+      "name_en": "راميدا",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "ETEL",
+      "name": "المصرية للاتصالات",
+      "grade": "Blocked",
+      "finalScore": 31,
+      "targetProbability": 37,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -12.87,
+      "rr": 0.16,
+      "price": 113.76,
+      "priceDisplay": "113.76",
+      "entryFrom": 92.33,
+      "entryTo": 92.57,
+      "target1": 117.742,
+      "target2": 121.274,
+      "stopLoss": 88.19,
+      "support1": 90.45,
+      "resistance1": 117.742,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 37% | ربح هدف1 3.5% | عائد متوقع -12.9% | R/R 0.16 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "المصرية للاتصالات",
+      "name_en": "المصرية للاتصالات",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "EGAL",
+      "name": "مصر للألومنيوم",
+      "grade": "Blocked",
+      "finalScore": 31,
+      "targetProbability": 37,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -16.62,
+      "rr": 0.12,
+      "price": 380.09,
+      "priceDisplay": "380.09",
+      "entryFrom": 280.36,
+      "entryTo": 287.96,
+      "target1": 393.393,
+      "target2": 405.195,
+      "stopLoss": 272,
+      "support1": 278.97,
+      "resistance1": 393.393,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 37% | ربح هدف1 3.5% | عائد متوقع -16.6% | R/R 0.12 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "مصر للألومنيوم",
+      "name_en": "مصر للألومنيوم",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3134,7 +3686,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3163,23 +3715,23 @@
       "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
     },
     {
-      "symbol": "ORAS",
-      "name": "أوراسكوم كونستراكشون",
+      "symbol": "ALCN",
+      "name": "الإسكندرية لتداول الحاويات والبضائع",
       "grade": "Blocked",
       "finalScore": 30,
       "targetProbability": 36,
       "potentialProfitPct": 3.5,
-      "expectedReturnPct": -10.23,
-      "rr": 0.19,
-      "price": 840.03,
-      "priceDisplay": "840.03",
-      "entryFrom": 710.38,
-      "entryTo": 719.87,
-      "target1": 869.431,
-      "target2": 895.514,
-      "stopLoss": 689.18,
-      "support1": 706.85,
-      "resistance1": 869.431,
+      "expectedReturnPct": -9.61,
+      "rr": 0.21,
+      "price": 32.73,
+      "priceDisplay": "32.73",
+      "entryFrom": 27.87,
+      "entryTo": 28.62,
+      "target1": 33.876,
+      "target2": 34.892,
+      "stopLoss": 27.17,
+      "support1": 27.87,
+      "resistance1": 33.876,
       "priceState": "conflict",
       "precisionRisk": false,
       "executionAllowed": false,
@@ -3191,9 +3743,9 @@
         "تعارض سعر",
         "R/R ضعيف"
       ],
-      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -10.2% | R/R 0.19 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "أوراسكوم كونستراكشون",
-      "name_en": "أوراسكوم كونستراكشون",
+      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -9.6% | R/R 0.21 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "الإسكندرية لتداول الحاويات والبضائع",
+      "name_en": "الإسكندرية لتداول الحاويات والبضائع",
       "finalConfidence": 45,
       "coreDataReady": false,
       "missingCoreFields": [
@@ -3203,7 +3755,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3232,23 +3784,23 @@
       "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
     },
     {
-      "symbol": "RMDA",
-      "name": "راميدا",
+      "symbol": "SPIN",
+      "name": "سبينالكس",
       "grade": "Blocked",
       "finalScore": 30,
       "targetProbability": 36,
       "potentialProfitPct": 3.5,
-      "expectedReturnPct": -10.98,
-      "rr": 0.18,
-      "price": 5.91,
-      "priceDisplay": "5.91",
-      "entryFrom": 4.92,
-      "entryTo": 4.93,
-      "target1": 6.117,
-      "target2": 6.3,
-      "stopLoss": 4.78,
-      "support1": 4.9,
-      "resistance1": 6.117,
+      "expectedReturnPct": -16.62,
+      "rr": 0.13,
+      "price": 19.04,
+      "priceDisplay": "19.04",
+      "entryFrom": 14.07,
+      "entryTo": 14.31,
+      "target1": 19.706,
+      "target2": 20.298,
+      "stopLoss": 13.72,
+      "support1": 14.07,
+      "resistance1": 19.706,
       "priceState": "conflict",
       "precisionRisk": false,
       "executionAllowed": false,
@@ -3260,9 +3812,9 @@
         "تعارض سعر",
         "R/R ضعيف"
       ],
-      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -11.0% | R/R 0.18 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "راميدا",
-      "name_en": "راميدا",
+      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -16.6% | R/R 0.13 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "سبينالكس",
+      "name_en": "سبينالكس",
       "finalConfidence": 45,
       "coreDataReady": false,
       "missingCoreFields": [
@@ -3272,7 +3824,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3301,23 +3853,23 @@
       "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
     },
     {
-      "symbol": "CCAP",
-      "name": "القلعة للاستثمارات المالية",
+      "symbol": "MICH",
+      "name": "مصر لصناعة الكيماويات",
       "grade": "Blocked",
       "finalScore": 30,
       "targetProbability": 36,
       "potentialProfitPct": 3.5,
-      "expectedReturnPct": -12.87,
-      "rr": 0.16,
-      "price": 5.89,
-      "priceDisplay": "5.89",
-      "entryFrom": 4.79,
-      "entryTo": 4.89,
-      "target1": 6.096,
-      "target2": 6.279,
-      "stopLoss": 4.59,
-      "support1": 4.71,
-      "resistance1": 6.096,
+      "expectedReturnPct": -18.47,
+      "rr": 0.11,
+      "price": 51.77,
+      "priceDisplay": "51.77",
+      "entryFrom": 36.91,
+      "entryTo": 37.92,
+      "target1": 53.582,
+      "target2": 55.189,
+      "stopLoss": 35.81,
+      "support1": 36.73,
+      "resistance1": 53.582,
       "priceState": "conflict",
       "precisionRisk": false,
       "executionAllowed": false,
@@ -3329,9 +3881,9 @@
         "تعارض سعر",
         "R/R ضعيف"
       ],
-      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -12.9% | R/R 0.16 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "القلعة للاستثمارات المالية",
-      "name_en": "القلعة للاستثمارات المالية",
+      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -18.5% | R/R 0.11 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "مصر لصناعة الكيماويات",
+      "name_en": "مصر لصناعة الكيماويات",
       "finalConfidence": 45,
       "coreDataReady": false,
       "missingCoreFields": [
@@ -3341,7 +3893,145 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "AXPH",
+      "name": "الإسكندرية للأدوية",
+      "grade": "Blocked",
+      "finalScore": 30,
+      "targetProbability": 36,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -21.78,
+      "rr": 0.1,
+      "price": 1694.18,
+      "priceDisplay": "1694.18",
+      "entryFrom": 1106.2,
+      "entryTo": 1194.16,
+      "target1": 1753.476,
+      "target2": 1806.081,
+      "stopLoss": 1084.27,
+      "support1": 1112.07,
+      "resistance1": 1753.476,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -21.8% | R/R 0.10 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "الإسكندرية للأدوية",
+      "name_en": "الإسكندرية للأدوية",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "AMOC",
+      "name": "الإسكندرية للزيوت المعدنية",
+      "grade": "Blocked",
+      "finalScore": 30,
+      "targetProbability": 36,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -27.41,
+      "rr": 0.08,
+      "price": 13.46,
+      "priceDisplay": "13.46",
+      "entryFrom": 7.66,
+      "entryTo": 7.74,
+      "target1": 13.931,
+      "target2": 14.349,
+      "stopLoss": 7.43,
+      "support1": 7.62,
+      "resistance1": 13.931,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 45,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 36% | ربح هدف1 3.5% | عائد متوقع -27.4% | R/R 0.08 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "الإسكندرية للزيوت المعدنية",
+      "name_en": "الإسكندرية للزيوت المعدنية",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3409,7 +4099,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3478,7 +4168,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3547,7 +4237,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3560,75 +4250,6 @@
           ]
         },
         "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "EFID",
-      "name": "إيديتا للصناعات الغذائية",
-      "grade": "Blocked",
-      "finalScore": 30,
-      "targetProbability": 35,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -6.79,
-      "rr": 0.28,
-      "price": 30.08,
-      "priceDisplay": "30.08",
-      "entryFrom": 27.19,
-      "entryTo": 27.23,
-      "target1": 31.133,
-      "target2": 32.067,
-      "stopLoss": 26.37,
-      "support1": 27.05,
-      "resistance1": 31.133,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -6.8% | R/R 0.28 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "إيديتا للصناعات الغذائية",
-      "name_en": "إيديتا للصناعات الغذائية",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -3685,7 +4306,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3754,7 +4375,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3823,7 +4444,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3836,75 +4457,6 @@
           ]
         },
         "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "OCDI",
-      "name": "سوديك",
-      "grade": "Blocked",
-      "finalScore": 29,
-      "targetProbability": 35,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -16.78,
-      "rr": 0.13,
-      "price": 33,
-      "priceDisplay": "33",
-      "entryFrom": 24.57,
-      "entryTo": 24.98,
-      "target1": 34.155,
-      "target2": 35.18,
-      "stopLoss": 23.86,
-      "support1": 24.47,
-      "resistance1": 34.155,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 35% | ربح هدف1 3.5% | عائد متوقع -16.8% | R/R 0.13 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "سوديك",
-      "name_en": "سوديك",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -3961,7 +4513,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4029,7 +4581,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4097,7 +4649,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4166,7 +4718,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4235,7 +4787,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4304,7 +4856,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4317,144 +4869,6 @@
           ]
         },
         "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "EXPA",
-      "name": "البنك المصري لتنمية الصادرات",
-      "grade": "Blocked",
-      "finalScore": 28,
-      "targetProbability": 34,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -9.62,
-      "rr": 0.21,
-      "price": 21.13,
-      "priceDisplay": "21.13",
-      "entryFrom": 18.05,
-      "entryTo": 18.21,
-      "target1": 21.87,
-      "target2": 22.526,
-      "stopLoss": 17.67,
-      "support1": 18.12,
-      "resistance1": 21.87,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -9.6% | R/R 0.21 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "البنك المصري لتنمية الصادرات",
-      "name_en": "البنك المصري لتنمية الصادرات",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "SKPC",
-      "name": "سيدي كرير للبتروكيماويات",
-      "grade": "Blocked",
-      "finalScore": 28,
-      "targetProbability": 34,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -11.1,
-      "rr": 0.19,
-      "price": 18.91,
-      "priceDisplay": "18.91",
-      "entryFrom": 15.82,
-      "entryTo": 15.86,
-      "target1": 19.572,
-      "target2": 20.159,
-      "stopLoss": 15.39,
-      "support1": 15.78,
-      "resistance1": 19.572,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -11.1% | R/R 0.19 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "سيدي كرير للبتروكيماويات",
-      "name_en": "سيدي كرير للبتروكيماويات",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -4511,7 +4925,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4524,213 +4938,6 @@
           ]
         },
         "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "ETEL",
-      "name": "المصرية للاتصالات",
-      "grade": "Blocked",
-      "finalScore": 28,
-      "targetProbability": 34,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -13.64,
-      "rr": 0.16,
-      "price": 113.76,
-      "priceDisplay": "113.76",
-      "entryFrom": 92.33,
-      "entryTo": 92.57,
-      "target1": 117.742,
-      "target2": 121.274,
-      "stopLoss": 88.19,
-      "support1": 90.45,
-      "resistance1": 117.742,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -13.6% | R/R 0.16 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "المصرية للاتصالات",
-      "name_en": "المصرية للاتصالات",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "EGAL",
-      "name": "مصر للألومنيوم",
-      "grade": "Blocked",
-      "finalScore": 28,
-      "targetProbability": 34,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -17.58,
-      "rr": 0.12,
-      "price": 380.09,
-      "priceDisplay": "380.09",
-      "entryFrom": 280.36,
-      "entryTo": 287.96,
-      "target1": 393.393,
-      "target2": 405.195,
-      "stopLoss": 272,
-      "support1": 278.97,
-      "resistance1": 393.393,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -17.6% | R/R 0.12 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "مصر للألومنيوم",
-      "name_en": "مصر للألومنيوم",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "AXPH",
-      "name": "الإسكندرية للأدوية",
-      "grade": "Blocked",
-      "finalScore": 28,
-      "targetProbability": 34,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -22.57,
-      "rr": 0.1,
-      "price": 1694.18,
-      "priceDisplay": "1694.18",
-      "entryFrom": 1106.2,
-      "entryTo": 1194.16,
-      "target1": 1753.476,
-      "target2": 1806.081,
-      "stopLoss": 1084.27,
-      "support1": 1112.07,
-      "resistance1": 1753.476,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -22.6% | R/R 0.10 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "الإسكندرية للأدوية",
-      "name_en": "الإسكندرية للأدوية",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -4787,7 +4994,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4856,7 +5063,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4869,75 +5076,6 @@
           ]
         },
         "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "AMOC",
-      "name": "الإسكندرية للزيوت المعدنية",
-      "grade": "Blocked",
-      "finalScore": 28,
-      "targetProbability": 34,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -28.38,
-      "rr": 0.08,
-      "price": 13.46,
-      "priceDisplay": "13.46",
-      "entryFrom": 7.66,
-      "entryTo": 7.74,
-      "target1": 13.931,
-      "target2": 14.349,
-      "stopLoss": 7.43,
-      "support1": 7.62,
-      "resistance1": 13.931,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 34% | ربح هدف1 3.5% | عائد متوقع -28.4% | R/R 0.08 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "الإسكندرية للزيوت المعدنية",
-      "name_en": "الإسكندرية للزيوت المعدنية",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -4994,7 +5132,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5062,7 +5200,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5130,7 +5268,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5198,7 +5336,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5267,7 +5405,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5280,75 +5418,6 @@
           ]
         },
         "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "IFAP",
-      "name": "الدولية للمحاصيل الزراعية",
-      "grade": "Blocked",
-      "finalScore": 28,
-      "targetProbability": 33,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -6.6,
-      "rr": 0.3,
-      "price": 21,
-      "priceDisplay": "21",
-      "entryFrom": 19.11,
-      "entryTo": 19.15,
-      "target1": 21.735,
-      "target2": 21.31,
-      "stopLoss": 18.57,
-      "support1": 19.05,
-      "resistance1": 21.735,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -6.6% | R/R 0.30 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "الدولية للمحاصيل الزراعية",
-      "name_en": "الدولية للمحاصيل الزراعية",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -5405,7 +5474,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5474,76 +5543,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "SAUD",
-      "name": "بنك البركة مصر",
-      "grade": "Blocked",
-      "finalScore": 27,
-      "targetProbability": 33,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -9.1,
-      "rr": 0.23,
-      "price": 23.77,
-      "priceDisplay": "23.77",
-      "entryFrom": 20.75,
-      "entryTo": 21.13,
-      "target1": 24.602,
-      "target2": 25.34,
-      "stopLoss": 20.13,
-      "support1": 20.65,
-      "resistance1": 24.602,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -9.1% | R/R 0.23 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "بنك البركة مصر",
-      "name_en": "بنك البركة مصر",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5612,7 +5612,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5641,38 +5641,38 @@
       "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
     },
     {
-      "symbol": "ALCN",
-      "name": "الإسكندرية لتداول الحاويات والبضائع",
+      "symbol": "EXPA",
+      "name": "البنك المصري لتنمية الصادرات",
       "grade": "Blocked",
       "finalScore": 27,
       "targetProbability": 33,
       "potentialProfitPct": 3.5,
-      "expectedReturnPct": -10.23,
+      "expectedReturnPct": -9.82,
       "rr": 0.21,
-      "price": 32.73,
-      "priceDisplay": "32.73",
-      "entryFrom": 27.87,
-      "entryTo": 28.62,
-      "target1": 33.876,
-      "target2": 34.892,
-      "stopLoss": 27.17,
-      "support1": 27.87,
-      "resistance1": 33.876,
+      "price": 21.13,
+      "priceDisplay": "21.13",
+      "entryFrom": 18.05,
+      "entryTo": 18.21,
+      "target1": 21.87,
+      "target2": 22.526,
+      "stopLoss": 17.67,
+      "support1": 18.12,
+      "resistance1": 21.87,
       "priceState": "conflict",
       "precisionRisk": false,
       "executionAllowed": false,
       "executionBlockReason": "توجد قيود تمنع التنفيذ",
       "sourceUsed": "market",
       "historySessions": 8,
-      "confidence": 45,
+      "confidence": 43,
       "blocks": [
         "تعارض سعر",
         "R/R ضعيف"
       ],
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -10.2% | R/R 0.21 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "الإسكندرية لتداول الحاويات والبضائع",
-      "name_en": "الإسكندرية لتداول الحاويات والبضائع",
-      "finalConfidence": 45,
+      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -9.8% | R/R 0.21 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "البنك المصري لتنمية الصادرات",
+      "name_en": "البنك المصري لتنمية الصادرات",
+      "finalConfidence": 43,
       "coreDataReady": false,
       "missingCoreFields": [
         "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
@@ -5681,7 +5681,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5750,214 +5750,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "SUGR",
-      "name": "الدلتا للسكر",
-      "grade": "Blocked",
-      "finalScore": 27,
-      "targetProbability": 33,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -14.61,
-      "rr": 0.15,
-      "price": 58.36,
-      "priceDisplay": "58.36",
-      "entryFrom": 46,
-      "entryTo": 46.51,
-      "target1": 60.403,
-      "target2": 62.215,
-      "stopLoss": 44.63,
-      "support1": 45.77,
-      "resistance1": 60.403,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -14.6% | R/R 0.15 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "الدلتا للسكر",
-      "name_en": "الدلتا للسكر",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "SPIN",
-      "name": "سبينالكس",
-      "grade": "Blocked",
-      "finalScore": 27,
-      "targetProbability": 33,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -17.57,
-      "rr": 0.13,
-      "price": 19.04,
-      "priceDisplay": "19.04",
-      "entryFrom": 14.07,
-      "entryTo": 14.31,
-      "target1": 19.706,
-      "target2": 20.298,
-      "stopLoss": 13.72,
-      "support1": 14.07,
-      "resistance1": 19.706,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -17.6% | R/R 0.13 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "سبينالكس",
-      "name_en": "سبينالكس",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "MICH",
-      "name": "مصر لصناعة الكيماويات",
-      "grade": "Blocked",
-      "finalScore": 27,
-      "targetProbability": 33,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -19.5,
-      "rr": 0.11,
-      "price": 51.77,
-      "priceDisplay": "51.77",
-      "entryFrom": 36.91,
-      "entryTo": 37.92,
-      "target1": 53.582,
-      "target2": 55.189,
-      "stopLoss": 35.81,
-      "support1": 36.73,
-      "resistance1": 53.582,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -19.5% | R/R 0.11 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "مصر لصناعة الكيماويات",
-      "name_en": "مصر لصناعة الكيماويات",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6009,7 +5802,7 @@
       "executionBlockReason": "توجد قيود تمنع التنفيذ",
       "sourceUsed": "market",
       "historySessions": 8,
-      "confidence": 45,
+      "confidence": 43,
       "blocks": [
         "تعارض سعر",
         "R/R ضعيف"
@@ -6017,7 +5810,7 @@
       "why": "احتمال الهدف 33% | ربح هدف1 3.5% | عائد متوقع -20.2% | R/R 0.11 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
       "name_ar": "العربية للأسمنت",
       "name_en": "العربية للأسمنت",
-      "finalConfidence": 45,
+      "finalConfidence": 43,
       "coreDataReady": false,
       "missingCoreFields": [
         "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
@@ -6026,7 +5819,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6095,7 +5888,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6164,7 +5957,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6233,7 +6026,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6302,7 +6095,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6371,7 +6164,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6440,7 +6233,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6509,7 +6302,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6578,7 +6371,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6647,7 +6440,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6716,7 +6509,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6785,7 +6578,76 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "IFAP",
+      "name": "الدولية للمحاصيل الزراعية",
+      "grade": "Blocked",
+      "finalScore": 27,
+      "targetProbability": 32,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -6.75,
+      "rr": 0.3,
+      "price": 21,
+      "priceDisplay": "21",
+      "entryFrom": 19.11,
+      "entryTo": 19.15,
+      "target1": 21.735,
+      "target2": 21.31,
+      "stopLoss": 18.57,
+      "support1": 19.05,
+      "resistance1": 21.735,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 43,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -6.7% | R/R 0.30 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "الدولية للمحاصيل الزراعية",
+      "name_en": "الدولية للمحاصيل الزراعية",
+      "finalConfidence": 43,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6854,7 +6716,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6923,7 +6785,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6992,7 +6854,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7061,7 +6923,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7130,7 +6992,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7199,7 +7061,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7268,7 +7130,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7281,6 +7143,75 @@
           ]
         },
         "historySessions": 7,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "SAUD",
+      "name": "بنك البركة مصر",
+      "grade": "Blocked",
+      "finalScore": 26,
+      "targetProbability": 32,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -9.29,
+      "rr": 0.23,
+      "price": 23.77,
+      "priceDisplay": "23.77",
+      "entryFrom": 20.75,
+      "entryTo": 21.13,
+      "target1": 24.602,
+      "target2": 25.34,
+      "stopLoss": 20.13,
+      "support1": 20.65,
+      "resistance1": 24.602,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 43,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -9.3% | R/R 0.23 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "بنك البركة مصر",
+      "name_en": "بنك البركة مصر",
+      "finalConfidence": 43,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -7337,7 +7268,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7406,7 +7337,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7475,7 +7406,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7544,7 +7475,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7613,7 +7544,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7682,7 +7613,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7751,7 +7682,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7820,7 +7751,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7889,7 +7820,76 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "SUGR",
+      "name": "الدلتا للسكر",
+      "grade": "Blocked",
+      "finalScore": 26,
+      "targetProbability": 32,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -14.88,
+      "rr": 0.15,
+      "price": 58.36,
+      "priceDisplay": "58.36",
+      "entryFrom": 46,
+      "entryTo": 46.51,
+      "target1": 60.403,
+      "target2": 62.215,
+      "stopLoss": 44.63,
+      "support1": 45.77,
+      "resistance1": 60.403,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 43,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 32% | ربح هدف1 3.5% | عائد متوقع -14.9% | R/R 0.15 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف",
+      "name_ar": "الدلتا للسكر",
+      "name_en": "الدلتا للسكر",
+      "finalConfidence": 43,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7958,7 +7958,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8027,7 +8027,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8096,7 +8096,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8165,7 +8165,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8234,7 +8234,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8303,7 +8303,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8372,7 +8372,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8441,7 +8441,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8510,7 +8510,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8578,7 +8578,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8647,7 +8647,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8716,7 +8716,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8785,7 +8785,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8854,7 +8854,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8923,7 +8923,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8992,7 +8992,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9061,7 +9061,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9130,7 +9130,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9199,7 +9199,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9268,7 +9268,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9337,7 +9337,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9406,7 +9406,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9475,7 +9475,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9544,7 +9544,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9613,7 +9613,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9682,7 +9682,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9751,7 +9751,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9820,7 +9820,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9889,7 +9889,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9958,7 +9958,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10027,7 +10027,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10096,7 +10096,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10165,7 +10165,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10234,7 +10234,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10303,7 +10303,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10372,7 +10372,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10441,7 +10441,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10510,7 +10510,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10579,7 +10579,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10648,7 +10648,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10717,7 +10717,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10786,7 +10786,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10855,7 +10855,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10924,7 +10924,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10993,7 +10993,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11062,7 +11062,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11131,7 +11131,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11200,7 +11200,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11269,7 +11269,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11338,7 +11338,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11407,7 +11407,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11476,7 +11476,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11545,7 +11545,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11614,7 +11614,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11683,7 +11683,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11752,7 +11752,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11821,7 +11821,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11890,7 +11890,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11959,7 +11959,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12028,7 +12028,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12097,7 +12097,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12166,7 +12166,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12235,7 +12235,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12304,7 +12304,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12373,7 +12373,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12442,7 +12442,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12511,7 +12511,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12580,7 +12580,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12647,7 +12647,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12715,7 +12715,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12784,7 +12784,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12853,7 +12853,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12922,7 +12922,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12991,7 +12991,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13060,7 +13060,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13129,7 +13129,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13198,7 +13198,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13229,10 +13229,10 @@
       "symbol": "ELWA",
       "name": "الوادي العالمية للاستثمار والتنمية",
       "grade": "Blocked",
-      "finalScore": 15,
-      "targetProbability": 16,
+      "finalScore": 14,
+      "targetProbability": 15,
       "potentialProfitPct": 7.49,
-      "expectedReturnPct": -3.83,
+      "expectedReturnPct": -3.97,
       "rr": 1.25,
       "price": 1.87,
       "priceDisplay": "1.87",
@@ -13249,15 +13249,15 @@
       "executionBlockReason": "توجد قيود تمنع التنفيذ",
       "sourceUsed": "market",
       "historySessions": 8,
-      "confidence": 45,
+      "confidence": 43,
       "blocks": [
         "تعارض سعر",
         "إشارة مخاطر"
       ],
-      "why": "احتمال الهدف 16% | ربح هدف1 7.5% | عائد متوقع -3.8% | R/R 1.25 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، إشارة مخاطر",
+      "why": "احتمال الهدف 15% | ربح هدف1 7.5% | عائد متوقع -4.0% | R/R 1.25 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، إشارة مخاطر",
       "name_ar": "الوادي العالمية للاستثمار والتنمية",
       "name_en": "الوادي العالمية للاستثمار والتنمية",
-      "finalConfidence": 45,
+      "finalConfidence": 43,
       "coreDataReady": false,
       "missingCoreFields": [
         "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
@@ -13266,7 +13266,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13298,10 +13298,10 @@
       "symbol": "IRON",
       "name": "الحديد والصلب",
       "grade": "Blocked",
-      "finalScore": 15,
-      "targetProbability": 13,
+      "finalScore": 14,
+      "targetProbability": 12,
       "potentialProfitPct": 11.88,
-      "expectedReturnPct": -3.67,
+      "expectedReturnPct": -3.85,
       "rr": 1.98,
       "price": 30.04,
       "priceDisplay": "30.04",
@@ -13318,15 +13318,15 @@
       "executionBlockReason": "توجد قيود تمنع التنفيذ",
       "sourceUsed": "market",
       "historySessions": 8,
-      "confidence": 45,
+      "confidence": 43,
       "blocks": [
         "تعارض سعر",
         "إشارة مخاطر"
       ],
-      "why": "احتمال الهدف 13% | ربح هدف1 11.9% | عائد متوقع -3.7% | R/R 1.98 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، إشارة مخاطر",
+      "why": "احتمال الهدف 12% | ربح هدف1 11.9% | عائد متوقع -3.9% | R/R 1.98 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، إشارة مخاطر",
       "name_ar": "الحديد والصلب",
       "name_en": "الحديد والصلب",
-      "finalConfidence": 45,
+      "finalConfidence": 43,
       "coreDataReady": false,
       "missingCoreFields": [
         "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
@@ -13335,7 +13335,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13367,10 +13367,10 @@
       "symbol": "CICH",
       "name": "سي آي كابيتال",
       "grade": "Blocked",
-      "finalScore": 5,
-      "targetProbability": 9,
+      "finalScore": 4,
+      "targetProbability": 8,
       "potentialProfitPct": 3.5,
-      "expectedReturnPct": -5.31,
+      "expectedReturnPct": -5.41,
       "rr": 0.57,
       "price": 12.29,
       "priceDisplay": "12.29",
@@ -13387,16 +13387,16 @@
       "executionBlockReason": "توجد قيود تمنع التنفيذ",
       "sourceUsed": "market",
       "historySessions": 8,
-      "confidence": 45,
+      "confidence": 43,
       "blocks": [
         "تعارض سعر",
         "R/R ضعيف",
         "إشارة مخاطر"
       ],
-      "why": "احتمال الهدف 9% | ربح هدف1 3.5% | عائد متوقع -5.3% | R/R 0.57 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر",
+      "why": "احتمال الهدف 8% | ربح هدف1 3.5% | عائد متوقع -5.4% | R/R 0.57 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر",
       "name_ar": "سي آي كابيتال",
       "name_en": "سي آي كابيتال",
-      "finalConfidence": 45,
+      "finalConfidence": 43,
       "coreDataReady": false,
       "missingCoreFields": [
         "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
@@ -13405,77 +13405,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "ADIB",
-      "name": "مصرف أبو ظبي الإسلامي مصر",
-      "grade": "Blocked",
-      "finalScore": 1,
-      "targetProbability": 7,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -12.69,
-      "rr": 0.25,
-      "price": 52.21,
-      "priceDisplay": "52.21",
-      "entryFrom": 46.1,
-      "entryTo": 47.11,
-      "target1": 54.037,
-      "target2": 55.658,
-      "stopLoss": 44.95,
-      "support1": 46.1,
-      "resistance1": 54.037,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف",
-        "إشارة مخاطر"
-      ],
-      "why": "احتمال الهدف 7% | ربح هدف1 3.5% | عائد متوقع -12.7% | R/R 0.25 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر",
-      "name_ar": "مصرف أبو ظبي الإسلامي مصر",
-      "name_en": "مصرف أبو ظبي الإسلامي مصر",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13545,7 +13475,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13558,6 +13488,76 @@
           ]
         },
         "historySessions": 7,
+        "priceConflict": true,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "ADIB",
+      "name": "مصرف أبو ظبي الإسلامي مصر",
+      "grade": "Blocked",
+      "finalScore": 0,
+      "targetProbability": 6,
+      "potentialProfitPct": 3.5,
+      "expectedReturnPct": -12.86,
+      "rr": 0.25,
+      "price": 52.21,
+      "priceDisplay": "52.21",
+      "entryFrom": 46.1,
+      "entryTo": 47.11,
+      "target1": 54.037,
+      "target2": 55.658,
+      "stopLoss": 44.95,
+      "support1": 46.1,
+      "resistance1": 54.037,
+      "priceState": "conflict",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "توجد قيود تمنع التنفيذ",
+      "sourceUsed": "market",
+      "historySessions": 8,
+      "confidence": 43,
+      "blocks": [
+        "تعارض سعر",
+        "R/R ضعيف",
+        "إشارة مخاطر"
+      ],
+      "why": "احتمال الهدف 6% | ربح هدف1 3.5% | عائد متوقع -12.9% | R/R 0.25 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر، R/R ضعيف، إشارة مخاطر",
+      "name_ar": "مصرف أبو ظبي الإسلامي مصر",
+      "name_en": "مصرف أبو ظبي الإسلامي مصر",
+      "finalConfidence": 43,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-09-02T16:39:31.091Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -13615,7 +13615,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13685,7 +13685,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13754,7 +13754,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13824,7 +13824,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13896,7 +13896,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13967,7 +13967,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14038,7 +14038,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14109,7 +14109,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14181,7 +14181,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14252,7 +14252,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14324,7 +14324,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14395,7 +14395,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14467,7 +14467,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14538,7 +14538,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14610,7 +14610,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14681,7 +14681,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14752,7 +14752,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14823,7 +14823,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14894,7 +14894,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14964,7 +14964,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -15036,7 +15036,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -15107,7 +15107,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -15178,7 +15178,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -15249,7 +15249,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-09-02T12:51:17.580Z",
+        "generatedAt": "2026-09-02T16:39:31.091Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -15280,5 +15280,5 @@
     }
   ],
   "note": "V9.0 Stable Core: final ranking preserves safe entry/target/stop plans and blocks unsafe sub-1 EGP rounded prices.",
-  "qualityHardenedAt": "2026-09-02T12:51:17.580Z"
+  "qualityHardenedAt": "2026-09-02T16:39:31.091Z"
 }
