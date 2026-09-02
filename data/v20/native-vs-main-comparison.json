@@ -1,23 +1,23 @@
 {
   "schemaVersion": "20.0.0-native-vs-main-comparison-1",
-  "generatedAt": "2026-09-01T17:50:50.844Z",
-  "sessionDate": "2026-09-01",
+  "generatedAt": "2026-09-02T17:55:43.885Z",
+  "sessionDate": "2026-09-02",
   "comparisonType": "SELECTION_SNAPSHOT_AND_FORWARD_EVALUATION_BASELINE",
   "native": {
     "engineId": "V20_FULL_MARKET_NATIVE_SELECTION_V1",
     "fullMarketIndependent": true,
     "legacyScoringContributionPct": 0,
     "top10": [
-      "MBSC",
-      "SVCE",
-      "ABUK",
-      "ISMA",
-      "GDWA",
-      "EMFD",
+      "TMGH",
+      "CERA",
+      "EGAL",
       "AMOC",
-      "HDBK",
-      "AMIA",
-      "ATQA"
+      "ATLC",
+      "ABUK",
+      "SUGR",
+      "EMFD",
+      "OCDI",
+      "NINH"
     ]
   },
   "mainApp": {
@@ -29,16 +29,16 @@
   "legacyRanking": {
     "source": "data/final-opportunity-ranking.json",
     "top10": [
-      "OLFI",
-      "RUBX",
-      "PHAR",
-      "BTFH",
-      "TMGH",
-      "RMDA",
-      "MPCO",
-      "DOMT",
-      "ORAS",
-      "CCAP"
+      "LCSW",
+      "ELEC",
+      "PRDC",
+      "OBRI",
+      "CERA",
+      "EGAL",
+      "SVCE",
+      "CCAP",
+      "GGRN",
+      "ABUK"
     ]
   },
   "v16_9Champion": {
@@ -61,48 +61,46 @@
       "overlapPctOfLeft": 0,
       "shared": [],
       "leftOnly": [
-        "MBSC",
-        "SVCE",
-        "ABUK",
-        "ISMA",
-        "GDWA",
-        "EMFD",
+        "TMGH",
+        "CERA",
+        "EGAL",
         "AMOC",
-        "HDBK",
-        "AMIA",
-        "ATQA"
+        "ATLC",
+        "ABUK",
+        "SUGR",
+        "EMFD",
+        "OCDI",
+        "NINH"
       ],
       "rightOnly": []
     },
     "nativeVsLegacyRankingTop10": {
       "leftCount": 10,
       "rightCount": 10,
-      "sharedCount": 0,
-      "overlapPctOfLeft": 0,
-      "shared": [],
+      "sharedCount": 3,
+      "overlapPctOfLeft": 30,
+      "shared": [
+        "CERA",
+        "EGAL",
+        "ABUK"
+      ],
       "leftOnly": [
-        "MBSC",
-        "SVCE",
-        "ABUK",
-        "ISMA",
-        "GDWA",
-        "EMFD",
+        "TMGH",
         "AMOC",
-        "HDBK",
-        "AMIA",
-        "ATQA"
+        "ATLC",
+        "SUGR",
+        "EMFD",
+        "OCDI",
+        "NINH"
       ],
       "rightOnly": [
-        "OLFI",
-        "RUBX",
-        "PHAR",
-        "BTFH",
-        "TMGH",
-        "RMDA",
-        "MPCO",
-        "DOMT",
-        "ORAS",
-        "CCAP"
+        "LCSW",
+        "ELEC",
+        "PRDC",
+        "OBRI",
+        "SVCE",
+        "CCAP",
+        "GGRN"
       ]
     },
     "nativeVsV16_9CurrentBasket": {
@@ -112,16 +110,16 @@
       "overlapPctOfLeft": 0,
       "shared": [],
       "leftOnly": [
-        "MBSC",
-        "SVCE",
-        "ABUK",
-        "ISMA",
-        "GDWA",
-        "EMFD",
+        "TMGH",
+        "CERA",
+        "EGAL",
         "AMOC",
-        "HDBK",
-        "AMIA",
-        "ATQA"
+        "ATLC",
+        "ABUK",
+        "SUGR",
+        "EMFD",
+        "OCDI",
+        "NINH"
       ],
       "rightOnly": [
         "MOIN",
@@ -132,12 +130,12 @@
     }
   },
   "nativeDiscovery": {
-    "outsideLegacySeedCount": 44,
-    "top10OutsideLegacySeedCount": 10
+    "outsideLegacySeedCount": 27,
+    "top10OutsideLegacySeedCount": 7
   },
   "forwardEvaluation": {
     "status": "PENDING_FUTURE_SESSIONS",
-    "selectionDate": "2026-09-01",
+    "selectionDate": "2026-09-02",
     "horizonsSessions": [
       1,
       3,
