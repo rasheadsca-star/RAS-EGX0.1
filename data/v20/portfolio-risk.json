@@ -1,7 +1,7 @@
 {
   "schemaVersion": "20.0.0-portfolio-risk-2",
-  "generatedAt": "2026-09-02T17:55:44.002Z",
-  "sessionDate": "2026-09-02",
+  "generatedAt": "2026-09-03T17:53:24.159Z",
+  "sessionDate": "2026-09-03",
   "executionStatus": "RESEARCH_ONLY",
   "globalExecutionOpen": false,
   "riskState": "DEFENSIVE",
@@ -17,8 +17,18 @@
     "notExecutionAdvice": true,
     "weightingMethod": "QUALITY_WEIGHTED_SCORE_X_DATA_CONFIDENCE_X_NET_RR_CAPPED_AFTER_TRADE_PLAN_ALIGNMENT",
     "requiresCurrentPriceInsideEntryRange": true,
-    "exposurePct": 0,
-    "positions": []
+    "exposurePct": 12.5,
+    "positions": [
+      {
+        "ticker": "MPRC",
+        "rank": 1,
+        "shadowPositionWeightPct": 12.5,
+        "opportunityScore": 80.3,
+        "dataConfidencePct": 82,
+        "netRiskReward": 0.735,
+        "tradePlanAlignmentState": "IN_ENTRY_RANGE"
+      }
+    ]
   },
   "invariants": {
     "v17FinalGateAuthoritative": true,
