@@ -1,6 +1,6 @@
 {
   "schemaVersion": "20.0.0-native-vs-main-comparison-1",
-  "generatedAt": "2026-09-03T17:53:24.081Z",
+  "generatedAt": "2026-09-06T17:06:00.493Z",
   "sessionDate": "2026-09-03",
   "comparisonType": "SELECTION_SNAPSHOT_AND_FORWARD_EVALUATION_BASELINE",
   "native": {
@@ -9,14 +9,14 @@
     "legacyScoringContributionPct": 0,
     "top10": [
       "MPRC",
-      "KORA",
+      "ALCN",
       "CERA",
+      "KORA",
       "HDBK",
       "ISMA",
-      "MFPC",
-      "EMFD",
-      "CANA",
       "INFI",
+      "EMFD",
+      "NCCW",
       "COSG"
     ]
   },
@@ -62,14 +62,14 @@
       "shared": [],
       "leftOnly": [
         "MPRC",
-        "KORA",
+        "ALCN",
         "CERA",
+        "KORA",
         "HDBK",
         "ISMA",
-        "MFPC",
-        "EMFD",
-        "CANA",
         "INFI",
+        "EMFD",
+        "NCCW",
         "COSG"
       ],
       "rightOnly": []
@@ -77,29 +77,27 @@
     "nativeVsLegacyRankingTop10": {
       "leftCount": 10,
       "rightCount": 10,
-      "sharedCount": 1,
-      "overlapPctOfLeft": 10,
+      "sharedCount": 3,
+      "overlapPctOfLeft": 30,
       "shared": [
-        "MPRC"
+        "MPRC",
+        "ALCN",
+        "NCCW"
       ],
       "leftOnly": [
-        "KORA",
         "CERA",
+        "KORA",
         "HDBK",
         "ISMA",
-        "MFPC",
-        "EMFD",
-        "CANA",
         "INFI",
+        "EMFD",
         "COSG"
       ],
       "rightOnly": [
-        "NCCW",
         "SVCE",
         "AMES",
         "NIPH",
         "CICH",
-        "ALCN",
         "ISMQ",
         "MEGM",
         "TMGH"
@@ -113,14 +111,14 @@
       "shared": [],
       "leftOnly": [
         "MPRC",
-        "KORA",
+        "ALCN",
         "CERA",
+        "KORA",
         "HDBK",
         "ISMA",
-        "MFPC",
-        "EMFD",
-        "CANA",
         "INFI",
+        "EMFD",
+        "NCCW",
         "COSG"
       ],
       "rightOnly": [
@@ -133,7 +131,7 @@
   },
   "nativeDiscovery": {
     "outsideLegacySeedCount": 24,
-    "top10OutsideLegacySeedCount": 6
+    "top10OutsideLegacySeedCount": 5
   },
   "forwardEvaluation": {
     "status": "PENDING_FUTURE_SESSIONS",
