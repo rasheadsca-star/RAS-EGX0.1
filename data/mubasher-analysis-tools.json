@@ -1,13 +1,13 @@
 {
   "ok": true,
   "engine": "v10_0_mubasher_alternative_sources_loop",
-  "generatedAt": "2026-09-06T12:12:34.248Z",
+  "generatedAt": "2026-09-06T15:31:39.698Z",
   "summary": {
     "sources": 6,
     "sourcesOk": 5,
     "currentSourcesOk": 4,
     "staleFallbackSources": 1,
-    "totalRows": 925,
+    "totalRows": 928,
     "uniqueSymbols": 222
   },
   "sources": [
@@ -85,7 +85,7 @@
       "currentRunOk": true,
       "staleFallback": false,
       "httpStatus": 200,
-      "count": 2,
+      "count": 5,
       "error": "",
       "attempt": 1
     }
@@ -236,8 +236,8 @@
     {
       "symbol": "ACAMD",
       "name": "العربية لإدارة وتطوير الأصول",
-      "sourceCount": 3,
-      "currentExternalSourceCount": 3,
+      "sourceCount": 4,
+      "currentExternalSourceCount": 4,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -299,6 +299,36 @@
             ],
             "numeric": [],
             "rowText": "ACAMD/support-resistance','within",
+            "fallback": true
+          }
+        },
+        "priceBoard": {
+          "sourceId": "mubasherPrices",
+          "title": "Mubasher EGX Price Board",
+          "currentRunOk": true,
+          "staleFallback": false,
+          "row": {
+            "symbol": "ACAMD",
+            "sourceId": "mubasherPrices",
+            "group": "priceBoard",
+            "rowIndex": 2,
+            "name": "ACAMD",
+            "cells": [
+              "ACAMD) بيان من الشركةاسم الشركة : الشركة العربية لادارة وتطوير الاصول كود الترقيم الدولي : 02:16 م العنوان : مطاحن مصر الوسطي ("
+            ],
+            "numeric": [
+              {
+                "raw": "02",
+                "value": 2,
+                "isPercent": false
+              },
+              {
+                "raw": "16 ",
+                "value": 16,
+                "isPercent": false
+              }
+            ],
+            "rowText": "ACAMD) بيان من الشركةاسم الشركة : الشركة العربية لادارة وتطوير الاصول كود الترقيم الدولي : 02:16 م العنوان : مطاحن مصر الوسطي (",
             "fallback": true
           }
         }
@@ -1825,8 +1855,8 @@
     {
       "symbol": "ASPI",
       "name": "أسباير كابيتال",
-      "sourceCount": 3,
-      "currentExternalSourceCount": 3,
+      "sourceCount": 4,
+      "currentExternalSourceCount": 4,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -1888,6 +1918,51 @@
             ],
             "numeric": [],
             "rowText": "ASPI/support-resistance','within",
+            "fallback": true
+          }
+        },
+        "priceBoard": {
+          "sourceId": "mubasherPrices",
+          "title": "Mubasher EGX Price Board",
+          "currentRunOk": true,
+          "staleFallback": false,
+          "row": {
+            "symbol": "ASPI",
+            "sourceId": "mubasherPrices",
+            "group": "priceBoard",
+            "rowIndex": 1,
+            "name": "ASPI",
+            "cells": [
+              "ASPI) - محضر إجتماع الجمعية العامة غير العادية المنعقدة في 13/08/2026 (موثق) اسم الشركة: 02:18 م العنوان : الشركة العربية لادارة وتطوير الاصول ("
+            ],
+            "numeric": [
+              {
+                "raw": "13",
+                "value": 13,
+                "isPercent": false
+              },
+              {
+                "raw": "08",
+                "value": 8,
+                "isPercent": false
+              },
+              {
+                "raw": "2026 ",
+                "value": 2026,
+                "isPercent": false
+              },
+              {
+                "raw": "02",
+                "value": 2,
+                "isPercent": false
+              },
+              {
+                "raw": "18 ",
+                "value": 18,
+                "isPercent": false
+              }
+            ],
+            "rowText": "ASPI) - محضر إجتماع الجمعية العامة غير العادية المنعقدة في 13/08/2026 (موثق) اسم الشركة: 02:18 م العنوان : الشركة العربية لادارة وتطوير الاصول (",
             "fallback": true
           }
         }
@@ -2752,10 +2827,10 @@
             "symbol": "CEFM",
             "sourceId": "mubasherPrices",
             "group": "priceBoard",
-            "rowIndex": 1,
+            "rowIndex": 5,
             "name": "CEFM",
             "cells": [
-              "CEFM) - تقرير مراقب الحسابات الخارجى عن السنة المالية المنتهية فى 30/06/2026اسم الشركة: مطاحن مصر الوسطيكود 01:56 م العنوان : مصر للفنادق ("
+              "CEFM) - تقرير مراقب الحسابات الخارجى عن السنة المالية المنتهية فى 30/06/2026اسم الشركة: مطاحن مصر الوسطيكود المزيد if(window.midata.is"
             ],
             "numeric": [
               {
@@ -2772,19 +2847,9 @@
                 "raw": "2026",
                 "value": 2026,
                 "isPercent": false
-              },
-              {
-                "raw": "01",
-                "value": 1,
-                "isPercent": false
-              },
-              {
-                "raw": "56 ",
-                "value": 56,
-                "isPercent": false
               }
             ],
-            "rowText": "CEFM) - تقرير مراقب الحسابات الخارجى عن السنة المالية المنتهية فى 30/06/2026اسم الشركة: مطاحن مصر الوسطيكود 01:56 م العنوان : مصر للفنادق (",
+            "rowText": "CEFM) - تقرير مراقب الحسابات الخارجى عن السنة المالية المنتهية فى 30/06/2026اسم الشركة: مطاحن مصر الوسطيكود المزيد if(window.midata.is",
             "fallback": true
           }
         }
@@ -9406,8 +9471,8 @@
     {
       "symbol": "MHOT",
       "name": "مصر للفنادق",
-      "sourceCount": 4,
-      "currentExternalSourceCount": 4,
+      "sourceCount": 3,
+      "currentExternalSourceCount": 3,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -9469,25 +9534,6 @@
             ],
             "numeric": [],
             "rowText": "MHOT/support-resistance','within",
-            "fallback": true
-          }
-        },
-        "priceBoard": {
-          "sourceId": "mubasherPrices",
-          "title": "Mubasher EGX Price Board",
-          "currentRunOk": true,
-          "staleFallback": false,
-          "row": {
-            "symbol": "MHOT",
-            "sourceId": "mubasherPrices",
-            "group": "priceBoard",
-            "rowIndex": 2,
-            "name": "MHOT",
-            "cells": [
-              "MHOT) - رد الشركة على تقرير الجهاز المركزى للمحاسباتاسم الشركة: مصر للفنادقكود الترقيم الدولي: "
-            ],
-            "numeric": [],
-            "rowText": "MHOT) - رد الشركة على تقرير الجهاز المركزى للمحاسباتاسم الشركة: مصر للفنادقكود الترقيم الدولي: ",
             "fallback": true
           }
         }
@@ -12033,8 +12079,8 @@
     {
       "symbol": "PRDC",
       "name": "بايونيرز بروبرتيز",
-      "sourceCount": 3,
-      "currentExternalSourceCount": 3,
+      "sourceCount": 4,
+      "currentExternalSourceCount": 4,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -12096,6 +12142,36 @@
             ],
             "numeric": [],
             "rowText": "PRDC/support-resistance','within",
+            "fallback": true
+          }
+        },
+        "priceBoard": {
+          "sourceId": "mubasherPrices",
+          "title": "Mubasher EGX Price Board",
+          "currentRunOk": true,
+          "staleFallback": false,
+          "row": {
+            "symbol": "PRDC",
+            "sourceId": "mubasherPrices",
+            "group": "priceBoard",
+            "rowIndex": 4,
+            "name": "PRDC",
+            "cells": [
+              "PRDC) - بيان من الشركةاسم الشركة : بايونيرز بروبرتيز للتنمية العمرانية بي ار اي ج 01:57 م العنوان : مطاحن مصر الوسطي ("
+            ],
+            "numeric": [
+              {
+                "raw": "01",
+                "value": 1,
+                "isPercent": false
+              },
+              {
+                "raw": "57 ",
+                "value": 57,
+                "isPercent": false
+              }
+            ],
+            "rowText": "PRDC) - بيان من الشركةاسم الشركة : بايونيرز بروبرتيز للتنمية العمرانية بي ار اي ج 01:57 م العنوان : مطاحن مصر الوسطي (",
             "fallback": true
           }
         }
