@@ -1,16 +1,16 @@
 {
   "ok": false,
   "engine": "v9_8_7_workflow_source_verification",
-  "generatedAt": "2026-09-09T13:02:37.126Z",
+  "generatedAt": "2026-09-09T16:42:15.290Z",
   "score": 78,
   "state": "warn",
   "realFetch": true,
   "fetchMode": "price_precision_source_adapter",
-  "message": "Fetched and accepted 213 rows from mubasher_symbol_pages_precise_enriched",
-  "marketRows": 213,
+  "message": "Fetched and accepted 210 rows from mubasher_symbol_pages_precise_enriched",
+  "marketRows": 210,
   "cacheRows": 221,
   "recommendationRows": 221,
-  "sourceAgeMinutes": 3.4,
+  "sourceAgeMinutes": 2,
   "summary": {
     "ok": 8,
     "warn": 0,
@@ -46,7 +46,7 @@
       "id": "market_rows",
       "name": "market.json rows",
       "state": "ok",
-      "value": "213",
+      "value": "210",
       "message": "market.json يحتوي صفوفًا",
       "action": "متابعة"
     },
@@ -70,7 +70,7 @@
       "id": "source_age",
       "name": "Source age",
       "state": "ok",
-      "value": "3.4 min",
+      "value": "2 min",
       "message": "المصدر حديث نسبيًا",
       "action": "متابعة"
     },
@@ -78,7 +78,7 @@
       "id": "price_reconciliation",
       "name": "Price reconciliation",
       "state": "bad",
-      "value": "200 conflict / 8 stale",
+      "value": "204 conflict / 4 stale",
       "message": "يوجد تعارض أسعار بعد الجلب",
       "action": "افتح تدقيق الأسعار"
     },
