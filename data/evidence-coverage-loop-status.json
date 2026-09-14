@@ -1,7 +1,7 @@
 {
   "ok": true,
   "engine": "v10_0_real_coverage_recovery_engine",
-  "generatedAt": "2026-09-13T16:22:50.057Z",
+  "generatedAt": "2026-09-14T15:05:56.057Z",
   "delayed": true,
   "note": "V10 uses internal cache as valid analysis evidence and separates analysis/watch coverage from executable trading permission.",
   "summary": {
@@ -22,9 +22,9 @@
       "totalAttempts": 6
     },
     "sourcesOk": 5,
-    "currentSourcesOk": 4,
-    "staleFallbackSources": 1,
-    "totalExternalRows": 924,
+    "currentSourcesOk": 3,
+    "staleFallbackSources": 2,
+    "totalExternalRows": 926,
     "exclusionReasons": [
       {
         "reason": "سعر غير موجود",
@@ -59,7 +59,7 @@
       "currentRunOk": true,
       "staleFallback": false,
       "httpStatus": 200,
-      "count": 210,
+      "count": 212,
       "error": "",
       "attempt": 1
     },
@@ -108,11 +108,11 @@
       "title": "Mubasher EGX Price Board",
       "url": "https://www.mubasher.info/markets/EGX",
       "ok": true,
-      "currentRunOk": true,
-      "staleFallback": false,
+      "currentRunOk": false,
+      "staleFallback": true,
       "httpStatus": 200,
       "count": 4,
-      "error": "",
+      "error": "current source unavailable; preserved last good rows",
       "attempt": 1
     }
   ],
@@ -192,7 +192,7 @@
             "symbol": "AALR",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 109,
+            "rowIndex": 140,
             "name": "AALR",
             "cells": [
               "AALR'},{'change"
@@ -211,7 +211,7 @@
             "symbol": "AALR",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 268,
+            "rowIndex": 214,
             "name": "AALR",
             "cells": [
               "AALR/support-resistance','within"
@@ -223,9 +223,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 306.85,
+      "basePrice": 306.8,
       "baseVolume": 22915,
-      "baseValue": 15054270
+      "baseValue": 11730995
     },
     {
       "symbol": "ABUK",
@@ -302,7 +302,7 @@
             "symbol": "ABUK",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 46,
+            "rowIndex": 60,
             "name": "ABUK",
             "cells": [
               "ABUK'},{'change"
@@ -321,7 +321,7 @@
             "symbol": "ABUK",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 300,
+            "rowIndex": 166,
             "name": "ABUK",
             "cells": [
               "ABUK/support-resistance','within"
@@ -333,9 +333,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 94.08,
+      "basePrice": 90.5,
       "baseVolume": 1477849,
-      "baseValue": 57935884
+      "baseValue": 49328600
     },
     {
       "symbol": "ACAMD",
@@ -412,7 +412,7 @@
             "symbol": "ACAMD",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 45,
+            "rowIndex": 69,
             "name": "ACAMD",
             "cells": [
               "ACAMD'},{'change"
@@ -431,7 +431,7 @@
             "symbol": "ACAMD",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 26,
+            "rowIndex": 66,
             "name": "ACAMD",
             "cells": [
               "ACAMD/support-resistance','within"
@@ -443,9 +443,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.1,
+      "basePrice": 2.11,
       "baseVolume": 20244005,
-      "baseValue": 58198896
+      "baseValue": 38949424
     },
     {
       "symbol": "ACAP",
@@ -522,7 +522,7 @@
             "symbol": "ACAP",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 168,
+            "rowIndex": 113,
             "name": "ACAP",
             "cells": [
               "ACAP'},{'change"
@@ -541,7 +541,7 @@
             "symbol": "ACAP",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 180,
+            "rowIndex": 206,
             "name": "ACAP",
             "cells": [
               "ACAP/support-resistance','within"
@@ -553,9 +553,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 9.25,
+      "basePrice": 9.12,
       "baseVolume": 528886,
-      "baseValue": 4030668
+      "baseValue": 16106001
     },
     {
       "symbol": "ACGC",
@@ -632,7 +632,7 @@
             "symbol": "ACGC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 111,
+            "rowIndex": 82,
             "name": "ACGC",
             "cells": [
               "ACGC'},{'change"
@@ -651,7 +651,7 @@
             "symbol": "ACGC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 270,
+            "rowIndex": 282,
             "name": "ACGC",
             "cells": [
               "ACGC/support-resistance','within"
@@ -663,9 +663,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 15.42,
+      "basePrice": 14.92,
       "baseVolume": 1145484,
-      "baseValue": 14526351
+      "baseValue": 31065342
     },
     {
       "symbol": "ADCI",
@@ -742,7 +742,7 @@
             "symbol": "ADCI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 181,
+            "rowIndex": 178,
             "name": "ADCI",
             "cells": [
               "ADCI'},{'change"
@@ -761,7 +761,7 @@
             "symbol": "ADCI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 332,
+            "rowIndex": 362,
             "name": "ADCI",
             "cells": [
               "ADCI/support-resistance','within"
@@ -773,9 +773,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 291.1,
+      "basePrice": 285.01,
       "baseVolume": 58412,
-      "baseValue": 2813812
+      "baseValue": 3306852.5
     },
     {
       "symbol": "ADIB",
@@ -852,7 +852,7 @@
             "symbol": "ADIB",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 64,
+            "rowIndex": 46,
             "name": "ADIB",
             "cells": [
               "ADIB'},{'change"
@@ -871,7 +871,7 @@
             "symbol": "ADIB",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 38,
+            "rowIndex": 20,
             "name": "ADIB",
             "cells": [
               "ADIB/support-resistance','within"
@@ -883,9 +883,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 52.51,
+      "basePrice": 52.32,
       "baseVolume": 1594922,
-      "baseValue": 35068316
+      "baseValue": 74943872
     },
     {
       "symbol": "ADPC",
@@ -962,7 +962,7 @@
             "symbol": "ADPC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 107,
+            "rowIndex": 122,
             "name": "ADPC",
             "cells": [
               "ADPC'},{'change"
@@ -981,7 +981,7 @@
             "symbol": "ADPC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 252,
+            "rowIndex": 70,
             "name": "ADPC",
             "cells": [
               "ADPC/support-resistance','within"
@@ -993,9 +993,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 3.92,
+      "basePrice": 3.9,
       "baseVolume": 1243483,
-      "baseValue": 15824813
+      "baseValue": 13835517
     },
     {
       "symbol": "AFDI",
@@ -1072,7 +1072,7 @@
             "symbol": "AFDI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 159,
+            "rowIndex": 163,
             "name": "AFDI",
             "cells": [
               "AFDI'},{'change"
@@ -1091,7 +1091,7 @@
             "symbol": "AFDI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 280,
+            "rowIndex": 176,
             "name": "AFDI",
             "cells": [
               "AFDI/support-resistance','within"
@@ -1103,9 +1103,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 54.19,
+      "basePrice": 52.36,
       "baseVolume": 91077,
-      "baseValue": 5116298
+      "baseValue": 5649678
     },
     {
       "symbol": "AFMC",
@@ -1182,7 +1182,7 @@
             "symbol": "AFMC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 30,
+            "rowIndex": 74,
             "name": "AFMC",
             "cells": [
               "AFMC'},{'change"
@@ -1201,7 +1201,7 @@
             "symbol": "AFMC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 218,
+            "rowIndex": 318,
             "name": "AFMC",
             "cells": [
               "AFMC/support-resistance','within"
@@ -1213,9 +1213,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 162.78,
+      "basePrice": 164.15,
       "baseVolume": 23685,
-      "baseValue": 99310952
+      "baseValue": 34529860
     },
     {
       "symbol": "AIDC",
@@ -1292,7 +1292,7 @@
             "symbol": "AIDC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 81,
+            "rowIndex": 102,
             "name": "AIDC",
             "cells": [
               "AIDC'},{'change"
@@ -1311,7 +1311,7 @@
             "symbol": "AIDC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 158,
+            "rowIndex": 154,
             "name": "AIDC",
             "cells": [
               "AIDC/support-resistance','within"
@@ -1323,9 +1323,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 0.74,
+      "basePrice": 0.73,
       "baseVolume": 31229358,
-      "baseValue": 28644204
+      "baseValue": 19695272
     },
     {
       "symbol": "AIHC",
@@ -1402,7 +1402,7 @@
             "symbol": "AIHC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 44,
+            "rowIndex": 57,
             "name": "AIHC",
             "cells": [
               "AIHC'},{'change"
@@ -1421,7 +1421,7 @@
             "symbol": "AIHC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 186,
+            "rowIndex": 50,
             "name": "AIHC",
             "cells": [
               "AIHC/support-resistance','within"
@@ -1433,9 +1433,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 0.83,
+      "basePrice": 0.82,
       "baseVolume": 34963570,
-      "baseValue": 59467528
+      "baseValue": 51168380
     },
     {
       "symbol": "AJWA",
@@ -1512,7 +1512,7 @@
             "symbol": "AJWA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 100,
+            "rowIndex": 109,
             "name": "AJWA",
             "cells": [
               "AJWA'},{'change"
@@ -1531,7 +1531,7 @@
             "symbol": "AJWA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 222,
+            "rowIndex": 276,
             "name": "AJWA",
             "cells": [
               "AJWA/support-resistance','within"
@@ -1543,9 +1543,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 180.43,
+      "basePrice": 181,
       "baseVolume": 47404,
-      "baseValue": 18455532
+      "baseValue": 18009970
     },
     {
       "symbol": "ALCN",
@@ -1622,7 +1622,7 @@
             "symbol": "ALCN",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 62,
+            "rowIndex": 142,
             "name": "ALCN",
             "cells": [
               "ALCN'},{'change"
@@ -1641,7 +1641,7 @@
             "symbol": "ALCN",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 2,
+            "rowIndex": 328,
             "name": "ALCN",
             "cells": [
               "ALCN/support-resistance','within"
@@ -1653,9 +1653,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 32.47,
+      "basePrice": 31.1,
       "baseVolume": 150499,
-      "baseValue": 36643204
+      "baseValue": 11113032
     },
     {
       "symbol": "ALUM",
@@ -1732,7 +1732,7 @@
             "symbol": "ALUM",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 180,
+            "rowIndex": 144,
             "name": "ALUM",
             "cells": [
               "ALUM'},{'change"
@@ -1751,7 +1751,7 @@
             "symbol": "ALUM",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 140,
+            "rowIndex": 290,
             "name": "ALUM",
             "cells": [
               "ALUM/support-resistance','within"
@@ -1763,9 +1763,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 27.57,
+      "basePrice": 27.27,
       "baseVolume": 131456,
-      "baseValue": 2825559
+      "baseValue": 10525317
     },
     {
       "symbol": "AMER",
@@ -1842,7 +1842,7 @@
             "symbol": "AMER",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 80,
+            "rowIndex": 67,
             "name": "AMER",
             "cells": [
               "AMER'},{'change"
@@ -1861,7 +1861,7 @@
             "symbol": "AMER",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 196,
+            "rowIndex": 96,
             "name": "AMER",
             "cells": [
               "AMER/support-resistance','within"
@@ -1873,9 +1873,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 5.28,
+      "basePrice": 5.14,
       "baseVolume": 14698793,
-      "baseValue": 28822802
+      "baseValue": 39265588
     },
     {
       "symbol": "AMES",
@@ -1952,7 +1952,7 @@
             "symbol": "AMES",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 7,
+            "rowIndex": 8,
             "name": "AMES",
             "cells": [
               "AMES'},{'change"
@@ -1971,7 +1971,7 @@
             "symbol": "AMES",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 88,
+            "rowIndex": 54,
             "name": "AMES",
             "cells": [
               "AMES/support-resistance','within"
@@ -1983,9 +1983,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 60.24,
+      "basePrice": 57.68,
       "baseVolume": 917255,
-      "baseValue": 254730528
+      "baseValue": 241686800
     },
     {
       "symbol": "AMIA",
@@ -2028,7 +2028,7 @@
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة جزئية",
       "sourceCount": 4,
-      "currentExternalSourceCount": 4,
+      "currentExternalSourceCount": 3,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -2064,7 +2064,7 @@
             "symbol": "AMIA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 139,
+            "rowIndex": 103,
             "name": "AMIA",
             "cells": [
               "AMIA'},{'change"
@@ -2083,7 +2083,7 @@
             "symbol": "AMIA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 128,
+            "rowIndex": 258,
             "name": "AMIA",
             "cells": [
               "AMIA/support-resistance','within"
@@ -2096,8 +2096,8 @@
         "priceBoard": {
           "sourceId": "mubasherPrices",
           "title": "Mubasher EGX Price Board",
-          "currentRunOk": true,
-          "staleFallback": false,
+          "currentRunOk": false,
+          "staleFallback": true,
           "row": {
             "symbol": "AMIA",
             "sourceId": "mubasherPrices",
@@ -2114,9 +2114,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 18.92,
+      "basePrice": 18.63,
       "baseVolume": 351463,
-      "baseValue": 7658529
+      "baseValue": 19546502
     },
     {
       "symbol": "AMOC",
@@ -2193,7 +2193,7 @@
             "symbol": "AMOC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 17,
+            "rowIndex": 13,
             "name": "AMOC",
             "cells": [
               "AMOC'},{'change"
@@ -2212,7 +2212,7 @@
             "symbol": "AMOC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 24,
+            "rowIndex": 172,
             "name": "AMOC",
             "cells": [
               "AMOC/support-resistance','within"
@@ -2224,9 +2224,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 13.62,
+      "basePrice": 13.48,
       "baseVolume": 3388140,
-      "baseValue": 154579392
+      "baseValue": 187181936
     },
     {
       "symbol": "APSW",
@@ -2303,7 +2303,7 @@
             "symbol": "APSW",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 198,
+            "rowIndex": 195,
             "name": "APSW",
             "cells": [
               "APSW'},{'change"
@@ -2322,7 +2322,7 @@
             "symbol": "APSW",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 336,
+            "rowIndex": 260,
             "name": "APSW",
             "cells": [
               "APSW/support-resistance','within"
@@ -2334,9 +2334,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 8.6,
+      "basePrice": 8.56,
       "baseVolume": 58731,
-      "baseValue": 412738.09
+      "baseValue": 941127.13
     },
     {
       "symbol": "ARAB",
@@ -2413,7 +2413,7 @@
             "symbol": "ARAB",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 54,
+            "rowIndex": 41,
             "name": "ARAB",
             "cells": [
               "ARAB'},{'change"
@@ -2432,7 +2432,7 @@
             "symbol": "ARAB",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 80,
+            "rowIndex": 82,
             "name": "ARAB",
             "cells": [
               "ARAB/support-resistance','within"
@@ -2446,7 +2446,7 @@
       "exclusionReason": "",
       "basePrice": 0.25,
       "baseVolume": 201126446,
-      "baseValue": 45116524
+      "baseValue": 84957624
     },
     {
       "symbol": "ARCC",
@@ -2523,7 +2523,7 @@
             "symbol": "ARCC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 151,
+            "rowIndex": 84,
             "name": "ARCC",
             "cells": [
               "ARCC'},{'change"
@@ -2542,7 +2542,7 @@
             "symbol": "ARCC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 350,
+            "rowIndex": 86,
             "name": "ARCC",
             "cells": [
               "ARCC/support-resistance','within"
@@ -2554,9 +2554,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 75.25,
+      "basePrice": 75.58,
       "baseVolume": 264897,
-      "baseValue": 6311631
+      "baseValue": 30724460
     },
     {
       "symbol": "AREH",
@@ -2633,7 +2633,7 @@
             "symbol": "AREH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 93,
+            "rowIndex": 132,
             "name": "AREH",
             "cells": [
               "AREH'},{'change"
@@ -2652,7 +2652,7 @@
             "symbol": "AREH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 130,
+            "rowIndex": 342,
             "name": "AREH",
             "cells": [
               "AREH/support-resistance','within"
@@ -2664,9 +2664,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 1.48,
+      "basePrice": 1.45,
       "baseVolume": 14839261,
-      "baseValue": 21520178
+      "baseValue": 13045154
     },
     {
       "symbol": "ARVA",
@@ -2805,7 +2805,7 @@
             "symbol": "ASCM",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 112,
+            "rowIndex": 127,
             "name": "ASCM",
             "cells": [
               "ASCM'},{'change"
@@ -2824,7 +2824,7 @@
             "symbol": "ASCM",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 342,
+            "rowIndex": 234,
             "name": "ASCM",
             "cells": [
               "ASCM/support-resistance','within"
@@ -2836,9 +2836,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 63.35,
+      "basePrice": 62.56,
       "baseVolume": 577768,
-      "baseValue": 14451764
+      "baseValue": 13419726
     },
     {
       "symbol": "ASPI",
@@ -2915,7 +2915,7 @@
             "symbol": "ASPI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 59,
+            "rowIndex": 53,
             "name": "ASPI",
             "cells": [
               "ASPI'},{'change"
@@ -2934,7 +2934,7 @@
             "symbol": "ASPI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 124,
+            "rowIndex": 4,
             "name": "ASPI",
             "cells": [
               "ASPI/support-resistance','within"
@@ -2948,7 +2948,7 @@
       "exclusionReason": "",
       "basePrice": 0.44,
       "baseVolume": 39126645,
-      "baseValue": 40740020
+      "baseValue": 53850244
     },
     {
       "symbol": "ATLC",
@@ -3025,7 +3025,7 @@
             "symbol": "ATLC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 87,
+            "rowIndex": 133,
             "name": "ATLC",
             "cells": [
               "ATLC'},{'change"
@@ -3044,7 +3044,7 @@
             "symbol": "ATLC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 224,
+            "rowIndex": 198,
             "name": "ATLC",
             "cells": [
               "ATLC/support-resistance','within"
@@ -3056,9 +3056,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 7.07,
+      "basePrice": 7.19,
       "baseVolume": 895173,
-      "baseValue": 24342672
+      "baseValue": 12967195
     },
     {
       "symbol": "ATQA",
@@ -3135,7 +3135,7 @@
             "symbol": "ATQA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 47,
+            "rowIndex": 45,
             "name": "ATQA",
             "cells": [
               "ATQA'},{'change"
@@ -3154,7 +3154,7 @@
             "symbol": "ATQA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 160,
+            "rowIndex": 164,
             "name": "ATQA",
             "cells": [
               "ATQA/support-resistance','within"
@@ -3166,9 +3166,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 13.02,
+      "basePrice": 12.98,
       "baseVolume": 4094503,
-      "baseValue": 56437592
+      "baseValue": 75874592
     },
     {
       "symbol": "AXPH",
@@ -3245,7 +3245,7 @@
             "symbol": "AXPH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 177,
+            "rowIndex": 182,
             "name": "AXPH",
             "cells": [
               "AXPH'},{'change"
@@ -3264,7 +3264,7 @@
             "symbol": "AXPH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 366,
+            "rowIndex": 382,
             "name": "AXPH",
             "cells": [
               "AXPH/support-resistance','within"
@@ -3276,9 +3276,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 1678.57,
+      "basePrice": 1668.7,
       "baseVolume": 17728,
-      "baseValue": 3371614.75
+      "baseValue": 2639208
     },
     {
       "symbol": "BINV",
@@ -3355,7 +3355,7 @@
             "symbol": "BINV",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 125,
+            "rowIndex": 189,
             "name": "BINV",
             "cells": [
               "BINV'},{'change"
@@ -3374,7 +3374,7 @@
             "symbol": "BINV",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 146,
+            "rowIndex": 352,
             "name": "BINV",
             "cells": [
               "BINV/support-resistance','within"
@@ -3386,9 +3386,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 51.74,
+      "basePrice": 51.35,
       "baseVolume": 27125,
-      "baseValue": 9993778
+      "baseValue": 1715054.25
     },
     {
       "symbol": "BIOC",
@@ -3465,7 +3465,7 @@
             "symbol": "BIOC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 71,
+            "rowIndex": 65,
             "name": "BIOC",
             "cells": [
               "BIOC'},{'change"
@@ -3484,7 +3484,7 @@
             "symbol": "BIOC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 42,
+            "rowIndex": 240,
             "name": "BIOC",
             "cells": [
               "BIOC/support-resistance','within"
@@ -3496,9 +3496,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 288.85,
+      "basePrice": 291.14,
       "baseVolume": 28729,
-      "baseValue": 32511138
+      "baseValue": 40334596
     },
     {
       "symbol": "BONY",
@@ -3575,7 +3575,7 @@
             "symbol": "BONY",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 50,
+            "rowIndex": 66,
             "name": "BONY",
             "cells": [
               "BONY'},{'change"
@@ -3594,7 +3594,7 @@
             "symbol": "BONY",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 220,
+            "rowIndex": 178,
             "name": "BONY",
             "cells": [
               "BONY/support-resistance','within"
@@ -3606,9 +3606,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 4.53,
+      "basePrice": 4.54,
       "baseVolume": 5929934,
-      "baseValue": 53046664
+      "baseValue": 39477664
     },
     {
       "symbol": "BTFH",
@@ -3685,7 +3685,7 @@
             "symbol": "BTFH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 38,
+            "rowIndex": 42,
             "name": "BTFH",
             "cells": [
               "BTFH'},{'change"
@@ -3704,7 +3704,7 @@
             "symbol": "BTFH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 30,
+            "rowIndex": 72,
             "name": "BTFH",
             "cells": [
               "BTFH/support-resistance','within"
@@ -3716,9 +3716,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.95,
+      "basePrice": 2.91,
       "baseVolume": 81001361,
-      "baseValue": 68326928
+      "baseValue": 82236328
     },
     {
       "symbol": "CAED",
@@ -3795,7 +3795,7 @@
             "symbol": "CAED",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 110,
+            "rowIndex": 21,
             "name": "CAED",
             "cells": [
               "CAED'},{'change"
@@ -3814,7 +3814,7 @@
             "symbol": "CAED",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 290,
+            "rowIndex": 106,
             "name": "CAED",
             "cells": [
               "CAED/support-resistance','within"
@@ -3826,9 +3826,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 129.59,
+      "basePrice": 128.14,
       "baseVolume": 70708,
-      "baseValue": 14801907
+      "baseValue": 135212144
     },
     {
       "symbol": "CANA",
@@ -3905,7 +3905,7 @@
             "symbol": "CANA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 108,
+            "rowIndex": 129,
             "name": "CANA",
             "cells": [
               "CANA'},{'change"
@@ -3924,7 +3924,7 @@
             "symbol": "CANA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 330,
+            "rowIndex": 366,
             "name": "CANA",
             "cells": [
               "CANA/support-resistance','within"
@@ -3936,9 +3936,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 42.99,
+      "basePrice": 42.34,
       "baseVolume": 63549,
-      "baseValue": 15770282
+      "baseValue": 13288325
     },
     {
       "symbol": "CCAP",
@@ -4034,7 +4034,7 @@
             "symbol": "CCAP",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 66,
+            "rowIndex": 10,
             "name": "CCAP",
             "cells": [
               "CCAP/support-resistance','within"
@@ -4046,9 +4046,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 6.21,
+      "basePrice": 6.3,
       "baseVolume": 149136890,
-      "baseValue": 1473943552
+      "baseValue": 2039000832
     },
     {
       "symbol": "CCRS",
@@ -4125,7 +4125,7 @@
             "symbol": "CCRS",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 122,
+            "rowIndex": 88,
             "name": "CCRS",
             "cells": [
               "CCRS'},{'change"
@@ -4144,7 +4144,7 @@
             "symbol": "CCRS",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 86,
+            "rowIndex": 46,
             "name": "CCRS",
             "cells": [
               "CCRS/support-resistance','within"
@@ -4156,9 +4156,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.59,
+      "basePrice": 2.44,
       "baseVolume": 3372338,
-      "baseValue": 10952504
+      "baseValue": 27373970
     },
     {
       "symbol": "CEFM",
@@ -4235,7 +4235,7 @@
             "symbol": "CEFM",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 142,
+            "rowIndex": 167,
             "name": "CEFM",
             "cells": [
               "CEFM'},{'change"
@@ -4254,7 +4254,7 @@
             "symbol": "CEFM",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 234,
+            "rowIndex": 248,
             "name": "CEFM",
             "cells": [
               "CEFM/support-resistance','within"
@@ -4268,7 +4268,7 @@
       "exclusionReason": "",
       "basePrice": 147.28,
       "baseVolume": 7361,
-      "baseValue": 7175380.5
+      "baseValue": 5374856
     },
     {
       "symbol": "CERA",
@@ -4345,7 +4345,7 @@
             "symbol": "CERA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 13,
+            "rowIndex": 4,
             "name": "CERA",
             "cells": [
               "CERA'},{'change"
@@ -4364,7 +4364,7 @@
             "symbol": "CERA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 168,
+            "rowIndex": 12,
             "name": "CERA",
             "cells": [
               "CERA/support-resistance','within"
@@ -4376,9 +4376,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 1.66,
+      "basePrice": 1.57,
       "baseVolume": 9182420,
-      "baseValue": 173823680
+      "baseValue": 392855296
     },
     {
       "symbol": "CFGH",
@@ -4455,7 +4455,7 @@
             "symbol": "CFGH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 209,
+            "rowIndex": 211,
             "name": "CFGH",
             "cells": [
               "CFGH'},{'change"
@@ -4474,7 +4474,7 @@
             "symbol": "CFGH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 384,
+            "rowIndex": 408,
             "name": "CFGH",
             "cells": [
               "CFGH/support-resistance','within"
@@ -4486,9 +4486,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 0.12,
+      "basePrice": 0.1,
       "baseVolume": 34730,
-      "baseValue": 3562.13
+      "baseValue": 8781.11
     },
     {
       "symbol": "CICH",
@@ -4565,7 +4565,7 @@
             "symbol": "CICH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 166,
+            "rowIndex": 165,
             "name": "CICH",
             "cells": [
               "CICH'},{'change"
@@ -4584,7 +4584,7 @@
             "symbol": "CICH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 362,
+            "rowIndex": 392,
             "name": "CICH",
             "cells": [
               "CICH/support-resistance','within"
@@ -4596,9 +4596,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 12.92,
+      "basePrice": 12.79,
       "baseVolume": 192710,
-      "baseValue": 4119896.5
+      "baseValue": 5553481
     },
     {
       "symbol": "CIEB",
@@ -4675,7 +4675,7 @@
             "symbol": "CIEB",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 154,
+            "rowIndex": 114,
             "name": "CIEB",
             "cells": [
               "CIEB'},{'change"
@@ -4694,7 +4694,7 @@
             "symbol": "CIEB",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 320,
+            "rowIndex": 216,
             "name": "CIEB",
             "cells": [
               "CIEB/support-resistance','within"
@@ -4706,9 +4706,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 25.24,
+      "basePrice": 25.17,
       "baseVolume": 171636,
-      "baseValue": 5565286.5
+      "baseValue": 15883110
     },
     {
       "symbol": "CIRA",
@@ -4785,7 +4785,7 @@
             "symbol": "CIRA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 55,
+            "rowIndex": 12,
             "name": "CIRA",
             "cells": [
               "CIRA'},{'change"
@@ -4804,7 +4804,7 @@
             "symbol": "CIRA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 372,
+            "rowIndex": 322,
             "name": "CIRA",
             "cells": [
               "CIRA/support-resistance','within"
@@ -4816,9 +4816,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 37,
+      "basePrice": 38.4,
       "baseVolume": 1037761,
-      "baseValue": 42790052
+      "baseValue": 198532384
     },
     {
       "symbol": "CLHO",
@@ -4895,7 +4895,7 @@
             "symbol": "CLHO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 74,
+            "rowIndex": 56,
             "name": "CLHO",
             "cells": [
               "CLHO'},{'change"
@@ -4914,7 +4914,7 @@
             "symbol": "CLHO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 18,
+            "rowIndex": 120,
             "name": "CLHO",
             "cells": [
               "CLHO/support-resistance','within"
@@ -4926,9 +4926,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 16.13,
+      "basePrice": 16.26,
       "baseVolume": 2213449,
-      "baseValue": 30631102
+      "baseValue": 51238296
     },
     {
       "symbol": "CNFN",
@@ -5005,7 +5005,7 @@
             "symbol": "CNFN",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 182,
+            "rowIndex": 154,
             "name": "CNFN",
             "cells": [
               "CNFN'},{'change"
@@ -5024,7 +5024,7 @@
             "symbol": "CNFN",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 192,
+            "rowIndex": 250,
             "name": "CNFN",
             "cells": [
               "CNFN/support-resistance','within"
@@ -5036,9 +5036,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 4.73,
+      "basePrice": 4.72,
       "baseVolume": 6003829,
-      "baseValue": 2744140.5
+      "baseValue": 7315270
     },
     {
       "symbol": "COMI",
@@ -5115,7 +5115,7 @@
             "symbol": "COMI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 8,
+            "rowIndex": 3,
             "name": "COMI",
             "cells": [
               "COMI'},{'change"
@@ -5134,7 +5134,7 @@
             "symbol": "COMI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 184,
+            "rowIndex": 6,
             "name": "COMI",
             "cells": [
               "COMI/support-resistance','within"
@@ -5146,9 +5146,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 138.41,
+      "basePrice": 136.33,
       "baseVolume": 2459727,
-      "baseValue": 252067968
+      "baseValue": 693739008
     },
     {
       "symbol": "COPR",
@@ -5225,7 +5225,7 @@
             "symbol": "COPR",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 90,
+            "rowIndex": 77,
             "name": "COPR",
             "cells": [
               "COPR'},{'change"
@@ -5244,7 +5244,7 @@
             "symbol": "COPR",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 318,
+            "rowIndex": 28,
             "name": "COPR",
             "cells": [
               "COPR/support-resistance','within"
@@ -5256,9 +5256,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 0.49,
+      "basePrice": 0.47,
       "baseVolume": 18401159,
-      "baseValue": 23800896
+      "baseValue": 33353364
     },
     {
       "symbol": "COSG",
@@ -5354,7 +5354,7 @@
             "symbol": "COSG",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 150,
+            "rowIndex": 112,
             "name": "COSG",
             "cells": [
               "COSG/support-resistance','within"
@@ -5368,7 +5368,7 @@
       "exclusionReason": "",
       "basePrice": 1.88,
       "baseVolume": 14335649,
-      "baseValue": 19799582
+      "baseValue": 22277996
     },
     {
       "symbol": "CPCI",
@@ -5445,7 +5445,7 @@
             "symbol": "CPCI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 185,
+            "rowIndex": 175,
             "name": "CPCI",
             "cells": [
               "CPCI'},{'change"
@@ -5464,7 +5464,7 @@
             "symbol": "CPCI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 394,
+            "rowIndex": 386,
             "name": "CPCI",
             "cells": [
               "CPCI/support-resistance','within"
@@ -5476,9 +5476,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 536.31,
+      "basePrice": 536.08,
       "baseVolume": 19125,
-      "baseValue": 1843179
+      "baseValue": 3774265.5
     },
     {
       "symbol": "CPME",
@@ -5555,7 +5555,7 @@
             "symbol": "CPME",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 162,
+            "rowIndex": 153,
             "name": "CPME",
             "cells": [
               "CPME'},{'change"
@@ -5574,7 +5574,7 @@
             "symbol": "CPME",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 364,
+            "rowIndex": 186,
             "name": "CPME",
             "cells": [
               "CPME/support-resistance','within"
@@ -5586,9 +5586,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 36.57,
+      "basePrice": 38.99,
       "baseVolume": 78440,
-      "baseValue": 4761567
+      "baseValue": 7386613
     },
     {
       "symbol": "CRST",
@@ -5665,7 +5665,7 @@
             "symbol": "CRST",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 4,
+            "rowIndex": 11,
             "name": "CRST",
             "cells": [
               "CRST'},{'change"
@@ -5684,7 +5684,7 @@
             "symbol": "CRST",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 94,
+            "rowIndex": 84,
             "name": "CRST",
             "cells": [
               "CRST/support-resistance','within"
@@ -5696,9 +5696,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 3.42,
+      "basePrice": 3.73,
       "baseVolume": 41748692,
-      "baseValue": 402793408
+      "baseValue": 205707360
     },
     {
       "symbol": "CSAG",
@@ -5775,7 +5775,7 @@
             "symbol": "CSAG",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 120,
+            "rowIndex": 166,
             "name": "CSAG",
             "cells": [
               "CSAG'},{'change"
@@ -5794,7 +5794,7 @@
             "symbol": "CSAG",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 44,
+            "rowIndex": 330,
             "name": "CSAG",
             "cells": [
               "CSAG/support-resistance','within"
@@ -5806,9 +5806,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 40.3,
+      "basePrice": 39.26,
       "baseVolume": 374486,
-      "baseValue": 12419961
+      "baseValue": 5543412.5
     },
     {
       "symbol": "DAPH",
@@ -5885,7 +5885,7 @@
             "symbol": "DAPH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 103,
+            "rowIndex": 105,
             "name": "DAPH",
             "cells": [
               "DAPH'},{'change"
@@ -5904,7 +5904,7 @@
             "symbol": "DAPH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 52,
+            "rowIndex": 338,
             "name": "DAPH",
             "cells": [
               "DAPH/support-resistance','within"
@@ -5916,9 +5916,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 127,
+      "basePrice": 120.74,
       "baseVolume": 55653,
-      "baseValue": 17261712
+      "baseValue": 18542172
     },
     {
       "symbol": "DCCC",
@@ -6028,7 +6028,7 @@
             "symbol": "DEIN",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 422,
+            "rowIndex": 426,
             "name": "DEIN",
             "cells": [
               "DEIN/support-resistance','within"
@@ -6040,7 +6040,7 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 11.38,
+      "basePrice": 10.35,
       "baseVolume": 3,
       "baseValue": 49.68
     },
@@ -6119,7 +6119,7 @@
             "symbol": "DGTZ",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 193,
+            "rowIndex": 183,
             "name": "DGTZ",
             "cells": [
               "DGTZ'},{'change"
@@ -6138,7 +6138,7 @@
             "symbol": "DGTZ",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 374,
+            "rowIndex": 242,
             "name": "DGTZ",
             "cells": [
               "DGTZ/support-resistance','within"
@@ -6150,9 +6150,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.52,
+      "basePrice": 2.51,
       "baseVolume": 515980,
-      "baseValue": 1406934.13
+      "baseValue": 2624342.5
     },
     {
       "symbol": "DOMT",
@@ -6229,7 +6229,7 @@
             "symbol": "DOMT",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 145,
+            "rowIndex": 155,
             "name": "DOMT",
             "cells": [
               "DOMT'},{'change"
@@ -6248,7 +6248,7 @@
             "symbol": "DOMT",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 352,
+            "rowIndex": 286,
             "name": "DOMT",
             "cells": [
               "DOMT/support-resistance','within"
@@ -6260,9 +6260,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 28.02,
+      "basePrice": 28.18,
       "baseVolume": 152975,
-      "baseValue": 6959513.5
+      "baseValue": 7082228
     },
     {
       "symbol": "DSCW",
@@ -6339,7 +6339,7 @@
             "symbol": "DSCW",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 114,
+            "rowIndex": 68,
             "name": "DSCW",
             "cells": [
               "DSCW'},{'change"
@@ -6358,7 +6358,7 @@
             "symbol": "DSCW",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 74,
+            "rowIndex": 94,
             "name": "DSCW",
             "cells": [
               "DSCW/support-resistance','within"
@@ -6370,9 +6370,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 1.89,
+      "basePrice": 1.87,
       "baseVolume": 13099217,
-      "baseValue": 13260803
+      "baseValue": 39253724
     },
     {
       "symbol": "DTPP",
@@ -6386,7 +6386,7 @@
         "internal:price",
         "internal:volume/value",
         "internal:support/resistance",
-        "internal:valid plan",
+        "internal:partial plan",
         "internal:data quality",
         "external:volume",
         "external:liquidity",
@@ -6396,7 +6396,7 @@
         "internal:price",
         "internal:volume/value",
         "internal:support/resistance",
-        "internal:valid plan",
+        "internal:partial plan",
         "internal:data quality",
         "external:volume",
         "external:liquidity",
@@ -6405,13 +6405,13 @@
       "coreSignalCount": 5,
       "internalCacheUsed": true,
       "cacheExtracted": true,
-      "cacheEvidenceCount": 5,
+      "cacheEvidenceCount": 4,
       "priceStatus": "ok",
       "executionPriceOk": true,
       "pricePrecisionRisk": false,
       "volumeStatus": "حجم/قيمة من الكاش",
       "supportStatus": "دعم/مقاومة من الكاش",
-      "planStatus": "خطة سعرية منطقية",
+      "planStatus": "خطة جزئية",
       "sourceCount": 3,
       "currentExternalSourceCount": 3,
       "sources": {
@@ -6468,7 +6468,7 @@
             "symbol": "DTPP",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 242,
+            "rowIndex": 110,
             "name": "DTPP",
             "cells": [
               "DTPP/support-resistance','within"
@@ -6480,9 +6480,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 301.47,
+      "basePrice": 361.76,
       "baseVolume": 859249,
-      "baseValue": 259677680
+      "baseValue": 262243920
     },
     {
       "symbol": "EALR",
@@ -6559,7 +6559,7 @@
             "symbol": "EALR",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 153,
+            "rowIndex": 151,
             "name": "EALR",
             "cells": [
               "EALR'},{'change"
@@ -6578,7 +6578,7 @@
             "symbol": "EALR",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 338,
+            "rowIndex": 296,
             "name": "EALR",
             "cells": [
               "EALR/support-resistance','within"
@@ -6590,9 +6590,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 375.62,
+      "basePrice": 377.38,
       "baseVolume": 7585,
-      "baseValue": 5973048.5
+      "baseValue": 8373395.5
     },
     {
       "symbol": "EASB",
@@ -6669,7 +6669,7 @@
             "symbol": "EASB",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 68,
+            "rowIndex": 107,
             "name": "EASB",
             "cells": [
               "EASB'},{'change"
@@ -6688,7 +6688,7 @@
             "symbol": "EASB",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 154,
+            "rowIndex": 270,
             "name": "EASB",
             "cells": [
               "EASB/support-resistance','within"
@@ -6700,9 +6700,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 8.7,
+      "basePrice": 9.2,
       "baseVolume": 2675138,
-      "baseValue": 33055692
+      "baseValue": 18060320
     },
     {
       "symbol": "EAST",
@@ -6779,7 +6779,7 @@
             "symbol": "EAST",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 118,
+            "rowIndex": 64,
             "name": "EAST",
             "cells": [
               "EAST'},{'change"
@@ -6798,7 +6798,7 @@
             "symbol": "EAST",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 262,
+            "rowIndex": 188,
             "name": "EAST",
             "cells": [
               "EAST/support-resistance','within"
@@ -6810,9 +6810,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 34.89,
+      "basePrice": 34.46,
       "baseVolume": 426116,
-      "baseValue": 12602646
+      "baseValue": 40815152
     },
     {
       "symbol": "EBSC",
@@ -6889,7 +6889,7 @@
             "symbol": "EBSC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 149,
+            "rowIndex": 179,
             "name": "EBSC",
             "cells": [
               "EBSC'},{'change"
@@ -6908,7 +6908,7 @@
             "symbol": "EBSC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 276,
+            "rowIndex": 174,
             "name": "EBSC",
             "cells": [
               "EBSC/support-resistance','within"
@@ -6920,9 +6920,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.15,
+      "basePrice": 2.08,
       "baseVolume": 10886117,
-      "baseValue": 6596315
+      "baseValue": 3099320.75
     },
     {
       "symbol": "ECAP",
@@ -6999,7 +6999,7 @@
             "symbol": "ECAP",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 164,
+            "rowIndex": 180,
             "name": "ECAP",
             "cells": [
               "ECAP'},{'change"
@@ -7018,7 +7018,7 @@
             "symbol": "ECAP",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 406,
+            "rowIndex": 324,
             "name": "ECAP",
             "cells": [
               "ECAP/support-resistance','within"
@@ -7030,9 +7030,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 32.55,
+      "basePrice": 32.88,
       "baseVolume": 280282,
-      "baseValue": 4319628
+      "baseValue": 2843084.25
     },
     {
       "symbol": "EDFM",
@@ -7109,7 +7109,7 @@
             "symbol": "EDFM",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 191,
+            "rowIndex": 193,
             "name": "EDFM",
             "cells": [
               "EDFM'},{'change"
@@ -7128,7 +7128,7 @@
             "symbol": "EDFM",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 414,
+            "rowIndex": 378,
             "name": "EDFM",
             "cells": [
               "EDFM/support-resistance','within"
@@ -7140,9 +7140,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 410.24,
+      "basePrice": 422.3,
       "baseVolume": 870,
-      "baseValue": 1636014.5
+      "baseValue": 1115534
     },
     {
       "symbol": "EEII",
@@ -7219,7 +7219,7 @@
             "symbol": "EEII",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 144,
+            "rowIndex": 121,
             "name": "EEII",
             "cells": [
               "EEII'},{'change"
@@ -7238,7 +7238,7 @@
             "symbol": "EEII",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 212,
+            "rowIndex": 52,
             "name": "EEII",
             "cells": [
               "EEII/support-resistance','within"
@@ -7250,9 +7250,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.34,
+      "basePrice": 2.29,
       "baseVolume": 12466359,
-      "baseValue": 7009827.5
+      "baseValue": 14096104
     },
     {
       "symbol": "EFIC",
@@ -7329,7 +7329,7 @@
             "symbol": "EFIC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 34,
+            "rowIndex": 28,
             "name": "EFIC",
             "cells": [
               "EFIC'},{'change"
@@ -7348,7 +7348,7 @@
             "symbol": "EFIC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 54,
+            "rowIndex": 170,
             "name": "EFIC",
             "cells": [
               "EFIC/support-resistance','within"
@@ -7360,9 +7360,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 216.22,
+      "basePrice": 204.78,
       "baseVolume": 31011,
-      "baseValue": 85411472
+      "baseValue": 117443424
     },
     {
       "symbol": "EFID",
@@ -7405,7 +7405,7 @@
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة سعرية منطقية",
       "sourceCount": 4,
-      "currentExternalSourceCount": 4,
+      "currentExternalSourceCount": 3,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -7441,7 +7441,7 @@
             "symbol": "EFID",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 82,
+            "rowIndex": 39,
             "name": "EFID",
             "cells": [
               "EFID'},{'change"
@@ -7460,7 +7460,7 @@
             "symbol": "EFID",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 272,
+            "rowIndex": 108,
             "name": "EFID",
             "cells": [
               "EFID/support-resistance','within"
@@ -7473,8 +7473,8 @@
         "priceBoard": {
           "sourceId": "mubasherPrices",
           "title": "Mubasher EGX Price Board",
-          "currentRunOk": true,
-          "staleFallback": false,
+          "currentRunOk": false,
+          "staleFallback": true,
           "row": {
             "symbol": "EFID",
             "sourceId": "mubasherPrices",
@@ -7502,9 +7502,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 31.29,
+      "basePrice": 30.97,
       "baseVolume": 630474,
-      "baseValue": 28628904
+      "baseValue": 87803240
     },
     {
       "symbol": "EFIH",
@@ -7581,7 +7581,7 @@
             "symbol": "EFIH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 63,
+            "rowIndex": 73,
             "name": "EFIH",
             "cells": [
               "EFIH'},{'change"
@@ -7600,7 +7600,7 @@
             "symbol": "EFIH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 284,
+            "rowIndex": 146,
             "name": "EFIH",
             "cells": [
               "EFIH/support-resistance','within"
@@ -7612,9 +7612,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 23.95,
+      "basePrice": 23.47,
       "baseVolume": 1589570,
-      "baseValue": 36635568
+      "baseValue": 35769800
     },
     {
       "symbol": "EGAL",
@@ -7691,7 +7691,7 @@
             "symbol": "EGAL",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 89,
+            "rowIndex": 52,
             "name": "EGAL",
             "cells": [
               "EGAL'},{'change"
@@ -7710,7 +7710,7 @@
             "symbol": "EGAL",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 144,
+            "rowIndex": 220,
             "name": "EGAL",
             "cells": [
               "EGAL/support-resistance','within"
@@ -7722,9 +7722,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 375.83,
+      "basePrice": 371.6,
       "baseVolume": 104529,
-      "baseValue": 24068824
+      "baseValue": 56145572
     },
     {
       "symbol": "EGAS",
@@ -7801,7 +7801,7 @@
             "symbol": "EGAS",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 167,
+            "rowIndex": 159,
             "name": "EGAS",
             "cells": [
               "EGAS'},{'change"
@@ -7820,7 +7820,7 @@
             "symbol": "EGAS",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 76,
+            "rowIndex": 372,
             "name": "EGAS",
             "cells": [
               "EGAS/support-resistance','within"
@@ -7832,9 +7832,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 58.47,
+      "basePrice": 58.01,
       "baseVolume": 61308,
-      "baseValue": 4098137.75
+      "baseValue": 6131300
     },
     {
       "symbol": "EGBE",
@@ -7911,7 +7911,7 @@
             "symbol": "EGBE",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 202,
+            "rowIndex": 203,
             "name": "EGBE",
             "cells": [
               "EGBE'},{'change"
@@ -7930,7 +7930,7 @@
             "symbol": "EGBE",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 296,
+            "rowIndex": 302,
             "name": "EGBE",
             "cells": [
               "EGBE/support-resistance','within"
@@ -7942,9 +7942,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 0.52,
+      "basePrice": 0.51,
       "baseVolume": 17684,
-      "baseValue": 91387.82
+      "baseValue": 88136.3
     },
     {
       "symbol": "EGCH",
@@ -8021,7 +8021,7 @@
             "symbol": "EGCH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 21,
+            "rowIndex": 44,
             "name": "EGCH",
             "cells": [
               "EGCH'},{'change"
@@ -8040,7 +8040,7 @@
             "symbol": "EGCH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 174,
+            "rowIndex": 256,
             "name": "EGCH",
             "cells": [
               "EGCH/support-resistance','within"
@@ -8052,9 +8052,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 13.84,
+      "basePrice": 14.01,
       "baseVolume": 1714118,
-      "baseValue": 137979248
+      "baseValue": 78442056
     },
     {
       "symbol": "EGSA",
@@ -8131,7 +8131,7 @@
             "symbol": "EGSA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 207,
+            "rowIndex": 209,
             "name": "EGSA",
             "cells": [
               "EGSA'},{'change"
@@ -8150,7 +8150,7 @@
             "symbol": "EGSA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 408,
+            "rowIndex": 326,
             "name": "EGSA",
             "cells": [
               "EGSA/support-resistance','within"
@@ -8162,9 +8162,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 9.07,
+      "basePrice": 9.02,
       "baseVolume": 51,
-      "baseValue": 7265.5
+      "baseValue": 11204.4
     },
     {
       "symbol": "EGTS",
@@ -8241,7 +8241,7 @@
             "symbol": "EGTS",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 48,
+            "rowIndex": 106,
             "name": "EGTS",
             "cells": [
               "EGTS'},{'change"
@@ -8260,7 +8260,7 @@
             "symbol": "EGTS",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 344,
+            "rowIndex": 320,
             "name": "EGTS",
             "cells": [
               "EGTS/support-resistance','within"
@@ -8272,9 +8272,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 17.15,
+      "basePrice": 17.16,
       "baseVolume": 3524544,
-      "baseValue": 55271300
+      "baseValue": 18308878
     },
     {
       "symbol": "EHDR",
@@ -8351,7 +8351,7 @@
             "symbol": "EHDR",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 132,
+            "rowIndex": 120,
             "name": "EHDR",
             "cells": [
               "EHDR'},{'change"
@@ -8370,7 +8370,7 @@
             "symbol": "EHDR",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 162,
+            "rowIndex": 344,
             "name": "EHDR",
             "cells": [
               "EHDR/support-resistance','within"
@@ -8382,9 +8382,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.91,
+      "basePrice": 2.89,
       "baseVolume": 5283809,
-      "baseValue": 8626776
+      "baseValue": 14248027
     },
     {
       "symbol": "ELEC",
@@ -8461,7 +8461,7 @@
             "symbol": "ELEC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 26,
+            "rowIndex": 38,
             "name": "ELEC",
             "cells": [
               "ELEC'},{'change"
@@ -8480,7 +8480,7 @@
             "symbol": "ELEC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 64,
+            "rowIndex": 182,
             "name": "ELEC",
             "cells": [
               "ELEC/support-resistance','within"
@@ -8492,9 +8492,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.07,
+      "basePrice": 2.04,
       "baseVolume": 5415040,
-      "baseValue": 111744088
+      "baseValue": 89033680
     },
     {
       "symbol": "ELKA",
@@ -8571,7 +8571,7 @@
             "symbol": "ELKA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 99,
+            "rowIndex": 63,
             "name": "ELKA",
             "cells": [
               "ELKA'},{'change"
@@ -8590,7 +8590,7 @@
             "symbol": "ELKA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 240,
+            "rowIndex": 292,
             "name": "ELKA",
             "cells": [
               "ELKA/support-resistance','within"
@@ -8602,9 +8602,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 1.76,
+      "basePrice": 1.74,
       "baseVolume": 86626327,
-      "baseValue": 19155626
+      "baseValue": 43335160
     },
     {
       "symbol": "ELNA",
@@ -8681,7 +8681,7 @@
             "symbol": "ELNA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 201,
+            "rowIndex": 202,
             "name": "ELNA",
             "cells": [
               "ELNA'},{'change"
@@ -8700,7 +8700,7 @@
             "symbol": "ELNA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 410,
+            "rowIndex": 370,
             "name": "ELNA",
             "cells": [
               "ELNA/support-resistance','within"
@@ -8712,7 +8712,7 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 35.74,
+      "basePrice": 37.81,
       "baseVolume": 5969,
       "baseValue": 230773.63
     },
@@ -8791,7 +8791,7 @@
             "symbol": "ELSH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 61,
+            "rowIndex": 71,
             "name": "ELSH",
             "cells": [
               "ELSH'},{'change"
@@ -8810,7 +8810,7 @@
             "symbol": "ELSH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 182,
+            "rowIndex": 252,
             "name": "ELSH",
             "cells": [
               "ELSH/support-resistance','within"
@@ -8822,9 +8822,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 13.45,
+      "basePrice": 13.34,
       "baseVolume": 2901189,
-      "baseValue": 38255220
+      "baseValue": 37988248
     },
     {
       "symbol": "ELWA",
@@ -8901,7 +8901,7 @@
             "symbol": "ELWA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 183,
+            "rowIndex": 194,
             "name": "ELWA",
             "cells": [
               "ELWA'},{'change"
@@ -8920,7 +8920,7 @@
             "symbol": "ELWA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 400,
+            "rowIndex": 414,
             "name": "ELWA",
             "cells": [
               "ELWA/support-resistance','within"
@@ -8932,9 +8932,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 1.95,
+      "basePrice": 1.79,
       "baseVolume": 607707,
-      "baseValue": 2738285.5
+      "baseValue": 1043497.12
     },
     {
       "symbol": "EMFD",
@@ -9011,7 +9011,7 @@
             "symbol": "EMFD",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 12,
+            "rowIndex": 31,
             "name": "EMFD",
             "cells": [
               "EMFD'},{'change"
@@ -9030,7 +9030,7 @@
             "symbol": "EMFD",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 114,
+            "rowIndex": 284,
             "name": "EMFD",
             "cells": [
               "EMFD/support-resistance','within"
@@ -9044,7 +9044,7 @@
       "exclusionReason": "",
       "basePrice": 14.8,
       "baseVolume": 5087250,
-      "baseValue": 175140016
+      "baseValue": 110018232
     },
     {
       "symbol": "ENGC",
@@ -9121,7 +9121,7 @@
             "symbol": "ENGC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 152,
+            "rowIndex": 146,
             "name": "ENGC",
             "cells": [
               "ENGC'},{'change"
@@ -9140,7 +9140,7 @@
             "symbol": "ENGC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 164,
+            "rowIndex": 48,
             "name": "ENGC",
             "cells": [
               "ENGC/support-resistance','within"
@@ -9152,9 +9152,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 43.83,
+      "basePrice": 43,
       "baseVolume": 176562,
-      "baseValue": 5995836
+      "baseValue": 9787472
     },
     {
       "symbol": "EOSB",
@@ -9231,7 +9231,7 @@
             "symbol": "EOSB",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 206,
+            "rowIndex": 201,
             "name": "EOSB",
             "cells": [
               "EOSB'},{'change"
@@ -9250,7 +9250,7 @@
             "symbol": "EOSB",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 418,
+            "rowIndex": 406,
             "name": "EOSB",
             "cells": [
               "EOSB/support-resistance','within"
@@ -9341,7 +9341,7 @@
             "symbol": "EPCO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 36,
+            "rowIndex": 117,
             "name": "EPCO",
             "cells": [
               "EPCO'},{'change"
@@ -9360,7 +9360,7 @@
             "symbol": "EPCO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 190,
+            "rowIndex": 266,
             "name": "EPCO",
             "cells": [
               "EPCO/support-resistance','within"
@@ -9372,9 +9372,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 11.82,
+      "basePrice": 11.74,
       "baseVolume": 292020,
-      "baseValue": 72368440
+      "baseValue": 15404424
     },
     {
       "symbol": "EPPK",
@@ -9422,7 +9422,7 @@
             "symbol": "EPPK",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 424,
+            "rowIndex": 428,
             "name": "EPPK",
             "cells": [
               "EPPK/support-resistance','within"
@@ -9513,7 +9513,7 @@
             "symbol": "ETEL",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 32,
+            "rowIndex": 18,
             "name": "ETEL",
             "cells": [
               "ETEL'},{'change"
@@ -9532,7 +9532,7 @@
             "symbol": "ETEL",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 120,
+            "rowIndex": 168,
             "name": "ETEL",
             "cells": [
               "ETEL/support-resistance','within"
@@ -9544,9 +9544,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 126.04,
+      "basePrice": 126.69,
       "baseVolume": 269394,
-      "baseValue": 91426024
+      "baseValue": 153461264
     },
     {
       "symbol": "ETRS",
@@ -9623,7 +9623,7 @@
             "symbol": "ETRS",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 126,
+            "rowIndex": 141,
             "name": "ETRS",
             "cells": [
               "ETRS'},{'change"
@@ -9642,7 +9642,7 @@
             "symbol": "ETRS",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 258,
+            "rowIndex": 92,
             "name": "ETRS",
             "cells": [
               "ETRS/support-resistance','within"
@@ -9654,9 +9654,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 11.2,
+      "basePrice": 10.92,
       "baseVolume": 7417475,
-      "baseValue": 9698503
+      "baseValue": 11612840
     },
     {
       "symbol": "EXPA",
@@ -9733,7 +9733,7 @@
             "symbol": "EXPA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 91,
+            "rowIndex": 81,
             "name": "EXPA",
             "cells": [
               "EXPA'},{'change"
@@ -9752,7 +9752,7 @@
             "symbol": "EXPA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 50,
+            "rowIndex": 18,
             "name": "EXPA",
             "cells": [
               "EXPA/support-resistance','within"
@@ -9764,9 +9764,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 21.22,
+      "basePrice": 21.26,
       "baseVolume": 1241456,
-      "baseValue": 22824384
+      "baseValue": 32248488
     },
     {
       "symbol": "FAIT",
@@ -9843,7 +9843,7 @@
             "symbol": "FAIT",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 175,
+            "rowIndex": 173,
             "name": "FAIT",
             "cells": [
               "FAIT'},{'change"
@@ -9862,7 +9862,7 @@
             "symbol": "FAIT",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 380,
+            "rowIndex": 14,
             "name": "FAIT",
             "cells": [
               "FAIT/support-resistance','within"
@@ -9874,9 +9874,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 47.96,
+      "basePrice": 47.25,
       "baseVolume": 105576,
-      "baseValue": 3557716.25
+      "baseValue": 4066110.75
     },
     {
       "symbol": "FAITA",
@@ -9953,7 +9953,7 @@
             "symbol": "FAITA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 208,
+            "rowIndex": 210,
             "name": "FAITA",
             "cells": [
               "FAITA'},{'change"
@@ -9972,7 +9972,7 @@
             "symbol": "FAITA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 404,
+            "rowIndex": 416,
             "name": "FAITA",
             "cells": [
               "FAITA/support-resistance','within"
@@ -9984,9 +9984,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 0.98,
+      "basePrice": 0.99,
       "baseVolume": 26511,
-      "baseValue": 26241.46
+      "baseValue": 10860.24
     },
     {
       "symbol": "FERC",
@@ -10063,7 +10063,7 @@
             "symbol": "FERC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 137,
+            "rowIndex": 131,
             "name": "FERC",
             "cells": [
               "FERC'},{'change"
@@ -10082,7 +10082,7 @@
             "symbol": "FERC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 72,
+            "rowIndex": 44,
             "name": "FERC",
             "cells": [
               "FERC/support-resistance','within"
@@ -10094,9 +10094,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 78.91,
+      "basePrice": 79.72,
       "baseVolume": 35316,
-      "baseValue": 7822447.5
+      "baseValue": 13054769
     },
     {
       "symbol": "FWRY",
@@ -10173,7 +10173,7 @@
             "symbol": "FWRY",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 53,
+            "rowIndex": 24,
             "name": "FWRY",
             "cells": [
               "FWRY'},{'change"
@@ -10192,7 +10192,7 @@
             "symbol": "FWRY",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 96,
+            "rowIndex": 204,
             "name": "FWRY",
             "cells": [
               "FWRY/support-resistance','within"
@@ -10204,9 +10204,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 19.12,
+      "basePrice": 19.14,
       "baseVolume": 5627677,
-      "baseValue": 46860864
+      "baseValue": 124094896
     },
     {
       "symbol": "GBCO",
@@ -10249,7 +10249,7 @@
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة سعرية منطقية",
       "sourceCount": 4,
-      "currentExternalSourceCount": 4,
+      "currentExternalSourceCount": 3,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -10285,7 +10285,7 @@
             "symbol": "GBCO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 104,
+            "rowIndex": 87,
             "name": "GBCO",
             "cells": [
               "GBCO'},{'change"
@@ -10304,7 +10304,7 @@
             "symbol": "GBCO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 274,
+            "rowIndex": 210,
             "name": "GBCO",
             "cells": [
               "GBCO/support-resistance','within"
@@ -10317,8 +10317,8 @@
         "priceBoard": {
           "sourceId": "mubasherPrices",
           "title": "Mubasher EGX Price Board",
-          "currentRunOk": true,
-          "staleFallback": false,
+          "currentRunOk": false,
+          "staleFallback": true,
           "row": {
             "symbol": "GBCO",
             "sourceId": "mubasherPrices",
@@ -10335,9 +10335,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 30.2,
+      "basePrice": 30.39,
       "baseVolume": 1039876,
-      "baseValue": 16938378
+      "baseValue": 28739136
     },
     {
       "symbol": "GDWA",
@@ -10414,7 +10414,7 @@
             "symbol": "GDWA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 72,
+            "rowIndex": 75,
             "name": "GDWA",
             "cells": [
               "GDWA'},{'change"
@@ -10433,7 +10433,7 @@
             "symbol": "GDWA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 152,
+            "rowIndex": 232,
             "name": "GDWA",
             "cells": [
               "GDWA/support-resistance','within"
@@ -10447,7 +10447,7 @@
       "exclusionReason": "",
       "basePrice": 0.79,
       "baseVolume": 9179259,
-      "baseValue": 32333870
+      "baseValue": 34315408
     },
     {
       "symbol": "GGCC",
@@ -10524,7 +10524,7 @@
             "symbol": "GGCC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 73,
+            "rowIndex": 104,
             "name": "GGCC",
             "cells": [
               "GGCC'},{'change"
@@ -10543,7 +10543,7 @@
             "symbol": "GGCC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 286,
+            "rowIndex": 238,
             "name": "GGCC",
             "cells": [
               "GGCC/support-resistance','within"
@@ -10555,9 +10555,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 0.88,
+      "basePrice": 0.9,
       "baseVolume": 54452263,
-      "baseValue": 32142258
+      "baseValue": 18926304
     },
     {
       "symbol": "GGRN",
@@ -10634,7 +10634,7 @@
             "symbol": "GGRN",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 123,
+            "rowIndex": 110,
             "name": "GGRN",
             "cells": [
               "GGRN'},{'change"
@@ -10653,7 +10653,7 @@
             "symbol": "GGRN",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 20,
+            "rowIndex": 236,
             "name": "GGRN",
             "cells": [
               "GGRN/support-resistance','within"
@@ -10667,7 +10667,7 @@
       "exclusionReason": "",
       "basePrice": 1.46,
       "baseVolume": 7033449,
-      "baseValue": 10788893
+      "baseValue": 17304118
     },
     {
       "symbol": "GIHD",
@@ -10744,7 +10744,7 @@
             "symbol": "GIHD",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 75,
+            "rowIndex": 101,
             "name": "GIHD",
             "cells": [
               "GIHD'},{'change"
@@ -10763,7 +10763,7 @@
             "symbol": "GIHD",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 122,
+            "rowIndex": 184,
             "name": "GIHD",
             "cells": [
               "GIHD/support-resistance','within"
@@ -10775,9 +10775,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 78.09,
+      "basePrice": 74.99,
       "baseVolume": 75796,
-      "baseValue": 30299892
+      "baseValue": 19917412
     },
     {
       "symbol": "GMCI",
@@ -10873,7 +10873,7 @@
             "symbol": "GMCI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 108,
+            "rowIndex": 404,
             "name": "GMCI",
             "cells": [
               "GMCI/support-resistance','within"
@@ -10885,9 +10885,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 1.88,
+      "basePrice": 1.85,
       "baseVolume": 740993,
-      "baseValue": 907391.94
+      "baseValue": 672799.5
     },
     {
       "symbol": "GPIM",
@@ -10964,7 +10964,7 @@
             "symbol": "GPIM",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 129,
+            "rowIndex": 116,
             "name": "GPIM",
             "cells": [
               "GPIM'},{'change"
@@ -10983,7 +10983,7 @@
             "symbol": "GPIM",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 136,
+            "rowIndex": 294,
             "name": "GPIM",
             "cells": [
               "GPIM/support-resistance','within"
@@ -10995,9 +10995,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 1.62,
+      "basePrice": 1.61,
       "baseVolume": 7243236,
-      "baseValue": 9299851
+      "baseValue": 15548761
     },
     {
       "symbol": "GRCA",
@@ -11074,7 +11074,7 @@
             "symbol": "GRCA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 52,
+            "rowIndex": 51,
             "name": "GRCA",
             "cells": [
               "GRCA'},{'change"
@@ -11093,7 +11093,7 @@
             "symbol": "GRCA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 12,
+            "rowIndex": 42,
             "name": "GRCA",
             "cells": [
               "GRCA/support-resistance','within"
@@ -11105,9 +11105,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 53.71,
+      "basePrice": 48.4,
       "baseVolume": 25066,
-      "baseValue": 47781456
+      "baseValue": 57442964
     },
     {
       "symbol": "GSSC",
@@ -11184,7 +11184,7 @@
             "symbol": "GSSC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 188,
+            "rowIndex": 168,
             "name": "GSSC",
             "cells": [
               "GSSC'},{'change"
@@ -11203,7 +11203,7 @@
             "symbol": "GSSC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 236,
+            "rowIndex": 226,
             "name": "GSSC",
             "cells": [
               "GSSC/support-resistance','within"
@@ -11215,9 +11215,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 299.13,
+      "basePrice": 293.5,
       "baseVolume": 9363,
-      "baseValue": 1699026.63
+      "baseValue": 5329470.5
     },
     {
       "symbol": "GTEX",
@@ -11294,13 +11294,13 @@
             "symbol": "GTEX",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 210,
+            "rowIndex": 208,
             "name": "GTEX",
             "cells": [
-              "GTEX'}]; الشركة السعر نسبة التغير قيمة التداول السيولة الخارجة مخطط السيوله السيولة الداخلة التاريخ {{row.name}} {{row.last"
+              "GTEX'},{'change"
             ],
             "numeric": [],
-            "rowText": "GTEX'}]; الشركة السعر نسبة التغير قيمة التداول السيولة الخارجة مخطط السيوله السيولة الداخلة التاريخ {{row.name}} {{row.last",
+            "rowText": "GTEX'},{'change",
             "fallback": true
           }
         },
@@ -11313,7 +11313,7 @@
             "symbol": "GTEX",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 416,
+            "rowIndex": 354,
             "name": "GTEX",
             "cells": [
               "GTEX/support-resistance','within"
@@ -11327,7 +11327,7 @@
       "exclusionReason": "",
       "basePrice": 0.03,
       "baseVolume": 270736,
-      "baseValue": 9204.79
+      "baseValue": 12164.07
     },
     {
       "symbol": "GTWL",
@@ -11404,7 +11404,7 @@
             "symbol": "GTWL",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 31,
+            "rowIndex": 30,
             "name": "GTWL",
             "cells": [
               "GTWL'},{'change"
@@ -11423,7 +11423,7 @@
             "symbol": "GTWL",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 34,
+            "rowIndex": 8,
             "name": "GTWL",
             "cells": [
               "GTWL/support-resistance','within"
@@ -11435,9 +11435,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 243.34,
+      "basePrice": 238.52,
       "baseVolume": 2088206,
-      "baseValue": 94607224
+      "baseValue": 112951096
     },
     {
       "symbol": "HDBK",
@@ -11514,7 +11514,7 @@
             "symbol": "HDBK",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 98,
+            "rowIndex": 72,
             "name": "HDBK",
             "cells": [
               "HDBK'},{'change"
@@ -11545,9 +11545,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 109.5,
+      "basePrice": 109.88,
       "baseVolume": 203039,
-      "baseValue": 19516886
+      "baseValue": 36527076
     },
     {
       "symbol": "HELI",
@@ -11624,7 +11624,7 @@
             "symbol": "HELI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 35,
+            "rowIndex": 33,
             "name": "HELI",
             "cells": [
               "HELI'},{'change"
@@ -11643,7 +11643,7 @@
             "symbol": "HELI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 70,
+            "rowIndex": 98,
             "name": "HELI",
             "cells": [
               "HELI/support-resistance','within"
@@ -11655,9 +11655,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 7.95,
+      "basePrice": 7.97,
       "baseVolume": 10011393,
-      "baseValue": 80525304
+      "baseValue": 106163728
     },
     {
       "symbol": "HRHO",
@@ -11734,7 +11734,7 @@
             "symbol": "HRHO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 67,
+            "rowIndex": 54,
             "name": "HRHO",
             "cells": [
               "HRHO'},{'change"
@@ -11753,7 +11753,7 @@
             "symbol": "HRHO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 292,
+            "rowIndex": 262,
             "name": "HRHO",
             "cells": [
               "HRHO/support-resistance','within"
@@ -11765,9 +11765,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 25.78,
+      "basePrice": 25.69,
       "baseVolume": 2572122,
-      "baseValue": 33157270
+      "baseValue": 53618408
     },
     {
       "symbol": "ICID",
@@ -11844,7 +11844,7 @@
             "symbol": "ICID",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 128,
+            "rowIndex": 184,
             "name": "ICID",
             "cells": [
               "ICID'},{'change"
@@ -11863,7 +11863,7 @@
             "symbol": "ICID",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 328,
+            "rowIndex": 212,
             "name": "ICID",
             "cells": [
               "ICID/support-resistance','within"
@@ -11875,9 +11875,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 18.92,
+      "basePrice": 18.9,
       "baseVolume": 489696,
-      "baseValue": 9413452
+      "baseValue": 2263440.75
     },
     {
       "symbol": "IDRE",
@@ -11954,7 +11954,7 @@
             "symbol": "IDRE",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 169,
+            "rowIndex": 171,
             "name": "IDRE",
             "cells": [
               "IDRE'},{'change"
@@ -11973,7 +11973,7 @@
             "symbol": "IDRE",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 346,
+            "rowIndex": 348,
             "name": "IDRE",
             "cells": [
               "IDRE/support-resistance','within"
@@ -11985,9 +11985,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 53.55,
+      "basePrice": 53.61,
       "baseVolume": 381906,
-      "baseValue": 3942748.25
+      "baseValue": 5002252
     },
     {
       "symbol": "IFAP",
@@ -12064,7 +12064,7 @@
             "symbol": "IFAP",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 141,
+            "rowIndex": 123,
             "name": "IFAP",
             "cells": [
               "IFAP'},{'change"
@@ -12083,7 +12083,7 @@
             "symbol": "IFAP",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 112,
+            "rowIndex": 156,
             "name": "IFAP",
             "cells": [
               "IFAP/support-resistance','within"
@@ -12095,9 +12095,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 20.59,
+      "basePrice": 20.7,
       "baseVolume": 83753,
-      "baseValue": 7248957
+      "baseValue": 13639462
     },
     {
       "symbol": "INFI",
@@ -12174,7 +12174,7 @@
             "symbol": "INFI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 143,
+            "rowIndex": 100,
             "name": "INFI",
             "cells": [
               "INFI'},{'change"
@@ -12193,7 +12193,7 @@
             "symbol": "INFI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 126,
+            "rowIndex": 118,
             "name": "INFI",
             "cells": [
               "INFI/support-resistance','within"
@@ -12205,9 +12205,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 146.07,
+      "basePrice": 144.92,
       "baseVolume": 65963,
-      "baseValue": 7152418
+      "baseValue": 20525362
     },
     {
       "symbol": "IRON",
@@ -12284,7 +12284,7 @@
             "symbol": "IRON",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 131,
+            "rowIndex": 98,
             "name": "IRON",
             "cells": [
               "IRON'},{'change"
@@ -12303,7 +12303,7 @@
             "symbol": "IRON",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 288,
+            "rowIndex": 124,
             "name": "IRON",
             "cells": [
               "IRON/support-resistance','within"
@@ -12315,9 +12315,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 28.58,
+      "basePrice": 28.15,
       "baseVolume": 169859,
-      "baseValue": 8950854
+      "baseValue": 22182572
     },
     {
       "symbol": "ISMA",
@@ -12394,7 +12394,7 @@
             "symbol": "ISMA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 60,
+            "rowIndex": 147,
             "name": "ISMA",
             "cells": [
               "ISMA'},{'change"
@@ -12413,7 +12413,7 @@
             "symbol": "ISMA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 204,
+            "rowIndex": 80,
             "name": "ISMA",
             "cells": [
               "ISMA/support-resistance','within"
@@ -12425,9 +12425,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 32.04,
+      "basePrice": 31.15,
       "baseVolume": 613331,
-      "baseValue": 39367052
+      "baseValue": 9777238
     },
     {
       "symbol": "ISMQ",
@@ -12504,7 +12504,7 @@
             "symbol": "ISMQ",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 102,
+            "rowIndex": 97,
             "name": "ISMQ",
             "cells": [
               "ISMQ'},{'change"
@@ -12523,7 +12523,7 @@
             "symbol": "ISMQ",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 106,
+            "rowIndex": 150,
             "name": "ISMQ",
             "cells": [
               "ISMQ/support-resistance','within"
@@ -12535,9 +12535,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 9.13,
+      "basePrice": 9.09,
       "baseVolume": 14471657,
-      "baseValue": 17977256
+      "baseValue": 22225804
     },
     {
       "symbol": "ISPH",
@@ -12614,7 +12614,7 @@
             "symbol": "ISPH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 42,
+            "rowIndex": 40,
             "name": "ISPH",
             "cells": [
               "ISPH'},{'change"
@@ -12633,7 +12633,7 @@
             "symbol": "ISPH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 56,
+            "rowIndex": 30,
             "name": "ISPH",
             "cells": [
               "ISPH/support-resistance','within"
@@ -12645,9 +12645,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 12.93,
+      "basePrice": 12.77,
       "baseVolume": 1798643,
-      "baseValue": 60225744
+      "baseValue": 85838344
     },
     {
       "symbol": "JUFO",
@@ -12724,7 +12724,7 @@
             "symbol": "JUFO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 127,
+            "rowIndex": 134,
             "name": "JUFO",
             "cells": [
               "JUFO'},{'change"
@@ -12743,7 +12743,7 @@
             "symbol": "JUFO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 304,
+            "rowIndex": 300,
             "name": "JUFO",
             "cells": [
               "JUFO/support-resistance','within"
@@ -12755,9 +12755,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 27.1,
+      "basePrice": 27.14,
       "baseVolume": 287540,
-      "baseValue": 9496197
+      "baseValue": 12537262
     },
     {
       "symbol": "KABO",
@@ -12834,7 +12834,7 @@
             "symbol": "KABO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 23,
+            "rowIndex": 70,
             "name": "KABO",
             "cells": [
               "KABO'},{'change"
@@ -12853,7 +12853,7 @@
             "symbol": "KABO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 32,
+            "rowIndex": 346,
             "name": "KABO",
             "cells": [
               "KABO/support-resistance','within"
@@ -12865,9 +12865,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 9.44,
+      "basePrice": 9.99,
       "baseVolume": 2198392,
-      "baseValue": 119579016
+      "baseValue": 38096456
     },
     {
       "symbol": "KORA",
@@ -12963,7 +12963,7 @@
             "symbol": "KORA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 6,
+            "rowIndex": 68,
             "name": "KORA",
             "cells": [
               "KORA/support-resistance','within"
@@ -12975,9 +12975,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 6.81,
+      "basePrice": 7.11,
       "baseVolume": 140856835,
-      "baseValue": 527356864
+      "baseValue": 898153856
     },
     {
       "symbol": "KRDI",
@@ -13054,7 +13054,7 @@
             "symbol": "KRDI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 16,
+            "rowIndex": 22,
             "name": "KRDI",
             "cells": [
               "KRDI'},{'change"
@@ -13073,7 +13073,7 @@
             "symbol": "KRDI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 116,
+            "rowIndex": 22,
             "name": "KRDI",
             "cells": [
               "KRDI/support-resistance','within"
@@ -13085,9 +13085,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 0.44,
+      "basePrice": 0.46,
       "baseVolume": 19477896,
-      "baseValue": 156383168
+      "baseValue": 132213088
     },
     {
       "symbol": "KWIN",
@@ -13164,7 +13164,7 @@
             "symbol": "KWIN",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 97,
+            "rowIndex": 136,
             "name": "KWIN",
             "cells": [
               "KWIN'},{'change"
@@ -13183,7 +13183,7 @@
             "symbol": "KWIN",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 308,
+            "rowIndex": 196,
             "name": "KWIN",
             "cells": [
               "KWIN/support-resistance','within"
@@ -13195,9 +13195,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 89.14,
+      "basePrice": 89.27,
       "baseVolume": 89909,
-      "baseValue": 19529314
+      "baseValue": 12379135
     },
     {
       "symbol": "KZPC",
@@ -13274,7 +13274,7 @@
             "symbol": "KZPC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 84,
+            "rowIndex": 90,
             "name": "KZPC",
             "cells": [
               "KZPC'},{'change"
@@ -13293,7 +13293,7 @@
             "symbol": "KZPC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 176,
+            "rowIndex": 310,
             "name": "KZPC",
             "cells": [
               "KZPC/support-resistance','within"
@@ -13305,9 +13305,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 14.41,
+      "basePrice": 13.97,
       "baseVolume": 327839,
-      "baseValue": 25372858
+      "baseValue": 26207076
     },
     {
       "symbol": "LCSW",
@@ -13384,7 +13384,7 @@
             "symbol": "LCSW",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 135,
+            "rowIndex": 150,
             "name": "LCSW",
             "cells": [
               "LCSW'},{'change"
@@ -13403,7 +13403,7 @@
             "symbol": "LCSW",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 326,
+            "rowIndex": 278,
             "name": "LCSW",
             "cells": [
               "LCSW/support-resistance','within"
@@ -13415,9 +13415,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 34.77,
+      "basePrice": 34.46,
       "baseVolume": 3819108,
-      "baseValue": 8374918.5
+      "baseValue": 8434727
     },
     {
       "symbol": "LUTS",
@@ -13494,7 +13494,7 @@
             "symbol": "LUTS",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 22,
+            "rowIndex": 43,
             "name": "LUTS",
             "cells": [
               "LUTS'},{'change"
@@ -13513,7 +13513,7 @@
             "symbol": "LUTS",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 142,
+            "rowIndex": 208,
             "name": "LUTS",
             "cells": [
               "LUTS/support-resistance','within"
@@ -13525,9 +13525,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 1.01,
+      "basePrice": 0.95,
       "baseVolume": 32204578,
-      "baseValue": 122066440
+      "baseValue": 78869536
     },
     {
       "symbol": "MAAL",
@@ -13604,7 +13604,7 @@
             "symbol": "MAAL",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 173,
+            "rowIndex": 170,
             "name": "MAAL",
             "cells": [
               "MAAL'},{'change"
@@ -13623,7 +13623,7 @@
             "symbol": "MAAL",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 348,
+            "rowIndex": 134,
             "name": "MAAL",
             "cells": [
               "MAAL/support-resistance','within"
@@ -13635,9 +13635,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 9.04,
+      "basePrice": 8.85,
       "baseVolume": 1608104,
-      "baseValue": 3602164.25
+      "baseValue": 5004966.5
     },
     {
       "symbol": "MASR",
@@ -13714,7 +13714,7 @@
             "symbol": "MASR",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 5,
+            "rowIndex": 27,
             "name": "MASR",
             "cells": [
               "MASR'},{'change"
@@ -13733,7 +13733,7 @@
             "symbol": "MASR",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 58,
+            "rowIndex": 122,
             "name": "MASR",
             "cells": [
               "MASR/support-resistance','within"
@@ -13745,9 +13745,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 8.26,
+      "basePrice": 8.24,
       "baseVolume": 9192742,
-      "baseValue": 291443456
+      "baseValue": 118290168
     },
     {
       "symbol": "MBSC",
@@ -13824,7 +13824,7 @@
             "symbol": "MBSC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 121,
+            "rowIndex": 108,
             "name": "MBSC",
             "cells": [
               "MBSC'},{'change"
@@ -13843,7 +13843,7 @@
             "symbol": "MBSC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 92,
+            "rowIndex": 34,
             "name": "MBSC",
             "cells": [
               "MBSC/support-resistance','within"
@@ -13855,9 +13855,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 410.14,
+      "basePrice": 409.21,
       "baseVolume": 34237,
-      "baseValue": 11863433
+      "baseValue": 18036342
     },
     {
       "symbol": "MCQE",
@@ -13934,7 +13934,7 @@
             "symbol": "MCQE",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 88,
+            "rowIndex": 93,
             "name": "MCQE",
             "cells": [
               "MCQE'},{'change"
@@ -13953,7 +13953,7 @@
             "symbol": "MCQE",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 306,
+            "rowIndex": 136,
             "name": "MCQE",
             "cells": [
               "MCQE/support-resistance','within"
@@ -13965,9 +13965,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 235.01,
+      "basePrice": 225.6,
       "baseVolume": 92851,
-      "baseValue": 24243936
+      "baseValue": 25571154
     },
     {
       "symbol": "MCRO",
@@ -14044,7 +14044,7 @@
             "symbol": "MCRO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 24,
+            "rowIndex": 14,
             "name": "MCRO",
             "cells": [
               "MCRO'},{'change"
@@ -14063,7 +14063,7 @@
             "symbol": "MCRO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 260,
+            "rowIndex": 74,
             "name": "MCRO",
             "cells": [
               "MCRO/support-resistance','within"
@@ -14077,7 +14077,7 @@
       "exclusionReason": "",
       "basePrice": 1.68,
       "baseVolume": 12771226,
-      "baseValue": 115102240
+      "baseValue": 180932752
     },
     {
       "symbol": "MEGM",
@@ -14216,7 +14216,7 @@
             "symbol": "MENA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 187,
+            "rowIndex": 196,
             "name": "MENA",
             "cells": [
               "MENA'},{'change"
@@ -14235,7 +14235,7 @@
             "symbol": "MENA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 358,
+            "rowIndex": 394,
             "name": "MENA",
             "cells": [
               "MENA/support-resistance','within"
@@ -14247,9 +14247,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 6.7,
+      "basePrice": 6.69,
       "baseVolume": 1007732,
-      "baseValue": 1742810.38
+      "baseValue": 887412.38
     },
     {
       "symbol": "MEPA",
@@ -14326,7 +14326,7 @@
             "symbol": "MEPA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 65,
+            "rowIndex": 85,
             "name": "MEPA",
             "cells": [
               "MEPA'},{'change"
@@ -14345,7 +14345,7 @@
             "symbol": "MEPA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 60,
+            "rowIndex": 306,
             "name": "MEPA",
             "cells": [
               "MEPA/support-resistance','within"
@@ -14357,9 +14357,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.04,
+      "basePrice": 2.05,
       "baseVolume": 3491229,
-      "baseValue": 34894156
+      "baseValue": 30141912
     },
     {
       "symbol": "MFPC",
@@ -14436,7 +14436,7 @@
             "symbol": "MFPC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 43,
+            "rowIndex": 34,
             "name": "MFPC",
             "cells": [
               "MFPC'},{'change"
@@ -14455,7 +14455,7 @@
             "symbol": "MFPC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 110,
+            "rowIndex": 140,
             "name": "MFPC",
             "cells": [
               "MFPC/support-resistance','within"
@@ -14467,9 +14467,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 47.98,
+      "basePrice": 46.84,
       "baseVolume": 1384756,
-      "baseValue": 60210672
+      "baseValue": 103471256
     },
     {
       "symbol": "MFSC",
@@ -14546,7 +14546,7 @@
             "symbol": "MFSC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 189,
+            "rowIndex": 174,
             "name": "MFSC",
             "cells": [
               "MFSC'},{'change"
@@ -14565,7 +14565,7 @@
             "symbol": "MFSC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 68,
+            "rowIndex": 368,
             "name": "MFSC",
             "cells": [
               "MFSC/support-resistance','within"
@@ -14577,9 +14577,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 50.24,
+      "basePrice": 50.26,
       "baseVolume": 351392,
-      "baseValue": 1662333.63
+      "baseValue": 3806186.75
     },
     {
       "symbol": "MHOT",
@@ -14656,7 +14656,7 @@
             "symbol": "MHOT",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 101,
+            "rowIndex": 172,
             "name": "MHOT",
             "cells": [
               "MHOT'},{'change"
@@ -14675,7 +14675,7 @@
             "symbol": "MHOT",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 226,
+            "rowIndex": 384,
             "name": "MHOT",
             "cells": [
               "MHOT/support-resistance','within"
@@ -14687,9 +14687,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 17.91,
+      "basePrice": 18.17,
       "baseVolume": 337060,
-      "baseValue": 18058736
+      "baseValue": 4807012.5
     },
     {
       "symbol": "MICH",
@@ -14766,7 +14766,7 @@
             "symbol": "MICH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 119,
+            "rowIndex": 158,
             "name": "MICH",
             "cells": [
               "MICH'},{'change"
@@ -14785,7 +14785,7 @@
             "symbol": "MICH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 314,
+            "rowIndex": 340,
             "name": "MICH",
             "cells": [
               "MICH/support-resistance','within"
@@ -14797,9 +14797,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 50.82,
+      "basePrice": 49.59,
       "baseVolume": 138392,
-      "baseValue": 12499044
+      "baseValue": 6194560.5
     },
     {
       "symbol": "MILS",
@@ -14876,7 +14876,7 @@
             "symbol": "MILS",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 76,
+            "rowIndex": 115,
             "name": "MILS",
             "cells": [
               "MILS'},{'change"
@@ -14895,7 +14895,7 @@
             "symbol": "MILS",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 334,
+            "rowIndex": 126,
             "name": "MILS",
             "cells": [
               "MILS/support-resistance','within"
@@ -14907,9 +14907,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 202,
+      "basePrice": 202.97,
       "baseVolume": 31424,
-      "baseValue": 29931146
+      "baseValue": 15846564
     },
     {
       "symbol": "MIPH",
@@ -14986,7 +14986,7 @@
             "symbol": "MIPH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 156,
+            "rowIndex": 187,
             "name": "MIPH",
             "cells": [
               "MIPH'},{'change"
@@ -15005,7 +15005,7 @@
             "symbol": "MIPH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 412,
+            "rowIndex": 158,
             "name": "MIPH",
             "cells": [
               "MIPH/support-resistance','within"
@@ -15017,9 +15017,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 809.76,
+      "basePrice": 802.71,
       "baseVolume": 586,
-      "baseValue": 5287419
+      "baseValue": 2066028
     },
     {
       "symbol": "MMAT",
@@ -15027,14 +15027,15 @@
       "coverageStatus": "ANALYSIS_READY_INTERNAL_CACHE",
       "sourceStrengthScore": 100,
       "evidenceScore": 100,
-      "confirmationCount": 6,
-      "confirmations": 6,
+      "confirmationCount": 7,
+      "confirmations": 7,
       "confirmationSources": [
         "internal:price",
         "internal:volume/value",
         "internal:support/resistance",
         "internal:valid plan",
         "internal:data quality",
+        "external:liquidity",
         "external:supportResistance"
       ],
       "evidenceSources": [
@@ -15043,6 +15044,7 @@
         "internal:support/resistance",
         "internal:valid plan",
         "internal:data quality",
+        "external:liquidity",
         "external:supportResistance"
       ],
       "coreSignalCount": 5,
@@ -15055,9 +15057,28 @@
       "volumeStatus": "حجم/قيمة من الكاش",
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة سعرية منطقية",
-      "sourceCount": 1,
-      "currentExternalSourceCount": 1,
+      "sourceCount": 2,
+      "currentExternalSourceCount": 2,
       "sources": {
+        "liquidity": {
+          "sourceId": "mubasherLiquidity",
+          "title": "Mubasher Liquidity Monitor",
+          "currentRunOk": true,
+          "staleFallback": false,
+          "row": {
+            "symbol": "MMAT",
+            "sourceId": "mubasherLiquidity",
+            "group": "liquidity",
+            "rowIndex": 207,
+            "name": "MMAT",
+            "cells": [
+              "MMAT'},{'change"
+            ],
+            "numeric": [],
+            "rowText": "MMAT'},{'change",
+            "fallback": true
+          }
+        },
         "supportResistance": {
           "sourceId": "mubasherSupportResistance",
           "title": "Mubasher Support & Resistance",
@@ -15067,7 +15088,7 @@
             "symbol": "MMAT",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 428,
+            "rowIndex": 420,
             "name": "MMAT",
             "cells": [
               "MMAT/support-resistance','within"
@@ -15081,7 +15102,7 @@
       "exclusionReason": "",
       "basePrice": 3.7,
       "baseVolume": 11701,
-      "baseValue": 3880
+      "baseValue": 43293.7
     },
     {
       "symbol": "MOED",
@@ -15158,7 +15179,7 @@
             "symbol": "MOED",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 83,
+            "rowIndex": 9,
             "name": "MOED",
             "cells": [
               "MOED'},{'change"
@@ -15177,7 +15198,7 @@
             "symbol": "MOED",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 36,
+            "rowIndex": 142,
             "name": "MOED",
             "cells": [
               "MOED/support-resistance','within"
@@ -15191,7 +15212,7 @@
       "exclusionReason": "",
       "basePrice": 0.79,
       "baseVolume": 6540887,
-      "baseValue": 27563730
+      "baseValue": 232805472
     },
     {
       "symbol": "MOIL",
@@ -15268,7 +15289,7 @@
             "symbol": "MOIL",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 203,
+            "rowIndex": 200,
             "name": "MOIL",
             "cells": [
               "MOIL'},{'change"
@@ -15287,7 +15308,7 @@
             "symbol": "MOIL",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 298,
+            "rowIndex": 90,
             "name": "MOIL",
             "cells": [
               "MOIL/support-resistance','within"
@@ -15301,7 +15322,7 @@
       "exclusionReason": "",
       "basePrice": 0.68,
       "baseVolume": 260595,
-      "baseValue": 27680.31
+      "baseValue": 198268.67
     },
     {
       "symbol": "MOIN",
@@ -15378,7 +15399,7 @@
             "symbol": "MOIN",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 79,
+            "rowIndex": 112,
             "name": "MOIN",
             "cells": [
               "MOIN'},{'change"
@@ -15397,7 +15418,7 @@
             "symbol": "MOIN",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 48,
+            "rowIndex": 268,
             "name": "MOIN",
             "cells": [
               "MOIN/support-resistance','within"
@@ -15409,9 +15430,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 39.77,
+      "basePrice": 36.65,
       "baseVolume": 22961,
-      "baseValue": 29391914
+      "baseValue": 16491344
     },
     {
       "symbol": "MOSC",
@@ -15488,7 +15509,7 @@
             "symbol": "MOSC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 190,
+            "rowIndex": 191,
             "name": "MOSC",
             "cells": [
               "MOSC'},{'change"
@@ -15507,7 +15528,7 @@
             "symbol": "MOSC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 378,
+            "rowIndex": 412,
             "name": "MOSC",
             "cells": [
               "MOSC/support-resistance','within"
@@ -15519,9 +15540,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 315,
+      "basePrice": 315.97,
       "baseVolume": 12589,
-      "baseValue": 1651284.38
+      "baseValue": 1230627.38
     },
     {
       "symbol": "MPCI",
@@ -15598,7 +15619,7 @@
             "symbol": "MPCI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 20,
+            "rowIndex": 35,
             "name": "MPCI",
             "cells": [
               "MPCI'},{'change"
@@ -15617,7 +15638,7 @@
             "symbol": "MPCI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 216,
+            "rowIndex": 56,
             "name": "MPCI",
             "cells": [
               "MPCI/support-resistance','within"
@@ -15629,9 +15650,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 417.83,
+      "basePrice": 417.37,
       "baseVolume": 518786,
-      "baseValue": 138004080
+      "baseValue": 99159792
     },
     {
       "symbol": "MPCO",
@@ -15708,7 +15729,7 @@
             "symbol": "MPCO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 3,
+            "rowIndex": 10,
             "name": "MPCO",
             "cells": [
               "MPCO'},{'change"
@@ -15727,7 +15748,7 @@
             "symbol": "MPCO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 104,
+            "rowIndex": 130,
             "name": "MPCO",
             "cells": [
               "MPCO/support-resistance','within"
@@ -15739,9 +15760,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.58,
+      "basePrice": 2.74,
       "baseVolume": 17594356,
-      "baseValue": 429554912
+      "baseValue": 211243152
     },
     {
       "symbol": "MPRC",
@@ -15818,7 +15839,7 @@
             "symbol": "MPRC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 39,
+            "rowIndex": 91,
             "name": "MPRC",
             "cells": [
               "MPRC'},{'change"
@@ -15837,7 +15858,7 @@
             "symbol": "MPRC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 22,
+            "rowIndex": 100,
             "name": "MPRC",
             "cells": [
               "MPRC/support-resistance','within"
@@ -15851,7 +15872,7 @@
       "exclusionReason": "",
       "basePrice": 40,
       "baseVolume": 853873,
-      "baseValue": 64920836
+      "baseValue": 26180102
     },
     {
       "symbol": "MTIE",
@@ -15947,7 +15968,7 @@
             "symbol": "MTIE",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 14,
+            "rowIndex": 16,
             "name": "MTIE",
             "cells": [
               "MTIE/support-resistance','within"
@@ -15959,9 +15980,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 8.53,
+      "basePrice": 8.46,
       "baseVolume": 4696709,
-      "baseValue": 21519322
+      "baseValue": 24248318
     },
     {
       "symbol": "NAHO",
@@ -16038,7 +16059,7 @@
             "symbol": "NAHO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 205,
+            "rowIndex": 206,
             "name": "NAHO",
             "cells": [
               "NAHO'},{'change"
@@ -16057,7 +16078,7 @@
             "symbol": "NAHO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 386,
+            "rowIndex": 396,
             "name": "NAHO",
             "cells": [
               "NAHO/support-resistance','within"
@@ -16071,7 +16092,7 @@
       "exclusionReason": "",
       "basePrice": 0.14,
       "baseVolume": 802,
-      "baseValue": 23982.26
+      "baseValue": 16870.88
     },
     {
       "symbol": "NAPR",
@@ -16148,7 +16169,7 @@
             "symbol": "NAPR",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 105,
+            "rowIndex": 55,
             "name": "NAPR",
             "cells": [
               "NAPR'},{'change"
@@ -16167,7 +16188,7 @@
             "symbol": "NAPR",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 388,
+            "rowIndex": 2,
             "name": "NAPR",
             "cells": [
               "NAPR/support-resistance','within"
@@ -16179,9 +16200,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 30,
+      "basePrice": 36,
       "baseVolume": 267255,
-      "baseValue": 16669216
+      "baseValue": 51550420
     },
     {
       "symbol": "NARE",
@@ -16258,7 +16279,7 @@
             "symbol": "NARE",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 172,
+            "rowIndex": 29,
             "name": "NARE",
             "cells": [
               "NARE'},{'change"
@@ -16277,7 +16298,7 @@
             "symbol": "NARE",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 254,
+            "rowIndex": 26,
             "name": "NARE",
             "cells": [
               "NARE/support-resistance','within"
@@ -16289,9 +16310,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 17.09,
+      "basePrice": 16.9,
       "baseVolume": 361946,
-      "baseValue": 3728773.5
+      "baseValue": 116956576
     },
     {
       "symbol": "NCCW",
@@ -16368,7 +16389,7 @@
             "symbol": "NCCW",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 19,
+            "rowIndex": 37,
             "name": "NCCW",
             "cells": [
               "NCCW'},{'change"
@@ -16387,7 +16408,7 @@
             "symbol": "NCCW",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 10,
+            "rowIndex": 160,
             "name": "NCCW",
             "cells": [
               "NCCW/support-resistance','within"
@@ -16399,9 +16420,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 7.65,
+      "basePrice": 8.37,
       "baseVolume": 1704394,
-      "baseValue": 148929728
+      "baseValue": 89744272
     },
     {
       "symbol": "NEDA",
@@ -16478,7 +16499,7 @@
             "symbol": "NEDA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 195,
+            "rowIndex": 198,
             "name": "NEDA",
             "cells": [
               "NEDA'},{'change"
@@ -16509,9 +16530,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.78,
+      "basePrice": 2.73,
       "baseVolume": 182082,
-      "baseValue": 963775.5
+      "baseValue": 500130.84
     },
     {
       "symbol": "NHPS",
@@ -16588,7 +16609,7 @@
             "symbol": "NHPS",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 134,
+            "rowIndex": 124,
             "name": "NHPS",
             "cells": [
               "NHPS'},{'change"
@@ -16619,9 +16640,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 82.07,
+      "basePrice": 80.63,
       "baseVolume": 1505383,
-      "baseValue": 8405329
+      "baseValue": 13615511
     },
     {
       "symbol": "NINH",
@@ -16698,7 +16719,7 @@
             "symbol": "NINH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 146,
+            "rowIndex": 137,
             "name": "NINH",
             "cells": [
               "NINH'},{'change"
@@ -16717,7 +16738,7 @@
             "symbol": "NINH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 228,
+            "rowIndex": 218,
             "name": "NINH",
             "cells": [
               "NINH/support-resistance','within"
@@ -16729,9 +16750,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 22.68,
+      "basePrice": 22.24,
       "baseVolume": 886050,
-      "baseValue": 6952884
+      "baseValue": 12058035
     },
     {
       "symbol": "NIPH",
@@ -16808,7 +16829,7 @@
             "symbol": "NIPH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 49,
+            "rowIndex": 23,
             "name": "NIPH",
             "cells": [
               "NIPH'},{'change"
@@ -16827,7 +16848,7 @@
             "symbol": "NIPH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 214,
+            "rowIndex": 190,
             "name": "NIPH",
             "cells": [
               "NIPH/support-resistance','within"
@@ -16839,9 +16860,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 337.47,
+      "basePrice": 333.35,
       "baseVolume": 1744666,
-      "baseValue": 54817876
+      "baseValue": 124125624
     },
     {
       "symbol": "OBRI",
@@ -16918,7 +16939,7 @@
             "symbol": "OBRI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 138,
+            "rowIndex": 118,
             "name": "OBRI",
             "cells": [
               "OBRI'},{'change"
@@ -16937,7 +16958,7 @@
             "symbol": "OBRI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 316,
+            "rowIndex": 62,
             "name": "OBRI",
             "cells": [
               "OBRI/support-resistance','within"
@@ -16949,9 +16970,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 32.33,
+      "basePrice": 32.08,
       "baseVolume": 2287936,
-      "baseValue": 7667713
+      "baseValue": 15128504
     },
     {
       "symbol": "OCDI",
@@ -17028,7 +17049,7 @@
             "symbol": "OCDI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 66,
+            "rowIndex": 26,
             "name": "OCDI",
             "cells": [
               "OCDI'},{'change"
@@ -17047,7 +17068,7 @@
             "symbol": "OCDI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 266,
+            "rowIndex": 114,
             "name": "OCDI",
             "cells": [
               "OCDI/support-resistance','within"
@@ -17059,9 +17080,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 32.71,
+      "basePrice": 31.59,
       "baseVolume": 4524224,
-      "baseValue": 34608336
+      "baseValue": 120048624
     },
     {
       "symbol": "OCPH",
@@ -17138,7 +17159,7 @@
             "symbol": "OCPH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 184,
+            "rowIndex": 176,
             "name": "OCPH",
             "cells": [
               "OCPH'},{'change"
@@ -17157,7 +17178,7 @@
             "symbol": "OCPH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 46,
+            "rowIndex": 376,
             "name": "OCPH",
             "cells": [
               "OCPH/support-resistance','within"
@@ -17169,9 +17190,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 251.01,
+      "basePrice": 249.56,
       "baseVolume": 32030,
-      "baseValue": 2668458
+      "baseValue": 3708270.75
     },
     {
       "symbol": "ODIN",
@@ -17248,7 +17269,7 @@
             "symbol": "ODIN",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 136,
+            "rowIndex": 139,
             "name": "ODIN",
             "cells": [
               "ODIN'},{'change"
@@ -17267,7 +17288,7 @@
             "symbol": "ODIN",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 90,
+            "rowIndex": 308,
             "name": "ODIN",
             "cells": [
               "ODIN/support-resistance','within"
@@ -17279,9 +17300,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.83,
+      "basePrice": 2.75,
       "baseVolume": 5190241,
-      "baseValue": 7946297
+      "baseValue": 11731197
     },
     {
       "symbol": "OFH",
@@ -17358,7 +17379,7 @@
             "symbol": "OFH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 58,
+            "rowIndex": 48,
             "name": "OFH",
             "cells": [
               "OFH'},{'change"
@@ -17377,7 +17398,7 @@
             "symbol": "OFH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 98,
+            "rowIndex": 288,
             "name": "OFH",
             "cells": [
               "OFH/support-resistance','within"
@@ -17389,9 +17410,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 1.07,
+      "basePrice": 1.09,
       "baseVolume": 20417435,
-      "baseValue": 41019184
+      "baseValue": 67109152
     },
     {
       "symbol": "OIH",
@@ -17468,7 +17489,7 @@
             "symbol": "OIH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 37,
+            "rowIndex": 61,
             "name": "OIH",
             "cells": [
               "OIH'},{'change"
@@ -17487,7 +17508,7 @@
             "symbol": "OIH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 248,
+            "rowIndex": 64,
             "name": "OIH",
             "cells": [
               "OIH/support-resistance','within"
@@ -17501,7 +17522,7 @@
       "exclusionReason": "",
       "basePrice": 2.16,
       "baseVolume": 44825768,
-      "baseValue": 70428376
+      "baseValue": 49137916
     },
     {
       "symbol": "OLFI",
@@ -17578,7 +17599,7 @@
             "symbol": "OLFI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 157,
+            "rowIndex": 125,
             "name": "OLFI",
             "cells": [
               "OLFI'},{'change"
@@ -17597,7 +17618,7 @@
             "symbol": "OLFI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 206,
+            "rowIndex": 264,
             "name": "OLFI",
             "cells": [
               "OLFI/support-resistance','within"
@@ -17609,9 +17630,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 22.58,
+      "basePrice": 22.64,
       "baseVolume": 1040171,
-      "baseValue": 5229034.5
+      "baseValue": 13589931
     },
     {
       "symbol": "ORAS",
@@ -17688,7 +17709,7 @@
             "symbol": "ORAS",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 41,
+            "rowIndex": 19,
             "name": "ORAS",
             "cells": [
               "ORAS'},{'change"
@@ -17707,7 +17728,7 @@
             "symbol": "ORAS",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 246,
+            "rowIndex": 102,
             "name": "ORAS",
             "cells": [
               "ORAS/support-resistance','within"
@@ -17719,9 +17740,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 849.67,
+      "basePrice": 857.3,
       "baseVolume": 215556,
-      "baseValue": 60571176
+      "baseValue": 152856512
     },
     {
       "symbol": "ORHD",
@@ -17798,7 +17819,7 @@
             "symbol": "ORHD",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 10,
+            "rowIndex": 25,
             "name": "ORHD",
             "cells": [
               "ORHD'},{'change"
@@ -17817,7 +17838,7 @@
             "symbol": "ORHD",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 282,
+            "rowIndex": 144,
             "name": "ORHD",
             "cells": [
               "ORHD/support-resistance','within"
@@ -17829,9 +17850,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 43.02,
+      "basePrice": 42.61,
       "baseVolume": 2015953,
-      "baseValue": 205492688
+      "baseValue": 120556176
     },
     {
       "symbol": "ORWE",
@@ -17908,7 +17929,7 @@
             "symbol": "ORWE",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 95,
+            "rowIndex": 62,
             "name": "ORWE",
             "cells": [
               "ORWE'},{'change"
@@ -17927,7 +17948,7 @@
             "symbol": "ORWE",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 82,
+            "rowIndex": 180,
             "name": "ORWE",
             "cells": [
               "ORWE/support-resistance','within"
@@ -17939,9 +17960,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 28,
+      "basePrice": 27.62,
       "baseVolume": 586090,
-      "baseValue": 20024528
+      "baseValue": 45950804
     },
     {
       "symbol": "PHAR",
@@ -18018,7 +18039,7 @@
             "symbol": "PHAR",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 57,
+            "rowIndex": 32,
             "name": "PHAR",
             "cells": [
               "PHAR'},{'change"
@@ -18037,7 +18058,7 @@
             "symbol": "PHAR",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 166,
+            "rowIndex": 40,
             "name": "PHAR",
             "cells": [
               "PHAR/support-resistance','within"
@@ -18049,9 +18070,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 126.38,
+      "basePrice": 125.15,
       "baseVolume": 259510,
-      "baseValue": 42043668
+      "baseValue": 109775784
     },
     {
       "symbol": "PHDC",
@@ -18128,7 +18149,7 @@
             "symbol": "PHDC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 9,
+            "rowIndex": 17,
             "name": "PHDC",
             "cells": [
               "PHDC'},{'change"
@@ -18147,7 +18168,7 @@
             "symbol": "PHDC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 84,
+            "rowIndex": 58,
             "name": "PHDC",
             "cells": [
               "PHDC/support-resistance','within"
@@ -18159,9 +18180,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 14.51,
+      "basePrice": 14.23,
       "baseVolume": 12620888,
-      "baseValue": 210537424
+      "baseValue": 153630704
     },
     {
       "symbol": "PHGC",
@@ -18238,7 +18259,7 @@
             "symbol": "PHGC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 147,
+            "rowIndex": 130,
             "name": "PHGC",
             "cells": [
               "PHGC'},{'change"
@@ -18257,7 +18278,7 @@
             "symbol": "PHGC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 354,
+            "rowIndex": 104,
             "name": "PHGC",
             "cells": [
               "PHGC/support-resistance','within"
@@ -18271,7 +18292,7 @@
       "exclusionReason": "",
       "basePrice": 0.09,
       "baseVolume": 83641561,
-      "baseValue": 6749315.5
+      "baseValue": 13249967
     },
     {
       "symbol": "PHTV",
@@ -18348,7 +18369,7 @@
             "symbol": "PHTV",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 186,
+            "rowIndex": 190,
             "name": "PHTV",
             "cells": [
               "PHTV'},{'change"
@@ -18367,7 +18388,7 @@
             "symbol": "PHTV",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 368,
+            "rowIndex": 410,
             "name": "PHTV",
             "cells": [
               "PHTV/support-resistance','within"
@@ -18379,9 +18400,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 354.11,
+      "basePrice": 350.05,
       "baseVolume": 9236,
-      "baseValue": 1793469.38
+      "baseValue": 1359688.25
     },
     {
       "symbol": "POUL",
@@ -18458,7 +18479,7 @@
             "symbol": "POUL",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 33,
+            "rowIndex": 111,
             "name": "POUL",
             "cells": [
               "POUL'},{'change"
@@ -18489,9 +18510,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 39.88,
+      "basePrice": 40.08,
       "baseVolume": 1168266,
-      "baseValue": 85570080
+      "baseValue": 17070144
     },
     {
       "symbol": "PRCL",
@@ -18568,7 +18589,7 @@
             "symbol": "PRCL",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 113,
+            "rowIndex": 89,
             "name": "PRCL",
             "cells": [
               "PRCL'},{'change"
@@ -18587,7 +18608,7 @@
             "symbol": "PRCL",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 232,
+            "rowIndex": 312,
             "name": "PRCL",
             "cells": [
               "PRCL/support-resistance','within"
@@ -18599,9 +18620,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 32.03,
+      "basePrice": 31.72,
       "baseVolume": 2035543,
-      "baseValue": 13871351
+      "baseValue": 26561250
     },
     {
       "symbol": "PRDC",
@@ -18678,7 +18699,7 @@
             "symbol": "PRDC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 85,
+            "rowIndex": 80,
             "name": "PRDC",
             "cells": [
               "PRDC'},{'change"
@@ -18697,7 +18718,7 @@
             "symbol": "PRDC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 294,
+            "rowIndex": 192,
             "name": "PRDC",
             "cells": [
               "PRDC/support-resistance','within"
@@ -18709,9 +18730,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 8.35,
+      "basePrice": 8.13,
       "baseVolume": 8905574,
-      "baseValue": 25162958
+      "baseValue": 32278326
     },
     {
       "symbol": "PRMH",
@@ -18788,7 +18809,7 @@
             "symbol": "PRMH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 171,
+            "rowIndex": 177,
             "name": "PRMH",
             "cells": [
               "PRMH'},{'change"
@@ -18807,7 +18828,7 @@
             "symbol": "PRMH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 370,
+            "rowIndex": 388,
             "name": "PRMH",
             "cells": [
               "PRMH/support-resistance','within"
@@ -18819,9 +18840,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.72,
+      "basePrice": 2.64,
       "baseVolume": 8119854,
-      "baseValue": 3792904.25
+      "baseValue": 3665160.5
     },
     {
       "symbol": "QNBE",
@@ -18898,7 +18919,7 @@
             "symbol": "QNBE",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 78,
+            "rowIndex": 138,
             "name": "QNBE",
             "cells": [
               "QNBE'},{'change"
@@ -18917,7 +18938,7 @@
             "symbol": "QNBE",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 134,
+            "rowIndex": 400,
             "name": "QNBE",
             "cells": [
               "QNBE/support-resistance','within"
@@ -18929,9 +18950,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 58.6,
+      "basePrice": 57,
       "baseVolume": 138819,
-      "baseValue": 29463002
+      "baseValue": 11931894
     },
     {
       "symbol": "RACC",
@@ -19008,7 +19029,7 @@
             "symbol": "RACC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 130,
+            "rowIndex": 148,
             "name": "RACC",
             "cells": [
               "RACC'},{'change"
@@ -19027,7 +19048,7 @@
             "symbol": "RACC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 310,
+            "rowIndex": 360,
             "name": "RACC",
             "cells": [
               "RACC/support-resistance','within"
@@ -19039,9 +19060,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 9.9,
+      "basePrice": 9.69,
       "baseVolume": 383965,
-      "baseValue": 9213637
+      "baseValue": 9356027
     },
     {
       "symbol": "RAKT",
@@ -19118,7 +19139,7 @@
             "symbol": "RAKT",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 199,
+            "rowIndex": 205,
             "name": "RAKT",
             "cells": [
               "RAKT'},{'change"
@@ -19137,7 +19158,7 @@
             "symbol": "RAKT",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 420,
+            "rowIndex": 424,
             "name": "RAKT",
             "cells": [
               "RAKT/support-resistance','within"
@@ -19149,9 +19170,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 21.67,
+      "basePrice": 22.15,
       "baseVolume": 7280,
-      "baseValue": 334070.66
+      "baseValue": 162896.73
     },
     {
       "symbol": "RAYA",
@@ -19228,7 +19249,7 @@
             "symbol": "RAYA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 92,
+            "rowIndex": 76,
             "name": "RAYA",
             "cells": [
               "RAYA'},{'change"
@@ -19247,7 +19268,7 @@
             "symbol": "RAYA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 62,
+            "rowIndex": 222,
             "name": "RAYA",
             "cells": [
               "RAYA/support-resistance','within"
@@ -19259,9 +19280,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 7.17,
+      "basePrice": 7.11,
       "baseVolume": 9094994,
-      "baseValue": 21673706
+      "baseValue": 33410242
     },
     {
       "symbol": "RMDA",
@@ -19338,7 +19359,7 @@
             "symbol": "RMDA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 29,
+            "rowIndex": 86,
             "name": "RMDA",
             "cells": [
               "RMDA'},{'change"
@@ -19357,7 +19378,7 @@
             "symbol": "RMDA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 40,
+            "rowIndex": 200,
             "name": "RMDA",
             "cells": [
               "RMDA/support-resistance','within"
@@ -19371,7 +19392,7 @@
       "exclusionReason": "",
       "basePrice": 6.25,
       "baseVolume": 1852658,
-      "baseValue": 104392648
+      "baseValue": 28968980
     },
     {
       "symbol": "ROTO",
@@ -19448,7 +19469,7 @@
             "symbol": "ROTO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 160,
+            "rowIndex": 156,
             "name": "ROTO",
             "cells": [
               "ROTO'},{'change"
@@ -19467,7 +19488,7 @@
             "symbol": "ROTO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 188,
+            "rowIndex": 380,
             "name": "ROTO",
             "cells": [
               "ROTO/support-resistance','within"
@@ -19479,9 +19500,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 42.65,
+      "basePrice": 42.06,
       "baseVolume": 576715,
-      "baseValue": 5112328.5
+      "baseValue": 6770392.5
     },
     {
       "symbol": "RREI",
@@ -19558,7 +19579,7 @@
             "symbol": "RREI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 86,
+            "rowIndex": 119,
             "name": "RREI",
             "cells": [
               "RREI'},{'change"
@@ -19577,7 +19598,7 @@
             "symbol": "RREI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 200,
+            "rowIndex": 228,
             "name": "RREI",
             "cells": [
               "RREI/support-resistance','within"
@@ -19589,9 +19610,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 4.31,
+      "basePrice": 4.4,
       "baseVolume": 1717087,
-      "baseValue": 25111226
+      "baseValue": 15070577
     },
     {
       "symbol": "RTVC",
@@ -19668,7 +19689,7 @@
             "symbol": "RTVC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 165,
+            "rowIndex": 185,
             "name": "RTVC",
             "cells": [
               "RTVC'},{'change"
@@ -19687,7 +19708,7 @@
             "symbol": "RTVC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 398,
+            "rowIndex": 224,
             "name": "RTVC",
             "cells": [
               "RTVC/support-resistance','within"
@@ -19699,9 +19720,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 4,
+      "basePrice": 4.01,
       "baseVolume": 420685,
-      "baseValue": 4179502.25
+      "baseValue": 2186721.75
     },
     {
       "symbol": "RUBX",
@@ -19778,7 +19799,7 @@
             "symbol": "RUBX",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 158,
+            "rowIndex": 145,
             "name": "RUBX",
             "cells": [
               "RUBX'},{'change"
@@ -19797,7 +19818,7 @@
             "symbol": "RUBX",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 322,
+            "rowIndex": 332,
             "name": "RUBX",
             "cells": [
               "RUBX/support-resistance','within"
@@ -19809,9 +19830,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 12.86,
+      "basePrice": 12.84,
       "baseVolume": 16483375,
-      "baseValue": 5145020.5
+      "baseValue": 9797494
     },
     {
       "symbol": "SAUD",
@@ -19888,7 +19909,7 @@
             "symbol": "SAUD",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 178,
+            "rowIndex": 152,
             "name": "SAUD",
             "cells": [
               "SAUD'},{'change"
@@ -19907,7 +19928,7 @@
             "symbol": "SAUD",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 278,
+            "rowIndex": 390,
             "name": "SAUD",
             "cells": [
               "SAUD/support-resistance','within"
@@ -19919,9 +19940,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 23.61,
+      "basePrice": 23.63,
       "baseVolume": 221494,
-      "baseValue": 3019772
+      "baseValue": 7602877.5
     },
     {
       "symbol": "SCEM",
@@ -19998,7 +20019,7 @@
             "symbol": "SCEM",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 18,
+            "rowIndex": 59,
             "name": "SCEM",
             "cells": [
               "SCEM'},{'change"
@@ -20017,7 +20038,7 @@
             "symbol": "SCEM",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 8,
+            "rowIndex": 116,
             "name": "SCEM",
             "cells": [
               "SCEM/support-resistance','within"
@@ -20029,9 +20050,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 100,
+      "basePrice": 97.46,
       "baseVolume": 167168,
-      "baseValue": 152449920
+      "baseValue": 49779844
     },
     {
       "symbol": "SCFM",
@@ -20108,7 +20129,7 @@
             "symbol": "SCFM",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 155,
+            "rowIndex": 181,
             "name": "SCFM",
             "cells": [
               "SCFM'},{'change"
@@ -20127,7 +20148,7 @@
             "symbol": "SCFM",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 170,
+            "rowIndex": 364,
             "name": "SCFM",
             "cells": [
               "SCFM/support-resistance','within"
@@ -20139,9 +20160,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 275.8,
+      "basePrice": 274.74,
       "baseVolume": 10591,
-      "baseValue": 5466716
+      "baseValue": 2842093.75
     },
     {
       "symbol": "SCTS",
@@ -20218,7 +20239,7 @@
             "symbol": "SCTS",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 179,
+            "rowIndex": 143,
             "name": "SCTS",
             "cells": [
               "SCTS'},{'change"
@@ -20237,7 +20258,7 @@
             "symbol": "SCTS",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 376,
+            "rowIndex": 358,
             "name": "SCTS",
             "cells": [
               "SCTS/support-resistance','within"
@@ -20249,9 +20270,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 621.9,
+      "basePrice": 614.54,
       "baseVolume": 24420,
-      "baseValue": 2941166
+      "baseValue": 10793362
     },
     {
       "symbol": "SDTI",
@@ -20328,7 +20349,7 @@
             "symbol": "SDTI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 117,
+            "rowIndex": 92,
             "name": "SDTI",
             "cells": [
               "SDTI'},{'change"
@@ -20347,7 +20368,7 @@
             "symbol": "SDTI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 132,
+            "rowIndex": 60,
             "name": "SDTI",
             "cells": [
               "SDTI/support-resistance','within"
@@ -20359,9 +20380,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 72.67,
+      "basePrice": 72,
       "baseVolume": 76087,
-      "baseValue": 12736343
+      "baseValue": 25767962
     },
     {
       "symbol": "SEIG",
@@ -20438,7 +20459,7 @@
             "symbol": "SEIG",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 196,
+            "rowIndex": 192,
             "name": "SEIG",
             "cells": [
               "SEIG'},{'change"
@@ -20457,7 +20478,7 @@
             "symbol": "SEIG",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 250,
+            "rowIndex": 336,
             "name": "SEIG",
             "cells": [
               "SEIG/support-resistance','within"
@@ -20469,9 +20490,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 252.74,
+      "basePrice": 250.59,
       "baseVolume": 15975,
-      "baseValue": 908687.19
+      "baseValue": 1118296
     },
     {
       "symbol": "SIPC",
@@ -20548,7 +20569,7 @@
             "symbol": "SIPC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 14,
+            "rowIndex": 47,
             "name": "SIPC",
             "cells": [
               "SIPC'},{'change"
@@ -20567,7 +20588,7 @@
             "symbol": "SIPC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 156,
+            "rowIndex": 162,
             "name": "SIPC",
             "cells": [
               "SIPC/support-resistance','within"
@@ -20579,9 +20600,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 5.95,
+      "basePrice": 6.2,
       "baseVolume": 1277109,
-      "baseValue": 172911360
+      "baseValue": 67228976
     },
     {
       "symbol": "SKPC",
@@ -20658,7 +20679,7 @@
             "symbol": "SKPC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 27,
+            "rowIndex": 36,
             "name": "SKPC",
             "cells": [
               "SKPC'},{'change"
@@ -20677,7 +20698,7 @@
             "symbol": "SKPC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 238,
+            "rowIndex": 230,
             "name": "SKPC",
             "cells": [
               "SKPC/support-resistance','within"
@@ -20689,9 +20710,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 18.5,
+      "basePrice": 18.15,
       "baseVolume": 1391581,
-      "baseValue": 108849960
+      "baseValue": 93589632
     },
     {
       "symbol": "SMFR",
@@ -20768,7 +20789,7 @@
             "symbol": "SMFR",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 176,
+            "rowIndex": 157,
             "name": "SMFR",
             "cells": [
               "SMFR'},{'change"
@@ -20787,7 +20808,7 @@
             "symbol": "SMFR",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 4,
+            "rowIndex": 304,
             "name": "SMFR",
             "cells": [
               "SMFR/support-resistance','within"
@@ -20799,9 +20820,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 251.22,
+      "basePrice": 249.73,
       "baseVolume": 2091,
-      "baseValue": 3411911
+      "baseValue": 6218429.5
     },
     {
       "symbol": "SNFC",
@@ -20878,7 +20899,7 @@
             "symbol": "SNFC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 161,
+            "rowIndex": 95,
             "name": "SNFC",
             "cells": [
               "SNFC'},{'change"
@@ -20897,7 +20918,7 @@
             "symbol": "SNFC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 360,
+            "rowIndex": 280,
             "name": "SNFC",
             "cells": [
               "SNFC/support-resistance','within"
@@ -20909,9 +20930,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 10.9,
+      "basePrice": 10.79,
       "baseVolume": 914365,
-      "baseValue": 5041552.5
+      "baseValue": 23041064
     },
     {
       "symbol": "SPIN",
@@ -20988,7 +21009,7 @@
             "symbol": "SPIN",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 150,
+            "rowIndex": 160,
             "name": "SPIN",
             "cells": [
               "SPIN'},{'change"
@@ -21007,7 +21028,7 @@
             "symbol": "SPIN",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 324,
+            "rowIndex": 374,
             "name": "SPIN",
             "cells": [
               "SPIN/support-resistance','within"
@@ -21019,9 +21040,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 18.78,
+      "basePrice": 18.32,
       "baseVolume": 472129,
-      "baseValue": 6430163.5
+      "baseValue": 6096598.5
     },
     {
       "symbol": "SPMD",
@@ -21098,7 +21119,7 @@
             "symbol": "SPMD",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 148,
+            "rowIndex": 16,
             "name": "SPMD",
             "cells": [
               "SPMD'},{'change"
@@ -21117,7 +21138,7 @@
             "symbol": "SPMD",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 208,
+            "rowIndex": 316,
             "name": "SPMD",
             "cells": [
               "SPMD/support-resistance','within"
@@ -21131,7 +21152,7 @@
       "exclusionReason": "",
       "basePrice": 0.44,
       "baseVolume": 21624669,
-      "baseValue": 6607410
+      "baseValue": 154314880
     },
     {
       "symbol": "SUGR",
@@ -21174,7 +21195,7 @@
       "supportStatus": "دعم/مقاومة من الكاش",
       "planStatus": "خطة سعرية منطقية",
       "sourceCount": 4,
-      "currentExternalSourceCount": 4,
+      "currentExternalSourceCount": 3,
       "sources": {
         "volume": {
           "sourceId": "mubasherVolume",
@@ -21210,7 +21231,7 @@
             "symbol": "SUGR",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 51,
+            "rowIndex": 78,
             "name": "SUGR",
             "cells": [
               "SUGR'},{'change"
@@ -21229,7 +21250,7 @@
             "symbol": "SUGR",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 102,
+            "rowIndex": 272,
             "name": "SUGR",
             "cells": [
               "SUGR/support-resistance','within"
@@ -21242,8 +21263,8 @@
         "priceBoard": {
           "sourceId": "mubasherPrices",
           "title": "Mubasher EGX Price Board",
-          "currentRunOk": true,
-          "staleFallback": false,
+          "currentRunOk": false,
+          "staleFallback": true,
           "row": {
             "symbol": "SUGR",
             "sourceId": "mubasherPrices",
@@ -21286,9 +21307,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 62.92,
+      "basePrice": 63.81,
       "baseVolume": 62828,
-      "baseValue": 49454796
+      "baseValue": 32514648
     },
     {
       "symbol": "SVCE",
@@ -21365,7 +21386,7 @@
             "symbol": "SVCE",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 25,
+            "rowIndex": 15,
             "name": "SVCE",
             "cells": [
               "SVCE'},{'change"
@@ -21384,7 +21405,7 @@
             "symbol": "SVCE",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 28,
+            "rowIndex": 128,
             "name": "SVCE",
             "cells": [
               "SVCE/support-resistance','within"
@@ -21396,9 +21417,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 12.32,
+      "basePrice": 12.22,
       "baseVolume": 15866982,
-      "baseValue": 113736592
+      "baseValue": 163056960
     },
     {
       "symbol": "SWDY",
@@ -21475,7 +21496,7 @@
             "symbol": "SWDY",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 56,
+            "rowIndex": 58,
             "name": "SWDY",
             "cells": [
               "SWDY'},{'change"
@@ -21494,7 +21515,7 @@
             "symbol": "SWDY",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 118,
+            "rowIndex": 36,
             "name": "SWDY",
             "cells": [
               "SWDY/support-resistance','within"
@@ -21506,9 +21527,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 127.79,
+      "basePrice": 127.44,
       "baseVolume": 91899,
-      "baseValue": 42763696
+      "baseValue": 50264024
     },
     {
       "symbol": "TALM",
@@ -21585,7 +21606,7 @@
             "symbol": "TALM",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 40,
+            "rowIndex": 5,
             "name": "TALM",
             "cells": [
               "TALM'},{'change"
@@ -21604,7 +21625,7 @@
             "symbol": "TALM",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 198,
+            "rowIndex": 254,
             "name": "TALM",
             "cells": [
               "TALM/support-resistance','within"
@@ -21616,9 +21637,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 18.13,
+      "basePrice": 18.9,
       "baseVolume": 470132,
-      "baseValue": 64150756
+      "baseValue": 345841440
     },
     {
       "symbol": "TANM",
@@ -21695,7 +21716,7 @@
             "symbol": "TANM",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 15,
+            "rowIndex": 49,
             "name": "TANM",
             "cells": [
               "TANM'},{'change"
@@ -21714,7 +21735,7 @@
             "symbol": "TANM",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 16,
+            "rowIndex": 38,
             "name": "TANM",
             "cells": [
               "TANM/support-resistance','within"
@@ -21726,9 +21747,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 6.52,
+      "basePrice": 7.28,
       "baseVolume": 2044098,
-      "baseValue": 167547376
+      "baseValue": 64065800
     },
     {
       "symbol": "TAQA",
@@ -21805,7 +21826,7 @@
             "symbol": "TAQA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 70,
+            "rowIndex": 83,
             "name": "TAQA",
             "cells": [
               "TAQA'},{'change"
@@ -21824,7 +21845,7 @@
             "symbol": "TAQA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 100,
+            "rowIndex": 32,
             "name": "TAQA",
             "cells": [
               "TAQA/support-resistance','within"
@@ -21836,9 +21857,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 15.94,
+      "basePrice": 15.8,
       "baseVolume": 1654388,
-      "baseValue": 32653196
+      "baseValue": 30942108
     },
     {
       "symbol": "TMGH",
@@ -21915,7 +21936,7 @@
             "symbol": "TMGH",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 11,
+            "rowIndex": 7,
             "name": "TMGH",
             "cells": [
               "TMGH'},{'change"
@@ -21934,7 +21955,7 @@
             "symbol": "TMGH",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 256,
+            "rowIndex": 24,
             "name": "TMGH",
             "cells": [
               "TMGH/support-resistance','within"
@@ -21946,9 +21967,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 99.49,
+      "basePrice": 97.86,
       "baseVolume": 2145971,
-      "baseValue": 198832000
+      "baseValue": 248803856
     },
     {
       "symbol": "TRTO",
@@ -22025,7 +22046,7 @@
             "symbol": "TRTO",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 204,
+            "rowIndex": 212,
             "name": "TRTO",
             "cells": [
               "TRTO'},{'change"
@@ -22044,7 +22065,7 @@
             "symbol": "TRTO",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 392,
+            "rowIndex": 398,
             "name": "TRTO",
             "cells": [
               "TRTO/support-resistance','within"
@@ -22058,7 +22079,7 @@
       "exclusionReason": "",
       "basePrice": 0.07,
       "baseVolume": 1,
-      "baseValue": 26144.11
+      "baseValue": 0.03
     },
     {
       "symbol": "TYCN",
@@ -22135,7 +22156,7 @@
             "symbol": "TYCN",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 192,
+            "rowIndex": 188,
             "name": "TYCN",
             "cells": [
               "TYCN'},{'change"
@@ -22154,7 +22175,7 @@
             "symbol": "TYCN",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 382,
+            "rowIndex": 244,
             "name": "TYCN",
             "cells": [
               "TYCN/support-resistance','within"
@@ -22166,9 +22187,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 14.58,
+      "basePrice": 14.36,
       "baseVolume": 3603158,
-      "baseValue": 1601875.63
+      "baseValue": 2023634
     },
     {
       "symbol": "UBEE",
@@ -22245,7 +22266,7 @@
             "symbol": "UBEE",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 174,
+            "rowIndex": 164,
             "name": "UBEE",
             "cells": [
               "UBEE'},{'change"
@@ -22264,7 +22285,7 @@
             "symbol": "UBEE",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 148,
+            "rowIndex": 356,
             "name": "UBEE",
             "cells": [
               "UBEE/support-resistance','within"
@@ -22276,9 +22297,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 16.18,
+      "basePrice": 16,
       "baseVolume": 140371,
-      "baseValue": 3594527.25
+      "baseValue": 5567786
     },
     {
       "symbol": "UEFM",
@@ -22355,7 +22376,7 @@
             "symbol": "UEFM",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 133,
+            "rowIndex": 162,
             "name": "UEFM",
             "cells": [
               "UEFM'},{'change"
@@ -22374,7 +22395,7 @@
             "symbol": "UEFM",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 302,
+            "rowIndex": 418,
             "name": "UEFM",
             "cells": [
               "UEFM/support-resistance','within"
@@ -22386,9 +22407,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 523.13,
+      "basePrice": 530.48,
       "baseVolume": 1026,
-      "baseValue": 8446548
+      "baseValue": 5739929
     },
     {
       "symbol": "UEGC",
@@ -22465,7 +22486,7 @@
             "symbol": "UEGC",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 106,
+            "rowIndex": 128,
             "name": "UEGC",
             "cells": [
               "UEGC'},{'change"
@@ -22484,7 +22505,7 @@
             "symbol": "UEGC",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 172,
+            "rowIndex": 314,
             "name": "UEGC",
             "cells": [
               "UEGC/support-resistance','within"
@@ -22498,7 +22519,7 @@
       "exclusionReason": "",
       "basePrice": 1.74,
       "baseVolume": 7632424,
-      "baseValue": 16382613
+      "baseValue": 13357934
     },
     {
       "symbol": "UNIP",
@@ -22575,7 +22596,7 @@
             "symbol": "UNIP",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 77,
+            "rowIndex": 126,
             "name": "UNIP",
             "cells": [
               "UNIP'},{'change"
@@ -22594,7 +22615,7 @@
             "symbol": "UNIP",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 244,
+            "rowIndex": 334,
             "name": "UNIP",
             "cells": [
               "UNIP/support-resistance','within"
@@ -22608,7 +22629,7 @@
       "exclusionReason": "",
       "basePrice": 0.38,
       "baseVolume": 9741175,
-      "baseValue": 29544904
+      "baseValue": 13455898
     },
     {
       "symbol": "UNIT",
@@ -22685,7 +22706,7 @@
             "symbol": "UNIT",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 194,
+            "rowIndex": 20,
             "name": "UNIT",
             "cells": [
               "UNIT'},{'change"
@@ -22704,7 +22725,7 @@
             "symbol": "UNIT",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 390,
+            "rowIndex": 132,
             "name": "UNIT",
             "cells": [
               "UNIT/support-resistance','within"
@@ -22716,9 +22737,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 18.51,
+      "basePrice": 18.27,
       "baseVolume": 123733,
-      "baseValue": 991414.19
+      "baseValue": 145631696
     },
     {
       "symbol": "VALU",
@@ -22795,7 +22816,7 @@
             "symbol": "VALU",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 140,
+            "rowIndex": 135,
             "name": "VALU",
             "cells": [
               "VALU'},{'change"
@@ -22814,7 +22835,7 @@
             "symbol": "VALU",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 312,
+            "rowIndex": 152,
             "name": "VALU",
             "cells": [
               "VALU/support-resistance','within"
@@ -22826,9 +22847,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 10.9,
+      "basePrice": 10.83,
       "baseVolume": 1391280,
-      "baseValue": 7306409
+      "baseValue": 12534103
     },
     {
       "symbol": "VLMR",
@@ -22905,7 +22926,7 @@
             "symbol": "VLMR",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 200,
+            "rowIndex": 199,
             "name": "VLMR",
             "cells": [
               "VLMR'},{'change"
@@ -22924,7 +22945,7 @@
             "symbol": "VLMR",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 178,
+            "rowIndex": 88,
             "name": "VLMR",
             "cells": [
               "VLMR/support-resistance','within"
@@ -22938,7 +22959,7 @@
       "exclusionReason": "",
       "basePrice": 0.68,
       "baseVolume": 23524,
-      "baseValue": 296478.19
+      "baseValue": 258575.94
     },
     {
       "symbol": "VLMRA",
@@ -23015,7 +23036,7 @@
             "symbol": "VLMRA",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 69,
+            "rowIndex": 79,
             "name": "VLMRA",
             "cells": [
               "VLMRA'},{'change"
@@ -23034,7 +23055,7 @@
             "symbol": "VLMRA",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 230,
+            "rowIndex": 246,
             "name": "VLMRA",
             "cells": [
               "VLMRA/support-resistance','within"
@@ -23046,9 +23067,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 32.11,
+      "basePrice": 31.8,
       "baseVolume": 790249,
-      "baseValue": 33053076
+      "baseValue": 32323874
     },
     {
       "symbol": "WCDF",
@@ -23125,7 +23146,7 @@
             "symbol": "WCDF",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 163,
+            "rowIndex": 186,
             "name": "WCDF",
             "cells": [
               "WCDF'},{'change"
@@ -23144,7 +23165,7 @@
             "symbol": "WCDF",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 396,
+            "rowIndex": 148,
             "name": "WCDF",
             "cells": [
               "WCDF/support-resistance','within"
@@ -23156,9 +23177,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 692.68,
+      "basePrice": 707.82,
       "baseVolume": 2799,
-      "baseValue": 4351348.5
+      "baseValue": 2123373.75
     },
     {
       "symbol": "WKOL",
@@ -23235,7 +23256,7 @@
             "symbol": "WKOL",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 116,
+            "rowIndex": 161,
             "name": "WKOL",
             "cells": [
               "WKOL'},{'change"
@@ -23254,7 +23275,7 @@
             "symbol": "WKOL",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 210,
+            "rowIndex": 202,
             "name": "WKOL",
             "cells": [
               "WKOL/support-resistance','within"
@@ -23266,9 +23287,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 340.14,
+      "basePrice": 345,
       "baseVolume": 2907,
-      "baseValue": 12989026
+      "baseValue": 5819745
     },
     {
       "symbol": "ZEOT",
@@ -23345,7 +23366,7 @@
             "symbol": "ZEOT",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 170,
+            "rowIndex": 169,
             "name": "ZEOT",
             "cells": [
               "ZEOT'},{'change"
@@ -23364,7 +23385,7 @@
             "symbol": "ZEOT",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 340,
+            "rowIndex": 274,
             "name": "ZEOT",
             "cells": [
               "ZEOT/support-resistance','within"
@@ -23376,9 +23397,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 13.89,
+      "basePrice": 13.66,
       "baseVolume": 4197768,
-      "baseValue": 3862543.5
+      "baseValue": 5233414.5
     },
     {
       "symbol": "ZMID",
@@ -23455,7 +23476,7 @@
             "symbol": "ZMID",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 28,
+            "rowIndex": 50,
             "name": "ZMID",
             "cells": [
               "ZMID'},{'change"
@@ -23474,7 +23495,7 @@
             "symbol": "ZMID",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 202,
+            "rowIndex": 76,
             "name": "ZMID",
             "cells": [
               "ZMID/support-resistance','within"
@@ -23486,9 +23507,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 9.79,
+      "basePrice": 9.64,
       "baseVolume": 14747522,
-      "baseValue": 104407864
+      "baseValue": 62440972
     },
     {
       "symbol": "SEIGA",
@@ -23599,7 +23620,7 @@
             "symbol": "ADRI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 115,
+            "rowIndex": 99,
             "name": "ADRI",
             "cells": [
               "ADRI'},{'change"
@@ -23618,7 +23639,7 @@
             "symbol": "ADRI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 356,
+            "rowIndex": 350,
             "name": "ADRI",
             "cells": [
               "ADRI/support-resistance','within"
@@ -23630,9 +23651,9 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 10.39,
-      "baseVolume": 1254883,
-      "baseValue": 13125042
+      "basePrice": 10.74,
+      "baseVolume": 2068215,
+      "baseValue": 21573616
     },
     {
       "symbol": "AIFI",
@@ -23703,7 +23724,7 @@
             "symbol": "AIFI",
             "sourceId": "mubasherLiquidity",
             "group": "liquidity",
-            "rowIndex": 124,
+            "rowIndex": 149,
             "name": "AIFI",
             "cells": [
               "AIFI'},{'change"
@@ -23722,7 +23743,7 @@
             "symbol": "AIFI",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 264,
+            "rowIndex": 298,
             "name": "AIFI",
             "cells": [
               "AIFI/support-resistance','within"
@@ -23734,9 +23755,86 @@
         }
       },
       "exclusionReason": "",
-      "basePrice": 2.5,
-      "baseVolume": 4029407,
-      "baseValue": 10111499
+      "basePrice": 2.41,
+      "baseVolume": 3533360,
+      "baseValue": 8659520
+    },
+    {
+      "symbol": "ESRS",
+      "name": "' ### Size: [[320,50],[300,50],[300,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Ezz Steel SAE",
+      "coverageStatus": "ANALYSIS_READY_INTERNAL_CACHE",
+      "sourceStrengthScore": 66,
+      "evidenceScore": 66,
+      "confirmationCount": 4,
+      "confirmations": 4,
+      "confirmationSources": [
+        "internal:price",
+        "internal:volume/value",
+        "external:liquidity",
+        "external:supportResistance"
+      ],
+      "evidenceSources": [
+        "internal:price",
+        "internal:volume/value",
+        "external:liquidity",
+        "external:supportResistance"
+      ],
+      "coreSignalCount": 2,
+      "internalCacheUsed": true,
+      "cacheExtracted": true,
+      "cacheEvidenceCount": 2,
+      "priceStatus": "ok",
+      "executionPriceOk": true,
+      "pricePrecisionRisk": false,
+      "volumeStatus": "حجم/قيمة من الكاش",
+      "supportStatus": "ناقص",
+      "planStatus": "ناقص",
+      "sourceCount": 2,
+      "currentExternalSourceCount": 2,
+      "sources": {
+        "liquidity": {
+          "sourceId": "mubasherLiquidity",
+          "title": "Mubasher Liquidity Monitor",
+          "currentRunOk": true,
+          "staleFallback": false,
+          "row": {
+            "symbol": "ESRS",
+            "sourceId": "mubasherLiquidity",
+            "group": "liquidity",
+            "rowIndex": 204,
+            "name": "ESRS",
+            "cells": [
+              "ESRS'},{'change"
+            ],
+            "numeric": [],
+            "rowText": "ESRS'},{'change",
+            "fallback": true
+          }
+        },
+        "supportResistance": {
+          "sourceId": "mubasherSupportResistance",
+          "title": "Mubasher Support & Resistance",
+          "currentRunOk": true,
+          "staleFallback": false,
+          "row": {
+            "symbol": "ESRS",
+            "sourceId": "mubasherSupportResistance",
+            "group": "supportResistance",
+            "rowIndex": 422,
+            "name": "ESRS",
+            "cells": [
+              "ESRS/support-resistance','within"
+            ],
+            "numeric": [],
+            "rowText": "ESRS/support-resistance','within",
+            "fallback": true
+          }
+        }
+      },
+      "exclusionReason": "",
+      "basePrice": 141,
+      "baseVolume": 604,
+      "baseValue": 85164.79
     },
     {
       "symbol": "GPPL",
@@ -23782,7 +23880,7 @@
             "symbol": "GPPL",
             "sourceId": "mubasherSupportResistance",
             "group": "supportResistance",
-            "rowIndex": 426,
+            "rowIndex": 430,
             "name": "GPPL",
             "cells": [
               "GPPL/support-resistance','within"
@@ -23857,62 +23955,6 @@
       "basePrice": 0,
       "baseVolume": 55,
       "baseValue": 139.15
-    },
-    {
-      "symbol": "ESRS",
-      "name": "' ### Size: [[320,50],[300,50],[300,100],[320,100],[320,480]] End AdSlot 1 --> --> --> --> --> --> --> --> Ezz Steel SAE",
-      "coverageStatus": "ANALYSIS_READY_INTERNAL_CACHE",
-      "sourceStrengthScore": 58,
-      "evidenceScore": 58,
-      "confirmationCount": 3,
-      "confirmations": 3,
-      "confirmationSources": [
-        "internal:price",
-        "internal:volume/value",
-        "external:supportResistance"
-      ],
-      "evidenceSources": [
-        "internal:price",
-        "internal:volume/value",
-        "external:supportResistance"
-      ],
-      "coreSignalCount": 2,
-      "internalCacheUsed": true,
-      "cacheExtracted": true,
-      "cacheEvidenceCount": 2,
-      "priceStatus": "ok",
-      "executionPriceOk": true,
-      "pricePrecisionRisk": false,
-      "volumeStatus": "حجم/قيمة من الكاش",
-      "supportStatus": "ناقص",
-      "planStatus": "ناقص",
-      "sourceCount": 1,
-      "currentExternalSourceCount": 1,
-      "sources": {
-        "supportResistance": {
-          "sourceId": "mubasherSupportResistance",
-          "title": "Mubasher Support & Resistance",
-          "currentRunOk": true,
-          "staleFallback": false,
-          "row": {
-            "symbol": "ESRS",
-            "sourceId": "mubasherSupportResistance",
-            "group": "supportResistance",
-            "rowIndex": 430,
-            "name": "ESRS",
-            "cells": [
-              "ESRS/support-resistance','within"
-            ],
-            "numeric": [],
-            "rowText": "ESRS/support-resistance','within",
-            "fallback": true
-          }
-        }
-      },
-      "exclusionReason": "",
-      "basePrice": 141,
-      "baseVolume": 2748,
-      "baseValue": 387468
     },
     {
       "symbol": "ICLE",
