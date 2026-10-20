@@ -1,11 +1,11 @@
 {
   "ok": true,
   "engine": "v8_9_3_executive_home",
-  "generatedAt": "2026-10-19T18:46:38.265Z",
+  "generatedAt": "2026-10-20T13:36:52.891Z",
   "summary": {
     "dataStatus": "ok",
     "coveragePct": 94.6,
-    "marketRows": 207,
+    "marketRows": 206,
     "source": "mubasher_symbol_pages_precise_enriched",
     "actionableCount": 218,
     "aPlus": 0,
@@ -439,6 +439,18 @@
       "why": "max/min internal price spread 28.98%"
     },
     {
+      "id": "price:price_conflict:ACAMD:تعارض سعر",
+      "level": "critical",
+      "priority": "عاجل",
+      "source": "price",
+      "type": "price_conflict",
+      "symbol": "ACAMD",
+      "title": "تعارض سعر",
+      "text": "final=2.04, recommendation=2.25, market=2.04, cache=2.25",
+      "action": "مراجعة السعر قبل أي قرار قوي",
+      "why": "max/min internal price spread 10.29%"
+    },
+    {
       "id": "price:price_conflict:ACAP:تعارض سعر",
       "level": "critical",
       "priority": "عاجل",
@@ -497,18 +509,6 @@
       "text": "final=3.1, recommendation=3.45, market=3.1, cache=3.45",
       "action": "مراجعة السعر قبل أي قرار قوي",
       "why": "max/min internal price spread 11.29%"
-    },
-    {
-      "id": "price:price_conflict:ADRI:تعارض سعر",
-      "level": "critical",
-      "priority": "عاجل",
-      "source": "price",
-      "type": "price_conflict",
-      "symbol": "ADRI",
-      "title": "تعارض سعر",
-      "text": "final=13.52, recommendation=null, market=13.52, cache=null",
-      "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 86.23%"
     }
   ],
   "nextActions": [
