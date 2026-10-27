@@ -1,13 +1,13 @@
 {
   "ok": true,
   "engine": "v9_0_stable_core_final_ranking_safe_plan",
-  "generatedAt": "2026-10-27T14:36:15.411Z",
+  "generatedAt": "2026-10-27T18:22:58.480Z",
   "total": 221,
   "summary": {
     "p1": 0,
     "p2": 0,
-    "p3": 3,
-    "blocked": 201,
+    "p3": 6,
+    "blocked": 192,
     "precisionBlocked": 22
   },
   "rows": [
@@ -51,7 +51,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -118,7 +118,75 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 7,
+        "priceConflict": false,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "AJWA",
+      "name": "أجواء للصناعات الغذائية",
+      "grade": "P3",
+      "finalScore": 59,
+      "targetProbability": 61,
+      "potentialProfitPct": 3.69,
+      "expectedReturnPct": -0.51,
+      "rr": 0.52,
+      "price": 179.07,
+      "priceDisplay": "179.07",
+      "entryFrom": 170.67,
+      "entryTo": 180.86,
+      "target1": 185.67,
+      "target2": 195.33,
+      "stopLoss": 166.4,
+      "support1": 170.67,
+      "resistance1": 185.67,
+      "priceState": "stale",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "",
+      "sourceUsed": "history",
+      "historySessions": 7,
+      "confidence": 55,
+      "blocks": [
+        "سعر قديم",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 61% | ربح هدف1 3.7% | عائد متوقع -0.5% | R/R 0.52 | السعر قديم | تاريخ 7/50 | قيود: سعر قديم، R/R ضعيف",
+      "name_ar": "أجواء للصناعات الغذائية",
+      "name_en": "أجواء للصناعات الغذائية",
+      "finalConfidence": 55,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -183,7 +251,143 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 7,
+        "priceConflict": false,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "ENGC",
+      "name": "آيكون",
+      "grade": "P3",
+      "finalScore": 56,
+      "targetProbability": 58,
+      "potentialProfitPct": 1.99,
+      "expectedReturnPct": -0.2,
+      "rr": 0.62,
+      "price": 36.6,
+      "priceDisplay": "36.6",
+      "entryFrom": 36.33,
+      "entryTo": 36.97,
+      "target1": 37.33,
+      "target2": 37.67,
+      "stopLoss": 35.42,
+      "support1": 36.33,
+      "resistance1": 37.33,
+      "priceState": "stale",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "",
+      "sourceUsed": "history",
+      "historySessions": 7,
+      "confidence": 55,
+      "blocks": [
+        "سعر قديم",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 58% | ربح هدف1 2.0% | عائد متوقع -0.2% | R/R 0.62 | السعر قديم | تاريخ 7/50 | قيود: سعر قديم، R/R ضعيف",
+      "name_ar": "آيكون",
+      "name_en": "آيكون",
+      "finalConfidence": 55,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-10-27T18:22:58.635Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 7,
+        "priceConflict": false,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "ADCI",
+      "name": "العربية للأدوية",
+      "grade": "P3",
+      "finalScore": 55,
+      "targetProbability": 58,
+      "potentialProfitPct": 1.11,
+      "expectedReturnPct": -0.8,
+      "rr": 0.32,
+      "price": 240.97,
+      "priceDisplay": "240.97",
+      "entryFrom": 238.65,
+      "entryTo": 243.38,
+      "target1": 243.65,
+      "target2": 246.82,
+      "stopLoss": 232.68,
+      "support1": 238.65,
+      "resistance1": 243.65,
+      "priceState": "stale",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "",
+      "sourceUsed": "history",
+      "historySessions": 7,
+      "confidence": 55,
+      "blocks": [
+        "سعر قديم",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 58% | ربح هدف1 1.1% | عائد متوقع -0.8% | R/R 0.32 | السعر قديم | تاريخ 7/50 | قيود: سعر قديم، R/R ضعيف",
+      "name_ar": "العربية للأدوية",
+      "name_en": "العربية للأدوية",
+      "finalConfidence": 55,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -250,7 +454,75 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": false,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "SPIN",
+      "name": "سبينالكس",
+      "grade": "Watch",
+      "finalScore": 53,
+      "targetProbability": 57,
+      "potentialProfitPct": 0.71,
+      "expectedReturnPct": -0.96,
+      "rr": 0.22,
+      "price": 14.17,
+      "priceDisplay": "14.17",
+      "entryFrom": 14.07,
+      "entryTo": 14.31,
+      "target1": 14.27,
+      "target2": 14.39,
+      "stopLoss": 13.72,
+      "support1": 14.07,
+      "resistance1": 14.27,
+      "priceState": "stale",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "",
+      "sourceUsed": "history",
+      "historySessions": 8,
+      "confidence": 55,
+      "blocks": [
+        "سعر قديم",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 57% | ربح هدف1 0.7% | عائد متوقع -1.0% | R/R 0.22 | السعر قديم | تاريخ 8/50 | قيود: سعر قديم، R/R ضعيف",
+      "name_ar": "سبينالكس",
+      "name_en": "سبينالكس",
+      "finalConfidence": 55,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -317,7 +589,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -384,7 +656,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -449,7 +721,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -516,7 +788,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -529,6 +801,73 @@
           ]
         },
         "historySessions": 8,
+        "priceConflict": false,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "ISMA",
+      "name": "الإسماعيلية مصر للدواجن",
+      "grade": "Watch",
+      "finalScore": 54,
+      "targetProbability": 54,
+      "potentialProfitPct": 4.69,
+      "expectedReturnPct": 1,
+      "rr": 1.4,
+      "price": 28.15,
+      "priceDisplay": "28.15",
+      "entryFrom": 27.91,
+      "entryTo": 28.43,
+      "target1": 29.47,
+      "target2": 30.24,
+      "stopLoss": 27.21,
+      "support1": 27.91,
+      "resistance1": 29.47,
+      "priceState": "stale",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "",
+      "sourceUsed": "history",
+      "historySessions": 7,
+      "confidence": 40,
+      "blocks": [
+        "سعر قديم"
+      ],
+      "why": "احتمال الهدف 54% | ربح هدف1 4.7% | عائد متوقع 1.0% | R/R 1.40 | السعر قديم | تاريخ 7/50 | قيود: سعر قديم",
+      "name_ar": "الإسماعيلية مصر للدواجن",
+      "name_en": "الإسماعيلية مصر للدواجن",
+      "finalConfidence": 40,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-10-27T18:22:58.635Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 7,
         "priceConflict": false,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -581,7 +920,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -648,7 +987,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -715,7 +1054,279 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 7,
+        "priceConflict": false,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "UNIT",
+      "name": "المتحدة للإسكان",
+      "grade": "Watch",
+      "finalScore": 48,
+      "targetProbability": 50,
+      "potentialProfitPct": 3.63,
+      "expectedReturnPct": -1.2,
+      "rr": 0.6,
+      "price": 12.95,
+      "priceDisplay": "12.95",
+      "entryFrom": 12.48,
+      "entryTo": 13.08,
+      "target1": 13.42,
+      "target2": 13.98,
+      "stopLoss": 12.17,
+      "support1": 12.48,
+      "resistance1": 13.42,
+      "priceState": "stale",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "",
+      "sourceUsed": "history",
+      "historySessions": 7,
+      "confidence": 40,
+      "blocks": [
+        "سعر قديم",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 50% | ربح هدف1 3.6% | عائد متوقع -1.2% | R/R 0.60 | السعر قديم | تاريخ 7/50 | قيود: سعر قديم، R/R ضعيف",
+      "name_ar": "المتحدة للإسكان",
+      "name_en": "المتحدة للإسكان",
+      "finalConfidence": 40,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-10-27T18:22:58.635Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 7,
+        "priceConflict": false,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "VLMRA",
+      "name": "فالمور القابضة",
+      "grade": "Watch",
+      "finalScore": 47,
+      "targetProbability": 49,
+      "potentialProfitPct": 2.2,
+      "expectedReturnPct": -0.62,
+      "rr": 0.66,
+      "price": 28.2,
+      "priceDisplay": "28.2",
+      "entryFrom": 28.1,
+      "entryTo": 28.39,
+      "target1": 28.82,
+      "target2": 29.13,
+      "stopLoss": 27.26,
+      "support1": 27.96,
+      "resistance1": 28.82,
+      "priceState": "stale",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "",
+      "sourceUsed": "history",
+      "historySessions": 7,
+      "confidence": 40,
+      "blocks": [
+        "سعر قديم",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 49% | ربح هدف1 2.2% | عائد متوقع -0.6% | R/R 0.66 | السعر قديم | تاريخ 7/50 | قيود: سعر قديم، R/R ضعيف",
+      "name_ar": "فالمور القابضة",
+      "name_en": "فالمور القابضة",
+      "finalConfidence": 40,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-10-27T18:22:58.635Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 7,
+        "priceConflict": false,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "EGCH",
+      "name": "كيما",
+      "grade": "Watch",
+      "finalScore": 45,
+      "targetProbability": 48,
+      "potentialProfitPct": 1.39,
+      "expectedReturnPct": -1.33,
+      "rr": 0.36,
+      "price": 12.25,
+      "priceDisplay": "12.25",
+      "entryFrom": 12.14,
+      "entryTo": 12.3,
+      "target1": 12.42,
+      "target2": 12.65,
+      "stopLoss": 11.78,
+      "support1": 12.08,
+      "resistance1": 12.42,
+      "priceState": "stale",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "",
+      "sourceUsed": "history",
+      "historySessions": 8,
+      "confidence": 40,
+      "blocks": [
+        "سعر قديم",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 48% | ربح هدف1 1.4% | عائد متوقع -1.3% | R/R 0.36 | السعر قديم | تاريخ 8/50 | قيود: سعر قديم، R/R ضعيف",
+      "name_ar": "كيما",
+      "name_en": "كيما",
+      "finalConfidence": 40,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-10-27T18:22:58.635Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 8,
+        "priceConflict": false,
+        "pricePrecisionRisk": false,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "AMIA",
+      "name": "العربية للمحابس",
+      "grade": "Watch",
+      "finalScore": 44,
+      "targetProbability": 47,
+      "potentialProfitPct": 2.18,
+      "expectedReturnPct": -1.35,
+      "rr": 0.49,
+      "price": 8.72,
+      "priceDisplay": "8.72",
+      "entryFrom": 8.58,
+      "entryTo": 8.81,
+      "target1": 8.91,
+      "target2": 9.04,
+      "stopLoss": 8.33,
+      "support1": 8.54,
+      "resistance1": 8.91,
+      "priceState": "stale",
+      "precisionRisk": false,
+      "executionAllowed": false,
+      "executionBlockReason": "",
+      "sourceUsed": "history",
+      "historySessions": 7,
+      "confidence": 40,
+      "blocks": [
+        "سعر قديم",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 47% | ربح هدف1 2.2% | عائد متوقع -1.3% | R/R 0.49 | السعر قديم | تاريخ 7/50 | قيود: سعر قديم، R/R ضعيف",
+      "name_ar": "العربية للمحابس",
+      "name_en": "العربية للمحابس",
+      "finalConfidence": 40,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -784,7 +1395,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -854,7 +1465,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -922,7 +1533,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -991,7 +1602,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -1063,7 +1674,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -1135,7 +1746,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -1207,7 +1818,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -1279,7 +1890,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -1351,7 +1962,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": false,
           "liquidityOk": false,
@@ -1421,7 +2032,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1489,7 +2100,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1558,7 +2169,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1626,7 +2237,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1639,74 +2250,6 @@
           ]
         },
         "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "SPIN",
-      "name": "سبينالكس",
-      "grade": "Blocked",
-      "finalScore": 50,
-      "targetProbability": 52,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -0.19,
-      "rr": 0.83,
-      "price": 14.32,
-      "priceDisplay": "14.32",
-      "entryFrom": 14.07,
-      "entryTo": 14.31,
-      "target1": 14.821,
-      "target2": 14.39,
-      "stopLoss": 13.72,
-      "support1": 14.07,
-      "resistance1": 14.821,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر"
-      ],
-      "why": "احتمال الهدف 52% | ربح هدف1 3.5% | عائد متوقع -0.2% | R/R 0.83 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر",
-      "name_ar": "سبينالكس",
-      "name_en": "سبينالكس",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -1762,7 +2305,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1830,7 +2373,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1898,7 +2441,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -1966,7 +2509,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2034,7 +2577,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2102,7 +2645,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2170,75 +2713,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "ENGC",
-      "name": "آيكون",
-      "grade": "Blocked",
-      "finalScore": 55,
-      "targetProbability": 48,
-      "potentialProfitPct": 19.38,
-      "expectedReturnPct": 6.18,
-      "rr": 3.23,
-      "price": 31.27,
-      "priceDisplay": "31.27",
-      "entryFrom": 30.332,
-      "entryTo": 36.97,
-      "target1": 37.33,
-      "target2": 37.67,
-      "stopLoss": 29.394,
-      "support1": 36.33,
-      "resistance1": 37.33,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 7,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر"
-      ],
-      "why": "احتمال الهدف 48% | ربح هدف1 19.4% | عائد متوقع 6.2% | R/R 3.23 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر",
-      "name_ar": "آيكون",
-      "name_en": "آيكون",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2306,7 +2781,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2374,7 +2849,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2442,7 +2917,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2511,7 +2986,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2580,7 +3055,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2648,7 +3123,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2716,7 +3191,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2785,7 +3260,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2853,7 +3328,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2921,7 +3396,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -2989,7 +3464,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3057,7 +3532,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3125,7 +3600,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3193,7 +3668,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3261,7 +3736,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3329,7 +3804,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3397,7 +3872,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3465,7 +3940,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3533,7 +4008,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3601,7 +4076,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3669,7 +4144,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3737,7 +4212,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3805,7 +4280,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3873,7 +4348,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -3942,7 +4417,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4011,7 +4486,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4080,7 +4555,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4149,7 +4624,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4218,7 +4693,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4287,7 +4762,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4355,7 +4830,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4423,7 +4898,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4491,7 +4966,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4559,7 +5034,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4628,7 +5103,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4697,7 +5172,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4710,75 +5185,6 @@
           ]
         },
         "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "ADCI",
-      "name": "العربية للأدوية",
-      "grade": "Blocked",
-      "finalScore": 38,
-      "targetProbability": 42,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -3.99,
-      "rr": 0.37,
-      "price": 256.84,
-      "priceDisplay": "256.84",
-      "entryFrom": 238.65,
-      "entryTo": 243.38,
-      "target1": 265.829,
-      "target2": 273.804,
-      "stopLoss": 232.68,
-      "support1": 238.65,
-      "resistance1": 265.829,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 7,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 42% | ربح هدف1 3.5% | عائد متوقع -4.0% | R/R 0.37 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "العربية للأدوية",
-      "name_en": "العربية للأدوية",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 7,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -4835,7 +5241,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4904,7 +5310,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -4973,7 +5379,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5041,7 +5447,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5110,7 +5516,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5179,7 +5585,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5248,7 +5654,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5317,7 +5723,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5386,76 +5792,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "AJWA",
-      "name": "أجواء للصناعات الغذائية",
-      "grade": "Blocked",
-      "finalScore": 35,
-      "targetProbability": 41,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -10.41,
-      "rr": 0.17,
-      "price": 208.22,
-      "priceDisplay": "208.22",
-      "entryFrom": 170.67,
-      "entryTo": 180.86,
-      "target1": 215.508,
-      "target2": 221.973,
-      "stopLoss": 166.4,
-      "support1": 170.67,
-      "resistance1": 215.508,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 7,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 41% | ربح هدف1 3.5% | عائد متوقع -10.4% | R/R 0.17 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "أجواء للصناعات الغذائية",
-      "name_en": "أجواء للصناعات الغذائية",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5524,7 +5861,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5593,7 +5930,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5662,7 +5999,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5731,7 +6068,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5799,7 +6136,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5867,7 +6204,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -5935,7 +6272,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6004,7 +6341,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6073,7 +6410,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6142,7 +6479,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6155,74 +6492,6 @@
           ]
         },
         "historySessions": 3,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "ISMA",
-      "name": "الإسماعيلية مصر للدواجن",
-      "grade": "Blocked",
-      "finalScore": 47,
-      "targetProbability": 39,
-      "potentialProfitPct": 58.87,
-      "expectedReturnPct": 19.3,
-      "rr": 9.81,
-      "price": 18.55,
-      "priceDisplay": "18.55",
-      "entryFrom": 17.994,
-      "entryTo": 28.43,
-      "target1": 29.47,
-      "target2": 30.24,
-      "stopLoss": 17.437,
-      "support1": 27.91,
-      "resistance1": 29.47,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 7,
-      "confidence": 40,
-      "blocks": [
-        "تعارض سعر"
-      ],
-      "why": "احتمال الهدف 39% | ربح هدف1 58.9% | عائد متوقع 19.3% | R/R 9.81 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر",
-      "name_ar": "الإسماعيلية مصر للدواجن",
-      "name_en": "الإسماعيلية مصر للدواجن",
-      "finalConfidence": 40,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 7,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -6278,7 +6547,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6346,7 +6615,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6414,7 +6683,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6482,7 +6751,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6550,7 +6819,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6618,7 +6887,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6687,7 +6956,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6755,7 +7024,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6823,7 +7092,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6890,7 +7159,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -6958,7 +7227,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7026,7 +7295,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7039,74 +7308,6 @@
           ]
         },
         "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "EGCH",
-      "name": "كيما",
-      "grade": "Blocked",
-      "finalScore": 42,
-      "targetProbability": 36,
-      "potentialProfitPct": 16.07,
-      "expectedReturnPct": 1.95,
-      "rr": 2.68,
-      "price": 10.7,
-      "priceDisplay": "10.7",
-      "entryFrom": 12.14,
-      "entryTo": 12.3,
-      "target1": 12.42,
-      "target2": 12.65,
-      "stopLoss": 10.058,
-      "support1": 12.08,
-      "resistance1": 12.42,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 8,
-      "confidence": 40,
-      "blocks": [
-        "تعارض سعر"
-      ],
-      "why": "احتمال الهدف 36% | ربح هدف1 16.1% | عائد متوقع 1.9% | R/R 2.68 | السعر متعارض | تاريخ 8/50 | قيود: تعارض سعر",
-      "name_ar": "كيما",
-      "name_en": "كيما",
-      "finalConfidence": 40,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 8,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -7162,7 +7363,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7230,7 +7431,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7299,7 +7500,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7367,7 +7568,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7435,7 +7636,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7503,7 +7704,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7571,7 +7772,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7639,7 +7840,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7707,7 +7908,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7775,7 +7976,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7843,7 +8044,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7911,7 +8112,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -7979,7 +8180,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8047,7 +8248,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8115,7 +8316,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8183,7 +8384,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8251,7 +8452,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8319,7 +8520,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8387,7 +8588,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8456,7 +8657,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8524,7 +8725,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8592,7 +8793,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8660,7 +8861,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8728,7 +8929,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8796,7 +8997,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8864,7 +9065,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -8932,7 +9133,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9000,7 +9201,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9068,7 +9269,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9136,7 +9337,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9204,7 +9405,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9272,7 +9473,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9340,7 +9541,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9408,7 +9609,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9476,7 +9677,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9544,7 +9745,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9612,7 +9813,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9680,7 +9881,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9748,7 +9949,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9816,75 +10017,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "VLMRA",
-      "name": "فالمور القابضة",
-      "grade": "Blocked",
-      "finalScore": 35,
-      "targetProbability": 33,
-      "potentialProfitPct": 10.93,
-      "expectedReturnPct": -0.41,
-      "rr": 1.82,
-      "price": 25.98,
-      "priceDisplay": "25.98",
-      "entryFrom": 28.1,
-      "entryTo": 28.39,
-      "target1": 28.82,
-      "target2": 29.13,
-      "stopLoss": 24.421,
-      "support1": 27.96,
-      "resistance1": 28.82,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 7,
-      "confidence": 40,
-      "blocks": [
-        "تعارض سعر"
-      ],
-      "why": "احتمال الهدف 33% | ربح هدف1 10.9% | عائد متوقع -0.4% | R/R 1.82 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر",
-      "name_ar": "فالمور القابضة",
-      "name_en": "فالمور القابضة",
-      "finalConfidence": 40,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -9953,7 +10086,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10022,7 +10155,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10091,7 +10224,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10160,7 +10293,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10228,7 +10361,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10296,7 +10429,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10364,7 +10497,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10432,7 +10565,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10500,7 +10633,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10568,7 +10701,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10636,7 +10769,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10704,7 +10837,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10772,7 +10905,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10841,7 +10974,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10910,7 +11043,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -10979,7 +11112,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11048,7 +11181,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11117,7 +11250,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11186,7 +11319,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11255,7 +11388,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11324,7 +11457,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11392,7 +11525,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11460,7 +11593,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11528,7 +11661,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11597,7 +11730,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11666,7 +11799,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11735,7 +11868,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11804,7 +11937,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11873,7 +12006,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -11942,7 +12075,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12011,7 +12144,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12080,7 +12213,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12149,7 +12282,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12217,7 +12350,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12286,7 +12419,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12355,7 +12488,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12368,75 +12501,6 @@
           ]
         },
         "historySessions": 8,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "UNIT",
-      "name": "المتحدة للإسكان",
-      "grade": "Blocked",
-      "finalScore": 24,
-      "targetProbability": 30,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -17.91,
-      "rr": 0.13,
-      "price": 16.69,
-      "priceDisplay": "16.69",
-      "entryFrom": 12.48,
-      "entryTo": 13.08,
-      "target1": 17.274,
-      "target2": 17.792,
-      "stopLoss": 12.17,
-      "support1": 12.48,
-      "resistance1": 17.274,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 7,
-      "confidence": 40,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -17.9% | R/R 0.13 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "المتحدة للإسكان",
-      "name_en": "المتحدة للإسكان",
-      "finalConfidence": 40,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 7,
         "priceConflict": true,
         "pricePrecisionRisk": false,
         "executionAllowed": false,
@@ -12493,7 +12557,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12562,7 +12626,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12631,76 +12695,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": true,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": false,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "AMIA",
-      "name": "العربية للمحابس",
-      "grade": "Blocked",
-      "finalScore": 24,
-      "targetProbability": 30,
-      "potentialProfitPct": 3.5,
-      "expectedReturnPct": -34.49,
-      "rr": 0.07,
-      "price": 16.92,
-      "priceDisplay": "16.92",
-      "entryFrom": 8.58,
-      "entryTo": 8.81,
-      "target1": 17.512,
-      "target2": 18.038,
-      "stopLoss": 8.33,
-      "support1": 8.54,
-      "resistance1": 17.512,
-      "priceState": "conflict",
-      "precisionRisk": false,
-      "executionAllowed": false,
-      "executionBlockReason": "توجد قيود تمنع التنفيذ",
-      "sourceUsed": "market",
-      "historySessions": 7,
-      "confidence": 40,
-      "blocks": [
-        "تعارض سعر",
-        "R/R ضعيف"
-      ],
-      "why": "احتمال الهدف 30% | ربح هدف1 3.5% | عائد متوقع -34.5% | R/R 0.07 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر، R/R ضعيف",
-      "name_ar": "العربية للمحابس",
-      "name_en": "العربية للمحابس",
-      "finalConfidence": 40,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12769,7 +12764,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12838,7 +12833,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12907,7 +12902,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -12975,7 +12970,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13044,7 +13039,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13112,7 +13107,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13182,7 +13177,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13250,7 +13245,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13318,7 +13313,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13387,7 +13382,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13456,7 +13451,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13524,7 +13519,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13595,7 +13590,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13665,7 +13660,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13735,7 +13730,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13805,7 +13800,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13876,7 +13871,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -13947,7 +13942,78 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
+        "requiredMubasherFields": {
+          "priceOk": true,
+          "liquidityOk": false,
+          "srOk": true,
+          "freshOk": false,
+          "ok": false,
+          "missing": [
+            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+          ]
+        },
+        "historySessions": 7,
+        "priceConflict": true,
+        "pricePrecisionRisk": true,
+        "executionAllowed": false,
+        "monitorOnly": true,
+        "reasons": [
+          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
+          "تعارض سعر أو حظر سابق في محرك السعر",
+          "مخاطر دقة السعر أقل من جنيه أو سعر غير مؤكد",
+          "تاريخ أقل من 20 جلسة: مراقبة فقط"
+        ]
+      },
+      "recommendation": "مراقبة فقط",
+      "signal": "WATCH_ONLY",
+      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، مخاطر دقة السعر أقل من جنيه أو سعر غير مؤكد، تاريخ أقل من 20 جلسة: مراقبة فقط"
+    },
+    {
+      "symbol": "PHGC",
+      "name": "بريميوم هيلث كير",
+      "grade": "Blocked",
+      "finalScore": 1,
+      "targetProbability": 5,
+      "potentialProfitPct": 3.33,
+      "expectedReturnPct": -5.11,
+      "rr": 0.6,
+      "price": 0.09,
+      "priceDisplay": "0.090",
+      "entryFrom": 0.09,
+      "entryTo": 0.09,
+      "target1": 0.093,
+      "target2": 0.1,
+      "stopLoss": 0.085,
+      "support1": 0.09,
+      "resistance1": 0.093,
+      "priceState": "precision_risk",
+      "precisionRisk": true,
+      "executionAllowed": false,
+      "executionBlockReason": "دقة سعر أقل من 1 جنيه غير كافية للتنفيذ؛ يلزم تأكيد 3 خانات مثل 0.216",
+      "sourceUsed": "history",
+      "historySessions": 7,
+      "confidence": 45,
+      "blocks": [
+        "سعر قديم",
+        "دقة سعر غير كافية",
+        "R/R ضعيف"
+      ],
+      "why": "احتمال الهدف 5% | ربح هدف1 3.3% | عائد متوقع -5.1% | R/R 0.60 | السعر دقة غير كافية | تاريخ 7/50 | قيود: سعر قديم، دقة سعر غير كافية، R/R ضعيف",
+      "name_ar": "بريميوم هيلث كير",
+      "name_en": "بريميوم هيلث كير",
+      "finalConfidence": 45,
+      "coreDataReady": false,
+      "missingCoreFields": [
+        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
+        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
+      ],
+      "monitorOnly": true,
+      "goalQualityGate": {
+        "ok": false,
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14017,7 +14083,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14087,7 +14153,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14158,7 +14224,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14186,79 +14252,6 @@
       "recommendation": "مراقبة فقط",
       "signal": "WATCH_ONLY",
       "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، مخاطر دقة السعر أقل من جنيه أو سعر غير مؤكد، تاريخ أقل من 20 جلسة: مراقبة فقط"
-    },
-    {
-      "symbol": "PHGC",
-      "name": "بريميوم هيلث كير",
-      "grade": "Blocked",
-      "finalScore": 6,
-      "targetProbability": 5,
-      "potentialProfitPct": 12.5,
-      "expectedReturnPct": -5.31,
-      "rr": 2,
-      "price": 0.08,
-      "priceDisplay": "0.080",
-      "entryFrom": 0.09,
-      "entryTo": 0.09,
-      "target1": 0.09,
-      "target2": 0.1,
-      "stopLoss": 0.075,
-      "support1": 0.09,
-      "resistance1": 0.09,
-      "priceState": "precision_risk",
-      "precisionRisk": true,
-      "executionAllowed": false,
-      "executionBlockReason": "دقة سعر أقل من 1 جنيه غير كافية للتنفيذ؛ يلزم تأكيد 3 خانات مثل 0.216",
-      "sourceUsed": "market",
-      "historySessions": 7,
-      "confidence": 45,
-      "blocks": [
-        "تعارض سعر",
-        "دقة سعر غير كافية"
-      ],
-      "why": "احتمال الهدف 5% | ربح هدف1 12.5% | عائد متوقع -5.3% | R/R 2.00 | السعر دقة غير كافية | تاريخ 7/50 | قيود: تعارض سعر، دقة سعر غير كافية",
-      "name_ar": "بريميوم هيلث كير",
-      "name_en": "بريميوم هيلث كير",
-      "finalConfidence": 45,
-      "coreDataReady": false,
-      "missingCoreFields": [
-        "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-        "الدعم والمقاومة غير متاحة من مباشر",
-        "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-      ],
-      "monitorOnly": true,
-      "goalQualityGate": {
-        "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
-        "requiredMubasherFields": {
-          "priceOk": true,
-          "liquidityOk": false,
-          "srOk": false,
-          "freshOk": false,
-          "ok": false,
-          "missing": [
-            "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-            "الدعم والمقاومة غير متاحة من مباشر",
-            "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح"
-          ]
-        },
-        "historySessions": 7,
-        "priceConflict": true,
-        "pricePrecisionRisk": true,
-        "executionAllowed": false,
-        "monitorOnly": true,
-        "reasons": [
-          "السيولة/قيمة أو حجم التداول غير متاحة من مباشر",
-          "الدعم والمقاومة غير متاحة من مباشر",
-          "لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح",
-          "تعارض سعر أو حظر سابق في محرك السعر",
-          "مخاطر دقة السعر أقل من جنيه أو سعر غير مؤكد",
-          "تاريخ أقل من 20 جلسة: مراقبة فقط"
-        ]
-      },
-      "recommendation": "مراقبة فقط",
-      "signal": "WATCH_ONLY",
-      "exclusionReason": "السيولة/قيمة أو حجم التداول غير متاحة من مباشر، الدعم والمقاومة غير متاحة من مباشر، لا يوجد تأكيد مصدر مباشر/كاش مباشر صالح، تعارض سعر أو حظر سابق في محرك السعر، مخاطر دقة السعر أقل من جنيه أو سعر غير مؤكد، تاريخ أقل من 20 جلسة: مراقبة فقط"
     },
     {
       "symbol": "CFGH",
@@ -14302,7 +14295,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14373,7 +14366,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14444,7 +14437,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14515,7 +14508,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14587,7 +14580,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14658,7 +14651,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14729,7 +14722,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14800,7 +14793,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14871,7 +14864,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -14941,7 +14934,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -15013,7 +15006,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -15084,7 +15077,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -15155,7 +15148,7 @@
       "monitorOnly": true,
       "goalQualityGate": {
         "ok": false,
-        "generatedAt": "2026-10-27T14:36:15.653Z",
+        "generatedAt": "2026-10-27T18:22:58.635Z",
         "requiredMubasherFields": {
           "priceOk": true,
           "liquidityOk": false,
@@ -15186,5 +15179,5 @@
     }
   ],
   "note": "V9.0 Stable Core: final ranking preserves safe entry/target/stop plans and blocks unsafe sub-1 EGP rounded prices.",
-  "qualityHardenedAt": "2026-10-27T14:36:15.653Z"
+  "qualityHardenedAt": "2026-10-27T18:22:58.635Z"
 }
