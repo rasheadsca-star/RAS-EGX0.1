@@ -1,7 +1,7 @@
 {
   "ok": true,
   "engine": "v8_9_1_alert_decision_center_calibrated",
-  "generatedAt": "2026-10-27T18:22:57.691Z",
+  "generatedAt": "2026-10-28T15:12:09.263Z",
   "total": 34,
   "summary": {
     "critical": 20,
@@ -67,18 +67,6 @@
       "text": "final=12.96, recommendation=9.23, market=12.96, cache=9.23",
       "action": "مراجعة السعر قبل أي قرار قوي",
       "why": "max/min internal price spread 40.41%"
-    },
-    {
-      "id": "price:price_conflict:ADCI:تعارض سعر",
-      "level": "critical",
-      "priority": "عاجل",
-      "source": "price",
-      "type": "price_conflict",
-      "symbol": "ADCI",
-      "title": "تعارض سعر",
-      "text": "final=256.84, recommendation=240.97, market=256.84, cache=240.97",
-      "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 6.59%"
     },
     {
       "id": "price:price_conflict:ADPC:تعارض سعر",
@@ -165,18 +153,6 @@
       "why": "max/min internal price spread 61.70%"
     },
     {
-      "id": "price:price_conflict:AJWA:تعارض سعر",
-      "level": "critical",
-      "priority": "عاجل",
-      "source": "price",
-      "type": "price_conflict",
-      "symbol": "AJWA",
-      "title": "تعارض سعر",
-      "text": "final=208.22, recommendation=179.07, market=208.22, cache=179.07",
-      "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 16.28%"
-    },
-    {
       "id": "price:price_conflict:ALCN:تعارض سعر",
       "level": "critical",
       "priority": "عاجل",
@@ -225,18 +201,6 @@
       "why": "max/min internal price spread 86.30%"
     },
     {
-      "id": "price:price_conflict:AMIA:تعارض سعر",
-      "level": "critical",
-      "priority": "عاجل",
-      "source": "price",
-      "type": "price_conflict",
-      "symbol": "AMIA",
-      "title": "تعارض سعر",
-      "text": "final=16.92, recommendation=8.72, market=16.92, cache=8.72",
-      "action": "مراجعة السعر قبل أي قرار قوي",
-      "why": "max/min internal price spread 94.04%"
-    },
-    {
       "id": "price:price_conflict:AMOC:تعارض سعر",
       "level": "critical",
       "priority": "عاجل",
@@ -259,6 +223,42 @@
       "text": "final=0.23, recommendation=0.21, market=0.23, cache=0.21",
       "action": "مراجعة السعر قبل أي قرار قوي",
       "why": "max/min internal price spread 9.52%"
+    },
+    {
+      "id": "price:price_conflict:ARCC:تعارض سعر",
+      "level": "critical",
+      "priority": "عاجل",
+      "source": "price",
+      "type": "price_conflict",
+      "symbol": "ARCC",
+      "title": "تعارض سعر",
+      "text": "final=64, recommendation=55.44, market=64, cache=55.44",
+      "action": "مراجعة السعر قبل أي قرار قوي",
+      "why": "max/min internal price spread 15.44%"
+    },
+    {
+      "id": "price:price_conflict:AREH:تعارض سعر",
+      "level": "critical",
+      "priority": "عاجل",
+      "source": "price",
+      "type": "price_conflict",
+      "symbol": "AREH",
+      "title": "تعارض سعر",
+      "text": "final=1.06, recommendation=1.56, market=1.06, cache=1.56",
+      "action": "مراجعة السعر قبل أي قرار قوي",
+      "why": "max/min internal price spread 47.17%"
+    },
+    {
+      "id": "price:price_conflict:ARVA:تعارض سعر",
+      "level": "critical",
+      "priority": "عاجل",
+      "source": "price",
+      "type": "price_conflict",
+      "symbol": "ARVA",
+      "title": "تعارض سعر",
+      "text": "final=14.99, recommendation=11.03, market=14.99, cache=11.03",
+      "action": "مراجعة السعر قبل أي قرار قوي",
+      "why": "max/min internal price spread 35.90%"
     },
     {
       "id": "history:history_incomplete:market:تاريخ 50 جلسة غير مكتمل",
@@ -369,14 +369,14 @@
       "why": "احتمال الهدف 74% | ربح هدف1 8.3% | عائد متوقع 5.6% | R/R 3.90 | السعر متعارض | تاريخ 7/50 | قيود: تعارض سعر"
     },
     {
-      "id": "price:stale_price_summary:market:7 أسعار قديمة/غير مؤكدة",
+      "id": "price:stale_price_summary:market:17 أسعار قديمة/غير مؤكدة",
       "level": "info",
       "priority": "معلومة",
       "source": "price",
       "type": "stale_price_summary",
       "symbol": null,
-      "title": "7 أسعار قديمة/غير مؤكدة",
-      "text": "أمثلة: APSW, CFGH, DEIN, ELWA, EOSB, GTEX, NEDA",
+      "title": "17 أسعار قديمة/غير مؤكدة",
+      "text": "أمثلة: ADCI, AJWA, AMIA, APSW, CFGH, DEIN, EGCH, ELWA, ENGC, EOSB, GTEX, ISMA, NEDA, PHGC",
       "action": "شغّل Workflow مرة واحدة فقط أو انتظر تحديث المصدر",
       "why": "تم دمج الأسعار القديمة في تنبيه واحد بدل عشرات التنبيهات"
     },
